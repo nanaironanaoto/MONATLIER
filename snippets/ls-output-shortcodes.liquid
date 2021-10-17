@@ -1,0 +1,64 @@
+{%- comment -%}
+    Evaluate shortcodes
+{%- endcomment -%}
+
+{%- assign output = input -%}
+{%- assign shortcodesPreff = '[LS_' -%}
+{%- assign shortcodesSuff = ']' -%}
+{%- assign shortcodesChunks = input | split: shortcodesPreff -%}
+
+{%- for shortcodeChunk in shortcodesChunks -%}
+
+    {%- unless shortcodeChunk contains ']' -%}
+        {%- continue -%}
+    {%- endunless -%}
+
+    {%- assign shortcodeSignature = shortcodeChunk | split: shortcodesSuff | first -%}
+    {%- assign shortcodeString = shortcodesPreff | append: shortcodeSignature | append: shortcodesSuff -%}
+    {%- assign shortcodeName = shortcodeSignature | split: ' ' | first -%}
+    {%- assign shortcodeArguments = shortcodeSignature | replace_first: shortcodeName, "" | strip | split: " " -%}
+    {%- assign shortcodeOutput = nill -%}
+
+    {%- case shortcodeName -%}
+
+        {%- when 'LANGUAGES_SWITCHER' -%}
+
+            {%- assign switcherId = shortcodeArguments | first | plus: 0 -%}
+            {%- capture shortcodeOutput -%}{%- render "ls-languages-switcher", id: switcherId -%}{%- endcapture -%}
+
+        {%- when 'LANGUAGE_TITLE' -%}
+
+            {%- assign languageCode = shortcodeArguments | first -%}
+            {%- capture shortcodeOutput -%}{%- render "ls-language-title", code: languageCode -%}{%- endcapture -%}
+
+        {%- when 'LANGUAGE_HREF' -%}
+
+            {%- assign languageCode = shortcodeArguments | first -%}
+            {%- capture shortcodeOutput -%}{%- render "ls-language-href", code: languageCode -%}{%- endcapture -%}
+
+        {%- when 'CURRENCIES_SWITCHER' -%}
+
+            {%- assign switcherId = shortcodeArguments | first | plus: 0 -%}
+            {%- capture shortcodeOutput -%}{%- render "ls-currencies-switcher", id: switcherId -%}{%- endcapture -%}
+
+        {%- when 'CURRENCY_TITLE' -%}
+
+            {%- assign currencyCode = shortcodeArguments | first -%}
+            {%- capture shortcodeOutput -%}{%- render "ls-currency-title", code: currencyCode -%}{%- endcapture -%}
+
+        {%- when 'CURRENCY_HREF' -%}
+
+            {%- assign currencyCode = shortcodeArguments | first -%}
+            {%- capture shortcodeOutput -%}{%- render "ls-currency-href", code: currencyCode -%}{%- endcapture -%}
+
+    {%- endcase -%}
+
+    {%- if shortcodeOutput == nill -%}
+        {%- continue -%}
+    {%- endif -%}
+
+    {%- assign output = output | replace: shortcodeString, shortcodeOutput -%}
+
+{%- endfor -%}
+
+{{ output }}

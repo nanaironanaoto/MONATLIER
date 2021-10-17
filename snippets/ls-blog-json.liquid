@@ -1,0 +1,20 @@
+{%- comment -%}
+    Create localized blog json string
+{%- endcomment -%}
+
+{%- capture json -%}
+    {%- if blog -%}
+        {
+            "articles_count": {{ blog.articles_count | json }},
+            "comments_enabled": {{ blog.comments_enabled | json }},
+            "handle": {{ blog.handle | json }},
+            "id": {{ blog.id | json }},
+            "moderated": {{ blog.moderated | json }},
+            "title": {{ blog.title | json }}
+        }
+    {%- else -%}
+        null
+    {%- endif -%}
+{%- endcapture -%}
+
+{{ json | strip_newlines | replace: "	", "" | replace: "  ", "" }}

@@ -1,0 +1,13 @@
+{% comment %}
+  DO NOT MODIFY THIS FILE DIRECTLY. THIS FILE WILL BE OVERWRITTEN.
+  YOU CAN MODIFY THE LIQUID CODE FOR THIS CUSTOM FIELD HERE:
+  https://customfields.bonify.io/dashboard/tatsumi-shimada.myshopify.com/pages/configure/247493/edit
+{% endcomment %}
+{% if page.metafields.custom_fields["subtitle"] != blank %}
+  <div class="custom-field custom-field__subtitle custom-field__type--text">
+    <h3 class="custom-field--title"><ls-static-861689>日本語タイトル</ls-static-861689></h3>
+    <div class="custom-field--value">
+      {{ page.metafields.custom_fields["subtitle"] }}
+    </div>
+  </div>
+{% endif %}

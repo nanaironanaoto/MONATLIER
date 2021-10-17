@@ -1,0 +1,25 @@
+<div class="page-width page-content pages info-page favorite-page">
+      <header class="section-header">
+        <h1 class="section-header__title">{{ page.metafields.custom_fields["subtitle"] }}</h1>
+          <div class="page-subtitle">
+            {{ page.title }}
+          </div>
+        {% if page.metafields.custom_fields["page_description"] != blank %}
+        <div class="page-description">
+            {{ page.metafields.custom_fields["page_description"] }}
+        </div>
+        {% endif %}
+      </header>
+
+      <div class="">
+        <div id="ReplaceFavoriteApp"></div>
+      </div>
+
+
+</div>
+<script src="{{ 'ReplaceFavoriteApp.js' | asset_url }}" defer="defer"></script>
+
+
+	<div class="bread-pages">
+  		<a href="{{ routes.root_url }}">{{ 'general.site.top'|t  }}</a> <span>＞</span> {{ page.title}}
+	</div>

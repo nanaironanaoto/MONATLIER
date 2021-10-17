@@ -1,0 +1,1112 @@
+
+//アバウト：共通
+#PageContainer{
+    overflow: hidden;
+  
+    position: relative;
+}
+
+.about-page.page-width {max-width: 100%;padding:0;}
+.about-page {
+    margin-top:100px;
+}
+.about-page h1{
+    font-family: "TTDrugs-L" !important;
+    font-size:90px !important;
+    letter-spacing: 0.04em;
+    margin-bottom:14px;
+}
+.about-page .page-subtitle{
+  font-size:17px;
+    letter-spacing: 0.23em;
+    margin-bottom: 90px;
+    color: #939393;
+}
+@media only screen and (max-width: 768px)
+{
+.about-page {
+    margin-top: 14vw;
+
+}
+.about-page h1{
+    font-family: "TTDrugs-R" !important;
+    font-size:11.5vw !important;
+    letter-spacing: 0.07em;
+    margin-bottom:10px;
+}
+.about-page .page-subtitle{
+  font-size: 3.2vw;
+    letter-spacing: 0.1em;
+    margin-bottom: 0px;
+}
+}
+//アバウト：ナビゲーション
+.about-nav{
+    margin: 184px auto 128px;
+    display: flex;
+    justify-content: center;
+}
+.about-nav a{
+    padding: 0 40px;
+    text-align: center;
+}
+.about-nav a.is-1{padding-left: 0;}
+.about-nav a.is-2{
+    border-left:solid 1px #EEEEEE;
+    border-right:solid 1px #EEEEEE;
+}
+.about-nav a.is-3{padding-right: 0;}
+.about-nav span{display: block;}
+.about-nav-title{
+    font-family: "TTDrugs-R";
+    font-size:19px;
+    letter-spacing: 0.08em;
+}
+.about-nav-japanese{
+    font-size:12px;
+    letter-spacing: 0.09em;
+    color:#939393;
+}
+.about-nav a.is-active {
+  color: #C8C8C8;
+    pointer-events: none;
+  
+
+}
+.about-nav a.is-active .about-nav-japanese{color:#C8C8C8;}
+//ホバー
+a.about-nav-list a, a.about-nav-list span{
+    transition: color 0.4s;
+}
+a.about-nav-list:hover a, a.about-nav-list:hover span{
+    color:#C9C9C9 ;
+}
+
+@media only screen and (max-width: 768px)
+{
+.about-nav{
+    margin: 28.8vw auto 18vw;
+    flex-direction: column;
+}
+.about-nav a{
+    padding: 0 ;
+    text-align: center;
+    margin-bottom: 7vw;
+}
+.about-nav-title{
+    font-family: "TTDrugs-R";
+    font-size: 5.6vw;
+    letter-spacing: 0.06em;
+    margin-bottom: -1.1vw;
+}
+.about-nav-japanese{
+    font-size: 3vw;
+    letter-spacing: 0.06em;
+    color:#939393;
+}
+}
+
+/*----------------------------------------------------------------------------------------------------------------コンセプト--*/
+
+
+//コンセプト：ヘッダー
+.concept-header {
+    background-image: url('https://cdn.shopify.com/s/files/1/0268/1202/2962/files/concepthero.jpg?v=1614911739');
+    background-size: cover;
+    content: "";
+    height: 100vh;
+    color: #FFF;
+    text-align: center;
+    padding: 0 0;
+    background-attachment: fixed;
+}
+
+@supports (-webkit-touch-callout: none) {
+  .concept-header {
+    height: -webkit-fill-available;
+  }
+}
+.concept-header span{
+    font-family: "TTDrugs-L" !important;
+    font-size: 21.5px;
+    letter-spacing: 0.04em;
+    margin-bottom: 40px;
+    display: block;
+    position: relative;
+    top: 40%;
+    
+}
+.concept-header h1{
+    font-size:95px;
+    font-family: "TTDrugs-L" !important;
+    letter-spacing: 0.04em;
+    position: relative;
+    top: 40%;
+}
+.concept-header p{
+    font-size: 17px;
+    letter-spacing: 0.23em;
+    position: relative;
+    top: 40%;
+}
+
+
+//コンセプト：上部
+.concept-wrap{
+    max-width: 930px;
+    margin:0 auto;
+    padding:142px 55px 158px;
+    
+}
+.concept-wrap p{
+    font-size: 16px;
+    letter-spacing: 0.12em;
+    line-height: 2.5;
+    margin-bottom: 40px;
+}
+
+//コンセプト：上部画像
+.concept-image-top{
+    margin-top: 105px;
+    display: flex;
+}
+
+.concept-image{
+    content: "";
+    background-size: cover;
+    background-position: center;
+    margin-right: -55px;
+}
+.concept-image-wrap.left{
+    width: 50%;
+    padding-right: 90px;
+    padding-top: 0;
+}
+.concept-image-wrap.right{
+    width: 50%;
+    margin-right: -55px;
+}
+
+.concept-image.left{
+    background-image: url('https://cdn.shopify.com/s/files/1/0268/1202/2962/files/concept_2.jpg');
+    width: 320px;
+    height: 433.5px;
+}
+.concept-image.right{
+    background-image: url('https://cdn.shopify.com/s/files/1/0268/1202/2962/files/concept_3.jpg');
+    height: 656px;
+}
+//コンセプト：下部
+.concept-bottom{position: relative;}
+.concept-image-wrap.bottom{
+    margin-left: -50%;
+    margin-right: -530px;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    right: 50%;
+    z-index: 1;
+}
+.concept-image.bottom{
+    background-image: url('https://cdn.shopify.com/s/files/1/0268/1202/2962/files/concept_4.jpg');
+    padding-top:689px;
+    z-index: 1;
+}
+.concept-bottom-text{
+    max-width: 1080px;
+    margin:0 auto;
+    position: relative;
+    z-index: 2;
+    padding: 200px 55px 0 590px ;
+    height: 689px;
+}
+.concept-bottom-text p{
+    font-size:16px;
+    letter-spacing: 0.1em;
+    line-height: 2.5;
+    margin-bottom: 40px;
+}
+.concept-bottom-text-2{
+    max-width: 930px;
+    margin:0 auto;
+    padding:112px 55px 190px;
+}
+.concept-bottom-text-2 p{
+    font-size:16px;
+    letter-spacing: 0.1em;
+    line-height: 2.5;
+    margin-bottom: 48px;
+}
+
+//コンセプト：下部コピー、ロゴ
+.concept-bottom-end h3{
+    font-size: 20.5px;
+    text-align: center;
+    letter-spacing: 0.27em;
+    color: #C8AB7A;
+    margin-bottom: 26px;
+}
+.concept-bottom-end {
+    text-align: center;
+}
+.concept-bottom-end svg {
+    width: 372px;
+}
+
+@media only screen and (max-width: 768px)
+{
+.concept-header{
+    background-image: url('https://cdn.shopify.com/s/files/1/0268/1202/2962/files/concept-sp-hero.jpg?v=1614912851');
+    background-attachment: initial;
+}
+.concept-header span{
+    font-size: 5.2vw;
+    letter-spacing: 0.07em;
+    margin-bottom: 6.6vw;
+    display: block;
+    
+}
+.concept-header h1{
+    font-size: 14.5vw !important;
+    font-family: "TTDrugs-R" !important;
+    letter-spacing: 0.07em;
+}
+.concept-header p{
+    font-size: 3.7vw;
+    letter-spacing: 0.1em;
+}
+
+//コンセプト：上部
+.concept-wrap{
+    margin:0 auto;
+    padding: 22vw 0;
+}
+.concept-wrap p{
+    font-size: 3.6vw;
+    line-height: 2.2;
+    text-align: justify;
+    letter-spacing: 0.1em;
+    margin-bottom: 10vw;
+    padding: 0 10vw;
+}
+.concept-top{padding-left: 0;}
+.concept-image-top{
+    display: flex;
+    flex-direction: column-reverse;
+}    
+.concept-image{margin-right: 0;}
+.concept-image-wrap.left{
+    width: 64%;
+    padding-right: 0;
+    padding-top: 5vw;
+    margin-left: 10vw;
+}
+.concept-image-wrap.right{
+    width: 100%;
+    margin-right: 0;
+    margin-top: 13vw;
+    padding-left: 10vw;
+}
+
+.concept-image.left{
+    padding-top: 95%;
+    height: auto;
+    width: 100%;
+    background-image: url('https://cdn.shopify.com/s/files/1/0268/1202/2962/files/concept-sp_3.jpg?v=1614912735');
+}
+.concept-image.right{
+    padding-top: 140%;
+    height: auto;
+}    
+
+//コンセプト：下部
+.concept-bottom-text {
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+    padding: 5.7vw 10vw 0;
+    height: auto;
+}
+.concept-bottom-text p{
+    font-size: 3.6vw;
+    line-height: 2.2;
+    text-align: justify;
+    margin-bottom: 10vw;
+}
+.concept-bottom-text-2{
+    padding: 26vw 10vw 29vw;
+}
+.concept-bottom-text-2 p{
+    font-size: 3.6vw;
+    line-height: 2.2;
+    text-align: justify;
+    margin-bottom: 10vw;
+}
+
+//コンセプト：下部コピー、ロゴ
+.concept-bottom-end h3{
+    font-size: 4.1vw;
+    text-align: center;
+    letter-spacing: 0.27em;
+    color: #C8AB7A;
+    margin-bottom: -4vw;
+}
+.concept-bottom-end {
+    text-align: center;
+}
+.concept-bottom-end svg {
+    width: 74vw;
+}
+.concept-image-wrap.bottom {
+    margin-left: 0;
+    margin-right: 0;
+    position: relative;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 0;
+}
+.concept-image.bottom{
+    padding-top: 68%;
+    background-image: url('https://cdn.shopify.com/s/files/1/0268/1202/2962/files/concept-sp_1.jpg?v=1614912736');
+}
+}
+/*----------------------------------------------------------------------------------------------------------------フィロソフィー--*/
+.phil-header{
+    margin-top:160px;
+    background-image: url('https://cdn.shopify.com/s/files/1/0268/1202/2962/files/concept-para.jpg?v=1614912304');
+    background-size: cover;
+    background-position: center;
+    content:"";
+    width: 100%;
+    height: 505px;
+    background-attachment: fixed;
+}
+.phil-top{
+    max-width: 930px;
+    padding: 170px 55px 164px;
+    margin:0 auto;
+    position: relative;
+}
+.phil-top h2{
+    font-family: "TTDrugs-R" !important;
+    font-size: 53px;
+    letter-spacing: 0.12em;
+    margin-bottom: 6px;
+}
+.phil-top span{
+    font-size: 14.5px;
+    letter-spacing: 0.14em;
+    color:#939393;
+}
+.phil-top p{
+    max-width: 593px;
+    margin: 50px 0 ;
+    line-height: 2.14;
+    font-size: 15px;
+    letter-spacing: 0.06em;
+    position: relative;
+}
+//キーワード
+.phil-middle{
+    max-width: 930px;
+    margin: 0 auto;
+    padding: 0 55px;
+    display: flex;
+    position: relative;
+}
+.phil-middle-title{
+    writing-mode: vertical-rl;
+    font-family: "TTDrugs-R" !important;
+    color: #6E6E6E;
+    width: 20%;
+    padding-right: 94px;
+    position: relative;
+}
+.phil-middle-title h3{
+    font-size: 44px;
+    letter-spacing: 0.08em;
+    font-family: "TTDrugs-R" !important;
+    line-height: 1;
+    margin-left: -5px;
+}
+.phil-middle-title p{
+    font-size: 18px;
+    letter-spacing: 0.08em;
+    margin-left: 0px;
+}
+.phil-middle-content{
+    width: 80%;
+    margin-top: -5px;
+    margin-bottom: 122px;
+}
+.phil-content {
+    border-bottom:solid 1px #EEEEEE;
+    margin-bottom: 45px;
+}
+.phil-content.is-3 {
+    border-bottom:solid 0px;
+}
+.phil-middle-content span{
+    color: #C8AB7A;
+    font-size: 16px;
+    letter-spacing: 0.24em;
+}
+.phil-content span.num{
+    font-size: 19px;
+    letter-spacing: 0.24em;
+    font-family: "TTDrugs-R" !important;
+    position: relative;
+    display: inline-block;
+    top: 1px;
+}
+.phil-content h4{
+    color: #C8AB7A;
+    font-family: "TTDrugs-L" !important;
+    font-weight: 400;
+    font-size: 74px;
+    letter-spacing: 0.02em;
+    line-height: 0.98;
+}
+.phil-content p{
+    margin: 26px 0 44px;
+    font-size: 14px;
+    letter-spacing: 0.089em;
+    line-height: 1.85;
+}
+.phil-bottom{
+    padding: 0 55px;
+}
+.phil-bottom-wrap{
+    max-width: 1060px;
+    margin: 0 auto;
+    display: flex;
+    background: #F8F6F4;
+}
+.phil-bottom-left{
+    width: 65%;
+}
+.phil-bottom-left p {
+    font-size: 14px;
+    letter-spacing: 0.08em;
+    line-height: 1.92;
+    padding: 90px 91px 78px;
+}
+.phil-bottom-right{
+    width: 50%;
+    background: #FFF;
+    margin: 10px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+}
+.phil-bottom-right svg{
+    display: block;
+    margin: 0 auto;
+    width: 286px;
+    height: auto;
+}
+
+@media only screen and (max-width: 768px)
+{
+.phil-header{
+    margin-top: 30vw;
+    height: 63vw;
+    background-image: url('https://cdn.shopify.com/s/files/1/0268/1202/2962/files/sugimoto_sample.jpg?v=1616036268');
+    background-size: cover;
+    background-position: center;
+    background-attachment: inherit;
+}
+//フィロソフィー
+.phil-top{
+    max-width: 930px;
+    padding: 26vw 10vw 134px;
+}
+.phil-top h2{
+    font-size: 10.6vw;
+    letter-spacing: 0.05em;
+    margin-bottom: 2.9vw;
+}
+.phil-top span{
+    font-size: 3.1vw;
+    letter-spacing: 0.14em;
+    color:#939393;
+}
+.phil-top p{
+    margin: 10.7vw 0 ;
+    line-height: 2;
+    font-size: 3.5vw;
+    letter-spacing: 0.07em;
+}
+
+//キーワード
+.phil-middle{
+    padding: 0 10vw;
+}
+.phil-middle-title{
+    width: 20%;
+    padding-right: 12%;
+}
+.phil-middle-title h3{
+    font-size: 7vw;
+}
+.phil-middle-content{
+  
+    position: relative;
+    width: 80%;
+    margin-top: -1.5vw;
+    margin-bottom: 122px;
+}
+.phil-content {
+    border-bottom:solid 1px #EEEEEE;
+    margin-bottom: 6.4vw;
+}
+.phil-middle-content span{
+    font-size: 3.5vw;
+}
+.phil-content span.num{
+    font-size: 4vw;
+    margin-right: 1.5vw;
+    letter-spacing: 0.09em;
+    top: 0.1vw;
+}
+.phil-content h4{
+    font-size: 10.5vw;
+    line-height: 0.98;
+    margin-bottom:  5vw;
+    font-family: "TTDrugs-R" !important;
+}
+.phil-content p{
+    margin: 5vw 0 7vw;
+    font-size: 3.5vw;
+    line-height: 1.85;
+}
+.phil-bottom{
+    padding: 0 5vw;
+}
+.phil-bottom-wrap{
+    flex-direction: column-reverse;
+}
+.phil-bottom-left{
+    width:100%;
+}
+.phil-bottom-left p {
+    font-size: 3.5vw;
+    letter-spacing: 0.08em;
+    line-height: 1.92;
+    padding: 1.8vw 5vw 5vw;
+}
+.phil-bottom-right{
+    width:auto;
+    margin: 5vw;
+    height: 73vw;
+}
+.phil-bottom-right svg{
+    display: block;
+    margin: 0 auto;
+    width: 54vw;
+    height: auto;
+}
+}
+/*----------------------------------------------------------------------------------------------------------------素材について--*/
+.material-wrap h2{
+    margin-bottom: 38px;
+    font-size:25px;
+    font-weight: 600;
+    letter-spacing: 0.26em;
+}
+p.material-top-info{text-align: center;margin-bottom:100px}
+
+//素材について：モーダル見出し
+.material-wrap h3{
+    font-size: 30px;
+    letter-spacing: 0.26em;
+    margin-bottom:46px;
+    text-align: center;
+    font-weight: 600;
+}
+//素材について：モーダル小見出し
+.material-wrap h4{
+    font-size: 17px;
+    letter-spacing: 0.13em;
+    margin-bottom:8px;
+    font-weight: 600;
+    margin-top: 64px;
+}
+.material-wrap p{
+    font-size:15px;
+    line-height: 2.14;
+    letter-spacing: 0.1em;
+    margin-bottom: 26px;
+}
+.material-wrap p.material-notice{
+    font-size:12px ;
+    letter-spacing: 0.1em;
+    line-height: 1.8;
+    color: #939393;
+}
+.material-wrap table{
+  overflow-x: scroll !important;
+  white-space: nowrap;
+  background: #FFF;
+  border-spacing: 1px 0;
+  font-size: 13px;
+}
+.material-wrap table th{
+    background: #F6F6F6;
+    text-align: center ; 
+    font-size: 14px;
+    padding-top:13px;
+    padding-bottom:13px;
+}
+.material-wrap table th.is-mark{
+    background: #C8AB7A;
+    color:#FFF;
+    text-align: center ;
+    letter-spacing: 2px;
+    font-weight: 500;
+}
+.material-wrap table td{
+    border: solid 1px #F6F6F6;
+    border-top: solid 0px;
+    text-align: center ;
+    padding-top:13px;
+    padding-bottom:13px;
+}
+//地金
+.material-metal-wrap{
+    display: flex;
+    margin: 131px 0 145px;
+}
+.material-metal-image{
+    background-image: url('https://cdn.shopify.com/s/files/1/0268/1202/2962/files/material_1.jpg?v=1614916869');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: right;
+    content: "";
+    display: block;
+    width: 55%;
+    margin-left:-200px;
+}
+.material-metal-margin{width: 5%; margin-left: -3vw;}
+.material-metal-text{
+    max-width: 600px;
+    padding-right:20px;
+}
+.material-metal-text h2{position: relative;}
+.material-metal-text ruby{
+    position: absolute;
+    left: 7px;
+    top:-17px;
+    font-size: 10px;
+    font-weight: 500;
+}
+
+//ダイヤモンド
+.material-diamond-wrap{
+    display: flex; 
+    flex-direction: row-reverse;
+    margin: 0 0 126px;
+}
+.material-diamond-image{
+    background-image: url('https://cdn.shopify.com/s/files/1/0268/1202/2962/files/material_6.jpg?v=1614916870');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: right;
+    content: "";
+    display: block;
+    width: 60%;
+    margin-right:0%;
+}
+.material-diamond-margin{width:0 ; margin-right: -10%;}
+.material-diamond-text{
+    margin-right:-3vw;
+    max-width: 600px;
+    padding-left: 10px;
+}
+
+//カラーストーン
+.material-stone-wrap{
+    display: flex;
+    align-items: center;
+    margin: 0 0 80px;
+}
+.material-stone-image{
+    background-image: url('https://cdn.shopify.com/s/files/1/0268/1202/2962/files/material_2.jpg?v=1614916869');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center right;
+    content: "";
+    display: block;
+    width: 55%;
+    margin-left:-200px;
+    height: 550px;
+}
+.material-stone-margin{width: 5%; margin-left: -3vw;}
+.material-stone-text{
+    max-width: 600px;
+    padding-right:20px;
+}
+
+.material-hardness-wrap{max-width: 900px; padding:40px;margin:0 auto;}
+
+.stone-variant{display: flex;
+    border-bottom:solid 1px #EEEEEE;
+    padding: 28px;}
+.stone-variant:last-child{border-bottom:solid 0px #EEEEEE;}
+.stone-variant img {width: 140px; height: 140px;}
+.stone-variant h4{ margin-top: 1px;}
+.stone-variant-text{margin-left: 44px;}
+.stone-variant-text p{font-size: 13px;}
+.table-margin{
+    display: none;
+    
+}
+@media only screen and (max-width: 768px)
+{
+.table-margin{
+    display: table-cell;
+    width: 10vw;
+    background: none !important;
+    padding: 5vw !important;
+    border: solid 0px !important;
+}   
+}
+@media only screen and (max-width: 768px)
+{
+.material-wrap{
+    overflow: hidden;
+}
+
+.material-wrap h2{
+  	margin-bottom: 7vw;
+    font-weight: 600;
+    letter-spacing: 0.26em;
+    font-size:4.6vw;
+}
+//素材について：モーダル見出し
+.material-wrap h3{
+    font-size: 5vw;
+    margin-bottom: 8vw;
+    margin-top: 4vw;
+}
+//素材について：モーダル小見出し
+.material-wrap h4{
+    font-size: 4vw;
+    letter-spacing: 0.13em;
+    margin-bottom: 2vw;
+    font-weight: 600;
+    margin-top: 10vw;
+}
+.material-wrap p {
+    font-size:3.4vw;
+    line-height: 2;
+    letter-spacing: 0.06em;
+    margin-bottom: 5.4vw;
+}
+.material-wrap p.material-notice{
+    font-size: 2.9vw;
+    letter-spacing: 0.07em;
+}
+//地金
+.material-metal-wrap{
+    display: block;
+    margin: 10vw 0 5vw;
+}
+.material-metal-image{
+    height: 60vw;
+    background-position: center right -8vw;
+    width: 110vw;
+    margin-left:-16vw;
+    background-size: 134vw;
+}
+.material-metal-text{
+    padding: 7vw 10vw;
+    width: 100%;
+}
+.material-metal-text ruby{
+    left: 1px;
+    top:-14px;
+}
+ //ダイヤモンド 
+.material-diamond-wrap{
+    display: block;
+    margin: 0 0 20vw;
+}
+.material-diamond-image{
+    height: 130vw;
+    background-size: cover;
+    background-position: center;
+    background-size: 180vw;
+    width: 100vw;
+    margin-top:-15vw;
+    margin-bottom:-40vw;
+}
+.material-diamond-text{
+    margin-right:0;
+    width: 100%;
+    padding: 14vw 10vw ;
+}   
+.material-wrap table{
+  overflow-x: scroll !important;
+  white-space: nowrap;
+  display: block;
+  background: #FFF;
+  border-spacing: 1px 0;
+  font-size: 2.6vw;
+    width: 80vw;
+    margin-right: -10vw;
+} 
+.material-stone-wrap{
+    display: block;
+    margin: 0 0 14vw;
+}
+.material-stone-image{
+    height: 105vw;
+    background-size: cover;
+    background-position: center right -5vw;
+    width: 100vw;
+    margin-left:0;
+    margin-top:-14vw;
+    margin-bottom:-20vw;
+}
+.material-stone-margin{
+    width: 0; 
+    margin-left: 0; 
+    margin-top:-20vw;
+}
+.material-stone-text{
+    padding: 10vw;
+    width: 100%;
+}
+
+p.material-top-info{
+    text-align: left;
+    margin-bottom:60px;
+}
+.material-hardness-wrap {
+    padding: 10vw 10vw 0;
+}
+  
+.stone-variant{display: block;
+    border-bottom:solid 1px #EEEEEE;
+    padding: 0;}
+.stone-variant img {width: 100%; height: auto;}
+.stone-variant h4{ margin-top: 5vw;}
+.stone-variant-text{margin-left: 0;}
+.stone-variant-text p{
+    font-size:3.2vw;
+    line-height: 2;
+    letter-spacing: 0.06em;
+    margin-bottom: 10vw;
+}
+}
+
+/*----------------------------------------------------------------------------------------------------------------工房について--*/
+.workshop-hero{
+    background-image: url('https://cdn.shopify.com/s/files/1/0268/1202/2962/files/wshi.jpg?v=1614910570');
+    background-size: cover;
+    background-position: center;
+    padding:152px 0 115px;
+    background-attachment: fixed;
+}
+.workshop-hero p{
+    text-align: center;
+    color: #FFF;
+    line-height: 2.3125;
+    margin-bottom: 28px;
+    font-size: 16px;
+    letter-spacing: 0.1em;
+}
+.workshop-hero p:first-child{margin-bottom:56px;}
+.workshop-hero p:last-child{margin-top:54px;}
+
+.chiefdesigner{
+    display: flex;
+    max-width: 1060px;
+    margin:0 auto;
+    margin-top: 120px;
+    align-items: center;
+}
+
+.chiefdesigner-image{width: 50% ;padding-right: 55px;}
+.chiefdesigner-text{
+    padding-left: 55px;
+    width: 50%;
+}
+.chiefdesigner-text span{
+    margin-bottom: 26px;
+    display: block;
+    font-size:15px;
+    letter-spacing: 0.12em;
+}
+.chiefdesigner-text h2{
+    font-family: "TTDrugs-L" !important;
+    font-size:88.5px;
+    letter-spacing: 0.06em;
+    margin-bottom: 8px;
+}
+.chiefdesigner-text .japanese-name{
+    margin-bottom: 46px; 
+    font-size:26px;
+    letter-spacing: 0.33em;
+}
+.chiefdesigner-text p{
+    font-size: 15px;
+    letter-spacing: 0.1em;
+    position: relative;
+}
+.shop-staff{
+    display: flex;
+    max-width: 820px;
+    margin:0 auto;
+    align-items: center;
+    margin-top: 120px;
+}
+.staff-right{
+
+    margin-top: 96px ;}
+.staff-left{flex-direction: row-reverse;}
+.shop-staff-text{
+  width: 50%;
+    position: relative;
+}
+.staff-left .shop-staff-image{
+    width: 50%;
+    padding-left: 60px;
+    position: relative;
+}
+.staff-right .shop-staff-text{
+    padding-left: 30px;
+}
+.staff-right .shop-staff-image{
+    width: 50%;
+    padding-right: 60px;
+    position: relative;
+}
+.shop-staff-text span{
+    margin-bottom: 6px;
+    display: block;
+    font-size: 12px;
+    letter-spacing: 0.12em;
+}
+.shop-staff-text  h2{
+    font-family: "TTDrugs-R" !important;
+    font-size: 32px;
+    letter-spacing: 0.08em;
+    margin-bottom: 4px; 
+}
+.japanese-name{color:#939393;}
+.shop-staff-text .japanese-name{
+    margin-bottom: 18px; 
+    font-size:16px;
+    letter-spacing: 0.33em;
+}
+.shop-staff-text p{
+    font-size:14px;
+    letter-spacing: 0.08em;
+    line-height: 1.85;
+}
+
+p.shop-staff-text-margin{
+    margin-bottom: 60px;
+}
+
+.staff-left:last-child{
+    margin-top: 95px;
+}
+.staff-left:last-child .shop-staff-text p{
+    letter-spacing: 0.04em;
+}
+@media only screen and (max-width: 768px)
+{
+.workshop-hero{
+    margin-top: 12vw;
+    padding: 20vw 0 14vw;
+    background-attachment: initial;
+}
+.workshop-hero p{
+    text-align: center;
+    color: #FFF;
+    line-height: 2.23;
+    font-size: 3.4vw;
+    margin-bottom: 7vw;
+}
+.workshop-hero p:first-child{
+    margin-bottom: 8vw;
+}
+.workshop-hero p:last-child{
+    margin-top: 8vw;
+}
+    
+.chiefdesigner{
+    display: block;
+    padding: 0 10vw;
+    margin-top: 23vw;
+    margin-bottom: 25vw;
+}
+.chiefdesigner-image{
+    width: 100%;
+    padding: 0;
+    margin-bottom: 9vw;
+}
+.chiefdesigner-text{
+    position: relative;
+    padding: 0;
+    width: 100%;
+}
+.chiefdesigner-text h2{
+    font-size: 15.3vw;
+    letter-spacing: 0.06em;
+    margin-bottom: 1.9vw;
+}
+.chiefdesigner-text .japanese-name{
+    margin-bottom: 5vw;
+    font-size: 5.3vw;
+}
+.chiefdesigner-text p{
+    font-size: 3.7vw;
+    letter-spacing: 0.05em;
+}
+
+.chiefdesigner-text p br{display: none;}
+.shop-staff{
+    display: block; 
+    margin-bottom: 13vw; 
+    margin-top:0;
+    position: relative;
+}
+.shop-staff-text{width: 100%;
+    position: relative;}
+.staff-left .shop-staff-image{width: 100%; padding-left: 10vw;}
+.staff-right .shop-staff-image{width: 100%; padding-right: 10vw;}
+.shop-staff-text{padding: 10vw !important;}
+
+//肩書
+.shop-staff-text span{
+    letter-spacing: 0.12em;
+    margin-bottom: 3vw;
+    font-size: 3vw;
+}
+.shop-staff-text  h2{
+    font-size: 7.4vw;
+    margin-bottom: 1vw; 
+}
+.shop-staff-text  h2 br{display: none;}
+.shop-staff-text .japanese-name{
+    margin-bottom: 5vw; 
+    font-size: 4vw;
+}
+.shop-staff-text p{
+    font-size: 3.5vw;
+    line-height: 1.7;
+    margin-bottom: 0vw;
+}
+p.shop-staff-text-margin{
+    margin-bottom: 14vw;
+}
+  
+.staff-left:last-child{
+    margin-top: 0;
+}
+}

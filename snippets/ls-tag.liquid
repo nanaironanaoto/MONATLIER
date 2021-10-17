@@ -1,0 +1,36 @@
+{%- comment -%}
+    Find tag translation
+{%- endcomment -%}
+
+{%- capture defaultLanguageCode -%}{%- render "ls-default-language" -%}{%- endcapture -%}
+{%- capture languageCode -%}{%- render "ls-language" -%}{%- endcapture -%}
+
+{%- assign resourceTag = tag -%}
+
+{%- if languageCode != defaultLanguageCode -%}
+
+    {%- capture md5key -%}{%- render 'ls-md5-key', md5key: tag, keySize: 30 -%}{%- endcapture -%}
+    {%- assign tagsTranslationsNamespace = '' -%}
+
+    {%- if resource == nil -%}
+        {%- if template.name == 'collection' -%}
+            {%- assign tagsTranslationsNamespace = 'ls-p-tags-' | append: languageCode -%}
+        {%- else -%}
+            {%- assign tagsTranslationsNamespace = 'ls-a-tags-' | append: languageCode -%}
+        {%- endif -%}
+    {%- elsif resource.object_type == "article" or resource.articles_count != blank -%}
+        {%- assign tagsTranslationsNamespace = 'ls-a-tags-' | append: languageCode -%}
+    {%- elsif resource.object_type == "product" or resource.products_count != blank -%}
+        {%- assign tagsTranslationsNamespace = 'ls-p-tags-' | append: languageCode -%}
+    {%- endif -%}
+
+    {%- if tagsTranslationsNamespace -%}
+        {%- assign tagTranslation = shop.metafields[tagsTranslationsNamespace][md5key] -%}
+        {%- if tagTranslation != blank -%}
+            {%- assign resourceTag = tagTranslation -%}
+        {%- endif -%}
+    {%- endif -%}
+
+{%- endif -%}
+
+{{ resourceTag }}

@@ -1,0 +1,81 @@
+{%- comment -%}
+    Create localized product json string
+{%- endcomment -%}
+
+{%- capture json -%}
+    {%- if product -%}
+        {
+            "id": {{ product.id | json }},
+            "title": {{ product.title | json }},
+            "handle": {{ product.handle | json }},
+            "description": {{ product.description | json }},
+            "published_at": {{ product.published_at | date: "%FT%T%:z" | json }},
+            "created_at": {{ product.created_at | date: "%FT%T%:z" | json }},
+            "vendor": {{ product.vendor | json }},
+            "type": {{ product.vendor | json }},
+            "tags": {%- capture tagsString -%}{%- render "ls-tags", resource: product, tags: product.tags -%}{%- endcapture -%}{{ tagsString | split: "," | json }},
+            "price": {{ product.price | json }},
+            "price_min": {{ product.price_min | json }},
+            "price_max": {{ product.price_max | json }},
+            "available": {{ product.available | json }},
+            "price_varies": {{ product.price_varies | json }},
+            "compare_at_price": {{ product.compare_at_price | json }},
+            "compare_at_price_min": {{ product.compare_at_price_min | json }},
+            "compare_at_price_max": {{ product.compare_at_price_max | json }},
+            "compare_at_price_varies": {{ product.compare_at_price_varies | json }},
+            "variants": [
+                {%- for variant in product.variants -%}
+                    {
+                        "id": {{ variant.id | json }},
+                        "title": {{ variant.title | json }},
+                        "option1": {{ variant.option1 | json }},
+                        "option2": {{ variant.option2 | json }},
+                        "option3": {{ variant.option3 | json }},
+                        "sku": {{ variant.sku | json }},
+                        "requires_shipping": {{ variant.requires_shipping | json }},
+                        "taxable": {{ variant.taxable | json }},
+                        {%- if variant.featured_image -%}
+                            "featured_image": {
+                                "id": {{ variant.featured_image.id | json }},
+                                "product_id": {{ product.id | json }},
+                                "position": {{ variant.featured_image.position | json }},
+                                "alt": {%- capture imageAlt -%}{%- render "ls-alt", image: variant.featured_image -%}{%- endcapture -%}{{ imageAlt | json }},
+                                "width": {{ variant.featured_image.width | json }},
+                                "height": {{ variant.featured_image.height | json }},
+                                "src": {%- capture imageUrl -%}{%- render "ls-img-url", image: variant.featured_image, img_url: "master" -%}{%- endcapture -%}{{ imageUrl | json }},
+                                "variant_ids": {{ variant.featured_image.variants | map: 'id' | json }}
+                            }
+                        {%- else-%}
+                            "featured_image": null
+                        {%- endif -%},
+                        "available": {{ variant.available | json }},
+                        "name": {{ product.title | append: "-" | append: variant.title | json }},
+                        "public_title": {{ variant.title | json }},
+                        "options": {{ variant.options | json }},
+                        "price": {{ variant.price | json }},
+                        "weight": {{ variant.weight | json }},
+                        "compare_at_price": {{ variant.compare_at_price | json }},
+                        "inventory_management": {{ variant.inventory_management | json }},
+                        "barcode": {{ variant.barcode | json }}
+                    }{%- if forloop.last == false -%},{%- endif -%}
+                {%- endfor -%}
+            ],
+            "images": [
+                {%- for image in product.images -%}
+                    {%- capture imageUrl -%}{%- render "ls-img-url", image: image, img_url: "master" -%}{%- endcapture -%}{{ imageUrl | json }}{%- if forloop.last == false -%},{%- endif -%}
+                {%- endfor -%}
+            ],
+            {%- if product.featured_image -%}
+                "featured_image": {%- capture imageUrl -%}{%- render "ls-img-url", image: product.featured_image, img_url: "master" -%}{%- endcapture -%}{{ imageUrl | json }},
+            {%- else -%}
+                "featured_image": null,
+            {%- endif -%}
+            "options": {{ product.options | json }},
+            "content": {{ product.content | json }}
+        }
+    {%- else -%}
+        null
+    {%- endif -%}
+{%- endcapture -%}
+
+{{ json | strip_newlines | replace: "	", "" | replace: "  ", "" }}

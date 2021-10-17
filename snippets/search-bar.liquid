@@ -1,0 +1,24 @@
+{%- unless search_btn_style -%}
+  {%- assign search_btn_style = 'btn' -%}
+{%- endunless -%}
+
+<form action="{{ routes.search_url }}" method="get" class="input-group search-bar {{ search_bar_location }}" role="search">
+  <input type="hidden" name="type" value="{{ settings.search_type }}">
+  <input type="search" name="q" value="{{ search.terms | escape | replace: '*', '' }}" placeholder="{{ 'general.search.placeholder' | t }}" class="input-group-field" aria-label="{{ 'general.search.placeholder' | t }}">
+  <div class="input-group-btn">
+    <button type="submit" class="{{ search_btn_style }}">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" width="35.334" height="35.334" viewBox="0 0 35.334 35.334">
+  <g id="グループ_2431" data-name="グループ 2431" transform="translate(0 0)">
+    <line id="線_117" data-name="線 117" x2="7.15" y2="6.974" transform="translate(25.837 25.34)" fill="none" stroke="#fff" stroke-width="4"/>
+    <g id="グループ_1181" data-name="グループ 1181" transform="translate(0 18.319) rotate(-45)">
+      <path id="前面オブジェクトで型抜き_17" data-name="前面オブジェクトで型抜き 17" d="M12.953,24.064a13.385,13.385,0,0,1-9.16-3.524,11.437,11.437,0,0,1,0-17.016A13.385,13.385,0,0,1,12.953,0a13.383,13.383,0,0,1,9.159,3.524,11.437,11.437,0,0,1,0,17.016A13.384,13.384,0,0,1,12.953,24.064ZM12.953,1A9.439,9.439,0,0,0,5.908,4.229a11.589,11.589,0,0,0-2.919,7.8,11.589,11.589,0,0,0,2.919,7.8,9.439,9.439,0,0,0,7.046,3.232A9.438,9.438,0,0,0,20,19.836a11.589,11.589,0,0,0,2.918-7.8A11.589,11.589,0,0,0,20,4.229,9.438,9.438,0,0,0,12.953,1Z" transform="translate(0 0)" fill="#fff"/>
+    </g>
+  </g>
+</svg>
+
+      
+      <span class="icon__fallback-text">{{ 'general.search.submit' | t }}</span>
+    </button>
+  </div>
+</form>

@@ -1,0 +1,8 @@
+{% if article.metafields.custom_fields["blog-lead"] != blank %}
+  <div class="custom-field custom-field__blog-lead custom-field__type--html">
+    <h3 class="custom-field--title">リード文</h3>
+    <div class="custom-field--value">
+      {{ article.metafields.custom_fields["blog-lead"] }}
+    </div>
+  </div>
+{% endif %}

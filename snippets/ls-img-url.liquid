@@ -1,0 +1,33 @@
+{%- comment -%}
+    Find image url translation
+{%- endcomment -%}
+
+{%- assign imageUrl = image | img_url: img_url, scale: scale, crop: crop, format: format -%}
+
+{%- capture defaultLanguageCode -%}{%- render "ls-default-language" -%}{%- endcapture -%}
+{%- capture languageCode -%}{%- render "ls-language" -%}{%- endcapture -%}
+
+{%- if languageCode != defaultLanguageCode -%}
+
+    {%- assign originalImageUrl = image | img_url: 'master' -%}
+    {%- assign protocolPart = originalImageUrl | split: '//' | first | append: '//' -%}
+    {%- assign domainPart = originalImageUrl | split: '//' | last | split: '/' | first -%}
+    {%- assign pathPart = originalImageUrl | remove_first: protocolPart | remove_first: domainPart | split: '?' | first -%}
+
+    {%- capture imageTranslationsNamespace -%}ls-i-{%- render 'ls-md5-key', md5key: pathPart, keySize: 8 -%}-{{ languageCode }}{%- endcapture -%}
+
+    {%- assign translatedImgUrl = shop.metafields[imageTranslationsNamespace].src -%}
+
+    {%- if translatedImgUrl != blank -%}
+
+        {%- assign translatedImgName = translatedImgUrl | split: '/' | last -%}
+        {%- assign translatedImageDirectory = translatedImgUrl | remove: translatedImgName | remove_first: "https:" -%}
+        {%- assign translatedImgName = translatedImgName | split: '?' | first -%}
+
+        {%- assign imageUrl = translatedImgName | asset_img_url: img_url, scale: scale, crop: crop, format: format | split: '/' | last | prepend: translatedImageDirectory -%}
+
+    {%- endif -%}
+
+{%- endif -%}
+
+{{ imageUrl }}

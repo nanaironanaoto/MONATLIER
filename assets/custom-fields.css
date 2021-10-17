@@ -1,0 +1,171 @@
+/**
+ * Base CSS file for Custom Fields widget styles.
+ * You can modify this file.
+ */
+.custom-fields-widgets-wrapper {
+  margin-top: 2rem;
+}
+.custom-fields-widgets-wrapper > div {
+  margin-bottom: 2rem;
+}
+.custom-fields-widgets-wrapper > div:last-child {
+  margin-bottom: 0;
+}
+
+.custom-fields-wrapper > [class*=cf-widget-] {
+  margin-bottom: 2rem;
+}
+
+.custom-fields-section {
+  margin-top: 6rem;
+}
+.custom-fields-section .custom-field {
+  margin: auto;
+  padding-left: 22px;
+  padding-right: 22px;
+  max-width: 1200px;
+}
+.custom-fields-section .cf-widget-items-wrapper {
+  margin: auto;
+  padding-left: 22px;
+  padding-right: 22px;
+  max-width: 1200px;
+}
+.custom-fields-section .custom-fields-section__item > div {
+  margin-bottom: 8rem;
+}
+@media screen and (min-width: 749px) {
+  .custom-fields-section .custom-field {
+    padding-left: 55px;
+    padding-right: 55px;
+  }
+  .custom-fields-section .cf-widget-items-wrapper {
+    padding-left: 55px;
+    padding-right: 55px;
+  }
+}
+
+
+/**
+ * Columns Widget CSS.
+ */
+.cf-widget__columns {
+  margin-bottom: -55px;
+}
+.cf-widget__columns .cf-widget-items-wrapper {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+.cf-widget__columns .cf-widget-item {
+  width: calc((100% / 1) - 0rem);
+  margin-right: 1rem;
+}
+.cf-widget__columns .cf-widget-item:nth-child(1n) {
+  margin-right: 0;
+}
+@media screen and (min-width: 749px) {
+  .cf-widget__columns .cf-widget-item {
+    width: calc((100% / 3) - 0.6666666667rem);
+    margin-right: 1rem;
+  }
+  .cf-widget__columns .cf-widget-item:nth-child(1n) {
+    margin-right: 1rem;
+  }
+  .cf-widget__columns .cf-widget-item:nth-child(3n) {
+    margin-right: 0;
+  }
+}
+@media screen and (min-width: 749px) {
+  .cf-widget__columns[data-grid-width="1"] .cf-widget-item {
+    width: calc((100% / 1) - 0rem);
+    margin-right: 1rem;
+  }
+  .cf-widget__columns[data-grid-width="1"] .cf-widget-item:nth-child(1n) {
+    margin-right: 0;
+  }
+  .cf-widget__columns[data-grid-width="2"] .cf-widget-item {
+    width: calc((100% / 2) - 0.5rem);
+    margin-right: 1rem;
+  }
+  .cf-widget__columns[data-grid-width="2"] .cf-widget-item:nth-child(2n) {
+    margin-right: 0;
+  }
+  .cf-widget__columns[data-grid-width="3"] .cf-widget-item {
+    width: calc((100% / 3) - 0.6666666667rem);
+    margin-right: 1rem;
+  }
+  .cf-widget__columns[data-grid-width="3"] .cf-widget-item:nth-child(3n) {
+    margin-right: 0;
+  }
+  .cf-widget__columns[data-grid-width="4"] .cf-widget-item {
+    width: calc((100% / 4) - 0.75rem);
+    margin-right: 1rem;
+  }
+  .cf-widget__columns[data-grid-width="4"] .cf-widget-item:nth-child(4n) {
+    margin-right: 0;
+  }
+  .cf-widget__columns[data-grid-width="5"] .cf-widget-item {
+    width: calc((100% / 5) - 0.8rem);
+    margin-right: 1rem;
+  }
+  .cf-widget__columns[data-grid-width="5"] .cf-widget-item:nth-child(5n) {
+    margin-right: 0;
+  }
+  .cf-widget__columns[data-grid-width="6"] .cf-widget-item {
+    width: calc((100% / 6) - 0.8333333333rem);
+    margin-right: 1rem;
+  }
+  .cf-widget__columns[data-grid-width="6"] .cf-widget-item:nth-child(6n) {
+    margin-right: 0;
+  }
+  .cf-widget__columns[data-grid-width="7"] .cf-widget-item {
+    width: calc((100% / 7) - 0.8571428571rem);
+    margin-right: 1rem;
+  }
+  .cf-widget__columns[data-grid-width="7"] .cf-widget-item:nth-child(7n) {
+    margin-right: 0;
+  }
+  .cf-widget__columns[data-grid-width="8"] .cf-widget-item {
+    width: calc((100% / 8) - 0.875rem);
+    margin-right: 1rem;
+  }
+  .cf-widget__columns[data-grid-width="8"] .cf-widget-item:nth-child(8n) {
+    margin-right: 0;
+  }
+}
+.cf-widget__columns .inner {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+.cf-widget__columns .cf-widget-field__image {
+  width: 100%;
+  margin-bottom: 1rem;
+}
+.cf-widget__columns .cf-widget-field__image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 5px;
+}
+.cf-widget__columns .cf-widget-field__title {
+  text-align: left;
+  font-weight: bold;
+  font-size: 1.5rem;
+  margin-bottom: 0.75rem;
+  line-height: 2rem;
+}
+.cf-widget__columns .cf-widget-item {
+  margin-bottom: 55px;
+}
+@media screen and (min-width: 749px) {
+  .cf-widget__columns .cf-widget-field__title {
+    padding-right: 3rem;
+  }
+  .cf-widget__columns .cf-widget-field__body {
+    padding-right: 3rem;
+  }
+}

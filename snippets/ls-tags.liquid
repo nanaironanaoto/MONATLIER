@@ -1,0 +1,27 @@
+{%- comment -%}
+    Render translated tags string
+{%- endcomment -%}
+
+{%- capture defaultLanguageCode -%}{%- render "ls-default-language" -%}{%- endcapture -%}
+{%- capture languageCode -%}{%- render "ls-language" -%}{%- endcapture -%}
+
+{%- assign tagsString = tags | join: "," -%}
+
+{%- if languageCode != defaultLanguageCode -%}
+
+    {%- assign tagsString = '' -%}
+
+    {%- for tag in tags -%}
+
+        {%- capture resourceTag -%}{%- render "ls-tag", resource: resource, tag: tag -%}{%- endcapture -%}
+        {%- assign tagsString = tagsString | append: resourceTag -%}
+
+        {%- if forloop.last == false -%}
+            {%- assign tagsString = tagsString | append: ',' -%}
+        {%- endif -%}
+
+    {%- endfor -%}
+
+{%- endif -%}
+
+{{ tagsString }}

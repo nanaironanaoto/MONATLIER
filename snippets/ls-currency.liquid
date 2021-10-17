@@ -1,0 +1,21 @@
+{%- comment -%}
+    Render LangShop currency
+{%- endcomment -%}
+
+{%- assign defaultCurrency = shop.metafields.ls-settings.defaultCurrency -%}
+{%- assign targetCurrencies = shop.metafields.ls-settings.targetCurrencies -%}
+{%- assign currenciesCodes = targetCurrencies | map: 'code' -%}
+{%- assign currenciesCodes = defaultCurrency.code | split: "," | concat: currenciesCodes -%}
+{%- assign currencyCode = defaultCurrency.code -%}
+
+{%- if shop.enabled_currencies.size > 1 -%}
+    {%- assign currencyCode = cart.currency.iso_code | downcase -%}
+{%- elsif currenciesCodes.size > 1 -%}
+    {%- if cart.attributes.currency and currenciesCodes contains cart.attributes.currency -%}
+        {%- assign currencyCode = cart.attributes.currency -%}
+    {%- elsif checkout.attributes.currency and currenciesCodes contains checkout.attributes.currency -%}
+        {%- assign currencyCode = checkout.attributes.currency -%}
+    {%- endif -%}
+{%- endif -%}
+
+{{ currencyCode }}

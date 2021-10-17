@@ -1,0 +1,37 @@
+<div class="top-news pc">
+<div class="lottie-player-torigger"></div>
+<lottie-player class="lottie-01" src="https://assets3.lottiefiles.com/packages/lf20_qdhefth3.json" background="transparent" speed="1" style="width: 1920; height: 1080px;" autoplay></lottie-player>
+  <span class="news-title">{{ 'general.site.news' | t }}</span><span class="top-news-bar">|</span>  <br>
+{% for article in blogs["post"].articles limit:3 %}
+  	
+    <a href="{{ article.url }}" class="" aria-label="{{ article.title | escape }}">
+          {{ article.published_at | time_tag: '%Y.%m.%d ' }}
+    <span>{{ article.title }}</span>
+  </a>  <br>
+{% endfor %}
+</div>
+<div class="top-news mobile">
+    <div class="para-img medium--hide is-1"><img src="https://cdn.shopify.com/s/files/1/0268/1202/2962/files/ring-1.png?v=1614868402"></div>
+
+  
+  <span class="news-title">{{ 'general.site.news' | t }}</span><br><br>
+{% for article in blogs["post"].articles limit:3 %}  	
+  <span class="news-date">{{ article.published_at | time_tag: '%Y.%m.%d ' }}</span>
+    <a href="{{ article.url }}" class="" aria-label="{{ article.title | escape }}">
+    <span div class="news">{{ article.title }}</span><br>
+  </a>
+{% endfor %}
+</div>
+{% schema %}
+  
+{
+"name": "お知らせ",
+"settings": [],
+"presets": [
+{
+"name": "お知らせ",
+"category": "ADVANCED LAYOUT"
+}
+]
+}
+{% endschema %}

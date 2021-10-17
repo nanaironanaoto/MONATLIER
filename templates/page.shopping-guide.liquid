@@ -1,0 +1,108 @@
+<div class="page-width page-content pages guide-page">
+  
+<div class="guide-wrap">
+  <div class="sidebar pc">
+    <div class="widget widget--sticky">
+      <span class="sidebar-title">{{ 'general.site.shoppingguide' | t }}</span>
+      <div class="">
+        <div class="guid-nav">
+          <h3><a href="/pages/flow">{{ 'general.guide.flow' | t }}<span class=" arrow arrow-bottom {% if page.handle contains 'flow' %}active{% endif %}">{% render 'arrow-bottom' %}</span></a></h3>
+        <ul class="{% if page.handle contains 'flow' %}open-accordion{% endif %}">
+          <li>{% render 'arrow-svg' %}<a href="#order">{{ 'general.guide.order' | t }}</a></li>
+          <li>{% render 'arrow-svg' %}<a href="#shipping">{{ 'general.guide.shipping-date' | t }}</a></li>
+        </ul>
+        </div>
+        <div class="guid-nav">
+          <h3 class=""><a href="/pages/payment">{{ 'general.guide.payment' | t }}<span class="arrow arrow-bottom {% if page.handle contains 'payment' %}active{% endif %}">{% render 'arrow-bottom' %}</span></a></h3>
+        <ul class="{% if page.handle contains 'payment' %}open-accordion{% endif %}">
+          <li>{% render 'arrow-svg' %}<a href="#card">{{ 'general.guide.card' | t }}</a></li>
+          <li>{% render 'arrow-svg' %}<a href="#yamato">{{ 'general.guide.yamato' | t }}</a></li>
+          <li>{% render 'arrow-svg' %}<a href="#bank">{{ 'general.guide.bank' | t }}</a></li>
+          <li>{% render 'arrow-svg' %}<a href="#paypay">{{ 'general.guide.paypay' | t }}</a></li>
+          <li>{% render 'arrow-svg' %}<a href="#paypal">{{ 'general.guide.paypal' | t }}</a></li>
+          <li>{% render 'arrow-svg' %}<a href="#invoice">{{ 'general.guide.invoice' | t }}</a></li>
+        </ul>
+        </div>
+        <div class="guid-nav">
+          <h3 class=""><a href="/pages/shipping">{{ 'general.guide.shipping' | t }}<span class="arrow arrow-bottom {% if page.handle contains 'shipping' %}active{% endif %}">{% render 'arrow-bottom' %}</span></a></h3>
+        <ul class="{% if page.handle contains 'shipping' %}open-accordion{% endif %}">
+          <li>{% render 'arrow-svg' %}<a href="#company">{{ 'general.guide.company' | t }}</a></li>
+          <li>{% render 'arrow-svg' %}<a href="#date">{{ 'general.guide.date' | t }}</a></li>
+          <li>{% render 'arrow-svg' %}<a href="#time">{{ 'general.guide.time' | t }}</a></li>
+          <li>{% render 'arrow-svg' %}<a href="#price">{{ 'general.guide.price' | t }}</a></li>
+          <li>{% render 'arrow-svg' %}<a href="#global">{{ 'general.guide.global' | t }}</a></li>
+          <li>{% render 'arrow-svg' %}<a href="#today">{{ 'general.guide.today' | t }}</a></li>
+        </ul>
+        </div>
+        <div class="guid-nav">
+          <h3 class=""><a href="/pages/returns">{{ 'general.guide.returns' | t }}<span class="arrow arrow-bottom {% if page.handle contains 'returns' %}active{% endif %}">{% render 'arrow-bottom' %}</span></a></h3>
+        <ul class="{% if page.handle contains 'returns' %}open-accordion{% endif %}">
+          <li>{% render 'arrow-svg' %}<a href="#info">{{ 'general.guide.info' | t }}</a></li>
+          <li>{% render 'arrow-svg' %}<a href="#cannot">{{ 'general.guide.cannot' | t }}</a></li>
+          <li>{% render 'arrow-svg' %}<a href="#aboutreturn">{{ 'general.guide.aboutreturn' | t }}</a></li>
+          <li>{% render 'arrow-svg' %}<a href="#aboutchange">{{ 'general.guide.aboutchange' | t }}</a></li>
+          <li>{% render 'arrow-svg' %}<a href="#defective">{{ 'general.guide.defective' | t }}</a></li>
+          <li>{% render 'arrow-svg' %}<a href="#refund">{{ 'general.guide.refund' | t }}</a></li>
+          <li>{% render 'arrow-svg' %}<a href="#cancel">{{ 'general.guide.cancel' | t }}</a></li>
+        </ul>
+        </div>
+
+              
+      </div>
+    </div>
+  </div>
+  <div class="main">
+    <h1 class="mobile">{{ page.title }}</h1>
+      <div class="rte--nomargin">
+        {{ page.content }}
+      </div>
+  
+  </div>
+  
+  {% comment %}
+  {%- render 'breadcrumbs' -%}
+  {% endcomment %}
+
+</div>
+</div>
+<div class="shoppingguide-menu-sp">
+  
+  <h2>{{ 'general.site.shoppingguide' | t }}</h2><span class="guide-subtitle">{{ 'general.guide.guide' | t }}</span>
+<div class="shoppingguide-menu-wrap"><a href="/pages/flow" class="shoppingguide-menu">
+<div class="shoppingguide-menu-left"><span>01</span></div>
+<div class="shoppingguide-menu-right {% if page.handle contains "flow"%}is-active{% endif %}">
+<h3>{{ 'general.guide.flow' | t }}</h3>
+</div>
+</a></div>
+<div class="shoppingguide-menu-wrap"><a href="/pages/payment" class="shoppingguide-menu">
+<div class="shoppingguide-menu-left"><span>02</span></div>
+<div class="shoppingguide-menu-right {% if page.handle contains "payment"%}is-active{% endif %}">
+<h3>{{ 'general.guide.payment' | t }}</h3>
+</div>
+</a></div>
+<div class="shoppingguide-menu-wrap"><a href="/pages/shipping" class="shoppingguide-menu">
+<div class="shoppingguide-menu-left"><span>03</span></div>
+<div class="shoppingguide-menu-right {% if page.handle contains "shipping"%}is-active{% endif %}">
+<h3>{{ 'general.guide.shipping' | t }}</h3>
+</div>
+</a></div>
+<div class="shoppingguide-menu-wrap"><a href="/pages/returns" class="shoppingguide-menu">
+<div class="shoppingguide-menu-left"><span>04</span></div>
+<div class="shoppingguide-menu-right {% if page.handle contains "returns"%}is-active{% endif %}">
+<h3>{{ 'general.guide.returns' | t }}</h3>
+</div>
+</a></div>
+</div>
+
+
+
+
+
+  	{% section 'FAQ-and-CONTACT' %}
+<div class="bread-pages">
+  <a href="{{ routes.root_url }}">{{ 'general.site.top' | t }}</a> <span>＞</span> <a href="/pages/shoppingguide">{{ 'general.site.shoppingguide' | t }}</a> <span>＞</span> {{ page.title}}
+</div>
+
+
+
+

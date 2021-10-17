@@ -1,0 +1,61 @@
+<div class="faq">    
+  <header class="section-header">
+    <h1 class="section-header__title">{{ page.metafields.custom_fields["subtitle"] }}</h1>
+      <div class="page-subtitle">
+      {{ page.title }}
+      </div>
+      <nav class="service-nav service-nav-half">
+    <div class="service-nav-item left-nav">
+    <a href="#order" class="">{{ 'general.pages.faq_order' |t }}</a>
+    </div>
+    <div class="service-nav-item">        
+    <a href="#shipping" class="">{{ 'general.pages.faq_shipping' |t }}</a>
+    </div>
+     <div class="service-nav-item">        
+    <a href="#product" class="">{{ 'general.pages.faq_product' |t }}</a>
+    </div>
+  </nav>
+    
+  </header>
+ <div class="page-width narrow">
+   
+   {{ page.content }}
+  
+      <nav class="service-nav service-nav-half bottom is-bottom">
+    <div class="service-nav-item left-nav">
+    <a href="#order" class="">{{ 'general.pages.faq_order' |t }}</a>
+    </div>
+    <div class="service-nav-item">        
+    <a href="#shipping" class="">{{ 'general.pages.faq_shipping' |t }}</a>
+    </div>
+     <div class="service-nav-item">        
+    <a href="#product" class="">{{ 'general.pages.faq_product' |t }}</a>
+    </div>
+  </nav>
+</div>
+
+<div class="bread-pages">
+  <a href="{{ routes.root_url }}">{{ 'general.site.top' | t }}</a> <span>＞</span> {{ page.title}}
+</div>
+
+<!--アコーディオン-->
+<script>
+$(function(){
+  
+    var parent = $('dt');
+  parent.each(function(){
+	var self = $(this);
+	self.on('click',function(){
+		parent.not(self).next().slideUp(300);
+        parent.not(self).removeClass("active");
+		self.next().slideToggle(300);	
+        $(this).toggleClass("active");
+    });
+  });
+});
+</script>
+
+
+{% comment %}
+{% section 'page-faq-template' %}
+{% endcomment %}

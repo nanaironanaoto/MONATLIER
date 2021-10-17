@@ -1,0 +1,72 @@
+{%- comment -%}
+    Init LangShop JS SDK
+{%- endcomment -%}
+
+{%- capture languageCode -%}{%- render "ls-language" -%}{%- endcapture -%}
+{%- capture currencyCode -%}{%- render "ls-currency" -%}{%- endcapture -%}
+
+{%- capture localizationRecommendationAlertNamespace -%}ls-ln-{%- render 'ls-md5-key', md5key: "recommendation-alert", keySize: 14 -%}{%- endcapture -%}
+{%- capture localizationSwitchersNamespace -%}ls-ln-{%- render 'ls-md5-key', md5key: "switchers", keySize: 14 -%}{%- endcapture -%}
+{%- capture localizationLanguagesNamespace -%}ls-ln-{%- render 'ls-md5-key', md5key: "languages", keySize: 14 -%}{%- endcapture -%}
+{%- capture localizationCurrenciesNamespace -%}ls-ln-{%- render 'ls-md5-key', md5key: "currencies", keySize: 14 -%}{%- endcapture -%}
+
+<!-- /snippets/ls-sdk.liquid -->
+<script type="text/javascript">
+  window.LangShopConfig = {
+    "currentLanguage": {{ languageCode | json }},
+    "currentCurrency": {{ currencyCode | json }},
+    "shopifyLocales": {%- render "ls-shopify-locales" -%},
+    "shopifyCurrencies": {{ shop.enabled_currencies | map: "iso_code" | json }},
+    "originalLanguage": {{ shop.metafields.ls-settings.originalLanguage | json }},
+    "targetLanguages": {{ shop.metafields.ls-settings.targetLanguages | json }},
+    "languagesSwitchers": {{ shop.metafields.ls-settings.languagesSwitchers | json }},
+    "defaultCurrency": {{ shop.metafields.ls-settings.defaultCurrency | json }},
+    "targetCurrencies": {{ shop.metafields.ls-settings.targetCurrencies | json }},
+    "currenciesSwitchers": {{ shop.metafields.ls-settings.currenciesSwitchers | json }},
+    "languageDetection": {{ shop.metafields.ls-settings.languageDetection | json }},
+    "languagesCountries": {{ shop.metafields.ls-settings.languagesCountries | json }},
+    "languagesBrowsers": {{ shop.metafields.ls-settings.languagesBrowsers | json }},
+    "currencyDetection": {{ shop.metafields.ls-settings.currencyDetection | json }},
+    "currenciesLanguages": {{ shop.metafields.ls-settings.currenciesLanguages | json }},
+    "currenciesCountries": {{ shop.metafields.ls-settings.currenciesCountries | json }},
+    "recommendationAlert": {{ shop.metafields.ls-settings.recommendationAlert | json }},
+    "currencyInQueryParam": {%- if shop.metafields.ls-settings.currencyInQueryParam == 'false' %}false{%- else -%}true{%- endif -%},
+    "allowAutomaticRedirects": {%- if shop.metafields.ls-settings.allowAutomaticRedirects == 'false' %}false{%- else -%}true{%- endif -%},
+    "storeMoneyFormat": {{ shop.money_format | json }},
+    "storeMoneyWithCurrencyFormat": {{ shop.money_with_currency_format | json }},
+    "themeDynamics": {%- render "ls-theme-dynamics-array" -%},
+    "isAdmin": {%- if content_for_header contains 'Shopify.AdminBarInjector' -%}true{%- else -%}false{%- endif -%},
+    "isPreview": {%- if content_for_header contains 'preview_bar_injector' -%}true{%- else -%}false{%- endif -%},
+      "i18n": {
+          "recommendation_alert": {
+              "currency_language_suggestion": {{ shop.metafields[localizationRecommendationAlertNamespace]['currency_language_suggestion'] | json }},
+              "language_suggestion": {{ shop.metafields[localizationRecommendationAlertNamespace]['language_suggestion'] | json }},
+              "currency_suggestion": {{ shop.metafields[localizationRecommendationAlertNamespace]['currency_suggestion'] | json }},
+              "change": {{ shop.metafields[localizationRecommendationAlertNamespace]['change'] | json }}
+          },
+          "switchers": {
+              "ios_switcher": {
+                  "done": {{ shop.metafields[localizationSwitchersNamespace]['ios_switcher.done'] | json }},
+                  "close": {{ shop.metafields[localizationSwitchersNamespace]['ios_switcher.close'] | json }}
+              }
+          },
+          "languages": {
+              {%- assign languagesCodes = shop.metafields.ls-settings.targetLanguages | map: 'code' -%}
+              {%- assign languagesCodes = shop.metafields.ls-settings.originalLanguage.code | split: "," | concat: languagesCodes -%}
+              {%- for code in languagesCodes -%}
+                  {%- assign metafieldKey = 'code-' | append: code -%}
+                  {{ code | json }}: {{ shop.metafields[localizationLanguagesNamespace][metafieldKey] | json }}{%- if forloop.last == false -%},{%- endif -%}
+              {%- endfor -%}
+          },
+          "currencies": {
+              {%- assign currenciesCodes = shop.metafields.ls-settings.targetCurrencies | map: 'code' -%}
+              {%- assign currenciesCodes = shop.metafields.ls-settings.defaultCurrency.code | split: "," | concat: currenciesCodes -%}
+              {%- for code in currenciesCodes -%}
+                  {%- assign metafieldKey = 'code-' | append: code -%}
+                  {{ code | json }}: {{ shop.metafields[localizationCurrenciesNamespace][metafieldKey] | json }}{%- if forloop.last == false -%},{%- endif -%}
+              {%- endfor -%}
+          }
+      }
+  };
+</script>
+<script src="{{ "ls-sdk.js" | asset_url }}&proxy_prefix={{ "/apps/langshop" | escape }}" async></script>

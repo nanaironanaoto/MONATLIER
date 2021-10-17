@@ -1,0 +1,32 @@
+{%- comment -%}
+    Display current/selected currency href
+{%- endcomment -%}
+
+{%- assign defaultCurrency = shop.metafields.ls-settings.defaultCurrency -%}
+{%- capture currencyCode -%}{%- render "ls-currency" -%}{%- endcapture -%}
+
+{%- if code != blank -%}
+    {%- assign currencyCode = code -%}
+{%- endif -%}
+
+{%- assign currencyObject = '' -%}
+{%- if currencyCode == defaultCurrency.code -%}
+    {%- assign currencyObject = defaultCurrency.defaultCurrency -%}
+{%- else -%}
+
+    {%- for targetCurrency in shop.metafields.ls-settings.targetCurrencies -%}
+
+        {%- if targetCurrency.code != currencyCode -%}
+            {%- continue -%}
+        {%- endif -%}
+
+        {%- assign currencyObject = targetCurrency -%}
+        {%- break -%}
+
+    {%- endfor -%}
+
+{%- endif -%}
+
+{%- if currencyObject -%}
+    javascript:LangShopSDK.switchCurrency({{ currencyObject.code | json | escape }});
+{%- endif -%}

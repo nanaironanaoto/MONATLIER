@@ -1,0 +1,32 @@
+{%- comment -%}
+    Display current/selected language href
+{%- endcomment -%}
+
+{%- assign originalLanguage = shop.metafields.ls-settings.originalLanguage -%}
+{%- capture languageCode -%}{%- render "ls-language" -%}{%- endcapture -%}
+
+{%- if code != blank -%}
+    {%- assign languageCode = code -%}
+{%- endif -%}
+
+{%- assign languageObject = '' -%}
+{%- if languageCode == originalLanguage.code -%}
+    {%- assign languageObject = originalLanguage -%}
+{%- else -%}
+
+    {%- for targetLanguage in shop.metafields.ls-settings.targetLanguages -%}
+
+        {%- if targetLanguage.code != languageCode -%}
+            {%- continue -%}
+        {%- endif -%}
+
+        {%- assign languageObject = targetLanguage -%}
+        {%- break -%}
+
+    {%- endfor -%}
+
+{%- endif -%}
+
+{%- if languageObject and languageObject.published == true -%}
+    javascript:LangShopSDK.switchLanguage({{ languageObject.code | json | escape }});
+{%- endif -%}

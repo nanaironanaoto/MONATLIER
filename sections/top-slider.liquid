@@ -1,0 +1,981 @@
+<div class="top-slider">
+<header class=" top-header">
+  <div class="header-wrap">	
+    <div class="site-logo"><a href="{{ routes.root_url }}">{% render 'svg-top-logo' %}</a></div>
+
+{% render 'header-navi' %}
+
+    <div class="header-icons">  
+{% render 'header-icon-list' %}  
+    <div class="hamub-menu-btn">{% render 'svg-menu-button' %}
+  </div>
+    </div>
+  </div>
+</header> 
+  
+
+<!--モバイル用ヘッダー-->
+<header class="site-header sp-header sp-top">
+  <div class="header-wrap">
+    
+    <div class="sp-menu-left">
+      <div class="sp-hamub-menu-btn">
+        <span class="hamub-open">{% render 'svg-menu-button' %}</span>
+        <span class="hamub-close">{% render 'svg-close-button' %} </span>
+      </div>
+    	<div class="sp-hamub-search-btn">
+        <span class="search-open">{% render 'svg-search' %}</span>
+        <span class="search-close">{% render 'svg-close-button' %} </span>
+      
+      </div>
+    </div>
+    <div class="sp-hamub sp-menu-list ">
+      
+{% render "sp-menu" %}
+      
+      <div class="header-icons">  
+    	<a href="/account">{{ 'general.site.mypage' |t }}</a>
+     	<a href="{{ routes.cart_url }}" class="js-drawer-open-cart" aria-controls="CartDrawer" >{{ 'general.site.cart' |t }}
+       		{% if cart.item_count > 0 %}
+       			<span class="cart-item-count">{{ cart.item_count }}</span>
+       		{% endif %}
+    	</a>
+        <a class ="favorite-icon" href="/pages/favorite-list"><svg xmlns="http://www.w3.org/2000/svg" width="30.644" height="28.795" viewBox="0 0 30.644 28.795">
+  <g id="合体_2" data-name="合体 2" fill="none">
+    <path d="M 15.39791584014893 25.92245101928711 L 26.59348487854004 14.38867092132568 C 29.33002662658691 11.56942367553711 29.33022880554199 6.982316970825195 26.59402084350586 4.162853240966797 L 26.52534484863281 4.092501163482666 L 26.52329444885254 4.090401172637939 L 26.52125358581543 4.088301181793213 C 25.21436500549316 2.741641044616699 23.48122406005859 2.000001192092896 21.64110374450684 2.000001192092896 C 19.80209732055664 2.000001192092896 18.06991386413574 2.740773439407349 16.76330184936523 4.085873126983643 L 16.76146507263184 4.087790966033936 L 16.75792503356934 4.091431140899658 L 15.32212448120117 5.57210111618042 L 13.88632488250732 4.091431140899658 L 13.88350296020508 4.088505744934082 L 13.88330459594727 4.088301181793213 C 12.57641410827637 2.741641044616699 10.84327411651611 2.000001192092896 9.003154754638672 2.000001192092896 C 7.163024425506592 2.000001192092896 5.429884433746338 2.741641044616699 4.125904560089111 4.085300922393799 L 4.051334381103516 4.162441253662109 C 1.314144492149353 6.981781005859375 1.314144492149353 11.56919097900391 4.051514625549316 14.38870143890381 L 15.24637508392334 25.92240715026855 L 15.32212448120117 25.84429168701172 L 15.39791584014893 25.92245101928711 M 15.39706420898438 28.79480171203613 L 15.32569408416748 28.72095108032227 C 15.32441425323486 28.71964073181152 15.32340431213379 28.71857070922852 15.32212448120117 28.71725082397461 C 15.32084465026855 28.71857070922852 15.31983470916748 28.71964073181152 15.31855487823486 28.72095108032227 L 15.24718475341797 28.79480171203613 L 2.616374492645264 15.78168106079102 C -0.872125506401062 12.18849086761475 -0.872125506401062 6.362481117248535 2.616374492645264 2.769291162490845 L 2.687744379043579 2.695441007614136 C 4.431634426116943 0.8984811305999756 6.717391967773438 1.125183075600944e-06 9.003149032592773 1.125183075600944e-06 C 11.28890705108643 1.125183075600944e-06 13.57466411590576 0.8984811305999756 15.31855487823486 2.695441007614136 C 15.31983470916748 2.696751117706299 15.32084465026855 2.697821140289307 15.32212448120117 2.699141025543213 C 15.32340431213379 2.697821140289307 15.32441425323486 2.696751117706299 15.32569408416748 2.695441007614136 C 17.06958389282227 0.8984811305999756 19.35534286499023 1.125183075600944e-06 21.64109992980957 1.125183075600944e-06 C 23.92685699462891 1.125183075600944e-06 26.21261405944824 0.8984811305999756 27.95650482177734 2.695441007614136 L 28.02859497070313 2.769291162490845 C 31.5163745880127 6.362481117248535 31.5163745880127 12.18849086761475 28.02859497070313 15.78168106079102 L 15.39706420898438 28.79480171203613 Z" stroke="none" fill="#4b4b4b"/>
+  </g>
+</svg>
+		</div>
+      
+    <div class="sns-icon-sp-footer">
+        <a href="https://www.instagram.com/monatelier_jewelry/" target="_blank">{% render "svg-insta" %} </a>
+        <a href="https://www.facebook.com/TATSUMI-SHIMADA-101693801852364" target="_blank">{% render "svg-face" %}</a>
+    </div>
+    <div class="select-lang">
+      <a href="{{ routes.root_url }}">{{ 'general.language.japanese' |t }}</a>
+      <a href="/en">{{ 'general.language.en' |t }}</a>
+      <a href="/zh-tw">{{ 'general.language.tw' |t }}</a>
+      <a href="/zh-cn">{{ 'general.language.cn' |t }}</a>
+    </div>
+      
+
+    </div><!--sp-hamub-->
+    <div class="sp-search-menu">
+     
+{% render "sp-search" %} 
+
+    </div><!--sp-hamub-->
+            <div class="site-logo"><a href="{{ routes.root_url }}">{% render 'svg-logo-sp' %}</a></div>
+    
+    <div class="header-icons">  
+      <a href="/account">{% render 'svg-mypage' %}</a>
+      <a href="{{ routes.cart_url }}" class="js-drawer-open-cart" aria-controls="CartDrawer" data-icon="{{ settings.cart_icon }}">
+      <span class="cart-link">
+        {%- if settings.cart_icon == 'cart' -%}
+          {% render 'svg-cart' %}
+        {%- else -%}
+          <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-bag" viewBox="0 0 64 64"><g fill="none" stroke="#000" stroke-width="2"><path d="M25 26c0-15.79 3.57-20 8-20s8 4.21 8 20"/><path d="M14.74 18h36.51l3.59 36.73h-43.7z"/></g></svg>
+        {%- endif -%}
+        <span class="icon__fallback-text">{{ 'layout.cart.title' | t }}</span>
+       {% if cart.item_count > 0 %}
+       <span class="cart-item-count">{{ cart.item_count }}</span>
+       {% endif %}
+        
+        
+      </span>
+    </a>
+      
+    </div>
+  </div>
+</header>  
+  
+  
+  
+<style>
+.top-slider{
+    height: 100vh;
+}
+
+@supports (-webkit-touch-callout: none) {
+  .top-slider {
+    height: -webkit-fill-available;
+  }
+}
+.slider-back-image{
+    height: 100%;
+    background-size: cover;
+    background-position: center center;
+}
+.slide {
+  position   : relative;
+  overflow   : hidden;
+  width      : 100%;
+  height     : 100%;
+  margin     : auto;
+  z-index	:0;
+}
+.slide li {
+  display    : block;
+  position   : absolute;
+  width      : 100%;
+  height     : 100%;
+}
+.slider-back-image{
+    position: absolute;
+  width      : 100%;
+  height     : 100%;
+}
+
+.slide-text{
+    position: absolute ;
+    top:38vh;
+    z-index: 2;
+    padding: 0 10vw;
+}
+.slide-text h2{
+    font-family: "TTDrugs-R" !important;
+    font-size:64px;
+}
+.slide-text p{
+    font-size:14px;
+    letter-spacing: 2px;
+    margin-bottom:30px;
+}
+.slide-text .slide-subtitle{
+    font-family: "TTDrugs-I" !important;
+    font-size:13px;
+}
+.slide-text .see-more{
+    font-size:21px;
+    letter-spacing: 2px;
+    border-bottom: solid 1px ;
+    padding-bottom: 10px;
+    width: 200px;
+    display: block;
+  	margin-left:0 !important;
+}
+
+@media only screen and (min-width: 769px){
+.slider-back-image.is-sp  {
+    display:none;
+}
+}  
+@media only screen and (max-width: 768px){
+.slider-back-image.is-pc  {
+    display:none;
+}  
+.slide-text{
+    text-align: center;
+    right: 0;
+    left: 0;
+    bottom: 0;
+}
+.slide-text-animate  {
+    right: 0;
+    left: 0;
+    bottom:  2.5vw;
+    position   : absolute;
+}
+  
+.slide-text h2{
+    font-size:13vw;
+    letter-spacing: 0.4vw;
+    margin-bottom:0;
+}
+
+.slide-text .slide-subtitle{
+    font-size: 3vw;
+    margin-bottom:4vw;
+}
+.slide-text p{
+    font-size: 3vw;
+    letter-spacing: 2px;
+    margin-bottom:9vw;
+}
+.slide-text .see-more{
+   display: none !important;
+}
+}
+  
+</style>
+<!-----------------------------------------------------------------------------------------------------------------------------スライド4枚-->
+{% assign slide_title = "Between" %}  
+{% assign slide_head = "“Between you and me”" %}  
+
+  
+  
+{% if section.settings.image_4 != blank %}
+<ul class="slide is-4">
+    <div class="slide-text">
+      <div class="slide-text-animate rte">
+      <h2>{{ slide_title }}</h2>
+      <p class="slide-subtitle">{{ slide_head }}</p>
+      <p>{{  'general.series.copy_html' | t  }}</p>
+      <a href="/collections/between" class="see-more">{{ 'general.site.discover' | t }}</a>
+      </div>
+    </div>
+  <li class="{{ section.settings.image_move_1 }}">
+    <div class="slider-back-image A is-pc" style="background-image:url('{% comment ls-rpl %}{{ section.settings.image_1 | img_url: '2140x' }}{% endcomment %}{%- capture LS_IMG_URL -%}{%- render "ls-img-url", image: section.settings.image_1, img_url: '2140x' -%}{%- endcapture -%}{{ LS_IMG_URL }}{% comment /ls-rpl %}{% endcomment %}');"></div>
+    <div class="slider-back-image A is-sp" style="background-image:url('{% comment ls-rpl %}{{ section.settings.image_mobile_1 | img_url: '2140x' }}{% endcomment %}{%- capture LS_IMG_URL -%}{%- render "ls-img-url", image: section.settings.image_mobile_1, img_url: '2140x' -%}{%- endcapture -%}{{ LS_IMG_URL }}{% comment /ls-rpl %}{% endcomment %}');"></div>
+  </li>
+  <li class="{{ section.settings.image_move_2 }}">
+    <div class="slider-back-image B is-pc" style="background-image:url('{% comment ls-rpl %}{{ section.settings.image_2 | img_url: '2140x' }}{% endcomment %}{%- capture LS_IMG_URL -%}{%- render "ls-img-url", image: section.settings.image_2, img_url: '2140x' -%}{%- endcapture -%}{{ LS_IMG_URL }}{% comment /ls-rpl %}{% endcomment %}');"></div>
+    <div class="slider-back-image B is-sp" style="background-image:url('{% comment ls-rpl %}{{ section.settings.image_mobile_2 | img_url: '2140x' }}{% endcomment %}{%- capture LS_IMG_URL -%}{%- render "ls-img-url", image: section.settings.image_mobile_2, img_url: '2140x' -%}{%- endcapture -%}{{ LS_IMG_URL }}{% comment /ls-rpl %}{% endcomment %}');"></div>
+  </li>
+  <li class="{{ section.settings.image_move_3 }}">
+    <div class="slider-back-image B is-pc" style="background-image:url('{% comment ls-rpl %}{{ section.settings.image_3 | img_url: '2140x' }}{% endcomment %}{%- capture LS_IMG_URL -%}{%- render "ls-img-url", image: section.settings.image_3, img_url: '2140x' -%}{%- endcapture -%}{{ LS_IMG_URL }}{% comment /ls-rpl %}{% endcomment %}');"></div>
+    <div class="slider-back-image B is-sp" style="background-image:url('{% comment ls-rpl %}{{ section.settings.image_mobile_3 | img_url: '2140x' }}{% endcomment %}{%- capture LS_IMG_URL -%}{%- render "ls-img-url", image: section.settings.image_mobile_3, img_url: '2140x' -%}{%- endcapture -%}{{ LS_IMG_URL }}{% comment /ls-rpl %}{% endcomment %}');"></div>
+  </li>
+  <li class="{{ section.settings.image_move_4 }}">
+    <div class="slider-back-image B is-pc" style="background-image:url('{% comment ls-rpl %}{{ section.settings.image_4 | img_url: '2140x' }}{% endcomment %}{%- capture LS_IMG_URL -%}{%- render "ls-img-url", image: section.settings.image_4, img_url: '2140x' -%}{%- endcapture -%}{{ LS_IMG_URL }}{% comment /ls-rpl %}{% endcomment %}');"></div>
+    <div class="slider-back-image B is-sp" style="background-image:url('{% comment ls-rpl %}{{ section.settings.image_mobile_4 | img_url: '2140x' }}{% endcomment %}{%- capture LS_IMG_URL -%}{%- render "ls-img-url", image: section.settings.image_mobile_4, img_url: '2140x' -%}{%- endcapture -%}{{ LS_IMG_URL }}{% comment /ls-rpl %}{% endcomment %}');"></div>
+  </li>
+</ul>  
+
+<style>
+.slide-text ,.slide-text a, 
+.top-header .navi-text,
+.top-header .header-icons a,
+.top-header .site-logo svg path,
+.top-header .header-icons svg path,
+.top-header .header-icons svg rect,
+.sp-header.sp-top .header-icons svg path,
+.sp-header.sp-top .header-icons svg rect,
+.sp-header.sp-top .site-logo svg path,
+.sp-top .sp-menu-left svg path
+{animation  : text-4 28s linear infinite;}
+
+.top-header .hamub-menu-btn svg g line,
+.sp-top .sp-menu-left svg g line
+{animation  : text-line-4 28s linear infinite;}
+  
+.top-header .cart-item-count,
+.sp-header.sp-top .cart-item-count
+{animation  : text-back-4 28s linear infinite;}
+  
+.slide-text-animate{
+  animation  : text-anime-4 28s linear;
+  animation-iteration-count:1;
+}
+.slide.is-4 .zoom-in .slider-back-image {
+  opacity    : 0;
+  animation  : zoom-in-4 28s linear infinite;
+}
+.slide.is-4 .zoom-out .slider-back-image {
+  opacity    : 0;
+  animation  : zoom-out-4 28s linear infinite;
+}
+.slide.is-4 .slide-left .slider-back-image {
+  opacity    : 0;
+  animation  : slide-left-4 28s linear infinite;
+}
+.slide.is-4 .slide-right .slider-back-image {
+  opacity    : 0;
+  animation  : slide-right-4 28s linear infinite;
+}
+.slide.is-4 .slide-top .slider-back-image {
+  opacity    : 0;
+  animation  : slide-top-4 28s linear infinite;
+}
+.slide.is-4 .slide-bottom .slider-back-image {
+  opacity    : 0;
+  animation  : slide-bottom-4 28s linear infinite;
+}
+.slide.is-4 li:nth-of-type(1) .slider-back-image { animation-delay: 0s !important;}
+.slide.is-4 li:nth-of-type(2) .slider-back-image { animation-delay: 7s !important;}
+.slide.is-4 li:nth-of-type(3) .slider-back-image { animation-delay: 14s !important;}
+.slide.is-4 li:nth-of-type(4) .slider-back-image { animation-delay: 21s !important;}
+
+@keyframes text-4{ 
+  0% { color: #{{ section.settings.text_color_4 }} ; fill: #{{ section.settings.text_color_4 }} ; border-color:#{{ section.settings.text_color_4 }}26;}
+  2% { color: #{{ section.settings.text_color_1 }} ;   fill: #{{ section.settings.text_color_1 }} ; border-color:#{{ section.settings.text_color_1 }}26;}
+  25% { color: #{{ section.settings.text_color_1 }} ; fill: #{{ section.settings.text_color_1 }} ; border-color:#{{ section.settings.text_color_1 }}26;}
+  27% { color: #{{ section.settings.text_color_2 }} ;   fill: #{{ section.settings.text_color_2 }} ; border-color:#{{ section.settings.text_color_2 }}26;}
+  50% { color: #{{ section.settings.text_color_2 }} ; fill: #{{ section.settings.text_color_2 }} ; border-color:#{{ section.settings.text_color_2 }}26;}
+  52% { color: #{{ section.settings.text_color_3 }} ;   fill: #{{ section.settings.text_color_3 }} ; border-color:#{{ section.settings.text_color_3 }}26;}
+  75% { color: #{{ section.settings.text_color_3 }} ; fill: #{{ section.settings.text_color_3 }} ; border-color:#{{ section.settings.text_color_3 }}26;}
+  77% { color: #{{ section.settings.text_color_4 }} ;  fill: #{{ section.settings.text_color_4 }} ; border-color:#{{ section.settings.text_color_4 }}26;}
+  100% { color: #{{ section.settings.text_color_4 }} ; fill: #{{ section.settings.text_color_4 }} ;  border-color:#{{ section.settings.text_color_4 }}26;}
+}  
+  
+@keyframes text-line-4{ 
+  0% { stroke: #{{ section.settings.text_color_4 }};}
+  2% { stroke: #{{ section.settings.text_color_1 }} ;}
+  25% { stroke: #{{ section.settings.text_color_1 }} ;}
+  27% { stroke: #{{ section.settings.text_color_2 }} ;}
+  50% { stroke: #{{ section.settings.text_color_2 }} ;}
+  52% { stroke: #{{ section.settings.text_color_3 }} ;}
+  75% { stroke: #{{ section.settings.text_color_3 }} ;}
+  77% { stroke: #{{ section.settings.text_color_4 }} ;}
+  100% { stroke: #{{ section.settings.text_color_4 }};}
+}
+@keyframes text-back-4{ 
+  0% { background: #{{ section.settings.text_color_4 }} ; color: #{% if section.settings.text_color_4 == "4b4b4b" %}FFF{% else %}4b4b4b{% endif %} ;}
+  2% { background: #{{ section.settings.text_color_1 }} ;   color: #{% if section.settings.text_color_1 == "4b4b4b" %}FFF{% else %}4b4b4b{% endif %} ;}
+  25% { background: #{{ section.settings.text_color_1 }} ; color: #{% if section.settings.text_color_1 == "4b4b4b" %}FFF{% else %}4b4b4b{% endif %} ;}
+  27% { background: #{{ section.settings.text_color_2 }} ;   color: #{% if section.settings.text_color_2 == "4b4b4b" %}FFF{% else %}4b4b4b{% endif %} ;}
+  50% { background: #{{ section.settings.text_color_2 }} ; color: #{% if section.settings.text_color_2 == "4b4b4b" %}FFF{% else %}4b4b4b{% endif %} ;}
+  52% { background: #{{ section.settings.text_color_3 }} ;   color: #{% if section.settings.text_color_3 == "4b4b4b" %}FFF{% else %}4b4b4b{% endif %} ;}
+  75% { background: #{{ section.settings.text_color_3 }} ; color: #{% if section.settings.text_color_3 == "4b4b4b" %}FFF{% else %}4b4b4b{% endif %} ;}
+  77% { background: #{{ section.settings.text_color_4 }} ;  color: #{% if section.settings.text_color_4 == "4b4b4b" %}FFF{% else %}4b4b4b{% endif %} ;}
+  100% { background: #{{ section.settings.text_color_4 }} ; color: #{% if section.settings.text_color_4 == "4b4b4b" %}FFF{% else %}4b4b4b{% endif %} ; }
+}  
+@keyframes text-anime-4{ 
+  0% { opacity: 0 ; }
+  4% { opacity: 0 ; }
+ 8% { opacity: 1 ; }
+ 33% { opacity: 1 ; }
+ 100% { opacity: 1 ; }
+}  
+
+{% assign an1 = "3" %}
+{% assign an2 = "25" %}
+{% assign an3 = "29" %}
+{% assign an4 = "30" %}
+
+@keyframes zoom-in-4{
+   0% { opacity: 0 ; z-index: 1; transform:scale(1);}
+{{an1}}%{ opacity: 1 ;}
+{{an2}}%{ z-index: 0 ;}
+{{an3}}%{ opacity: 1 ;  transform:scale(1.2);}
+{{an4}}%{ opacity: 0 ;}
+ 100% { opacity: 0 ;}
+}  
+@keyframes zoom-out-4{
+   0% { opacity: 0 ; z-index: 1; transform:scale(1.2);}
+{{an1}}%{ opacity: 1 ;}
+{{an2}}%{ z-index: 0 ;}
+{{an3}}%{ opacity: 1 ;  transform:scale(1);}
+{{an4}}%{ opacity: 0 ;}
+ 100% { opacity: 0 }
+}  
+@keyframes slide-left-4{
+   0% { opacity: 0 ; z-index: 1;  transform:scale(1.1) translateX(2vh);}
+{{an1}}%{ opacity: 1 ;}
+{{an2}}%{ z-index: 0 ;}
+{{an3}}%{ opacity: 1 ; transform:scale(1.1) translateX(-2vh);}
+{{an4}}%{ opacity: 0 ;}
+ 100% { opacity: 0 ;}
+}  
+@keyframes slide-right-4{
+   0% { opacity: 0 ; z-index: 1;  transform:scale(1.1) translateX(-2vh);}
+{{an1}}% { opacity: 1 ;}
+{{an2}}% { z-index: 0 ;}
+{{an3}}% { opacity: 1 ; transform:scale(1.1) translateX(2vh);}
+{{an4}}% { opacity: 0 ;}
+ 100% { opacity: 0 ;}
+}  
+@keyframes slide-top-4{
+   0% { opacity: 0 ; z-index: 1;  transform:scale(1.1) translateY(3vh);}
+{{an1}}% { opacity: 1 ;}
+{{an2}}% { z-index: 0 ;}
+{{an3}}% { opacity: 1 ; transform:scale(1.1) translateY(-3vh);}
+{{an4}}% { opacity: 0 ;}
+ 100% { opacity: 0 ;}
+}  
+@keyframes slide-bottom-4{
+   0% { opacity: 0 ; z-index: 1;  transform:scale(1.1) translateY(-3vh);}
+{{an1}}% { opacity: 1 ;}
+{{an2}}% { z-index: 0 ;}
+{{an3}}% { opacity: 1 ; transform:scale(1.1) translateY(3vh);}
+{{an4}}% { opacity: 0 ;}
+ 100% { opacity: 0 ;}
+}  
+</style>
+  
+  
+{% endif %}
+<!-----------------------------------------------------------------------------------------------------------------------------スライド3枚-->
+{% if section.settings.image_3 != blank and section.settings.image_4 == blank %}
+<ul class="slide is-3">
+    <div class="slide-text">
+      <div class="slide-text-animate rte">
+      <h2>{{ slide_title }}</h2>
+      <p class="slide-subtitle">{{ slide_head }}</p>
+      <p>{{  'general.series.copy_html' | t  }}</p>
+      <a href="/collections/between" class="see-more">{{ 'general.site.discover' | t }}</a>
+      </div>
+    </div>
+  <li class="{{ section.settings.image_move_1 }}">
+    <div class="slider-back-image A is-pc" style="background-image:url('{% comment ls-rpl %}{{ section.settings.image_1 | img_url: '2140x' }}{% endcomment %}{%- capture LS_IMG_URL -%}{%- render "ls-img-url", image: section.settings.image_1, img_url: '2140x' -%}{%- endcapture -%}{{ LS_IMG_URL }}{% comment /ls-rpl %}{% endcomment %}');"></div>
+    <div class="slider-back-image A is-sp" style="background-image:url('{% comment ls-rpl %}{{ section.settings.image_mobile_1 | img_url: '2140x' }}{% endcomment %}{%- capture LS_IMG_URL -%}{%- render "ls-img-url", image: section.settings.image_mobile_1, img_url: '2140x' -%}{%- endcapture -%}{{ LS_IMG_URL }}{% comment /ls-rpl %}{% endcomment %}');"></div>
+  </li>
+  <li class="{{ section.settings.image_move_2 }}">
+    <div class="slider-back-image B is-pc" style="background-image:url('{% comment ls-rpl %}{{ section.settings.image_2 | img_url: '2140x' }}{% endcomment %}{%- capture LS_IMG_URL -%}{%- render "ls-img-url", image: section.settings.image_2, img_url: '2140x' -%}{%- endcapture -%}{{ LS_IMG_URL }}{% comment /ls-rpl %}{% endcomment %}');"></div>
+    <div class="slider-back-image B is-sp" style="background-image:url('{% comment ls-rpl %}{{ section.settings.image_mobile_2 | img_url: '2140x' }}{% endcomment %}{%- capture LS_IMG_URL -%}{%- render "ls-img-url", image: section.settings.image_mobile_2, img_url: '2140x' -%}{%- endcapture -%}{{ LS_IMG_URL }}{% comment /ls-rpl %}{% endcomment %}');"></div>
+  </li>
+  <li class="{{ section.settings.image_move_3 }}">
+    <div class="slider-back-image B is-pc" style="background-image:url('{% comment ls-rpl %}{{ section.settings.image_3 | img_url: '2140x' }}{% endcomment %}{%- capture LS_IMG_URL -%}{%- render "ls-img-url", image: section.settings.image_3, img_url: '2140x' -%}{%- endcapture -%}{{ LS_IMG_URL }}{% comment /ls-rpl %}{% endcomment %}');"></div>
+    <div class="slider-back-image B is-sp" style="background-image:url('{% comment ls-rpl %}{{ section.settings.image_mobile_3 | img_url: '2140x' }}{% endcomment %}{%- capture LS_IMG_URL -%}{%- render "ls-img-url", image: section.settings.image_mobile_3, img_url: '2140x' -%}{%- endcapture -%}{{ LS_IMG_URL }}{% comment /ls-rpl %}{% endcomment %}');"></div>
+  </li>
+</ul>  
+
+<style>
+.slide-text ,.slide-text a, 
+.top-header .navi-text,
+.top-header .header-icons a,
+.top-header .site-logo svg path,
+.top-header .header-icons svg path,
+.top-header .header-icons svg rect,
+.sp-header.sp-top  .header-icons svg path,
+.sp-header.sp-top  .header-icons svg rect,
+.sp-header.sp-top  .site-logo svg path,
+.sp-header.sp-top .sp-menu-left svg path
+{animation  : text-3 21s linear infinite;}
+
+.top-header .hamub-menu-btn svg g line,
+.sp-header.sp-top .sp-menu-left svg g line
+{animation  : text-line-3 21s linear infinite;}
+  
+.top-header .cart-item-count,
+.sp-header.sp-top .cart-item-count
+{animation  : text-back-3 21s linear infinite;}
+  
+.slide-text-animate{
+  animation  : text-anime-3 21s linear;
+  animation-iteration-count:1;
+}
+.slide.is-3 .zoom-in .slider-back-image {
+  opacity    : 0;
+  animation  : zoom-in-3 21s linear infinite;
+}
+.slide.is-3 .zoom-out .slider-back-image {
+  opacity    : 0;
+  animation  : zoom-out-3 21s linear infinite;
+}
+.slide.is-3 .slide-left .slider-back-image {
+  opacity    : 0;
+  animation  : slide-left-3 21s linear infinite;
+}
+.slide.is-3 .slide-right .slider-back-image {
+  opacity    : 0;
+  animation  : slide-right-3 21s linear infinite;
+}
+.slide.is-3 .slide-top .slider-back-image {
+  opacity    : 0;
+  animation  : slide-top-3 21s linear infinite;
+}
+.slide.is-3 .slide-bottom .slider-back-image {
+  opacity    : 0;
+  animation  : slide-bottom-3 21s linear infinite;
+}
+.slide.is-3 li:nth-of-type(1) .slider-back-image { animation-delay: 0s !important;}
+.slide.is-3 li:nth-of-type(2) .slider-back-image { animation-delay: 7s !important;}
+.slide.is-3 li:nth-of-type(3) .slider-back-image { animation-delay: 14s !important;}
+
+@keyframes text-3{ 
+  0% { color: #{{ section.settings.text_color_3 }} ; fill: #{{ section.settings.text_color_3 }} ; border-color:#{{ section.settings.text_color_3 }}26;}
+  2.6% { color: #{{ section.settings.text_color_1 }} ;   fill: #{{ section.settings.text_color_1 }} ; border-color:#{{ section.settings.text_color_1 }}26;}
+  33% { color: #{{ section.settings.text_color_1 }} ; fill: #{{ section.settings.text_color_1 }} ; border-color:#{{ section.settings.text_color_1 }}26;}
+  35.6% { color: #{{ section.settings.text_color_2 }} ;   fill: #{{ section.settings.text_color_2 }} ; border-color:#{{ section.settings.text_color_2 }}26;}
+  67% { color: #{{ section.settings.text_color_2 }} ; fill: #{{ section.settings.text_color_2 }} ; border-color:#{{ section.settings.text_color_2 }}26;}
+  69.6% { color: #{{ section.settings.text_color_3 }} ;  fill: #{{ section.settings.text_color_3 }} ; border-color:#{{ section.settings.text_color_3 }}26;}
+  100% { color: #{{ section.settings.text_color_3 }} ; fill: #{{ section.settings.text_color_3 }} ;  border-color:#{{ section.settings.text_color_3 }}26;}
+}  
+  
+@keyframes text-line-3{ 
+  0% { stroke: #{{ section.settings.text_color_3 }};}
+  2.6% { stroke: #{{ section.settings.text_color_1 }} ;}
+  33% { stroke: #{{ section.settings.text_color_1 }}  ;}
+  35.6% { stroke: #{{ section.settings.text_color_2 }} ;}
+  67% { stroke: #{{ section.settings.text_color_2 }}  ;}
+  69.6% { stroke: #{{ section.settings.text_color_3 }};}
+  100% { stroke: #{{ section.settings.text_color_3 }};}
+}
+@keyframes text-back-3{ 
+  0% { background: #{{ section.settings.text_color_3 }} ; color: #{% if section.settings.text_color_3 == "4b4b4b" %}FFF{% else %}4b4b4b{% endif %} ;}
+  2.6% { background: #{{ section.settings.text_color_1 }} ;   color: #{% if section.settings.text_color_1 == "4b4b4b" %}FFF{% else %}4b4b4b{% endif %} ;}
+  33% { background: #{{ section.settings.text_color_1 }} ; color: #{% if section.settings.text_color_1 == "4b4b4b" %}FFF{% else %}4b4b4b{% endif %} ;}
+  35.6% { background: #{{ section.settings.text_color_2 }} ;   color: #{% if section.settings.text_color_2 == "4b4b4b" %}FFF{% else %}4b4b4b{% endif %} ;}
+  67% { background: #{{ section.settings.text_color_2 }} ; color: #{% if section.settings.text_color_2 == "4b4b4b" %}FFF{% else %}4b4b4b{% endif %} ;}
+  69.6% { background: #{{ section.settings.text_color_3 }} ;  color: #{% if section.settings.text_color_3 == "4b4b4b" %}FFF{% else %}4b4b4b{% endif %} ;}
+  100% { background: #{{ section.settings.text_color_3 }} ; color: #{% if section.settings.text_color_3 == "4b4b4b" %}FFF{% else %}4b4b4b{% endif %} ; }
+}  
+@keyframes text-anime-3{ 
+  0% { opacity: 0 ; }
+  6% { opacity: 0 ; }
+ 10% { opacity: 1 ; }
+ 33% { opacity: 1 ; }
+ 100% { opacity: 1 ; }
+}  
+
+{% assign an1 = "4" %}
+{% assign an2 = "33" %}
+{% assign an3 = "39" %}
+{% assign an4 = "40" %}
+
+@keyframes zoom-in-3{
+   0% { opacity: 0 ; z-index: 1; transform:scale(1);}
+{{an1}}%{ opacity: 1 ;}
+{{an2}}%{ z-index: 0 ;}
+{{an3}}%{ opacity: 1 ;  transform:scale(1.2);}
+{{an4}}%{ opacity: 0 ;}
+ 100% { opacity: 0 ;}
+}  
+@keyframes zoom-out-3{
+   0% { opacity: 0 ; z-index: 1; transform:scale(1.2);}
+{{an1}}%{ opacity: 1 ;}
+{{an2}}%{ z-index: 0 ;}
+{{an3}}%{ opacity: 1 ;  transform:scale(1);}
+{{an4}}%{ opacity: 0 ;}
+ 100% { opacity: 0 }
+}  
+@keyframes slide-left-3{
+   0% { opacity: 0 ; z-index: 1;  transform:scale(1.1) translateX(2vh);}
+{{an1}}%{ opacity: 1 ;}
+{{an2}}%{ z-index: 0 ;}
+{{an3}}%{ opacity: 1 ; transform:scale(1.1) translateX(-2vh);}
+{{an4}}%{ opacity: 0 ;}
+ 100% { opacity: 0 ;}
+}  
+@keyframes slide-right-3{
+   0% { opacity: 0 ; z-index: 1;  transform:scale(1.1) translateX(-2vh);}
+{{an1}}% { opacity: 1 ;}
+{{an2}}% { z-index: 0 ;}
+{{an3}}% { opacity: 1 ; transform:scale(1.1) translateX(2vh);}
+{{an4}}% { opacity: 0 ;}
+ 100% { opacity: 0 ;}
+}  
+@keyframes slide-top-3{
+   0% { opacity: 0 ; z-index: 1;  transform:scale(1.1) translateY(3vh);}
+{{an1}}% { opacity: 1 ;}
+{{an2}}% { z-index: 0 ;}
+{{an3}}% { opacity: 1 ; transform:scale(1.1) translateY(-3vh);}
+{{an4}}% { opacity: 0 ;}
+ 100% { opacity: 0 ;}
+}  
+@keyframes slide-bottom-3{
+   0% { opacity: 0 ; z-index: 1;  transform:scale(1.1) translateY(-3vh);}
+{{an1}}% { opacity: 1 ;}
+{{an2}}% { z-index: 0 ;}
+{{an3}}% { opacity: 1 ; transform:scale(1.1) translateY(3vh);}
+{{an4}}% { opacity: 0 ;}
+ 100% { opacity: 0 ;}
+}  
+</style>
+  
+  
+{% endif %}
+  
+  
+<!-----------------------------------------------------------------------------------------------------------------------------スライド2枚-->
+{% if section.settings.image_2 != blank and section.settings.image_3 == blank %}
+<ul class="slide is-2">
+    <div class="slide-text">
+      <div class="slide-text-animate rte">
+      <h2>{{ slide_title }}</h2>
+      <p class="slide-subtitle">{{ slide_head }}</p>
+      <p>{{ 'general.series.copy_html' | t }}</p>
+      <a href="/collections/between" class="see-more">{{ 'general.site.discover' | t }}</a>
+      </div>
+    </div>
+  <li class="{{ section.settings.image_move_1 }}">
+    <div class="slider-back-image A is-pc" style="background-image:url('{% comment ls-rpl %}{{ section.settings.image_1 | img_url: '2140x' }}{% endcomment %}{%- capture LS_IMG_URL -%}{%- render "ls-img-url", image: section.settings.image_1, img_url: '2140x' -%}{%- endcapture -%}{{ LS_IMG_URL }}{% comment /ls-rpl %}{% endcomment %}');"></div>
+    <div class="slider-back-image A is-sp" style="background-image:url('{% comment ls-rpl %}{{ section.settings.image_mobile_1 | img_url: '2140x' }}{% endcomment %}{%- capture LS_IMG_URL -%}{%- render "ls-img-url", image: section.settings.image_mobile_1, img_url: '2140x' -%}{%- endcapture -%}{{ LS_IMG_URL }}{% comment /ls-rpl %}{% endcomment %}');"></div>
+  </li>
+  <li class="{{ section.settings.image_move_2 }}">
+    <div class="slider-back-image B is-pc" style="background-image:url('{% comment ls-rpl %}{{ section.settings.image_2 | img_url: '2140x' }}{% endcomment %}{%- capture LS_IMG_URL -%}{%- render "ls-img-url", image: section.settings.image_2, img_url: '2140x' -%}{%- endcapture -%}{{ LS_IMG_URL }}{% comment /ls-rpl %}{% endcomment %}');"></div>
+    <div class="slider-back-image B is-sp" style="background-image:url('{% comment ls-rpl %}{{ section.settings.image_mobile_2 | img_url: '2140x' }}{% endcomment %}{%- capture LS_IMG_URL -%}{%- render "ls-img-url", image: section.settings.image_mobile_2, img_url: '2140x' -%}{%- endcapture -%}{{ LS_IMG_URL }}{% comment /ls-rpl %}{% endcomment %}');"></div>
+  </li>
+</ul>  
+
+<style>
+.slide-text ,.slide-text a, 
+.top-header .navi-text,
+.top-header .header-icons a,
+.top-header .site-logo svg path,
+.top-header .header-icons svg path,
+.top-header .header-icons svg rect,
+.sp-header.sp-top  .header-icons svg path,
+.sp-header.sp-top  .header-icons svg rect,
+.sp-header.sp-top .site-logo svg path,
+.sp-header.sp-top .sp-menu-left svg path
+{animation  : text-2 14s linear infinite;}
+
+.top-header .hamub-menu-btn svg g line,
+.sp-header.sp-top .sp-menu-left svg g line
+{animation  : text-line-2 14s linear infinite;}
+  
+.top-header .cart-item-count,
+.sp-header.sp-top  .cart-item-count
+{animation  : text-back-2 14s linear infinite;}
+  
+.slide-text-animate{
+  animation  : text-anime-2 14s linear;
+  animation-iteration-count:1;
+}
+.slide.is-2 .zoom-in .slider-back-image {
+  opacity    : 0;
+  animation  : zoom-in-2 14s linear infinite;
+}
+.slide.is-2 .zoom-out .slider-back-image {
+  opacity    : 0;
+  animation  : zoom-out-2 14s linear infinite;
+}
+.slide.is-2 .slide-left .slider-back-image {
+  opacity    : 0;
+  animation  : slide-left-2 14s linear infinite;
+}
+.slide.is-2 .slide-right .slider-back-image {
+  opacity    : 0;
+  animation  : slide-right-2 14s linear infinite;
+}
+.slide.is-2 .slide-top .slider-back-image {
+  opacity    : 0;
+  animation  : slide-top-2 14s linear infinite;
+}
+.slide.is-2 .slide-bottom .slider-back-image {
+  opacity    : 0;
+  animation  : slide-bottom-2 14s linear infinite;
+}
+.slide.is-2 li:nth-of-type(1) .slider-back-image { animation-delay: 0s !important;}
+.slide.is-2 li:nth-of-type(2) .slider-back-image { animation-delay: 7s !important;}
+
+@keyframes text-2{ 
+  0% { color: #{{ section.settings.text_color_2 }} ; fill: #{{ section.settings.text_color_2 }} ; border-color:#{{ section.settings.text_color_2 }}26;}
+  4% { color: #{{ section.settings.text_color_1 }} ;   fill: #{{ section.settings.text_color_1 }} ; border-color:#{{ section.settings.text_color_1 }}26;}
+  50% { color: #{{ section.settings.text_color_1 }} ; fill: #{{ section.settings.text_color_1 }} ; border-color:#{{ section.settings.text_color_1 }}26;}
+  54% { color: #{{ section.settings.text_color_2 }} ;  fill: #{{ section.settings.text_color_2 }} ; border-color:#{{ section.settings.text_color_2 }}26;}
+  100% { color: #{{ section.settings.text_color_2 }} ; fill: #{{ section.settings.text_color_2 }} ;  border-color:#{{ section.settings.text_color_2 }}26;}
+}  
+  
+@keyframes text-line-2{ 
+  0% { stroke: #{{ section.settings.text_color_2 }};}
+  4% { stroke: #{{ section.settings.text_color_1 }} ;}
+  50% { stroke: #{{ section.settings.text_color_1 }}  ;}
+  54% { stroke: #{{ section.settings.text_color_2 }};}
+  100% { stroke: #{{ section.settings.text_color_2 }};}
+}
+  
+@keyframes text-back-2{ 
+  0% { background: #{{ section.settings.text_color_2 }} ; color: #{% if section.settings.text_color_2 == "4b4b4b" %}FFF{% else %}4b4b4b{% endif %} ;}
+  4% { background: #{{ section.settings.text_color_1 }} ;   color: #{% if section.settings.text_color_1 == "4b4b4b" %}FFF{% else %}4b4b4b{% endif %} ;}
+  50% { background: #{{ section.settings.text_color_1 }} ; color: #{% if section.settings.text_color_1 == "4b4b4b" %}FFF{% else %}4b4b4b{% endif %} ;}
+  54% { background: #{{ section.settings.text_color_2 }} ;  color: #{% if section.settings.text_color_2 == "4b4b4b" %}FFF{% else %}4b4b4b{% endif %} ;}
+  100% { background: #{{ section.settings.text_color_2 }} ; color: #{% if section.settings.text_color_2 == "4b4b4b" %}FFF{% else %}4b4b4b{% endif %} ; }
+}  
+@keyframes text-anime-2{ 
+  0% { opacity: 0 ; }
+  8% { opacity: 0 ; }
+ 12% { opacity: 1 ; }
+ 100% { opacity: 1 ; }
+}  
+
+@keyframes zoom-in-2{
+   0% { opacity: 0 ; z-index: 1; transform:scale(1);}
+   6% { opacity: 1 ;}
+  50% { z-index: 0 ;}
+  59% { opacity: 1 ;  transform:scale(1.2);}
+  60% { opacity: 0 ;}
+ 100% { opacity: 0 ;}
+}  
+@keyframes zoom-out-2{
+   0% { opacity: 0 ; z-index: 1; transform:scale(1.2);}
+   6% { opacity: 1 }
+  50% { z-index: 0 ;}
+  59% { opacity: 1 ;  transform:scale(1);}
+  60% { opacity: 0;  }
+ 100% { opacity: 0 }
+}  
+@keyframes slide-left-2{
+   0% { opacity: 0 ; z-index: 1;  transform:scale(1.1) translateX(2vh);}
+   6% { opacity: 1 ;}
+  50% { z-index: 0 ;}
+  59% { opacity: 1 ; transform:scale(1.1) translateX(-2vh);}
+  60% { opacity: 0 ;}
+ 100% { opacity: 0 ;}
+}  
+@keyframes slide-right-2{
+   0% { opacity: 0 ; z-index: 1;  transform:scale(1.1) translateX(-2vh);}
+   6% { opacity: 1 ;}
+  50% { z-index: 0 ;}
+  59% { opacity: 1 ; transform:scale(1.1) translateX(2vh);}
+  60% { opacity: 0 ;}
+ 100% { opacity: 0 ;}
+}  
+@keyframes slide-top-2{
+   0% { opacity: 0 ; z-index: 1;  transform:scale(1.1) translateY(3vh);}
+   6% { opacity: 1 ;}
+  50% { z-index: 0 ;}
+  59% { opacity: 1 ; transform:scale(1.1) translateY(-3vh);}
+  60% { opacity: 0 ;}
+ 100% { opacity: 0 ;}
+}  
+@keyframes slide-bottom-2{
+   0% { opacity: 0 ; z-index: 1;  transform:scale(1.1) translateY(-3vh);}
+   6% { opacity: 1 ;}
+  50% { z-index: 0 ;}
+  59% { opacity: 1 ; transform:scale(1.1) translateY(3vh);}
+  60% { opacity: 0 ;}
+ 100% { opacity: 0 ;}
+}  
+</style>
+  
+  
+{% endif %}
+  
+
+  
+  
+
+</div>
+<script>
+// ブラウザサイズを自動で取得してiOS対策
+$(document).ready(function () {
+  var hSize = $(window).height();
+  $(".top-slider").height(hSize); // ブラウザの縦のサイズを取得
+});
+$(window).resize(function () { // ページをリサイズした時の処理
+  var hSize = $(window).height();
+  $(".top-slider").height(hSize); // ブラウザの縦のサイズを取得
+});
+  
+</script>
+  
+  
+{% schema %}
+  
+{
+"name": "トップページスライダー",
+"settings": [
+          {
+            "type": "image_picker",
+            "id": "image_1",
+            "label": "1枚目の画像"
+          },
+          {
+            "type": "image_picker",
+            "id": "image_mobile_1",
+            "label": "1枚目の画像（モバイル）"
+          },
+      	{
+        "type": "select",
+        "id": "image_move_1",
+        "label": "1枚目のスライド方向",
+        "default": "slide-top",
+        "options": [
+          {
+            "label": "下から上に",
+            "value": "slide-top"
+          },
+          {
+            "label": "上から下に",
+            "value": "slide-bottom"
+          },
+          {
+            "label": "右から左に",
+            "value": "slide-left"
+          },
+          {
+            "label": "左から右に",
+            "value": "slide-right"
+          },
+          {
+            "label": "ズームイン",
+            "value": "zoom-in"
+          },
+          {
+            "label": "ズームアウト",
+            "value": "zoom-out"
+          }
+		  ]
+        },
+      	{
+        "type": "select",
+        "id": "text_color_1",
+        "label": "1枚目の文字色",
+        "default": "4b4b4b",
+        "options": [
+          {
+            "label": "グレー",
+            "value": "4b4b4b"
+          },
+          {
+            "label": "ホワイト",
+            "value": "FFFFFF"
+          }
+		]
+		},
+          {
+            "type": "image_picker",
+            "id": "image_2",
+            "label": "2枚目の画像"
+          },
+          {
+            "type": "image_picker",
+            "id": "image_mobile_2",
+            "label": "2枚目の画像（モバイル）"
+          },
+      	{
+        "type": "select",
+        "id": "image_move_2",
+        "label": "2枚目のスライド方向",
+        "default": "slide-top",
+        "options": [
+          {
+            "label": "下から上に",
+            "value": "slide-top"
+          },
+          {
+            "label": "上から下に",
+            "value": "slide-bottom"
+          },
+          {
+            "label": "右から左に",
+            "value": "slide-left"
+          },
+          {
+            "label": "左から右に",
+            "value": "slide-right"
+          },
+          {
+            "label": "ズームイン",
+            "value": "zoom-in"
+          },
+          {
+            "label": "ズームアウト",
+            "value": "zoom-out"
+          }
+		]
+		},
+      	{
+        "type": "select",
+        "id": "text_color_2",
+        "label": "2枚目の文字色",
+        "default": "4b4b4b",
+        "options": [
+          {
+            "label": "グレー",
+            "value": "4b4b4b"
+          },
+          {
+            "label": "ホワイト",
+            "value": "FFFFFF"
+          }
+		]
+		},
+          {
+            "type": "image_picker",
+            "id": "image_3",
+            "label": "3枚目の画像"
+          },
+          {
+            "type": "image_picker",
+            "id": "image_mobile_3",
+            "label": "3枚目の画像（モバイル）"
+          },
+      	{
+        "type": "select",
+        "id": "image_move_3",
+        "label": "3枚目のスライド方向",
+        "default": "slide-top",
+        "options": [
+          {
+            "label": "下から上に",
+            "value": "slide-top"
+          },
+          {
+            "label": "上から下に",
+            "value": "slide-bottom"
+          },
+          {
+            "label": "右から左に",
+            "value": "slide-left"
+          },
+          {
+            "label": "左から右に",
+            "value": "slide-right"
+          },
+          {
+            "label": "ズームイン",
+            "value": "zoom-in"
+          },
+          {
+            "label": "ズームアウト",
+            "value": "zoom-out"
+          }
+		]
+		},
+      	{
+        "type": "select",
+        "id": "text_color_3",
+        "label": "3枚目の文字色",
+        "default": "4b4b4b",
+        "options": [
+          {
+            "label": "グレー",
+            "value": "4b4b4b"
+          },
+          {
+            "label": "ホワイト",
+            "value": "FFFFFF"
+          }
+		]
+		},
+          {
+            "type": "image_picker",
+            "id": "image_4",
+            "label": "4枚目の画像"
+          },
+          {
+            "type": "image_picker",
+            "id": "image_mobile_4",
+            "label": "4枚目の画像（モバイル）"
+          },
+      	{
+        "type": "select",
+        "id": "image_move_4",
+        "label": "4枚目のスライド方向",
+        "default": "slide-top",
+        "options": [
+          {
+            "label": "下から上に",
+            "value": "slide-top"
+          },
+          {
+            "label": "上から下に",
+            "value": "slide-bottom"
+          },
+          {
+            "label": "右から左に",
+            "value": "slide-left"
+          },
+          {
+            "label": "左から右に",
+            "value": "slide-right"
+          },
+          {
+            "label": "ズームイン",
+            "value": "zoom-in"
+          },
+          {
+            "label": "ズームアウト",
+            "value": "zoom-out"
+          }
+		]
+		},
+      	{
+        "type": "select",
+        "id": "text_color_4",
+        "label": "4枚目の文字色",
+        "default": "4b4b4b",
+        "options": [
+          {
+            "label": "グレー",
+            "value": "4b4b4b"
+          },
+          {
+            "label": "ホワイト",
+            "value": "FFFFFF"
+          }
+		]
+		}
+],
+"presets": [
+{
+"name": "トップページスライダー",
+"category": "ADVANCED LAYOUT"
+}
+]
+}
+{% endschema %}

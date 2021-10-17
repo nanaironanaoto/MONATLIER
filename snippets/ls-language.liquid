@@ -1,0 +1,11 @@
+{%- comment -%}
+    Render LangShop language
+{%- endcomment -%}
+
+{%- if request.locale.iso_code -%}
+    {%- assign languageCode = request.locale.iso_code -%}
+{%- else -%}
+    {%- assign languageCode = shop.locale -%}
+{%- endif -%}
+
+{{ languageCode }}

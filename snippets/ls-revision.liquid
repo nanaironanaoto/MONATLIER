@@ -1,0 +1,15 @@
+{%- capture md5key -%}{%- render 'ls-md5-key', md5key: hash, keySize: 14 -%}{%- endcapture -%}
+{%- assign namespace = 'ls-rv-' | append: md5key -%}
+{%- assign metafields = shop.metafields[namespace] -%}
+{%- assign count = metafields | size -%}
+{%- assign revision = '' -%}
+
+{%- unless count == 0 -%}
+    {%- assign offset = count | minus: 1 -%}
+    {%- for metafield in metafields offset: offset -%}
+        {%- assign revision = metafield | last -%}
+        {%- break -%}
+    {%- endfor -%}
+{%- endunless -%}
+
+{{ revision.value }}

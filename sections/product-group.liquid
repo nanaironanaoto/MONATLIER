@@ -1,0 +1,82 @@
+{% if product.metafields.custom_fields["series"] != blank %}
+{% assign series = product.metafields.custom_fields.style %}
+<div class="index-section concept-section">
+   <div class="section-header">
+   		<h2 class="section-header__title">{{ 'general.series.series' | t }}</h2>
+        <span>{{ 'general.product.series_text' | t }}</span>
+   </div>
+  <div class="concept-image small--hide" style="background-image:url('{{ product.metafields.custom_fields.style-image }}');">
+  </div>
+  <div class="concept-image medium--hide" style="background-image:url('{{ product.metafields.custom_fields.style-image-sp }}');">
+  </div>
+  <div class="series-products-wrap">
+    <div class="series-products-left">
+	  	<span class="series-name">{{ product.metafields.custom_fields.series }} {{ 'general.series.series_small' | t }}</span>
+        <h3>{{ product.metafields.custom_fields["style"] }}</h3>
+        <span class="series-japanese">{{ collections[series].metafields.custom_fields["style-japanese"]}}</span>
+    </div>
+    <div class="series-products-right">
+        <p>{{ collections[series].description}}</p>
+    </div>
+  </div>
+</div>
+
+
+
+
+<div class="top-product ">
+  <div class="page-width">
+<div class="series-product">
+ {{ style }}
+{% for series-product in collections[series].products %}
+                {%- render 'product-grid-item', product: series-product, grid_item_width: grid_item_width -%}
+{% endfor %}
+</div>
+  <div class="rte"><a href="/collections/{{ product.metafields.custom_fields.style }}" class="see-more left text-link ">{{ 'general.site.see_all' | t }}</a></div>
+</div>
+</div>
+{% endif %}
+
+<script>
+    //おすすめ商品：スリックスライダー
+  $(function() {
+ $('.series-product').slick({ 
+  infinite: true,
+    slidesToShow: 6, //「オプション名: 値」の形式で書く
+     responsive: [{
+         		breakpoint: 1920,
+                  settings: {
+                    slidesToShow: 4,
+                    slidesToScroll: 1,
+                }
+       			},{
+         		breakpoint: 1060,
+                  settings: {
+                    slidesToShow: 3,
+                    slidesToScroll: 1,
+                }
+       			},{
+         		breakpoint: 768,
+                  settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 1,
+                }
+       			}
+              ]
+   
+  });
+});
+</script>
+
+{% schema %}
+  {
+    "name": "Section name",
+    "settings": []
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

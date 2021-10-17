@@ -1,0 +1,14 @@
+{%- comment -%}
+    Render language direction
+{%- endcomment -%}
+
+{%- capture languageCode -%}{%- render "ls-language" -%}{%- endcapture -%}
+{%- assign languageCode = languageCode | split: "-" | first -%}
+
+{%- assign rtlList = "ar,arc,bcc,bqi,ckb,dv,fa,glk,he,lrc,mzn,pnb,ps,sd,ug,ur,yi" | split: ',' -%}
+
+{%- if rtlList contains languageCode -%}
+    rtl
+{%- else -%}
+    ltr
+{%- endif -%}

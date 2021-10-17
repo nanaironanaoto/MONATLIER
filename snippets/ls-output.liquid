@@ -1,0 +1,13 @@
+{%- comment -%}
+    Modify html output
+{%- endcomment -%}
+
+{%- assign output = input -%}
+
+{%- capture output -%}{%- render "ls-output-shortcodes", input: output -%}{%- endcapture -%}
+{%- capture output -%}{%- render "ls-output-statics", input: output -%}{%- endcapture -%}
+{%- capture output -%}{%- render "ls-output-dynamics", input: output -%}{%- endcapture -%}
+{%- capture output -%}{%- render "ls-output-form-actions", input: output -%}{%- endcapture -%}
+{%- capture output -%}{%- render "ls-output-sanitize", input: output -%}{%- endcapture -%}
+
+{{ output }}

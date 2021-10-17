@@ -1,0 +1,621 @@
+{%- capture LS_INPUT -%}<!doctype html>
+{% comment ls-rpl %}<html class="no-js" lang="{{ request.locale.iso_code }}" dir="{{ settings.text_direction }}">{% endcomment %}<html class="no-js" lang="{%- render "ls-language" -%}" dir="{%- render "ls-language-direction" -%}">{% comment /ls-rpl %}{% endcomment %}
+<head>
+{%- render "ls-head" -%}
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="{{ settings.color_button }}">
+  <meta name="google-site-verification" content="qOMsP354gg2Bzic4FZ8MJ7yKA-kb4SuYp0JgnYjhN-Y" />
+  <link rel="canonical" href="{{ canonical_url }}">
+  <link rel="canonical" href="{{ canonical_url }}">
+  <link rel="preconnect" href="https://cdn.shopify.com">
+  <link rel="preconnect" href="https://fonts.shopifycdn.com">
+  <link rel="dns-prefetch" href="https://productreviews.shopifycdn.com">
+  <link rel="dns-prefetch" href="https://ajax.googleapis.com">
+  <link rel="dns-prefetch" href="https://maps.googleapis.com">
+  <link rel="dns-prefetch" href="https://maps.gstatic.com">
+<!-- 高速化キーリクエストのプリロード -->
+<link rel="preload" href="/apps/favorite_button/css/SFA.css" as="style"> 
+<!--   <link rel="preload" as="style" href="/apps/favorite_button/css/SFA.css"> -->
+  {%- if settings.favicon != blank -%}
+    <link rel="shortcut icon" href="{% comment ls-rpl %}{{ settings.favicon | img_url: '32x32' }}{% endcomment %}{%- capture LS_IMG_URL -%}{%- render "ls-img-url", image: settings.favicon, img_url: '32x32' -%}{%- endcapture -%}{{ LS_IMG_URL }}{% comment /ls-rpl %}{% endcomment %}" type="image/png" />
+  {%- endif -%}
+  <link rel="apple-touch-icon" sizes="180x180" href="https://cdn.shopify.com/s/files/1/0268/1202/2962/files/app.png?v=1616288501">
+
+
+  {%- render 'seo-title' -%}
+  
+  {% if template == "index" %}
+  <meta name="description" content="{{ 'general.site.index-description' | t }}">
+  {% else %}
+  {%- if page_description -%}
+  <meta name="description" content="{{ page_description | escape }}">
+  {%- endif -%}
+  {% endif %}
+
+  {%- render 'social-meta-tags' -%}
+
+  {%- render 'font-face' -%}
+  {{ 'theme.css' | asset_url | stylesheet_tag }}
+  {%- render 'css-variables' -%}
+  
+<script type="text/javascript">
+  $(function(){
+    var ua = navigator.userAgent;
+    if((ua.indexOf('iPhone') > 0) || ua.indexOf('iPod') > 0 || (ua.indexOf('Android') > 0 && ua.indexOf('Mobile') > 0)){
+        $('head').prepend('<meta name="viewport" content="width=768px">');
+    } else {
+        $('head').prepend('<meta name="viewport" content="width=device-width,initial-scale=1">');
+    }
+});
+</script>
+ 
+  
+  <script>
+    document.documentElement.className = document.documentElement.className.replace('no-js', 'js');
+
+    window.theme = window.theme || {};
+    theme.routes = {
+      home: "{{ routes.root_url }}",
+      cart: "{{ routes.cart_url }}",
+      cartAdd: "{{ routes.cart_add_url | append: '.js'}}",
+      cartChange: "{{ routes.cart_change_url }}"
+    };
+    theme.strings = {
+      soldOut: {{ 'products.product.sold_out' | t | json }},
+      unavailable: {{ 'products.product.unavailable' | t | json }},
+      stockLabel: {{ 'products.product.stock_label' | t: count: '[count]' | json }},
+      willNotShipUntil: {{ 'products.product.will_not_ship_until' | t: date: '[date]' | json }},
+      willBeInStockAfter: {{ 'products.product.will_be_in_stock_after' | t: date: '[date]' | json }},
+      waitingForStock: {{ 'products.product.waiting_for_stock' | t | json }},
+      savePrice: {{ 'products.general.save_html' | t: saved_amount: '[saved_amount]' | json }},
+      cartEmpty: {{ 'cart.general.empty' | t | json }},
+      cartTermsConfirmation: {{ 'cart.general.terms_confirm' | t | json }}
+    };
+    theme.settings = {
+      dynamicVariantsEnable: true,
+      dynamicVariantType: {{ settings.variant_type | json }},
+      cartType: {{ settings.cart_type | json }},
+      moneyFormat: {{ shop.money_format | json }},
+      saveType: {{ settings.product_save_type | json }},
+      recentlyViewedEnabled: false,
+      predictiveSearch: {{ settings.predictive_search_enabled }},
+      predictiveSearchType: {{ settings.search_type | json }},
+      inventoryThreshold: {{ settings.inventory_threshold }},
+      quickView: {{ settings.quick_shop_enable }},
+      themeName: 'Impulse',
+      themeVersion: "3.6.1"
+    };
+  </script>
+  
+  
+  <script type="text/javascript"> var ndnapps_product_json = "{{ 'ndnapps-products-slider.json' | asset_url }}";</script>
+{{ content_for_header }}
+{{ 'ndnapps_products_slider.js' | asset_url | script_tag }}
+
+  {% if template == 'product' and product.metafields.inventory.ShappifyHidden or product.type contains '_HIDDEN_' %}<meta name='robots' content='noindex'>{% endif %}
+{%- render 'bold-options-hybrid' -%}
+{%- render 'bold-common' -%}
+<script src="{{ 'vendor-scripts-v7.js' | asset_url | split: '?' | first }}" defer="defer"></script>
+
+  {%- if shop.enabled_currencies.size > 1 -%}
+    <link rel="preload" as="style" href="{{ 'currency-flags.css' | asset_url | split: '?' | first }}" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="stylesheet" href="{{ 'currency-flags.css' | asset_url | split: '?' | first }}">
+  {%- endif -%}
+
+  <script src="{{ 'theme.js' | asset_url }}" defer="defer"></script>
+  
+<!--スクロールエフェクト-->
+  <script src="{{ 'jquery.inview.min.js' | asset_url }}" defer="defer"></script>
+<!--スクロールエフェクト-end-->
+
+  
+  
+  {{ 'add-style.scss.css' | asset_url | stylesheet_tag }}
+  {{ 'add-style-header.scss.css' | asset_url | stylesheet_tag }}
+  {{ 'add-style-blog.scss.css' | asset_url | stylesheet_tag }}
+  
+<!--サービスページの場合--> 
+  {% if template == 'index' %}
+  {{ 'add-style-top.scss.css' | asset_url | stylesheet_tag }}
+  {% endif %}
+  
+<!--商品・プロダクトページの場合--> 
+  {% if template == 'product' %}
+  {{ 'add-style-product.scss.css' | asset_url | stylesheet_tag }}
+  {% endif %}
+    
+<!--アバウトページの場合--> 
+  {% if template == 'page.about' %}
+  {{ 'add-style-about.scss.css' | asset_url | stylesheet_tag }}
+  {% endif %}
+  
+<!--コレクションページの場合--> 
+  {% if template == 'collection' %}
+  {{ 'add-style-collection.scss.css' | asset_url | stylesheet_tag }}
+  {% endif %}
+  
+<!--サービスページの場合--> 
+  {% if template == 'page.service' %}
+  {{ 'add-style-service.scss.css' | asset_url | stylesheet_tag }}
+  {% endif %}
+
+<!--トップページ以外の場合ヘッダーの高さ調整start--> 
+  {% unless template == "index" %}
+<style>  
+  .main-content{padding-top:120px;}
+</style>
+  {% endunless %}
+<!--トップページ以外の場合ヘッダーの高さ調整end--> 
+  
+  {%- if request.page_type contains 'customers/' -%}
+    <script src="{{ 'shopify_common.js' | shopify_asset_url }}" defer="defer"></script>
+  {%- endif -%}
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+<script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.1/TweenMax.min.js"></script>
+  <script src="{{ 'jquery.easing.1.3.js' | asset_url }}" defer="defer"></script>
+
+
+<!--begin-boost-pfs-filter-css-->
+  {% render 'boost-pfs-style' %}
+<!--end-boost-pfs-filter-css-->
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-QFKQS3W7VG"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-QFKQS3W7VG');
+</script>
+
+
+{{ 'ndnapps-products-slider.css' | asset_url | stylesheet_tag }}
+<script type="text/javascript">jQuery(document).ready(function(){Shopify.Products.recordRecentlyViewed( );});</script>
+<script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+{{ 'custom-fields.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'custom-fields-widgets.js' | asset_url }}" defer="defer"></script>
+  
+</head>
+
+<body class="template-{{ template | replace: '.', ' ' | truncatewords: 1, '' | handle }}{% if request.path == '/challenge' %} template-challange{% endif %}" data-center-text="{{settings.type_body_align_text}}" data-button_style="{{settings.button_style}}" data-type_header_capitalize="{{settings.type_header_capitalize}}" data-type_headers_align_text="{{settings.type_headers_align_text}}" data-type_product_capitalize="{{settings.type_product_capitalize}}" data-swatch_style="{{settings.swatch_style}}" {% if settings.disable_animations %}data-disable-animations="true"{% endif %}>
+
+  
+  <div class="overlay-all"></div>
+  <!--カスタムカーソル-->
+  <div class="cursor">
+  <div class="follower"></div></div>
+  
+  <a class="in-page-link visually-hidden skip-link" href="#MainContent">{{ 'general.accessibility.skip_to_content' | t }}</a>
+
+  <div id="PageContainer" class="page-container">
+    <div class="transition-body">
+
+    {%- section 'header' -%}
+
+
+      <main class="main-content" id="MainContent">
+        {{ content_for_layout }}
+      </main>
+
+      {%- section 'footer-promotions' -%}
+      {%- section 'footer' -%}
+
+    </div>
+  </div>
+
+  {%- section 'newsletter-popup' -%}
+
+  {%- if settings.cart_type == 'drawer' -%}
+    {%- render 'ajax-cart-template' -%}
+  {%- endif -%}
+
+  <div class="hide">
+    <button data-id="prevArrowTemplate" class="slick-prev" aria-label="{{ 'general.pagination.previous' | t }}" type="button">
+      <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-chevron-left" viewBox="0 0 284.49 498.98"><path d="M249.49 0a35 35 0 0 1 24.75 59.75L84.49 249.49l189.75 189.74a35.002 35.002 0 1 1-49.5 49.5L10.25 274.24a35 35 0 0 1 0-49.5L224.74 10.25A34.89 34.89 0 0 1 249.49 0z"/></svg>
+      <span class="icon__fallback-text">{{ 'general.pagination.previous' | t }}</span>
+    </button>
+    <button data-id="nextArrowTemplate" class="slick-next" aria-label="{{ 'general.pagination.next' | t }}" type="button">
+      <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-chevron-right" viewBox="0 0 284.49 498.98"><path d="M35 498.98a35 35 0 0 1-24.75-59.75l189.74-189.74L10.25 59.75a35.002 35.002 0 0 1 49.5-49.5l214.49 214.49a35 35 0 0 1 0 49.5L59.75 488.73A34.89 34.89 0 0 1 35 498.98z"/></svg>
+      <span class="icon__fallback-text">{{ 'general.pagination.next' | t }}</span>
+    </button>
+  </div>
+
+  {%- if settings.predictive_search_enabled -%}
+    {%- render 'predictive-template' -%}
+  {%- endif -%}
+
+  {%- render 'video-modal' -%}
+  {%- render 'photoswipe-template' -%}
+  {%- if template contains 'product' -%}
+    {%- render 'recently-viewed-product-template' -%}
+  {%- endif -%}
+
+    {% if request.locale.name == "English"%}
+    {% elsif request.locale.name == "繁體中文"%}
+    {% elsif request.locale.name == "简体中文"%}
+    {% else %}
+<style>
+    .grid-product__title {
+    text-indent: -6px;
+    }
+    .top-product .grid-product__title {
+    text-indent: -6px;
+    }
+    h1.product-single__title {
+    text-indent: -16px;
+    }
+    @media only screen and (max-width: 768px){
+    .grid-product__title {
+    text-indent: -1.3vw;
+    }
+    .top-product .grid-product__title {
+    text-indent: -1.6vw;
+    }
+    h1.product-single__title {
+    text-indent: -4vw;
+    }
+    }
+</style>
+    {% endif %}
+<script>
+  
+ //パララックスエフェクト-PC用 
+var wh = window.innerHeight,
+  reg = 150;//調整値、正の数だとスクロール時に上に動き、負の数だと下に動く。絶対値が大きいほど動く量が小さくなる。
+ 
+window.addEventListener('load', update_window_size);
+window.addEventListener('resize', update_window_size);
+function update_window_size() {
+  wh = window.innerHeight;
+}
+ 
+var paraItems = document.querySelectorAll('lottie-player');//対象
+paraItems = Array.prototype.slice.call(paraItems, 0);
+ 
+//トリガー部分
+if (paraItems.length) {
+  parallax();
+  window.addEventListener('load', parallax);
+  window.addEventListener('resize', parallax);
+  window.addEventListener('scroll', parallax, { passive: true });
+}
+ 
+//本体 
+function parallax() {
+  paraItems.forEach(function (paraItem, i) {
+ 
+    //動きなどもっと自由に決めたい場合はこのあたりを好きに修正する。
+    paraItem.style.transform = '';
+    var nowpos = paraItem.getBoundingClientRect().top - wh,
+      myreg = paraItem.getAttribute('data-reg') ? Number(paraItem.getAttribute('data-reg')) : reg;
+    if (nowpos < 0) {
+      paraItem.style.transform = 'translate(0,' + (nowpos / myreg) + 'vw)';
+    }
+ 
+  });
+}
+</script>  
+<!--フェードエフェクト-->
+{% if template == "index" %}  
+<script>
+jQuery(function(){
+  $(".main-content").children().children().addClass('fadein');
+  });
+</script>  
+{% elsif template =="collection" %}
+<script>
+jQuery(function(){
+  $(".grid-product").addClass('fadein');
+  $(".series-section-block").addClass('fadein');
+  });
+</script>  
+{% elsif template =="product" %}
+<script>
+jQuery(function(){
+  $(".product-section").children().addClass('fadein');
+  $(".main-content").children().addClass('fadein');
+  });
+</script>  
+{% elsif page.handle contains "concept" %}
+<script>
+jQuery(function(){
+  $(".concept-top").children().addClass('fadein');
+  $('.concept-image').addClass('fadein');
+  $('.concept-bottom-text').children().addClass('fadein');
+  $('.concept-image-wrap.bottom').addClass('fadein');
+  $('.concept-bottom-text-2').children().addClass('fadein');
+  $('.concept-bottom-end').addClass('fadein');
+  $('.phil-header').addClass('fadein');
+  $('.phil-header').addClass('fadein');
+  $('.phil-top').addClass('fadein');
+  $('.phil-middle').addClass('fadein');
+  $('.phil-bottom').addClass('fadein');
+  });
+</script>  
+{% elsif page.handle contains "material" %}
+<script>
+jQuery(function(){
+  $(".material-metal-wrap").addClass('fadein');
+  $(".material-diamond-wrap").addClass('fadein');
+  $(".material-stone-wrap").addClass('fadein');
+  $(".material-hardness-wrap").addClass('fadein');
+  });
+</script>  
+{% elsif page.handle contains "shoppingguide" %}
+<script>
+jQuery(function(){
+  $(".main-content").addClass('fadein');
+  });
+</script>  
+{% elsif page.handle contains "company" or page.handle contains "contact"  %}
+{% elsif page.handle contains "workshop" %}
+<script>
+jQuery(function(){
+  $(".page-width").children().children().children().addClass('fadein');
+  });
+</script>  
+{% elsif template contains "search" %}
+<script>
+jQuery(function(){
+  setTimeout(function(){
+  $(".page-width").children().children().children().removeClass('fadein');
+  $(".page-width").children().children().removeClass('fadein');
+  $(".grid__item").addClass('scrollin');
+    },1000);
+  });
+</script>  
+{% elsif template contains "service" %}
+{% elsif page.handle contains "faq" %}
+<script>
+jQuery(function(){
+  $(".page-width").children().addClass('fadein');
+  $(".faq h2").addClass('fadein');
+  });
+</script>  
+{% else %}
+<script>
+jQuery(function(){
+  $(".page-width").children().children().addClass('fadein');
+  });
+</script>  
+  
+{% endif%}  
+
+<!--カスタムカーソル-->
+<script>
+var
+cursor = $(".cursor"),
+cWidth = 11, //カーソルの大きさ
+mouseX = 0, //マウスのX座標
+mouseY = 0; //マウスのY座標
+
+$(document).on('mousemove', function(e) {
+  mouseX = e.pageX;
+  mouseY = e.pageY;
+  cursor.css({
+    //カーソルの真ん中に座標軸が来るよう、
+    //カーソルの大きさの半分を引きます
+    left: mouseX - (cWidth / 2),
+    top: mouseY - (cWidth / 2)
+  })
+});
+  
+
+  
+$(function(){
+$('a, button').hover(
+    function() {
+        //マウスカーソルが重なった時の処理
+	$(".follower").addClass("is-hover");
+    },
+    function() {
+        //マウスカーソルが離れた時の処理
+	$(".follower").removeClass("is-hover");
+    });
+});
+  
+</script>
+
+<!--アコーディオン-->
+<script>
+$(function(){
+$(".js-accordion").on("click", function() {
+$(this).next().slideToggle();
+$("span",this).toggleClass("active");
+$(this).toggleClass("active");
+});
+});
+</script>
+
+  
+<script>
+$(function() {
+       $('.series-slider-left').slick({
+});
+       $('.series-slider-center').slick({
+    asNavFor: '.series-slider'
+});
+       $('.series-slider-description').slick({
+    	asNavFor: '.series-slider',
+         fade: true
+});
+       $('.series-slider-right').slick({
+});
+});
+</script>
+
+<!--モーダルウィンドウ-->
+
+<script>  
+  $(function(){
+    var winScrollTop;
+    $('.ec-modal-open').each(function(){
+        $(this).on('click',function(){
+    		$('body').addClass("is-modal-open");
+            //スクロール位置を取得
+            winScrollTop = $(window).scrollTop();
+            var target = $(this).data('target');
+            var ecModal = document.getElementById(target);
+            $(ecModal).fadeIn(200);
+            return false;
+        });
+    });
+    $('.ec-modal-close').on('click',function(){
+        $('.ec-modal').fadeOut( 200);
+    		$('body').removeClass("is-modal-open");
+        $('body,html').stop().animate({scrollTop:winScrollTop}, 100);
+        return false;
+    }); 
+});
+</script>  
+
+
+
+<!--ページ内リンク-->
+<script>
+$(function(){
+  $('a[href^="#"]').click(function(){
+    var headsize = 150;
+    var speed = 800;
+    var href= $(this).attr("href");
+    var target = $(href == "#" || href == "" ? 'html' : href);
+    var position = target.offset().top-headsize;
+    $("html, body").animate({scrollTop:position}, speed, "swing");
+    return false;
+  });
+});
+</script>
+
+<!--ページ内リンク-->
+<script>
+$(function(){
+  $('a[href^="#"]').click(function(){
+    var headsize = 150;
+    var speed = 800;
+    var href= $(this).attr("href");
+    var target = $(href == "#" || href == "" ? 'html' : href);
+    var position = target.offset().top-headsize;
+    $("html, body").animate({scrollTop:position}, speed, "swing");
+    return false;
+  });
+});
+</script>
+
+<!--コレクション遷移-->
+<script>  
+$(function() {
+  setTimeout(function(){
+$(document).on("click",".boost-pfs-filter-button:contains('Between')", function () {
+    window.location.href = '/collections/between';
+});
+var $filterto = $('#CollectionSidebar');
+$(".search-bar-side").appendTo($filterto) ;
+
+    },1000);
+});
+</script>
+
+  
+<script>
+jQuery(function(){
+    $('.overlay-all').addClass('active');
+    jQuery(window).scroll(function (){
+        jQuery('.fadein').each(function(){
+            var elemPos = jQuery(this).offset().top;
+            var scroll = jQuery(window).scrollTop();
+            var windowHeight = jQuery(window).height();
+            if (scroll > elemPos - windowHeight + 200){
+                jQuery(this).addClass('scrollin');
+            }
+        });
+    });
+  $(function(){
+    setInterval(function(){
+    jQuery(window).scroll();
+    },1000);
+});
+  });
+  
+//フェードエフェクト：lottie
+</script>  
+<script>
+jQuery(function(){
+    jQuery(window).scroll(function (){
+        jQuery('.lottie-player-torigger').each(function(){
+            var elemPos = jQuery(this).offset().top;
+            var scroll = jQuery(window).scrollTop();
+          var windowHeight = jQuery(window).height();
+            if (scroll > elemPos - windowHeight + 50){
+              	$(this).next().addClass('display-active');
+                $(this).next().addClass('scrollin');
+            }
+        });
+    });
+  });
+jQuery(function(){
+    jQuery(window).scroll(function (){
+        jQuery('.series-slider-center').each(function(){
+            var elemPos = jQuery(this).offset().top;
+            var scroll = jQuery(window).scrollTop();
+          var windowHeight = jQuery(window).height();
+            if (scroll > elemPos - windowHeight + 50){
+                jQuery('.series-slider').addClass('scrollin');
+            }
+        });
+    });
+    jQuery(window).scroll();
+  });
+  </script>
+ <script> 
+ //パララックスエフェクト-SP用 
+var whSp = window.innerHeight,
+  regSp = 40;//調整値、正の数だとスクロール時に上に動き、負の数だと下に動く。絶対値が大きいほど動く量が小さくなる。
+ 
+window.addEventListener('load', update_window_size);
+window.addEventListener('resize', update_window_size);
+function update_window_size() {
+  whSp = window.innerHeight;
+}
+ 
+var paraItemsSp = document.querySelectorAll('.para-img');//対象
+paraItemsSp = Array.prototype.slice.call(paraItemsSp, 0);
+ 
+//トリガー部分
+if (paraItemsSp.length) {
+  parallax();
+  window.addEventListener('load', parallax);
+  window.addEventListener('resize', parallax);
+  window.addEventListener('scroll', parallax, { passive: true });
+}
+ 
+//本体 
+function parallax() {
+  paraItemsSp.forEach(function (paraItem, i) {
+ 
+    //動きなどもっと自由に決めたい場合はこのあたりを好きに修正する。
+    paraItem.style.transform = '';
+    var nowpos = paraItem.getBoundingClientRect().top - whSp,
+      myreg = paraItem.getAttribute('data-reg') ? Number(paraItem.getAttribute('data-reg')) : regSp;
+    if (nowpos < 0) {
+      paraItem.style.transform = 'translate(0,' + (nowpos / myreg) + 'vw)';
+    }
+ 
+  });
+}
+</script>  
+<script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+<!--begin-boost-pfs-js-->
+  {% render 'boost-pfs' %}
+<!--end-boost-pfs-js-->
+  
+</body>
+</html>
+{%- endcapture -%}{%- render "ls-output", input: LS_INPUT -%}

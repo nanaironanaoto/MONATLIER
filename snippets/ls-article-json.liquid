@@ -1,0 +1,35 @@
+{%- comment -%}
+    Create localized article json string
+{%- endcomment -%}
+
+{%- capture json -%}
+    {%- if article -%}
+        {
+            "id": {{ article.id | json }},
+            "title": {{ article.title | json }},
+            "created_at": {{ article.created_at | date: "%FT%T%:z" | json }},
+            "body_html": {{ article.content | json }},
+            "blog_id": {{ blog.id | json }},
+            "author": {{ article.author | json }},
+            "published_at": {{ article.published_at | date: "%FT%T%:z" | json }},
+            "summary_html": {{ article.excerpt | json }},
+            "template_suffix": {{ article.template_suffix | json }},
+            "handle": {{ article.handle | json }},
+            "tags": {%- capture tagsString -%}{%- render "ls-tags", resource: article, tags: article.tags -%}{%- endcapture -%}{{ tagsString | split: "," | json }},
+            {%- if article.image -%}
+                "image": {
+                    "alt": {%- capture imageAlt -%}{%- render "ls-alt", image: article.image -%}{%- endcapture -%}{{ imageAlt | json }},
+                    "width": {{ article.image.width | json }},
+                    "height": {{ article.image.height | json }},
+                    "src": {%- capture imageUrl -%}{%- render "ls-img-url", image: article.image, img_url: "master" -%}{%- endcapture -%}{{ imageUrl | json }}
+                }
+            {%- else -%}
+                "image": null
+            {%- endif -%}
+        }
+    {%- else -%}
+        null
+    {%- endif -%}
+{%- endcapture -%}
+
+{{ json | strip_newlines | replace: "	", "" | replace: "  ", "" }}

@@ -1,0 +1,17 @@
+{%- capture seo_title -%}
+  {{ page_title }}｜
+  {%- if current_tags -%}
+    {% comment ls-rpl %}{%- assign meta_tags = current_tags | join: ', ' %}{% endcomment %}{%- capture LS_TAGS -%}{%- render "ls-tags", resource: nil, tags: current_tags -%}{%- endcapture -%}{%- assign LS_TAGS = LS_TAGS | split: "," -%}{%- assign meta_tags = LS_TAGS | join: ', ' %}{% comment /ls-rpl %}{% endcomment %} &ndash; {{ 'general.meta.tags' | t: tags: meta_tags -}}
+  {%- endif -%}
+  {%- if current_page != 1 -%}
+     {{ 'general.meta.page' | t: page: current_page }}
+  {%- endif -%}
+  {%- if template == 'password' -%}
+    {{ shop.name }}
+  {%- else -%}
+    {%- unless page_title contains shop.name -%}
+      {{ 'general.site.seo-title'|t  }}
+    {%- endunless -%}
+  {%- endif -%}
+{%- endcapture -%}
+<title>{{ seo_title }}</title>

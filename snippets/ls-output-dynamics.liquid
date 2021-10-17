@@ -1,0 +1,40 @@
+{%- comment -%}
+    Replace dynamic items
+{%- endcomment -%}
+
+{%- capture languageCode -%}{%- render "ls-language" -%}{%- endcapture -%}
+{%- capture themeKey -%}{%- render 'ls-md5-key', md5key: theme.id, keySize: 8 -%}{%- endcapture -%}
+{%- assign themeDynamicsNamespace = 'ls-d-' | append: themeKey -%}
+{%- assign themeDynamicsTranslationsNamespace = 'ls-d-' | append: themeKey | append: '-' | append: languageCode -%}
+{%- capture themeDynamics -%}{%- render "ls-theme-dynamics" -%}{%- endcapture -%}
+{%- assign themeDynamics = themeDynamics | split: "," | sort | reverse -%}
+
+{%- assign output = input -%}
+
+{%- for dynamic in themeDynamics -%}
+
+    {%- assign key = dynamic | split: "-" | last -%}
+    {%- assign item = shop.metafields[themeDynamicsNamespace][key] -%}
+
+    {%- if item.watchLiquid == false -%}
+        {%- continue -%}
+    {%- endif -%}
+
+    {%- assign value = item.value -%}
+    {%- assign before = item.before -%}
+    {%- assign after = item.after -%}
+
+    {%- assign dynamicTranslation = shop.metafields[themeDynamicsTranslationsNamespace][key] -%}
+
+    {%- capture valueWithoutSpaces -%}{{ before }}{{ value }}{{ after }}{%- endcapture -%}
+    {%- capture valueWithOneSpace -%}{{ before }} {{ value }} {{ after }}{%- endcapture -%}
+    {%- capture valueWithTwoSpaces -%}{{ before }}  {{ value }}  {{ after }}{%- endcapture -%}
+    {%- capture replaceWith -%}{{ before }}{{ dynamicTranslation }}{{ after }}{%- endcapture -%}
+
+    {%- assign output = output | replace: valueWithoutSpaces, replaceWith -%}
+    {%- assign output = output | replace: valueWithOneSpace, replaceWith -%}
+    {%- assign output = output | replace: valueWithTwoSpaces, replaceWith -%}
+
+{%- endfor -%}
+
+{{ output }}

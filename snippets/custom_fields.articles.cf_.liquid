@@ -1,0 +1,32 @@
+{% if article.metafields.custom_fields["cf_"] != blank %}
+{% assign data_attr = shop.metafields._cf_articles["cf_"].data_attr %}
+<div class="cf-widget-cf- cf-widget__columns" {{ data_attr }}>
+  <div class="cf-widget-items-wrapper">
+    {% for item in article.metafields.custom_fields["cf_"] %}
+    <div class="cf-widget-item">
+      <div class="inner">
+        
+          {% if item.image != blank %}
+          <div class="cf-widget-field cf-widget-field__image cf-widget-field--image">
+            {% render "cf-image" with image: item.image, crop: "center", size: "380x380" %}
+          </div>
+          {% endif %}
+        
+          {% if item.title != blank %}
+          <div class="cf-widget-field cf-widget-field__title cf-widget-field--text">
+            {{ item.title }}
+          </div>
+          {% endif %}
+        
+          {% if item.body != blank %}
+          <div class="cf-widget-field cf-widget-field__body cf-widget-field--html">
+            {{ item.body }}
+          </div>
+          {% endif %}
+        
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+{% endif %}

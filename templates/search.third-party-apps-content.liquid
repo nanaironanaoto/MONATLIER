@@ -1,0 +1,59 @@
+{%- layout none -%}
+
+{%- assign query = search.terms | url_decode | split: "&amp;" -%}
+
+{%- for param in query -%}
+
+    {%- assign parts = param | split: '=' -%}
+    {%- assign partsCount = parts | size -%}
+
+    {%- if partsCount < 2 -%}
+        {%- continue -%}
+    {%- endif -%}
+
+    {%- assign key = parts | first -%}
+    {%- assign value = parts | last -%}
+
+    {%- case key -%}
+        {%- when 'token' -%}
+            {%- assign token = value -%}
+        {%- when 'keys' -%}
+            {%- assign keys = value | split: "," -%}
+    {%- endcase -%}
+
+{%- endfor -%}
+
+{%- capture languageCode -%}{%- render "ls-language" -%}{%- endcapture -%}
+{%- capture md5key -%}{%- render 'ls-md5-key', md5key: token, keySize: 15 -%}{%- endcapture -%}
+{%- assign thirdPartyAppsContentNamespace = 'ls-t-' | append: md5key -%}
+
+{%- capture json -%}
+
+    {
+        "data": [
+
+            {%- capture loop -%}
+
+                {%- for key in keys -%}
+
+                    {%- assign itemKey = key | slice: 0, 30 -%}
+                    {%- assign hash = "third-party-apps:" | append: token | append: ":content:" | append: itemKey | append: ":" | append: languageCode | append: ":" | append: "value" -%}
+                    {%- capture valueRevision -%}{%- render "ls-revision", hash: hash -%}{%- endcapture -%}
+
+                    ,{
+                        "value": {{ shop.metafields[thirdPartyAppsContentNamespace][itemKey] | json }},
+                        "translated": {%- if valueRevision != blank -%}true{%- else -%}false{%- endif -%}
+                    }
+
+                {%- endfor -%}
+
+            {%- endcapture -%}
+
+            {{ loop | remove_first: "," }}
+
+        ]
+    }
+
+{%- endcapture -%}
+
+{{ json | strip_newlines | replace: "	", "" | replace: "  ", "" }}

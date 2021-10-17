@@ -1,0 +1,279 @@
+
+<div id="modal01" class="ec-modal ring-size-modawindow">
+<div class="ec-modal-wrap">
+<div class="ec-modal__content">
+<div class="ec-modal__bg ec-modal-close"></div>
+<a class="ec-modal-close"></a>
+<div class="ec-modal__inner">
+<div class="section-header english">
+  <h2 class="section-title"><ls-static-412914>FITTING</ls-static-412914></h2>
+  <span><ls-static-465512>リングサイズがご不安なお客様に</ls-static-465512></span>
+  </div>
+  <div class="ring-size-info">
+    <div class="ring-size-info-image">
+      <img src="https://cdn.shopify.com/s/files/1/0268/1202/2962/files/118387852_2x_9e55cb05-5cc1-47a3-afef-1964167a70e7.png?v=1611786122">
+    </div>
+    <div class="ring-size-info-text">
+      <h3><ls-static-598116>サイズ確認用 お試しリングゲージ</ls-static-598116></h3>
+      <span>￥0</span>
+<p><ls-static-529148>リングをご購入いただけるお客様にのみ、サイズ確認用の真鍮製のリングゲージを無料で差し上げております。</ls-static-529148><br>
+  <ls-static-368885>ご希望のお客様は、”ご購入されるリング”と一緒に、下記から”お試しリングゲージ”を３つまでサイズ選択してカートに追加してください。</ls-static-368885></p>
+<div class="ringsize-add-to-cart">
+  <span><ls-static-856949>お試しリングサイズ：</ls-static-856949></span>
+  
+
+<select class="ring-size-select">
+  <option value="select"><ls-static-557516>リングサイズを選択</ls-static-557516></option>
+{% for ring-id in all_products['sample'].variants %}
+  <option value="{{ ring-id.id }}">{{ ring-id.title }}</option>
+{% endfor%}
+  </select>
+  
+{% for ringvariant in all_products['sample'].variants %}
+<section id="{{ ringvariant.id }}">
+<div id="ProductSection-{{ ringvariant.id }}" class="product-section is-modal" data-section-id="{{ ringvariant.id }}" data-section-type="product-template">
+   <form method="post" action="/cart/add" id="AddToCartForm-{{ ringvariant.id }}" accept-charset="UTF-8" class="product-single__form" enctype="multipart/form-data">
+        <input type="hidden" name="form_type" value="product">
+        <input type="hidden" name="utf8" value="✓">
+        <select name="id" id="ProductSelect-{{ ringvariant.id }}" class="product-single__variants no-js">
+          <option selected="selected" value="{{ ringvariant.id }}">
+         </option></select>
+   <div class="payment-buttons">
+    <button type="submit" name="add" id="AddToCart-{{ ringvariant.id }}" class="btn btn--full add-to-cart btn--secondary" {% unless ringvariant.available %}disabled{% endunless%} >
+      <span id="AddToCartText-{{ ringvariant.id }}" data-default-text="カートに追加">
+        {% if ringvariant.available %}<ls-static-580916>カートに追加</ls-static-580916>{% else %}<ls-static-113800>SOLD OUT</ls-static-113800>{% endif %}
+      </span>
+     </button>
+   </div>
+  </form>
+</div>
+</section>
+{% endfor %}  
+    </div>
+  
+  <br><a href="/products/sample" class="arrow-link"><ls-static-461367>¥3,000でリングゲージ単品購入もできます</ls-static-461367></a>
+    </div>
+  </div>
+  
+  <hr>
+  
+  <h4><ls-static-913046>FLOW</ls-static-913046><span><ls-static-87870>サイズ確定までの流れ</ls-static-87870></span></h4>  
+  <div class="modal-flex-wrap size-flow is-pc">
+    
+    <div class="modal-flex-box">
+      <img src="https://cdn.shopify.com/s/files/1/0268/1202/2962/files/3038_2x_bfeb6e25-0bc4-4364-a3e0-a0e356eff189.png?v=1611796953">
+      <p><ls-static-16376>”ご購入されるリング”を「おおよそのサイズ」でご購入いただき、同時に”お試しリングゲージ”をサイズ違いで３つまでカートに追加してください。</ls-static-16376></p>
+
+    </div>
+    <div class="modal-flex-box">
+      <img src="https://cdn.shopify.com/s/files/1/0268/1202/2962/files/3039_2x_a34cab37-63e4-4c98-8227-0c232bc52ee3.png?v=1611796939">
+      <p><ls-static-26348>リングゲージが届いたら指にはめてサイズをご確認ください。</ls-static-26348><br><ls-static-436818>手の動かし方やむくみによって着用感が変わるため、1日のうちで時間を変えて何度か測ることをおすすめします。</ls-static-436818></p>
+    </div>
+    <div class="modal-flex-box">
+      <img src="https://cdn.shopify.com/s/files/1/0268/1202/2962/files/3040_2x_c964b295-f935-4105-9c28-d2e4a2021bd0.png?v=1611796944">
+      <p><ls-static-896078>リングゲージ到着から1週間以内に、メールにて確定サイズをご連絡下さい。</ls-static-896078><br><ls-static-960909>在庫がある場合は最短で発送、在庫がない場合は、約3～5週間の製作期間に入ります。 　</ls-static-960909></p>
+    </div>
+  </div>
+  
+  <div class="modal-flex-wrap size-flow is-mobile">
+    
+    <div class="modal-flex-box">
+      <img src="https://cdn.shopify.com/s/files/1/0268/1202/2962/files/3038_2x_bfeb6e25-0bc4-4364-a3e0-a0e356eff189.png?v=1611796953">
+      <p><ls-static-675749>”ご購入されるリング”を「おおよそのサイズ」でご購入いただき、同時に”お試しリングゲージ”をサイズ違いで３つまでカートに追加してください。</ls-static-675749></p>
+
+    </div>
+    <div class="modal-flex-box">
+      <img src="https://cdn.shopify.com/s/files/1/0268/1202/2962/files/3039_2x_a34cab37-63e4-4c98-8227-0c232bc52ee3.png?v=1611796939">
+      <p><ls-static-952473>リングゲージが届いたら指にはめてサイズをご確認ください。</ls-static-952473><br><ls-static-890541>手の動かし方やむくみによって着用感が変わるため、1日のうちで時間を変えて何度か測ることをおすすめします。</ls-static-890541></p>
+    </div>
+    <div class="modal-flex-box">
+      <img src="https://cdn.shopify.com/s/files/1/0268/1202/2962/files/3040_2x_c964b295-f935-4105-9c28-d2e4a2021bd0.png?v=1611796944">
+      <p><ls-static-757103>リングゲージ到着から1週間以内に、メールにて確定サイズをご連絡下さい。</ls-static-757103><br><ls-static-430227>在庫がある場合は最短で発送、在庫がない場合は、約3～5週間の製作期間に入ります。 　</ls-static-430227></p>
+    </div>
+  </div>
+  
+  
+  <hr>
+  
+  <h4><ls-static-382447>ATTENTION</ls-static-382447><span><ls-static-135108>リングサイズに関するご注意</ls-static-135108></span></h4>
+  	<ul class="ring-size-list">
+      <li><ls-static-642623>0号〜20号よりお選びください。(0.5号刻みはお作りがございません。あらかじめご了承ください。)</ls-static-642623></li>
+      <li><ls-static-722249>リングゲージは、幅細タイプ(約1.6mm)と幅広タイプ(約3.3mm)がございます。</ls-static-722249></li>
+      <li><ls-static-592608>ご購入のリングと幅や着け心地が近い方をスタッフが選んでお届けいたします。</ls-static-592608></li>
+      <li><ls-static-758217>リングはデザインにより、同じ号数でも小さく/大きく感じることがございます。リングゲージと実際のリングの着け心地がやや異なる場合は、スタッフからのアドバイスメモを同封いたします。お選びの際のご参考にどうぞ。</ls-static-758217></li>
+      <li><ls-static-566038>リングゲージは3個まで無料です。4個以上をご希望の場合、4個目から1個につき￥300+税 を商品代金に加算させていただきます。</ls-static-566038></li>
+      <li><ls-static-203696>また、追加配送をご希望の場合、別途配送料 (メール便￥82) をいただきます。</ls-static-203696></li>
+      <li><ls-static-486744>リングゲージは、商品の送付先住所にお届けいたします。別のお届け先をご希望の場合は、備考欄にてお知らせください。</ls-static-486744></li>
+      <li><ls-static-420560>リングゲージお届け後、1週間以内にご連絡が無かった場合は、ご注文をキャンセルさせて頂きます。</ls-static-420560></li>
+  	</ul>
+  
+  <hr>
+  
+  
+  <h4 class="conversion-chart"><ls-static-920412>CONVERSION CHART</ls-static-920412><span><ls-static-845171>リングサイズ対応表</ls-static-845171></span></h4>
+  	<table>
+	<tbody>
+		<tr>
+			<th><ls-static-63853>リング直径（mm）</ls-static-63853></th>
+			<td>13</td>
+			<td>13 1/3
+</td>
+			<td>13 2/3</td>
+			<td>14</td>
+			<td>14 1/3</td>
+			<td>14 2/3</td>
+			<td>15</td>
+			<td>15 1/3</td>
+			<td>15 2/3</td>
+		</tr>
+		<tr>
+			<th><ls-static-801306>リング内周（mm）</ls-static-801306></th>
+			<td>40.8</td>
+			<td>41.9</td>
+			<td>42.9</td>
+			<td>44</td>
+			<td>45</td>
+			<td>46.1</td>
+			<td>47.1</td>
+			<td>48.2</td>
+			<td>49.2</td>
+		</tr>
+		<tr>
+			<th><ls-static-744800>日本サイズ（JCS規格）</ls-static-744800></th>
+			<td>1</td>
+			<td>2</td>
+			<td>3</td>
+			<td>4</td>
+			<td>5</td>
+			<td>6</td>
+			<td>7</td>
+			<td>8</td>
+			<td>9</td>
+		</tr>
+		<tr>
+			<th><ls-static-168988>国際基準（JIS・ISO規格）</ls-static-168988></th>
+			<td>41</td>
+			<td>42</td>
+			<td>43</td>
+			<td>44</td>
+			<td>45</td>
+			<td>46</td>
+			<td>47</td>
+			<td>48</td>
+			<td>49</td>
+		</tr>
+		<tr>
+			<th><ls-static-281986>アメリカサイズ（US）</ls-static-281986></th>
+			<td>1</td>
+			<td>2</td>
+			<td>2.5</td>
+			<td>3</td>
+			<td>3.5</td>
+			<td>3.5-4</td>
+			<td>4</td>
+			<td>4.5-5</td>
+			<td>5</td>
+		</tr>
+		<tr>
+			<th><ls-static-228911>イギリスサイズ（BS規格）</ls-static-228911></th>
+			<td>C</td>
+			<td>D</td>
+			<td>E</td>
+			<td>F</td>
+			<td>G</td>
+			<td>G-H</td>
+			<td>H-I</td>
+			<td>I-J</td>
+			<td>J</td>
+		</tr>
+	</tbody>
+</table>
+  
+  
+</div><!--ec-modal__inner-->
+</div>
+  </div>
+  </div>
+<script>
+$('.ring-size-select').change(function () {
+  var val = $('.ring-size-select option:selected').val();
+  if (val == '.ring-size-select') return;
+  $('section').fadeOut(0);
+  $('section#' + val ).fadeIn(0);
+});
+  
+  
+
+//サイズ確定までの流れ：スリックスライダー
+  $(function() {
+ $('.ec-modal-open').on('click' , function() { 
+   
+  setTimeout(function(){
+ $('.size-flow.is-mobile').slick({ 
+  infinite: true,
+   
+    slidesToShow: 3, //「オプション名: 値」の形式で書く
+     responsive: [{
+         		breakpoint: 1920,
+                  settings: {
+                    slidesToShow: 3,
+                    slidesToScroll: 1,
+                }
+       			},{
+         		breakpoint: 1060,
+                  settings: {
+                    slidesToShow: 3,
+                    slidesToScroll: 1,
+                }
+       			},{
+         		breakpoint: 768,
+                  settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                }
+       			},{
+              
+                breakpoint: 480,
+                  settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                },
+              }
+              ]
+   
+  });
+    },200);
+  });
+});
+</script>
+
+
+
+
+<!--
+<div class="sample-ring">
+<div class="grid__item grid-product grid-product__has-quick-shop aos-init aos-animate" data-aos="row-of-" data-product-handle="test-ring" id="ring-size">
+  <div class="grid-product__content">
+    <a href="/products/test-ring?pr_prod_strat=collection_fallback&amp;pr_rec_pid=6157502677170&amp;pr_ref_pid=6115324592306&amp;pr_seq=uniform" class="grid-product__link">
+      <div class="grid-product__image-mask">
+        <div id="quick-ring-size" class="quick-product__btn js-modal-open-quick-modal-6157502677170 small--hide" data-product-id="6157502677170" aria-expanded="false">
+            <span class="quick-product__label" >QUICK VIEW</span>
+          </div><div class="image-wrap" style="height: 0; padding-bottom: 61.53846153846154%;">
+            <img class="grid-product__image lazyautosizes lazyloaded" data-widths="[180, 360, 540, 720, 900, 1080]" data-aspectratio="1.625" data-sizes="auto" alt="" data-srcset="//cdn.shopify.com/s/files/1/0268/1202/2962/products/sugimoto_sample_1_180x.jpg?v=1611015886 180w, //cdn.shopify.com/s/files/1/0268/1202/2962/products/sugimoto_sample_1_360x.jpg?v=1611015886 360w, //cdn.shopify.com/s/files/1/0268/1202/2962/products/sugimoto_sample_1_540x.jpg?v=1611015886 540w, //cdn.shopify.com/s/files/1/0268/1202/2962/products/sugimoto_sample_1_720x.jpg?v=1611015886 720w, //cdn.shopify.com/s/files/1/0268/1202/2962/products/sugimoto_sample_1_900x.jpg?v=1611015886 900w, //cdn.shopify.com/s/files/1/0268/1202/2962/products/sugimoto_sample_1_1080x.jpg?v=1611015886 1080w" sizes="104px" srcset="//cdn.shopify.com/s/files/1/0268/1202/2962/products/sugimoto_sample_1_180x.jpg?v=1611015886 180w, //cdn.shopify.com/s/files/1/0268/1202/2962/products/sugimoto_sample_1_360x.jpg?v=1611015886 360w, //cdn.shopify.com/s/files/1/0268/1202/2962/products/sugimoto_sample_1_540x.jpg?v=1611015886 540w, //cdn.shopify.com/s/files/1/0268/1202/2962/products/sugimoto_sample_1_720x.jpg?v=1611015886 720w, //cdn.shopify.com/s/files/1/0268/1202/2962/products/sugimoto_sample_1_900x.jpg?v=1611015886 900w, //cdn.shopify.com/s/files/1/0268/1202/2962/products/sugimoto_sample_1_1080x.jpg?v=1611015886 1080w">
+            <noscript>
+              <img class="grid-product__image lazyloaded" src="//cdn.shopify.com/s/files/1/0268/1202/2962/products/sugimoto_sample_1_400x.jpg?v=1611015886" alt="">
+            </noscript>
+          </div></div>
+    <div class="custom-field--value product-series">
+      <span class="series-name"></span> | 
+    </div>
+      <div class="grid-product__meta">
+        <div class="grid-product__title grid-product__title--body">サイズ確認用 お試しリングゲージ</div><div class="grid-product__price">¥0
+</div></div>
+    </a>
+  </div></div>
+</div>
+<script>
+
+</script>
+-->

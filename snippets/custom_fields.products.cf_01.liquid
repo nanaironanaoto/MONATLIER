@@ -1,0 +1,13 @@
+{% comment %}
+  DO NOT MODIFY THIS FILE DIRECTLY. THIS FILE WILL BE OVERWRITTEN.
+  YOU CAN MODIFY THE LIQUID CODE FOR THIS CUSTOM FIELD HERE:
+  https://customfields.bonify.io/dashboard/tatsumi-shimada.myshopify.com/products/configure/239586/edit
+{% endcomment %}
+{% if product.metafields.custom_fields["cf_01"] != blank %}
+  <div class="custom-field custom-field__cf-01 custom-field__type--image">
+    <h3 class="custom-field--title"><ls-static-254135>商品画像01</ls-static-254135></h3>
+    <div class="custom-field--value">  
+      {% include 'cf-image' with image: product.metafields.custom_fields["cf_01"] %}
+    </div>
+  </div>
+{% endif %}

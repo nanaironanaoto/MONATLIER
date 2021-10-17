@@ -1,0 +1,11 @@
+{%- capture previous_label -%}
+  {% render "svg-arrow-right-gold" %}PREV
+  <span class="icon__fallback-text">{{ 'general.pagination.previous' | t }}</span>
+{%- endcapture -%}
+{%- capture next_label -%}
+  NEXT{% render "svg-arrow-right-gold" %}
+  <span class="icon__fallback-text">{{ 'general.pagination.next' | t }}</span>
+{%- endcapture -%}
+<div class="pagination">
+  {{ paginate | default_pagination: previous: previous_label, next: next_label | replace: 'view=ajax', '' }}
+</div>

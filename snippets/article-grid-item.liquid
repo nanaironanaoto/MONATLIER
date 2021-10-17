@@ -1,0 +1,66 @@
+{%- assign fixed_aspect_ratio = false -%}
+{% unless image_size == 'natural' %}
+  {%- assign fixed_aspect_ratio = true -%}
+{% endunless %}
+
+<li class="blog-list">
+  <div class="blog-list-item">
+      {%- if article.image -%}
+        <a href="{{ article.url }}" class="article__grid-image" aria-label="{{ article.title | escape }}">
+          {%- if fixed_aspect_ratio -%}
+            <div class="image-wrap">
+              <div
+                class="grid__image-ratio grid__image-ratio--cover grid__image-ratio--{{ image_size }} lazyload"
+                data-bgset="{% render 'bgset', image: article.image %}"
+                data-sizes="auto">
+              </div>
+              <noscript>
+                <img class="lazyloaded" src="{% comment ls-rpl %}{{ article.image | img_url: '400x' }}{% endcomment %}{%- capture LS_IMG_URL -%}{%- render "ls-img-url", image: article.image, img_url: '400x' -%}{%- endcapture -%}{{ LS_IMG_URL }}{% comment /ls-rpl %}{% endcomment %}" alt="{{ article.title | escape }}">
+              </noscript>
+            </div>
+          {%- else -%}
+            <div class="image-wrap" style="height: 0; padding-bottom: {{ 100 | divided_by: article.image.aspect_ratio }}%;">
+              {% comment ls-rpl %}{%- assign img_url = article.image | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}{% endcomment %}{%- capture LS_IMG_URL -%}{%- render "ls-img-url", image: article.image, img_url: '1x1' -%}{%- endcapture -%}{%- assign img_url = LS_IMG_URL | replace: '_1x1.', '_{width}x.' -%}{% comment /ls-rpl %}{% endcomment %}
+              <img class="lazyload"
+                  data-src="{{ img_url }}"
+                  data-widths="[180, 360, 540, 720, 900, 1080]"
+                  data-aspectratio="{{ article.image.aspect_ratio }}"
+                  data-sizes="auto"
+                  alt="{% comment ls-rpl %}{{ article.image.alt | escape }}{% endcomment %}{%- capture LS_ALT -%}{%- render "ls-alt", image: article.image -%}{%- endcapture -%}{{ LS_ALT | escape }}{% comment /ls-rpl %}{% endcomment %}">
+              <noscript>
+                <img class="lazyloaded" src="{% comment ls-rpl %}{{ article.image | img_url: '400x' }}{% endcomment %}{%- capture LS_IMG_URL -%}{%- render "ls-img-url", image: article.image, img_url: '400x' -%}{%- endcapture -%}{{ LS_IMG_URL }}{% comment /ls-rpl %}{% endcomment %}" alt="{{ article.title | escape }}">
+              </noscript>
+            </div>
+          {%- endif -%}
+        </a>
+      {%- else -%}
+        <div class="article__grid-image">
+          {%- if fixed_aspect_ratio -%}
+            <div class="image-wrap">
+              <div
+                class="grid__image-ratio grid__image-ratio--cover grid__image-ratio--{{ image_size }} lazyload" style="background-image:url('https://cdn.shopify.com/s/files/1/0268/1202/2962/files/no-blog-image.png?v=1610935558')">
+              </div>
+            </div>
+          {%- endif -%}
+        </div>
+      {%- endif -%}
+   <a href="{{ article.url }}" class="blog-list-meta"> 
+      <div class="article__grid-meta">
+        {%- if section.settings.blog_show_date or article.tags.size > 0 or articles.comments_count > 0 -%}
+          <div class="article__date">
+              {{ article.published_at | time_tag: '%Y.%m.%d ' }}
+            <span class="blog-tag">
+              {%- for tag in article.tags -%}
+              {{ tag }}
+              {%- endfor -%}
+            </span>
+          </div>
+        {%- endif -%}
+
+        <span class="article__title">{{ article.title }}</span>
+      </div>
+    </a>
+   <a href="{{ article.url }}" class="blog-list-arrow">{% render 'svg-arrow-right-gold' %}
+   </a>
+  </div>
+</li>

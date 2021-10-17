@@ -1,0 +1,21 @@
+{%- comment -%}
+    Create localized page json string
+{%- endcomment -%}
+
+{%- capture json -%}
+    {%- if page -%}
+        {
+            "author": {{ page.author | json }},
+            "content": {{ page.content | json }},
+            "handle": {{ page.handle | json }},
+            "id": {{ page.id | json }},
+            "published_at": {{ page.published_at | date: "%FT%T%:z" | json }},
+            "template_suffix": {{ page.template_suffix | json }},
+            "title": {{ page.title | json }}
+        }
+    {%- else -%}
+        null
+    {%- endif -%}
+{%- endcapture -%}
+
+{{ json | strip_newlines | replace: "	", "" | replace: "  ", "" }}

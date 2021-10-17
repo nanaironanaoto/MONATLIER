@@ -1,0 +1,119 @@
+
+
+<div class="page-width page-content service-page pages" >
+
+
+      <header class="section-header">
+        <h1 class="section-header__title">{{ page.metafields.custom_fields["subtitle"] }}</h1>
+          <div class="page-subtitle">
+            {{ page.title }}
+          </div>
+        {% if page.metafields.custom_fields["page_description"] != blank %}
+        <div class="page-description">
+            {{ page.metafields.custom_fields["page_description"] }}
+        </div>
+        {% endif %}
+      </header>
+
+      <div class="">
+        {{ page.content }}
+      </div>
+</div>
+
+  {% if page.handle == "customorder" %}
+  	{% section 'contact-us' %}
+	<style>
+  	.contact-us{
+    padding: 65px 0 0;
+    margin-bottom: 0;
+	}
+    .main-content{
+    overflow: hidden; 
+    }
+	</style>
+  {% endif %}
+  
+  
+  {% if page.handle == "service" %}
+  	{% section 'service' %}
+  {% else %}
+<div class="page-width page-content service-page pages" >
+  
+  
+  {% endif %}
+  
+  
+</div>
+  {% unless page.handle == "service" %}
+  
+  <div class="service-nav-wrap">
+  <nav class="service-nav service-nav-sp">
+    <div class="service-nav-item left-nav">
+    <a href="/pages/gift" class="{% if page.handle contains "gift" %}service-current{% endif %}">{{ 'general.service.giftwrapping' | t }}<span>{{ 'general.service.giftwrapping-jp' | t }}</span></a>
+    </div>
+    {% comment %}
+    <div class="service-nav-item">        
+    <a href="/pages/customorder" class="{% if page.handle contains "custom" %}service-current{% endif %}">{{ 'general.service.customorder' | t }}<span>{{ 'general.service.customorder-jp' | t }}</span></a>
+    </div>
+    {% endcomment %}
+    <div class="service-nav-item">        
+    <a href="/pages/afterservice" class="{% if page.handle contains "after" %}service-current{% endif %}">{{ 'general.service.afterservice' | t }}<span>{{ 'general.service.afterservice-jp' | t }}</span></a>
+    </div>
+    <div class="service-nav-item">        
+    <a href="/pages/warranty" class="{% if page.handle contains "warranty" %}service-current{% endif %}">{{ 'general.service.warranty' | t }}<span>{{ 'general.service.warranty-jp' | t }}</span></a>
+    </div>
+    <div class="service-nav-item">        
+    <a href="/pages/care" class="{% if page.handle contains "care" %}service-current{% endif %}">{{ 'general.service.care' | t }}<span>{{ 'general.service.care-jp' | t }}</span></a>
+    </div>     
+  </nav>
+  {% endunless %}
+    
+    
+  	{% section 'FAQ-and-CONTACT' %}
+
+
+</div>
+</div>
+
+
+<div class="bread-pages">
+  <a href="{{ routes.root_url }}">{{ 'general.site.top' | t }}</a> <span>＞</span> <a href="/pages/service">{{ 'general.service.service' | t }}</a> <span>＞</span> {{ page.title}}
+</div>
+<script>
+$(function() {
+       $('.cleaning-slider').slick({
+  centerMode: true,
+    infinite: false,
+  slidesToShow: 1,
+   
+});
+});
+</script>
+  
+  {% if page.handle contains "gift" %}
+  	<style>
+      @media only screen and (min-width: 769px)
+{
+.service-page .page-description {
+    display: none;
+}
+}
+
+  </style>
+  {% endif %}
+
+  {% if page.handle contains "warranty" %}
+  	<style>
+      @media only screen and (max-width: 768px)
+{
+.service-page .section-header {
+    margin-bottom: 18vw;
+}
+
+.service-page h2 {
+  line-height:1.3;
+} 
+}
+
+  </style>
+  {% endif %}

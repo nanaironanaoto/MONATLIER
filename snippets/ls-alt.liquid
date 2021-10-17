@@ -1,0 +1,25 @@
+{%- comment -%}
+    Find image alt translation
+{%- endcomment -%}
+
+{%- capture defaultLanguageCode -%}{%- render "ls-default-language" -%}{%- endcapture -%}
+{%- capture languageCode -%}{%- render "ls-language" -%}{%- endcapture -%}
+
+{%- assign imageAlt = image.alt -%}
+
+{%- if languageCode != defaultLanguageCode -%}
+
+    {%- assign originalImageUrl = image | img_url: 'master' -%}
+    {%- assign protocolPart = originalImageUrl | split: '//' | first | append: '//' -%}
+    {%- assign domainPart = originalImageUrl | split: '//' | last | split: '/' | first -%}
+    {%- assign pathPart = originalImageUrl | remove_first: protocolPart | remove_first: domainPart | split: '?' | first -%}
+    {%- capture imageTranslationsNamespace -%}ls-i-{%- render 'ls-md5-key', md5key: pathPart, keySize: 8 -%}-{{ languageCode }}{%- endcapture -%}
+    {%- assign translatedImgAlt = shop.metafields[imageTranslationsNamespace].alt -%}
+
+    {%- if translatedImgAlt != blank -%}
+        {%- assign imageAlt = translatedImgAlt -%}
+    {%- endif -%}
+
+{%- endif -%}
+
+{{ imageAlt }}

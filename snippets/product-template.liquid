@@ -1,0 +1,655 @@
+{%- liquid
+  assign current_variant = product.selected_or_first_available_variant
+
+  unless thumbnail_position
+    assign thumbnail_position = 'beside'
+  endunless
+
+  unless description_style
+    assign description_style = 'full'
+  endunless
+
+  assign product_zoom_size = '1800x1800'
+  assign product_image_size = '620x'
+
+  case image_container_width
+    when 'small'
+      assign product_image_width = 'medium-up--two-fifths'
+      assign product_description_width = 'medium-up--three-fifths'
+      assign product_image_size = '480x'
+    when 'medium'
+      assign product_image_width = 'medium-up--one-half'
+      assign product_description_width = 'medium-up--one-half'
+      assign product_image_size = '620x'
+    when 'large'
+      assign product_image_width = 'medium-up--three-fifths'
+      assign product_description_width = 'medium-up--two-fifths'
+      assign product_image_size = '740x'
+  endcase
+
+  assign product_img_structure = product.featured_media | img_url: '1x1' | replace: '_1x1.', '_{width}x.'
+-%}
+
+<div id="ProductSection-{{ section_id }}"
+  class="product-section"
+  data-section-id="{{ section_id }}"
+  data-section-type="product-template"
+  data-product-handle="{{ product.handle }}"
+  data-product-title="{{ product.title | escape }}"
+  data-product-url="{{ product.url | within: collection }}"
+  data-aspect-ratio="{{ 100 | divided_by: product.featured_media.aspect_ratio }}"
+  data-img-url="{{ product_img_structure }}"
+  {% if settings.product_zoom_enable %}
+    data-image-zoom="true"
+  {% endif %}
+  {% if settings.inventory_enable %}
+    data-inventory="true"
+  {% endif %}
+  {% if settings.inventory_transfers_enable %}
+    data-incoming-inventory="true"
+  {% endif %}
+  {% unless isModal %}
+    data-enable-history-state="true"
+  {% endunless %}>
+
+  {%- render 'product-template-variables', product: product, current_variant: current_variant -%}
+
+  <div class="page-content page-content--product">
+    <div class="page-width">
+
+            <div class="bread-product mobile">
+            <a href="/">{{ 'general.site.top' | t }}</a><span>＞</span>
+            {% if product.type =="リング" %}
+            <a href="https://tatsumi-shimada.myshopify.com/collections/ring">{{ 'general.product.ring' | t }}</a><span>＞</span>
+            {% elsif product.type =="ネックレス" %}
+            <a href="https://tatsumi-shimada.myshopify.com/collections/necklace">{{ 'general.product.necklace' | t }}</a><span>＞</span>
+            {% elsif product.type =="オプション" %}
+            <a href="https://tatsumi-shimada.myshopify.com/collections/option">{{ 'general.product.option' | t }}</a><span>＞</span>
+            {% endif %}
+            {{ product.title }}
+            </div>
+
+      <div class="grid{% unless image_position == 'left' %} grid--product-images-right{% endunless %}">
+        {%- if image_position == 'left' -%}
+          <div class="grid__item {{ product_image_width }} product-single__sticky">
+            
+       	  	{% render 'orbitvu-gallery' %}
+            {% comment %}
+            {% if product.metafields.custom_fields["image-360"] != blank %}
+            <div class="custom-field product-360-image custom-field__type--html">
+      			{{ product.metafields.custom_fields["image-360"] }}
+            </div>
+            {% else %}
+            {%- render 'product-images',
+              section_id: section_id,
+              product: product,
+              isModal: isModal,
+              image_position: image_position,
+              product_zoom_size: product_zoom_size,
+              product_image_size: product_image_size,
+              thumbnail_arrows: thumbnail_arrows,
+              thumbnail_position: thumbnail_position,
+              video_looping: video_looping,
+              video_style: video_style
+            -%}
+			{% endif %}
+            {% endcomment %}
+          </div>
+        {%- endif -%}
+
+        <div class="grid__item {{ product_description_width }}">
+          
+
+          <div class="product-single__meta">
+            <div class="bread-product">
+            <a href="/">{{ 'general.site.top' | t }}</a><span>＞</span>
+            {% if product.type =="リング" %}
+            <a href="https://tatsumi-shimada.myshopify.com/collections/ring">{{ 'general.product.ring' | t }}</a><span>＞</span>
+            {% elsif product.type =="ネックレス" %}
+            <a href="https://tatsumi-shimada.myshopify.com/collections/necklace">{{ 'general.product.necklace' | t }}</a><span>＞</span>
+            {% elsif product.type =="オプション" %}
+            <a href="https://tatsumi-shimada.myshopify.com/collections/option">{{ 'general.product.option' | t }}</a><span>＞</span>
+            {% endif %}
+            {{ product.title }}
+            </div>
+            <div class="product-no">
+            {{ 'general.product.product_no' | t }}{{product.metafields.custom_fields["cf_jewelryno"]}}
+            </div>
+
+            
+            <!--
+            {%- if settings.show_breadcrumbs and isModal != true -%}
+              {%- render 'breadcrumbs' -%}
+            {%- endif -%}
+		    -->
+
+            {%- if settings.vendor_enable -%}
+              <div class="product-single__vendor">
+                {%- assign vendor_handle = product.vendor | handleize -%}
+                {%- if collections[vendor_handle] != empty -%}
+                  <a href="{{ routes.collections_url }}/{{ collections[vendor_handle].handle }}">
+                    {{ collections[vendor_handle].title }}
+                  </a>
+                {%- else -%}
+                  {{ product.vendor | link_to_vendor }}
+                {%- endif -%}
+              </div>
+            {%- endif -%}
+            
+            {% if product.metafields.custom_fields["series"] != blank %}
+    			<div class="custom-field--value product-page-series">
+      				<span class="series-name">{{ product.metafields.custom_fields.series }} {{ 'general.series.series_small' | t }} </span><span class="bar">|
+                  
+{% assign series = product.metafields.custom_fields.style %}
+                  </span>{{ product.metafields.custom_fields["style"] }}<span class="japanese">{{ collections[series].metafields.custom_fields["style-japanese"]}}</span>
+
+                  {% if product.metafields.custom_fields["cf_"] != blank %}
+                    	   <p class="product-metafields-text-explanation">{{ product.metafields.custom_fields["cf_"] }}</p>
+                 	{%- endif -%}
+
+    			</div>
+            {%- endif -%}
+            
+            {%- if isModal -%}
+              <p class="h2 product-single__title">
+                {{ product.title }}
+              </p>
+            {%- else -%}
+              <h1 class="h2 product-single__title">
+                {{ product.title }}
+              </h1>
+            {%- endif -%}
+
+            {%- if settings.enable_product_reviews and settings.reviews_layout == 'full' -%}
+              {%- liquid
+                if isModal
+                  assign review_link = product.url | within: collection | append: '#Reviews-' | append: product.id
+                else
+                  assign review_link = '#Reviews-' | append: product.id
+                endif
+              -%}
+              <a href="{{ review_link }}" class="product-single__review-link">
+                <span class="shopify-product-reviews-badge" data-id="{{ product.id }}"></span>
+              </a>
+            {%- endif -%}
+
+            {%- if settings.sku_enable -%}
+              <p id="Sku-{{ section_id }}" class="product-single__sku">
+                {%- if current_variant.sku -%}
+                  {{ current_variant.sku }}
+                {%- endif -%}
+              </p>
+            {%- endif -%}
+
+            {%- assign hide_sale_price = true -%}
+            {%- if product.compare_at_price_max > product.price -%}
+              {%- if current_variant.compare_at_price > current_variant.price -%}
+                {%- assign hide_sale_price = false -%}
+              {%- endif -%}
+              <span
+                id="PriceA11y-{{ section_id }}"
+                class="visually-hidden"
+                aria-hidden="{{ hide_sale_price }}">
+                  {{ 'products.general.regular_price' | t }}
+              </span>
+              <span class="product__price-wrap-{{ section_id }}{% if hide_sale_price %} hide{% endif %}">
+                <span id="ComparePrice-{{ section_id }}" class="product__price product__price--compare">
+                  {%- if current_variant.compare_at_price > current_variant.price -%}
+                    {{ current_variant.compare_at_price | money }}
+                  {%- endif -%}
+                </span>
+              </span>
+              <span id="ComparePriceA11y-{{ section_id }}" class="visually-hidden">{{ 'products.general.sale_price' | t }}</span>
+            {%- else -%}
+              <span id="PriceA11y-{{ section_id }}" class="visually-hidden">{{ 'products.general.regular_price' | t }}</span>
+            {%- endif -%}
+
+            <span id="ProductPrice-{{ section_id }}"
+              class="product__price{% if current_variant.compare_at_price > current_variant.price %} on-sale{% endif %}">
+              {{ current_variant.price | money }}
+            </span>
+
+            {%- if settings.product_save_amount -%}
+              {%- if settings.product_save_type == 'dollar' -%}
+                {%- capture saved_amount -%}{{ current_variant.compare_at_price | minus: current_variant.price | money }}{%- endcapture -%}
+              {%- else -%}
+                {%- capture saved_amount -%}{{ current_variant.compare_at_price | minus: current_variant.price | times: 100.0 | divided_by: current_variant.compare_at_price | round }}%{%- endcapture -%}
+              {%- endif -%}
+              <span id="SavePrice-{{ section_id }}" class="product__price-savings{% if hide_sale_price %} hide{% endif %}">
+                {%- unless hide_sale_price -%}
+                  {{ 'products.general.save_html' | t: saved_amount: saved_amount }}
+                {%- endunless -%}
+              </span>
+            {%- endif -%}
+
+            <div class="product__unit-price product__unit-price--spacing product__unit-price-wrapper--{{ section_id }}{% unless current_variant.unit_price_measurement %} hide{% endunless %}">
+              {%- capture unit_price_base_unit -%}
+                <span class="product__unit-base--{{ section_id }}">
+                  {%- if current_variant.unit_price_measurement -%}
+                    {%- if current_variant.unit_price_measurement.reference_value != 1 -%}
+                      {{ current_variant.unit_price_measurement.reference_value }}
+                    {%- endif -%}
+                    {{ current_variant.unit_price_measurement.reference_unit }}
+                  {%- endif -%}
+                </span>
+              {%- endcapture -%}
+
+              <span class="product__unit-price--{{ section_id }}">{{ current_variant.unit_price | money }}</span>/{{ unit_price_base_unit }}
+            </div>
+
+            {%- if shop.taxes_included or shop.shipping_policy.body != blank -%}
+              <div class="product__policies rte small--text-center">
+                <small>
+                  {%- if shop.taxes_included -%}
+                    {{ 'products.product.include_taxes' | t }}
+                  {%- endif -%}
+                  {%- if shop.shipping_policy.body != blank -%}
+                    {{ 'products.product.shipping_policy_html' | t: link: shop.shipping_policy.url }}
+                  {%- endif -%}
+                </small>
+              </div>
+            {%- endif -%}
+
+            {%- if settings.inventory_enable or settings.inventory_transfers_enable -%}
+              {%- assign variants_with_inventory_tracking = product.variants | where: 'inventory_management', 'shopify' -%}
+
+              <script>
+                // Store inventory quantities in JS because they're no longer
+                // available directly in JS when a variant changes.
+                // Have an object that holds all potential products so it works
+                // with quick view or with multiple featured products.
+                window.inventories = window.inventories || {};
+                window.inventories['{{section_id}}'] = {};
+                 {% for variant in variants_with_inventory_tracking %}
+                  window.inventories['{{section_id}}'][{{variant.id}}] = {
+                    'quantity': {{ variant.inventory_quantity | default: 0 }},
+                    'incoming': {{ variant.incoming | default: false | json }},
+                    'next_incoming_date': {{ variant.next_incoming_date | date: format: 'date' | json }}
+                  };
+                 {% endfor %}
+              </script>
+
+              {% comment %}
+                If loaded in quick view, it might be from a JS-loaded function
+                that loads recommended products. If that's the case, the above
+                JS will not set the variant inventory. Add it to an accessible
+                data div to read later instead.
+              {% endcomment %}
+              {%- if isModal -%}
+                <div
+                  data-section-id="{{ section_id }}"
+                  class="hide js-product-inventory-data"
+                  aria-hidden="true"
+                  >
+                  {%- for variant in variants_with_inventory_tracking -%}
+                    <div
+                      class="js-variant-inventory-data"
+                      data-id="{{ variant.id }}"
+                      data-quantity="{{ variant.inventory_quantity | default: 0 }}"
+                      data-incoming="{{ variant.incoming | default: false | json }}"
+                      data-date="{{ variant.next_incoming_date | date: format: 'date' | json }}"
+                    >
+                    </div>
+                  {%- endfor -%}
+                </div>
+              {%- endif -%}
+            {%- endif -%}
+
+
+            {%- unless isModal -%}
+              {% comment %}
+                Shopify's product form attaches a number of tracking
+                scripts that cause slower load times and false statistics.
+                Quick view modals request these on-demand.
+              {% endcomment %}
+                        
+            
+              {%- render 'product-form',
+                section_id: section_id,
+                product: product,
+                current_variant: current_variant
+              -%}
+            
+            {%- else -%}
+              <div
+                id="ProductFormHolder-{{ section_id }}"
+                class="product-form-holder"
+                data-url="{{ product.url }}"
+                data-template="{{ product.template_suffix }}"></div>
+            {%- endunless -%}
+
+            {%- unless isModal -%}
+              {%- if settings.surface_pickup_enable -%}
+                <div id="StoreAvailabilityHolder-{{ section_id }}"
+                  data-product-name="{{ product.title | escape }}"
+                  data-base-url="{{ shop.url }}{{ routes.root_url }}"
+                  ></div>
+              {%- endif -%}
+            {%- endunless -%}
+
+            {%- if settings.trust_image != blank -%}
+              <div class="aos-animate trust-image" style="max-width: {{ settings.trust_image.width }}px;">
+                <div class="image-wrap " style="height: 0; padding-bottom: {{ 100 | divided_by: settings.trust_image.aspect_ratio }}%;">
+                  {% comment ls-rpl %}{%- assign img_url = settings.trust_image | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}{% endcomment %}{%- capture LS_IMG_URL -%}{%- render "ls-img-url", image: settings.trust_image, img_url: '1x1' -%}{%- endcapture -%}{%- assign img_url = LS_IMG_URL | replace: '_1x1.', '_{width}x.' -%}{% comment /ls-rpl %}{% endcomment %}
+                  <img class="lazyload"
+                      data-src="{{ img_url }}"
+                      data-widths="[360, 540, 700, 1024]"
+                      data-aspectratio="{{ settings.trust_image.aspect_ratio }}"
+                      data-sizes="auto"
+                      alt="{% comment ls-rpl %}{{ settings.trust_image.alt }}{% endcomment %}{%- capture LS_ALT -%}{%- render "ls-alt", image: settings.trust_image -%}{%- endcapture -%}{{ LS_ALT }}{% comment /ls-rpl %}{% endcomment %}">
+                  <noscript>
+                    <img class="lazyloaded" src="{% comment ls-rpl %}{{ settings.trust_image | img_url: '540x' }}{% endcomment %}{%- capture LS_IMG_URL -%}{%- render "ls-img-url", image: settings.trust_image, img_url: '540x' -%}{%- endcapture -%}{{ LS_IMG_URL }}{% comment /ls-rpl %}{% endcomment %}" alt="{% comment ls-rpl %}{{ settings.trust_image.alt }}{% endcomment %}{%- capture LS_ALT -%}{%- render "ls-alt", image: settings.trust_image -%}{%- endcapture -%}{{ LS_ALT }}{% comment /ls-rpl %}{% endcomment %}">
+                  </noscript>
+                </div>
+              </div>
+            {%- endif -%}
+
+            
+            <div class="product-contact">
+              <a href="/pages/contact?id={{ product.handle }}" class="arrow-link">{{ 'general.product.contact' | t }}</a>
+            </div>
+            
+                <!--
+            <div class="product-info-wrapper">
+              <div class="product-info">
+                <input type="checkbox" name="accordion" class="accordion-checkbox" id="accordion-checkbox{{product.id}}">
+				<label class="accordion-trigger" for="accordion-checkbox{{product.id}}"><h2 class="h3 product-ad">DETAIL<span>商品説明</span></h2></label>
+				<ul class="accordion-target list">
+ 					<li class="list__item">{{ product.description }}</li>
+				</ul>
+				<input type="checkbox" name="accordion" class="accordion-checkbox" id="accordion-checkbox2{{product.id}}">
+				<label class="accordion-trigger" for="accordion-checkbox2{{product.id}}"><h2 class="h3 product-ad" >INFORMATION<span>詳細情報</span></h2></label>
+				<ul class="accordion-target list">
+  					<li class="list__item">
+						<table>
+                {% if product.metafields.custom_fields["size"] != blank %}
+                <tr>
+                <th>サイズ</th>
+                <td>{{ product.metafields.custom_fields["size"] }}</td>
+                </tr>
+                {% endif %}
+                {% if product.metafields.custom_fields["length"] != blank %}
+                <tr>
+                <th>全長</th>
+                <td>{{ product.metafields.custom_fields["length"] }}</td>
+                </tr>
+                {% endif %}
+                {% if product.metafields.custom_fields["metal"] != blank %}
+                <tr>
+                <th>地金</th>
+                <td>{{ product.metafields.custom_fields["metal"] }}</td>
+                </tr>
+                {% endif %}
+                {% if product.metafields.custom_fields["arm"] != blank %}
+                <tr>
+                <th>腕</th>
+                <td>{{ product.metafields.custom_fields["arm"] }}</td>
+                </tr>
+                {% endif %}
+                {% if product.metafields.custom_fields["arm"] != blank %}
+                <tr>
+                <th>トップサイズ</th>
+                <td>{{ product.metafields.custom_fields["topsize"] }}</td>
+                </tr>
+                {% endif %}
+                {% if product.metafields.custom_fields["motif"] != blank %}
+                <tr>
+                <th>モチーフのサイズ</th>
+                <td>{{ product.metafields.custom_fields["motif"] }}</td>
+                </tr>
+                {% endif %}
+                {% if product.metafields.custom_fields["chain"] != blank %}
+                <tr>
+                <th>チェーン</th>
+                <td>{{ product.metafields.custom_fields["chain"] }}</td>
+                </tr>
+                {% endif %}
+                {% if product.metafields.custom_fields["stone"] != blank %}
+                <tr>
+                <th>石</th>
+                <td>{{ product.metafields.custom_fields["stone"] }}</td>
+                </tr>
+                {% endif %}
+                {% if product.metafields.custom_fields["weight"] != blank %}
+                <tr>
+                <th>重量</th>
+                <td>{{ product.metafields.custom_fields["weight"] }}</td>
+                </tr>
+                {% endif %}
+                </table>
+					</li>
+				</ul>           
+              </div>
+              <div id = "infiniteoptions-container">
+              </div>
+            </div>--><!--product-info-wrapper-->
+              {%- render 'product-additional-content', product: product, section_id: section_id -%}
+
+          </div>
+        </div>
+
+     
+<script>
+$(function() {
+
+  var parent = $('.product-accordion');
+  parent.each(function(){
+	var self = $(this);
+	self.on('click',function(){
+		parent.not(self).next().slideUp(300);
+        parent.not(self).removeClass("active");
+		self.next().slideToggle(300);	
+        $(this).toggleClass("active");
+    });
+  });
+  
+//リングサイズモーダル移動
+   
+    var $ringsize = $('.variant-wrapper:contains("リングサイズ")');
+  $(".ring-size-modal.is-1").appendTo($ringsize) ;
+    var $ringsize = $('.variant-wrapper:contains("Ring size")');
+  $(".ring-size-modal.is-1").appendTo($ringsize) ;
+    var $ringsize = $('.variant-wrapper:contains("戒指尺寸")');
+  $(".ring-size-modal.is-1").appendTo($ringsize) ;
+    var $ringsize = $('.variant-wrapper:contains("戒指的大小")');
+  $(".ring-size-modal.is-1").appendTo($ringsize) ;  
+  
+  
+//レビューを書く移動
+    var $write = $('.stamped-review').parent().parent().parent().parent().parent();
+  $(".write-review").appendTo($write) ;
+});
+</script>
+               
+        {%- unless image_position == 'left' -%}
+          <div class="grid__item {{ product_image_width }} product-single__sticky">
+            {%- render 'product-images',
+              section_id: section_id,
+              product: product,
+              isModal: isModal,
+              image_position: image_position,
+              product_zoom_size: product_zoom_size,
+              product_image_size: product_image_size,
+              thumbnail_arrows: thumbnail_arrows,
+              thumbnail_position: thumbnail_position,
+              video_looping: video_looping,
+              video_style: video_style
+            -%}
+          </div>
+        {%- endunless -%}
+      </div>
+        
+      {%- if description_style == 'full' -%}
+        <div class="product-single__description-full rte">
+          {{ product.description }}
+        </div>
+
+        {%- render 'product-additional-content', product: product, section_id: section_id -%}
+      {%- endif -%}
+    </div>
+  </div>
+  
+
+{% unless isModal %}<!--モーダル非表示ー-->
+<!--ギャラリー-->
+{% if product.metafields.custom_fields["gallery1"] != blank or product.metafields.custom_fields["gallery4"] != blank or  product.metafields.custom_fields["gallery-youtube"] != blank %}
+        <div class="shopify-section index-section gallery-section">
+          <div class="page-width">
+            <div class="section-header">
+              <h2 class="section-header__title">{{ 'general.product.gallery' | t }}</h2>
+              <span>{{ 'general.product.gallery_text' | t }}</span>
+            </div>
+            
+    {% assign videourl = product.metafields.custom_fields["gallery-youtube"] %}
+    {% if videourl contains "youtube"%}
+    {% assign youtube = videourl | remove: "https://www.youtube.com/watch?v=" %}
+    {% elsif videourl contains "youtu.be" %}
+    {% assign youtube = videourl | remove: "https://youtu.be/" %}
+    {% endif %}
+    {% unless youtube == blank %}
+  <div class="video-wrapper">
+    <iframe src="//www.youtube.com/embed/{{ youtube }}?rel=0&showinfo=0&vq=720" width="1280" height="780" frameborder="0" allowfullscreen></iframe>
+  </div>
+    {% endunless %}
+            
+            {% if product.metafields.custom_fields["gallery1"] != blank %}
+            <div class="gallery-box">
+              <img src="{% render 'cf-image' with image: product.metafields.custom_fields["gallery1"], print: 'url' %}')">
+            </div>
+            {% endif %}
+            {% if product.metafields.custom_fields["gallery2"] != blank %}
+            <div class="gallery-box-half">
+	            <div class="gallery-box-half-child">
+                  <img src="{% render 'cf-image' with image: product.metafields.custom_fields["gallery2"], print: 'url' %}')">
+              </div>
+            	<div class="gallery-box-half-child">
+                  <img src="{% render 'cf-image' with image: product.metafields.custom_fields["gallery3"], print: 'url' %}')">
+              </div>
+            </div>
+            {% endif %}
+            {% if product.metafields.custom_fields["gallery4"] != blank %}
+            <div class="gallery-box" >
+              <img src="{% render 'cf-image' with image: product.metafields.custom_fields["gallery4"], print: 'url' %}')"></div>
+            <div class="gallery-box" >
+              <img src="{% render 'cf-image' with image: product.metafields.custom_fields["gallery5"], print: 'url' %}')"></div>
+            {% endif %}
+          </div>
+        </div>
+{% endif %}
+  
+<!--ポイント-->
+{% if product.metafields.custom_fields["feature1-1"] != blank or product.metafields.custom_fields["feature2-1"] != blank or product.metafields.custom_fields["feature3-1"] != blank %}
+<div class="index-section point-section">
+  <div class="page-width">
+            <div class="section-header">
+              <h2 class="section-header__title">{{ 'general.product.point' | t }}</h2>
+              <span>{{ 'general.product.point_text' | t }}</span>
+            </div>
+{% if product.metafields.custom_fields["feature1-1"] != blank %}
+    <div class="flex-box">
+      <div class="flex-box__item flex-content">
+         <h3>{{ product.metafields.custom_fields["feature1-1"]}}</h3>
+          <p>{{ product.metafields.custom_fields["feature1-2"]}}</p>
+  			{{ product.metafields.custom_fields["feature1-3"]}}
+      </div>
+      
+      <div class="flex-box__item flex-image"
+      	style="background-image:url('{{ product.metafields.custom_fields["feature1-4"]}}')">
+      </div>
+    </div>
+{% endif %}
+{% if product.metafields.custom_fields["feature2-1"] != blank %}
+    <div class="flex-box reverse">      
+      <div class="flex-box__item flex-content">
+         <h3>{{ product.metafields.custom_fields["feature2-1"]}}</h3>
+          <p>{{ product.metafields.custom_fields["feature2-2"]}}</p>
+  			{{ product.metafields.custom_fields["feature2-3"]}}
+      </div>
+      
+      <div class="flex-box__item flex-image"
+      	style="background-image:url('{{ product.metafields.custom_fields["feature2-4"]}}')">
+      </div>
+    </div>
+{% endif %}
+{% if product.metafields.custom_fields["feature3-1"] != blank %}
+    <div class="flex-box">
+      <div class="flex-content">
+         <h3>{{ product.metafields.custom_fields["feature3-1"]}}</h3>
+          <p>{{ product.metafields.custom_fields["feature3-2"]}}</p>
+  			{{ product.metafields.custom_fields["feature3-3"]}}
+      </div>
+    </div>
+{% endif %}
+  </div>
+</div>
+{% endif %}
+  
+<!--レビューウィジェット-->
+<div class="product-reviews">
+            <div class="section-header">
+              <h2 class="section-header__title">{{ 'general.product.review' | t }}</h2>
+              <span>{{ 'general.product.review_text' | t }}</span>
+            </div>
+  
+  
+<div id="stamped-main-widget" class="stamped-main-widget" data-widget-style="standard" data-product-id="{{ product.id }}" data-name="{{ product.title | escape }}" data-url="{{ shop.url }}{{ product.url }}" data-image-url="{% comment ls-rpl %}{{ product.featured_image | product_img_url: "large" |replace: '?', '%3F' | replace: '&','%26'}}{% endcomment %}{%- capture LS_IMG_URL -%}{%- render "ls-img-url", image: product.featured_image, img_url: "large" -%}{%- endcapture -%}{{ LS_IMG_URL | replace: '?', '%3F' | replace: '&','%26'}}{% comment /ls-rpl %}{% endcomment %}" data-description="{{ product.description | escape }}" data-product-sku="{{product.handle}}" data-product-type="{{product.type}}" data-widget-language="{{shop.locale}}">{{ product.metafields.stamped.reviews }}</div><!--End Stamped.io Auto Installation-->
+<div class="write-review-blank">
+  <span class="text-center write-review"><a class="arrow-link text-center" href="/a/review/write?product={{ product.handle }}">{{ 'general.product.review_post' | t }}</a></span>
+  </div>
+  </div>
+{% endunless %}
+  
+<script>
+  //レビュー：スリックスライダー
+$(function() {
+  setTimeout(function(){
+       $('.stamped-reviews').slick({
+  centerMode: true,
+  slidesToShow: 1,
+              responsive: [{
+         		breakpoint: 768,
+                  settings: {
+  centerMode: false,
+                }
+       			},
+              ]
+   
+});
+    },1000);
+});
+  
+
+</script>
+  
+
+  
+  
+</div>
+
+
+<!--お試しリング-->
+{% if product.type =="リング" %}
+<a class="ec-modal-open ring-size-modal is-1" href="" data-target="modal01">？</a>
+{% render "ring-size" %}
+{% endif %}
+{% if product.handle == "sample" %}
+<style>
+  .variant-wrapper--dropdown {
+    width: 100% !important;
+    margin: 0;
+    font-size: 0;
+}
+</style>
+{% endif %}
+
+
+  <style>
+    {% if request.locale.name == "English" or  request.locale.name == "繁體中文" or  request.locale.name == "简体中文"%}  
+    span.japanese{display:none;}
+    {% endif %}
+    
+  </style>
+
+
+      			{% render "adjuster" %}
+            

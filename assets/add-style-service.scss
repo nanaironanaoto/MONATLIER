@@ -1,0 +1,454 @@
+
+/*--------------------------------------------------------------------------------
+
+サービスページ
+
+--------------------------------------------------------------------------------*/
+
+/*----------------------------------------------------------------------------------------------------------------サービスページ共通--*/
+
+.service-page{
+    margin-top:90px;
+}
+.service-page .section-header{
+    margin-bottom: 117px;
+}
+
+
+.service-page h1{
+    font-size: 57px;
+    letter-spacing: 0.05em;
+}
+.service-page h2{
+    margin-top: 136px;
+    font-size: 23px;
+    letter-spacing: 0.14em;
+    font-weight: 600;
+    color:#D6B17D;
+    margin-bottom: 27px;
+}
+.service-page h2:first-child{
+    margin-top: 0;
+}
+.service-page .section-header p{
+    line-height: 2;
+}
+
+.service-page p{
+    font-size: 15px;
+    letter-spacing: 0.1em;
+    line-height: 2.08;
+}
+.service-page .page-description p{
+   line-height: 2;
+   text-align: center;
+   padding:0 36px;
+}
+
+
+.service-page .page-subtitle{
+    color:#939393;
+    letter-spacing: 0.23em;
+    margin: 6px 0 44px;
+}
+
+@media only screen and (max-width: 768px)
+{
+  
+.service-page.page-width{padding:0;}
+.service-page {
+    margin-top: 12.8vw;
+}
+.service-page .section-header {
+    margin-bottom: 26vw;
+}
+.service-page h1{
+    font-size: 12.3vw;
+    letter-spacing: 0.05em;
+    line-height: 1.026315789473684;
+}
+.service-page .page-subtitle {
+    font-size: 3.5vw;
+    letter-spacing: 0.08em;
+    margin: 1.4vw 0 8.4vw;
+    color: #939393;
+}
+.service-page h2{
+    font-size: 4.7vw;
+    letter-spacing: 0.14em;
+    margin-bottom: 6.4vw;
+    margin-top: 17vw;
+}
+.service-page p{
+    font-size: 3.7vw;
+    letter-spacing: 0.1em;
+    line-height: 1.9;
+}
+.service-page .page-description p{
+   text-align: left;
+    font-size: 3.4vw;
+    letter-spacing: 0.09em;
+    padding: 0 10vw;
+}
+}
+/*----------------------------------------------------------------------------------------------------------------狭幅コンテンツ--*/
+.narrow-content{max-width:820px; margin:0 auto;}
+.narrow-content .grid{margin-left:-58px;}
+.narrow-content .medium-up--one-half{padding-left:58px;}
+
+@media only screen and (max-width: 768px){
+.narrow-content{padding: 0 10vw;}
+}
+
+
+
+/*----------------------------------------------------------------------------------------------------------------ご自宅でのケア--*/
+.how-to-care{
+    max-width: 840px;
+    margin: 141px auto 0;
+}
+.how-to-care img {margin: -75px 0 0 60px; }
+.how-to-care h2 {margin-bottom: 52px; }
+.cleaning{max-width: 840px;margin: 138px auto 0;}
+.cleaning h2 {margin-bottom: 59px; }
+.cleaning ul{margin: 0;}
+.cleaning li{display: flex; margin-bottom:26px;}
+.cleaning img{width: 130px; height: 130px;}
+.cleaning li::marker{content:none;}
+.cleaning-info{margin-left:40px;}
+.cleaning-info span{
+    color:#B7B7B7; 
+    font-size: 22px;
+    letter-spacing: 0.13em;
+    margin-right :16px;
+    font-weight: 500;
+    font-family: "TTDrugs-R" !important;
+}
+.cleaning-info h3{
+    color:#5C5C5C;
+    font-size: 17px;
+    letter-spacing: 0.08em;
+    margin-top: -7px;
+    margin-bottom: 3px;
+}
+.cleaning-info p{
+    font-size:15px;
+    line-height: 1.7;
+}
+
+.care-info{max-width: 840px; margin: 129px auto 100px; padding: 75px 80px 60px; background: #F8F6F4;}
+.care-info h3{
+  	margin-top: 57px;
+    font-size:17px;
+    letter-spacing: 0.14em;
+    color:#D6B17D;
+    letter-spacing: 2px;
+    margin-bottom: 12px;
+}
+.care-info h3:first-child{
+    margin-top:0;
+}
+.care-info p{
+    font-size:14px;
+    letter-spacing: 0.08em;
+    line-height: 1.928571428571429;
+}
+@media only screen and (max-width: 768px)
+{
+.how-to-care{
+    margin: 27vw auto 0;
+    padding:0 10vw;
+}
+.how-to-care h2 {margin-bottom: 7.8vw;}
+.how-to-care img {margin:0 0 7.2vw; width:100%;}
+.cleaning.mobile{
+    margin: 29.2vw auto 0;
+}
+.cleaning h2 {
+    margin: 0 auto;
+    margin-bottom: 4.2vw;
+    padding: 0;
+    width: 69vw;
+    font-size: 4.4vw;
+}
+.cleaning .slick-list.draggable{padding:0 10vw !important;}
+.cleaning .slick-arrow{
+    top:36%; 
+    width: 8vw; 
+    height: 8vw;
+}
+.cleaning .slick-arrow:before{
+    background-size: 2vw;
+    width: 8.5vw; 
+    height: 8vw;
+}
+.cleaning .slick-next{right: 6.1vw;}
+.cleaning .slick-prev{left: 6.1vw;}
+.slick-prev.slick-arrow:before{
+    width: 7vw;
+}
+.cleaning li{display: block; margin: 5.5vw;}
+.cleaning img{
+    width: 100%; 
+    height: auto; 
+    margin-bottom: 6.8vw;
+}
+.cleaning-info span{
+    font-size: 5.5vw;
+    display: inline-block;
+    position: relative;
+    top: 0.4vw;
+}
+.cleaning-info{margin-left:0;}
+.cleaning-info h3{
+    font-size: 4.5vw;
+    vertical-align: top;
+    display: inline-block;
+    margin-bottom: 2.2vw;
+}
+.cleaning-info p{
+    font-size: 3.1vw;
+    line-height: 1.9;
+}
+
+.care-info{ 
+    padding: 20.5vw 10vw 21vw;
+    margin: 22vw auto 100px;
+}
+.care-info h3 {
+    margin-top: 15vw;
+    font-size: 4.4vw;
+    letter-spacing: 0.14em;
+    color: #D6B17D;
+    letter-spacing: 0.14em;
+    margin-bottom: 3.3vw;
+}
+.care-info p {
+    font-size: 3.7vw;
+    letter-spacing: 0.05em;
+    line-height: 1.94;
+}
+
+
+}
+
+/*----------------------------------------------------------------------------------------------------------------ギフトラッピング--*/
+.gift-wrapping h3{
+    color:#B7B7B7;
+    font-size:19px;
+    letter-spacing: 0.14em;
+    margin:14px 0 6px;
+}
+.gift-wrapping h3 span{
+    margin-left:10px;
+    font-weight: 500;
+    font-size:13px;
+    letter-spacing: 0.06em;
+    color:#4B4B4B;
+}
+.gift-wrapping .grid{
+    margin-top:46px;
+}
+
+.gift-wrapping .text-small{
+    font-size:13px;
+}
+
+.gift-wrapping .grid .text-small{
+    font-size:14px;
+    letter-spacing: 0.1em;
+    
+}
+@media only screen and (max-width: 768px)
+{
+.gift-wrapping .text-small{
+    font-size: 2.9vw;
+    line-height: 1.8;
+    display: inline-block;
+    margin-top: 1.4vw;
+}
+.gift-wrapping h3{
+    font-size: 3.9vw;
+    margin: 3vw 0 0;
+}
+.gift-wrapping h3 span{
+    margin-left: 3vw;
+    font-size: 3.2vw;
+}
+.gift-wrapping .grid {
+    margin-top: 10vw;
+    margin-left: 0;
+}
+.gift-wrapping  .grid__item{
+    margin-bottom: 10vw;
+    padding-left: 0;
+}
+.gift-wrapping .grid .text-small {
+    font-size: 3.5vw;
+    line-height: 1.61;
+    display: inline-block;
+}
+}
+
+/*----------------------------------------------------------------------------------------------------------------カスタムオーダー--*/
+.custom-order.grid{
+    margin-left:-80px;
+    margin-bottom:120px;
+}
+.custom-order.grid img{ width: 100%;}
+.custom-order .medium-up--one-third{
+    padding-left:80px;
+}
+.custom-order .flex{
+    display: flex;
+    margin-top:24px;
+}
+.custom-order .title-num{
+    font-size: 58px;
+    line-height: 0.9;
+    color:#D6B17D;
+	  font-family: "TTDrugs-I" !important;
+}
+
+.custom-order .title-text h2{
+    font-size: 21px;
+    letter-spacing: 0.14em;
+    margin-left: 26px;
+    line-height: 1.380952380952381;
+    display: inline-block;
+    width: 100%;
+    margin-bottom: 4px;
+}
+.custom-order .title-text span{
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    margin-left: 26px;
+    color:#D6B17D;
+    display: inline-block;
+    width: 100%;
+}
+.custom-order .custom-info{
+    display: block;
+    line-height: 1.846153846153846;
+    margin-top: 18px;
+    margin-bottom:20px;
+    font-size:13px;
+    width: 100%;
+}
+.custom-order .see-more {
+  	font-size: 20px;
+  	width: 160px;
+	padding-bottom: 7px;
+}
+
+@media only screen and (max-width: 768px)
+{
+.custom-order.grid:first-child {
+    margin-top: -10vw;
+}
+.custom-order.grid {
+    margin-bottom:0;
+    margin-left: 0;
+    padding: 0 10vw;
+}
+.custom-order .flex{
+    display: flex;
+    margin-top: 5vw;
+}
+.custom-order .grid__item {
+    margin-bottom: 21vw;
+    padding-left:0;
+}
+.custom-order .title-num{
+    font-size: 15vw;
+}
+
+.custom-order .title-text h2{
+    font-size: 5.5vw;
+    margin-left: 7vw;
+    margin-bottom: 1vw;
+}
+.custom-order .title-text span{
+    font-size: 3.2vw;
+    margin-left: 7vw;
+}
+.custom-order .custom-info{
+    margin-top: 3.1vw;
+    margin-bottom: 7vw;
+    font-size: 3.6vw;
+}
+.custom-order .see-more {
+  	font-size: 6.4vw;
+  	width: 54vw;
+	padding-bottom: 2.8vw;
+}
+}
+
+/*----------------------------------------------------------------------------------------------------------------アフターサービス--*/
+.after-service{
+    margin-top: -25px;
+}
+.after-service .section-header{
+    margin-bottom:94px;
+}
+.after-service h2{
+    margin-bottom: 13px;
+    margin-top: 92px;
+}
+
+.after-service .arrow-link{
+    font-size: 14px;
+}
+.after-service .arrow-link:after{
+    font-size: 14px;
+    background-size: 9px;
+    content: "";
+    width: 9px;
+    top: 2px;
+    height: 16px;
+}
+
+@media only screen and (max-width: 768px){
+.after-service{
+    margin-bottom: 36vw;
+}
+.after-service h2 {
+    margin-bottom: 3vw;
+    margin-top: 15vw;
+}
+}
+/*----------------------------------------------------------------------------------------------------------------製品保証--*/
+
+
+
+.warranty-img {
+    float: right;
+}
+.warranty-img{
+    width: 265px;
+    margin-top: -51px;
+    margin-left: 44px;
+}
+p.warranty-top{
+    font-size:13px;
+    letter-spacing: 0.08em;
+    line-height: 1.615384615384615;
+    margin-top: -8px;
+}
+p.warranty-bottom{
+    letter-spacing: 0.06em;
+}
+@media only screen and (max-width: 768px)
+{
+  .warranty img{
+    width: 100%;
+    margin-top: 0;
+    margin-left: 0;
+    margin-bottom: 40px;
+}  
+p.warranty-top{
+    font-size: 2.7vw;
+    letter-spacing: 0.06em;
+    margin-top: 1vw;
+}
+}

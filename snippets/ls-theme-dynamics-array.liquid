@@ -1,0 +1,36 @@
+{%- comment -%}
+    Render theme dynamics array
+{%- endcomment -%}
+
+{%- capture languageCode -%}{%- render "ls-language" -%}{%- endcapture -%}
+{%- capture themeKey -%}{%- render 'ls-md5-key', md5key: theme.id, keySize: 8 -%}{%- endcapture -%}
+{%- assign themeDynamicsNamespace = 'ls-d-' | append: themeKey -%}
+{%- assign themeDynamicsTranslationsNamespace = 'ls-d-' | append: themeKey | append: '-' | append: languageCode -%}
+{%- capture themeDynamics -%}{%- render "ls-theme-dynamics" -%}{%- endcapture -%}
+{%- assign themeDynamics = themeDynamics | split: "," | sort | reverse -%}
+
+{%- capture themeDynamicsArray -%}
+[
+    {%- capture loop -%}
+
+        {%- for dynamic in themeDynamics -%}
+
+            {%- assign key = dynamic | split: "-" | last -%}
+            {%- assign dynamicItem = shop.metafields[themeDynamicsNamespace][key] -%}
+
+            {%- if dynamicItem.watchJs == false -%}
+                {%- continue -%}
+            {%- endif -%}
+
+            {%- assign dynamicTranslation = shop.metafields[themeDynamicsTranslationsNamespace][key] -%}
+
+            ,{"before":{{ dynamicItem.before | json }},"search":{{ dynamicItem.value | json }},"replace":{{ dynamicTranslation | json }},"after":{{ dynamicItem.after | json }}}
+        {%- endfor -%}
+
+    {%- endcapture -%}
+
+    {{ loop | remove_first: "," }}
+]
+{%- endcapture -%}
+
+{{ themeDynamicsArray | strip_newlines }}

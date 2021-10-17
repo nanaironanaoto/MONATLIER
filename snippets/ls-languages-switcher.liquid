@@ -1,0 +1,10 @@
+{%- comment -%}
+    Include languages switcher
+{%- endcomment -%}
+
+{%- assign languagesSwitchersIds = shop.metafields.ls-settings.languagesSwitchers | map: 'id' -%}
+
+{%- if id != blank and languagesSwitchersIds contains id -%}
+    <!-- /snippets/ls-languages-switcher.liquid -->
+    <div class="ls-sw-languages ls-sw-languages-{{ id }}" translate="no"></div>
+{%- endif -%}

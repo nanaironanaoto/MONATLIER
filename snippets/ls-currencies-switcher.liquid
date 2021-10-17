@@ -1,0 +1,10 @@
+{%- comment -%}
+    Include currencies switcher
+{%- endcomment -%}
+
+{%- assign currenciesSwitchersIds = shop.metafields.ls-settings.currenciesSwitchers | map: 'id' -%}
+
+{%- if id != blank and currenciesSwitchersIds contains id -%}
+    <!-- /snippets/ls-currencies-switcher.liquid -->
+    <div class="ls-sw-currencies ls-sw-currencies-{{ id }}" translate="no"></div>
+{%- endif -%}

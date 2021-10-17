@@ -1,0 +1,96 @@
+
+<section class="service">
+{% if template == "index"  %}
+  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+<div class="lottie-player-torigger"></div>
+  <lottie-player 
+class="lottie-02" src="https://assets3.lottiefiles.com/packages/lf20_trgkyfrc.json" background="transparent" speed="1" style="width: 1920; height: 1080px;" autoplay="true" ></lottie-player>
+
+{% endif %}
+<div class="page-width sp-full">
+  
+{% unless page.handle == "service"  %}
+  <div class="section-header">
+      <h2 class="section-header__title">{{ 'general.service.service' | t }}</h2>
+    <span>{{ 'general.service.service-text_html' | t }}</span>
+  </div>
+{% endunless %}  
+  <div class="grid grid--uniform">
+    <div class="grid__item medium-up--one-half small--one-half">
+      <a href="/pages/gift">
+        <div class="service-back small--hide"  style="background-image:url('https://cdn.shopify.com/s/files/1/0268/1202/2962/files/service01_pc.jpg')"></div>
+        <div class="service-back medium--hide"  style="background-image:url('https://cdn.shopify.com/s/files/1/0268/1202/2962/files/service01_sp.jpg')"></div>
+        <div class="service-info">
+        <h3>{{ 'general.service.giftwrapping' | t }}</h3>
+        <span>{{ 'general.service.giftwrapping-text' | t }}</span>
+        </div>
+      </a>
+    </div>
+{% comment %}
+    <div class="grid__item medium-up--one-third small--one-half">
+      <a href="/pages/customorder">
+        <div class="service-back small--hide" style="background-image:url('https://cdn.shopify.com/s/files/1/0268/1202/2962/files/service-2.jpg')"></div>
+        <div class="service-back medium--hide"  style="background-image:url('https://cdn.shopify.com/s/files/1/0268/1202/2962/files/service-sp-2.jpg')"></div>
+        <div class="service-info">
+        <h3>{{ 'general.service.customorder' | t }}</h3>
+        <span class="pc">{{ 'general.service.customorder-text' | t }}</span>
+        <span class="mobile">{{ 'general.service.customorder-text-sp' | t }}</span>
+        </div>
+      </a>
+    </div>
+{% endcomment %}
+    <div class="grid__item medium-up--one-half small--one-half">
+      <a href="/pages/afterservice">
+        <div class="service-back small--hide" style="background-image:url('https://cdn.shopify.com/s/files/1/0268/1202/2962/files/service02_pc.jpg')"></div>
+        <div class="service-back medium--hide"  style="background-image:url('https://cdn.shopify.com/s/files/1/0268/1202/2962/files/service-sp-3.png?v=1618272005')"></div>
+        <div class="service-info">
+        <h3>{{ 'general.service.afterservice' | t }}</h3>
+        <span class="pc">{{ 'general.service.afterservice-text' | t }}</span>
+        <span class="mobile">{{ 'general.service.afterservice-text-sp' | t }}</span>
+        </div>
+      </a>
+    </div>
+  </div>
+  {% if page.handle == "service" %}
+      <div class="grid grid--uniform">
+    <div class="grid__item medium-up--one-half small--one-half">
+      <a href="/pages/warranty">
+        <div class="service-back small--hide"  style="background-image:url('https://cdn.shopify.com/s/files/1/0268/1202/2962/files/service-4.jpg')"></div>
+        <div class="service-back medium--hide"  style="background-image:url('https://cdn.shopify.com/s/files/1/0268/1202/2962/files/service-sp-4.jpg')"></div>
+        <div class="service-info">
+        <h3>{{ 'general.service.warranty' | t }}</h3>
+        <span>{{ 'general.service.warranty-text' | t }}</span>
+        </div>
+      </a>
+    </div>
+    <div class="grid__item medium-up--one-half small--one-half">
+      <a href="/pages/care">
+        <div class="service-back small--hide" style="background-image:url('https://cdn.shopify.com/s/files/1/0268/1202/2962/files/service-5.jpg')"></div>
+        <div class="service-back medium--hide"  style="background-image:url('https://cdn.shopify.com/s/files/1/0268/1202/2962/files/service-sp-5.jpg')"></div>
+        <div class="service-info">
+        <h3>{{ 'general.service.care' | t }}</h3>
+        <span class="pc">{{ 'general.service.care-text' | t }}</span>
+        <span class="mobile">{{ 'general.service.care-text-sp' | t }}</span>
+        </div>
+      </a>
+    </div>
+  </div>
+  {% endif %}
+  {% if template == 'index' or template == 'collection' or template == 'product' %}
+  <div class="rte"><a class="see-more" href="/pages/service">{{ 'general.site.see_more' | t }}</a></div>
+  {% endif %}
+</div>
+</section>
+<!-- Welcome section ends -->
+{% schema %}
+{
+"name": "SERVICE",
+"settings": [],
+"presets": [
+{
+"name": "SERVICE",
+"category": "ADVANCED LAYOUT"
+}
+]
+}
+{% endschema %}

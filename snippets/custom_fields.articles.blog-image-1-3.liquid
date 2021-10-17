@@ -1,0 +1,8 @@
+{% if article.metafields.custom_fields["blog-image-1-3"] != blank %}
+  <div class="custom-field custom-field__blog-image-1-3 custom-field__type--image">
+    <h3 class="custom-field--title">画像3</h3>
+    <div class="custom-field--value">  
+      {% render 'cf-image' with image: article.metafields.custom_fields["blog-image-1-3"], print: 'url' %}
+    </div>
+  </div>
+{% endif %}

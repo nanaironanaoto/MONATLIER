@@ -1,0 +1,71 @@
+{%- comment -%}
+    Replace static items
+{%- endcomment -%}
+
+{%- assign output = input -%}
+{%- assign statics = input | split: '<ls-static-' -%}
+
+{%- capture languageCode -%}{%- render "ls-language" -%}{%- endcapture -%}
+{%- capture defaultLanguageCode -%}{%- render "ls-default-language" -%}{%- endcapture -%}
+{%- if languageCode == defaultLanguageCode -%}
+    {%- assign languageCode = 'default' -%}
+{%- endif -%}
+
+{%- capture themeKey -%}{%- render 'ls-md5-key', md5key: theme.id, keySize: 8 -%}{%- endcapture -%}
+{%- assign themeStaticsTranslationsNamespace = 'ls-c-' | append: themeKey | append: '-' | append: languageCode -%}
+
+{%- for static in statics -%}
+    
+    {%- unless static contains '</ls-static-' -%}
+        {%- continue -%}
+    {%- endunless -%}
+
+    {%- assign staticString = static | split: '</ls-static-' | first -%}
+    {%- assign staticId = staticString | split: '>' | first -%}
+    {%- assign staticOpenTag = '<ls-static-' | append: staticId | append: '>' -%}
+    {%- assign staticCloseTag = '</ls-static-' | append: staticId | append: '>' -%}
+
+    {%- assign staticSplit = staticId | append: '>' -%}
+    {%- assign staticContent = staticString | split: staticSplit | last -%}
+
+    {%- capture md5Key -%}{%- render 'ls-md5-key', md5key: staticId, keySize: 30 -%}{%- endcapture -%}
+    {%- assign staticReplacementSrc = staticOpenTag | append: staticContent | append: staticCloseTag -%}
+    {%- assign staticReplacementTranslation = shop.metafields[themeStaticsTranslationsNamespace][md5Key] -%}
+
+    {%- if staticReplacementTranslation == blank  -%}
+        {%- assign output = output | replace: staticReplacementSrc, staticContent -%}
+    {%- else -%}
+        {%- assign output = output | replace: staticReplacementSrc, staticReplacementTranslation -%}
+    {%- endif -%}
+
+{%- endfor -%}
+
+{%- assign statics = output | split: '&lt;ls-static-' -%}
+
+{%- for static in statics -%}
+
+    {%- unless static contains '&lt;/ls-static-' -%}
+        {%- continue -%}
+    {%- endunless -%}
+
+    {%- assign staticString = static | split: '&lt;/ls-static-' | first -%}
+    {%- assign staticId = staticString | split: '&gt;' | first -%}
+    {%- assign staticOpenTag = '&lt;ls-static-' | append: staticId | append: '&gt;' -%}
+    {%- assign staticCloseTag = '&lt;/ls-static-' | append: staticId | append: '&gt;' -%}
+
+    {%- assign staticSplit = staticId | append: '&gt;' -%}
+    {%- assign staticContent = staticString | split: staticSplit | last -%}
+
+    {%- capture md5Key -%}{%- render 'ls-md5-key', md5key: staticId, keySize: 30 -%}{%- endcapture -%}
+    {%- assign staticReplacementSrc = staticOpenTag | append: staticContent | append: staticCloseTag -%}
+    {%- assign staticReplacementTranslation = shop.metafields[themeStaticsTranslationsNamespace][md5Key] -%}
+
+    {%- if staticReplacementTranslation == blank  -%}
+        {%- assign output = output | replace: staticReplacementSrc, staticContent -%}
+    {%- else -%}
+        {%- assign output = output | replace: staticReplacementSrc, staticReplacementTranslation -%}
+    {%- endif -%}
+
+{%- endfor -%}
+
+{{ output }}

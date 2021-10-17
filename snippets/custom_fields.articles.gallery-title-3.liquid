@@ -1,0 +1,8 @@
+{% if article.metafields.custom_fields["gallery-title-3"] != blank %}
+  <div class="custom-field custom-field__gallery-title-3 custom-field__type--text">
+    <h3 class="custom-field--title">ギャラリータイトル</h3>
+    <div class="custom-field--value">
+      {{ article.metafields.custom_fields["gallery-title-3"] }}
+    </div>
+  </div>
+{% endif %}

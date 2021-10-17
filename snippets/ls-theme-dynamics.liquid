@@ -1,0 +1,53 @@
+{%- comment -%}
+    Find theme dynamics
+{%- endcomment -%}
+
+{%- capture languageCode -%}{%- render "ls-language" -%}{%- endcapture -%}
+{%- capture themeKey -%}{%- render 'ls-md5-key', md5key: theme.id, keySize: 8 -%}{%- endcapture -%}
+{%- assign themeDynamicsNamespace = 'ls-d-' | append: themeKey -%}
+{%- assign themeDynamicsTranslationsNamespace = 'ls-d-' | append: themeKey | append: '-' | append: languageCode -%}
+{%- assign themeDynamics = '' -%}
+{%- assign currentTemplateName = template.name -%}
+{%- if currentTemplateName == blank and request.page_type == "policy" -%}
+    {%- assign currentTemplateName = "page" -%}
+{%- endif -%}
+
+{%- for dynamic in shop.metafields[themeDynamicsNamespace] -%}
+
+    {%- assign key = dynamic | first -%}
+    {%- assign item = dynamic | last -%}
+    {%- assign value = item.value -%}
+    {%- assign before = item.before -%}
+    {%- assign after = item.after -%}
+    {%- assign templates = item.templates -%}
+
+    {%- if value == blank or before == blank or after == blank -%}
+        {%- continue -%}
+    {%- endif -%}
+
+    {%- unless templates == nil or templates contains currentTemplateName -%}
+        {%- continue -%}
+    {%- endunless -%}
+
+    {%- assign dynamicTranslation = shop.metafields[themeDynamicsTranslationsNamespace][key] -%}
+    {%- if dynamicTranslation == blank -%}
+        {%- continue -%}
+    {%- endif -%}
+
+    {%- unless themeDynamics == blank -%}
+        {%- assign themeDynamics = themeDynamics | append: ',' -%}
+    {%- endunless -%}
+
+    {%- assign valueLength = value | size -%}
+
+    {%- assign valueLengthCharacters = valueLength | downcase | size -%}
+    {%- assign leadingZeros = 10 | minus: valueLengthCharacters -%}
+    {%- for i in (0..leadingZeros) -%}
+        {%- assign valueLength = valueLength | prepend: '0' -%}
+    {%- endfor -%}
+
+    {%- assign themeDynamics = themeDynamics | append: valueLength | append: "-" | append: key -%}
+
+{%- endfor -%}
+
+{{ themeDynamics }}

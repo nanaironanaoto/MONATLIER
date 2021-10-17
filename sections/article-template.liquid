@@ -1,0 +1,514 @@
+{%- assign number_of_comments = article.comments_count -%}
+
+{%- if comment -%}
+  {%- assign number_of_comments = article.comments_count | plus: 1 -%}
+{%- endif -%}
+
+
+      <div class="page-width narrow">
+         <div class="blog-header">
+            {%- if section.settings.blog_show_date or article.tags.size > 0 or articles.comments_count > 0 -%}
+              <div class="article__date">
+                {%- if section.settings.blog_show_comments and article.comments_count > 0 -%}
+                  <a href="#comments">
+                    {{ 'blogs.comments.with_count' | t: count: number_of_comments }}
+                  </a> &middot;
+                {%- endif -%}
+                {%- if section.settings.blog_show_tags and article.tags.size > 0 -%}
+                {%- if section.settings.blog_show_date -%}
+                  {{ article.published_at | time_tag: '%Y.%m.%d ' }}
+                {%- endif -%}
+                  {%- for tag in article.tags -%}
+                     <a href="{{ blog.url }}/tagged/{{ tag | handle }}">{{ tag }}</a>
+                  {%- endfor -%}
+                {%- endif -%}
+              </div>
+            {%- endif -%}
+
+
+            {%- if section.settings.blog_show_author -%}
+              <div class="article__author">{{ article.author }}</div>
+            {%- endif -%}
+            <h1 class="section-header__title">
+              {{ article.title }}
+            </h1>
+          </div>
+
+
+{%- if section.settings.image_hero and article.image -%}
+  <div class="collection-hero">
+    {% comment ls-rpl %}{%- assign img_url = article.image | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}{% endcomment %}{%- capture LS_IMG_URL -%}{%- render "ls-img-url", image: article.image, img_url: '1x1' -%}{%- endcapture -%}{%- assign img_url = LS_IMG_URL | replace: '_1x1.', '_{width}x.' -%}{% comment /ls-rpl %}{% endcomment %}
+
+    <img class="collection-hero__image image-fit lazyload"
+      src=""
+      data-src="{{ img_url }}"
+      data-aspectratio="{{ article.image.aspect_ratio }}"
+      data-sizes="auto"
+      data-parent-fit="cover"
+      alt="{% comment ls-rpl %}{{ article.image.alt | escape }}{% endcomment %}{%- capture LS_ALT -%}{%- render "ls-alt", image: article.image -%}{%- endcapture -%}{{ LS_ALT | escape }}{% comment /ls-rpl %}{% endcomment %}">
+    <noscript>
+      <img class="collection-hero__image image-fit"
+        src="{% comment ls-rpl %}{{ article.image | img_url: '1400x' }}{% endcomment %}{%- capture LS_IMG_URL -%}{%- render "ls-img-url", image: article.image, img_url: '1400x' -%}{%- endcapture -%}{{ LS_IMG_URL }}{% comment /ls-rpl %}{% endcomment %}"
+        alt="{% comment ls-rpl %}{{ article.image.alt | escape }}{% endcomment %}{%- capture LS_ALT -%}{%- render "ls-alt", image: article.image -%}{%- endcapture -%}{{ LS_ALT | escape }}{% comment /ls-rpl %}{% endcomment %}">
+    </noscript>
+    </div>
+{%- endif -%}
+
+  </div>
+<div class="page-width narrow page-content">
+  <article class="{% comment %}widescreen--six-tenths widescreen--push-two-tenths medium-up--two-thirds medium-up--push-one-sixth{% endcomment %} article">
+    <div class="article__body">
+      {% if article.metafields.custom_fields["blog-lead"] != blank %}
+      <div class="blog-lead">{{article.metafields.custom_fields["blog-lead"]}}</div>
+      {% endif%}
+      <div id="htag-list"></div>
+      
+<!--見出し    1-->  
+      {% if article.metafields.custom_fields["blog-main-1-1"] != blank %}
+      <h2>{{article.metafields.custom_fields["blog-main-1-1"]}}</h2>
+      {% endif%}
+<!--本文      1-->  
+      {% if article.metafields.custom_fields["blog-main-1-2"] != blank %}
+      <div class="blog-main-text">{{article.metafields.custom_fields["blog-main-1-2"]}}</div>
+      {% endif%}
+<!--画像      1-->  
+      {% if article.metafields.custom_fields["blog-image-1-1"] != blank %}
+      <div class="blog-images is-full">
+          <img src="{{article.metafields.custom_fields["blog-image-1-1"]}}" alt="{{article.metafields.custom_fields["alt-1-1"]}}">
+          <span class="blog-image-caption">{{article.metafields.custom_fields["captio1-1"]}}</span>
+        </div>
+      {% endif%}
+      {% if article.metafields.custom_fields["blog-image-1-2"] != blank %}
+      <div class="blog-images-half-wrap">
+        <div class="blog-images is-half" >
+          <img src="{{article.metafields.custom_fields["blog-image-1-2"]}}" alt="{{article.metafields.custom_fields["alt-1-2"]}}">
+          <span class="blog-image-caption">{{article.metafields.custom_fields["caption1-2"]}}</span>
+        </div>
+        <div class="blog-images is-half" >
+          <img src="{{article.metafields.custom_fields["blog-image-1-3"]}}" alt="{{article.metafields.custom_fields["alt1-3"]}}">
+          <span class="blog-image-caption">{{article.metafields.custom_fields["caption1-3"]}}</span>
+        </div>
+      </div>
+      {% endif%}
+      {% if article.metafields.custom_fields["blog-image-1-1"] != blank or article.metafields.custom_fields["blog-image-1-2"] != blank %}
+      <div class="blog-image-margin"></div>
+      {% endif %}
+<!--ギャラリー1-->
+      {% if article.metafields.custom_fields["gallery-title-1"] != blank %}
+      <h2 class="blog-collection-title">{{article.metafields.custom_fields["gallery-title-1"]}}</h2>
+      {% endif%}
+      {% if article.metafields.custom_fields["gallery-1"] != blank %}
+      {% assign collection = article.metafields.custom_fields["gallery-1"] %}
+      <ul class="grid blog-collection grid--collection">
+      {% for product in collections[collection].products limit:6 %}
+      <li>{% include 'product-grid-item' %}</li>
+      {% endfor %}
+      </ul>
+      {% endif %}
+      
+
+<!--見出し    2-->  
+      {% if article.metafields.custom_fields["blog-main-2-1"] != blank %}
+      <h2>{{article.metafields.custom_fields["blog-main-2-1"]}}</h2>
+      {% endif%}
+<!--本文      2-->  
+      {% if article.metafields.custom_fields["blog-main-2-2"] != blank %}
+      <div class="blog-main-text">{{article.metafields.custom_fields["blog-main-2-2"]}}</div>
+      {% endif%}
+<!--画像      2-->  
+      {% if article.metafields.custom_fields["blog-image-2-1"] != blank %}
+      <div class="blog-images is-full">
+          <img src="{{article.metafields.custom_fields["blog-image-2-1"]}}" alt="{{article.metafields.custom_fields["alt2-1"]}}">
+          <span class="blog-image-caption">{{article.metafields.custom_fields["caption2-1"]}}</span>
+        </div>
+      {% endif%}
+      {% if article.metafields.custom_fields["blog-image-2-2"] != blank %}
+      <div class="blog-images-half-wrap">
+        <div class="blog-images is-half" >
+          <img src="{{article.metafields.custom_fields["blog-image-2-2"]}}" alt="{{article.metafields.custom_fields["alt2-2"]}}">
+          <span class="blog-image-caption">{{article.metafields.custom_fields["caption2-2"]}}</span>
+        </div>
+        <div class="blog-images is-half" >
+          <img src="{{article.metafields.custom_fields["blog-image-2-3"]}}" alt="{{article.metafields.custom_fields["alt2-3"]}}">
+          <span class="blog-image-caption">{{article.metafields.custom_fields["caption2-3"]}}</span>
+        </div>
+      </div>
+      {% endif%}
+      {% if article.metafields.custom_fields["blog-image-2-1"] != blank or article.metafields.custom_fields["blog-image-2-2"] != blank %}
+      <div class="blog-image-margin"></div>
+      {% endif %}
+<!--ギャラリー2-->
+      {% if article.metafields.custom_fields["gallery-title-2"] != blank %}
+      <h2 class="blog-collection-title">{{article.metafields.custom_fields["gallery-title-2"]}}</h2>
+      {% endif%}
+	{% if article.metafields.custom_fields["gallery-2"] != blank %}
+	{% assign collection = article.metafields.custom_fields["gallery-2"] %}
+      <ul class="grid blog-collection grid--collection">
+	{% for product in collections[collection].products limit:6 %}
+	<li>{% include 'product-grid-item' %}</li>
+	{% endfor %}
+      </ul>
+	{% endif %}
+
+<!--見出し    3-->  
+      {% if article.metafields.custom_fields["blog-main-3-1"] != blank %}
+      <h2>{{article.metafields.custom_fields["blog-main-3-1"]}}</h2>
+      {% endif%}
+<!--本文      3-->  
+      {% if article.metafields.custom_fields["blog-main-3-2"] != blank %}
+      <div class="blog-main-text">{{article.metafields.custom_fields["blog-main-3-2"]}}</div>
+      {% endif%}
+<!--画像      3-->  
+      {% if article.metafields.custom_fields["blog-image-3-1"] != blank %}
+      <div class="blog-images is-full">
+          <img src="{{article.metafields.custom_fields["blog-image-3-1"]}}" alt="{{article.metafields.custom_fields["alt3-1"]}}">
+          <span class="blog-image-caption">{{article.metafields.custom_fields["caption3-1"]}}</span>
+        </div>
+      {% endif%}
+      {% if article.metafields.custom_fields["blog-image-3-2"] != blank %}
+      <div class="blog-images-half-wrap">
+        <div class="blog-images is-half" >
+          <img src="{{article.metafields.custom_fields["blog-image-3-2"]}}" alt="{{article.metafields.custom_fields["alt3-2"]}}">
+          <span class="blog-image-caption">{{article.metafields.custom_fields["caption3-2"]}}</span>
+        </div>
+        <div class="blog-images is-half" >
+          <img src="{{article.metafields.custom_fields["blog-image-3-3"]}}" alt="{{article.metafields.custom_fields["alt3-3"]}}">
+          <span class="blog-image-caption">{{article.metafields.custom_fields["caption3-3"]}}</span>
+        </div>
+      </div>
+      {% endif%}
+      {% if article.metafields.custom_fields["blog-image-3-1"] != blank or article.metafields.custom_fields["blog-image-3-2"] != blank %}
+      <div class="blog-image-margin"></div>
+      {% endif %}
+<!--ギャラリー3-->
+      {% if article.metafields.custom_fields["gallery-title-3"] != blank %}
+      <h2 class="blog-collection-title">{{article.metafields.custom_fields["gallery-title-3"]}}</h2>
+      {% endif%}
+	{% if article.metafields.custom_fields["gallery-3"] != blank %}
+	{% assign collection = article.metafields.custom_fields["gallery-3"] %}
+      <ul class="grid blog-collection grid--collection">
+	{% for product in collections[collection].products limit:6 %}
+	<li>{% include 'product-grid-item' %}</li>
+	{% endfor %}
+      </ul>
+	{% endif %}
+    
+        {{ article.content }}
+        
+{% render 'articles.custom_fields' %}
+</div>
+
+       
+
+{% render 'sns-shares'%}
+    
+<!--前後のブログ-->
+<div class="blog-next-article">
+    <ul class="blog-list-pc top-blog blog-prev {% if blog.previous_article == blank %}hidden{% endif %}">
+      <span class="blog-next-title">{{ 'general.blog.prev-en' | t }}</span><p>{{ 'general.blog.prev' | t }}</p>
+      {%- assign prev_article = blog.previous_article -%}
+        {%- render 'article-grid-item',
+          blog: blog,
+          article: prev_article,
+          grid_item_width: 'medium-up--one-third',
+          per_row: '3',
+          image_size: section.settings.blog_image_size
+        -%}
+    </ul>
+    <ul class="blog-list-pc top-blog blog-next {% if blog.next_article == blank %}hidden{% endif %}">
+      <span class="blog-next-title">{{ 'general.blog.next-en' | t }}</span><p>{{ 'general.blog.next' | t }}</p>
+      {%- assign prev_article = blog.next_article -%}
+        {%- render 'article-grid-item',
+          blog: blog,
+          article: prev_article,
+          grid_item_width: 'medium-up--one-third',
+          per_row: '3',
+          image_size: section.settings.blog_image_size
+        -%}
+    </ul>
+</div>
+
+
+    
+<!--最新のブログ-->
+
+{%- if section.settings.divider -%}<div class="section--divider">{%- endif -%}
+    <div class="blog-related">
+      <span class="blog-related-title">{{ 'general.blog.related-en' | t }}</span><p>{{ 'general.blog.related' | t }}</p>
+
+
+
+  {%- unless blog.empty? or blog.articles.size == 0 -%}
+
+    <ul class="blog-list-pc top-blog">
+      {%- for article in blog.articles limit: section.settings.post_limit -%}
+        {%- render 'article-grid-item',
+          blog: blog,
+          article: article,
+          grid_item_width: 'medium-up--one-third',
+          per_row: '3',
+          image_size: section.settings.blog_image_size
+        -%}
+      {%- endfor -%}
+    </ul>
+
+    <ul class="blog-list-mobile top-blog">
+      {%- for article in blog.articles limit: section.settings.post_limit -%}
+        {%- render 'article-grid-item',
+          blog: blog,
+          article: article,
+          grid_item_width: 'medium-up--one-third',
+          per_row: '3',
+          image_size: section.settings.blog_image_size
+        -%}
+      {%- endfor -%}
+    </ul>
+  
+  
+  <span class="rte"><a href="{{ blog.url }}"  class="see-more">{{ 'general.site.see_all' | t }}</a></span>
+    </div>
+  
+
+<script>
+  
+  $(function() {
+ $('.blog-list-mobile').slick({ //{}を入れる
+  centerMode: true,
+    slidesToShow: 1, //「オプション名: 値」の形式で書く
+   
+  });
+});
+  </script>
+
+
+  
+{% comment %}  
+  
+  {%- else -%}
+{% endcomment %}
+  {%- endunless -%}
+
+
+{%- if section.settings.divider -%}</div>{%- endif -%}
+
+    
+    
+    
+    
+    
+    
+    
+
+
+      {%- if blog.comments_enabled? -%}
+
+        {%- if number_of_comments > 0 -%}
+          <h3>{{ 'blogs.comments.with_count' | t: count: number_of_comments }}</h3>
+          <hr class="hr--small hr--clear">
+        {%- endif -%}
+
+        {%- paginate article.comments by 5 -%}
+          {% comment %}
+            #comments is required, it is used as an anchor link by Shopify.
+          {% endcomment %}
+          <div id="comments">
+
+            {%- if comment and comment.errors == blank -%}
+              <hr class="hr--small hr--clear">
+              <p class="note note--success">
+                {%- if blog.moderated? -%}
+                  {{ 'blogs.comments.success_moderated' | t }}
+                {%- else -%}
+                  {{ 'blogs.comments.success' | t }}
+                {%- endif -%}
+              </p>
+            {%- endif -%}
+
+            {%- if number_of_comments > 0 -%}
+              <ul class="no-bullets">
+                {%- if comment and comment.errors == blank -%}
+                  <li id="{{ comment.id }}" class="comment{% if article.comments_count == 0 %} last{% endif %}">
+                    {%- render 'comment', comment: comment -%}
+                  </li>
+                {%- endif -%}
+
+                {%- for comment in article.comments -%}
+                  <li id="{{ comment.id }}" class="comment{% unless number_of_comments > article.comments_count %}{% endunless %}{% if forloop.last %} last {% endif %}">
+                    {%- render 'comment', comment: comment -%}
+                  </li>
+
+                  {%- unless forloop.last -%}
+                    <li><hr class="hr--clear"></li>
+                  {%- endunless -%}
+                {%- endfor -%}
+              </ul>
+
+              {%- if paginate.pages > 1 -%}
+                {%- render 'pagination', paginate: paginate -%}
+              {%- endif -%}
+
+            {%- endif -%}
+
+            <hr class="hr--large">
+
+            <header class="section-header{% unless settings.type_headers_align_text %} section-header--with-link{% endunless %}">
+              <h3 class="section-header__title">{{ 'blogs.comments.title' | t }}</h3>
+            </header>
+
+          </div>
+        {%- endpaginate -%}
+      {%- endif -%}
+
+
+    </article>
+
+
+</div>
+
+<div class="bread-pages">
+  <a href="/">{{ 'general.site.top' | t }}</a> <span>＞</span> <a href="/blogs/post">{{ 'general.site.column' | t }}</a> <span>＞</span> 
+  {% for tag in article.tags %}
+  <a href="/blogs/post/tagged/{% comment ls-rpl %}{{ tag }}{% endcomment %}{%- capture LS_TAG -%}{%- render "ls-tag", tag: tag, resource: article -%}{%- endcapture -%}{{ LS_TAG }}{% comment /ls-rpl %}{% endcomment %}">{% comment ls-rpl %}{{ tag }}{% endcomment %}{%- capture LS_TAG -%}{%- render "ls-tag", tag: tag, resource: article -%}{%- endcapture -%}{{ LS_TAG }}{% comment /ls-rpl %}{% endcomment %}</a>
+  {% endfor %}<span>＞</span>
+  {{ article.title }}
+</div>
+<script>
+{
+    // 設定
+    const TOC_INSERT_SELECTOR = '#htag-list';              // [セレクター指定] 目次を挿入する要素 querySelector用
+    const HEADING_SELECTOR    = 'h2,h3,h4,h5,h6'; // [セレクター指定] 収集する見出し要素 querySelectorAll用
+    const LINK_CLASS_NAME     = 'tocLink';           // [クラス名] 目次用aタグに追加するクラス名     .無し
+    const ID_NAME             = 'heading';           // [ID名]    目次に追加するID名のプレフィックス #無し
+    const tocInsertElement    = document.querySelector(TOC_INSERT_SELECTOR);
+    const headingElements     = document.querySelectorAll(HEADING_SELECTOR);
+    const layer = [];
+    let id = 0;
+    const uid   = () =>`${ID_NAME}${id++}`;
+    let oldRank = -1;
+    try {
+        const createLink = (el) => {
+            let li = document.createElement('li');
+            let a  = document.createElement('a');
+            el.id  = el.id || uid();
+            a.href = `#${el.id}`;
+            a.innerText = el.innerText;
+            a.className = LINK_CLASS_NAME;
+            li.appendChild(a);
+            return li;
+        };
+        const findParentElement = (layer, rank, diff) => {
+            do {
+                rank += diff;
+                if (layer[rank]) return layer[rank];
+            } while (0 < rank && rank < 7);
+            return false;
+        };
+        const appendToc = (el, toc) => {
+            el.appendChild(toc.cloneNode(true));
+        };
+        headingElements.forEach( (el) => {
+            let rank   = Number(el.tagName.substring(1));
+            let parent = findParentElement(layer, rank, -1);
+            if (oldRank > rank) layer.length = rank + 1;
+            if (!layer[rank]) {
+                layer[rank] = document.createElement('ol');
+                if (parent.lastChild) parent.lastChild.appendChild(layer[rank]);
+            }
+            layer[rank].appendChild(createLink(el));
+            oldRank = rank;
+        });
+        if (layer.length) appendToc(tocInsertElement, findParentElement(layer, 0, 1));
+    } catch (e) {
+        //error 
+    }
+}
+</script>
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Article",
+  "articleBody": {{ article.content | strip_html | json }},
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": {{ shop.url | append: article.url | json }}
+  },
+  "headline": {{ article.title | json }},
+  {% if article.excerpt != blank %}
+    "description": {{ article.excerpt | strip_html | json }},
+  {% endif %}
+  {% if article.image %}
+    {% assign image_size = article.image.width | append: 'x' %}
+    "image": [
+      {% comment ls-rpl %}{{ article | img_url: image_size | prepend: "https:" | json }}{% endcomment %}{%- capture LS_IMG_URL -%}{%- render "ls-img-url", image: article, img_url: image_size -%}{%- endcapture -%}{{ LS_IMG_URL | prepend: "https:" | json }}{% comment /ls-rpl %}{% endcomment %}
+    ],
+  {% endif %}
+  "datePublished": {{ article.published_at | date: '%Y-%m-%dT%H:%M:%SZ' | json }},
+  "dateModified": {{ article.updated_at | date: '%Y-%m-%dT%H:%M:%SZ' | json }},
+  "dateCreated": {{ article.created_at | date: '%Y-%m-%dT%H:%M:%SZ' | json }},
+  "author": {
+    "@type": "Person",
+    "name": {{ article.author | json }}
+  },
+  "publisher": {
+    "@type": "Organization",
+    {% if settings.share_image %}
+      {% assign image_size = settings.share_image.width | append: 'x' %}
+      "logo": {
+        "@type": "ImageObject",
+        "height": {{ settings.share_image.height | json }},
+        "url": {% comment ls-rpl %}{{ settings.share_image | img_url: image_size | prepend: "https:" | json }}{% endcomment %}{%- capture LS_IMG_URL -%}{%- render "ls-img-url", image: settings.share_image, img_url: image_size -%}{%- endcapture -%}{{ LS_IMG_URL | prepend: "https:" | json }}{% comment /ls-rpl %}{% endcomment %},
+        "width": {{ settings.share_image.width | json }}
+      },
+    {% endif %}
+    "name": {{ shop.name | json }}
+  }
+}
+</script>
+
+{% schema %}
+  {
+    "name": "Article pages",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "image_hero",
+        "label": "Use featured image as full-width hero",
+        "info": "(if article image is set)",
+        "default": false
+      },
+      {
+        "type": "checkbox",
+        "id": "blog_show_tags",
+        "label": "Show tags",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "blog_show_date",
+        "label": "Show date",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "blog_show_comments",
+        "label": "Show comment count",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "blog_show_author",
+        "label": "Show author"
+      },
+      {
+        "type": "checkbox",
+        "id": "social_sharing_blog",
+        "label": "Show social sharing buttons",
+        "default": true
+      }
+    ]
+  }
+{% endschema %}

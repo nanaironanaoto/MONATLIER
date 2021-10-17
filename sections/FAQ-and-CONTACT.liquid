@@ -1,0 +1,10 @@
+    
+  
+  <nav class="service-nav service-nav-half">
+    <div class="service-nav-item left-nav">
+    <a href="/pages/faq" class="{% if page.handle contains "faq" %}service-current{% endif %}">{{ 'general.site.faq' |t }}<span>{{ 'general.pages.faq' |t }}</span></a>
+    </div>
+    <div class="service-nav-item">        
+    <a href="/pages/contact" class="{% if page.handle contains "contact" %}service-current{% endif %}">{{ 'general.site.contact' |t }}<span>{{ 'general.pages.contact' |t }}</span></a>
+    </div>
+  </nav>

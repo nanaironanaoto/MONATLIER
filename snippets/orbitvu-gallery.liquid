@@ -1,0 +1,31 @@
+{{ '//shopify-app.orbitvu.com/build/front/css/orbitvu-sun-public.css' | stylesheet_tag }} 
+<div id="ovgallery-wrapper" class="orbitvu-gallery-wrapper">
+  <div id="ovgallery-fix" class="orbitvu-gallery-fix">
+    <div id="ovgallery" class="orbitvu-gallery">
+      <div id="ovgallery-product-image" class="orbitvu-gallery-product-image">
+        <div id="ovgallery-view-image" class="orbitvu-gallery-view-image orbitvu-active">
+          <div id="ovspinner-main-image" class="orbitvu-spinner">
+            <div class="orbitvu-spinner-inner">
+              <div class="bounce1"></div>
+              <div class="bounce2"></div>
+              <div class="bounce3"></div>
+            </div>
+          </div>
+        </div>
+      </div>  
+    </div>
+  </div>              
+</div>
+{{ '//shopify-app.orbitvu.com/build/front/js/injectOrbitvuGallery.js' | script_tag }}
+<script type="text/javascript">
+    var ovProduct = {{ product | json }};
+    ovProduct.ovImages = []
+    {% for image in product.images %}
+      ovProduct.ovImages.push({
+        id: {{ image.id }},
+        title: "{% comment ls-rpl %}{{ image.alt | escape }}{% endcomment %}{%- capture LS_ALT -%}{%- render "ls-alt", image: image -%}{%- endcapture -%}{{ LS_ALT | escape }}{% comment /ls-rpl %}{% endcomment %}",
+        src: "{% comment ls-rpl %}{{ image | img_url: '' }}{% endcomment %}{%- capture LS_IMG_URL -%}{%- render "ls-img-url", image: image, img_url: '' -%}{%- endcapture -%}{{ LS_IMG_URL }}{% comment /ls-rpl %}{% endcomment %}"
+      });
+    {% endfor %}
+    ORBITVUSUN.injectGallery(Shopify, ovProduct, 'shopify-app.orbitvu.com');
+</script>

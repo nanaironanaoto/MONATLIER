@@ -1,0 +1,39 @@
+<div class="page-width page-content pages info-page">
+ 
+  
+  {% if page.metafields.custom_fields["subtitle"] != blank %}
+      <header class="section-header">
+        <h1 class="section-header__title">{{ page.metafields.custom_fields["subtitle"] }}</h1>
+          <div class="page-subtitle">
+            {{ page.title }}
+          </div>
+        {% if page.metafields.custom_fields["page_description"] != blank %}
+        <div class="page-description">
+            {{ page.metafields.custom_fields["page_description"] }}
+        </div>
+        {% endif %}
+      </header>
+  {% else %}
+      <header class="section-header">
+ 	  <h1 class="japanese">{{ page.title}}</h1>
+        {% if page.metafields.custom_fields["page_description"] != blank %}
+        <div class="page-description">
+            {{ page.metafields.custom_fields["page_description"] }}
+        </div>
+        {% endif %}
+      </header>
+  {% endif %}
+
+  
+<div class="info-wrap">
+   {{ page.content }}
+</div>
+	</div>
+
+
+	<div class="bread-pages">
+  		<a href="{{ routes.root_url }}">{{ 'general.site.top'|t  }}</a> <span>＞</span> {{ page.title}}
+	</div>
+
+
+

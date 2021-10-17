@@ -1,0 +1,17 @@
+{%- comment -%}
+    Render Shopify locales array
+{%- endcomment -%}
+
+{%- capture shopifyLocalesArray -%}
+    [
+        {%- capture loop -%}
+            {%- for locale in shop.enabled_locales -%}
+                ,{"code":{{ locale.iso_code | json }},"rootUrl":{{ locale.root_url | json }}}
+            {%- endfor -%}
+        {%- endcapture -%}
+
+        {{ loop | remove_first: "," }}
+    ]
+{%- endcapture -%}
+
+{{ shopifyLocalesArray | strip_newlines }}

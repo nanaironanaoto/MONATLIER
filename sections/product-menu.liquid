@@ -1,0 +1,51 @@
+   	<div class="menu_contents page-menu-contents small--hide"> 
+          <div class="menu_contents_inner jewelry-header-menu">
+            <ul><span class="menu-content-title">{{ 'general.site.category'|t  }}</span><span class="menu-japanese">{{ 'general.menu.category'|t  }}</span>
+            <li><a href="/collections/new">{{ collections["new"].title }}</a></li>
+            <li><a href="/collections/necklace">{{ collections["necklace"].title }}</a></li>
+            <li><a href="/collections/ring">{{ collections["ring"].title }}</a></li>
+            <li><a href="/collections/other">{{ collections["other"].title }}</a></li>
+            <li><a href="/collections/all">{{ collections["all"].title }}</a></li>
+          </ul>
+          <ul><span class="menu-content-title">{{ 'general.series.series' |t }}</span><span class="menu-japanese">{{ 'general.menu.series'|t  }}</span><li><a href="/collections/between">{{ 'general.series.between' |t }}</a></li>
+          </ul>
+          <ul><span class="menu-content-title">{{ 'general.filter.material'|t  }}</span><span class="menu-japanese">{{ 'general.menu.material'|t  }}</span>
+            <li><a href="/collections/all?pf_t_material=K10">{{ 'general.filter.k10'|t  }}</a></li>
+            <li><a href="/collections/all?pf_t_material=ダイヤモンド">{{ 'general.filter.diamond'|t  }}</a></li>
+            <li><a href="/collections/all?pf_t_material=カラーストーン">{{ 'general.filter.colorstone'|t  }}</a></li>
+          </ul>
+          <ul><span class="menu-content-title">{{ 'general.filter.design'|t  }}</span><span class="menu-japanese">{{ 'general.menu.design'|t  }}</span>
+            <li><a href="/collections/all?pf_t_design=ライン">{{ 'general.filter.line'|t  }}</a></li>
+            <li><a href="/collections/all?pf_t_design=モチーフ">{{ 'general.filter.motif' |t }}</a></li>
+            <li><a href="/collections/all?pf_t_design=エターナル">{{ 'general.filter.eternal'|t  }}</a></li>
+            <li><a href="/collections/all?pf_t_design=透かし模様">{{ 'general.filter.watermark'|t  }}</a></li>
+            <li><a href="/collections/all?pf_t_design=一粒">{{ 'general.filter.grain'|t  }}</a></li>
+            <li><a href="/collections/all?pf_t_design=シンプル">{{ 'general.filter.simple'|t  }}</a></li>
+            <li><a href="/collections/all?pf_t_design=華奢">{{ 'general.filter.delicate'|t  }}</a></li>
+            <li><a href="/collections/all?pf_t_design=重ね付け">{{ 'general.filter.stacking'|t  }}</a></li>
+            <li><a href="/collections/all?pf_t_design=地金">{{ 'general.filter.bullion'|t  }}</a></li>
+          </ul>
+          <ul><span class="menu-content-title">{{ 'general.filter.price'|t  }}</span><span class="menu-japanese">{{ 'general.menu.price'|t  }}</span>
+            <li><a href="/collections/all?pf_p_price=%3A30000">{{ 'general.filter.3'|t  }}</a></li>
+            <li><a href="/collections/all?pf_p_price=30000%3A40000">{{ 'general.filter.3-4'|t  }}</a></li>
+            <li><a href="/collections/all?pf_p_price=40000%3A50000">{{ 'general.filter.4-5'|t  }}</a></li>
+            <li><a href="/collections/all?pf_p_price=50000%3A60000">{{ 'general.filter.5-6'|t  }}</a></li>
+            <li><a href="/collections/all?pf_p_price=60000%3A70000">{{ 'general.filter.6-7'|t  }}</a></li>
+            <li><a href="/collections/all?pf_p_price=70000%3A80000">{{ 'general.filter.7-8'|t  }}</a></li>
+            <li><a href="/collections/all?pf_p_price=80000%3A">{{ 'general.filter.8'|t  }}</a></li>
+          </ul>
+        </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Section name",
+    "settings": []
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

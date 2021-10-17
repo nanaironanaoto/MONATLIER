@@ -1,0 +1,31 @@
+{%- comment -%}
+    Create localized collection json string
+{%- endcomment -%}
+
+{%- capture json -%}
+    {%- if collection -%}
+        {
+            "id": {{ collection.id | json }},
+            "handle": {{ collection.handle | json }},
+            "title": {{ collection.title | json }},
+            "body_html": {{ collection.description | json }},
+            "published_at": {{ collection.published_at | date: "%FT%T%:z" | json }},
+            "sort_order": {{ collection.sort_by | default: collection.default_sort_by | json }},
+            "template_suffix": {{ collection.template_suffix | json }},
+            {%- if collection.image -%}
+                "image": {
+                    "alt": {%- capture imageAlt -%}{%- render "ls-alt", image: collection.image -%}{%- endcapture -%}{{ imageAlt | json }},
+                    "width": {{ collection.image.width | json }},
+                    "height": {{ collection.image.height | json }},
+                    "src": {%- capture imageUrl -%}{%- render "ls-img-url", image: collection.image, img_url: "master" -%}{%- endcapture -%}{{ imageUrl | json }}
+                }
+            {%- else -%}
+                "image": null
+            {%- endif -%}
+        }
+    {%- else -%}
+        null
+    {%- endif -%}
+{%- endcapture -%}
+
+{{ json | strip_newlines | replace: "	", "" | replace: "  ", "" }}

@@ -1,0 +1,13 @@
+{% comment %}
+  DO NOT MODIFY THIS FILE DIRECTLY. THIS FILE WILL BE OVERWRITTEN.
+  YOU CAN MODIFY THE LIQUID CODE FOR THIS CUSTOM FIELD HERE:
+  https://customfields.bonify.io/dashboard/tatsumi-shimada.myshopify.com/products/configure/246397/edit
+{% endcomment %}
+{% if product.metafields.custom_fields["style"] != blank %}
+  <div class="custom-field custom-field__style custom-field__type--text">
+    <h3 class="custom-field--title"><ls-static-166489>スタイル</ls-static-166489></h3>
+    <div class="custom-field--value">
+      {{ product.metafields.custom_fields["style"] }}
+    </div>
+  </div>
+{% endif %}

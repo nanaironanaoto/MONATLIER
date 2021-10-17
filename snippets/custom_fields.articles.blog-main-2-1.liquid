@@ -1,0 +1,8 @@
+{% if article.metafields.custom_fields["blog-main-2-1"] != blank %}
+  <div class="custom-field custom-field__blog-main-2-1 custom-field__type--text">
+    <h3 class="custom-field--title">タイトル</h3>
+    <div class="custom-field--value">
+      {{ article.metafields.custom_fields["blog-main-2-1"] }}
+    </div>
+  </div>
+{% endif %}

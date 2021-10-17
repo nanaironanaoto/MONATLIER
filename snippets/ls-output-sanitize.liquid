@@ -1,0 +1,17 @@
+{%- comment -%}
+    Remove unnecessary sdk include
+{%- endcomment -%}
+
+{%- assign output = input -%}
+{%- assign occurrence = "\/libs\/storefront\/sdk.js?release=" -%}
+
+{%- if output contains occurrence -%}
+    {%- assign temp = output | split: occurrence -%}
+    {%- assign left = temp[0] | split: '"' | last -%}
+    {%- assign right = temp[1] | split: '"' | first -%}
+    {%- assign url = '"' | append: left | append: occurrence | append: right | append: '"' -%}
+    {%- assign urlWithComma = url | append: "," -%}
+    {%- assign output = output | replace: urlWithComma, "" |replace: url, "" -%}
+{%- endif -%}
+
+{{ output }}

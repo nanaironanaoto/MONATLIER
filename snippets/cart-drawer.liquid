@@ -1,0 +1,25 @@
+{%- if settings.cart_type == 'drawer' -%}
+  <div id="CartDrawer" class="drawer drawer--right">
+    <form action="{{ routes.cart_url }}" method="post" novalidate class="drawer__contents">
+      <div class="drawer__fixed-header">
+        <div class="drawer__header appear-animation appear-delay-1">
+          <div class="h2 drawer__title">{{ 'cart.general.title' | t }}</div>
+          <div class="drawer__close">
+            <button type="button" class="drawer__close-button js-drawer-close">
+              <svg xmlns="http://www.w3.org/2000/svg" width="47.634" height="47.185" viewBox="0 0 47.634 47.185">
+  <g id="グループ_374" data-name="グループ 374" transform="translate(1.405 15.207)" opacity="0.3">
+    <line id="線_85" data-name="線 85" x2="44.823" y2="44.257" transform="translate(0 -13.702)" fill="none" stroke="#4b4b4b" stroke-width="4"/>
+    <line id="線_87" data-name="線 87" y1="44.877" x2="44.823" transform="translate(0 -14.5)" fill="none" stroke="#4b4b4b" stroke-width="2"/>
+  </g>
+</svg>
+
+              <span class="icon__fallback-text">{{ 'cart.general.close_cart' | t }}</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div id="CartContainer" class="drawer__inner"></div>
+    </form>
+  </div>
+{%- endif -%}

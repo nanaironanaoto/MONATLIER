@@ -1,0 +1,8 @@
+{% if article.metafields.custom_fields["alt3-1"] != blank %}
+  <div class="custom-field custom-field__alt3-1 custom-field__type--text">
+    <h3 class="custom-field--title">altタグ1</h3>
+    <div class="custom-field--value">
+      {{ article.metafields.custom_fields["alt3-1"] }}
+    </div>
+  </div>
+{% endif %}

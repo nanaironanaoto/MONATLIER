@@ -1,0 +1,13 @@
+{%- if block.settings.logo -%}
+  {%- style -%}
+    .footer__logo a {
+      height: {{ block.settings.desktop_logo_height }}px;
+    }
+  {%- endstyle -%}
+  {%- assign footer_logo_size = block.settings.desktop_logo_height | prepend: 'x' -%}
+  <div class="footer__logo">
+    <a href="{{ routes.root_url }}">
+      <img src="{% comment ls-rpl %}{{ block.settings.logo | img_url: footer_logo_size, scale: 2 }}{% endcomment %}{%- capture LS_IMG_URL -%}{%- render "ls-img-url", image: block.settings.logo, img_url: footer_logo_size, scale: 2 -%}{%- endcapture -%}{{ LS_IMG_URL }}{% comment /ls-rpl %}{% endcomment %}" alt="{% comment ls-rpl %}{{ block.settings.logo.alt | default: shop.name }}{% endcomment %}{%- capture LS_ALT -%}{%- render "ls-alt", image: block.settings.logo -%}{%- endcapture -%}{{ LS_ALT | default: shop.name }}{% comment /ls-rpl %}{% endcomment %}">
+    </a>
+  </div>
+{%- endif -%}
