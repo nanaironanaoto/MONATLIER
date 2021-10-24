@@ -24,24 +24,24 @@
     },
     "16350574848cd73f51": {
       "type": "top-series-slider",
+      "disabled": true,
       "settings": {
       }
     },
     "16350575038258728e": {
       "type": "advanced-content",
       "blocks": {
-        "16350575038258728e-0": {
-          "type": "image",
-          "disabled": true,
+        "42ec3c08-b895-4691-8ced-3aca4ef341f6": {
+          "type": "html",
           "settings": {
-            "link": "",
-            "width": "50%",
-            "alignment": "top-middle"
+            "code": "<div class=\"section-header\">\n      <h2 class=\"section-header__title\">NEW RELEASE<\/h2>\n<span>MONATRIER-モナトリエ-の新作シリーズ<\/span>\n  <\/div>\n<div class=\"series-slider-wrapper\">\n\n<ul class=\"series-slider series-slider-left\">\n<li><img src=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0268\/1202\/2962\/files\/1.png\"><\/li>\n<li><img src=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0268\/1202\/2962\/files\/2.png\"><\/li>\n<li><img src=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0268\/1202\/2962\/files\/3.png\"><\/li>\n<\/ul>\n\n<ul class=\"series-slider series-slider-center\">\n<li><img src=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0268\/1202\/2962\/files\/3.png\"><\/li>\n<li><img src=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0268\/1202\/2962\/files\/1.png\"><\/li>\n<li><img src=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0268\/1202\/2962\/files\/2.png\"><\/li>\n<\/ul>\n\n<ul class=\"series-slider series-slider-description\">\n<li>\n<h3>Across<\/h3>\n<h4>「出会い」<\/h4>\n<p>出会うまでの、線と線の合間。<br>呼びかける声が響いていたその空間も、<br>覚えていたい。<\/p>\n<a href=\"\/collections\/all\"><span>DISCOVER<\/span>\n<\/a>\n<\/li>\n<li>\n<h3>Days<\/h3>\n<h4>「毎日」<\/h4>\n<p>昨日の私、今日の私、明日の私。<br>\n小さな光でも、連続していけば、煌めきたつ。<\/p>\n<a href=\"\/collections\/all\">\n<span>DISCOVER<\/span>\n<\/a>\n<\/li>\n<li>\n<h3>Across<\/h3>\n<h4>「出会い」<\/h4>\n<p>出会うまでの、線と線の合間。<br>呼びかける声が響いていたその空間も、<br>覚えていたい。<\/p>\n<a href=\"\/collections\/all\">\n<span>DISCOVER<\/span>\n<\/a>\n<\/li>\n<\/ul>\n<ul class=\"series-slider series-slider-right\">\n<li>\n<img src=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0268\/1202\/2962\/files\/2.png\">\n<\/li>\n<li><img src=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0268\/1202\/2962\/files\/3.png\"><\/li>\n<li><img src=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0268\/1202\/2962\/files\/1.png\"><\/li>\n<\/ul>\n<\/div>",
+            "width": "100%",
+            "alignment": "center"
           }
         }
       },
       "block_order": [
-        "16350575038258728e-0"
+        "42ec3c08-b895-4691-8ced-3aca4ef341f6"
       ],
       "settings": {
         "full_width": true,
@@ -55,11 +55,13 @@
     },
     "16350574996bf954ff": {
       "type": "service",
+      "disabled": true,
       "settings": {
       }
     },
     "16350575062e269618": {
       "type": "advanced-content",
+      "disabled": true,
       "blocks": {
         "16350575062e269618-1": {
           "type": "html",
@@ -80,6 +82,7 @@
     },
     "163505751272e4b48b": {
       "type": "advanced-content",
+      "disabled": true,
       "blocks": {
         "163505751272e4b48b-1": {
           "type": "html",
