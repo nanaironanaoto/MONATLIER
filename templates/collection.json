@@ -1,36 +1,11 @@
 {
   "sections": {
-    "collection-header": {
-      "type": "collection-header",
-      "settings": {}
-    },
-    "collection-sidebar": {
-      "type": "collection-sidebar",
-      "settings": {}
-    },
-    "collection-promotions": {
-      "type": "collection-promotions",
-      "settings": {}
-    },
     "collection-template": {
       "type": "collection-template",
-      "settings": {}
-    },
-    "product-menu": {
-      "type": "product-menu",
-      "settings": {}
-    },
-    "service": {
-      "type": "service",
       "settings": {}
     }
   },
   "order": [
-    "collection-header",
-    "collection-sidebar",
-    "collection-promotions",
-    "collection-template",
-    "product-menu",
-    "service"
+    "collection-template"
   ]
 }

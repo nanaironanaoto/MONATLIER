@@ -16,7 +16,7 @@
   <link rel="dns-prefetch" href="https://maps.googleapis.com">
   <link rel="dns-prefetch" href="https://maps.gstatic.com">
 <!-- 高速化キーリクエストのプリロード -->
-<link rel="preload" href="/apps/favorite_button/css/SFA.css" as="style"> 
+<link rel="preload" href="/apps/favorite_button/css/SFA.css" as="style">
 <!--   <link rel="preload" as="style" href="/apps/favorite_button/css/SFA.css"> -->
   {%- if settings.favicon != blank -%}
     <link rel="shortcut icon" href="{% comment ls-rpl %}{{ settings.favicon | img_url: '32x32' }}{% endcomment %}{%- capture LS_IMG_URL -%}{%- render "ls-img-url", image: settings.favicon, img_url: '32x32' -%}{%- endcapture -%}{{ LS_IMG_URL }}{% comment /ls-rpl %}{% endcomment %}" type="image/png" />
@@ -25,7 +25,7 @@
 
 
   {%- render 'seo-title' -%}
-  
+
   {% if template == "index" %}
   <meta name="description" content="{{ 'general.site.index-description' | t }}">
   {% else %}
@@ -39,7 +39,7 @@
   {%- render 'font-face' -%}
   {{ 'theme.css' | asset_url | stylesheet_tag }}
   {%- render 'css-variables' -%}
-  
+
 <script type="text/javascript">
   $(function(){
     var ua = navigator.userAgent;
@@ -50,8 +50,8 @@
     }
 });
 </script>
- 
-  
+
+
   <script>
     document.documentElement.className = document.documentElement.className.replace('no-js', 'js');
 
@@ -88,8 +88,8 @@
       themeVersion: "3.6.1"
     };
   </script>
-  
-  
+
+
   <script type="text/javascript"> var ndnapps_product_json = "{{ 'ndnapps-products-slider.json' | asset_url }}";</script>
 {{ content_for_header }}
 {{ 'ndnapps_products_slider.js' | asset_url | script_tag }}
@@ -105,50 +105,50 @@
   {%- endif -%}
 
   <script src="{{ 'theme.js' | asset_url }}" defer="defer"></script>
-  
+
 <!--スクロールエフェクト-->
   <script src="{{ 'jquery.inview.min.js' | asset_url }}" defer="defer"></script>
 <!--スクロールエフェクト-end-->
 
-  
-  
+
+
   {{ 'add-style.scss.css' | asset_url | stylesheet_tag }}
   {{ 'add-style-header.scss.css' | asset_url | stylesheet_tag }}
   {{ 'add-style-blog.scss.css' | asset_url | stylesheet_tag }}
-  
-<!--サービスページの場合--> 
+
+<!--サービスページの場合-->
   {% if template == 'index' %}
   {{ 'add-style-top.scss.css' | asset_url | stylesheet_tag }}
   {% endif %}
-  
-<!--商品・プロダクトページの場合--> 
+
+<!--商品・プロダクトページの場合-->
   {% if template == 'product' %}
   {{ 'add-style-product.scss.css' | asset_url | stylesheet_tag }}
   {% endif %}
-    
-<!--アバウトページの場合--> 
+
+<!--アバウトページの場合-->
   {% if template == 'page.about' %}
   {{ 'add-style-about.scss.css' | asset_url | stylesheet_tag }}
   {% endif %}
-  
-<!--コレクションページの場合--> 
+
+<!--コレクションページの場合-->
   {% if template == 'collection' %}
   {{ 'add-style-collection.scss.css' | asset_url | stylesheet_tag }}
   {% endif %}
-  
-<!--サービスページの場合--> 
+
+<!--サービスページの場合-->
   {% if template == 'page.service' %}
   {{ 'add-style-service.scss.css' | asset_url | stylesheet_tag }}
   {% endif %}
 
-<!--トップページ以外の場合ヘッダーの高さ調整start--> 
+<!--トップページ以外の場合ヘッダーの高さ調整start-->
   {% unless template == "index" %}
-<style>  
+<style>
   .main-content{padding-top:120px;}
 </style>
   {% endunless %}
-<!--トップページ以外の場合ヘッダーの高さ調整end--> 
-  
+<!--トップページ以外の場合ヘッダーの高さ調整end-->
+
   {%- if request.page_type contains 'customers/' -%}
     <script src="{{ 'shopify_common.js' | shopify_asset_url }}" defer="defer"></script>
   {%- endif -%}
@@ -181,17 +181,17 @@
 <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
 {{ 'custom-fields.css' | asset_url | stylesheet_tag }}
 <script src="{{ 'custom-fields-widgets.js' | asset_url }}" defer="defer"></script>
-  
+
 </head>
 
 <body class="template-{{ template | replace: '.', ' ' | truncatewords: 1, '' | handle }}{% if request.path == '/challenge' %} template-challange{% endif %}" data-center-text="{{settings.type_body_align_text}}" data-button_style="{{settings.button_style}}" data-type_header_capitalize="{{settings.type_header_capitalize}}" data-type_headers_align_text="{{settings.type_headers_align_text}}" data-type_product_capitalize="{{settings.type_product_capitalize}}" data-swatch_style="{{settings.swatch_style}}" {% if settings.disable_animations %}data-disable-animations="true"{% endif %}>
 
-  
+
   <div class="overlay-all"></div>
   <!--カスタムカーソル-->
   <div class="cursor">
   <div class="follower"></div></div>
-  
+
   <a class="in-page-link visually-hidden skip-link" href="#MainContent">{{ 'general.accessibility.skip_to_content' | t }}</a>
 
   <div id="PageContainer" class="page-container">
@@ -199,10 +199,33 @@
 
     {%- section 'header' -%}
 
-
+      {% if request.page_type == 'collection' %}
+        <main class="main-content" id="MainContent">
+          <div id="CollectionAjaxResult" class="collection-content">
+            <div id="CollectionAjaxContent">
+              <div class="page-width">
+                <div class="grid">
+                  <div class="grid__item medium-up--one-fifth grid__item--sidebar">
+                    {% section 'collection-sidebar' %}
+                  </div>
+                  <div class="grid__item medium-up--four-fifths grid__item--content">
+                    {% section 'collection-promotions' %}
+                    <div class="collection-grid__wrapper">
+                      {{ content_for_layout }}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          {% section "product-menu" %}
+          {% section "service" %}
+        </main>
+      {% elsif %}
       <main class="main-content" id="MainContent">
         {{ content_for_layout }}
       </main>
+      {% endif %}
 
       {%- section 'footer-promotions' -%}
       {%- section 'footer' -%}
@@ -265,20 +288,20 @@
 </style>
     {% endif %}
 <script>
-  
- //パララックスエフェクト-PC用 
+
+ //パララックスエフェクト-PC用
 var wh = window.innerHeight,
   reg = 150;//調整値、正の数だとスクロール時に上に動き、負の数だと下に動く。絶対値が大きいほど動く量が小さくなる。
- 
+
 window.addEventListener('load', update_window_size);
 window.addEventListener('resize', update_window_size);
 function update_window_size() {
   wh = window.innerHeight;
 }
- 
+
 var paraItems = document.querySelectorAll('lottie-player');//対象
 paraItems = Array.prototype.slice.call(paraItems, 0);
- 
+
 //トリガー部分
 if (paraItems.length) {
   parallax();
@@ -286,11 +309,11 @@ if (paraItems.length) {
   window.addEventListener('resize', parallax);
   window.addEventListener('scroll', parallax, { passive: true });
 }
- 
-//本体 
+
+//本体
 function parallax() {
   paraItems.forEach(function (paraItem, i) {
- 
+
     //動きなどもっと自由に決めたい場合はこのあたりを好きに修正する。
     paraItem.style.transform = '';
     var nowpos = paraItem.getBoundingClientRect().top - wh,
@@ -298,31 +321,31 @@ function parallax() {
     if (nowpos < 0) {
       paraItem.style.transform = 'translate(0,' + (nowpos / myreg) + 'vw)';
     }
- 
+
   });
 }
-</script>  
+</script>
 <!--フェードエフェクト-->
-{% if template == "index" %}  
+{% if template == "index" %}
 <script>
 jQuery(function(){
   $(".main-content").children().children().addClass('fadein');
   });
-</script>  
+</script>
 {% elsif template =="collection" %}
 <script>
 jQuery(function(){
   $(".grid-product").addClass('fadein');
   $(".series-section-block").addClass('fadein');
   });
-</script>  
+</script>
 {% elsif template =="product" %}
 <script>
 jQuery(function(){
   $(".product-section").children().addClass('fadein');
   $(".main-content").children().addClass('fadein');
   });
-</script>  
+</script>
 {% elsif page.handle contains "concept" %}
 <script>
 jQuery(function(){
@@ -338,7 +361,7 @@ jQuery(function(){
   $('.phil-middle').addClass('fadein');
   $('.phil-bottom').addClass('fadein');
   });
-</script>  
+</script>
 {% elsif page.handle contains "material" %}
 <script>
 jQuery(function(){
@@ -347,20 +370,20 @@ jQuery(function(){
   $(".material-stone-wrap").addClass('fadein');
   $(".material-hardness-wrap").addClass('fadein');
   });
-</script>  
+</script>
 {% elsif page.handle contains "shoppingguide" %}
 <script>
 jQuery(function(){
   $(".main-content").addClass('fadein');
   });
-</script>  
+</script>
 {% elsif page.handle contains "company" or page.handle contains "contact"  %}
 {% elsif page.handle contains "workshop" %}
 <script>
 jQuery(function(){
   $(".page-width").children().children().children().addClass('fadein');
   });
-</script>  
+</script>
 {% elsif template contains "search" %}
 <script>
 jQuery(function(){
@@ -370,7 +393,7 @@ jQuery(function(){
   $(".grid__item").addClass('scrollin');
     },1000);
   });
-</script>  
+</script>
 {% elsif template contains "service" %}
 {% elsif page.handle contains "faq" %}
 <script>
@@ -378,15 +401,15 @@ jQuery(function(){
   $(".page-width").children().addClass('fadein');
   $(".faq h2").addClass('fadein');
   });
-</script>  
+</script>
 {% else %}
 <script>
 jQuery(function(){
   $(".page-width").children().children().addClass('fadein');
   });
-</script>  
-  
-{% endif%}  
+</script>
+
+{% endif%}
 
 <!--カスタムカーソル-->
 <script>
@@ -406,9 +429,9 @@ $(document).on('mousemove', function(e) {
     top: mouseY - (cWidth / 2)
   })
 });
-  
 
-  
+
+
 $(function(){
 $('a, button').hover(
     function() {
@@ -420,7 +443,7 @@ $('a, button').hover(
 	$(".follower").removeClass("is-hover");
     });
 });
-  
+
 </script>
 
 <!--アコーディオン-->
@@ -434,7 +457,7 @@ $(this).toggleClass("active");
 });
 </script>
 
-  
+
 <script>
 $(function() {
        $('.series-slider-left').slick({
@@ -453,7 +476,7 @@ $(function() {
 
 <!--モーダルウィンドウ-->
 
-<script>  
+<script>
   $(function(){
     var winScrollTop;
     $('.ec-modal-open').each(function(){
@@ -472,9 +495,9 @@ $(function() {
     		$('body').removeClass("is-modal-open");
         $('body,html').stop().animate({scrollTop:winScrollTop}, 100);
         return false;
-    }); 
+    });
 });
-</script>  
+</script>
 
 
 
@@ -509,7 +532,7 @@ $(function(){
 </script>
 
 <!--コレクション遷移-->
-<script>  
+<script>
 $(function() {
   setTimeout(function(){
 $(document).on("click",".boost-pfs-filter-button:contains('Between')", function () {
@@ -522,7 +545,7 @@ $(".search-bar-side").appendTo($filterto) ;
 });
 </script>
 
-  
+
 <script>
 jQuery(function(){
     $('.overlay-all').addClass('active');
@@ -542,9 +565,9 @@ jQuery(function(){
     },1000);
 });
   });
-  
+
 //フェードエフェクト：lottie
-</script>  
+</script>
 <script>
 jQuery(function(){
     jQuery(window).scroll(function (){
@@ -573,20 +596,20 @@ jQuery(function(){
     jQuery(window).scroll();
   });
   </script>
- <script> 
- //パララックスエフェクト-SP用 
+ <script>
+ //パララックスエフェクト-SP用
 var whSp = window.innerHeight,
   regSp = 40;//調整値、正の数だとスクロール時に上に動き、負の数だと下に動く。絶対値が大きいほど動く量が小さくなる。
- 
+
 window.addEventListener('load', update_window_size);
 window.addEventListener('resize', update_window_size);
 function update_window_size() {
   whSp = window.innerHeight;
 }
- 
+
 var paraItemsSp = document.querySelectorAll('.para-img');//対象
 paraItemsSp = Array.prototype.slice.call(paraItemsSp, 0);
- 
+
 //トリガー部分
 if (paraItemsSp.length) {
   parallax();
@@ -594,11 +617,11 @@ if (paraItemsSp.length) {
   window.addEventListener('resize', parallax);
   window.addEventListener('scroll', parallax, { passive: true });
 }
- 
-//本体 
+
+//本体
 function parallax() {
   paraItemsSp.forEach(function (paraItem, i) {
- 
+
     //動きなどもっと自由に決めたい場合はこのあたりを好きに修正する。
     paraItem.style.transform = '';
     var nowpos = paraItem.getBoundingClientRect().top - whSp,
@@ -606,16 +629,16 @@ function parallax() {
     if (nowpos < 0) {
       paraItem.style.transform = 'translate(0,' + (nowpos / myreg) + 'vw)';
     }
- 
+
   });
 }
-</script>  
+</script>
 <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 
 <!--begin-boost-pfs-js-->
   {% render 'boost-pfs' %}
 <!--end-boost-pfs-js-->
-  
+
 </body>
 </html>
 {%- endcapture -%}{%- render "ls-output", input: LS_INPUT -%}
