@@ -638,6 +638,19 @@
         "type": "top-series-slider",
         "settings": {
         }
+      },
+      "product-template-ring-size": {
+        "type": "product-template-ring-size",
+        "settings": {
+          "description_style": "default",
+          "social_enable": true,
+          "image_position": "left",
+          "image_size": "large",
+          "thumbnail_position": "beside",
+          "thumbnail_arrows": false,
+          "enable_video_looping": true,
+          "product_video_style": "muted"
+        }
       }
     },
     "content_for_index": [

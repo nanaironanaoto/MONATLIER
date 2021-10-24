@@ -2,11 +2,13 @@
   "sections": {
     "product-template": {
       "type": "product-template",
-      "settings": {}
+      "settings": {
+      }
     },
     "product-story-sections": {
       "type": "product-story-sections",
-      "settings": {}
+      "settings": {
+      }
     }
   },
   "order": [
