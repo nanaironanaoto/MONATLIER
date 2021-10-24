@@ -2,27 +2,33 @@
   "sections": {
     "collection-header": {
       "type": "collection-header",
-      "settings": {}
+      "settings": {
+      }
     },
     "collection-sidebar": {
       "type": "collection-sidebar",
-      "settings": {}
+      "settings": {
+      }
     },
     "collection-promotions": {
       "type": "collection-promotions",
-      "settings": {}
+      "settings": {
+      }
     },
     "collection-template": {
       "type": "collection-template",
-      "settings": {}
+      "settings": {
+      }
     },
     "product-menu": {
       "type": "product-menu",
-      "settings": {}
+      "settings": {
+      }
     },
     "service": {
       "type": "service",
-      "settings": {}
+      "settings": {
+      }
     }
   },
   "order": [
