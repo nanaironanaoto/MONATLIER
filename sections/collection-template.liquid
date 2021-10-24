@@ -1,104 +1,117 @@
+{% comment %}
+注意）並び順は以下でないと壊れる
+{% section 'collection-header' %}
+{% section 'collection-sidebar' %}
+{% section 'collection-promotions' %}
+{% section 'collection-template' %}
+{% endcomment %}
 {%- assign per_row = section.settings.per_row -%}
 {%- assign paginate_by = per_row | times: section.settings.rows_per_page -%}
 
 {% paginate collection.products by paginate_by %}
 
-<div
-  id="CollectionSection"
-  data-section-id="{{ section.id }}"
-  data-section-type="collection-template">
+          <div class="collection-grid__wrapper">
+            <div
+              id="CollectionSection"
+              data-section-id="{{ section.id }}"
+              data-section-type="collection-template">
 
-  {% if section.settings.subcollection_style == 'above' %}
-    {% include 'subcollections', per_row: section.settings.subcollections_per_row %}
-  {% endif %}
+              {% if section.settings.subcollection_style == 'above' %}
+                {% include 'subcollections', per_row: section.settings.subcollections_per_row %}
+              {% endif %}
 
-  <div class="collection-filter">
+              <div class="collection-filter">
 
-    <div class="collection-filter__item collection-filter__item--drawer">
-      {% comment %}
-      <button
-        type="button"
-        class="js-drawer-open-collection-filters btn btn--tertiary"
-        aria-controls="FilterDrawer">
-        <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-filter" viewBox="0 0 64 64"><path d="M48 42h10M48 42a5 5 0 1 1-5-5 5 5 0 0 1 5 5zM7 42h31M16 22H6M16 22a5 5 0 1 1 5 5 5 5 0 0 1-5-5zM57 22H26"/></svg>
-        <span>{{ 'collections.filters.title_tags' | t }}</span>
-      </button>
-      {% endcomment %}
-      
-      <div class="boost-pfs-filter-tree-mobile-button">{% include 'boost-pfs-filter-skeleton', type: 'button' %}</div>
-    </div>
+                <div class="collection-filter__item collection-filter__item--drawer">
+                  {% comment %}
+                  <button
+                    type="button"
+                    class="js-drawer-open-collection-filters btn btn--tertiary"
+                    aria-controls="FilterDrawer">
+                    <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-filter" viewBox="0 0 64 64"><path d="M48 42h10M48 42a5 5 0 1 1-5-5 5 5 0 0 1 5 5zM7 42h31M16 22H6M16 22a5 5 0 1 1 5 5 5 5 0 0 1-5-5zM57 22H26"/></svg>
+                    <span>{{ 'collections.filters.title_tags' | t }}</span>
+                  </button>
+                  {% endcomment %}
 
-    <div class="collection-filter__item collection-filter__item--count small--hide boost-pfs-filter-total-product">
-      {{ 'collections.general.items_with_count' | t: count: collection.products_count }}
-    </div>
+                  <div class="boost-pfs-filter-tree-mobile-button">{% include 'boost-pfs-filter-skeleton', type: 'button' %}</div>
+                </div>
 
-    <div class="collection-filter__item collection-filter__item--sort">
-      <div class="collection-filter__sort-container boost-pfs-filter-top-sorting">
-        {% include 'boost-pfs-filter-skeleton', width: 3 %}
+                <div class="collection-filter__item collection-filter__item--count small--hide boost-pfs-filter-total-product">
+                  {{ 'collections.general.items_with_count' | t: count: collection.products_count }}
+                </div>
+
+                <div class="collection-filter__item collection-filter__item--sort">
+                  <div class="collection-filter__sort-container boost-pfs-filter-top-sorting">
+                    {% include 'boost-pfs-filter-skeleton', width: 3 %}
+                  </div>
+                </div>
+              </div>
+              <div class="boost-pfs-filter-tree boost-pfs-filter-tree-v" data-is-mobile></div>
+              <p class="medium-up--hide text-center boost-pfs-filter-total-product"></p>
+              <div class="grid grid--uniform grid--collection boost-pfs-filter-products" data-boost-sort="{{ collection.default_sort_by }}" data-scroll-to>
+                {%- assign grid_item_width = 'small--one-half medium-up--one-third' -%}
+
+                {% case per_row %}
+                {% when 2 %}
+                  {%- assign grid_item_width = 'medium-up--one-half' -%}
+                {% when 3 %}
+                  {%- assign grid_item_width = 'small--one-half medium-up--one-third' -%}
+                {% when 4 %}
+                  {%- assign grid_item_width = 'small--one-half medium-up--one-quarter' -%}
+                {% when 5 %}
+                  {%- assign grid_item_width = 'small--one-half medium-up--one-fifth' -%}
+                {% endcase %}
+
+                {% for product in collection.products %}
+                  {% include 'product-grid-item' %}
+                {% else %}
+                  <div class="grid__item">
+                    <p>{{ 'collections.general.no_matches' | t }}</p>
+                  </div>
+                {% endfor %}
+
+              </div>
+
+              {% if section.settings.subcollection_style == 'below' %}
+                {% include 'subcollections', per_row: section.settings.subcollections_per_row %}
+              {% endif %}
+
+              <div class="boost-pfs-filter-bottom-pagination pagination">
+                {% if paginate.pages > 1 %}
+                  {% include 'pagination' %}
+                {% endif %}
+              </div>
+              <div class="boost-pfs-filter-load-more"></div>
+
+
+
+              <div class="boost-pfs-quick-shop-modal-container">
+                {%- if settings.quick_shop_enable -%}
+                  {%- for product in collection.products -%}
+                    {%- if product.available -%}
+                      {%- include 'quick-shop-modal' -%}
+                    {%- endif -%}
+                  {%- endfor -%}
+                {%- endif -%}
+              </div>
+
+              {%- if section.settings.description_position == 'bottom' -%}
+                {% if collection.description != blank %}
+                  <hr class="hr--clear hr--small">
+                  <div class="rte">
+                    {{ collection.description }}
+                  </div>
+                  <hr class="hr--clear hr--small">
+                {% endif %}
+              {%- endif -%}
+
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
-  <div class="boost-pfs-filter-tree boost-pfs-filter-tree-v" data-is-mobile></div>
-  <p class="medium-up--hide text-center boost-pfs-filter-total-product"></p>
-  <div class="grid grid--uniform grid--collection boost-pfs-filter-products" data-boost-sort="{{ collection.default_sort_by }}" data-scroll-to>
-    {%- assign grid_item_width = 'small--one-half medium-up--one-third' -%}
-
-    {% case per_row %}
-    {% when 2 %}
-      {%- assign grid_item_width = 'medium-up--one-half' -%}
-    {% when 3 %}
-      {%- assign grid_item_width = 'small--one-half medium-up--one-third' -%}
-    {% when 4 %}
-      {%- assign grid_item_width = 'small--one-half medium-up--one-quarter' -%}
-    {% when 5 %}
-      {%- assign grid_item_width = 'small--one-half medium-up--one-fifth' -%}
-    {% endcase %}
-
-    {% for product in collection.products %}
-      {% include 'product-grid-item' %}
-    {% else %}
-      <div class="grid__item">
-        <p>{{ 'collections.general.no_matches' | t }}</p>
-      </div>
-    {% endfor %}
-
-  </div>
-
-  {% if section.settings.subcollection_style == 'below' %}
-    {% include 'subcollections', per_row: section.settings.subcollections_per_row %}
-  {% endif %}
-
-  <div class="boost-pfs-filter-bottom-pagination pagination">
-    {% if paginate.pages > 1 %}
-      {% include 'pagination' %}
-    {% endif %}
-  </div>
-  <div class="boost-pfs-filter-load-more"></div>
-
-  
-  
-  <div class="boost-pfs-quick-shop-modal-container">
-    {%- if settings.quick_shop_enable -%}
-      {%- for product in collection.products -%}
-        {%- if product.available -%}
-          {%- include 'quick-shop-modal' -%}
-        {%- endif -%}
-      {%- endfor -%}
-    {%- endif -%}
-  </div>
-
-  {%- if section.settings.description_position == 'bottom' -%}
-    {% if collection.description != blank %}
-      <hr class="hr--clear hr--small">
-      <div class="rte">
-        {{ collection.description }}
-      </div>
-      <hr class="hr--clear hr--small">
-    {% endif %}
-  {%- endif -%}
-
 </div>
-
 {% endpaginate %}
 
 <script>
@@ -135,7 +148,7 @@
       vendor_enable: {% if settings.vendor_enable %} {{ settings.vendor_enable | json }} {% else %} false {% endif %},
       quick_shop_enable: {% if settings.quick_shop_enable %} {{ settings.quick_shop_enable | json }} {% else %} false {% endif %},
       product_hover_image: {% if settings.product_hover_image %} {{ settings.product_hover_image | json }} {% else %} false {% endif %},
-      product_grid_image_size: {% if settings.product_grid_image_size %} {{ settings.product_grid_image_size | json }} {% else %} 'natural' {% endif %},     
+      product_grid_image_size: {% if settings.product_grid_image_size %} {{ settings.product_grid_image_size | json }} {% else %} 'natural' {% endif %},
       enable_product_reviews:  {% if settings.enable_product_reviews %} {{ settings.enable_product_reviews | json }} {% else %} false {% endif %},
       collection_color_swatches: {% if settings.collection_color_swatches %} {{ settings.collection_color_swatches | json }} {% else %} false {% endif %},
       product_save_amount: {% if settings.product_save_amount %} {{ settings.product_save_amount | json }} {% else %} true {% endif %},
@@ -143,6 +156,352 @@
     }
   };
 </script>
+
+<div class="bread-pages">
+  <a href="/">{{ 'general.site.top' | t }}</a> <span>＞</span>{{ collection.title}}
+</div>
+<script>
+  $(function(){
+    setInterval(function(){
+      $('.boost-pfs-filter-top-sorting-select option[value="best-selling"]').remove();
+      $('.boost-pfs-filter-top-sorting-select option[value="title-ascending"]').remove();
+      $('.boost-pfs-filter-top-sorting-select option[value="title-descending"]').remove();
+      $('.boost-pfs-filter-top-sorting-select option[value="created-descending"]').remove();
+      $('.boost-pfs-filter-top-sorting-select option[value="best-selling"]').remove();
+      $('.boost-pfs-filter-top-sorting-select option[value="created-ascending"]').remove();
+    },1000);
+});
+</script>
+
+<style>
+
+.boost-pfs-filter-option-category .boost-pfs-filter-option-title-text:after{
+    content:"{{ 'css.filter.category' | t }}";
+}
+.boost-pfs-filter-option-series .boost-pfs-filter-option-title-text:after{
+    content:"{{ 'css.filter.series' | t }}";
+}
+.boost-pfs-filter-option-material .boost-pfs-filter-option-title-text:after{
+    content:"{{ 'css.filter.material' | t }}";
+}
+.boost-pfs-filter-option-design .boost-pfs-filter-option-title-text:after{
+    content:"{{ 'css.filter.design' | t }}";
+}
+.boost-pfs-filter-option-price .boost-pfs-filter-option-title-text:after{
+    content:"{{ 'css.filter.price' | t }}";
+}
+.boost-pfs-filter-option-stock .boost-pfs-filter-option-title-text:after{
+    content:"{{ 'css.filter.stock' | t }}";
+}
+
+</style>
+
+{% if collection.metafields.custom_fields["header-color"] == "ホワイト" %}
+<script>
+$(function() {
+  $(".site-header").addClass('white-text');
+});
+</script>
+{% endif %}
+
+
+{% if collection.title == "Between" %}
+<div class="series-list">
+  <div class="series-section-block">
+  <img src="https://cdn.shopify.com/s/files/1/0268/1202/2962/files/Between_5.jpg?v=1614152608">
+  <div class="series-text">
+  <h2>{{ 'general.series.across' | t }}<span>{{ collections["across"].metafields.custom_fields["style-japanese"] }}</span></h2>
+  <p>{{ collections["across"].description }}</p>
+  <div class="rte"><a href ="/collections/across">{{ 'general.site.discover' | t }}</a></div>
+  </div>
+  </div>
+
+  <div class="series-section-block">
+  <img src="https://cdn.shopify.com/s/files/1/0268/1202/2962/files/Between_3.jpg?v=1614152609">
+  <div class="series-text">
+  <h2>{{ 'general.series.temptation' | t }}<span>{{ collections["temptation"].metafields.custom_fields["style-japanese"] }}</span></h2>
+  <p>{{ collections["temptation"].description }}</p>
+  <div class="rte"><a href ="/collections/Temptation">{{ 'general.site.discover' | t }}</a></div>
+  </div>
+  </div>
+
+  <div class="series-section-block">
+  <img src="https://cdn.shopify.com/s/files/1/0268/1202/2962/files/Between_6.jpg?v=1614152578">
+  <div class="series-text">
+  <h2>{{ 'general.series.attract' | t }}<span>{{ collections["attract"].metafields.custom_fields["style-japanese"] }}</span></h2>
+  <p>{{ collections["attract"].description }}</p>
+  <div class="rte"><a href ="/collections/Attract">{{ 'general.site.discover' | t }}</a></div>
+  </div>
+  </div>
+
+  <div class="series-section-block">
+  <img src="https://cdn.shopify.com/s/files/1/0268/1202/2962/files/Between_7.jpg?v=1614152566">
+  <div class="series-text">
+  <h2>{{ 'general.series.expectation' | t }}<span>{{ collections["expect"].metafields.custom_fields["style-japanese"] }}</span></h2>
+  <p>{{ collections["expect"].description }}</p>
+  <div class="rte"><a href ="/collections/expect">{{ 'general.site.discover' | t }}</a></div>
+  </div>
+  </div>
+
+  <div class="series-section-block">
+  <img src="https://cdn.shopify.com/s/files/1/0268/1202/2962/files/Between_1.jpg?v=1614152566">
+  <div class="series-text">
+  <h2>{{ 'general.series.days' | t }}<span>{{ collections["days"].metafields.custom_fields["style-japanese"] }}</span></h2>
+  <p>{{ collections["days"].description }}</p>
+  <div class="rte"><a href ="/collections/Days">{{ 'general.site.discover' | t }}</a></div>
+  </div>
+  </div>
+
+  <div class="series-section-block">
+  <img src="https://cdn.shopify.com/s/files/1/0268/1202/2962/files/Between_4.jpg?v=1614152566">
+  <div class="series-text">
+  <h2>{{ 'general.series.deco' | t }}<span>{{ collections["deco"].metafields.custom_fields["style-japanese"] }}</span></h2>
+  <p>{{ collections["deco"].description }}</p>
+  <div class="rte"><a href ="/collections/Deco">{{ 'general.site.discover' | t }}</a></div>
+  </div>
+  </div>
+
+  <div class="series-section-block">
+  <img src="https://cdn.shopify.com/s/files/1/0268/1202/2962/files/Between_2.jpg?v=1614152566">
+  <div class="series-text">
+  <h2>{{ 'general.series.notice' | t }}<span>{{ collections["notice"].metafields.custom_fields["style-japanese"] }}</span></h2>
+  <p>{{ collections["notice"].description }}</p>
+  <div class="rte"><a href ="/collections/Notice">{{ 'general.site.discover' | t }}</a></div>
+  </div>
+  </div>
+</div>
+<style>
+  .pagination{
+  display:none !important;}
+.collection-filter{
+    display: none ;
+}
+
+@media only screen and (min-width: 769px){
+.page-width{
+    max-width: 1170px;
+    margin: 0 auto;
+}
+/*--ヘッダー--*/
+.collection-hero__content{
+    padding: 102px 0 0;
+}
+.collection-hero__content .section-header {
+    text-align: left !important;
+}
+.collection-hero__content .page-width {
+    max-width: 1170px;
+    margin: 0 auto;
+}
+/*--サイドバー--*/
+.grid__item--sidebar {
+    margin-top: 40px !important;
+}
+/*--メインコンテンツ--*/
+#CollectionAjaxResult{
+    margin-top: -94px;
+}
+.grid__item--content {
+    max-width: calc(100% - 190px);
+    min-width: calc(100% - 20%);
+    padding: 48px 0 0 84px;
+}
+.collection-hero__content h1.section-header__title{
+    display: inline-block;
+    font-size: 67px !important;
+    letter-spacing: 0.04em;
+    min-width: 300px;
+    margin-right: 55px;
+}
+.collection-description{
+    display: inline-block;
+    vertical-align: top;
+    position: relative;
+    top: 13px;
+    width: auto !important;
+}
+}
+
+/*--Between--*/
+.boost-pfs-filter-option-series .boost-pfs-filter-option-value{
+    font-weight: 600;
+}
+
+.collection-hero__content .section-header__title:after{
+    content: "”Between you and me”";
+    font-size:17px;
+    letter-spacing: 0.1em;
+    line-height: 2.4;
+    display: block;
+    font-family: "TTDrugs-I" !important;
+}
+.series-list h2{
+    font-size: 57px;
+    font-family: "TTDrugs-R" !important;
+    margin: 24px 0 22px;
+}
+.series-list h2 span{
+    font-size: 23px;
+    font-family: "游ゴシック体", YuGothic, "游ゴシック Medium", "Yu Gothic Medium", "游ゴシック", "Yu Gothic", sans-serif; font-weight:500;
+    color:#B7B7B7;
+    letter-spacing: 0.26em;
+}
+.series-list p{
+    font-size: 16px;
+    letter-spacing: 0.13em;
+    line-height: 2;
+    width: 72%;
+    display: inline-block;
+}
+.series-list .rte{
+    display: inline-block;
+    width: 27%;
+    min-width: 200px;
+    margin-bottom: 118px;
+}
+.series-text:last-child .rte{
+    margin-bottom: 165px;
+}
+.series-list a{
+    font-size: 19px;
+    font-family: "TTDrugs-R" !important;
+    letter-spacing: 0.09em;
+    line-height: 2;
+    color: #4b4b4b;
+    position: relative;
+    width: 100%;
+    vertical-align: middle;
+    padding-bottom: 4px;
+}
+@media only screen and (min-width: 769px){
+.service{
+    margin-bottom:220px;
+}
+
+}
+@media only screen and (max-width: 768px){
+.service{
+    margin-top: 20vw;
+}
+
+div.page-width{
+    padding: 0 !important;
+}
+.grid--collection {
+    margin-left: 0vw !important;
+}
+.series-text{
+    padding: 0 10vw;
+}
+
+/*--Between--*/
+.series-list h2{
+    font-size: 12vw !important;
+    margin: 7.4vw 0 5.3vw !important;
+    letter-spacing: 0.01em;
+}
+.series-list h2 span{
+    font-size: 4.6vw !important;
+    letter-spacing: 0.30em;
+    display: block;
+    margin-left: -2.4vw;
+    margin-top: 3vw;
+}
+.series-list p{
+    font-size: 3.7vw !important;
+    letter-spacing: 0.08em;
+    line-height: 1.931034482758621;
+    width: 100% !important;
+    display: inline-block;
+    margin-bottom: 5vw !important;
+}
+.series-list .rte{
+    display: inline-block;
+    width: 100%;
+    min-width: 55vw !important;
+    margin-bottom: 23.6vw !important;
+}
+.series-list a{
+    font-size: 6.4vw !important;
+    padding-bottom: 1vw !important;
+    width: 70% !important;
+}
+ .collection-hero__content h1.section-header__title{
+    font-size: 13vw !important;
+    letter-spacing: 0.07em;
+    min-width: 100%;
+    margin-bottom: 4.6vw;
+}
+.collection-hero__content{
+    padding-top: 10.4vw ;
+}
+.section-header__title:after{
+    font-size: 3.6vw !important;
+    letter-spacing: 0.09em;
+    line-height: 1.8 !important;
+    display: block;
+    font-family: "TTDrugs-I" !important;
+}
+
+
+.collection-description{
+    top: 3.5vw !important;
+    letter-spacing: 0.08em;
+    line-height: 2.2;
+    margin-bottom: 23vw;
+}
+}
+</style>
+<script>
+$(function() {
+  $(".grid-product").remove();
+    var $linkto = $('.boost-pfs-filter-products');
+  $(".series-list").prependTo($linkto) ;
+
+  setTimeout(function(){
+    },100);
+});
+
+
+</script>
+{% endif %}
+
+
+{% assign pageurl = content_for_header| split:'"pageurl":"' | last | split:'"' | first %}
+  {% if pageurl contains "/en"  %}
+  {% elsif pageurl contains "/zh-cn" or pageurl contains "/zh-CN" %}
+  {% elsif pageurl contains "/zh-tw" or pageurl contains "/zh-TW"  %}
+  {% else %}
+<style>
+.boost-pfs-filter-option-category .boost-pfs-filter-option-item.boost-pfs-filter-option-label .boost-pfs-filter-option-value{
+    font-size:0px ;
+}
+.boost-pfs-filter-option-category .boost-pfs-filter-option-item.boost-pfs-filter-option-label .boost-pfs-filter-option-value:after{
+    font-size:13px !important;
+}
+.boost-pfs-filter-option-category .boost-pfs-filter-option-item.boost-pfs-filter-option-label:nth-child(1) .boost-pfs-filter-option-value:after{
+    content:"新作ジュエリー";
+}
+.boost-pfs-filter-option-category .boost-pfs-filter-option-item.boost-pfs-filter-option-label:nth-child(2) .boost-pfs-filter-option-value:after{
+    content:"ネックレス";
+}
+.boost-pfs-filter-option-category .boost-pfs-filter-option-item.boost-pfs-filter-option-label:nth-child(3) .boost-pfs-filter-option-value:after{
+    content:"リング";
+}
+.boost-pfs-filter-option-category .boost-pfs-filter-option-item.boost-pfs-filter-option-label:nth-child(4) .boost-pfs-filter-option-value:after{
+    content:"オプション";
+}
+.boost-pfs-filter-option-category .boost-pfs-filter-option-item.boost-pfs-filter-option-label:nth-child(5) .boost-pfs-filter-option-value:after{
+    content:"全てのジュエリー";
+}
+</style>
+  {% endif %}
+
+<div class="search-bar-side">
+  <h4>{{ 'general.menu.keyword' | t }}</h4>
+	{% include 'search-bar', search_btn_style: 'btn', search_bar_location: 'search-bar--page' %}
+</div>
+
 {% schema %}
 
   {

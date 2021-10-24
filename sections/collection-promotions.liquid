@@ -1,17 +1,27 @@
-<div
-  data-section-id="{{ section.id }}"
-  data-section-type="promo-grid">
+{% comment %}
+注意）並び順は以下でないと壊れる
+{% section 'collection-header' %}
+{% section 'collection-sidebar' %}
+{% section 'collection-promotions' %}
+{% section 'collection-template' %}
+{% endcomment %}
 
-  {%- if section.blocks.size > 0 -%}
-    {%- style -%}
-      .flex-grid--{{ section.id }} {
-        margin-bottom: {{ section.settings.gutter_size }}px;
-      }
-    {%- endstyle -%}
+<div class="grid__item medium-up--four-fifths grid__item--content">
+  <div
+    data-section-id="{{ section.id }}"
+    data-section-type="promo-grid">
 
-    {%- render 'promo-grid', section: section, collection_page: true -%}
-  {%- endif -%}
-</div>
+    {%- if section.blocks.size > 0 -%}
+      {%- style -%}
+        .flex-grid--{{ section.id }} {
+          margin-bottom: {{ section.settings.gutter_size }}px;
+        }
+      {%- endstyle -%}
+
+      {%- render 'promo-grid', section: section, collection_page: true -%}
+    {%- endif -%}
+  </div>
+
 
 {% schema %}
   {

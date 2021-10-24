@@ -1,30 +1,39 @@
-<div
-  id="CollectionSidebar"
-  data-section-id="{{ section.id }}"
-  data-section-type="collection-sidebar"
-  data-combine-tags="{{ section.settings.tags_combine }}"
-  data-style="{{ section.settings.filter_style }}">
-  {%- assign animation_row = 1 -%}
-  <div id="FilterDrawer" class="drawer drawer--left">
-    <div class="drawer__fixed-header">
-      <div class="drawer__header appear-animation appear-delay-{{ animation_row }}">
-        <div class="h2 drawer__title">
-          {{ 'collections.filters.title_tags' | t }}
-        </div>
-        <div class="drawer__close">
-          <button type="button" class="drawer__close-button js-drawer-close">
-            <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-close" viewBox="0 0 64 64"><path d="M19 17.61l27.12 27.13m0-27.12L19 44.74"/></svg>
-            <span class="icon__fallback-text">{{ 'general.drawers.close_menu' | t }}</span>
-          </button>
+{% comment %}
+注意）並び順は以下でないと壊れる
+{% section 'collection-header' %}
+{% section 'collection-sidebar' %}
+{% section 'collection-promotions' %}
+{% section 'collection-template' %}
+{% endcomment %}
+<div class="grid__item medium-up--one-fifth grid__item--sidebar">
+  <div
+    id="CollectionSidebar"
+    data-section-id="{{ section.id }}"
+    data-section-type="collection-sidebar"
+    data-combine-tags="{{ section.settings.tags_combine }}"
+    data-style="{{ section.settings.filter_style }}">
+    {%- assign animation_row = 1 -%}
+    <div id="FilterDrawer" class="drawer drawer--left">
+      <div class="drawer__fixed-header">
+        <div class="drawer__header appear-animation appear-delay-{{ animation_row }}">
+          <div class="h2 drawer__title">
+            {{ 'collections.filters.title_tags' | t }}
+          </div>
+          <div class="drawer__close">
+            <button type="button" class="drawer__close-button js-drawer-close">
+              <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-close" viewBox="0 0 64 64"><path d="M19 17.61l27.12 27.13m0-27.12L19 44.74"/></svg>
+              <span class="icon__fallback-text">{{ 'general.drawers.close_menu' | t }}</span>
+            </button>
+          </div>
         </div>
       </div>
     </div>
+    {%- if section.settings.filter_style == 'sidebar' -%}
+      <div class="collection-sidebar small--hide">
+        <div class="boost-pfs-filter-tree boost-pfs-filter-tree-v boost-pfs-filter-tree-mobile-open" data-is-desktop></div>
+      </div>
+    {%- endif -%}
   </div>
-  {%- if section.settings.filter_style == 'sidebar' -%}
-    <div class="collection-sidebar small--hide">
-      <div class="boost-pfs-filter-tree boost-pfs-filter-tree-v boost-pfs-filter-tree-mobile-open" data-is-desktop></div>
-    </div>
-  {%- endif -%}
 </div>
 
 {%- if section.settings.filter_style == 'drawer' -%}
