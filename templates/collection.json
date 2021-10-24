@@ -1,10 +1,3 @@
-collection-header
-collection-sidebar
-collection-promotions
-collection-template
-product-menu
-service
-
 {
   "sections": {
     "collection-header": {
@@ -35,6 +28,8 @@ service
   "order": [
     "collection-header",
     "collection-sidebar",
+    "collection-promotions",
+    "collection-template",
     "product-menu",
     "service"
   ]
