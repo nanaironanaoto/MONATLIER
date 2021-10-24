@@ -52,10 +52,10 @@ h2.section-header__title {
 .top-header .site-logo{width: 35%;text-align: left;
     margin-bottom: 6px;}
 .top-header .site-logo svg{max-width: 203px;}
-.top-header .site-logo svg path{fill:#FFF; 
+.top-header .site-logo svg path{fill:#FFF;
     transition: all 0.6s;}
 .top-header a .cart-item-count{background: #fff; color:#4b4b4b;transition: all 0.6s;}
-.top-header .hamub-menu-btn svg g line{stroke:#FFF; 
+.top-header .hamub-menu-btn svg g line{stroke:#FFF;
     transition: all 0.6s;}
 .top-header .hamub-menu-btn.is-active svg g line{stroke:#4b4b4b;}
 
@@ -72,17 +72,17 @@ h2.section-header__title {
   .top-header{display:none;}
 }
 /*----------------------------------------------------------------------------------------------------------------お知らせ--*/
-#shopify-section-16113493533515f13f{
+#shopify-section-top-news{
     margin-left: 55px;
     padding-top: 38px;
     z-index: 0;
     position: relative;
 }
-#shopify-section-16113493533515f13f .news-title{
+#shopify-section-top-news .news-title{
     font-family:  "TTDrugs-R" !important;
     margin-right: 13px;
 }
-#shopify-section-16113493533515f13f a{
+#shopify-section-top-news a{
     font-size:14px;
     margin-left: 8px;
 }
@@ -127,7 +127,7 @@ h2.section-header__title {
 }
 
 @media only screen and (max-width: 768px){
-#shopify-section-16113493533515f13f {
+#shopify-section-top-news {
     margin: 0 10vw;
     padding-top: 10vw;
 
@@ -162,7 +162,7 @@ h2.section-header__title {
 }
 @media only screen and (max-width: 768px){
 #shopify-section-1525115199973 {
-    margin: 20vw 0 !important; 
+    margin: 20vw 0 !important;
     padding-top: 10vw;
 }
 
@@ -170,12 +170,12 @@ h2.section-header__title {
     font-size: 12.5vw;
     letter-spacing: 0.06em;
 }
-  
+
 #shopify-section-1525115199973 span{
     font-size: 3.5vw;
     letter-spacing: 0.08em;
 }
-  
+
 }
 
 /*----------------------------------------------------------------------------------------------------------------シリーズスライダー--*/
@@ -187,7 +187,7 @@ h2.section-header__title {
 }
 
 #shopify-section-1614155240a79cb3b2 .section-header{
-    
+
     z-index: 1;
     position: relative;
 }
@@ -195,7 +195,7 @@ h2.section-header__title {
 .series-slider-wrapper{position: relative;}
 .slick-arrow {font-size:18px; color:#000}
 .series-slider{
-    width: 25%; 
+    width: 25%;
     position: absolute !important;
     opacity : 0;
     transform : translate(0, 50px);
@@ -266,13 +266,13 @@ h2.section-header__title {
 .series-slider-description .slick-prev {left: 3vw;}
 .series-slider-description .slick-next {left: 7.6vw;}
 .series-slider-description h3{
-    font-size:4.6vw; 
+    font-size:4.6vw;
     margin-bottom: 0;
     line-height: 1.5;
   	font-family: "TTDrugs-R" !important;
 }
 .series-slider-description h4{
-    font-size:1.6vw; 
+    font-size:1.6vw;
     margin-top: 0vw;
     margin-bottom:2vw;
     margin-left: 0vw;
@@ -288,7 +288,7 @@ h2.section-header__title {
 .series-slider-description a span{
     display: block;
     width: 14vw;
-    font-size:1.23vw; 
+    font-size:1.23vw;
     margin-top: 3.6vw;
     padding-bottom:6px;
     padding-left:0;
@@ -339,7 +339,7 @@ h2.section-header__title {
 }
 
 @media only screen and (max-width: 768px){
-  
+
 #shopify-section-1614155240a79cb3b2{
     overflow: unset !important;
 }
@@ -390,7 +390,7 @@ h2.section-header__title {
 
 
 .series-slider-description .slick-prev {left: 68.4vw; top: -19vw;}
-.series-slider-description .slick-next {left: 68.4vw; 
+.series-slider-description .slick-next {left: 68.4vw;
     top: -8.4vw;}
 .series-slider-description a span{ width: 56vw;}
 .series-slider-name{
@@ -412,7 +412,7 @@ h2.section-header__title {
     letter-spacing: 0.12em;
 }
 @media only screen and (max-width: 768px){
-  
+
 #shopify-section-1609503358b9a1e66c {
     position: relative;
 }
@@ -440,7 +440,7 @@ h2.section-header__title {
     background-image: url('https://cdn.shopify.com/s/files/1/0268/1202/2962/files/concepthero.jpg?v=1614911739');
     background-size: cover;
     background-attachment:fixed;
-  
+
     padding:8.5em 0 6.5em;
     color:#FFF;
     background-position: center;
@@ -491,7 +491,7 @@ h2.section-header__title {
     letter-spacing: 0.07em;
 }
 #shopify-section-16106328737510c41c {
-  background-position: left; 
+  background-position: left;
     padding: 25vw 0 19vw;
     background-image: url('https://cdn.shopify.com/s/files/1/0268/1202/2962/files/concept-sp-hero.jpg?v=1614912851');
     background-attachment: initial;
@@ -501,7 +501,7 @@ h2.section-header__title {
     font-size:3.6vw;
     margin-bottom:6vw;
     letter-spacing: 0.12em;
-    
+
 }
 .top-concept{display: block;
     margin-top:14vw;
@@ -517,7 +517,7 @@ h2.section-header__title {
     position: absolute;
     right: 5vw;
     top:43%;
-    
+
 }
 .top-concept a{
     background: #FFF;
@@ -615,7 +615,7 @@ h2.section-header__title {
 .insta-info span{
     font-size:4vw;
     margin-bottom:9vw;
-    
+
 }
 .instagram a.see-more{
     transform: scale(1.2);
@@ -631,4 +631,3 @@ h2.section-header__title {
     float: right;
 }
 }
-
