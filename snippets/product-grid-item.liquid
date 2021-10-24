@@ -78,11 +78,11 @@
             style="height: 0; padding-bottom: {{ 100 | divided_by: preview_image.aspect_ratio }}%;"
             >
 
-            <!--2021/10/24 吉川追記 -->
+            {% comment %} <!--2021/10/24 吉川追記 -->
             <div style="position: absolute; z-index: 1;">
               <p>12カラット（仮）</p>
             </div>
-            <!--2021/10/24 吉川追記 -->
+            <!--2021/10/24 吉川追記 --> {% endcomment %}
 
             <img class="grid-product__image lazyload "
                 data-src="{{ img_url }}"
