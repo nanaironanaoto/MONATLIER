@@ -19,13 +19,12 @@
     },
     "top-news": {
       "type": "top-news",
-      "settings": {
-      }
+      "wrapper": "div#shopify-section-top-news",
+      "settings": {}
     },
     "16350574848cd73f51": {
       "type": "top-series-slider",
-      "settings": {
-      }
+      "settings": {}
     },
     "16350575038258728e": {
       "type": "advanced-content",
@@ -49,14 +48,12 @@
     },
     "163505749309cc6902": {
       "type": "top-product",
-      "settings": {
-      }
+      "settings": {}
     },
     "16350574996bf954ff": {
       "type": "service",
       "disabled": true,
-      "settings": {
-      }
+      "settings": {}
     },
     "16350575062e269618": {
       "type": "advanced-content",
@@ -129,8 +126,7 @@
     },
     "1635057530b6c47503": {
       "type": "contact-us",
-      "settings": {
-      }
+      "settings": {}
     }
   },
   "order": [
