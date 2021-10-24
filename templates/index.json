@@ -19,12 +19,13 @@
     },
     "top-news": {
       "type": "top-news",
-      "wrapper": "div#shopify-section-top-news",
-      "settings": {}
+      "settings": {
+      }
     },
     "16350574848cd73f51": {
       "type": "top-series-slider",
-      "settings": {}
+      "settings": {
+      }
     },
     "16350575038258728e": {
       "type": "advanced-content",
@@ -49,17 +50,13 @@
     },
     "163505749309cc6902": {
       "type": "top-product",
-      "settings": {}
+      "settings": {
+      }
     },
     "16350574996bf954ff": {
       "type": "service",
-<<<<<<< HEAD
-      "disabled": true,
-      "settings": {}
-=======
       "settings": {
       }
->>>>>>> f1b409f6eeaea354fc2cec21913d6ac68bf67ae9
     },
     "16350575062e269618": {
       "type": "advanced-content",
@@ -87,7 +84,7 @@
         "163505751272e4b48b-1": {
           "type": "html",
           "settings": {
-            "code": "<div class=\"lottie-player-torigger\"><\/div>\n<lottie-player class=\"lottie-03\" src=\"https:\/\/assets10.lottiefiles.com\/packages\/lf20_ls0bv1e4.json\" background=\"transparent\" speed=\"1\" style=\"width: 1080px; height: 1080px;\" autoplay><\/lottie-player>\n    <div class=\"para-img medium--hide is-4\"><img src=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0268\/1202\/2962\/files\/ring-4.png\"><\/div>\n  \n<div class=\"instagram-wrap\">\n<div class=\"instagram\">\n<div class=\"insta-image\">\n<img src=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0268\/1202\/2962\/files\/top-image_3.jpg?v=1614154815\">\n\n<a href=\"https:\/\/www.instagram.com\/monatelier_jewelry\/\" target=\"_blank\" class=\"mobile see-more white \">FOLLOW US!<\/a>\n<\/div>\n\n\n<div class=\"insta-info\">\n<img src=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0268\/1202\/2962\/files\/instagram-icon.png?v=1610680896\">\n<h2>OFFICIAL<br>INSTAGRAM<\/h2>\n<span>@monatelier_jewelry<\/span>\n\n<a href=\"https:\/\/www.instagram.com\/monatelier_jewelry\/\" target=\"_blank\" class=\"pc see-more white \">FOLLOW US!<\/a>\n<\/div>\n<\/div>\n<\/div>",
+            "code": "<div class=\"lottie-player-torigger\"><\/div>\n<lottie-player class=\"lottie-03\" src=\"https:\/\/assets10.lottiefiles.com\/packages\/lf20_ls0bv1e4.json\" background=\"transparent\" speed=\"1\" style=\"width: 1080px; height: 1080px;\" autoplay><\/lottie-player>\n    <div class=\"para-img medium--hide is-4\"><img class=\"lazy\" data-original=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0268\/1202\/2962\/files\/ring-4.png\"><\/div>\n  \n<div class=\"instagram-wrap\">\n<div class=\"instagram\">\n<div class=\"insta-image\">\n<img class=\"lazy\" data-original=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0268\/1202\/2962\/files\/top-image_3.jpg?v=1614154815\">\n\n<a href=\"https:\/\/www.instagram.com\/monatelier_jewelry\/\" target=\"_blank\" class=\"mobile see-more white \">FOLLOW US!<\/a>\n<\/div>\n\n\n<div class=\"insta-info\">\n<img class=\"lazy\" data-original=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0268\/1202\/2962\/files\/instagram-icon.png?v=1610680896\">\n<h2>OFFICIAL<br>INSTAGRAM<\/h2>\n<span>@monatelier_jewelry<\/span>\n\n<a href=\"https:\/\/www.instagram.com\/monatelier_jewelry\/\" target=\"_blank\" class=\"pc see-more white \">FOLLOW US!<\/a>\n<\/div>\n<\/div>\n<\/div>",
             "width": "100%",
             "alignment": "center"
           }
@@ -131,7 +128,8 @@
     },
     "1635057530b6c47503": {
       "type": "contact-us",
-      "settings": {}
+      "settings": {
+      }
     }
   },
   "order": [
