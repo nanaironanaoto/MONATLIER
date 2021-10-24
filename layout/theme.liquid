@@ -199,7 +199,7 @@
 
     {%- section 'header' -%}
 
-      {% if request.page_type == 'collection' %}
+      {% if template == 'collection' %}
         <main class="main-content" id="MainContent">
           <div id="CollectionAjaxResult" class="collection-content">
             <div id="CollectionAjaxContent">
@@ -221,7 +221,7 @@
           {% section "product-menu" %}
           {% section "service" %}
         </main>
-      {% elsif %}
+      {% else %}
       <main class="main-content" id="MainContent">
         {{ content_for_layout }}
       </main>
