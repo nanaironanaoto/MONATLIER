@@ -1,11 +1,171 @@
 {
   "sections": {
+    "1635057441f6209c12": {
+      "type": "top-slider",
+      "settings": {
+        "image_1": "shopify:\/\/shop_images\/top-image_5_2140x_f67521f8-2ed7-4ae6-8a96-b0c738cc4234.jpg",
+        "image_mobile_1": "shopify:\/\/shop_images\/hamub-back.jpg",
+        "image_move_1": "zoom-in",
+        "text_color_1": "FFFFFF",
+        "image_move_2": "slide-top",
+        "text_color_2": "4b4b4b",
+        "image_move_3": "slide-top",
+        "text_color_3": "4b4b4b",
+        "image_move_4": "slide-top",
+        "text_color_4": "4b4b4b"
+      }
+    },
     "top-news": {
       "type": "top-news",
-      "settings": {}
+      "settings": {
+      }
+    },
+    "16350574848cd73f51": {
+      "type": "top-series-slider",
+      "settings": {
+      }
+    },
+    "163505749309cc6902": {
+      "type": "top-product",
+      "settings": {
+      }
+    },
+    "16350574996bf954ff": {
+      "type": "service",
+      "settings": {
+      }
+    },
+    "16350575038258728e": {
+      "type": "advanced-content",
+      "blocks": {
+        "16350575038258728e-0": {
+          "type": "image",
+          "settings": {
+            "link": "",
+            "width": "50%",
+            "alignment": "top-middle"
+          }
+        },
+        "16350575038258728e-1": {
+          "type": "html",
+          "settings": {
+            "code": "<h2>Custom content<\/h2><p>Use this advanced section to build your own layouts or to add custom HTML or scripts.<\/p>",
+            "width": "50%",
+            "alignment": "center"
+          }
+        }
+      },
+      "block_order": [
+        "16350575038258728e-0",
+        "16350575038258728e-1"
+      ],
+      "settings": {
+        "full_width": false,
+        "space_around": true
+      }
+    },
+    "16350575062e269618": {
+      "type": "advanced-content",
+      "blocks": {
+        "16350575062e269618-0": {
+          "type": "image",
+          "settings": {
+            "link": "",
+            "width": "50%",
+            "alignment": "top-middle"
+          }
+        },
+        "16350575062e269618-1": {
+          "type": "html",
+          "settings": {
+            "code": "<h2>Custom content<\/h2><p>Use this advanced section to build your own layouts or to add custom HTML or scripts.<\/p>",
+            "width": "50%",
+            "alignment": "center"
+          }
+        }
+      },
+      "block_order": [
+        "16350575062e269618-0",
+        "16350575062e269618-1"
+      ],
+      "settings": {
+        "full_width": false,
+        "space_around": true
+      }
+    },
+    "163505751272e4b48b": {
+      "type": "advanced-content",
+      "blocks": {
+        "163505751272e4b48b-0": {
+          "type": "image",
+          "settings": {
+            "link": "",
+            "width": "50%",
+            "alignment": "top-middle"
+          }
+        },
+        "163505751272e4b48b-1": {
+          "type": "html",
+          "settings": {
+            "code": "<h2>Custom content<\/h2><p>Use this advanced section to build your own layouts or to add custom HTML or scripts.<\/p>",
+            "width": "50%",
+            "alignment": "center"
+          }
+        }
+      },
+      "block_order": [
+        "163505751272e4b48b-0",
+        "163505751272e4b48b-1"
+      ],
+      "settings": {
+        "full_width": false,
+        "space_around": true
+      }
+    },
+    "1635057515bdc337b9": {
+      "type": "blog-posts",
+      "settings": {
+        "title": "Blog posts",
+        "blog": "",
+        "post_limit": 3,
+        "blog_show_tags": false,
+        "blog_show_date": true,
+        "blog_show_comments": false,
+        "blog_show_author": false,
+        "view_all": true,
+        "blog_image_size": "wide",
+        "divider": false
+      }
+    },
+    "1635057524db91e937": {
+      "type": "featured-collection",
+      "settings": {
+        "title": "Featured collection",
+        "home_featured_products": "",
+        "per_row": 4,
+        "rows": 1,
+        "mobile_scrollable": true,
+        "view_all": true,
+        "divider": false
+      }
+    },
+    "1635057530b6c47503": {
+      "type": "contact-us",
+      "settings": {
+      }
     }
   },
   "order": [
-    "top-news"
+    "1635057441f6209c12",
+    "top-news",
+    "16350574848cd73f51",
+    "163505749309cc6902",
+    "16350574996bf954ff",
+    "16350575038258728e",
+    "16350575062e269618",
+    "163505751272e4b48b",
+    "1635057515bdc337b9",
+    "1635057524db91e937",
+    "1635057530b6c47503"
   ]
 }
