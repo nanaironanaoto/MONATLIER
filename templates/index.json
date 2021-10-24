@@ -117,9 +117,9 @@
       "type": "featured-collection",
       "settings": {
         "title": "Featured collection",
-        "home_featured_products": "",
-        "per_row": 4,
-        "rows": 1,
+        "home_featured_products": "new",
+        "per_row": 5,
+        "rows": 5,
         "mobile_scrollable": true,
         "view_all": true,
         "divider": false
