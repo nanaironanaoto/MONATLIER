@@ -29,9 +29,9 @@
   endif
 -%}
 
-<div class="grid__item grid-product {{ grid_item_width }}{% if settings.quick_shop_enable and sold_out == false %} grid-product__has-quick-shop{% endif %}" 
+<div class="grid__item grid-product {{ grid_item_width }}{% if settings.quick_shop_enable and sold_out == false %} grid-product__has-quick-shop{% endif %}"
      {% comment%}data-aos="row-of-{{ per_row }}"{% endcomment %} data-product-handle="{{ product.handle }}">
-  
+
   <div class="grid-product__content">
     {%- if has_custom_label -%}
       <div class="grid-product__tag grid-product__tag--custom">
@@ -77,14 +77,19 @@
           <div class="image-wrap"
             style="height: 0; padding-bottom: {{ 100 | divided_by: preview_image.aspect_ratio }}%;"
             >
-              
-      
+
+            <!--2021/10/24 吉川追記 -->
+            <div style="position: absolute; z-index: 1;">
+              <p>12カラット（仮）</p>
+            </div>
+            <!--2021/10/24 吉川追記 -->
+
             <img class="grid-product__image lazyload "
                 data-src="{{ img_url }}"
                 data-widths="[180, 360, 540, 720, 900, 1080]"
                 data-aspectratio="{{ preview_image.aspect_ratio }}"
                 data-sizes="auto"
-                alt="{% comment ls-rpl %}{{ preview_image.alt | escape }}{% endcomment %}{%- capture LS_ALT -%}{%- render "ls-alt", image: preview_image -%}{%- endcapture -%}{{ LS_ALT | escape }}{% comment /ls-rpl %}{% endcomment %}">    
+                alt="{% comment ls-rpl %}{{ preview_image.alt | escape }}{% endcomment %}{%- capture LS_ALT -%}{%- render "ls-alt", image: preview_image -%}{%- endcapture -%}{{ LS_ALT | escape }}{% comment /ls-rpl %}{% endcomment %}">
 
 
             <noscript>
@@ -94,7 +99,7 @@
             </noscript>
           </div>
         {%- endif -%}
-		
+
         {%- unless sold_out -%}
           {%- if settings.product_hover_image and product.media.size > 1 -%}
             {%- for media in product.media offset: 1 limit: 1 -%}

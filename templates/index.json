@@ -1,0 +1,11 @@
+{
+  "sections": {
+    "top-news": {
+      "type": "top-news",
+      "settings": {}
+    }
+  },
+  "order": [
+    "top-news"
+  ]
+}
