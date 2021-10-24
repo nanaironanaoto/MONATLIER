@@ -11,9 +11,9 @@
 {% section "product-menu" %}
 {% section 'service' %}
 
-  
+
 <div class="bread-pages">
-  		<a href="{{ routes.root_url }}">{{ 'general.site.top'|t  }}</a> <span>＞</span> <a href="/collections/all"><ls-static-353350>全てのジュエリー</ls-static-353350></a> <span>＞</span> 
+  		<a href="{{ routes.root_url }}">{{ 'general.site.top'|t  }}</a> <span>＞</span> <a href="/collections/all"><ls-static-353350>全てのジュエリー</ls-static-353350></a> <span>＞</span>
             {% if product.type =="リング" %}
             <a href="https://tatsumi-shimada.myshopify.com/collections/ring">{{ 'general.product.ring' | t }}</a><span>＞</span>
             {% elsif product.type =="ネックレス" %}
@@ -22,23 +22,23 @@
             <a href="https://tatsumi-shimada.myshopify.com/collections/option">{{ 'general.product.option' | t }}</a><span>＞</span>
             {% endif %}
             {{ product.title }}<br><br>
-            
-            
+
+
   {% if product.metafields.custom_fields['series'] =="Between" %}
   <a href="{{ routes.root_url }}">{{ 'general.site.top'|t  }}</a> <span>＞</span> <a href="/collections/between">{{ 'general.series.between'|t  }}</a> <span>＞</span>
   <a href="/collections/{{ product.metafields.custom_fields["style"] }}">{{ product.metafields.custom_fields["style"] }}{{ collections[series].metafields.custom_fields["style-japanese"]}}</a>
-  
+
    <span>＞</span>{{ product.title }}
   {% endif %}
 
 </div>
 <div class="product-slider" id="product-slider-1972"> </div>
 <style>
-  
+
 .giftwrapping-select span label:nth-child(3) input:after{
   content:"{{ 'css.product.gift' | t }}";
 }
-  
+
 </style>
 
 {% if collection %}
@@ -48,4 +48,3 @@
     </a>
   </div>
 {% endif %}
-

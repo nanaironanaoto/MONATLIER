@@ -199,7 +199,8 @@
 
     {%- section 'header' -%}
 
-      {% if request.page_type == 'collection' %}
+      {% if template == 'collection' %}{%- comment -%}コレクションテンプレート時{%- endcomment -%}
+        {% section 'collection-header' %}
         <main class="main-content" id="MainContent">
           <div id="CollectionAjaxResult" class="collection-content">
             <div id="CollectionAjaxContent">
@@ -221,7 +222,19 @@
           {% section "product-menu" %}
           {% section "service" %}
         </main>
-      {% elsif %}
+      {% elsif template == 'product' %}{%- comment -%}商品詳細テンプレート時{%- endcomment -%}
+        <main class="main-content" id="MainContent">
+          {{ content_for_layout }}
+        </main>
+        {% if product.type == "リング" or product.type == "ネックレス" %}
+          {% section 'product-group' %}
+        {% endif %}
+        {% section 'sns-shares'%}
+        {% comment %}{% section 'product-recommendations' %}{% endcomment %}
+        {% comment %}{% section 'recently-viewed' %}{% endcomment %}
+        {% section "product-menu" %}
+        {% section 'service' %}
+      {% else %}{%- comment -%}TOPなど上記以外のテンプレート時{%- endcomment -%}
       <main class="main-content" id="MainContent">
         {{ content_for_layout }}
       </main>

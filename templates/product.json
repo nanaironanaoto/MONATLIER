@@ -1,0 +1,16 @@
+{
+  "sections": {
+    "product-template": {
+      "type": "product-template",
+      "settings": {}
+    },
+    "product-story-sections": {
+      "type": "product-story-sections",
+      "settings": {}
+    }
+  },
+  "order": [
+    "product-template",
+    "product-story-sections"
+  ]
+}
