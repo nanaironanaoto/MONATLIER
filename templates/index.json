@@ -35,6 +35,7 @@
     },
     "16350574996bf954ff": {
       "type": "service",
+      "disabled": true,
       "settings": {
       }
     },
