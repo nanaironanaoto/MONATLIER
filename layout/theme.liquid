@@ -199,7 +199,11 @@
 
     {%- section 'header' -%}
 
+<<<<<<< HEAD
       {% if template == 'collection' %}{%- comment -%}コレクションテンプレート時{%- endcomment -%}
+=======
+      {% if template == 'collection' %}
+>>>>>>> 8e3220b0e082eb76cc677e22f15b7a53357ff0a6
         {% section 'collection-header' %}
         <main class="main-content" id="MainContent">
           <div id="CollectionAjaxResult" class="collection-content">
@@ -222,6 +226,7 @@
           {% section "product-menu" %}
           {% section "service" %}
         </main>
+<<<<<<< HEAD
       {% elsif template == 'product' %}{%- comment -%}商品詳細テンプレート時{%- endcomment -%}
         <main class="main-content" id="MainContent">
           {{ content_for_layout }}
@@ -235,6 +240,9 @@
         {% section "product-menu" %}
         {% section 'service' %}
       {% else %}{%- comment -%}TOPなど上記以外のテンプレート時{%- endcomment -%}
+=======
+      {% else %}
+>>>>>>> 8e3220b0e082eb76cc677e22f15b7a53357ff0a6
       <main class="main-content" id="MainContent">
         {{ content_for_layout }}
       </main>
