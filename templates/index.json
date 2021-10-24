@@ -29,6 +29,7 @@
     },
     "16350575038258728e": {
       "type": "advanced-content",
+      "disabled": true,
       "blocks": {
         "42ec3c08-b895-4691-8ced-3aca4ef341f6": {
           "type": "html",
@@ -54,13 +55,11 @@
     },
     "16350574996bf954ff": {
       "type": "service",
-      "disabled": true,
       "settings": {
       }
     },
     "16350575062e269618": {
       "type": "advanced-content",
-      "disabled": true,
       "blocks": {
         "16350575062e269618-1": {
           "type": "html",
@@ -81,7 +80,6 @@
     },
     "163505751272e4b48b": {
       "type": "advanced-content",
-      "disabled": true,
       "blocks": {
         "163505751272e4b48b-1": {
           "type": "html",
