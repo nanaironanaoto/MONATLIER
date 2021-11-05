@@ -544,9 +544,9 @@
       "password-content": {
         "type": "password-content",
         "settings": {
-          "title": "Opening Soon",
+          "title": "リニューアル中",
           "newsletter_enable": true,
-          "newsletter_heading": "<p>Get notified when we launch<\/p>",
+          "newsletter_heading": "<p>1月新サイトオープン予定<\/p>",
           "newsletter_placeholder": "Email address",
           "newsletter_button_text": "Submit",
           "show_share_buttons": true,
