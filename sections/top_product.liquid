@@ -1,31 +1,17 @@
-<!-- mv -->
-<div class="pc">
-  <div class="wide-content mv_position">
-    <div class="mv">
-      <ul class="slick-slider slick_mv cssreset">
-        <li>
-          {{ 'mv_pc01.jpg' | asset_url | img_tag }}
-        </li>
-        <li>
-          {{ 'mv_pc01.jpg' | asset_url | img_tag }}
-        </li>
-      </ul>
-    </div>
-  </div>
-</div>
-
-<div class="sp">
-  <div class="wide-content mv_position">
-    <div class="mv">
-      <ul class="slick-slider slick_mv cssreset">
-        <li>
-          {{ 'mv_sp01.jpg' | asset_url | img_tag }}
-        </li>
-        <li>
-          {{ 'mv_sp01.jpg' | asset_url | img_tag }}
-        </li>
-      </ul>
-    </div>
+<!--newitem-->
+<div class="content">
+  <div class="newitem">
+    {% for product in collections.frontpage.products %}
+      {% include 'product_card' %}
+      {% comment %} <div class="product">
+        {{ 'product01' | asset_url | img_tag }}
+        <div class="product_info">
+          <p>ダイヤモンドK10 0.03ct</p>
+          <p>［オリンド］リング</p>
+          <p>¥24,200</p>
+        </div>
+      </div> {% endcomment %}
+    {% endfor %}
   </div>
 </div>
 

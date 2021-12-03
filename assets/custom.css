@@ -1,5 +1,5 @@
 body{
-	font-family: TTDrugs-R,"游ゴシック体",YuGothic,"游ゴシック Medium","Yu Gothic Medium","游ゴシック","Yu Gothic",sans-serif;	
+	font-family: TTDrugs-R,"游ゴシック体",YuGothic,"游ゴシック Medium","Yu Gothic Medium","游ゴシック","Yu Gothic",sans-serif;
 }
 .pc{
 	display: block;
@@ -20,7 +20,7 @@ body{
 .cssreset, .cssreset *{
 	line-height: 1.5;
 	margin: 0;
-	padding: 0;		
+	padding: 0;
 }
 .text-14px{
 	font-size: 14px;
@@ -59,7 +59,7 @@ body{
     align-items: center;
     padding-left: 11.7%;
     padding-right: 5.0%;
-    justify-content: space-between; 
+    justify-content: space-between;
 }
 .header .header_logo{
 	width: 25%;
@@ -79,11 +79,12 @@ body{
 }
 .mv_position{
 	display: flex;
-	justify-content: flex-end;	
+	justify-content: flex-end;
 }
 .mv{
 	width: 88.3%;
 	min-width: 1046px;
+	margin-bottom: 36px;
 }
 .mv img{
 	width: 100%;
@@ -217,7 +218,7 @@ body{
 }
 .header-icons svg{
     height: 20px;
-    margin-right: 5px;	
+    margin-right: 5px;
 }
 .favorite-icon svg{
     width: 20px;
@@ -247,7 +248,7 @@ body{
 .footer .footer_logo {
     width: 100%;
     display: flex;
-    justify-content: space-between;    
+    justify-content: space-between;
 }
 .social_row {
 	width: 76%;
@@ -262,7 +263,7 @@ body{
 .footer_nav {
     padding: 50px;
     display: flex;
-	justify-content: space-between;    
+	justify-content: space-between;
 }
 .footer_nav_list {
     margin-top: 40px;
@@ -272,7 +273,7 @@ body{
 }
 .footer_bottom{
     display: flex;
-	justify-content: space-between;    
+	justify-content: space-between;
 }
 .footer_bottom_nav {
     display: flex;

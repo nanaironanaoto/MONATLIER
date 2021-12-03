@@ -3,9 +3,24 @@
     "top_mv": {
       "type": "top_mv",
       "settings": {}
+    },
+    "top_news": {
+      "type": "top_news",
+      "settings": {}
+    },
+    "top_heading": {
+      "type": "top_heading",
+      "settings": {}
+    },
+    "top_product": {
+      "type": "top_product",
+      "settings": {}
     }
   },
   "order": [
-    "top_mv"
+    "top_mv",
+    "top_news",
+    "top_heading",
+    "top_product"
   ]
 }

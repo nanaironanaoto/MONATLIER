@@ -40,80 +40,6 @@
   {{ 'theme.css' | asset_url | stylesheet_tag }}
   {%- render 'css-variables' -%}
 
-<script type="text/javascript">
-  $(function(){
-    var ua = navigator.userAgent;
-    if((ua.indexOf('iPhone') > 0) || ua.indexOf('iPod') > 0 || (ua.indexOf('Android') > 0 && ua.indexOf('Mobile') > 0)){
-        $('head').prepend('<meta name="viewport" content="width=768px">');
-    } else {
-        $('head').prepend('<meta name="viewport" content="width=device-width,initial-scale=1">');
-    }
-});
-</script>
-
-
-  <script>
-    document.documentElement.className = document.documentElement.className.replace('no-js', 'js');
-
-    window.theme = window.theme || {};
-    theme.routes = {
-      home: "{{ routes.root_url }}",
-      cart: "{{ routes.cart_url }}",
-      cartAdd: "{{ routes.cart_add_url | append: '.js'}}",
-      cartChange: "{{ routes.cart_change_url }}"
-    };
-    theme.strings = {
-      soldOut: {{ 'products.product.sold_out' | t | json }},
-      unavailable: {{ 'products.product.unavailable' | t | json }},
-      stockLabel: {{ 'products.product.stock_label' | t: count: '[count]' | json }},
-      willNotShipUntil: {{ 'products.product.will_not_ship_until' | t: date: '[date]' | json }},
-      willBeInStockAfter: {{ 'products.product.will_be_in_stock_after' | t: date: '[date]' | json }},
-      waitingForStock: {{ 'products.product.waiting_for_stock' | t | json }},
-      savePrice: {{ 'products.general.save_html' | t: saved_amount: '[saved_amount]' | json }},
-      cartEmpty: {{ 'cart.general.empty' | t | json }},
-      cartTermsConfirmation: {{ 'cart.general.terms_confirm' | t | json }}
-    };
-    theme.settings = {
-      dynamicVariantsEnable: true,
-      dynamicVariantType: {{ settings.variant_type | json }},
-      cartType: {{ settings.cart_type | json }},
-      moneyFormat: {{ shop.money_format | json }},
-      saveType: {{ settings.product_save_type | json }},
-      recentlyViewedEnabled: false,
-      predictiveSearch: {{ settings.predictive_search_enabled }},
-      predictiveSearchType: {{ settings.search_type | json }},
-      inventoryThreshold: {{ settings.inventory_threshold }},
-      quickView: {{ settings.quick_shop_enable }},
-      themeName: 'Impulse',
-      themeVersion: "3.6.1"
-    };
-  </script>
-
-
-  <script type="text/javascript"> var ndnapps_product_json = "{{ 'ndnapps-products-slider.json' | asset_url }}";</script>
-{{ content_for_header }}
-{{ 'ndnapps_products_slider.js' | asset_url | script_tag }}
-<!--2021/10/24 lazyload追加-->
-{{ 'lazyload.min.js' | asset_url | script_tag }}
-
-  {% if template == 'product' and product.metafields.inventory.ShappifyHidden or product.type contains '_HIDDEN_' %}<meta name='robots' content='noindex'>{% endif %}
-{%- render 'bold-options-hybrid' -%}
-{%- render 'bold-common' -%}
-<script src="{{ 'vendor-scripts-v7.js' | asset_url | split: '?' | first }}" defer="defer"></script>
-
-  {%- if shop.enabled_currencies.size > 1 -%}
-    <link rel="preload" as="style" href="{{ 'currency-flags.css' | asset_url | split: '?' | first }}" onload="this.onload=null;this.rel='stylesheet'">
-    <link rel="stylesheet" href="{{ 'currency-flags.css' | asset_url | split: '?' | first }}">
-  {%- endif -%}
-
-  <script src="{{ 'theme.js' | asset_url }}" defer="defer"></script>
-
-<!--スクロールエフェクト-->
-  <script src="{{ 'jquery.inview.min.js' | asset_url }}" defer="defer"></script>
-<!--スクロールエフェクト-end-->
-
-
-
   {{ 'add-style.scss.css' | asset_url | stylesheet_tag }}
   {{ 'add-style-header.scss.css' | asset_url | stylesheet_tag }}
   {{ 'add-style-blog.scss.css' | asset_url | stylesheet_tag }}
@@ -151,28 +77,9 @@
   {% endunless %}
 <!--トップページ以外の場合ヘッダーの高さ調整end-->
 
-  {%- if request.page_type contains 'customers/' -%}
-    <script src="{{ 'shopify_common.js' | shopify_asset_url }}" defer="defer"></script>
-  {%- endif -%}
-
-
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-<script>
-$(document).on('ready', function() {
-  $(".slick_mv").slick({
-    //autoplay: true, // 自動再生を設定
-    //autoplaySpeed: 4000, // 自動再生のスピード（ミリ秒単位）
-    dots: true // ドットインジケーターの表示
-  });
-});
-</script>
-
-{% comment %} <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
-<script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script> {% endcomment %}
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.1/TweenMax.min.js"></script>
-  <script src="{{ 'jquery.easing.1.3.js' | asset_url }}" defer="defer"></script>
+{%- if request.page_type contains 'customers/' -%}
+  <script src="{{ 'shopify_common.js' | shopify_asset_url }}" defer="defer"></script>
+{%- endif -%}
 
 
 <!--begin-boost-pfs-filter-css-->
@@ -188,18 +95,13 @@ $(document).on('ready', function() {
   gtag('config', 'G-QFKQS3W7VG');
 </script>
 
-
 {{ 'ndnapps-products-slider.css' | asset_url | stylesheet_tag }}
-<script type="text/javascript">jQuery(document).ready(function(){Shopify.Products.recordRecentlyViewed( );});</script>
-{% comment %} <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script> {% endcomment %}
-{{ 'custom-fields.css' | asset_url | stylesheet_tag }}
-<script src="{{ 'custom-fields-widgets.js' | asset_url }}" defer="defer"></script>
 
+<!--20211203-->
 {{ 'custom.css' | asset_url | stylesheet_tag }}
 {{ 'custom_sp.css' | asset_url | stylesheet_tag }}
 <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css">
 <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
-
 
 </head>
 
@@ -208,175 +110,106 @@ $(document).on('ready', function() {
     {%- section 'header' -%}
     <!-- header-top-margin -->
     <div class="header-top-margin"></div>
-
     {{ content_for_layout }}
 
     {%- section 'footer' -%}
+
+    {%- section 'newsletter-popup' -%}
 
     {%- if settings.cart_type == 'drawer' -%}
       {%- render 'ajax-cart-template' -%}
     {%- endif -%}
 
   </div><!-- .container -->
+</body>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+{% comment %} <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> {% endcomment %}
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 
 <script>
+$(".slick_mv").not('.slick-initialized').slick({});
+</script>
 
- //パララックスエフェクト-PC用
-var wh = window.innerHeight,
-  reg = 150;//調整値、正の数だとスクロール時に上に動き、負の数だと下に動く。絶対値が大きいほど動く量が小さくなる。
+{% comment %} <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.1/TweenMax.min.js"></script>
+  <script src="{{ 'jquery.easing.1.3.js' | asset_url }}" defer="defer"></script> {% endcomment %}
 
-window.addEventListener('load', update_window_size);
-window.addEventListener('resize', update_window_size);
-function update_window_size() {
-  wh = window.innerHeight;
-}
-
-var paraItems = document.querySelectorAll('lottie-player');//対象
-paraItems = Array.prototype.slice.call(paraItems, 0);
-
-//トリガー部分
-if (paraItems.length) {
-  parallax();
-  window.addEventListener('load', parallax);
-  window.addEventListener('resize', parallax);
-  window.addEventListener('scroll', parallax, { passive: true });
-}
-
-//本体
-function parallax() {
-  paraItems.forEach(function (paraItem, i) {
-
-    //動きなどもっと自由に決めたい場合はこのあたりを好きに修正する。
-    paraItem.style.transform = '';
-    var nowpos = paraItem.getBoundingClientRect().top - wh,
-      myreg = paraItem.getAttribute('data-reg') ? Number(paraItem.getAttribute('data-reg')) : reg;
-    if (nowpos < 0) {
-      paraItem.style.transform = 'translate(0,' + (nowpos / myreg) + 'vw)';
+<script type="text/javascript">
+  $(function(){
+    var ua = navigator.userAgent;
+    if((ua.indexOf('iPhone') > 0) || ua.indexOf('iPod') > 0 || (ua.indexOf('Android') > 0 && ua.indexOf('Mobile') > 0)){
+        $('head').prepend('<meta name="viewport" content="width=768px">');
+    } else {
+        $('head').prepend('<meta name="viewport" content="width=device-width,initial-scale=1">');
     }
-
-  });
-}
-</script>
-<!--フェードエフェクト-->
-{% if template == "index" %}
-<script>
-jQuery(function(){
-  $(".main-content").children().children().addClass('fadein');
-  });
-</script>
-{% elsif template =="collection" %}
-<script>
-jQuery(function(){
-  $(".grid-product").addClass('fadein');
-  $(".series-section-block").addClass('fadein');
-  });
-</script>
-{% elsif template =="product" %}
-<script>
-jQuery(function(){
-  $(".product-section").children().addClass('fadein');
-  $(".main-content").children().addClass('fadein');
-  });
-</script>
-{% elsif page.handle contains "concept" %}
-<script>
-jQuery(function(){
-  $(".concept-top").children().addClass('fadein');
-  $('.concept-image').addClass('fadein');
-  $('.concept-bottom-text').children().addClass('fadein');
-  $('.concept-image-wrap.bottom').addClass('fadein');
-  $('.concept-bottom-text-2').children().addClass('fadein');
-  $('.concept-bottom-end').addClass('fadein');
-  $('.phil-header').addClass('fadein');
-  $('.phil-header').addClass('fadein');
-  $('.phil-top').addClass('fadein');
-  $('.phil-middle').addClass('fadein');
-  $('.phil-bottom').addClass('fadein');
-  });
-</script>
-{% elsif page.handle contains "material" %}
-<script>
-jQuery(function(){
-  $(".material-metal-wrap").addClass('fadein');
-  $(".material-diamond-wrap").addClass('fadein');
-  $(".material-stone-wrap").addClass('fadein');
-  $(".material-hardness-wrap").addClass('fadein');
-  });
-</script>
-{% elsif page.handle contains "shoppingguide" %}
-<script>
-jQuery(function(){
-  $(".main-content").addClass('fadein');
-  });
-</script>
-{% elsif page.handle contains "company" or page.handle contains "contact"  %}
-{% elsif page.handle contains "workshop" %}
-<script>
-jQuery(function(){
-  $(".page-width").children().children().children().addClass('fadein');
-  });
-</script>
-{% elsif template contains "search" %}
-<script>
-jQuery(function(){
-  setTimeout(function(){
-  $(".page-width").children().children().children().removeClass('fadein');
-  $(".page-width").children().children().removeClass('fadein');
-  $(".grid__item").addClass('scrollin');
-    },1000);
-  });
-</script>
-{% elsif template contains "service" %}
-{% elsif page.handle contains "faq" %}
-<script>
-jQuery(function(){
-  $(".page-width").children().addClass('fadein');
-  $(".faq h2").addClass('fadein');
-  });
-</script>
-{% else %}
-<script>
-jQuery(function(){
-  $(".page-width").children().children().addClass('fadein');
-  });
-</script>
-
-{% endif%}
-
-<!--カスタムカーソル-->
-<script>
-var
-cursor = $(".cursor"),
-cWidth = 11, //カーソルの大きさ
-mouseX = 0, //マウスのX座標
-mouseY = 0; //マウスのY座標
-
-$(document).on('mousemove', function(e) {
-  mouseX = e.pageX;
-  mouseY = e.pageY;
-  cursor.css({
-    //カーソルの真ん中に座標軸が来るよう、
-    //カーソルの大きさの半分を引きます
-    left: mouseX - (cWidth / 2),
-    top: mouseY - (cWidth / 2)
-  })
 });
-
-
-
-$(function(){
-$('a, button').hover(
-    function() {
-        //マウスカーソルが重なった時の処理
-	$(".follower").addClass("is-hover");
-    },
-    function() {
-        //マウスカーソルが離れた時の処理
-	$(".follower").removeClass("is-hover");
-    });
-});
-
 </script>
+
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace('no-js', 'js');
+
+  window.theme = window.theme || {};
+  theme.routes = {
+    home: "{{ routes.root_url }}",
+    cart: "{{ routes.cart_url }}",
+    cartAdd: "{{ routes.cart_add_url | append: '.js'}}",
+    cartChange: "{{ routes.cart_change_url }}"
+  };
+  theme.strings = {
+    soldOut: {{ 'products.product.sold_out' | t | json }},
+    unavailable: {{ 'products.product.unavailable' | t | json }},
+    stockLabel: {{ 'products.product.stock_label' | t: count: '[count]' | json }},
+    willNotShipUntil: {{ 'products.product.will_not_ship_until' | t: date: '[date]' | json }},
+    willBeInStockAfter: {{ 'products.product.will_be_in_stock_after' | t: date: '[date]' | json }},
+    waitingForStock: {{ 'products.product.waiting_for_stock' | t | json }},
+    savePrice: {{ 'products.general.save_html' | t: saved_amount: '[saved_amount]' | json }},
+    cartEmpty: {{ 'cart.general.empty' | t | json }},
+    cartTermsConfirmation: {{ 'cart.general.terms_confirm' | t | json }}
+  };
+  theme.settings = {
+    dynamicVariantsEnable: true,
+    dynamicVariantType: {{ settings.variant_type | json }},
+    cartType: {{ settings.cart_type | json }},
+    moneyFormat: {{ shop.money_format | json }},
+    saveType: {{ settings.product_save_type | json }},
+    recentlyViewedEnabled: false,
+    predictiveSearch: {{ settings.predictive_search_enabled }},
+    predictiveSearchType: {{ settings.search_type | json }},
+    inventoryThreshold: {{ settings.inventory_threshold }},
+    quickView: {{ settings.quick_shop_enable }},
+    themeName: 'Impulse',
+    themeVersion: "3.6.1"
+  };
+</script>
+
+{% comment %} <script type="text/javascript"> var ndnapps_product_json = "{{ 'ndnapps-products-slider.json' | asset_url }}";</script> {% endcomment %}
+
+<script type="text/javascript">jQuery(document).ready(function(){Shopify.Products.recordRecentlyViewed( );});</script>
+{% comment %} <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script> {% endcomment %}
+{{ 'custom-fields.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'custom-fields-widgets.js' | asset_url }}" defer="defer"></script>
+
+{{ content_for_header }}
+{{ 'ndnapps_products_slider.js' | asset_url | script_tag }}
+<!--2021/10/24 lazyload追加-->
+{{ 'lazyload.min.js' | asset_url | script_tag }}
+
+{% if template == 'product' and product.metafields.inventory.ShappifyHidden or product.type contains '_HIDDEN_' %}<meta name='robots' content='noindex'>{% endif %}
+{%- render 'bold-options-hybrid' -%}
+{%- render 'bold-common' -%}
+<script src="{{ 'vendor-scripts-v7.js' | asset_url | split: '?' | first }}" defer="defer"></script>
+
+{%- if shop.enabled_currencies.size > 1 -%}
+  <link rel="preload" as="style" href="{{ 'currency-flags.css' | asset_url | split: '?' | first }}" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="stylesheet" href="{{ 'currency-flags.css' | asset_url | split: '?' | first }}">
+{%- endif -%}
+
+<script src="{{ 'theme.js' | asset_url }}" defer="defer"></script>
+
+<!--スクロールエフェクト-->
+<script src="{{ 'jquery.inview.min.js' | asset_url }}" defer="defer"></script>
+<!--スクロールエフェクト-end-->
 
 <!--アコーディオン-->
 <script>
@@ -385,23 +218,6 @@ $(".js-accordion").on("click", function() {
 $(this).next().slideToggle();
 $("span",this).toggleClass("active");
 $(this).toggleClass("active");
-});
-});
-</script>
-
-
-<script>
-$(function() {
-       $('.series-slider-left').slick({
-});
-       $('.series-slider-center').slick({
-    asNavFor: '.series-slider'
-});
-       $('.series-slider-description').slick({
-    	asNavFor: '.series-slider',
-         fade: true
-});
-       $('.series-slider-right').slick({
 });
 });
 </script>
@@ -565,12 +381,11 @@ function parallax() {
   });
 }
 </script>
-<script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 
 <!--begin-boost-pfs-js-->
   {% render 'boost-pfs' %}
 <!--end-boost-pfs-js-->
 
-</body>
+
 </html>
 {%- endcapture -%}{%- render "ls-output", input: LS_INPUT -%}
