@@ -1,0 +1,186 @@
+@media screen and (max-width: 768px) {
+	.pc{
+		display: none;
+	}
+	.sp{
+		display: block;
+	}	
+	.content {
+	    padding: 0 30px;
+    }
+	.mv {
+	    padding: 0 0 0 24px;
+    }	    
+	.header{
+	    height: 68px;
+	    padding-right: 24px;
+	    padding-left: 24px;
+	}
+	.header .header_navi {
+		display: none;
+	}
+	.header .header_menu {
+	    width: 100%;
+	}	
+	.header-top-margin {
+	    margin-top: 68px;
+	}
+	.logo {
+	    width: 107px;
+	}
+	.news_row {
+	    grid-template-columns: 2fr 5fr;
+	}	
+	.news_row div:first-of-type {
+	    font-size: 12px;
+	}
+	.news_row div:last-of-type {
+	    font-size: 14px;
+	}
+	.slick-dotted.slick-slider {
+	    margin-bottom: 20px;
+	}
+	.news {
+	    height: 110px;
+	}
+	.title h3 {
+	    font-size: 20px;
+    }
+	.title p {
+	    font-size: 12px;
+    }
+	.newitem {
+	    grid-template-columns: repeat(2, auto);
+        padding-bottom: 54px;
+    }
+	.newitem .product p:first-of-type {
+	    font-size: 10px;
+	}
+	.newitem .product p {
+	    line-height: 0.4;
+	    font-size: 12px;
+	    margin-bottom: 14px;
+	}
+	.newitem .product:nth-of-type(odd) {
+	    position: relative;
+	    top: 70px;
+	}
+	.btn_right a span:first-of-type {
+	    font-size: 14px;
+	}
+	.btn_right a span:last-of-type {
+	    font-size: 12px;
+	}
+	.top_category {
+	    display: block;
+	    max-width: 70%;
+	    margin: 0 auto 50px;
+	}
+	.top_category div:last-of-type {
+	    margin-bottom: 30px;
+	    position: relative;
+	    top: -12px;   
+	}
+	.top_category span:last-of-type {
+	    font-size: 12px;
+	}
+	.content_bnr {
+	    gap: 0;
+        padding-bottom: 70px;
+	}
+	.content_bnr a{
+	    line-height: 0;
+	    height: 50vw;
+	}
+	.column_col {
+    	display: block;
+    }
+    .title p {
+    	margin-bottom: 40px;
+    }
+	.column_row {
+	    grid-template-columns: 2fr 5fr;
+    }
+    .footer .footer_logo {
+	    display: block;
+        margin-bottom: 60px;
+	}
+	.btn_right {
+        padding-bottom: 64px;
+	}
+    .logo {
+	    margin: 0 auto;
+	}
+	.social_row {
+	    width: 45%;
+	    justify-content: space-between;
+	    column-gap: 24px;
+	    padding-left: 0;
+	    margin: 15px auto;
+	}
+	.btn_page_top.tt_drugs_r {
+	    width: 100%;
+	    text-align: center;
+	}
+	.btn_page_top a {
+	    font-size: 10px;
+	    text-decoration: underline;
+	}
+	.footer {
+	    border-top: none;
+	}
+	.footer {
+	    border-top: none;
+	    padding: 0;
+    }
+	.footer_nav {
+	    padding: 0;
+	    display: block;
+	}
+	.footer_nav>div {
+	    display: grid;
+	    grid-template-columns: 1fr 1fr;
+	    border-bottom: 1px solid #ccc;
+		padding-bottom: 15px;
+		margin-bottom: 23px;   
+	}
+	.footer_nav_list {
+	    margin-top: 0;
+	}
+	.footer_nav_list li {
+	    font-size: 12px;
+	    margin-bottom: 8px;
+	}
+	.footer_nav_title p:first-of-type {
+	    font-size: 14px;
+	}
+	.footer_nav_title p:last-of-type {
+	    font-size: 12px;
+	}
+	.footer_bottom {
+	    display: block;
+	}
+	.footer_bottom_nav {
+	    font-size: 12px;
+	    column-gap: 0;
+	    justify-content: space-between;
+	    margin: 40px 0 20px;
+	}
+	.allright {
+	    font-size: 10px;
+	    text-align: center;
+        padding-bottom: 20px;
+    }
+	.top-header .header-icons {
+	    padding-right: 0;
+	}
+	.content_bnr a>div p:first-of-type {
+	    font-size: 16px;
+	}	
+	.content_bnr a>div p:last-of-type {
+	    font-size: 12px;
+	}
+	.content_bnr a>div:last-of-type {
+	    line-height: 0;
+	}	
+}

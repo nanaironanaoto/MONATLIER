@@ -1,0 +1,297 @@
+body{
+	font-family: TTDrugs-R,"游ゴシック体",YuGothic,"游ゴシック Medium","Yu Gothic Medium","游ゴシック","Yu Gothic",sans-serif;	
+}
+.pc{
+	display: block;
+}
+.sp{
+	display: none;
+}
+.yu_gothic{
+	font-family: "游ゴシック体",YuGothic,"游ゴシック Medium","Yu Gothic Medium","游ゴシック","Yu Gothic",sans-serif;
+	letter-spacing: -1px;
+}
+.tt_drugs_r{
+	font-family: TTDrugs-R !important;
+}
+.slick-prev, .slick-next {
+    display: none !important;
+}
+.cssreset, .cssreset *{
+	line-height: 1.5;
+	margin: 0;
+	padding: 0;		
+}
+.text-14px{
+	font-size: 14px;
+}
+.text-20px{
+	font-size: 20px;
+}
+.container{
+}
+.wide-content{
+	max-width: 100%;
+	margin: 0 auto;
+}
+.content{
+	max-width: 76.5%;
+	min-width: 1046px;
+	margin: 0 auto;
+}
+
+.header-top-margin{
+	margin-top:160px;
+}
+.header_wrapper{
+    z-index: 2;
+    position: fixed;
+    width: 100%;
+    top: 0;
+}
+.header_position{
+
+}
+.header{
+    height: 160px;
+    background: #eee;
+    display: flex;
+    align-items: center;
+    padding-left: 11.7%;
+    padding-right: 5.0%;
+    justify-content: space-between; 
+}
+.header .header_logo{
+	width: 25%;
+}
+.header .header_navi {
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-right: 20%;
+}
+.header .header_menu{
+	width: 25%;
+}
+.hamub-right-top>a, .header-icons>a {
+    margin-left: 0 !important;
+}
+.mv_position{
+	display: flex;
+	justify-content: flex-end;	
+}
+.mv{
+	width: 88.3%;
+	min-width: 1046px;
+}
+.mv img{
+	width: 100%;
+}
+.news{
+	height: 172px;
+}
+.news_row{
+	display: grid;
+    grid-template-columns: 2fr 9fr;
+}
+.title{
+
+}
+.title h3 {
+    margin-bottom: 0;
+}
+.title p{
+	font-family: TTDrugs-R;
+	font-size: 18px;
+	margin-bottom: 54px;
+    line-height: 1;
+}
+.btn_right{
+    display: flex;
+    justify-content: flex-end;
+    padding-bottom: 110px;
+}
+.btn_right a span:first-of-type{
+	font-size: 20px;
+}
+.btn_right a span:last-of-type{
+	font-size: 14px;
+}
+.newitem{
+	display: grid;
+	grid-template-columns: repeat(3, auto);
+	gap: 17px;
+}
+.newitem .product{
+}
+.newitem .product p:first-of-type{
+	font-size: 14px;
+}
+.newitem .product p{
+	line-height: 0.7;
+}
+.newitem .product img{
+	width: 100%;
+}
+.product_info{
+	padding: 0 0 54px;
+}
+.logo{
+	width: 153px;
+}
+.top_category{
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+.top_category a{
+	width: 100%;
+	max-width: 170px;
+	margin: 33px auto 110px;
+}
+.top_category a>div {
+    width: 100%;
+}
+.top_category a>div:first-of-type{
+}
+.top_category a>div:last-of-type{
+	display: flex;
+	justify-content: flex-end;
+    text-align: right;
+}
+.top_category span:first-of-type{
+	font-size: 20px;
+}
+.top_category span:last-of-type{
+	font-size: 14px;
+}
+
+.content_bnr{
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 33px;
+	padding-bottom: 113px;
+}
+.content_bnr a img{
+	width: 100%;
+}
+.content_bnr a{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+    overflow: hidden;
+}
+.content_bnr a>div:first-of-type{
+    position: absolute;
+    color: white;
+    text-align: center;
+}
+.content_bnr a>div p:first-of-type{
+    font-size: 26px;
+}
+.content_bnr a>div p:last-of-type{
+    font-size: 18px;
+}
+.content_bnr a>div:last-of-type{
+    width: 100%;
+}
+
+/*add-style.cssを上書きする部分*/
+.top-header{
+    width: 100%;
+    background: white;
+}
+.top-header .header-icons a, .top-header .navi-text{
+	color: #000;
+}
+.top-header .hamub-menu-btn svg g line {
+    stroke: #000;
+}
+.top-header .header-icons {
+    width: 100%;
+    padding-right: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    column-gap: 20px;
+}
+.header-icons svg{
+    height: 20px;
+    margin-right: 5px;	
+}
+.favorite-icon svg{
+    width: 20px;
+    top: 0;
+    height: auto;
+}
+.slick-dots {
+    visibility: hidden;
+}
+.column_col{
+	display: grid;
+	grid-template-columns: 1fr 3fr;
+}
+.column_row{
+    display: grid;
+    grid-template-columns: 2fr 9fr;
+}
+.column_row div{
+    padding: 30px 0;
+	border-top: 1px solid #666;
+}
+.footer{
+	padding: 76px 0;
+	border-top: 1px solid #ccc;
+	height: 600px;
+}
+.footer .footer_logo {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;    
+}
+.social_row {
+	width: 76%;
+    display: flex;
+    align-items: start;
+    column-gap: 24px;
+    padding-left: 52px;
+}
+.btn_page_top{
+
+}
+.footer_nav {
+    padding: 50px;
+    display: flex;
+	justify-content: space-between;    
+}
+.footer_nav_list {
+    margin-top: 40px;
+}
+.footer_nav_list li {
+    margin-bottom: 20px;
+}
+.footer_bottom{
+    display: flex;
+	justify-content: space-between;    
+}
+.footer_bottom_nav {
+    display: flex;
+    column-gap: 50px;
+}
+.footer_nav_title p:first-of-type {
+    font-size: 20px;
+}
+.footer_nav_title p:last-of-type {
+    font-size: 14px;
+}
+.allright{
+	font-size: 14px;
+}
+
+@media screen and (max-width: 1024px) {
+	.content, .mv{
+		padding: 0 30px;
+		width: 100%;
+		min-width: 100%;
+	}
+}

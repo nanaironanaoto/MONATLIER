@@ -158,8 +158,19 @@
 
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
-<script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+<script>
+$(document).on('ready', function() {
+  $(".slick_mv").slick({
+    //autoplay: true, // 自動再生を設定
+    //autoplaySpeed: 4000, // 自動再生のスピード（ミリ秒単位）
+    dots: true // ドットインジケーターの表示
+  });
+});
+</script>
+
+{% comment %} <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+<script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script> {% endcomment %}
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.1/TweenMax.min.js"></script>
   <script src="{{ 'jquery.easing.1.3.js' | asset_url }}" defer="defer"></script>
 
@@ -184,124 +195,30 @@
 {{ 'custom-fields.css' | asset_url | stylesheet_tag }}
 <script src="{{ 'custom-fields-widgets.js' | asset_url }}" defer="defer"></script>
 
+{{ 'custom.css' | asset_url | stylesheet_tag }}
+{{ 'custom_sp.css' | asset_url | stylesheet_tag }}
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css">
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
+
+
 </head>
 
-<body class="template-{{ template | replace: '.', ' ' | truncatewords: 1, '' | handle }}{% if request.path == '/challenge' %} template-challange{% endif %}" data-center-text="{{settings.type_body_align_text}}" data-button_style="{{settings.button_style}}" data-type_header_capitalize="{{settings.type_header_capitalize}}" data-type_headers_align_text="{{settings.type_headers_align_text}}" data-type_product_capitalize="{{settings.type_product_capitalize}}" data-swatch_style="{{settings.swatch_style}}" {% if settings.disable_animations %}data-disable-animations="true"{% endif %}>
-
-
-  <div class="overlay-all"></div>
-  <!--カスタムカーソル-->
-  <div class="cursor">
-  <div class="follower"></div></div>
-
-  <a class="in-page-link visually-hidden skip-link" href="#MainContent">{{ 'general.accessibility.skip_to_content' | t }}</a>
-
-  <div id="PageContainer" class="page-container">
-    <div class="transition-body">
+  <div class="container">
 
     {%- section 'header' -%}
+    <!-- header-top-margin -->
+    <div class="header-top-margin"></div>
 
-      {% if template == 'collection' %}{%- comment -%}コレクションテンプレート時{%- endcomment -%}
-        {% section 'collection-header' %}
-        <main class="main-content" id="MainContent">
-          <div id="CollectionAjaxResult" class="collection-content">
-            <div id="CollectionAjaxContent">
-              <div class="page-width">
-                <div class="grid">
-                  <div class="grid__item medium-up--one-fifth grid__item--sidebar">
-                    {% section 'collection-sidebar' %}
-                  </div>
-                  <div class="grid__item medium-up--four-fifths grid__item--content">
-                    {% section 'collection-promotions' %}
-                    <div class="collection-grid__wrapper">
-                      {{ content_for_layout }}
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          {% section "product-menu" %}
-          {% section "service" %}
-        </main>
-      {% elsif template == 'product' %}{%- comment -%}商品詳細テンプレート時{%- endcomment -%}
-        <main class="main-content product_check_test" id="MainContent">
-          {{ content_for_layout }}
-        </main>
-        {% if product.type == "リング" or product.type == "ネックレス" %}
-          {% section 'product-group' %}
-        {% endif %}
-        {% section 'sns-shares'%}
-        {% comment %}{% section 'product-recommendations' %}{% endcomment %}
-        {% comment %}{% section 'recently-viewed' %}{% endcomment %}
-        {% section "product-menu" %}
-        {% section 'service' %}
-      {% else %}{%- comment -%}TOPなど上記以外のテンプレート時{%- endcomment -%}
-      <main class="main-content" id="MainContent">
-        {{ content_for_layout }}
-      </main>
-      {% endif %}
+    {{ content_for_layout }}
 
-      {%- section 'footer-promotions' -%}
-      {%- section 'footer' -%}
+    {%- section 'footer' -%}
 
-    </div>
-  </div>
+    {%- if settings.cart_type == 'drawer' -%}
+      {%- render 'ajax-cart-template' -%}
+    {%- endif -%}
 
-  {%- section 'newsletter-popup' -%}
+  </div><!-- .container -->
 
-  {%- if settings.cart_type == 'drawer' -%}
-    {%- render 'ajax-cart-template' -%}
-  {%- endif -%}
-
-  <div class="hide">
-    <button data-id="prevArrowTemplate" class="slick-prev" aria-label="{{ 'general.pagination.previous' | t }}" type="button">
-      <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-chevron-left" viewBox="0 0 284.49 498.98"><path d="M249.49 0a35 35 0 0 1 24.75 59.75L84.49 249.49l189.75 189.74a35.002 35.002 0 1 1-49.5 49.5L10.25 274.24a35 35 0 0 1 0-49.5L224.74 10.25A34.89 34.89 0 0 1 249.49 0z"/></svg>
-      <span class="icon__fallback-text">{{ 'general.pagination.previous' | t }}</span>
-    </button>
-    <button data-id="nextArrowTemplate" class="slick-next" aria-label="{{ 'general.pagination.next' | t }}" type="button">
-      <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-chevron-right" viewBox="0 0 284.49 498.98"><path d="M35 498.98a35 35 0 0 1-24.75-59.75l189.74-189.74L10.25 59.75a35.002 35.002 0 0 1 49.5-49.5l214.49 214.49a35 35 0 0 1 0 49.5L59.75 488.73A34.89 34.89 0 0 1 35 498.98z"/></svg>
-      <span class="icon__fallback-text">{{ 'general.pagination.next' | t }}</span>
-    </button>
-  </div>
-
-  {%- if settings.predictive_search_enabled -%}
-    {%- render 'predictive-template' -%}
-  {%- endif -%}
-
-  {%- render 'video-modal' -%}
-  {%- render 'photoswipe-template' -%}
-  {%- if template contains 'product' -%}
-    {%- render 'recently-viewed-product-template' -%}
-  {%- endif -%}
-
-    {% if request.locale.name == "English"%}
-    {% elsif request.locale.name == "繁體中文"%}
-    {% elsif request.locale.name == "简体中文"%}
-    {% else %}
-<style>
-    .grid-product__title {
-    text-indent: -6px;
-    }
-    .top-product .grid-product__title {
-    text-indent: -6px;
-    }
-    h1.product-single__title {
-    text-indent: -16px;
-    }
-    @media only screen and (max-width: 768px){
-    .grid-product__title {
-    text-indent: -1.3vw;
-    }
-    .top-product .grid-product__title {
-    text-indent: -1.6vw;
-    }
-    h1.product-single__title {
-    text-indent: -4vw;
-    }
-    }
-</style>
-    {% endif %}
 <script>
 
  //パララックスエフェクト-PC用
