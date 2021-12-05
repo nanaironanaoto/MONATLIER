@@ -15,12 +15,42 @@
     "top_product": {
       "type": "top_product",
       "settings": {}
+    },
+    "top_viewall_btn": {
+      "type": "top_viewall_btn",
+      "settings": {}
+    },
+    "top_heading": {
+      "type": "top_heading",
+      "settings": {}
+    },
+    "top_category": {
+      "type": "top_category",
+      "settings": {}
+    },
+    "top_topic_bnr": {
+      "type": "top_topic_bnr",
+      "settings": {}
+    },
+    "top_column": {
+      "type": "top_column",
+      "settings": {}
+    },
+    "top_viewall_btn": {
+      "type": "top_viewall_btn",
+      "settings": {}
     }
   },
   "order": [
     "top_mv",
     "top_news",
     "top_heading",
-    "top_product"
+    "top_product",
+    "top_viewall_btn",
+    "top_heading",
+    "top_category",
+    "top_topic_bnr",
+    "top_column",
+    "top_viewall_btn"
   ]
 }

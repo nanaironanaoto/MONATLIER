@@ -84,7 +84,7 @@ body{
 .mv{
 	width: 88.3%;
 	min-width: 1046px;
-	margin-bottom: 36px;
+	margin-bottom: 30px;
 }
 .mv img{
 	width: 100%;
@@ -144,11 +144,17 @@ body{
 .top_category{
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr 1fr;
+	margin: 33px auto 110px;
+}
+.top_category>div{
+	border-left: 1px solid #ccc;
+	display: flex;
+	justify-content: center;
+	align-content: center;
 }
 .top_category a{
 	width: 100%;
-	max-width: 170px;
-	margin: 33px auto 110px;
+	padding: 20px 40px 0;
 }
 .top_category a>div {
     width: 100%;

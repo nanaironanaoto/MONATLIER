@@ -1,0 +1,66 @@
+<!-- btn_right -->
+<div class="content">
+  <div class="btn_right">
+    <a href=""><span>すべての商品を見る</span><br>
+    <span>VIEW ALL</span></a>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": {
+    "ja": "ライトボタン"
+  },
+  "class": "sample_section",
+  "blocks": [
+    {
+      "type": "custom",
+      "name": {
+        "ja": "画像"
+      },
+      "limit": 3,
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image_picker",
+          "label": {
+            "ja": "画像"
+          }
+        }
+      ]
+    }
+  ],
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "is_visivle",
+      "label": {
+        "ja": "表示する？"
+      },
+      "info": {
+        "ja": "チェックを入れると表示、外すと非表示になります。"
+      }
+    },
+    {
+      "type": "textarea",
+      "id": "text",
+      "label": {
+        "ja": "本文"
+      },
+      "default": {
+        "ja": "default text. default text."
+      }
+    }
+  ],
+  "presets": [
+    {
+      "name": {
+        "ja": "ライトボタン"
+      },
+      "category": {
+        "ja": "_カスタム"
+      }
+    }
+  ]
+}
+{% endschema %}
