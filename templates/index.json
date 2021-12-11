@@ -121,6 +121,21 @@
     },
     "content": {
       "type": "content",
+      "blocks": {
+        "f3966f1e-d976-42fd-9e8c-f7b690558ae4": {
+          "type": "header",
+          "settings": {
+            "content_image_pc": "shopify:\/\/shop_images\/content_bnr01.jpg",
+            "content_image_sp": "shopify:\/\/shop_images\/content_bnr01_square.jpg",
+            "content_text_jp": "品質基準",
+            "content_text_en": "QUALITY",
+            "content_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "f3966f1e-d976-42fd-9e8c-f7b690558ae4"
+      ],
       "settings": {
       }
     },
