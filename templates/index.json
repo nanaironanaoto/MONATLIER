@@ -76,6 +76,46 @@
     },
     "category": {
       "type": "category",
+      "blocks": {
+        "d16539ec-cbca-4b2c-b44a-014d50ecd169": {
+          "type": "header",
+          "settings": {
+            "category_text_jp": "ネックレス",
+            "category_text_en": "NECKLACE",
+            "category_link": ""
+          }
+        },
+        "d3bc54bd-0017-4dcb-8053-2daf038c3973": {
+          "type": "header",
+          "settings": {
+            "category_text_jp": "リング",
+            "category_text_en": "RING",
+            "category_link": ""
+          }
+        },
+        "42b60fb3-4a8a-4a14-8ae1-c7d4d7ecf8a6": {
+          "type": "header",
+          "settings": {
+            "category_text_jp": "ピアス",
+            "category_text_en": "EARRING",
+            "category_link": ""
+          }
+        },
+        "c2893a4d-49da-454b-a0eb-29e988e79dfc": {
+          "type": "header",
+          "settings": {
+            "category_text_jp": "ブレスレット",
+            "category_text_en": "BRACELET",
+            "category_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "d16539ec-cbca-4b2c-b44a-014d50ecd169",
+        "d3bc54bd-0017-4dcb-8053-2daf038c3973",
+        "42b60fb3-4a8a-4a14-8ae1-c7d4d7ecf8a6",
+        "c2893a4d-49da-454b-a0eb-29e988e79dfc"
+      ],
       "settings": {
       }
     },
