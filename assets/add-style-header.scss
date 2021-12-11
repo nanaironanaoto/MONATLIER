@@ -88,10 +88,10 @@ a.navi-text.is-active{
     height: 14px;
     position: relative;
     top: 3px;
-    transition: all 0.4s;  
+    transition: all 0.4s;
 }
 .favorite-icon svg g path{
-    transition: all 0.4s;  
+    transition: all 0.4s;
 }
 //言語セレクター
 .select-lang-wrap{
@@ -144,7 +144,7 @@ a.select-lang{
   position: absolute;
   top: 100%;
   left: 0;
-  width: 100%;    
+  width: 100%;
 
 }
 .menu_contents_inner{
@@ -162,7 +162,7 @@ a.select-lang{
     width:20%;
     display: block;
 }
-.menu_contents span.menu-content-title{ 
+.menu_contents span.menu-content-title{
     font-family:  "TTDrugs-R" !important;
     font-size:22px;
     letter-spacing: 0.04em;
@@ -247,7 +247,7 @@ a.select-lang{
 .header-icons > a,,.hamub-right-top > a{
     font-family: "TTDrugs-R" !important;
     font-size: 14px;
-    margin-left: 20px !important; 
+    margin-left: 20px !important;
     letter-spacing: 0.04em;
 }
 .header-icons .cart-item-count,.hamub-right-top .cart-item-count{
@@ -274,15 +274,15 @@ a.select-lang{
 .top-header{display: none;}
 .site-header{display: none;}
 .site-header.sp-header{
-    display:block; 
-    position: fixed; 
+    display:block;
+    position: fixed;
     opacity: 1;
     background: none;
     pointer-events: auto;
 }
 .site-header.sp-header.header-fixed{background: #fffffff0;}
 .site-header.sp-header.header-white{background: #fffffff0;}
-  
+
 .sp-menu{width: 30%; padding-left:10px;}
 .sp-menu-left{
     display:flex;
@@ -330,7 +330,7 @@ a.select-lang{
 .sp-header .header-icons .favorite-icon{
     padding-left: 9vw !important;
     padding-right: 0 !important;
-}  
+}
 /*--ハンバーガーボタン押下時の動作--*/
 .hamub-open{position: absolute;}
 .hamub-close{
@@ -367,7 +367,7 @@ a.select-lang{
 .sp-hamub-search-btn svg{
     width: 5vw;
   height: 5vw;
-} 
+}
 
 .search-open{position: absolute;}
 .search-close{
@@ -386,7 +386,7 @@ a.select-lang{
 .sp-search{
     border-bottom: solid 1px #DDDDDD;
 }
-.sp-search-menu ul{ 
+.sp-search-menu ul{
     display: none;
     margin:0;
     padding: 0 0 15vw 0;
@@ -466,14 +466,14 @@ a.select-lang{
     letter-spacing: 0.07em;
     display: inline-block;
 }
-  
-  
+
+
 }
 
 /*--------------------------------------------------------------------------------------------------------------------------------PC：ハンバーガー--*/
 
 /*--ハンバーガーメニュー：ボタン--*/
-.hamub-menu-btn{  
+.hamub-menu-btn{
     vertical-align: middle;
     z-index: 2;
     margin-left:10px;
@@ -536,7 +536,7 @@ a.select-lang{
     width: 42%;
     height: 100vh;
     position: relative;
-    background-image: url('https://cdn.shopify.com/s/files/1/0268/1202/2962/files/hamub-back.jpg?v=1615440688');
+    // background-image: url('https://cdn.shopify.com/s/files/1/0268/1202/2962/files/hamub-back.jpg?v=1615440688');
   	background-size: cover;
 }
 .hamub-right{
@@ -645,7 +645,7 @@ a.select-lang{
     letter-spacing: 0.08em;
 }
 .sp-menu-multiple .sp-js-accordion{
-    position: absolute; 
+    position: absolute;
     right: 0px;
     top:0;
 }
@@ -663,7 +663,7 @@ a.select-lang{
     font-size: 7.5vw;
 }
 .sp-menu-multiple .hamub-main-sp ul{
-    margin-left: 0; 
+    margin-left: 0;
     margin-bottom:13vw;
     line-height: 1.2;
 }
@@ -714,7 +714,7 @@ a.select-lang{
     font-size:3vw;
 }
 }
-  
+
   /*-------------------透過ヘッダー-------------------*/
 .site-header.header-cleared{transition:background 0.4s;}
 .site-header.header-cleared{background: none;}
@@ -754,7 +754,7 @@ a.select-lang{
  .sp-header.header-fixed .site-logo svg path { fill:#C8AB7A ;}
  .sp-header.header-fixed .sp-menu-left svg g line { stroke:#4b4b4b !important;}
  .sp-header.header-fixed .cart-item-count { background:#4b4b4b !important; color:#FFF !important;}
-  
+
 //透過ヘッダー
 .site-header.sp-header.white-text.header-cleared{background: none;}
 .site-header.sp-header.white-text.header-cleared .sp-menu-left svg g line{stroke:#FFF !important;}
@@ -771,7 +771,7 @@ a.select-lang{
  .sp-header.header-white .site-logo  svg path{ fill:#C8AB7A !important;}
  .sp-header.header-white .sp-menu-left  svg g line { stroke:#4b4b4b !important;}
  .sp-header.header-white .cart-item-count { background:#4b4b4b !important; color:#FFF !important;}
-  
+
  .site-header.sp-header.white-text.header-cleared.header-white  .sp-menu-left svg g line{stroke:#4b4b4b !important;}
 .site-header.sp-header.white-text.header-cleared.header-white .header-icons  svg path,
 .site-header.sp-header.white-text.header-cleared.header-white .header-icons  svg rect,
@@ -779,10 +779,10 @@ a.select-lang{
 .site-header.sp-header.white-text.header-cleared.header-white .cart-item-count { background:#4b4b4b !important; color:#FFF !important;}
 .site-header.sp-header.header-cleared.white-text .header-icons a {
     color: #4b4b4b;
-} 
-  
+}
+
 .site-header.sp-header.white-text.header-cleared.header-white .site-logo  svg path{fill:#C8AB7A !important;
-  
+
 }
 }
 
@@ -826,7 +826,7 @@ a.select-lang{
     color:#6F6F6F ;
 }
 .footer-box li a{color:#6F6F6F ;}
-.footer-box.is-1{width: 34%; 
+.footer-box.is-1{width: 34%;
     text-align: center;}
 .footer-box.is-1 svg{
     width: 249px;
@@ -873,7 +873,7 @@ a.select-lang{
     margin: 0 auto;
     display: block;
     text-align: center;
-    margin-bottom: -6px; 
+    margin-bottom: -6px;
     margin: 0 26px;
     height: 19px;
     z-index: 1;
@@ -886,7 +886,7 @@ a.select-lang{
 }
 
 @media only screen and (max-width: 768px){
-    
+
 //フッター境界線
 .footer-border-wrap{
     margin-bottom: 0;
@@ -979,7 +979,7 @@ a.select-lang{
 .drawer__header{
     border: none;
     height: auto;
-}    
+}
 .h2.drawer__title{
     font-family: "TTDrugs-R" ;
     font-size: 34px;
@@ -1095,7 +1095,7 @@ a.select-lang{
 .drawer__header{
     border: none;
     height: auto;
-}    
+}
 .h2.drawer__title{
     font-family: "TTDrugs-R" ;
     font-size: 8.8vw;

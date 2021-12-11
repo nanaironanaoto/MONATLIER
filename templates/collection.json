@@ -1,12 +1,1 @@
-{
-  "sections": {
-    "collection-template": {
-      "type": "collection-template",
-      "settings": {
-      }
-    }
-  },
-  "order": [
-    "collection-template"
-  ]
-}
+{"sections":{"collection-template":{"type":"collection-template","settings":{}}},"order":["collection-template"]}

@@ -61,7 +61,7 @@ const ReplaceFavoriteApp = {
 	replace: () => SFA.creat.list = (item, meta = []) => {
 		const media = typeof item.media !== 'undefined'? item.media[0]: {
 			aspect_ratio: 1,
-			src: `//cdn.shopify.com/s/files/1/0268/1202/2962/t/35/assets/boost-pfs-no-image_360x.gif?v=4551082043989976841`,
+			src: `//cdn.shopify.com/s/files/1/0268/1202/2962/t/37/assets/boost-pfs-no-image_360x.gif?v=4551082043989976841`,
 			preview_image: {
 				alt: ''
 			}

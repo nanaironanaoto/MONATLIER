@@ -1,28 +1,32 @@
 <!-- header -->
-<div class="wide-content header_position cssreset">
+<div class="wide-content header_position">
   <div class="header_wrapper">
     <div class="header top-header">
 
       <div class="header_logo">
-        <p class="logo">
-          {{ 'logo.svg' | asset_url | img_tag }}
-        </p>
+        <a href="/">
+          <p class="logo cssreset">
+            {{ 'logo.svg' | asset_url | img_tag }}
+          </p>
+        </a>
       </div>
 
-      <div class="header_navi">
-        <a class="navi-text" href="">
+      {% comment %} {% render 'header-navi' %} {% endcomment %}
+
+      <div class="header_navi cssreset">
+        <a class="navi-text" href="/collections/all">
           <div>
             <p class="text-20px yu_gothic">ジュエリー</p>
             <p class="text-14px">JEWELRY</p>
           </div>
         </a>
-        <a class="navi-text" href="">
+        <a class="navi-text" href="/pages/quality">
           <div>
             <p class="text-20px yu_gothic">品質</p>
             <p class="text-14px">ABOUT</p>
           </div>
         </a>
-        <a class="navi-text" href="">
+        <a class="navi-text" href="/pages/service">
           <div>
             <p class="text-20px yu_gothic">アフターサービス</p>
             <p class="text-14px">SERVICE</p>
@@ -32,9 +36,19 @@
 
       <div class="header_menu">
         <div class="header-icons">
+          <!--account-->
           <a href="/account">{{ 'account_icon.svg' | asset_url | img_tag }}</a>
-          <input type="checkbox" id="search">
-          <label for="search">{{ 'search_icon.svg' | asset_url | img_tag }}</label>
+
+          <!--search-->
+          <div class="search_bar_btn">
+            <input type="checkbox" id="search">
+            <label for="search">{{ 'search_icon.svg' | asset_url | img_tag }}</label>
+            <div class="header-bar__module header-bar__search">
+              {% include 'search-bar' with 'header' %}
+            </div>
+          </div>
+
+          <!--cart-->
           <a href="/cart" class="js-drawer-open-cart" aria-controls="CartDrawer" aria-expanded="false">
             {{ 'cart_icon.svg' | asset_url | img_tag }}
           </a>
@@ -45,20 +59,90 @@
             </svg>
           </a>
 
-          </script>
-          <div class="hamub-menu-btn"><svg xmlns="http://www.w3.org/2000/svg" width="65.658" height="36.778" viewBox="0 0 65.658 36.778">
-              <g id="グループ_374" data-name="グループ 374" transform="translate(0 -1)">
-                <line id="線_85" data-name="線 85" x2="65.658" transform="translate(0 2)" fill="none" stroke="#4b4b4b" stroke-width="2"></line>
-                <line id="線_86" data-name="線 86" x2="65.658" transform="translate(0 19.389)" fill="none" stroke="#4b4b4b" stroke-width="2"></line>
-                <line id="線_87" data-name="線 87" x2="65.658" transform="translate(0 36.778)" fill="none" stroke="#4b4b4b" stroke-width="2"></line>
-              </g>
-            </svg>
+          <!--hamburger-->
+          <div class="hamub-menu-btn">
+            <label for="hamb_menu_toggle_btn">
+              <svg xmlns="http://www.w3.org/2000/svg" width="65.658" height="36.778" viewBox="0 0 65.658 36.778">
+                <g id="グループ_374" data-name="グループ 374" transform="translate(0 -1)">
+                  <line id="線_85" data-name="線 85" x2="65.658" transform="translate(0 2)" fill="none" stroke="#4b4b4b" stroke-width="2"></line>
+                  <line id="線_86" data-name="線 86" x2="65.658" transform="translate(0 19.389)" fill="none" stroke="#4b4b4b" stroke-width="2"></line>
+                  <line id="線_87" data-name="線 87" x2="65.658" transform="translate(0 36.778)" fill="none" stroke="#4b4b4b" stroke-width="2"></line>
+                </g>
+              </svg>
+            </label>
+            <input type="checkbox" id="hamb_menu_toggle_btn">
+            <!--menu-->
+            <div class="hamub-menu">
+              <div class="hamub-left"></div>
+              <div class="hamub-right">
+                <div class="hamub-right-top">
 
+                  <div class="hamb_header_icons">
+                    <!--account-->
+                    <a href="/account">{{ 'account_icon.svg' | asset_url | img_tag }}</a>
+
+                    <!--search-->
+                    <div class="search_bar_btn">
+                      <input type="checkbox" id="search">
+                      <label for="search">{{ 'search_icon.svg' | asset_url | img_tag }}</label>
+                      <div class="header-bar__module header-bar__search">
+                        {% include 'search-bar' with 'header' %}
+                      </div>
+                    </div>
+
+                    <!--cart-->
+                    <a href="/cart" class="js-drawer-open-cart" aria-controls="CartDrawer" aria-expanded="false">
+                      {{ 'cart_icon.svg' | asset_url | img_tag }}
+                    </a>
+                    <a class="favorite-icon pc" href="/pages/favorite-list"><svg xmlns="http://www.w3.org/2000/svg" width="30.644" height="28.795" viewBox="0 0 30.644 28.795">
+                        <g id="合体_2" data-name="合体 2" fill="none">
+                          <path d="M 15.39791584014893 25.92245101928711 L 26.59348487854004 14.38867092132568 C 29.33002662658691 11.56942367553711 29.33022880554199 6.982316970825195 26.59402084350586 4.162853240966797 L 26.52534484863281 4.092501163482666 L 26.52329444885254 4.090401172637939 L 26.52125358581543 4.088301181793213 C 25.21436500549316 2.741641044616699 23.48122406005859 2.000001192092896 21.64110374450684 2.000001192092896 C 19.80209732055664 2.000001192092896 18.06991386413574 2.740773439407349 16.76330184936523 4.085873126983643 L 16.76146507263184 4.087790966033936 L 16.75792503356934 4.091431140899658 L 15.32212448120117 5.57210111618042 L 13.88632488250732 4.091431140899658 L 13.88350296020508 4.088505744934082 L 13.88330459594727 4.088301181793213 C 12.57641410827637 2.741641044616699 10.84327411651611 2.000001192092896 9.003154754638672 2.000001192092896 C 7.163024425506592 2.000001192092896 5.429884433746338 2.741641044616699 4.125904560089111 4.085300922393799 L 4.051334381103516 4.162441253662109 C 1.314144492149353 6.981781005859375 1.314144492149353 11.56919097900391 4.051514625549316 14.38870143890381 L 15.24637508392334 25.92240715026855 L 15.32212448120117 25.84429168701172 L 15.39791584014893 25.92245101928711 M 15.39706420898438 28.79480171203613 L 15.32569408416748 28.72095108032227 C 15.32441425323486 28.71964073181152 15.32340431213379 28.71857070922852 15.32212448120117 28.71725082397461 C 15.32084465026855 28.71857070922852 15.31983470916748 28.71964073181152 15.31855487823486 28.72095108032227 L 15.24718475341797 28.79480171203613 L 2.616374492645264 15.78168106079102 C -0.872125506401062 12.18849086761475 -0.872125506401062 6.362481117248535 2.616374492645264 2.769291162490845 L 2.687744379043579 2.695441007614136 C 4.431634426116943 0.8984811305999756 6.717391967773438 1.125183075600944e-06 9.003149032592773 1.125183075600944e-06 C 11.28890705108643 1.125183075600944e-06 13.57466411590576 0.8984811305999756 15.31855487823486 2.695441007614136 C 15.31983470916748 2.696751117706299 15.32084465026855 2.697821140289307 15.32212448120117 2.699141025543213 C 15.32340431213379 2.697821140289307 15.32441425323486 2.696751117706299 15.32569408416748 2.695441007614136 C 17.06958389282227 0.8984811305999756 19.35534286499023 1.125183075600944e-06 21.64109992980957 1.125183075600944e-06 C 23.92685699462891 1.125183075600944e-06 26.21261405944824 0.8984811305999756 27.95650482177734 2.695441007614136 L 28.02859497070313 2.769291162490845 C 31.5163745880127 6.362481117248535 31.5163745880127 12.18849086761475 28.02859497070313 15.78168106079102 L 15.39706420898438 28.79480171203613 Z" stroke="none" fill="#4b4b4b"></path>
+                        </g>
+                      </svg>
+                    </a>
+
+                    <!--hamburger-->
+                    <div class="hamub-menu-btn">
+                      <label for="hamb_menu_toggle_btn">
+                        {% render 'svg-close-button' %}
+                      </label>
+                      <input type="checkbox" id="hamb_menu_toggle_btn">
+                    </div>
+                  </div><!--.header-icons-->
+
+                </div>
+                <div class="hamub-right-middle">
+                  <div class="hamub-right-main">
+                    <ul>
+                      <li><a href="{{ collections.all.url }}">{{ 'general.site.jewerly' |t }}</a></li>
+                    <li><a href="{{ pages["concept"].url}}">{{ 'general.site.about' | t }}</a></li>
+                      <li><a href="{{ pages["service"].url}}">{{ 'general.site.service' | t }}</a></li>
+                      <li><a href="{{ blogs["post"].url}}">{{ 'general.site.column' | t }}</a></li>
+                    </ul>
+                  </div>
+                  <div class="hamub-right-sub">
+                    <ul>
+                      <li><a href="{{ pages["shoppingguide"].url}}">{{ 'general.site.shoppingguide' |t }}</a></li>
+                      <li><a href="{{ pages["faq"].url}}">{{ 'general.site.faq' |t }}</a></li>
+                      <li><a href="{{ pages["contact"].url}}">{{ 'general.site.contact' |t }}</a></li>
+                      <li><a href="{{ pages["company"].url}}">{{ 'general.site.company' |t }}</a></li>
+                    </ul>
+                    <a class="insta" href="https://www.instagram.com/monatelier_jewelry/" target="_blank">{% render 'svg-insta' %}</a>
+                    <a  class="face"  href="https://www.facebook.com/TATSUMI-SHIMADA-101693801852364" target="_blank">{% render 'svg-face' %}</a>
+                  </div>
+                </div>
+                <div class="hamub-right-bottom">
+                  {% render 'svg-logo-big' %}
+                </div>
+              </div>
+            </div>
           </div>
+
         </div>
       </div>
-    </div>
-  </div>
+    </div><!--.header.top-header-->
+
+  </div><!--header_wrapper-->
 </div>
 
 {% schema %}

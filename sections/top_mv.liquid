@@ -3,12 +3,13 @@
   <div class="wide-content mv_position">
     <div class="mv">
       <ul class="slick-slider slick_mv cssreset">
-        <li>
-          {{ 'mv_pc01.jpg' | asset_url | img_tag }}
-        </li>
-        <li>
-          {{ 'mv_pc01.jpg' | asset_url | img_tag }}
-        </li>
+        {% for block in section.blocks %}
+          {% if block.settings.mv_image_pc != blank %}
+          <li>
+            {{ block.settings.mv_image_pc | img_url: 'master' | img_tag }}
+          </li>
+          {% endif %}
+        {% endfor %}
       </ul>
     </div>
   </div>
@@ -18,12 +19,13 @@
   <div class="wide-content mv_position">
     <div class="mv">
       <ul class="slick-slider slick_mv cssreset">
-        <li>
-          {{ 'mv_sp01.jpg' | asset_url | img_tag }}
-        </li>
-        <li>
-          {{ 'mv_sp01.jpg' | asset_url | img_tag }}
-        </li>
+        {% for block in section.blocks %}
+          {% if block.settings.mv_image_sp != blank %}
+          <li>
+            {{ block.settings.mv_image_sp | img_url: 'master' | img_tag }}
+          </li>
+          {% endif %}
+        {% endfor %}
       </ul>
     </div>
   </div>
@@ -32,56 +34,34 @@
 {% schema %}
 {
   "name": {
-    "ja": "サンプルセクション"
+    "ja": "メインビジュアル"
   },
-  "class": "sample_section",
+  "class": "mv_image",
   "blocks": [
-    {
-      "type": "custom",
-      "name": {
-        "ja": "画像"
-      },
-      "limit": 3,
-      "settings": [
-        {
-          "type": "image_picker",
-          "id": "image_picker",
-          "label": {
-            "ja": "画像"
+      {
+        "name": "image",
+        "type" : "header",
+        "settings": [
+          {
+            "type" : "image_picker",
+            "id" : "mv_image_pc",
+            "label" : "メインビジュアル画像(PC)"
+          },
+          {
+            "type" : "image_picker",
+            "id" : "mv_image_sp",
+            "label" : "メインビジュアル画像(SP)"
           }
-        }
-      ]
-    }
-  ],
-  "settings": [
-    {
-      "type": "checkbox",
-      "id": "is_visivle",
-      "label": {
-        "ja": "表示する？"
-      },
-      "info": {
-        "ja": "チェックを入れると表示、外すと非表示になります。"
+        ]
       }
-    },
-    {
-      "type": "textarea",
-      "id": "text",
-      "label": {
-        "ja": "本文"
-      },
-      "default": {
-        "ja": "default text. default text."
-      }
-    }
   ],
   "presets": [
     {
       "name": {
-        "ja": "サンプルセクション"
+        "ja": "メインビジュアル"
       },
       "category": {
-        "ja": "_カスタム"
+        "ja": "新規メニュー"
       }
     }
   ]
