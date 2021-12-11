@@ -62,8 +62,8 @@
     "top_product": {
       "type": "top_product",
       "settings": {
-        "home_featured_products": "",
-        "productAmount": 4
+        "home_featured_products": "all",
+        "productAmount": 6
       }
     },
     "view_all_btn": {
