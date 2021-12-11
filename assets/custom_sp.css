@@ -63,6 +63,7 @@
 	}
 	.newitem a:nth-of-type(odd) {
 	    position: relative;
+			top: 70px;
 	}
 	.btn_right a span:first-of-type {
 	    font-size: 14px;
