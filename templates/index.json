@@ -131,10 +131,21 @@
             "content_text_en": "QUALITY",
             "content_link": ""
           }
+        },
+        "a3a70a40-ee9c-4bc3-a123-21a53fe323e1": {
+          "type": "header",
+          "settings": {
+            "content_image_pc": "shopify:\/\/shop_images\/content_bnr02.jpg",
+            "content_image_sp": "shopify:\/\/shop_images\/content_bnr02_square.jpg",
+            "content_text_jp": "素材について",
+            "content_text_en": "MATERIAL",
+            "content_link": ""
+          }
         }
       },
       "block_order": [
-        "f3966f1e-d976-42fd-9e8c-f7b690558ae4"
+        "f3966f1e-d976-42fd-9e8c-f7b690558ae4",
+        "a3a70a40-ee9c-4bc3-a123-21a53fe323e1"
       ],
       "settings": {
       }
