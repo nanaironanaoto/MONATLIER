@@ -27,6 +27,19 @@
     },
     "top_news": {
       "type": "top_news",
+      "blocks": {
+        "506f655d-aaf0-4798-a5be-4339dc27577d": {
+          "type": "header",
+          "settings": {
+            "news_date": "2021\/12\/11",
+            "news_text": "Xmasジュエリー受注開始",
+            "news_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "506f655d-aaf0-4798-a5be-4339dc27577d"
+      ],
       "settings": {
       }
     },
