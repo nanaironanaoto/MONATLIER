@@ -69,9 +69,9 @@
     "view_all_btn": {
       "type": "view_all_btn",
       "settings": {
-        "view_all_btn_text_jp": "",
-        "view_all_btn_text_en": "",
-        "view_all_btn_link": ""
+        "view_all_btn_text_jp": "すべての商品を見る",
+        "view_all_btn_text_en": "VIEW ALL",
+        "view_all_btn_link": "shopify:\/\/collections\/all"
       }
     },
     "category": {
