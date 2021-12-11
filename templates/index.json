@@ -22,8 +22,7 @@
         "b96c6446-29e7-4689-9c7f-364a38dca920",
         "46552444-2f78-40ca-ace3-5c49721e3d0a"
       ],
-      "settings": {
-      }
+      "settings": {}
     },
     "top_news": {
       "type": "top_news",
@@ -49,28 +48,41 @@
         "506f655d-aaf0-4798-a5be-4339dc27577d",
         "f10eff1b-c144-4f30-9ded-1b970b1627aa"
       ],
-      "settings": {
-      }
+      "settings": {}
     },
     "top_heading": {
       "type": "top_heading",
-      "settings": {
-        "is_visivle": false,
-        "text": "default text. default text."
-      }
+      "settings": {}
     },
     "top_product": {
       "type": "top_product",
-      "settings": {
-        "is_visivle": false,
-        "text": "default text. default text."
-      }
+      "settings": {}
+    },
+    "view_all_btn": {
+      "type": "view_all_btn",
+      "settings": {}
+    },
+    "category": {
+      "type": "category",
+      "settings": {}
+    },
+    "content": {
+      "type": "content",
+      "settings": {}
+    },
+    "column": {
+      "type": "column",
+      "settings": {}
     }
   },
   "order": [
     "top_mv",
     "top_news",
     "top_heading",
-    "top_product"
+    "top_product",
+    "view_all_btn",
+    "category",
+    "content",
+    "column"
   ]
 }

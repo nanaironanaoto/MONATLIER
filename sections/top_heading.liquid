@@ -1,66 +1,32 @@
 <!-- title -->
 <div class="content">
   <div class="title">
-    <h3>新着商品</h3>
-    <p>NEW ITEM</p>
+    <h3>{{section.settings.top_heading_jp }}</h3>
+    <p>{{section.settings.top_heading_en }}</p>
   </div>
 </div>
 
 {% schema %}
 {
-  "name": {
-    "ja": "サンプルセクション"
-  },
-  "class": "sample_section",
-  "blocks": [
-    {
-      "type": "custom",
-      "name": {
-        "ja": "画像"
-      },
-      "limit": 3,
+      "name": "見出し",
       "settings": [
         {
-          "type": "image_picker",
-          "id": "image_picker",
-          "label": {
-            "ja": "画像"
-          }
+          "type" : "text",
+          "id": "top_heading_jp",
+          "label": "見出し(日本語))"
+        },
+        {
+          "type" : "text",
+          "id": "top_heading_en",
+          "label": "見出し(英語))"
+        }
+      ],
+      "presets" : [
+        {
+          "name" : "見出し",
+          "category" : "新規メニュー"
         }
       ]
+
     }
-  ],
-  "settings": [
-    {
-      "type": "checkbox",
-      "id": "is_visivle",
-      "label": {
-        "ja": "表示する？"
-      },
-      "info": {
-        "ja": "チェックを入れると表示、外すと非表示になります。"
-      }
-    },
-    {
-      "type": "textarea",
-      "id": "text",
-      "label": {
-        "ja": "本文"
-      },
-      "default": {
-        "ja": "default text. default text."
-      }
-    }
-  ],
-  "presets": [
-    {
-      "name": {
-        "ja": "サンプルセクション"
-      },
-      "category": {
-        "ja": "_カスタム"
-      }
-    }
-  ]
-}
 {% endschema %}

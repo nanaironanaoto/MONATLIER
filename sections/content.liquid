@@ -1,0 +1,89 @@
+<!-- content pc-->
+<div class="content pc">
+  <div class="content_bnr cssreset">
+    {% for block in section.blocks %}
+      {% if block.settings.content_image_pc != blank %}
+        <a href="{{ block.settings.content_link }}">
+          <div>
+            <p>{{ block.settings.content_text_jp }}</p>
+            <p>{{ block.settings.content_text_en }}</p>
+          </div>
+          <div>
+            {{ block.settings.content_image_pc | img_url: 'master' | img_tag }}
+          </div>
+        </a>
+      {% endif %}
+    {% endfor %}
+  </div>
+</div>
+
+<!-- content sp -->
+<div class="content_wide sp">
+  <div class="content_bnr cssreset">
+    {% for block in section.blocks %}
+      {% if block.settings.content_image_sp != blank %}
+        <a href="{{ block.settings.content_link }}">
+          <div>
+            <p>{{ block.settings.content_text_jp }}</p>
+            <p>{{ block.settings.content_text_en }}</p>
+          </div>
+          <div>
+            {{ block.settings.content_image_sp | img_url: 'master' | img_tag }}
+          </div>
+        </a>
+      {% endif %}
+    {% endfor %}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": {
+    "ja": "コンテンツ"
+  },
+  "class": "content_image",
+  "blocks": [
+      {
+        "name": "image",
+        "type" : "header",
+        "settings": [
+          {
+            "type" : "image_picker",
+            "id" : "content_image_pc",
+            "label" : "コンテンツ画像(PC)"
+          },
+          {
+            "type" : "image_picker",
+            "id" : "content_image_sp",
+            "label" : "コンテンツ画像(SP)"
+          },
+          {
+            "type" : "text",
+            "id" : "content_text_jp",
+            "label" : "テキスト(日本語)"
+          },
+          {
+            "type" : "text",
+            "id" : "content_text_en",
+            "label" : "テキスト(英語)"
+          },
+          {
+            "type" : "url",
+            "id" : "content_link",
+            "label" : "リンクURL"
+          }
+        ]
+      }
+  ],
+  "presets": [
+    {
+      "name": {
+        "ja": "コンテンツ"
+      },
+      "category": {
+        "ja": "新規メニュー"
+      }
+    }
+  ]
+}
+{% endschema %}

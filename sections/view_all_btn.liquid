@@ -1,0 +1,42 @@
+<!-- btn_right -->
+<div class="content">
+  <div class="btn_right">
+    <a href="{{ section.settings.view_all_btn_link }}"><span>{{ section.settings.view_all_btn_text_jp }}</span><br>
+    <span>{{ section.settings.view_all_btn_text_en }}</span></a>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": {
+    "ja": "すべて見るボタン"
+    },
+  "settings": [
+      {
+        "type" : "text",
+        "id" : "view_all_btn_text_jp",
+        "label" : "テキスト(日本語)"
+      },
+      {
+        "type" : "text",
+        "id" : "view_all_btn_text_en",
+        "label" : "テキスト(英語)"
+      },
+      {
+        "type" : "url",
+        "id" : "view_all_btn_link",
+        "label" : "リンクURL"
+      }
+    ],
+  "presets": [
+    {
+      "name": {
+        "ja": "すべて見るボタン"
+        },
+      "category": {
+        "ja": "新規メニュー"
+        }
+    }
+  ]
+}
+{% endschema %}
