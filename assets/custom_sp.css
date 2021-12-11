@@ -58,13 +58,11 @@
 	    font-size: 10px;
 	}
 	.newitem .product p {
-	    line-height: 0.4;
 	    font-size: 12px;
-	    margin-bottom: 14px;
+	    margin-bottom: 7px;
 	}
-	.newitem .product:nth-of-type(odd) {
+	.newitem a:nth-of-type(odd) {
 	    position: relative;
-	    top: 70px;
 	}
 	.btn_right a span:first-of-type {
 	    font-size: 14px;
