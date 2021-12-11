@@ -1,1 +1,54 @@
-{"sections":{"top_mv":{"type":"top_mv","settings":{}},"top_news":{"type":"top_news","settings":{}},"top_heading":{"type":"top_heading","settings":{}},"top_product":{"type":"top_product","settings":{}}},"order":["top_mv","top_news","top_heading","top_product"]}
+{
+  "sections": {
+    "top_mv": {
+      "type": "top_mv",
+      "blocks": {
+        "b96c6446-29e7-4689-9c7f-364a38dca920": {
+          "type": "header",
+          "settings": {
+            "mv_image_pc": "shopify:\/\/shop_images\/mv_pc01.jpg",
+            "mv_image_sp": "shopify:\/\/shop_images\/mv_sp01.jpg"
+          }
+        },
+        "46552444-2f78-40ca-ace3-5c49721e3d0a": {
+          "type": "header",
+          "settings": {
+            "mv_image_pc": "shopify:\/\/shop_images\/mv_pc01.jpg",
+            "mv_image_sp": "shopify:\/\/shop_images\/mv_sp01.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "b96c6446-29e7-4689-9c7f-364a38dca920",
+        "46552444-2f78-40ca-ace3-5c49721e3d0a"
+      ],
+      "settings": {
+      }
+    },
+    "top_news": {
+      "type": "top_news",
+      "settings": {
+      }
+    },
+    "top_heading": {
+      "type": "top_heading",
+      "settings": {
+        "is_visivle": false,
+        "text": "default text. default text."
+      }
+    },
+    "top_product": {
+      "type": "top_product",
+      "settings": {
+        "is_visivle": false,
+        "text": "default text. default text."
+      }
+    }
+  },
+  "order": [
+    "top_mv",
+    "top_news",
+    "top_heading",
+    "top_product"
+  ]
+}
