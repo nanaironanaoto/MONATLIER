@@ -178,6 +178,14 @@
         "column": "post",
         "column_limit": 4
       }
+    },
+    "16392222433e3abbbd": {
+      "type": "view_all_btn",
+      "settings": {
+        "view_all_btn_text_jp": "さらにお知らせを見る",
+        "view_all_btn_text_en": "VIEW ALL",
+        "view_all_btn_link": "shopify:\/\/blogs\/post"
+      }
     }
   },
   "order": [
@@ -188,6 +196,7 @@
     "view_all_btn",
     "category",
     "content",
-    "column"
+    "column",
+    "16392222433e3abbbd"
   ]
 }
