@@ -151,12 +151,23 @@
             "content_text_en": "CONCEPT",
             "content_link": ""
           }
+        },
+        "514da0b8-3a8c-45ce-8ce0-bc224259b884": {
+          "type": "header",
+          "settings": {
+            "content_image_pc": "shopify:\/\/shop_images\/content_bnr04.jpg",
+            "content_image_sp": "shopify:\/\/shop_images\/content_bnr04_square.jpg",
+            "content_text_jp": "アフターサービス",
+            "content_text_en": "SERVICE",
+            "content_link": ""
+          }
         }
       },
       "block_order": [
         "f3966f1e-d976-42fd-9e8c-f7b690558ae4",
         "a3a70a40-ee9c-4bc3-a123-21a53fe323e1",
-        "817f5d5f-9b04-49a1-b980-63110f33c53d"
+        "817f5d5f-9b04-49a1-b980-63110f33c53d",
+        "514da0b8-3a8c-45ce-8ce0-bc224259b884"
       ],
       "settings": {
       }
