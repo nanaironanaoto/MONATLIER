@@ -49,10 +49,10 @@
   {{ 'add-style-top.scss.css' | asset_url | stylesheet_tag }}
   {% endif %}
 
-<!--商品・プロダクトページの場合-->
+{% comment %} <!--商品・プロダクトページの場合-->
   {% if template == 'product' %}
   {{ 'add-style-product.scss.css' | asset_url | stylesheet_tag }}
-  {% endif %}
+  {% endif %} {% endcomment %}
 
 <!--アバウトページの場合-->
   {% if template == 'page.about' %}
@@ -95,7 +95,7 @@
   gtag('config', 'G-QFKQS3W7VG');
 </script>
 
-{{ 'ndnapps-products-slider.css' | asset_url | stylesheet_tag }}
+{% comment %} {{ 'ndnapps-products-slider.css' | asset_url | stylesheet_tag }} {% endcomment %}
 
 <!--20211203-->
 {{ 'custom.css' | asset_url | stylesheet_tag }}
@@ -129,6 +129,27 @@
 
 <script>
 $(".slick_mv").not('.slick-initialized').slick({});
+
+$(".slide").not('.slick-initialized').slick({
+  asNavFor: ".slide-navigation",
+  infinite: true,
+  slidesToShow: 1,
+  slidesToScroll: 1,
+  arrows: false,
+  fade: true,
+});
+
+$(".slide-navigation").not('.slick-initialized').slick({
+  asNavFor: ".slide",
+  centerMode: true,
+  infinite: true,
+  slidesToShow: 3,
+  slidesToScroll: 1,
+  autoplay: true,
+  autoplaySpeed: 4000,
+  speed: 400,
+  focusOnSelect: true,
+});
 </script>
 
 {% comment %} <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.1/TweenMax.min.js"></script>
@@ -191,7 +212,7 @@ $(".slick_mv").not('.slick-initialized').slick({});
 <script src="{{ 'custom-fields-widgets.js' | asset_url }}" defer="defer"></script>
 
 {{ content_for_header }}
-{{ 'ndnapps_products_slider.js' | asset_url | script_tag }}
+{% comment %} {{ 'ndnapps_products_slider.js' | asset_url | script_tag }} {% endcomment %}
 <!--2021/10/24 lazyload追加-->
 {{ 'lazyload.min.js' | asset_url | script_tag }}
 

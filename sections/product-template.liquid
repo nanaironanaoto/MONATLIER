@@ -1,163 +1,457 @@
-{%- if product.metafields.inventory.ShappifyHidden == 'true' -%}{%- break -%}{%- endif -%}
 {%- liquid
-  assign isModal = false
-  if template == 'product.modal'
-    assign isModal = true
-  endif
+  assign current_variant = product.selected_or_first_available_variant
+
+  unless thumbnail_position
+    assign thumbnail_position = 'beside'
+  endunless
+
+  unless description_style
+    assign description_style = 'full'
+  endunless
+
+  assign product_zoom_size = '1800x1800'
+  assign product_image_size = '620x'
+
+  case image_container_width
+    when 'small'
+      assign product_image_width = 'medium-up--two-fifths'
+      assign product_description_width = 'medium-up--three-fifths'
+      assign product_image_size = '480x'
+    when 'medium'
+      assign product_image_width = 'medium-up--one-half'
+      assign product_description_width = 'medium-up--one-half'
+      assign product_image_size = '620x'
+    when 'large'
+      assign product_image_width = 'medium-up--three-fifths'
+      assign product_description_width = 'medium-up--two-fifths'
+      assign product_image_size = '740x'
+  endcase
+
+  assign product_img_structure = product.featured_media | img_url: '1x1' | replace: '_1x1.', '_{width}x.'
 -%}
 
-{%- render 'product-template',
-  product: product,
-  description_style: section.settings.description_style,
-  image_position: section.settings.image_position,
-  image_container_width: section.settings.image_size,
-  section_id: product.id,
-  social: section.settings.social_enable,
-  isModal: isModal,
-  thumbnail_position: section.settings.thumbnail_position,
-  thumbnail_arrows: section.settings.thumbnail_arrows,
-  video_looping: section.settings.enable_video_looping,
-  video_style: section.settings.product_video_style
--%}
+<div id="ProductSection-{{ section_id }}"
+  class="product-section"
+  data-section-id="{{ section_id }}"
+  data-section-type="product-template"
+  data-product-handle="{{ product.handle }}"
+  data-product-title="{{ product.title | escape }}"
+  data-product-url="{{ product.url | within: collection }}"
+  data-aspect-ratio="{{ 100 | divided_by: product.featured_media.aspect_ratio }}"
+  data-img-url="{{ product_img_structure }}"
+  {% if settings.product_zoom_enable %}
+    data-image-zoom="true"
+  {% endif %}
+  {% if settings.inventory_enable %}
+    data-inventory="true"
+  {% endif %}
+  {% if settings.inventory_transfers_enable %}
+    data-incoming-inventory="true"
+  {% endif %}
+  {% unless isModal %}
+    data-enable-history-state="true"
+  {% endunless %}>
+
+  {%- render 'product-template-variables', product: product, current_variant: current_variant -%}
+
+  <!-- product_row -->
+  <div class="content">
+    <div class="product_row">
+      <!-- image -->
+
+      <!-- product_row左側 image -->
+      <div>
+        <div class="slide-box">
+          <ul class="slide">
+            <li class="item">
+              <a href="#">{{ 'sample01.jpg' | asset_url | img_tag }}</a>
+            </li>
+            <li class="item">
+              <a href="#">{{ 'sample01.jpg' | asset_url | img_tag }}</a>
+            </li>
+            <li class="item">
+              <a href="#">{{ 'sample01.jpg' | asset_url | img_tag }}</a>
+            </li>
+            <li class="item">
+              <a href="#">{{ 'sample01.jpg' | asset_url | img_tag }}</a>
+            </li>
+            <li class="item">
+              <a href="#">{{ 'sample01.jpg' | asset_url | img_tag }}</a>
+            </li>
+          </ul>
+          <div class="slide-navigation">
+            <div class="item">
+              <figure class="image">
+                {{ 'sample01.jpg' | asset_url | img_tag }}
+              </figure>
+            </div>
+            <div class="item">
+              <figure class="image">
+                {{ 'sample01.jpg' | asset_url | img_tag }}
+              </figure>
+            </div>
+            <div class="item">
+              <figure class="image">
+                {{ 'sample01.jpg' | asset_url | img_tag }}
+              </figure>
+            </div>
+            <div class="item">
+              <figure class="image">
+                {{ 'sample01.jpg' | asset_url | img_tag }}
+              </figure>
+            </div>
+            <div class="item">
+              <figure class="image">
+                {{ 'sample01.jpg' | asset_url | img_tag }}
+              </figure>
+            </div>
+          </div>
+        </div>
+      </div>
 
 
-{%- if settings.enable_product_reviews and settings.reviews_layout == 'full' -%}
-  <hr id="Reviews-{{ product.id }}" class="hr--clear">
-  <div class="index-section product-reviews product-reviews--full">
-    <div class="page-width">
-      <div id="shopify-product-reviews" data-id="{{product.id}}">{{ product.metafields.spr.reviews }}</div>
+      <!-- product_row右側 info -->
+      <div>
+        <!--.素材、カラット-->
+        <div class="product_material">
+        {% if product.metafields.custom_fields["cf_"] != blank %}
+          <div>{{ product.metafields.custom_fields["cf_"] }}</div>
+        {%- endif -%}
+        </div>
+
+        <!--商品名-->
+        <div class="product_name">
+          {{ product.title | escape }}
+        </div>
+
+        <!--価格-->
+        <div class="product_price">
+          {% render 'price' %}
+        </div>
+
+        <!--バリエーション選択&カートボタン・お気に入り追加ボタン-->
+        <div class="btn_row">
+
+  {%- render 'product-form',
+    section_id: section_id,
+    product: product,
+    current_variant: current_variant
+  -%}
+
+          {% comment %} <!--バリエーション選択プルダウン-->
+          <div class="variant-wrapper--dropdown js btn_row">
+            <label class="variant__label" for="SingleOptionSelector-6535264207026-option-0">
+              サイズ：
+            </label>
+            <div class="variant-input-wrap" data-index="option1" data-handle="リングサイズ">
+              <select class="variant__input-6535264207026" id="SingleOptionSelector-6535264207026-option-0" data-index="option1"><option value="6号" selected="selected" name="リングサイズ" class="variant-input" data-index="option1">
+                    6号
+                  </option><option value="7号" name="リングサイズ" class="variant-input" data-index="option2">
+                    7号
+                  </option><option value="8号" name="リングサイズ" class="variant-input" data-index="option3">
+                    8号
+                  </option><option value="9号" name="リングサイズ" class="variant-input" data-index="option4">
+                    9号
+                  </option><option value="10号" name="リングサイズ" class="variant-input" data-index="option5">
+                    10号
+                  </option><option value="11号" name="リングサイズ" class="variant-input" data-index="option6">
+                    11号
+                  </option><option value="12号" name="リングサイズ" class="variant-input" data-index="option7">
+                    12号
+                  </option></select>
+            </div>
+          </div>
+          <!--カートボタン・お気に入り追加ボタン-->
+          <div class="btn_row">
+            <button type="submit" name="add" id="AddToCart-6535264207026" class="btn btn--full add-to-cart">
+              <span id="AddToCartText-6535264207026" data-default-text="カートに追加">
+                カートに追加
+              </span>
+              <svg id="グループ_2945" data-name="グループ 2945" xmlns="http://www.w3.org/2000/svg" width="36.111" height="27.954" viewBox="0 0 36.111 27.954">
+                <g id="グループ_1331" data-name="グループ 1331">
+                <path id="パス_72" data-name="パス 72" d="M0,0,16.626,4.585V6.664L0,2.079Z" transform="translate(25.794 16.655) rotate(-90)" fill="#4b4b4b"></path>
+                <path id="パス_73" data-name="パス 73" d="M0,8.172l16.5-4.7V0L0,4.775Z" transform="translate(0 16.641) rotate(-90)" fill="#4b4b4b"></path>
+                <rect id="長方形_31" data-name="長方形 31" width="20.768" height="2.026" transform="translate(5.828 14.621)" fill="#4b4b4b"></rect>
+                <path id="パス_150" data-name="パス 150" d="M-.378.379H5.283V2.026H-.378Z" transform="translate(30.828 -0.379)" fill="#4b4b4b"></path>
+              </g>
+                <rect id="長方形_72" data-name="長方形 72" width="20.768" height="2.026" transform="translate(5.828 19.621)" fill="#4b4b4b"></rect>
+                <path id="前面オブジェクトで型抜き_1" data-name="前面オブジェクトで型抜き 1" d="M2.6,0A2.6,2.6,0,1,1,0,2.6,2.6,2.6,0,0,1,2.6,0Z" transform="translate(6.407 22.75)" fill="#4b4b4b"></path>
+                <path id="前面オブジェクトで型抜き_2" data-name="前面オブジェクトで型抜き 2" d="M2.6,0A2.6,2.6,0,1,1,0,2.6,2.6,2.6,0,0,1,2.6,0Z" transform="translate(21.442 22.75)" fill="#4b4b4b"></path>
+              </svg>
+            </button>
+            <!--お気に入り追加ボタン-->
+            <div class="_SFA detail" data-id="olindoring"><button class="SFA__btn" type="button"></button></div>
+          </div> {% endcomment %}
+        </div>
+
+        <!--この商品について問い合わせる-->
+        <div class="product_question">
+          この商品について問い合わせる
+        </div>
+
+        <!--説明テキスト-->
+        <div class="product_description_text">
+          {{ product.description }}
+        </div>
+
+        <!--商品スペック-->
+        <div class="title">
+          <h3>商品説明</h3>
+          <p>DESCRIPTION</p>
+        </div>
+        <div class="product_spec_table">
+        {% if product.type == "リング" or product.type == "ネックレス" %}
+          {% if product.metafields.custom_fields["size"] != blank %}
+            <dl>
+              <dt>{{ 'general.product.size' | t }}</dt>
+              <dd>{{ product.metafields.custom_fields["size"] }}</dd>
+            </dl>
+          {% endif %}
+          {% if product.metafields.custom_fields["length"] != blank %}
+            <dl>
+              <dt>{{ 'general.product.length' | t }}</dt>
+              <dd>{{ product.metafields.custom_fields["length"] }}</dd>
+            </dl>
+          {% endif %}
+          {% if product.metafields.custom_fields["metal"] != blank %}
+            <dl>
+              <dt>{{ 'general.product.metal' | t }}</dt>
+              <dd>{{ product.metafields.custom_fields["metal"] }}</dd>
+            </dl>
+          {% endif %}
+          {% if product.metafields.custom_fields["arm"] != blank %}
+            <dl>
+              <dt>{{ 'general.product.arm' | t }}</dt>
+              <dd>{{ product.metafields.custom_fields["arm"] }}</dd>
+            </dl>
+          {% endif %}
+          {% if product.metafields.custom_fields["topsize"] != blank %}
+            <dl>
+              <dt>{{ 'general.product.topsize' | t }}</dt>
+              <dd>{{ product.metafields.custom_fields["topsize"] }}</dd>
+            </dl>
+          {% endif %}
+          {% if product.metafields.custom_fields["motif"] != blank %}
+            <dl>
+              <dt>{{ 'general.product.motif' | t }}</dt>
+              <dd>{{ product.metafields.custom_fields["motif"] }}</dd>
+            </dl>
+          {% endif %}
+          {% if product.metafields.custom_fields["chain"] != blank %}
+            <dl>
+              <dt>{{ 'general.product.chain' | t }}</dt>
+              <dd>{{ product.metafields.custom_fields["chain"] }}</dd>
+            </dl>
+          {% endif %}
+          {% if product.metafields.custom_fields["stone"] != blank %}
+            <dl>
+              <dt>{{ 'general.product.stone' | t }}</dt>
+              <dd>{{ product.metafields.custom_fields["stone"] }}</dd>
+            </dl>
+          {% endif %}
+          {% if product.metafields.custom_fields["weight"] != blank %}
+            <dl>
+              <dt>{{ 'general.product.weight' | t }}</dt>
+              <dd>{{ product.metafields.custom_fields["weight"] }}</dd>
+            </dl>
+          {% endif %}
+        {% endif %}
+        {% if product.type == "リング" or product.type == "ネックレス" %}
+          <dl>
+              <div id = "infiniteoptions-container"></div>
+          </dl>
+        {% endif %}
+        </div>
+        <!--商品説明(スペック)-->
+
+      </div>
     </div>
   </div>
-{%- endif -%}
 
-<style>
-.giftwrapping-select span label:nth-child(3) input:after{
-  content:"{{ 'css.product.gift' | t }}";
-}
-</style>
-
-{% if collection %}
-  <div class="text-center page-content page-content--bottom">
-    <a href="{% if collection.handle == 'frontpage' %}/{% else %}{{ collection.url }}{% endif %}" class="btn btn--small return-link">
-      <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon--wide icon-arrow-left" viewBox="0 0 50 15"><path d="M50 5.38v4.25H15V15L0 7.5 15 0v5.38z"/></svg> {{ 'products.general.collection_return' | t: collection: collection.title }}
-    </a>
+  <!-- title -->
+  <div class="content">
+    <div class="title">
+      <h3>おすすめポイント</h3>
+      <p>POINTS</p>
+    </div>
   </div>
-{% endif %}
 
+  <!-- point_description -->
+  <div class="content">
+    <p class="point_description">
+      {{ product.description }}
+    </p>
+    <div class="throw_line"></div>
+  </div>
+
+  <div class="content">
+    <!--SP時・バリエーション選択&カートボタン・お気に入り追加ボタンここにもうひとつ-->
+    <div class="btn_row btn_row_second">
+      <!--バリエーション選択プルダウン-->
+      <div class="variant-wrapper--dropdown js btn_row">
+        <label class="variant__label" for="SingleOptionSelector-6535264207026-option-0">
+          サイズ：
+        </label>
+        <div class="variant-input-wrap" data-index="option1" data-handle="リングサイズ">
+          <select class="variant__input-6535264207026" id="SingleOptionSelector-6535264207026-option-0" data-index="option1"><option value="6号" selected="selected" name="リングサイズ" class="variant-input" data-index="option1">
+                6号
+              </option><option value="7号" name="リングサイズ" class="variant-input" data-index="option2">
+                7号
+              </option><option value="8号" name="リングサイズ" class="variant-input" data-index="option3">
+                8号
+              </option><option value="9号" name="リングサイズ" class="variant-input" data-index="option4">
+                9号
+              </option><option value="10号" name="リングサイズ" class="variant-input" data-index="option5">
+                10号
+              </option><option value="11号" name="リングサイズ" class="variant-input" data-index="option6">
+                11号
+              </option><option value="12号" name="リングサイズ" class="variant-input" data-index="option7">
+                12号
+              </option></select>
+        </div>
+      </div>
+      <!--カートボタン・お気に入り追加ボタン-->
+      <div class="btn_row">
+        <button type="submit" name="add" id="AddToCart-6535264207026" class="btn btn--full add-to-cart">
+          <span id="AddToCartText-6535264207026" data-default-text="カートに追加">
+            カートに追加
+          </span>
+          <svg id="グループ_2945" data-name="グループ 2945" xmlns="http://www.w3.org/2000/svg" width="36.111" height="27.954" viewBox="0 0 36.111 27.954">
+            <g id="グループ_1331" data-name="グループ 1331">
+            <path id="パス_72" data-name="パス 72" d="M0,0,16.626,4.585V6.664L0,2.079Z" transform="translate(25.794 16.655) rotate(-90)" fill="#4b4b4b"></path>
+            <path id="パス_73" data-name="パス 73" d="M0,8.172l16.5-4.7V0L0,4.775Z" transform="translate(0 16.641) rotate(-90)" fill="#4b4b4b"></path>
+            <rect id="長方形_31" data-name="長方形 31" width="20.768" height="2.026" transform="translate(5.828 14.621)" fill="#4b4b4b"></rect>
+            <path id="パス_150" data-name="パス 150" d="M-.378.379H5.283V2.026H-.378Z" transform="translate(30.828 -0.379)" fill="#4b4b4b"></path>
+          </g>
+            <rect id="長方形_72" data-name="長方形 72" width="20.768" height="2.026" transform="translate(5.828 19.621)" fill="#4b4b4b"></rect>
+            <path id="前面オブジェクトで型抜き_1" data-name="前面オブジェクトで型抜き 1" d="M2.6,0A2.6,2.6,0,1,1,0,2.6,2.6,2.6,0,0,1,2.6,0Z" transform="translate(6.407 22.75)" fill="#4b4b4b"></path>
+            <path id="前面オブジェクトで型抜き_2" data-name="前面オブジェクトで型抜き 2" d="M2.6,0A2.6,2.6,0,1,1,0,2.6,2.6,2.6,0,0,1,2.6,0Z" transform="translate(21.442 22.75)" fill="#4b4b4b"></path>
+          </svg>
+        </button>
+        <!--お気に入り追加ボタン-->
+        <div class="_SFA detail" data-id="olindoring"><button class="SFA__btn" type="button"></button></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- title -->
+  <div class="content">
+    <div class="title">
+      <h3>レビュー</h3>
+      <p>REVIEW</p>
+    </div>
+  </div>
+
+  <!-- review -->
+  <div class="content">
+    <p class="user_review">
+      テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。
+    </p>
+    <div class="throw_line"></div>
+  </div>
+
+  <!-- title -->
+  <div class="content">
+    <div class="title">
+      <h3>あなたへのおすすめ</h3>
+      <p>RECOMMENDATION</p>
+    </div>
+  </div>
+
+  <!--recommendation-->
+  <div class="content">
+    <div class="recommendation">
+      <div class="product">
+        <img src="./img/product01.jpg" alt="">
+        <div class="product_info">
+          <p>ダイヤモンドK10 0.03ct</p>
+          <p>［オリンド］リング</p>
+          <p>¥24,200</p>
+        </div>
+      </div>
+      <div class="product">
+        <img src="./img/product01.jpg" alt="">
+        <div class="product_info">
+          <p>ダイヤモンドK10 0.03ct</p>
+          <p>［オリンド］リング</p>
+          <p>¥24,200</p>
+        </div>
+      </div>
+      <div class="product">
+        <img src="./img/product01.jpg" alt="">
+        <div class="product_info">
+          <p>ダイヤモンドK10 0.03ct</p>
+          <p>［オリンド］リング</p>
+          <p>¥24,200</p>
+        </div>
+      </div>
+      <div class="product">
+        <img src="./img/product01.jpg" alt="">
+        <div class="product_info">
+          <p>ダイヤモンドK10 0.03ct</p>
+          <p>［オリンド］リング</p>
+          <p>¥24,200</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
 {% schema %}
-  {
-    "name": "Product pages",
-    "settings": [
-      {
-        "type": "select",
-        "id": "description_style",
-        "label": "Description position",
-        "default": "default",
-        "options": [
-          {
-            "value": "default",
-            "label": "Next to media"
-          },
-          {
-            "value": "full",
-            "label": "Below media"
+{
+  "name": {
+    "ja": "商品詳細ページ"
+  },
+  "class": "product-template",
+  "blocks": [
+    {
+      "type": "custom",
+      "name": {
+        "ja": "画像"
+      },
+      "limit": 3,
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image_picker",
+          "label": {
+            "ja": "画像"
           }
-        ]
+        }
+      ]
+    }
+  ],
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "is_visivle",
+      "label": {
+        "ja": "表示する？"
       },
-      {
-        "type": "checkbox",
-        "id": "social_enable",
-        "label": "Enable social sharing",
-        "default": true
-      },
-      {
-        "type": "header",
-        "content": "Media"
-      },
-      {
-        "type": "paragraph",
-        "content": "Learn more about [media types](https://help.shopify.com/en/manual/products/product-media)"
-      },
-      {
-        "type": "select",
-        "id": "image_position",
-        "label": "Position",
-        "default": "left",
-        "options": [
-          {
-            "value": "left",
-            "label": "Left"
-          },
-          {
-            "value": "right",
-            "label": "Right"
-          }
-        ]
-      },
-      {
-        "type": "select",
-        "id": "image_size",
-        "label": "Size",
-        "default": "medium",
-        "options": [
-          {
-            "value": "small",
-            "label": "Small"
-          },
-          {
-            "value": "medium",
-            "label": "Medium"
-          },
-          {
-            "value": "large",
-            "label": "Large"
-          }
-        ]
-      },
-      {
-        "type": "select",
-        "id": "thumbnail_position",
-        "label": "Thumbnail position",
-        "default": "beside",
-        "options": [
-          {
-            "value": "beside",
-            "label": "Next to media"
-          },
-          {
-            "value": "below",
-            "label": "Below media"
-          }
-        ]
-      },
-      {
-        "type": "checkbox",
-        "id": "thumbnail_arrows",
-        "label": "Show thumbnail arrows"
-      },
-      {
-        "type": "checkbox",
-        "id": "enable_video_looping",
-        "label": "Enable video looping",
-        "default": true
-      },
-      {
-        "type": "select",
-        "id": "product_video_style",
-        "label": "Video style",
-        "default": "muted",
-        "options": [
-          {
-            "value": "muted",
-            "label": "Video without sound"
-          },
-          {
-            "value": "unmuted",
-            "label": "Video with sound"
-          }
-        ],
-        "info": "Video with sound will not autoplay"
+      "info": {
+        "ja": "チェックを入れると表示、外すと非表示になります。"
       }
-    ]
-  }
+    },
+    {
+      "type": "textarea",
+      "id": "text",
+      "label": {
+        "ja": "本文"
+      },
+      "default": {
+        "ja": "default text. default text."
+      }
+    }
+  ],
+  "presets": [
+    {
+      "name": {
+        "ja": "商品詳細ページ"
+      },
+      "category": {
+        "ja": "商品詳細ページ"
+      }
+    }
+  ]
+}
 {% endschema %}

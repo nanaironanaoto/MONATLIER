@@ -45,7 +45,7 @@ h2.section-header__title{
   top:0;
 }
 .orbitvu-gallery-fix {
-    border: 0px solid #ccc !important; 
+    border: 0px solid #ccc !important;
 }
 
 @media only screen and (min-width: 769px){
@@ -167,7 +167,7 @@ h1.product-single__title{
     font-size:14px ;
     padding:4px 10px 4px 8px ;
 }
-.product-single__form{margin-bottom:10px;}   
+.product-single__form{margin-bottom:10px;}
 
 .product__quantity .js-qty__adjust{
     padding-bottom: 0;
@@ -181,7 +181,7 @@ h1.product-single__title{
 .page-content--product .page-width {
     margin-top:24vw !important;
     padding: 0 !important;
-    
+
 }
 .page-content--product .grid {margin-left: 0 ;}
 .page-content--product .grid__item{padding:0 ;}
@@ -213,7 +213,7 @@ h1.product-single__title{
 }
 .product-page-series .bar{margin:0 3vw 0 2vw;}
 .product-page-series span.japanese{font-size:13px;}
-  
+
 /*--商品タイトル--*/
 h1.product-single__title {
     font-size: 6.2vw !important;
@@ -228,7 +228,7 @@ h1.product-single__title {
     letter-spacing: 0.01em;
     margin-bottom: 7vw;
 }
-  
+
 /*--バリアントセレクター--*/
 .variant-wrapper--dropdown{
   width: 100%; margin:0;
@@ -294,7 +294,7 @@ h1.product-single__title {
     width: 4.5vw !important;
     height: 4.5vw !important;
 }
-    
+
 }
 
 /*----------------------------------------------------------------------------------------------------------------商品画像：ORBITVU--*/
@@ -345,14 +345,14 @@ div.orbittour-views_wrapper a img{
     height: 14.5vw !important;
     width: 14.5vw !important;
     margin-right: 1.2vw !important;
-    
+
 }
 .orbittour-initialized div.orbittour-views_wrapper:before {
     width: 14.5vw !important;
     height: 14.5vw !important;
     padding-top: 2.5vw !important;
     font-size: 1.2vw;
-}    
+}
 
 /*--ORBITVU：高さ調整--*/
 .product-360-image{
@@ -519,7 +519,7 @@ div.orbittour-views_wrapper .orbittour-thumbnail:focus{
     letter-spacing: 0.3vw;
     font-family: "TTDrugs-R" !important;
     padding: 3vw 0;
-}    
+}
 .product-info h2 span{
     display: block;
     font-size: 3vw;
@@ -848,7 +848,7 @@ div.orbittour-views_wrapper .orbittour-thumbnail:focus{
     line-height: 1.7;
     letter-spacing: 0.12em;
     margin-bottom: 4vw;
-    
+
 }
 }
 /*----------------------------------------------------------------------------------------------------------------レビュー--*/
@@ -856,8 +856,6 @@ div.orbittour-views_wrapper .orbittour-thumbnail:focus{
 .stamped-fa-star{color:#C8AB7A !important;}
 .product-reviews .section-header{margin-bottom:0 ;}
 #stamped-main-widget{margin:0 !important;}
-.slick-list{overflow: visible !important;}
-
 
 .stamped-header{display: none;}
 div[data-widget-style*=standard] .stamped-tab-container {display: none !important;}
@@ -879,7 +877,7 @@ div[data-widget-style*=standard] .stamped-tab-container {display: none !importan
 .stamped-review-content-body{
     letter-spacing: 1px;
     line-height: 2.1 !important;
-    margin-top: 20px !important; 
+    margin-top: 20px !important;
 }
 .stamped-review-header{margin-bottom: 30px;}
 div.stamped-review-header .created{float: left !important; margin-right:10px; font-size:15px;}
@@ -906,7 +904,7 @@ div.stamped-review-header .created{float: left !important; margin-right:10px; fo
     margin-bottom: 6vw;
 }
 div.stamped-review-header .created{
-    margin-right:2.4vw !important; 
+    margin-right:2.4vw !important;
     font-size: 3.8vw;
     letter-spacing: 0.3vw;
 }
@@ -927,17 +925,17 @@ div.stamped-review-header .author{
 .stamped-fa-star:before {
     font-size:4vw !important;
     letter-spacing: 0.4vw;
-    
+
 }
 .stamped-review-header-title{
     font-size:5vw !important;
     letter-spacing: 0.7vw;}
-    
+
 .stamped-review-content-body{
-    letter-spacing: 0.2vw !important; 
+    letter-spacing: 0.2vw !important;
     font-size: 3.4vw !important;
 }
-    
+
 .product-reviews .slick-arrow{
     position: absolute;
     top:108%;
@@ -973,7 +971,7 @@ div.stamped-review-header .author{
     width: auto !important;
     margin-top: -20vw;
 }
-  
+
 }
 
 
@@ -1030,8 +1028,8 @@ div.stamped-review-header .author{
 
 @media only screen and (max-width: 768px)
 {
-  
-  
+
+
 .concept-section {
     text-align: center;
     margin: 26vw 0 9vw ;
@@ -1056,7 +1054,7 @@ div.stamped-review-header .author{
 .series-products-left span.series-japanese{
     font-size: 4.8vw !important;
     letter-spacing: 0.34em !important;
-    
+
 }
 .series-products-wrap{
     display: flex;
@@ -1137,13 +1135,13 @@ ul.ring-size-list li::marker{
 /*--お試しリング：上部--*/
 .ring-size-info{display: flex;}
 .ring-size-info-image{ width: 32%;}
-.ring-size-info-text{ 
-    width: 68%; 
+.ring-size-info-text{
+    width: 68%;
     margin-left: 40px;
     font-size:14px;
     letter-spacing: 1px;
 }
-.ring-size-info-text > span{ 
+.ring-size-info-text > span{
     font-size:22px;
     font-weight: 500;
     display: block;
@@ -1164,7 +1162,7 @@ ul.ring-size-list li::marker{
     height: 50px;
 }
 .ringsize-add-to-cart .ring-size-select{
-    width: 32%; 
+    width: 32%;
     margin-right: 40px;
     height: 50px;
     font-size:12px !important;
@@ -1193,7 +1191,7 @@ ul.ring-size-list li::marker{
 
 /*--サイズ確定までの流れ--*/
 .size-flow.is-mobile{ display: none;}
-.size-flow.is-mobile{ 
+.size-flow.is-mobile{
     margin: -10vw -5vw -10vw;
     overflow:hidden;
 }
@@ -1201,13 +1199,13 @@ ul.ring-size-list li::marker{
     padding: 0 5vw;
 }
 .size-flow.is-mobile .slick-arrow{
-    top:23vw; 
-    width: 7vw; 
+    top:23vw;
+    width: 7vw;
     height: 7vw;
 }
 .size-flow.is-mobile .slick-arrow:before{
     background-size: 1.7vw;
-    width: 7vw; 
+    width: 7vw;
     height: 6.7vw;
 }
 .size-flow.is-mobile .slick-prev.slick-arrow:before{
@@ -1258,7 +1256,7 @@ ul.ring-size-list li::marker{
 .ring-size-modawindow ul::marker{
     content:"・" !important;
 }
-.ring-size-modawindow ul{ 
+.ring-size-modawindow ul{
     list-style-type: disc !important;
     margin: 0 0 0 4vw;
     font-size: 3.4vw;
@@ -1271,17 +1269,17 @@ ul.ring-size-list li::marker{
 /*--お試しリング：上部--*/
 .ring-size-info{flex-direction: column;}
 .ring-size-info-image{ width: 100%;}
-.ring-size-info-text{ 
-    width: 100%; 
+.ring-size-info-text{
+    width: 100%;
     margin-left: 0px;
 }
-.ring-size-info-text h3{ 
+.ring-size-info-text h3{
     font-size:5.6vw;
     text-align: left;
     letter-spacing: 0.08em;
     margin-top: 4vw;
 }
-.ring-size-info-text > span{ 
+.ring-size-info-text > span{
     font-size:5vw;
     margin-top: -2vw;
     letter-spacing: 0.11em;
@@ -1301,7 +1299,7 @@ ul.ring-size-list li::marker{
 }
 
 .ringsize-add-to-cart .ring-size-select{
-    width: 100%; 
+    width: 100%;
     margin:2vw 0;
     font-size:3.6vw !important;
     letter-spacing: 0;
@@ -1334,7 +1332,7 @@ h4.conversion-chart {
     font-size:6vw !important;
     letter-spacing: 0.05em;
 }
-    
+
 }
 
 //アジャスターカン
@@ -1389,7 +1387,7 @@ h4.conversion-chart {
 .orbitvu-gallery{
     padding-bottom: 0 !important;
     padding-top: 100% !important;
-    
+
 }
 .orbitvu-gallery-fix{
     position: relative;
@@ -1417,7 +1415,7 @@ div.orbitvu-image-thumbs {
     align-content: center;
 }
 div.orbitvu-gallery-product-views ul.orbitvu-image-thumbs{
-    
+
     margin: 0 auto !important;
 }
 li.orbitvu-gallery-item {
@@ -1463,12 +1461,12 @@ div.orbitvu-gallery-product-views ul.orbitvu-image-thumbs li.orbitvu-gallery-ite
     width: 14.5vw !important;
     height: 14.5vw !important;
 }
- 
+
 div.orbitvu-gallery-product-views ul.orbitvu-image-thumbs li.orbitvu-gallery-item, .orbitvu-gallery-product-views ul.orbitvu-image-thumbs li.orbitvu-gallery-item a img{
     vertical-align: top !important;
     width: 14.5vw !important;
     height: 14.5vw !important;
-}   
+}
 }
 
 //おすすめ商品スライダー

@@ -189,6 +189,22 @@ body{
 .product_info{
 	padding: 0 0 54px;
 }
+.recommendation{
+	display: grid;
+	grid-template-columns: repeat(4, auto);
+	gap: 17px;
+}
+.recommendation .product{
+}
+.recommendation .product p:first-of-type{
+	font-size: 14px;
+}
+.recommendation .product p{
+	line-height: 0.7;
+}
+.recommendation .product img{
+	width: 100%;
+}
 .logo{
 	width: 153px;
 }
@@ -353,6 +369,79 @@ body{
 	font-size: 14px;
 }
 
+.product_row{
+	display: flex;
+	gap: 64px;
+}
+.product_row>div{
+	width: calc(50% - 32px);
+}
+.product_material{
+    display: flex;
+    gap: 5px;
+    align-items: center;
+	font-size: 20px;
+    margin-bottom: 22px;
+}
+.product_spec_table{
+    font-size: 14px;
+}
+.product-template, .product-template * {
+    line-height: 1.5;
+}
+.product-template .product_name{
+	font-size: 20px;
+    margin-bottom: 11px;
+}
+.product-template .product_price{
+	font-size: 20px;
+    margin-bottom: 30px;
+}
+.product-template .btn_row{
+	display: flex;
+	align-items: center;
+}
+.product_question{
+    font-size: 12px;
+    text-decoration: underline;
+    margin-bottom: 40px;
+}
+.btn_row_second{
+    display: none;
+}
+.point_description, .user_review{
+	font-size: 16px;
+}
+.product-template .throw_line{
+	padding-bottom: 120px;
+	margin-bottom: 68px;
+	border-bottom: 1px solid #ccc;
+}
+.product_description_text{
+    margin-bottom: 70px;
+}
+.product_spec_table dl {
+    display: flex;
+    margin: 0;
+}
+.product_spec_table dt {
+    background: #E4E4E4;
+    width: 100%;
+    max-width: 100px;
+    border-bottom: 1px solid #fff;
+    padding: 5px 15px;
+}
+.product_spec_table dd {
+    border-bottom: 1px solid #ddd;
+    margin-left: 0;
+    width: 70%;
+    padding: 5px 15px;
+    min-width: 276px;
+}
+.product_spec_table {
+    margin-bottom: 64px;
+}
+
 @media screen and (max-width: 1366px) {
 	.header .header_navi{
 		padding-right: 5%;
@@ -372,4 +461,137 @@ body{
 		width: 100%;
 		min-width: 100%;
 	}
+}
+/* slide-box */
+
+.slide-box {
+  width: 100%;
+  position: relative;
+  margin: 0;
+  padding: 0;
+}
+
+/* slide */
+
+.slide {
+  position: relative;
+  margin: 0;
+  padding: 0;
+}
+.slide .item {
+  position: relative;
+  height: 100%;
+}
+.slide .item a {
+  display: block;
+}
+.slide .item::before {
+  display: block;
+  padding-top: 0;
+  content: "";
+}
+.slide .item .image {
+  position: relative;
+  overflow: hidden;
+}
+.slide .item img {
+  position: relative;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  margin: auto;
+  width: 100%;
+}
+.slide > .slick-list,
+.slide > .slick-list > .slick-track,
+.slide > .slick-list > .slick-track > .slick-slide > div {
+  position: relative;
+  height: 100%;
+}
+
+/* slide-navigation */
+.product-template .product-template .slide-navigation {
+  line-height: 0;
+  position: relative;
+  margin: 0;
+  padding: 0;
+}
+.product-template .slide-navigation .item {
+  position: relative;
+  cursor: pointer;
+}
+figure.image{
+	margin-block-start: 0;
+	margin-inline-start: 0;
+	margin-inline-end: 0;
+}
+.product-template .slide-navigation .item .image {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+.product-template .slide-navigation .item .image::before {
+  display: block;
+  padding-top: 0;
+  content: "";
+}
+.product-template .slide-navigation .item .image::after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  content: "";
+  opacity: 0.5;
+  background: #000;
+}
+.product-template .slide-navigation .slick-current .image::after {
+  opacity: 0;
+}
+.product-template .slide-navigation .item .image {
+  position: relative;
+  overflow: hidden;
+}
+.product-template .slide-navigation .item .image img {
+  position: relative;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  margin: auto;
+  width: 100%;
+}
+@media screen and (max-width: 767px) {
+  .product-template .slide-navigation {
+    width: 100%;
+  }
+  .product-template .slide-navigation .item .image::before {
+    padding-top: 0;
+  }
+}
+/* slick */
+.slick-vertical .slick-slide {
+  border: 0 solid transparent;
+}
+.slick-arrow {
+  z-index: 999;
+}
+.slick-prev {
+  top: 25px;
+  bottom: 0;
+  left: 20px;
+  right: auto;
+  margin: auto;
+}
+.slick-next {
+  top: 25px;
+  bottom: 0;
+  left: auto;
+  right: 20px;
+  margin: auto;
 }
