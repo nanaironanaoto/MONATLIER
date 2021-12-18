@@ -49,11 +49,14 @@
           </div>
 
           <!--cart-->
- <a href="{{ routes.cart_url }}" class="js-drawer-open-cart" aria-controls="CartDrawer" >{{ 'general.site.cart' |t }}
-	{% if cart.item_count > 0 %}
-		<span class="cart-item-count">{{ cart.item_count }}</span>
-	{% endif %}
-</a>
+          <a href="{{ routes.cart_url }}" class="js-drawer-open-cart" aria-controls="CartDrawer" data-icon="{{ settings.cart_icon }}">
+            <span class="cart-link">
+              {{ 'cart_icon.svg' | asset_url | img_tag }}
+              {% if cart.item_count > 0 %}
+              <span class="cart-item-count">{{ cart.item_count }}</span>
+              {% endif %}
+            </span>
+          </a>
 
           <a class="favorite-icon pc" href="/pages/favorite-list"><svg xmlns="http://www.w3.org/2000/svg" width="30.644" height="28.795" viewBox="0 0 30.644 28.795">
               <g id="合体_2" data-name="合体 2" fill="none">
