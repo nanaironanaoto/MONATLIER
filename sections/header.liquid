@@ -35,8 +35,7 @@
       </div>
 
       <div class="header_menu">
-        {% render 'header-icon-list' %}    
-        {%comment%}<div class="header-icons">
+        $._data($("a.js-drawer-open-cart").get(0), "events");<div class="header-icons">
           <!--account-->
           <a href="/account">{{ 'account_icon.svg' | asset_url | img_tag }}</a>
 
@@ -145,7 +144,7 @@
             </div>
           </div>
 
-        </div>{%endcomment%}
+        </div>
       </div>
     </div><!--.header.top-header-->
 
