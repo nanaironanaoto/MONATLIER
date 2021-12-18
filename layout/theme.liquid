@@ -49,10 +49,10 @@
   {{ 'add-style-top.scss.css' | asset_url | stylesheet_tag }}
   {% endif %}
 
-{% comment %} <!--商品・プロダクトページの場合-->
+<!--商品・プロダクトページの場合-->
   {% if template == 'product' %}
   {{ 'add-style-product.scss.css' | asset_url | stylesheet_tag }}
-  {% endif %} {% endcomment %}
+  {% endif %}
 
 <!--アバウトページの場合-->
   {% if template == 'page.about' %}
