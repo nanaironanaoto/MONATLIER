@@ -333,9 +333,5 @@
 		align-items: center;
 		justify-content: space-between;
 	}
-	.content.collection_row{
-		padding: 0 24px 0 40px;
-	}
-
 
 }

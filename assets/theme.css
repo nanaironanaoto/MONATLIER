@@ -2061,7 +2061,7 @@ input[type=image]{
   -webkit-appearance:none;
           appearance:none;
   background-position:100%;
-  background-image:url(//cdn.shopify.com/s/files/1/0268/1202/2962/t/37/assets/ico-select.svg);
+  background-image:url(//cdn.shopify.com/s/files/1/0268/1202/2962/t/41/assets/ico-select.svg);
   background-repeat:no-repeat;
   background-position:right 10px center;
   background-color:transparent;
@@ -2074,7 +2074,7 @@ input[type=image]{
 }
 
 .is-light .faux-select,.is-light select{
-    background-image:url(//cdn.shopify.com/s/files/1/0268/1202/2962/t/37/assets/ico-select-white.svg)
+    background-image:url(//cdn.shopify.com/s/files/1/0268/1202/2962/t/41/assets/ico-select-white.svg)
 }
 
 optgroup{
@@ -2802,7 +2802,7 @@ svg.icon:not(.icon--full-color) circle,svg.icon:not(.icon--full-color) ellipse,s
     animation-delay:250ms
 }
 --*/
-
+   
 .loading:after,.loading:before{
   content:"";
   position:absolute;
@@ -3420,7 +3420,7 @@ form+.footer__social{
     }
 
 .site-footer .faux-select,.site-footer select{
-    background-image:url(//cdn.shopify.com/s/files/1/0268/1202/2962/t/37/assets/ico-select-footer.svg);
+    background-image:url(//cdn.shopify.com/s/files/1/0268/1202/2962/t/41/assets/ico-select-footer.svg);
   }
 
 [data-center-text=true] .payment-icons{
@@ -3502,7 +3502,7 @@ form+.footer__social{
 .pagination{
   margin:0;
   padding:60px 0;
-  text-align:right;
+  text-align:center
 }
 
 .pagination>span{

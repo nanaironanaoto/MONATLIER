@@ -1,6 +1,6 @@
 {% if article.metafields.custom_fields["gallery-2"] != blank %}
   <div class="custom-field custom-field__gallery-2 custom-field__type--collection-reference">
-    <h3 class="custom-field--title"><ls-static-74924>ギャラリーセクション</ls-static-74924></h3>
+    <h3 class="custom-field--title"><ls-static-690170>ギャラリーセクション</ls-static-690170></h3>
     <div class="custom-field--value">  
       {% assign collection_ref = collections[article.metafields.custom_fields["gallery-2"]] %}
       {{ collection_ref.title | link_to: collection_ref.url }}
