@@ -1,7 +1,7 @@
 {%- comment -%} Check if template is collection or search page  {%- endcomment -%}
 {%- assign boost_pfs_is_initfilter = false -%}
 {%- if request.page_type == 'collection' or request.page_type == 'search' -%}
-  {%- unless template contains 'boost-pfs-original' -%}
+  {%- unless template contains 'boost-pfs-original' or boost_pfs_is_not_initfilter -%}
     {%- assign boost_pfs_is_initfilter = true -%}
   {%- endunless -%}
 {%- endif -%}
@@ -13,6 +13,7 @@
       filterUrl: 'https://services.mybcapps.com/bc-sf-filter/filter',
       searchUrl: 'https://services.mybcapps.com/bc-sf-filter/search',
       suggestionUrl: 'https://services.mybcapps.com/bc-sf-filter/search/suggest',
+      productsUrl: 'https://services.mybcapps.com/bc-sf-filter/search/products',
       analyticsUrl: 'https://lambda.mybcapps.com/e'
     },
     shop: {
@@ -20,19 +21,22 @@
       url: '{{ shop.url }}',
       domain: '{{ shop.permanent_domain }}',
       currency: '{{ shop.currency }}',
-      money_format: '{{ shop.money_format | replace: "'", '"' | replace: "$", "&#36;" }}'
+      money_format: {{ shop.money_format | replace: "'", '"' | replace: "$", "&#36;" | json }},
+      money_format_with_currency: {{ shop.money_with_currency_format | replace: "'", '"' | replace: "$", "&#36;"  | json }}
     },
     general: {
       file_url: "{{ '' | file_url }}",
       asset_url: "{{ 'boost-pfs.js' | asset_url }}",
       collection_id: {{ collection.id | default: 0 }},
       collection_handle: "{{ collection.handle }}",
+      collection_product_count: {{ collection.all_products_count | default: 0 }},
       {% if template contains 'collection' and collection.handle %}
       collection_count: {{ collection.products_count  }},
       {% endif %}
       {% if request.page_type == 'product' %}
       product_id: {{ product.id | default: 0 }},
       {% endif %}
+      theme_id: {{ theme.id | default: 0 }},
       collection_tags: {{ current_tags | json }},
       current_tags: {{ current_tags | json }},
       default_sort_by: "{{ collection.default_sort_by }}",
@@ -62,6 +66,9 @@
     {% if shop.metafields.pfs-swatch-settings != blank %}
     swatch_settings: {{ shop.metafields.pfs-swatch-settings | json | strip_html }},
     {% endif %}
+    {% if shop.metafields.boostpfs-settings.default-sort-order != blank %}
+    default_sort_order: {{ shop.metafields.boostpfs-settings.default-sort-order | json | strip_html }},
+    {% endif %}
   };
   function mergeObject(obj1, obj2){
     var obj3 = {};
@@ -84,6 +91,7 @@
 {%- if boost_pfs_is_initfilter == true -%}
   <script defer src="{{ 'boost-pfs-vendor.js' | asset_url }}"></script>
   <script defer src="{{ 'boost-pfs-core.js' | asset_url }}"></script>
+<script defer src="{{ 'boost-pfs-otp.js' | asset_url }}"></script>
   <script defer src="{{ 'boost-pfs-filter.js' | asset_url }}"></script>
   <script defer src="{{ 'boost-pfs-instant-search.js' | asset_url }}"></script>
 {%- else -%}
@@ -94,8 +102,8 @@
 <!-- Initialize App -->
 <script defer src="{{ 'boost-pfs-init.js' | asset_url }}"></script>
 
-{% capture boost_pfs_search_no_result_content %}{% include  "boost-pfs-instant-search-no-result-json" %}{% endcapture %}
+{% capture boost_pfs_search_no_result_content %}{% render  "boost-pfs-instant-search-no-result-json" %}{% endcapture %}
 {% unless boost_pfs_search_no_result_content contains "Liquid error" %}
   <!-- Instant search no result JSON data -->
-  {% include  "boost-pfs-instant-search-no-result-json" %}
+  {% render  "boost-pfs-instant-search-no-result-json" %}
 {% endunless %}

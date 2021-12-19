@@ -11,7 +11,7 @@
       {% for i in (1..3) %}
         <div class="boost-pfs-filter-option boost-pfs-filter-option-skeleton">
           <div class="boost-pfs-filter-option-title">
-            <h3><span></span></h3>
+            <button class="boost-pfs-filter-button boost-pfs-filter-option-title-heading"></button>
           </div>
           <div class="boost-pfs-filter-option-content">
             <span class="boost-pfs-filter-skeleton-text boost-pfs-filter-skeleton-width3"></span>
@@ -31,7 +31,7 @@
         </div>
       {% endfor %}
     {% when 'button' %}
-      <button class="boost-pfs-filter-skeleton-button"><span></span></button>
+      <button class="boost-pfs-filter-skeleton-button" role="status" aria-label="Loading"><span></span></button>
     {% else %}
       <span class="boost-pfs-filter-skeleton-text boost-pfs-filter-skeleton-width{{- width -}}"></span>
   {% endcase %}

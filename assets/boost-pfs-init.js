@@ -1,6 +1,6 @@
 var boostPFS = new BoostPFS();
 boostPFS.init(); 
-if (typeof boostPFSConfig != 'undefined' 
+if (typeof boostPFSConfig != 'undefined'
 	&& typeof boostPFSConfig.general != 'undefined' 
 	&& typeof boostPFSConfig.general.isInitFilter != 'undefined' 
 	&& boostPFSConfig.general.isInitFilter === true) { 

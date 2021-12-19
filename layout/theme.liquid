@@ -162,9 +162,9 @@
   <script src="{{ 'jquery.easing.1.3.js' | asset_url }}" defer="defer"></script>
 
 
-<!--begin-boost-pfs-filter-css-->
-  {% render 'boost-pfs-style' %}
-<!--end-boost-pfs-filter-css-->
+
+
+
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-QFKQS3W7VG"></script>
@@ -187,6 +187,12 @@
 {{ 'custom_sp.css' | asset_url | stylesheet_tag }}
 <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css">
 <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
+
+
+<!--begin-boost-pfs-filter-css-->
+  {% render 'boost-pfs-style' %}
+<!--end-boost-pfs-filter-css-->
+
 
 </head>
 
@@ -272,7 +278,7 @@ $(function(){
 <script>
 $(function() {
   setTimeout(function(){
-$(document).on("click",".boost-pfs-filter-button:contains('Between')", function () {
+
     window.location.href = '/collections/between';
 });
 var $filterto = $('#CollectionSidebar');
@@ -396,10 +402,14 @@ $(".slide-navigation").not('.slick-initialized').slick({
 });
 </script>
 
+
+
+
+
+
 <!--begin-boost-pfs-js-->
   {% render 'boost-pfs' %}
 <!--end-boost-pfs-js-->
-
 </body>
 </html>
 {%- endcapture -%}{%- render "ls-output", input: LS_INPUT -%}
