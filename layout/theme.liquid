@@ -40,6 +40,78 @@
   {{ 'theme.css' | asset_url | stylesheet_tag }}
   {%- render 'css-variables' -%}
 
+<script type="text/javascript">
+  $(function(){
+    var ua = navigator.userAgent;
+    if((ua.indexOf('iPhone') > 0) || ua.indexOf('iPod') > 0 || (ua.indexOf('Android') > 0 && ua.indexOf('Mobile') > 0)){
+        $('head').prepend('<meta name="viewport" content="width=768px">');
+    } else {
+        $('head').prepend('<meta name="viewport" content="width=device-width,initial-scale=1">');
+    }
+});
+</script>
+
+
+  <script>
+    document.documentElement.className = document.documentElement.className.replace('no-js', 'js');
+
+    window.theme = window.theme || {};
+    theme.routes = {
+      home: "{{ routes.root_url }}",
+      cart: "{{ routes.cart_url }}",
+      cartAdd: "{{ routes.cart_add_url | append: '.js'}}",
+      cartChange: "{{ routes.cart_change_url }}"
+    };
+    theme.strings = {
+      soldOut: {{ 'products.product.sold_out' | t | json }},
+      unavailable: {{ 'products.product.unavailable' | t | json }},
+      stockLabel: {{ 'products.product.stock_label' | t: count: '[count]' | json }},
+      willNotShipUntil: {{ 'products.product.will_not_ship_until' | t: date: '[date]' | json }},
+      willBeInStockAfter: {{ 'products.product.will_be_in_stock_after' | t: date: '[date]' | json }},
+      waitingForStock: {{ 'products.product.waiting_for_stock' | t | json }},
+      savePrice: {{ 'products.general.save_html' | t: saved_amount: '[saved_amount]' | json }},
+      cartEmpty: {{ 'cart.general.empty' | t | json }},
+      cartTermsConfirmation: {{ 'cart.general.terms_confirm' | t | json }}
+    };
+    theme.settings = {
+      dynamicVariantsEnable: true,
+      dynamicVariantType: {{ settings.variant_type | json }},
+      cartType: {{ settings.cart_type | json }},
+      moneyFormat: {{ shop.money_format | json }},
+      saveType: {{ settings.product_save_type | json }},
+      recentlyViewedEnabled: false,
+      predictiveSearch: {{ settings.predictive_search_enabled }},
+      predictiveSearchType: {{ settings.search_type | json }},
+      inventoryThreshold: {{ settings.inventory_threshold }},
+      quickView: {{ settings.quick_shop_enable }},
+      themeName: 'Impulse',
+      themeVersion: "3.6.1"
+    };
+  </script>
+
+
+  <script type="text/javascript"> var ndnapps_product_json = "{{ 'ndnapps-products-slider.json' | asset_url }}";</script>
+{{ content_for_header }}
+{{ 'ndnapps_products_slider.js' | asset_url | script_tag }}
+
+  {% if template == 'product' and product.metafields.inventory.ShappifyHidden or product.type contains '_HIDDEN_' %}<meta name='robots' content='noindex'>{% endif %}
+{%- render 'bold-options-hybrid' -%}
+{%- render 'bold-common' -%}
+<script src="{{ 'vendor-scripts-v7.js' | asset_url | split: '?' | first }}" defer="defer"></script>
+
+  {%- if shop.enabled_currencies.size > 1 -%}
+    <link rel="preload" as="style" href="{{ 'currency-flags.css' | asset_url | split: '?' | first }}" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="stylesheet" href="{{ 'currency-flags.css' | asset_url | split: '?' | first }}">
+  {%- endif -%}
+
+  <script src="{{ 'theme.js' | asset_url }}" defer="defer"></script>
+
+<!--スクロールエフェクト-->
+  <script src="{{ 'jquery.inview.min.js' | asset_url }}" defer="defer"></script>
+<!--スクロールエフェクト-end-->
+
+
+
   {{ 'add-style.scss.css' | asset_url | stylesheet_tag }}
   {{ 'add-style-header.scss.css' | asset_url | stylesheet_tag }}
   {{ 'add-style-blog.scss.css' | asset_url | stylesheet_tag }}
@@ -77,9 +149,17 @@
   {% endunless %}
 <!--トップページ以外の場合ヘッダーの高さ調整end-->
 
-{%- if request.page_type contains 'customers/' -%}
-  <script src="{{ 'shopify_common.js' | shopify_asset_url }}" defer="defer"></script>
-{%- endif -%}
+  {%- if request.page_type contains 'customers/' -%}
+    <script src="{{ 'shopify_common.js' | shopify_asset_url }}" defer="defer"></script>
+  {%- endif -%}
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+<script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.1/TweenMax.min.js"></script>
+  <script src="{{ 'jquery.easing.1.3.js' | asset_url }}" defer="defer"></script>
 
 
 <!--begin-boost-pfs-filter-css-->
@@ -95,7 +175,12 @@
   gtag('config', 'G-QFKQS3W7VG');
 </script>
 
-{% comment %} {{ 'ndnapps-products-slider.css' | asset_url | stylesheet_tag }} {% endcomment %}
+
+{{ 'ndnapps-products-slider.css' | asset_url | stylesheet_tag }}
+<script type="text/javascript">jQuery(document).ready(function(){Shopify.Products.recordRecentlyViewed( );});</script>
+<script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+{{ 'custom-fields.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'custom-fields-widgets.js' | asset_url }}" defer="defer"></script>
 
 <!--20211203-->
 {{ 'custom.css' | asset_url | stylesheet_tag }}
@@ -104,6 +189,9 @@
 <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
 
 </head>
+
+<body class="template-{{ template | replace: '.', ' ' | truncatewords: 1, '' | handle }}{% if request.path == '/challenge' %} template-challange{% endif %}" data-center-text="{{settings.type_body_align_text}}" data-button_style="{{settings.button_style}}" data-type_header_capitalize="{{settings.type_header_capitalize}}" data-type_headers_align_text="{{settings.type_headers_align_text}}" data-type_product_capitalize="{{settings.type_product_capitalize}}" data-swatch_style="{{settings.swatch_style}}" {% if settings.disable_animations %}data-disable-animations="true"{% endif %}>
+
 
   <div class="container">
 
@@ -121,127 +209,7 @@
     {%- endif -%}
 
   </div><!-- .container -->
-</body>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-{% comment %} <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> {% endcomment %}
-<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-
-<script>
-$(".slick_mv").not('.slick-initialized').slick({});
-
-$(".slide").not('.slick-initialized').slick({
-  asNavFor: ".slide-navigation",
-  infinite: true,
-  slidesToShow: 1,
-  slidesToScroll: 1,
-  arrows: false,
-  fade: true,
-});
-
-$(".slide-navigation").not('.slick-initialized').slick({
-  asNavFor: ".slide",
-  centerMode: true,
-  infinite: true,
-  slidesToShow: 3,
-  slidesToScroll: 1,
-  autoplay: true,
-  autoplaySpeed: 4000,
-  speed: 400,
-  focusOnSelect: true,
-});
-</script>
-
-{% comment %} <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.1/TweenMax.min.js"></script>
-  <script src="{{ 'jquery.easing.1.3.js' | asset_url }}" defer="defer"></script> {% endcomment %}
-
-<script type="text/javascript">
-  $(function(){
-    var ua = navigator.userAgent;
-    if((ua.indexOf('iPhone') > 0) || ua.indexOf('iPod') > 0 || (ua.indexOf('Android') > 0 && ua.indexOf('Mobile') > 0)){
-        $('head').prepend('<meta name="viewport" content="width=768px">');
-    } else {
-        $('head').prepend('<meta name="viewport" content="width=device-width,initial-scale=1">');
-    }
-});
-</script>
-
-
-<script>
-  document.documentElement.className = document.documentElement.className.replace('no-js', 'js');
-
-  window.theme = window.theme || {};
-  theme.routes = {
-    home: "{{ routes.root_url }}",
-    cart: "{{ routes.cart_url }}",
-    cartAdd: "{{ routes.cart_add_url | append: '.js'}}",
-    cartChange: "{{ routes.cart_change_url }}"
-  };
-  theme.strings = {
-    soldOut: {{ 'products.product.sold_out' | t | json }},
-    unavailable: {{ 'products.product.unavailable' | t | json }},
-    stockLabel: {{ 'products.product.stock_label' | t: count: '[count]' | json }},
-    willNotShipUntil: {{ 'products.product.will_not_ship_until' | t: date: '[date]' | json }},
-    willBeInStockAfter: {{ 'products.product.will_be_in_stock_after' | t: date: '[date]' | json }},
-    waitingForStock: {{ 'products.product.waiting_for_stock' | t | json }},
-    savePrice: {{ 'products.general.save_html' | t: saved_amount: '[saved_amount]' | json }},
-    cartEmpty: {{ 'cart.general.empty' | t | json }},
-    cartTermsConfirmation: {{ 'cart.general.terms_confirm' | t | json }}
-  };
-  theme.settings = {
-    dynamicVariantsEnable: true,
-    dynamicVariantType: {{ settings.variant_type | json }},
-    cartType: {{ settings.cart_type | json }},
-    moneyFormat: {{ shop.money_format | json }},
-    saveType: {{ settings.product_save_type | json }},
-    recentlyViewedEnabled: false,
-    predictiveSearch: {{ settings.predictive_search_enabled }},
-    predictiveSearchType: {{ settings.search_type | json }},
-    inventoryThreshold: {{ settings.inventory_threshold }},
-    quickView: {{ settings.quick_shop_enable }},
-    themeName: 'Impulse',
-    themeVersion: "3.6.1"
-  };
-</script>
-
-{% comment %} <script type="text/javascript"> var ndnapps_product_json = "{{ 'ndnapps-products-slider.json' | asset_url }}";</script> {% endcomment %}
-
-<script type="text/javascript">jQuery(document).ready(function(){Shopify.Products.recordRecentlyViewed( );});</script>
-{% comment %} <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script> {% endcomment %}
-{{ 'custom-fields.css' | asset_url | stylesheet_tag }}
-<script src="{{ 'custom-fields-widgets.js' | asset_url }}" defer="defer"></script>
-
-{{ content_for_header }}
-{% comment %} {{ 'ndnapps_products_slider.js' | asset_url | script_tag }} {% endcomment %}
-<!--2021/10/24 lazyload追加-->
-{{ 'lazyload.min.js' | asset_url | script_tag }}
-
-{% if template == 'product' and product.metafields.inventory.ShappifyHidden or product.type contains '_HIDDEN_' %}<meta name='robots' content='noindex'>{% endif %}
-{%- render 'bold-options-hybrid' -%}
-{%- render 'bold-common' -%}
-<script src="{{ 'vendor-scripts-v7.js' | asset_url | split: '?' | first }}" defer="defer"></script>
-
-{%- if shop.enabled_currencies.size > 1 -%}
-  <link rel="preload" as="style" href="{{ 'currency-flags.css' | asset_url | split: '?' | first }}" onload="this.onload=null;this.rel='stylesheet'">
-  <link rel="stylesheet" href="{{ 'currency-flags.css' | asset_url | split: '?' | first }}">
-{%- endif -%}
-
-<script src="{{ 'theme.js' | asset_url }}" defer="defer"></script>
-
-<!--スクロールエフェクト-->
-<script src="{{ 'jquery.inview.min.js' | asset_url }}" defer="defer"></script>
-<!--スクロールエフェクト-end-->
-
-<!--アコーディオン-->
-<script>
-$(function(){
-$(".js-accordion").on("click", function() {
-$(this).next().slideToggle();
-$("span",this).toggleClass("active");
-$(this).toggleClass("active");
-});
-});
-</script>
 
 <!--モーダルウィンドウ-->
 
@@ -402,11 +370,36 @@ function parallax() {
   });
 }
 </script>
+<script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+<script>
+$(".slick_mv").not('.slick-initialized').slick({});
+
+$(".slide").not('.slick-initialized').slick({
+  asNavFor: ".slide-navigation",
+  infinite: true,
+  slidesToShow: 1,
+  slidesToScroll: 1,
+  arrows: false,
+  fade: true,
+});
+
+$(".slide-navigation").not('.slick-initialized').slick({
+  asNavFor: ".slide",
+  centerMode: true,
+  infinite: true,
+  slidesToShow: 3,
+  slidesToScroll: 1,
+  autoplay: true,
+  autoplaySpeed: 4000,
+  speed: 400,
+  focusOnSelect: true,
+});
+</script>
 
 <!--begin-boost-pfs-js-->
   {% render 'boost-pfs' %}
 <!--end-boost-pfs-js-->
 
-
+</body>
 </html>
 {%- endcapture -%}{%- render "ls-output", input: LS_INPUT -%}

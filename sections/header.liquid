@@ -147,6 +147,236 @@
         </div>
       </div>
     </div><!--.header.top-header-->
+  </div><!--header_wrapper-->
+</div>
+
+<!--トップページの場合ヘッダーをスクロールイン start-->
+{% if template == "index" %}
+<script>
+    var flug = true;
+    $('.site-header').removeClass('header-fixed');
+$(window).scroll(function(){
+  if(flug){
+    flug = false;
+    setTimeout(function(){
+
+  if ($(window).scrollTop() > 100) {
+    $('.site-header').addClass('header-fixed');
+    $('.hamub-menu').addClass('is-fixed');
+  } else {
+    $('.site-header').removeClass('header-fixed');
+    $('.hamub-menu').removeClass('is-fixed');
+  }
+      flug = true;
+      return flug;
+    }, 500);
+  }
+});
+</script>
+<script>
+    var flug2 = true;
+$(window).scroll(function(){
+  if(flug2){
+    flug2 = false;
+    setTimeout(function(){
+  if ($(window).scrollTop() > 500) {
+    $('.site-header').addClass('is-stop');
+    $('.top-slider').addClass('is-stop');
+  } else {
+    $('.top-slider').removeClass('is-stop');
+    $('.site-header').removeClass('is-stop');
+  }
+      flug2 = true;
+      return flug2;
+    }, 500);
+  }
+});
+</script>
+{% comment %}
+<script>
+  $(window).scroll(function(){
+    $('.site-header').removeClass('header-fixed');
+  if ($(window).scrollTop() > 100) {
+    $('.site-header').addClass('header-fixed');
+    $('.hamub-menu').addClass('is-fixed');
+  } else {
+    $('.site-header').removeClass('header-fixed');
+    $('.hamub-menu').removeClass('is-fixed');
+  }
+});
+</script>
+{% endcomment %}
+<!--特定ページでヘッター透過-->
+{% elsif page.handle == "concept" %}
+<script>
+  $(function(){
+    $('.site-header').addClass('header-cleared white-text header-fixed ');
+});
+    var flug = true;
+    $('.site-header').removeClass('header-fixed');
+$(window).scroll(function(){
+  if(flug){
+    flug = false;
+    setTimeout(function(){
+
+    $('.site-header').addClass('header-cleared');
+  if ($(window).scrollTop() > 100) {
+    $('.site-header').removeClass('header-cleared');
+  } else {
+    $('.site-header').addClass('header-cleared');
+  }
+      flug = true;
+      return flug;
+    }, 500);
+  }
+});
+</script>
+
+<!--コレクションページでヘッター透過-->
+{% elsif template == "collection" %}
+<script>
+  $(function(){
+    $('.site-header').addClass('header-cleared header-fixed ');
+});
+    var flug = true;
+    $('.site-header').removeClass('header-fixed');
+$(window).scroll(function(){
+  if(flug){
+    flug = false;
+    setTimeout(function(){
+
+    $('.site-header').addClass('header-cleared');
+  if ($(window).scrollTop() > 100) {
+    $('.site-header').removeClass('header-cleared');
+  } else {
+    $('.site-header').addClass('header-cleared');
+  }
+      flug = true;
+      return flug;
+    }, 500);
+  }
+});
+</script>
+<!--トップページ以外の場合ヘッダーを固定 start-->
+{% else %}
+<script>
+  $(function(){
+    $('.site-header').addClass('header-fixed');
+    $('.hamub-menu').addClass('is-fixed');
+});
+</script>
+{% endif %}
+<!--トップページ以外の場合ヘッダーを固定 end-->
+
+
+
+<!--トップページ：メニューにホバーでメガメニュー展開-->
+<script>
+$(function() {
+  $('.gnavi > ul > li').hover(function() {
+    $(this).find('.menu_contents').stop().fadeIn(350, "linear");
+    $('.top-header').addClass("is-hover");
+    $('.site-header').addClass("is-hover");
+  }, function() {
+    $(this).find('.menu_contents').stop().fadeOut(350, "linear");
+    $('.top-header').removeClass("is-hover");
+    $('.site-header').removeClass("is-hover");
+  });
+});
+
+//--SP：ハンバーガーメニュークリックで展開
+
+$(function() {
+    $('.hamub-open').on('click' , function() {
+    $('.sp-hamub').fadeIn();
+    $('.sp-search-menu').fadeOut();
+    $('.site-header').addClass('header-white');
+    $('.sp-hamub-menu-btn').addClass('is-active');
+    $('.sp-hamub-search-btn').removeClass('is-active');
+    $('.sp-top').addClass('is-hide');
+
+  });
+});
+$(function() {
+  $('.hamub-close').on('click' , function() {
+    $('.sp-hamub').fadeOut(150);
+    $('.sp-search-menu').fadeOut(150);
+    $('.site-header').removeClass('header-white');
+    $('.sp-hamub-menu-btn').removeClass('is-active');
+    $('.sp-top').removeClass('is-hide');
+  });
+});
+$(function(){
+    $('.search-open').on('click' , function() {
+    $('.sp-search-menu').fadeIn();
+    $('.sp-hamub').fadeOut();
+    $('.site-header').addClass('header-white');
+    $('.sp-hamub-search-btn').addClass('is-active');
+    $('.sp-hamub-menu-btn').removeClass('is-active');
+    $('.sp-top').addClass('is-hide');
+  });
+});
+$(function() {
+  $('.search-close').on('click' , function() {
+    $('.sp-search-menu').fadeOut(150);
+    $('.sp-hamub').fadeOut(150);
+    $('.site-header').removeClass('header-white');
+    $('.sp-hamub-search-btn').removeClass('is-active');
+    $('.sp-top').removeClass('is-hide');
+  });
+});
+
+//--SP：メニュー内アコーディオンクリックで展開
+
+
+$(function(){
+
+    var parent = $('.sp-js-accordion');
+  parent.each(function(){
+  var self = $(this);
+  self.on('click',function(){
+    parent.not(self).parent().next().slideUp(300);
+        parent.not(self).parent().next().removeClass("active");
+    self.parent().next().slideToggle(300);
+        $(this).toggleClass("is-active");
+    });
+  });
+});
+
+
+$(function(){
+
+    var parent = $('.js-accordion-one');
+  parent.each(function(){
+  var self = $(this);
+  self.on('click',function(){
+    parent.not(self).next().slideUp(300);
+        parent.not(self).next().removeClass("active");
+    self.next().slideToggle(300);
+        $(this).toggleClass("is-active");
+    });
+  });
+});
+
+
+//--PC：ハンバーガーメニュークリックで展開
+
+$(function(){
+  $('.hamub-menu-btn').on('click', function(){
+    $('.hamub-menu').toggleClass('is-active');
+
+  });
+});
+
+//--ランダム背景
+$(function () {
+  var num = Math.ceil(3 * Math.random());
+  $('.hamub-menu').addClass('random-bg' + num);
+});
+
+</script>
+
+
 
 
 {%- render 'drawer-menu',
@@ -155,10 +385,130 @@
   toolbar_menu: toolbar_menu,
   logo_alignment: logo_alignment
 -%}
-{%- render 'cart-drawer' -%}   
-    
-    
-  </div><!--header_wrapper-->
+{%- render 'cart-drawer' -%}
+
+<div data-section-id="{{ section.id }}" data-section-type="header-section">
+
+  <div class="header-sticky-wrapper">
+    <div class="header-wrapper{% if overlay_header %} header-wrapper--sticky is-light{% endif %}">
+
+      {%- if overlay_header -%}
+        {%- if section.settings.show_locale_selector or section.settings.show_currency_selector or section.settings.toolbar_social or section.settings.toolbar_menu != blank -%}
+          {%- render 'toolbar',
+            section: section,
+            toolbar_menu: toolbar_menu,
+            overlay_header: overlay_header
+          -%}
+        {%- endif -%}
+      {%- endif -%}
+      <header
+        class="site-header{% if settings.type_navigation_style == 'heading' %} site-header--heading-style{% endif %}"
+        data-sticky="{{ sticky_header }}">
+        <div class="page-width">
+          <div
+            class="header-layout header-layout--{{ section.settings.main_menu_alignment }}"
+            data-logo-align="{{ logo_alignment }}">
+
+            {%- if logo_alignment == 'left' -%}
+              <div class="header-item header-item--logo">
+                {%- render 'header-logo-block', section: section -%}
+              </div>
+            {%- endif -%}
+
+            {%- if logo_alignment == 'left' and section.settings.main_menu_alignment != 'left-drawer' -%}
+              <div class="header-item header-item--navigation{% if section.settings.main_menu_alignment == 'left-center' %} text-center{% endif %}">
+                {%- render 'header-desktop-nav', main_menu: main_menu, dropdown_alignment: dropdown_alignment -%}
+              </div>
+            {%- endif -%}
+
+            {%- if logo_alignment == 'center' -%}
+              <div class="header-item header-item--left header-item--navigation">
+                {%- if section.settings.main_menu_alignment == 'center' or section.settings.main_menu_alignment == 'center-split' -%}
+                  {%- if settings.search_enable -%}
+                    <div class="site-nav small--hide">
+                      <a href="{{ routes.search_url }}" class="site-nav__link site-nav__link--icon js-search-header">
+                        <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-search" viewBox="0 0 64 64"><path d="M47.16 28.58A18.58 18.58 0 1 1 28.58 10a18.58 18.58 0 0 1 18.58 18.58zM54 54L41.94 42"/></svg>
+                        <span class="icon__fallback-text">{{ 'general.search.title' | t }}</span>
+                      </a>
+                    </div>
+                  {%- endif -%}
+                {%- endif -%}
+
+                {%- if section.settings.main_menu_alignment == 'center-left' -%}
+                  {%- render 'header-desktop-nav', main_menu: main_menu, dropdown_alignment: dropdown_alignment -%}
+                {%- endif -%}
+
+                <div class="site-nav{% unless section.settings.main_menu_alignment == 'center-drawer' %} medium-up--hide{% endunless %}">
+                  <button
+                    type="button"
+                    class="site-nav__link site-nav__link--icon js-drawer-open-nav"
+                    aria-controls="NavDrawer">
+                    <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-hamburger" viewBox="0 0 64 64"><path d="M7 15h51M7 32h43M7 49h51"/></svg>
+                    <span class="icon__fallback-text">{{ 'general.drawers.navigation' | t }}</span>
+                  </button>
+                </div>
+              </div>
+
+              {%- if section.settings.main_menu_alignment == 'center-split' -%}
+                {%- render 'header-split-nav', main_menu: main_menu, section: section, dropdown_alignment: dropdown_alignment -%}
+              {%- endif -%}
+
+              {%- if section.settings.main_menu_alignment != 'center-split' -%}
+                <div class="header-item header-item--logo">
+                  {%- render 'header-logo-block', section: section -%}
+                </div>
+              {%- endif -%}
+            {%- endif -%}
+
+            <div class="header-item header-item--icons">
+              {%- render 'header-icons', section: section -%}
+            </div>
+          </div>
+
+          {%- if section.settings.main_menu_alignment == 'center' -%}
+            <div class="text-center">
+              {%- render 'header-desktop-nav', main_menu: main_menu, dropdown_alignment: dropdown_alignment -%}
+            </div>
+          {%- endif -%}
+        </div>
+        <div class="site-header__search-container">
+          <div class="site-header__search">
+            <div class="page-width">
+              <form action="{{ routes.search_url }}" method="get" role="search"
+                id="HeaderSearchForm"
+                class="site-header__search-form">
+                <input type="hidden" name="type" value="{{ settings.search_type }}">
+                <button type="submit" class="text-link site-header__search-btn site-header__search-btn--submit">
+                  <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-search" viewBox="0 0 64 64"><path d="M47.16 28.58A18.58 18.58 0 1 1 28.58 10a18.58 18.58 0 0 1 18.58 18.58zM54 54L41.94 42"/></svg>
+                  <span class="icon__fallback-text">{{ 'general.search.submit' | t }}</span>
+                </button>
+                <input type="search" name="q" value="{{ search.terms | escape | replace: '*', '' }}" placeholder="{{ 'general.search.placeholder' | t }}" class="site-header__search-input" aria-label="{{ 'general.search.placeholder' | t }}">
+              </form>
+              <button type="button" class="js-search-header-close text-link site-header__search-btn">
+                <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-close" viewBox="0 0 64 64"><path d="M19 17.61l27.12 27.13m0-27.12L19 44.74"/></svg>
+                <span class="icon__fallback-text">{{ 'general.accessibility.close_modal' | t | json }}</span>
+              </button>
+            </div>
+          </div>
+          {%- if settings.predictive_search_enabled -%}
+            <div class="predictive-results hide">
+              <div class="page-width">
+                <div id="PredictiveResults"></div>
+                <div class="text-center predictive-results__footer">
+                  <button type="button" class="btn btn--small" data-predictive-search-button>
+                    <small>
+                      {{ 'general.search.view_more' | t }}
+                    </small>
+                  </button>
+                </div>
+              </div>
+            </div>
+          {%- endif -%}
+        </div>
+      </header>
+    </div>
+  </div>
+
 </div>
 
 {% schema %}
