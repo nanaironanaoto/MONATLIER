@@ -2,7 +2,7 @@
 {%- liquid
 	assign boost_translations = shop.metafields.boostpfs-settings.labelTranslations
   assign boost_settings = shop.metafields.bc-sf-filter.settings
-	assign boost_in_collection_search = boost_settings | split: 'enableCollectionSearch":' | last | split: ',"' | first | strip 
+	assign boost_in_collection_search = boost_settings | split: 'enableCollectionSearch":' | last | split: ',"' | first | strip
 	assign current_locale = request.locale.iso_code
 	assign primary_locale = current_locale
 	for locale in shop.published_locales
@@ -30,7 +30,7 @@
 
 	assign enable_filter_sticky_d = section.settings.enable_filter_sticky_d
 	assign enable_filter_sticky_m = section.settings.enable_filter_sticky_m
-	
+
 	assign show_view_as = section.settings.show_view_as
 	assign show_product_count = section.settings.show_product_count
 	assign show_sort_by = section.settings.show_sort_by
@@ -51,7 +51,7 @@
   assign aspect_ratio = section.settings.aspect_ratio | default: 'auto'
 	assign aspect_ratio_other = section.settings.aspect_ratio_other | default: ''
 	assign product_img_crop = section.settings.product_img_crop | default: 'none'
-  
+
   assign products_per_page = section.settings.products_per_page | default: 15
   assign products_per_row = section.settings.products_per_row | default: 3
 	assign products_per_row_m = section.settings.products_per_row_m | default: 2
@@ -104,210 +104,52 @@
   assign sold_out_bg = section.settings.sold_out_bg
   assign sold_out_text = section.settings.sold_out_text
   assign sold_out_img = section.settings.sold_out_img
-	
+
   assign tag_label_enable = section.settings.tag_label_enable
   assign tag_label_bg = section.settings.tag_label_bg
   assign tag_label_text = section.settings.tag_label_text
 -%}
 
 {% capture products_item_settings %}
-	{% if aspect_ratio == 'auto' %}boost-pfs-filter-product-item-equal-height-auto {% endif %} boost-pfs-filter-product-item-label-type-{{ label_type }} boost-pfs-filter-product-item-show-details-{{ show_detail_when_hover }} boost-pfs-filter-product-item-layout-{{ product_item_layout }} boost-pfs-filter-product-item-label-{{ label_position }}  boost-pfs-filter-product-item-text-alignment-{{ text_alignment }}  
+	{% if aspect_ratio == 'auto' %}boost-pfs-filter-product-item-equal-height-auto {% endif %} boost-pfs-filter-product-item-label-type-{{ label_type }} boost-pfs-filter-product-item-show-details-{{ show_detail_when_hover }} boost-pfs-filter-product-item-layout-{{ product_item_layout }} boost-pfs-filter-product-item-label-{{ label_position }}  boost-pfs-filter-product-item-text-alignment-{{ text_alignment }}
 {% endcapture %}
 
 {%- paginate collection.products by products_per_page -%}
 
-<style>
-  {% if collection_header_text != blank %}
-  .boost-pfs-filter-collection-header-wrapper .boost-pfs-filter-collection-description,
-  .boost-pfs-filter-collection-header-wrapper .boost-pfs-filter-collection-description p,
-  .boost-pfs-filter-collection-header-wrapper .boost-pfs-filter-collection-header, 
-  .boost-pfs-search-container .boost-pfs-search-result-header {
-    color: {{ collection_header_text }};
-  }
-  {% endif %}
+    <!-- collection image -->
+    <div class="pc">
+      <div class="wide-content collection_image_position">
+        <div class="collection_image">
+          {{ 'collection_image.jpg' | asset_img_url: 'master' | img_tag }}
+        </div>
+      </div>
+    </div>
 
-  {% if collection_header_bg != blank %}
-  .boost-pfs-filter-collection-header-wrapper {
-    background-color: {{ collection_header_bg }};
-  }
-  {% endif %}
+    <div class="sp">
+      <div class="wide-content collection_image_position">
+        <div class="collection_image">
+          {{ 'collection_image.jpg' | asset_img_url: 'master' | img_tag }}
+        </div>
+      </div>
+    </div>
 
-  {% if product_title_color != blank or product_title_font != blank or product_title_size != blank or product_title_transform != blank  %}
-    .boost-pfs-filter-product-item-title {
-      {% if product_title_color != blank %}
-          color: {{ product_title_color }};
-      {% endif %}
+    <!-- title -->
+    <div class="content">
+      <div class="title">
+        <h3><ls-static-119808>リング</ls-static-119808></h3>
+        <p><ls-static-695456>RING</ls-static-695456></p>
+      </div>
+    </div>
 
-      {% if product_title_font != blank %}
-      font-family: {{ product_title_font.family }};
-      font-weight: {{ product_title_font.weight }};
-      font-style: {{ product_title_font.style }};
-      {% endif %}
-
-      {% if product_title_transform != blank %}
-      text-transform: {{ product_title_transform }};
-      {% endif %}
-    }
-    {% if product_title_size != blank %}
-      @media (min-width: 768px){
-        .boost-pfs-filter-product-item-title {
-          font-size: {{ product_title_size }}px;
-        }
-      }
-    {% endif %}
-  {% endif %}
-
-  {% if product_vendor_color != blank or product_vendor_size != blank or product_vendor_font != blank or product_vendor_transform != blank  %}
-    .boost-pfs-filter-product-item-vendor {
-      {% if product_vendor_color != blank %}
-      color: {{ product_vendor_color }};
-      {% endif %}
-
-      {% if product_vendor_font != blank %}
-      font-family: {{ product_vendor_font.family }};
-      font-weight: {{ product_vendor_font.weight }};
-      font-style: {{ product_vendor_font.style }};
-      {% endif %}
-
-      {% if product_vendor_transform != blank %}
-      text-transform: {{ product_vendor_transform }};
-      {% endif %}
-    }
-    {% if product_vendor_size != blank %}
-      @media (min-width: 768px){
-        .boost-pfs-filter-product-item-vendor {
-          font-size: {{ product_vendor_size }}px;
-        }
-      }
-    {% endif %}
-  {% endif %}
-  {% if product_price_color != blank or product_price_size != blank or product_price_font != blank or product_price_size != blank   %}
-    .boost-pfs-filter-product-item-price {
-      {% if product_price_color != blank %}
-      color: {{ product_price_color }};
-      {% endif %}
-
-      {% if product_price_font != blank %}
-      font-family: {{ product_price_font.family }};
-      font-weight: {{ product_price_font.weight }};
-      font-style: {{ product_price_font.style }};
-      {% endif %}
-    }
-    {% if product_price_size != blank %}
-      @media (min-width: 768px){
-        .boost-pfs-filter-product-item-price {
-          font-size: {{ product_price_size }}px;
-        }
-      }
-    {% endif %}
-  {% endif %}
-
-  {% if product_old_price_color != blank %}
-  .boost-pfs-filter-product-item-price s {
-    color: {{ product_old_price_color }};
-  }
-  {% endif %}
-
-  {% if product_sale_price_color != blank %}
-  .boost-pfs-filter-product-item-price .boost-pfs-filter-product-item-sale-price {
-    color: {{ product_sale_price_color }};
-  }
-  {% endif %}
-
-  {% if product_des_color != blank or product_des_size != blank or product_des_font != blank %}
-    .boost-pfs-filter-product-item-list .boost-pfs-filter-des {
-      {% if product_des_color != blank %}
-      color: {{ product_des_color }};
-      {% endif %}
-
-      {% if product_des_font != blank %}
-      {% assign product_des_font = product_des_font %}
-      font-family: "{{ product_des_font.family }}";
-      font-weight: {{ product_des_font.weight }};
-      font-style: {{ product_des_font.style }};
-      {% endif %}
-    }
-    {% if product_des_size != blank %}
-      @media (min-width: 768px){
-        .boost-pfs-filter-product-item-list .boost-pfs-filter-des {
-          font-size: {{ product_des_size }}px;
-        }
-      }
-    {% endif %}
-  {% endif %}
-
-  {% if sale_label_bg != blank or sale_label_text != blank %}
-  .boost-pfs-filter-product-item-label .sale {
-    {% if sale_label_bg != blank %}
-    background-color: {{ sale_label_bg }};
-    {% endif %}
-
-    {% if sale_label_text != blank %}
-    color: {{ sale_label_text }};
-    {% endif %}
-  }
-  {% endif %}
-
-  {% if sold_out_bg != blank or sold_out_text != blank %}
-  .boost-pfs-filter-product-item-label .soldout {
-    {% if sold_out_bg != blank %}
-    background-color: {{ sold_out_bg }};
-    {% endif %}
-
-    {% if sold_out_text != blank %}
-    color: {{ sold_out_text }};
-    {% endif %}
-  }
-  {% endif %}
-
-  {% if tag_label_bg != blank or tag_label_text != blank %}
-  .boost-pfs-filter-product-item-label .tag {
-    {% if tag_label_bg != blank %}
-    background-color: {{ tag_label_bg }};
-    {% endif %}
-
-    {% if tag_label_text != blank %}
-    color: {{ tag_label_text }};
-    {% endif %}
-  }
-  {% endif %}
-
-  {% if swatch_by_text_bg != blank or swatch_by_text_color != blank or swatch_by_text_border != blank %}
-  .boost-pfs-filter-item-swatch-type-text>li:not(.boost-pfs-filter-item-swatch-more) {
-    {% if swatch_by_text_bg != blank %}
-    background-color: {{ swatch_by_text_bg }};
-    {% endif %}
-
-    {% if swatch_by_text_color != blank %}
-    color: {{ swatch_by_text_color }};
-    {% endif %}
-
-    {% if swatch_by_text_border != blank %}
-    border-color: {{ swatch_by_text_border }};
-    {% endif %}
-  }
-  {% endif %}
-  
-</style>
-
-{%- comment -%} COLLECTION HEADER {%- endcomment -%}
-<div class="boost-pfs-filter-collection-header-wrapper boost-pfs-filter-collection-image {% if collection.image and show_collection_image %}boost-pfs-filter-collection-has-image{% endif %}" {% if collection.image and show_collection_image %} style="background-image: url({{ collection.image | img_url: '2048x600', crop: 'top' }});" {% endif %}>
-	<div class="boost-pfs-container-default-{{ layout_type }}">
-		<div class="boost-pfs-section-header">
-			<h1 class="boost-pfs-filter-collection-header">
-				<span>
-					{{ collection.title }}
-				</span>
-			</h1>
-			{%- if collection.description and show_collection_des  != blank -%}
-			<div class="boost-pfs-filter-collection-description rte">
-				{{ collection.description }}
-			</div>
-			{%- endif -%}
-		</div>
-	</div>
-</div>
-{%- comment -%} END COLLECTION HEADER {%- endcomment -%}
+    <!-- news -->
+    <div class="content collection_descrption_filter_sort_row">
+      <div class="collection_description">
+          <p>
+            <ls-static-507612>リングの説明が入ります。リングの説明が入ります。リングの説明が入ります。</ls-static-507612><br>
+            <ls-static-815944>リングの説明が入ります。リングの説明が入ります。</ls-static-815944>
+          </p>
+      </div>
+    </div>
 
 {% if boost_in_collection_search == 'true' %}
   <div class="boost-pfs-container-default-{{ layout_type }} boost-pfs-in-collection-search">
@@ -333,22 +175,22 @@
       {% if show_view_as == true or show_view_as_m == true or filter_layout == 'filter_layout_collapse' or filter_layout == 'filter_layout_slide' %}
         <div class="boost-pfs-filter-toolbar-item boost-pfs-filter-toolbar-type boost-pfs-filter-{{ view_as_type }} {% if show_view_as == true or filter_layout == 'filter_layout_collapse' or filter_layout == 'filter_layout_slide'  %}boost-pfs-filter-display-type-d{% endif %} {% if show_view_as_m == true or filter_layout == 'filter_layout_collapse' or filter_layout == 'filter_layout_slide'  %}boost-pfs-filter-display-type-m{% endif %}">
           {% if filter_layout == 'filter_layout_collapse' or filter_layout == 'filter_layout_slide' %}
-            <button class="boost-pfs-filter-custom-filter-button"> 
+            <button class="boost-pfs-filter-custom-filter-button">
               <span>Filter</span>
-            </button> 
+            </button>
           {% endif %}
           {%- if show_view_as == true or show_view_as_m == true -%}
             <div class="boost-pfs-filter-top-display-type {% if show_view_as %}boost-pfs-filter-top-display-type-d{% endif %} {% if show_view_as_m %}boost-pfs-filter-top-display-type-m{% endif %}">{%- render 'boost-pfs-filter-skeleton', width: 2 -%}</div>
           {%- endif -%}
         </div>
       {%- endif -%}
-      
+
       {%- if show_product_count == true or show_product_count_m == true -%}
         <div class="boost-pfs-filter-toolbar-item boost-pfs-filter-toolbar-count {% if show_product_count%}boost-pfs-filter-toolbar-count-d{% endif %} {% if show_product_count_m %}boost-pfs-filter-toolbar-count-m{% endif %}">
           <span class="boost-pfs-filter-total-product">{%- render 'boost-pfs-filter-skeleton', width: 1 -%}</span>
         </div>
       {%- endif -%}
-      
+
       {%- if show_sort_by -%}
         <div class="boost-pfs-filter-toolbar-item boost-pfs-filter-custom-sorting boost-pfs-filter-top-sorting">{%- render 'boost-pfs-filter-skeleton', width: 1 -%}</div>
       {%- endif -%}
@@ -400,7 +242,7 @@
 					show_detail_when_hover: show_detail_when_hover,
 					show_vendor: show_vendor,
 					show_price: show_price,
-					
+
 					active_image_swap: active_image_swap,
 					show_product_review: show_product_review,
 					swatch_enable: swatch_enable,
@@ -423,7 +265,7 @@
 					sale_label_enable: sale_label_enable,
           sale_label_display: sale_label_display,
 					sale_label_img: sale_label_img,
-          
+
           sold_out_enable: sold_out_enable,
           sold_out_display: sold_out_display,
 					sold_out_img: sold_out_img,
@@ -477,7 +319,7 @@
 	show_price: show_price,
 	active_image_swap: active_image_swap,
 	show_product_review: show_product_review,
-  
+
 	swatch_enable: swatch_enable,
   show_swatch_tooltip: show_swatch_tooltip,
 	swatch_change_img: swatch_change_img,
