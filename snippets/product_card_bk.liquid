@@ -1,0 +1,55 @@
+{%- if product.metafields.inventory.ShappifyHidden == 'true' -%}{%- continue -%}{%- endif -%}
+{%- liquid
+  assign on_sale = false
+  if product.compare_at_price > product.price
+    assign on_sale = true
+  endif
+
+  assign sold_out = true
+  if product.available
+    assign sold_out = false
+  endif
+
+  assign product_tags = product.tags | join: ','
+  assign has_custom_label = false
+  if product_tags contains '_label_'
+    for tag in product.tags
+      if tag contains '_label_'
+        assign tag_starts_with = tag | slice: 0
+        if tag_starts_with == '_'
+          assign has_custom_label = true
+          assign custom_label = tag | replace: '_label_', ''
+        endif
+      endif
+    endfor
+  endif
+-%}
+
+<a href="{{ product.url | within: collection }}">
+  <div class="product">
+
+    {%- if has_custom_label -%}
+      <div class="grid-product__tag grid-product__tag--custom">
+        {{ custom_label }}
+      </div>
+    {%- else -%}
+      {%- if sold_out -%}
+        <div class="grid-product__tag grid-product__tag--sold-out">
+          {{ 'products.product.sold_out' | t }}
+        </div>
+      {%- endif -%}
+      {%- if on_sale and sold_out == false -%}
+        <div class="grid-product__tag grid-product__tag--sale">
+          {{ 'products.general.sale' | t }}
+        </div>
+      {%- endif -%}
+    {%- endif -%}
+
+    {{ 'product01.jpg' | asset_url | img_tag }}
+    <div class="product_info">
+      <p>ダイヤモンドK10 0.03ct</p>
+      <p>［オリンド］リング</p>
+      <p>¥24,200</p>
+    </div>
+  </div>
+</a>

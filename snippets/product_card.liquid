@@ -27,29 +27,58 @@
 
 <a href="{{ product.url | within: collection }}">
   <div class="product">
-
-    {%- if has_custom_label -%}
-      <div class="grid-product__tag grid-product__tag--custom">
-        {{ custom_label }}
-      </div>
-    {%- else -%}
-      {%- if sold_out -%}
-        <div class="grid-product__tag grid-product__tag--sold-out">
-          {{ 'products.product.sold_out' | t }}
-        </div>
-      {%- endif -%}
-      {%- if on_sale and sold_out == false -%}
-        <div class="grid-product__tag grid-product__tag--sale">
-          {{ 'products.general.sale' | t }}
-        </div>
-      {%- endif -%}
-    {%- endif -%}
-
-    {{ 'product01.jpg' | asset_url | img_tag }}
+    <img width="100%" src="{{product.featured_media | img_url: '386x'}}" alt="{{product.featured_media.alt}}">
     <div class="product_info">
-      <p>ダイヤモンドK10 0.03ct</p>
-      <p>［オリンド］リング</p>
-      <p>¥24,200</p>
+      <!--地金,石-->
+      {% if product.metafields.custom_fields["metal"] != blank %}
+        <p>{{ product.metafields.custom_fields["metal"] }}</p>
+      {% endif %}
+      {% if product.metafields.custom_fields["stone"] != blank %}
+        <p>{{ product.metafields.custom_fields["stone"] }}</p>
+      {% endif %}
+      <!--商品名-->
+      <p>{{ product.title }}</p>
+      <!--価格-->
+      <p class="grid-product__price">
+        {%- if on_sale -%}
+          <span class="visually-hidden">{{ 'products.general.regular_price' | t }}</span>
+          <span class="grid-product__price--original">{{ product.compare_at_price | money }}</span>
+          <span class="visually-hidden">{{ 'products.general.sale_price' | t }}</span>
+        {%- endif -%}
+        {%- if product.price_varies -%}
+          {{ product.price_min | money }}<span class="tax-notice">{{ 'general.product.tax' |t }}</span>～
+        {%- else -%}
+          {{ product.price  | money }}<span class="tax-notice">{{ 'general.product.tax' |t }}</span>
+        {%- endif -%}
+        {%- if on_sale -%}
+          {%- if settings.product_save_amount -%}
+            {%- if settings.product_save_type == 'dollar' -%}
+              {%- capture saved_amount -%}{{ product.compare_at_price | minus: product.price | money }}{%- endcapture -%}
+            {%- else -%}
+              {%- capture saved_amount -%}{{ product.compare_at_price | minus: product.price | times: 100.0 | divided_by: product.compare_at_price | round }}%{%- endcapture -%}
+            {%- endif -%}
+            <span class="grid-product__price--savings">
+              {{ 'products.general.save_html' | t: saved_amount: saved_amount }}
+            </span>
+          {%- endif -%}
+        {%- endif -%}
+
+        {%- assign product_variant = product.selected_or_first_available_variant -%}
+        {%- if product_variant.unit_price_measurement -%}
+          <div class="product__unit-price">
+            {%- capture unit_price_base_unit -%}
+              {%- if product_variant.unit_price_measurement -%}
+                {%- if product_variant.unit_price_measurement.reference_value != 1 -%}
+                  {{ product_variant.unit_price_measurement.reference_value }}
+                {%- endif -%}
+                {{ product_variant.unit_price_measurement.reference_unit }}
+              {%- endif -%}
+            {%- endcapture -%}
+
+            {{ product_variant.unit_price | money }}/{{ unit_price_base_unit }}
+          </div>
+        {%- endif -%}
+      </p>
     </div>
   </div>
 </a>

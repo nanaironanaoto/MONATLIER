@@ -2802,7 +2802,7 @@ svg.icon:not(.icon--full-color) circle,svg.icon:not(.icon--full-color) ellipse,s
     animation-delay:250ms
 }
 --*/
-   
+
 .loading:after,.loading:before{
   content:"";
   position:absolute;
@@ -3502,7 +3502,7 @@ form+.footer__social{
 .pagination{
   margin:0;
   padding:60px 0;
-  text-align:center
+  text-align:right;
 }
 
 .pagination>span{

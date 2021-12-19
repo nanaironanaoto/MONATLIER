@@ -8,130 +8,72 @@
   data-section-id="{{ section.id }}"
   data-section-type="collection-template">
 
-  {% comment %} {% if section.settings.subcollection_style == 'above' %}
+  {% if section.settings.subcollection_style == 'above' %}
     {% include 'subcollections', per_row: section.settings.subcollections_per_row %}
-  {% endif %} {% endcomment %}
+  {% endif %}
 
-    <!-- collection image -->
-    <div class="pc">
-      <div class="wide-content collection_image_position">
-        <div class="collection_image">
-          {{ 'collection_image.jpg' | asset_img_url: 'master' | img_tag }}
-        </div>
-      </div>
+  <div class="collection-filter">
+
+    <div class="collection-filter__item collection-filter__item--drawer">
+      {% comment %}
+      <button
+        type="button"
+        class="js-drawer-open-collection-filters btn btn--tertiary"
+        aria-controls="FilterDrawer">
+        <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-filter" viewBox="0 0 64 64"><path d="M48 42h10M48 42a5 5 0 1 1-5-5 5 5 0 0 1 5 5zM7 42h31M16 22H6M16 22a5 5 0 1 1 5 5 5 5 0 0 1-5-5zM57 22H26"/></svg>
+        <span>{{ 'collections.filters.title_tags' | t }}</span>
+      </button>
+      {% endcomment %}
+
+      <div class="boost-pfs-filter-tree-mobile-button">{% include 'boost-pfs-filter-skeleton', type: 'button' %}</div>
     </div>
 
-    <div class="sp">
-      <div class="wide-content collection_image_position">
-        <div class="collection_image">
-          {{ 'collection_image.jpg' | asset_img_url: 'master' | img_tag }}
-        </div>
-      </div>
+    <div class="collection-filter__item collection-filter__item--count small--hide boost-pfs-filter-total-product">
+      {{ 'collections.general.items_with_count' | t: count: collection.products_count }}
     </div>
 
-    <!-- title -->
-    <div class="content">
-      <div class="title">
-        <h3>リング</h3>
-        <p>RING</p>
+    <div class="collection-filter__item collection-filter__item--sort">
+      <div class="collection-filter__sort-container boost-pfs-filter-top-sorting">
+        {% include 'boost-pfs-filter-skeleton', width: 3 %}
       </div>
     </div>
-
-    <!-- news -->
-    <div class="content collection_descrption_filter_sort_row">
-      <div class="collection_description">
-          <p>
-            リングの説明が入ります。リングの説明が入ります。リングの説明が入ります。<br>
-            リングの説明が入ります。リングの説明が入ります。
-          </p>
-      </div>
-      <div>
-        {% comment %} <div class="collection_filter">
-          <button id="search_filter" style="border:1px solid #ccc;">
-            <span>絞り込み検索</span><span><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="10.678" height="12" viewBox="0 0 10.678 12"><defs><clipPath id="a"><rect width="10.678" height="12" fill="none"/></clipPath></defs><g clip-path="url(#a)"><path d="M5.707,1A4.706,4.706,0,1,1,1,5.706,4.712,4.712,0,0,1,5.707,1Zm0,8.593A3.886,3.886,0,1,0,1.82,5.706,3.891,3.891,0,0,0,5.707,9.593Z" transform="translate(-0.769 -1.041)" fill="#fff"/><path d="M2.61,2.921-.275.3.275-.3,3.161,2.314Z" transform="translate(7.792 7.653)" fill="#fff"/></g></svg></span>
-          </button>
-        </div> {% endcomment %}
-        <div class="collection_sort">
-
-          <div class="collection-filter">
-            <div class="collection-filter__item collection-filter__item--drawer">
-              <div class="boost-pfs-filter-tree-mobile-button">{% include 'boost-pfs-filter-skeleton', type: 'button' %}</div>
-            </div>
-            <div class="collection-filter__item collection-filter__item--count small--hide boost-pfs-filter-total-product">
-              {{ 'collections.general.items_with_count' | t: count: collection.products_count }}
-            </div>
-            <div class="collection-filter__item collection-filter__item--sort">
-              <div class="collection-filter__sort-container boost-pfs-filter-top-sorting">
-                {% include 'boost-pfs-filter-skeleton', width: 3 %}
-              </div>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </div>
-
+  </div>
   <div class="boost-pfs-filter-tree boost-pfs-filter-tree-v" data-is-mobile></div>
   <p class="medium-up--hide text-center boost-pfs-filter-total-product"></p>
   <div class="grid grid--uniform grid--collection boost-pfs-filter-products" data-boost-sort="{{ collection.default_sort_by }}" data-scroll-to>
     {%- assign grid_item_width = 'small--one-half medium-up--one-third' -%}
 
-  <div class="content collection_row">
+    {% case per_row %}
+    {% when 2 %}
+      {%- assign grid_item_width = 'medium-up--one-half' -%}
+    {% when 3 %}
+      {%- assign grid_item_width = 'small--one-half medium-up--one-third' -%}
+    {% when 4 %}
+      {%- assign grid_item_width = 'small--one-half medium-up--one-quarter' -%}
+    {% when 5 %}
+      {%- assign grid_item_width = 'small--one-half medium-up--one-fifth' -%}
+    {% endcase %}
 
-    <div class="collection_left_area_bg">
-      <div class="collection_left_area_bg_row">
-        <div class="collection_left_area">
-          <div class="search_cat">
-
-            <div class="title">
-              <h3>カテゴリー</h3>
-              <p>CATEGORY</p>
-            </div>
-
-            <div>
-              <ul>
-                <li>新作ジュエリー</li>
-                <li>ネックレス</li>
-                <li>リング</li>
-                <li>オプション</li>
-                <li>全てのジュエリー</li>
-              </ul>
-            </div>
-          </div><!--.search_cat-->
-        </div><!--.collection_left_area-->
-        <div class="collection_left_area_bg_close_tab">
-          <span class="batsu"></span>
-        </div>
+    {% for product in collection.products %}
+      {% include 'product-grid-item' %}
+    {% else %}
+      <div class="grid__item">
+        <p>{{ 'collections.general.no_matches' | t }}</p>
       </div>
-    </div><!--.collection_left_area_bg-->
+    {% endfor %}
 
-    <div class="collection_right_area">
-      <!--newitem-->
-      <div class="content">
-        <div class="newitem">
-          {% for product in collection.products %}
-            {% include 'product_card' %}
-          {% else %}
-            <div class="grid__item">
-              <p>{{ 'collections.general.no_matches' | t }}</p>
-            </div>
-          {% endfor %}
-        </div>
-      </div>
-
-      {% if section.settings.subcollection_style == 'below' %}
-        {% include 'subcollections', per_row: section.settings.subcollections_per_row %}
-      {% endif %}
-
-      <div class="boost-pfs-filter-bottom-pagination pagination">
-        {% if paginate.pages > 1 %}
-          {% include 'pagination' %}
-        {% endif %}
-      </div>
-      <div class="boost-pfs-filter-load-more"></div>
-
-    </div>
   </div>
+
+  {% if section.settings.subcollection_style == 'below' %}
+    {% include 'subcollections', per_row: section.settings.subcollections_per_row %}
+  {% endif %}
+
+  <div class="boost-pfs-filter-bottom-pagination pagination">
+    {% if paginate.pages > 1 %}
+      {% include 'pagination' %}
+    {% endif %}
+  </div>
+  <div class="boost-pfs-filter-load-more"></div>
 
 
 
@@ -200,20 +142,6 @@
       product_save_type: {% if settings.product_save_type %} {{ settings.product_save_type | json }} {% else %} 'dollar' {% endif %},
     }
   };
-
-  //collection_filter 20211219added
-  $('#search_filter').on('click', function() {
-    $('.collection_left_area_bg').addClass('nav_show');
-    $('.collection_left_area_bg_close_tab').addClass('nav_show');
-    $('.collection_left_area').addClass('nav_show');
-  });
-
-  $('.collection_left_area_bg_close_tab').on('click', function() {
-    $('.collection_left_area_bg').removeClass('nav_show');
-    $('.collection_left_area_bg_close_tab').removeClass('nav_show');
-    $('.collection_left_area').removeClass('nav_show');
-  });
-
 </script>
 {% schema %}
 
