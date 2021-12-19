@@ -290,64 +290,54 @@
 
 </style>
 
-<!-- collection image -->
-<div class="pc">
-  <div class="wide-content collection_image_position">
-    <div class="collection_image">
-      {{ 'collection_image.jpg' | asset_img_url: 'master' | img_tag }}
-    </div>
-  </div>
-</div>
-
-<div class="sp">
-  <div class="wide-content collection_image_position">
-    <div class="collection_image">
-      {{ 'collection_image.jpg' | asset_img_url: 'master' | img_tag }}
-    </div>
-  </div>
-</div>
-
-<!-- title -->
-<div class="content">
-  <div class="title">
-    <h3><ls-static-119808>リング</ls-static-119808></h3>
-    <p><ls-static-695456>RING</ls-static-695456></p>
-  </div>
-</div>
-
-<!-- news -->
-<div class="content collection_descrption_filter_sort_row">
-  <div class="collection_description">
-      <p>
-        <ls-static-507612>リングの説明が入ります。リングの説明が入ります。リングの説明が入ります。</ls-static-507612><br>
-        <ls-static-815944>リングの説明が入ります。リングの説明が入ります。</ls-static-815944>
-      </p>
-  </div>
-  <div>
-    {% comment %} <div class="collection_filter">
-      <button id="search_filter" style="border:1px solid #ccc;">
-        <span>絞り込み検索</span><span><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="10.678" height="12" viewBox="0 0 10.678 12"><defs><clipPath id="a"><rect width="10.678" height="12" fill="none"/></clipPath></defs><g clip-path="url(#a)"><path d="M5.707,1A4.706,4.706,0,1,1,1,5.706,4.712,4.712,0,0,1,5.707,1Zm0,8.593A3.886,3.886,0,1,0,1.82,5.706,3.891,3.891,0,0,0,5.707,9.593Z" transform="translate(-0.769 -1.041)" fill="#fff"/><path d="M2.61,2.921-.275.3.275-.3,3.161,2.314Z" transform="translate(7.792 7.653)" fill="#fff"/></g></svg></span>
-      </button>
-    </div> {% endcomment %}
-    <div class="collection_sort">
-
-      <div class="collection-filter">
-        <div class="collection-filter__item collection-filter__item--drawer">
-          <div class="boost-pfs-filter-tree-mobile-button">{% include 'boost-pfs-filter-skeleton', type: 'button' %}</div>
-        </div>
-        {% comment %} <div class="collection-filter__item collection-filter__item--count small--hide boost-pfs-filter-total-product">
-          {{ 'collections.general.items_with_count' | t: count: collection.products_count }}
-        </div> {% endcomment %}
-        <div class="collection-filter__item collection-filter__item--sort">
-          <div class="collection-filter__sort-container boost-pfs-filter-top-sorting">
-            {% include 'boost-pfs-filter-skeleton', width: 3 %}
-          </div>
+    <!-- mv -->
+    <div class="pc">
+      <div class="wide-content collection_image_position">
+        <div class="collection_image">
+          {{ 'collection_image.jpg'  | asset_url | img_tag }}
         </div>
       </div>
-
     </div>
-  </div>
-</div>
+
+    <div class="sp">
+      <div class="wide-content collection_image_position">
+        <div class="collection_image">
+          {{ 'collection_image.jpg'  | asset_url | img_tag }}
+        </div>
+      </div>
+    </div>
+
+    <!-- title -->
+    <div class="content">
+      <div class="title">
+        <h3>リング</h3>
+        <p>RING</p>
+      </div>
+    </div>
+
+    <!-- news -->
+    <div class="content collection_descrption_filter_sort_row">
+      <div class="collection_description">
+          <p>
+            リングの説明が入ります。リングの説明が入ります。リングの説明が入ります。<br>
+            リングの説明が入ります。リングの説明が入ります。
+          </p>
+      </div>
+      <div class="collection_filter_sort_row">
+        <div class="collection_filter">
+          <button id="search_filter" style="border:1px solid #ccc;">
+            <span>絞り込み検索</span><span><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="10.678" height="12" viewBox="0 0 10.678 12"><defs><clipPath id="a"><rect width="10.678" height="12" fill="none"/></clipPath></defs><g clip-path="url(#a)"><path d="M5.707,1A4.706,4.706,0,1,1,1,5.706,4.712,4.712,0,0,1,5.707,1Zm0,8.593A3.886,3.886,0,1,0,1.82,5.706,3.891,3.891,0,0,0,5.707,9.593Z" transform="translate(-0.769 -1.041)" fill="#fff"/><path d="M2.61,2.921-.275.3.275-.3,3.161,2.314Z" transform="translate(7.792 7.653)" fill="#fff"/></g></svg></span>
+          </button>
+        </div>
+        <div class="collection_sort">
+          <select name="" id="">
+            <option value="">新着順</option>
+            <option value=""></option>
+            <option value=""></option>
+          </select>
+        </div>
+      </div>
+    </div>
 
 {% if boost_in_collection_search == 'true' %}
   <div class="boost-pfs-container-default-{{ layout_type }} boost-pfs-in-collection-search">
@@ -370,7 +360,7 @@
 <div class="boost-pfs-filter-default-toolbar {% if show_view_as_m == false %} boost-pfs-filter-toolbar-top-mobile-hide-view-as {% endif %} {% if show_product_count_m == false %} boost-pfs-filter-toolbar-top-mobile-hide-product-count {% endif %}">
   {% if show_view_as == true or show_product_count == true or show_sort_by == true or show_view_as_m == true or show_product_count_m == true %}
     <div class="boost-pfs-container-default-{{ layout_type }} boost-pfs-filter-default-toolbar-inner {% if enable_filter_tree_button_desktop_v and enable_filter_sticky_d  %} boost-pfs-filter-sticky-wrapper {% endif %}">
-      {% comment %} {% if show_view_as == true or show_view_as_m == true or filter_layout == 'filter_layout_collapse' or filter_layout == 'filter_layout_slide' %}
+      {% if show_view_as == true or show_view_as_m == true or filter_layout == 'filter_layout_collapse' or filter_layout == 'filter_layout_slide' %}
         <div class="boost-pfs-filter-toolbar-item boost-pfs-filter-toolbar-type boost-pfs-filter-{{ view_as_type }} {% if show_view_as == true or filter_layout == 'filter_layout_collapse' or filter_layout == 'filter_layout_slide'  %}boost-pfs-filter-display-type-d{% endif %} {% if show_view_as_m == true or filter_layout == 'filter_layout_collapse' or filter_layout == 'filter_layout_slide'  %}boost-pfs-filter-display-type-m{% endif %}">
           {% if filter_layout == 'filter_layout_collapse' or filter_layout == 'filter_layout_slide' %}
             <button class="boost-pfs-filter-custom-filter-button">
@@ -381,102 +371,92 @@
             <div class="boost-pfs-filter-top-display-type {% if show_view_as %}boost-pfs-filter-top-display-type-d{% endif %} {% if show_view_as_m %}boost-pfs-filter-top-display-type-m{% endif %}">{%- render 'boost-pfs-filter-skeleton', width: 2 -%}</div>
           {%- endif -%}
         </div>
-      {%- endif -%} {% endcomment %}
+      {%- endif -%}
 
-      {% comment %} {%- if show_product_count == true or show_product_count_m == true -%}
+      {%- if show_product_count == true or show_product_count_m == true -%}
         <div class="boost-pfs-filter-toolbar-item boost-pfs-filter-toolbar-count {% if show_product_count%}boost-pfs-filter-toolbar-count-d{% endif %} {% if show_product_count_m %}boost-pfs-filter-toolbar-count-m{% endif %}">
           <span class="boost-pfs-filter-total-product">{%- render 'boost-pfs-filter-skeleton', width: 1 -%}</span>
         </div>
-      {%- endif -%} {% endcomment %}
+      {%- endif -%}
 
-      {% comment %} {%- if show_sort_by -%}
+      {%- if show_sort_by -%}
         <div class="boost-pfs-filter-toolbar-item boost-pfs-filter-custom-sorting boost-pfs-filter-top-sorting">{%- render 'boost-pfs-filter-skeleton', width: 1 -%}</div>
-      {%- endif -%} {% endcomment %}
+      {%- endif -%}
     </div>
   {%- endif -%}
 </div>
 {%- comment -%} END TOOLBAR {%- endcomment -%}
 
 <div class="boost-pfs-filter-wrapper {% if enable_filter_sticky_d %} boost-pfs-filter-tree-h-sticky-filter {% endif %} {% if filter_layout == 'filter_layout_collapse' %}boost-pfs-filter-layout-collapse {% endif %} {% if filter_layout == 'filter_layout_slide' %}boost-pfs-filter-layout-slide {% endif %}">
-	{%- if switch_layout_filter == 'switch_layout_filter_horizontal' -%}
-    <div class="boost-pfs-filter-tree-h-wrapper">
-      <div class="boost-pfs-container-default-{{ layout_type }}">
-        <div class="boost-pfs-filter-tree boost-pfs-filter-tree-h" data-is-desktop>
-          {%- render 'boost-pfs-filter-skeleton', type: 'filter-tree-h' -%}
-        </div>
-      </div>
-    </div>
-    <div class="boost-pfs-container-default-{{ layout_type }}">
-      <div class="boost-pfs-filter-refine-by-wrapper-h"></div>
-    </div>
-	{%- endif -%}
-	<div class="content collection_row boost-pfs-container-default-{{ layout_type }}">
+  <div class="content collection_row">
 		{%- if switch_layout_filter == 'switch_layout_filter_horizontal' -%}
 		<div class="boost-pfs-filter-tree boost-pfs-filter-tree-v" data-is-mobile></div>
 		{%- endif -%}
     {%- if switch_layout_filter != 'switch_layout_filter_horizontal' and filter_layout == 'filter_layout_slide' -%}
 			<div class="boost-pfs-filter-custom-drawer-overlay"></div>
 			{%- endif -%}
+      {%- if switch_layout_filter != 'switch_layout_filter_horizontal' -%}
+        <div class="collection_left_area">
+          <div class="boost-pfs-filter-left-col-inner">
+            {%- if filter_layout == 'filter_layout_slide' -%}
+            <div class="boost-pfs-filter-custom-drawer-close"></div>
+            {% endif %}
+            <div class="boost-pfs-filter-tree boost-pfs-filter-tree-v">{% render 'boost-pfs-filter-skeleton', type: 'filter-tree' %}</div>
+          </div>
+        </div>
+			{%- endif -%}
 
-    <div class="colletion_left_area">
-      <div class="boost-pfs-filter-left-col-inner">
-        {%- if filter_layout == 'filter_layout_slide' -%}
-        <div class="boost-pfs-filter-custom-drawer-close"></div>
-        {% endif %}
-        <div class="boost-pfs-filter-tree boost-pfs-filter-tree-v">{% render 'boost-pfs-filter-skeleton', type: 'filter-tree' %}</div>
-      </div>
-    </div>
+      <div class="collection_right_area">
+        <!--newitem-->
+        <div class="content">
+          <div class="newitem">
+            {%- for product in collection.products -%}
+              {%- render 'product_card',
+              product: product,
+              products_per_row: products_per_row,
+              products_per_row_m: products_per_row_m,
+              show_detail_when_hover: show_detail_when_hover,
+              show_vendor: show_vendor,
+              show_price: show_price,
 
-		<div class="collection_right_area">
-      <!--newitem-->
-      <div class="content">
-        <div class="newitem">
-				{%- for product in collection.products -%}
-				  {%- render 'product_card',
-					product: product,
-					products_per_row: products_per_row,
-					products_per_row_m: products_per_row_m,
-					show_detail_when_hover: show_detail_when_hover,
-					show_vendor: show_vendor,
-					show_price: show_price,
+              active_image_swap: active_image_swap,
+              show_product_review: show_product_review,
+              swatch_enable: swatch_enable,
+              show_swatch_tooltip: show_swatch_tooltip
+              swatch_change_img: swatch_change_img,
+              swatch_by_color_apply: swatch_by_color_apply,
+              swatch_by_color_shape: swatch_by_color_shape,
+              swatch_by_img_apply: swatch_by_img_apply,
+              swatch_by_img_shape: swatch_by_img_shape,
+              swatch_by_pro_img_apply: swatch_by_pro_img_apply,
+              swatch_by_pro_img_shape: swatch_by_pro_img_shape,
+              swatch_by_text_apply: swatch_by_text_apply,
+              swatch_by_text_shape: swatch_by_text_shape,
+              aspect_ratio: aspect_ratio,
+              aspect_ratio_other: aspect_ratio_other,
+              product_img_crop: product_img_crop,
+              tag_label_enable: tag_label_enable,
 
-					active_image_swap: active_image_swap,
-					show_product_review: show_product_review,
-					swatch_enable: swatch_enable,
-          show_swatch_tooltip: show_swatch_tooltip
-					swatch_change_img: swatch_change_img,
-          swatch_by_color_apply: swatch_by_color_apply,
-          swatch_by_color_shape: swatch_by_color_shape,
-          swatch_by_img_apply: swatch_by_img_apply,
-          swatch_by_img_shape: swatch_by_img_shape,
-          swatch_by_pro_img_apply: swatch_by_pro_img_apply,
-          swatch_by_pro_img_shape: swatch_by_pro_img_shape,
-          swatch_by_text_apply: swatch_by_text_apply,
-          swatch_by_text_shape: swatch_by_text_shape,
-					aspect_ratio: aspect_ratio,
-					aspect_ratio_other: aspect_ratio_other,
-					product_img_crop: product_img_crop,
-					tag_label_enable: tag_label_enable,
+              label_type: label_type,
+              sale_label_enable: sale_label_enable,
+              sale_label_display: sale_label_display,
+              sale_label_img: sale_label_img,
 
-          label_type: label_type,
-					sale_label_enable: sale_label_enable,
-          sale_label_display: sale_label_display,
-					sale_label_img: sale_label_img,
+              sold_out_enable: sold_out_enable,
+              sold_out_display: sold_out_display,
+              sold_out_img: sold_out_img,
 
-          sold_out_enable: sold_out_enable,
-          sold_out_display: sold_out_display,
-					sold_out_img: sold_out_img,
-
-					product_item_type: product_item_type,
-					label_soldout: label_soldout,
-					label_sale: label_sale,
-					label_from: label_from,
-					label_toolbar_viewas: label_toolbar_viewas,
-					label_items_with_count_one: label_items_with_count_one,
-					label_items_with_count_other: label_items_with_count_other,
-          label_sale_percent: label_sale_percent
-				-%}
-				{%- endfor -%}
+              product_item_type: product_item_type,
+              label_soldout: label_soldout,
+              label_sale: label_sale,
+              label_from: label_from,
+              label_toolbar_viewas: label_toolbar_viewas,
+              label_items_with_count_one: label_items_with_count_one,
+              label_items_with_count_other: label_items_with_count_other,
+              label_sale_percent: label_sale_percent
+            -%}
+				    {%- endfor -%}
+          </div>
         </div>
 			</div>
 			<div class="boost-pfs-filter-bottom-pagination boost-pfs-filter-bottom-pagination-default">
@@ -485,8 +465,10 @@
 				{%- endif -%}
 			</div>
 			<div class="boost-pfs-filter-load-more"></div>
-		</div>
 
+		{%- if switch_layout_filter != 'switch_layout_filter_horizontal' -%}
+		</div>
+		{%- endif -%}
 	</div>
 
 	{%- comment -%} start-bc-most-popular-template {%- endcomment -%}
