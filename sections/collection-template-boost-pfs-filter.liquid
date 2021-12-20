@@ -121,6 +121,9 @@
     max-width: 76.5%;
     min-width: 1046px;
 }
+.boost-pfs-filter-custom-filter-button:before, .boost-pfs-filter-tree-mobile-button button:before{
+	content: none;  
+}
  @media screen and (max-width: 768px) { 
   .boost-pfs-container-default-box {
       max-width: 100%;
@@ -134,9 +137,17 @@
     left: 0;
     right: auto;
   }
- }
- .boost-pfs-filter-custom-filter-button:before, .boost-pfs-filter-tree-mobile-button button:before{
-  content: none;  
+  .boost-pfs-filter-tree-mobile-style2.boost-pfs-filter-tree-v .boost-pfs-filter-options-wrapper {
+      overflow-x: hidden;
+      overflow-y: auto;
+      padding-bottom: 0;
+      height: auto;
+      flex-grow: 1;
+      position: fixed;
+      bottom: 49px;
+      width: calc(100% - 158px);
+      left: 48px;
+  }   
  }
 </style>
 
