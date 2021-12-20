@@ -149,6 +149,15 @@
             <ls-static-815944>リングの説明が入ります。リングの説明が入ります。</ls-static-815944>
           </p>
       </div>
+      <div class="collection_filter_sort_row">
+        <div class="collection_filter">
+          {% comment %} <button id="search_filter" style="border:1px solid #ccc;">
+            <span>絞り込み検索</span><span><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="10.678" height="12" viewBox="0 0 10.678 12"><defs><clipPath id="a"><rect width="10.678" height="12" fill="none"/></clipPath></defs><g clip-path="url(#a)"><path d="M5.707,1A4.706,4.706,0,1,1,1,5.706,4.712,4.712,0,0,1,5.707,1Zm0,8.593A3.886,3.886,0,1,0,1.82,5.706,3.891,3.891,0,0,0,5.707,9.593Z" transform="translate(-0.769 -1.041)" fill="#fff"/><path d="M2.61,2.921-.275.3.275-.3,3.161,2.314Z" transform="translate(7.792 7.653)" fill="#fff"/></g></svg></span>
+          </button> {% endcomment %}
+          <div id="search_filter" class="boost-pfs-filter-tree-mobile-button">{%- render 'boost-pfs-filter-skeleton', type: 'button' -%}</div>
+        </div>
+        <div class="collection_sort boost-pfs-filter-toolbar-item boost-pfs-filter-custom-sorting boost-pfs-filter-top-sorting">{%- render 'boost-pfs-filter-skeleton', width: 1 -%}</div>
+      </div>
     </div>
 
 {% if boost_in_collection_search == 'true' %}
@@ -156,48 +165,6 @@
     {% render 'boost-pfs-filter-skeleton', width: 4 %}
   </div>
 {% endif %}
-
-{%- comment -%} TOOLBAR TOP MOBILE {%- endcomment -%}
-<div class="boost-pfs-filter-toolbar-top-mobile {% if hide_toolbar_sort_by_mobile %} boost-pfs-filter-toolbar-top-mobile-hide-sort-by {% endif %} {% if enable_filter_sticky_m %}boost-pfs-filter-toolbar-sticky-mobile{% endif %}">
-  <div class="boost-pfs-filter-toolbar-top-mobile-inner {% if show_sort_by_m %} boost-pfs-filter-toolbar-show-sort-by-mobile {% endif %}">
-    {%- if show_sort_by_m -%}
-    	<div class="boost-pfs-filter-top-sorting boost-pfs-filter-top-sorting-mobile boost-pfs-filter-custom-sorting">{%- render 'boost-pfs-filter-skeleton', type: 'button' -%}</div>
-    {% endif %}
-    <div class="boost-pfs-filter-tree-mobile-button">{%- render 'boost-pfs-filter-skeleton', type: 'button' -%}</div>
-  </div>
-</div>
-{%- comment -%} END TOOLBAR TOP MOBILE {%- endcomment -%}
-
-{%- comment -%} TOOLBAR {%- endcomment -%}
-<div class="boost-pfs-filter-default-toolbar {% if show_view_as_m == false %} boost-pfs-filter-toolbar-top-mobile-hide-view-as {% endif %} {% if show_product_count_m == false %} boost-pfs-filter-toolbar-top-mobile-hide-product-count {% endif %}">
-  {% if show_view_as == true or show_product_count == true or show_sort_by == true or show_view_as_m == true or show_product_count_m == true %}
-    <div class="boost-pfs-container-default-{{ layout_type }} boost-pfs-filter-default-toolbar-inner {% if enable_filter_tree_button_desktop_v and enable_filter_sticky_d  %} boost-pfs-filter-sticky-wrapper {% endif %}">
-      {% if show_view_as == true or show_view_as_m == true or filter_layout == 'filter_layout_collapse' or filter_layout == 'filter_layout_slide' %}
-        <div class="boost-pfs-filter-toolbar-item boost-pfs-filter-toolbar-type boost-pfs-filter-{{ view_as_type }} {% if show_view_as == true or filter_layout == 'filter_layout_collapse' or filter_layout == 'filter_layout_slide'  %}boost-pfs-filter-display-type-d{% endif %} {% if show_view_as_m == true or filter_layout == 'filter_layout_collapse' or filter_layout == 'filter_layout_slide'  %}boost-pfs-filter-display-type-m{% endif %}">
-          {% if filter_layout == 'filter_layout_collapse' or filter_layout == 'filter_layout_slide' %}
-            <button class="boost-pfs-filter-custom-filter-button">
-              <span>Filter</span>
-            </button>
-          {% endif %}
-          {%- if show_view_as == true or show_view_as_m == true -%}
-            <div class="boost-pfs-filter-top-display-type {% if show_view_as %}boost-pfs-filter-top-display-type-d{% endif %} {% if show_view_as_m %}boost-pfs-filter-top-display-type-m{% endif %}">{%- render 'boost-pfs-filter-skeleton', width: 2 -%}</div>
-          {%- endif -%}
-        </div>
-      {%- endif -%}
-
-      {%- if show_product_count == true or show_product_count_m == true -%}
-        <div class="boost-pfs-filter-toolbar-item boost-pfs-filter-toolbar-count {% if show_product_count%}boost-pfs-filter-toolbar-count-d{% endif %} {% if show_product_count_m %}boost-pfs-filter-toolbar-count-m{% endif %}">
-          <span class="boost-pfs-filter-total-product">{%- render 'boost-pfs-filter-skeleton', width: 1 -%}</span>
-        </div>
-      {%- endif -%}
-
-      {%- if show_sort_by -%}
-        <div class="boost-pfs-filter-toolbar-item boost-pfs-filter-custom-sorting boost-pfs-filter-top-sorting">{%- render 'boost-pfs-filter-skeleton', width: 1 -%}</div>
-      {%- endif -%}
-    </div>
-  {%- endif -%}
-</div>
-{%- comment -%} END TOOLBAR {%- endcomment -%}
 
 <div class="boost-pfs-filter-wrapper {% if enable_filter_sticky_d %} boost-pfs-filter-tree-h-sticky-filter {% endif %} {% if filter_layout == 'filter_layout_collapse' %}boost-pfs-filter-layout-collapse {% endif %} {% if filter_layout == 'filter_layout_slide' %}boost-pfs-filter-layout-slide {% endif %}">
 	{%- if switch_layout_filter == 'switch_layout_filter_horizontal' -%}

@@ -369,14 +369,7 @@
     margin: 0!important;
     position: relative;
 }
-.boost-pfs-filter-tree-mobile-button:before{
-    content: "FILTER";
-    font-family: "TTDrugs-R" !important;
-    margin-bottom: 0.5vw;
-    display: block;
-    font-size:4vw;
-    letter-spacing: 0.3vw;
-}
+
 .boost-pfs-filter-tree-mobile-button button:after{
     content: "";
     background: url('https://cdn.shopify.com/s/files/1/0268/1202/2962/files/search.png?v=1612256632');
@@ -386,7 +379,7 @@
     width: 3.3vw;
     height: 3.3vw;
     right: 2.5vw;
-    top: 4.4vw;
+    top: 3.4vw;
     margin-bottom: 0.5vw;
     display: block;
     font-size:4vw;

@@ -322,7 +322,7 @@
 	    top: 0;
 	    right: 0;
 	}
-	#search_filter{
+	#search_filter button{
 		background: #717171;
 		color: white;
 		height: 40px;
