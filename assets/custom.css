@@ -632,6 +632,10 @@ figure.image{
 .collection_image {
     width: 88.3%;
     min-width: 1046px;
+    overflow: hidden;
+    height: 23vw;
+    display: flex;
+    align-items: center;
 }
 .collection_image img {
     width: 100%;
@@ -650,6 +654,9 @@ figure.image{
         padding: 0 30px;
         width: 100%;
         min-width: 100%;
+        overflow: unset;
+        height: auto;
+        display: block;
     }
 }
 
