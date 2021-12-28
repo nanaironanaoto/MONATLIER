@@ -1,12 +1,144 @@
+    <!-- collection image -->
+    <div class="pc">
+      <div class="wide-content collection_image_position">
+        <div class="collection_image">
+          {{ 'collection_image.jpg' | asset_img_url: 'master' | img_tag }}
+        </div>
+      </div>
+    </div>
+
+    <div class="sp">
+      <div class="wide-content collection_image_position">
+        <div class="collection_image">
+          {{ 'collection_image.jpg' | asset_img_url: 'master' | img_tag }}
+        </div>
+      </div>
+    </div>
+
+    <!-- title -->
+    <div class="content">
+      <div class="title">
+        <h3><ls-static-119808>リング</ls-static-119808></h3>
+        <p><ls-static-695456>RING</ls-static-695456></p>
+      </div>
+    </div>
+
+    <!-- news -->
+    <div class="content collection_descrption_filter_sort_row">
+      <div class="collection_description">
+          <p>
+            <ls-static-507612>リングの説明が入ります。リングの説明が入ります。リングの説明が入ります。</ls-static-507612><br>
+            <ls-static-815944>リングの説明が入ります。リングの説明が入ります。</ls-static-815944>
+          </p>
+      </div>
+    <div>
+
+    <!--newitem-->
+    <div class="content">
+      <div class="newitem">
+        {% for product in collection.products %}
+          {% include 'product_card' %}
+        {% else %}
+          <div class="grid__item">
+            <p>{{ 'collections.general.no_matches' | t }}</p>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+
+
 {% schema %}
+
   {
-    "name": "Section name",
-    "settings": []
+    "name": "Collection pages",
+    "settings": [
+      {
+        "type": "select",
+        "id": "description_position",
+        "label": "Collection description position",
+        "default": "top",
+        "options": [
+          {
+            "value": "top",
+            "label": "Top"
+          },
+          {
+            "value": "bottom",
+            "label": "Bottom"
+          }
+        ]
+      },
+      {
+        "type": "header",
+        "content": "Subcollections"
+      },
+      {
+        "type": "paragraph",
+        "content": "Links to collections from your menu will appear here. [Learn more](https://archetypethemes.co/blogs/impulse/how-do-i-create-subcollections)"
+      },
+      {
+        "type": "select",
+        "id": "subcollection_style",
+        "label": "Subcollection style",
+        "default": "above",
+        "options": [
+          {
+            "value": "above",
+            "label": "Above products"
+          },
+          {
+            "value": "below",
+            "label": "Below products"
+          },
+          {
+            "value": "none",
+            "label": "None"
+          }
+        ]
+      },
+      {
+        "type": "range",
+        "id": "subcollections_per_row",
+        "label": "Subcollections per row",
+        "default": 5,
+        "min": 2,
+        "max": 5,
+        "step": 1
+      },
+      {
+        "type": "header",
+        "content": "Products"
+      },
+      {
+        "type": "checkbox",
+        "id": "enable_collection_count",
+        "label": "Enable collection count",
+        "default": true
+      },
+      {
+        "type": "range",
+        "id": "per_row",
+        "label": "Products per row",
+        "default": 4,
+        "min": 2,
+        "max": 5,
+        "step": 1
+      },
+      {
+        "type": "range",
+        "id": "rows_per_page",
+        "label": "Rows per page",
+        "default": 7,
+        "min": 3,
+        "max": 20,
+        "step": 1
+      },
+      {
+        "type": "checkbox",
+        "id": "mobile_flush_grid",
+        "label": "Flush grid on mobile",
+        "default": false
+      }
+    ]
   }
 {% endschema %}
-
-{% stylesheet %}
-{% endstylesheet %}
-
-{% javascript %}
-{% endjavascript %}
