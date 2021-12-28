@@ -2,7 +2,8 @@
   "sections": {
     "concept-template": {
       "type": "concept-template",
-      "settings": {}
+      "settings": {
+      }
     }
   },
   "order": [
