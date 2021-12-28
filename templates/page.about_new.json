@@ -1,12 +1,12 @@
 {
   "sections": {
-    "concept-template": {
-      "type": "concept-template",
+    "about_new": {
+      "type": "about_new",
       "settings": {
       }
     }
   },
   "order": [
-    "concept-template"
+    "about_new"
   ]
 }
