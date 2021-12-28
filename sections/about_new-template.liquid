@@ -29,97 +29,53 @@
     <div>
 
 {% schema %}
-
-  {
-    "name": "Collection pages",
-    "settings": [
+{
+  "name": {
+    "ja": "コンテンツ"
+  },
+  "class": "content_image",
+  "blocks": [
       {
-        "type": "select",
-        "id": "description_position",
-        "label": "Collection description position",
-        "default": "top",
-        "options": [
+        "name": "image",
+        "type" : "header",
+        "settings": [
           {
-            "value": "top",
-            "label": "Top"
+            "type" : "image_picker",
+            "id" : "content_image_pc",
+            "label" : "コンテンツ画像(PC)"
           },
           {
-            "value": "bottom",
-            "label": "Bottom"
+            "type" : "image_picker",
+            "id" : "content_image_sp",
+            "label" : "コンテンツ画像(SP)"
+          },
+          {
+            "type" : "text",
+            "id" : "content_text_jp",
+            "label" : "テキスト(日本語)"
+          },
+          {
+            "type" : "text",
+            "id" : "content_text_en",
+            "label" : "テキスト(英語)"
+          },
+          {
+            "type" : "url",
+            "id" : "content_link",
+            "label" : "リンクURL"
           }
         ]
-      },
-      {
-        "type": "header",
-        "content": "Subcollections"
-      },
-      {
-        "type": "paragraph",
-        "content": "Links to collections from your menu will appear here. [Learn more](https://archetypethemes.co/blogs/impulse/how-do-i-create-subcollections)"
-      },
-      {
-        "type": "select",
-        "id": "subcollection_style",
-        "label": "Subcollection style",
-        "default": "above",
-        "options": [
-          {
-            "value": "above",
-            "label": "Above products"
-          },
-          {
-            "value": "below",
-            "label": "Below products"
-          },
-          {
-            "value": "none",
-            "label": "None"
-          }
-        ]
-      },
-      {
-        "type": "range",
-        "id": "subcollections_per_row",
-        "label": "Subcollections per row",
-        "default": 5,
-        "min": 2,
-        "max": 5,
-        "step": 1
-      },
-      {
-        "type": "header",
-        "content": "Products"
-      },
-      {
-        "type": "checkbox",
-        "id": "enable_collection_count",
-        "label": "Enable collection count",
-        "default": true
-      },
-      {
-        "type": "range",
-        "id": "per_row",
-        "label": "Products per row",
-        "default": 4,
-        "min": 2,
-        "max": 5,
-        "step": 1
-      },
-      {
-        "type": "range",
-        "id": "rows_per_page",
-        "label": "Rows per page",
-        "default": 7,
-        "min": 3,
-        "max": 20,
-        "step": 1
-      },
-      {
-        "type": "checkbox",
-        "id": "mobile_flush_grid",
-        "label": "Flush grid on mobile",
-        "default": false
       }
-    ]
-  }
+  ],
+  "presets": [
+    {
+      "name": {
+        "ja": "コンテンツ"
+      },
+      "category": {
+        "ja": "新規メニュー"
+      }
+    }
+  ]
+}
 {% endschema %}
