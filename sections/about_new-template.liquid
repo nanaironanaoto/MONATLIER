@@ -2,7 +2,7 @@
     <div class="pc">
       <div class="wide-content collection_image_position">
         <div class="collection_image">
-          {{ 'collection_image.jpg' | asset_img_url: 'master' | img_tag }}
+          {{ 'concept_mv_pc.jpg' | asset_img_url: 'master' | img_tag }}
         </div>
       </div>
     </div>
@@ -10,7 +10,7 @@
     <div class="sp">
       <div class="wide-content collection_image_position">
         <div class="collection_image">
-          {{ 'collection_image.jpg' | asset_img_url: 'master' | img_tag }}
+          {{ 'concept_mv_sp.jpg' | asset_img_url: 'master' | img_tag }}
         </div>
       </div>
     </div>
@@ -24,28 +24,9 @@
     </div>
 
     <!-- news -->
-    <div class="content collection_descrption_filter_sort_row">
-      <div class="collection_description">
-          <p>
-            <ls-static-507612>リングの説明が入ります。リングの説明が入ります。リングの説明が入ります。</ls-static-507612><br>
-            <ls-static-815944>リングの説明が入ります。リングの説明が入ります。</ls-static-815944>
-          </p>
-      </div>
-    <div>
-
-    <!--newitem-->
     <div class="content">
-      <div class="newitem">
-        {% for product in collection.products %}
-          {% include 'product_card' %}
-        {% else %}
-          <div class="grid__item">
-            <p>{{ 'collections.general.no_matches' | t }}</p>
-          </div>
-        {% endfor %}
-      </div>
-    </div>
 
+    <div>
 
 {% schema %}
 
