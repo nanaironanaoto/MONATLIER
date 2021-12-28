@@ -643,6 +643,63 @@ figure.image{
 .collection_left_area_bg{
     transition: 0.5s;
 }
+.indent_lv1{
+    margin-left:40px;
+}
+.content_wide_image img{
+    width: 100%;
+}
+.kodawari{
+    background: #E4E4E4;
+    display: flex;
+    justify-content: space-between;
+}
+.kodawari .col01{
+    padding:80px 100px;
+}
+.kodawari .col02{
+    display: flex;
+    justify-content: end;
+}
+.caption_lv1 h3{
+    font-size: 24px;
+}
+.caption_lv2 h3{
+    font-size: 20px;
+}
+.about_link_nav{
+    display: flex;
+    column-gap:40px;
+}
+.about_link_nav>div{
+    display: inline-block;
+    border-bottom: 1px solid #C8AB7A;
+}
+.about_link_nav>div *{
+    display: inline-block;
+    margin-right: 10px;
+}
+.about_diamond{
+    display: flex;
+    justify-content: space-between;
+}
+.about_diamond>div:nth-child(2) {
+    width: 100%;
+}
+.about_new_content02{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 73px;
+    row-gap: 80px;
+}
+.about_jikin{
+    display: flex;
+    justify-content: space-between;
+    gap: 100px;
+}
+.about_jikin * {
+    width: 100%;
+}
 
 @media screen and (max-width: 1024px) {
     .content, .mv{
@@ -657,6 +714,30 @@ figure.image{
         overflow: unset;
         height: auto;
         display: block;
+    }
+    .caption_lv1 h3 {
+        font-size: 16px;
+    }
+    .caption_lv2 h3{
+        font-size: 16px;
+    }
+    #concept p{
+        font-size: 12px;
+    }
+    #about p{
+        font-size: 12px;
+    }
+    .indent_lv1 {
+        margin-left: 24px;
+    }
+    .kodawari.content{
+        margin: 24px;
+        padding: 0;
+        width: 100%;
+        min-width: auto;
+    }
+    .kodawari .col01 {
+        padding: 24px 48px;
     }
 }
 

@@ -1,3 +1,4 @@
+  <div id="concept">
     <!-- collection image -->
     <div class="pc">
       <div class="wide-content collection_image_position">
@@ -18,12 +19,99 @@
     <!-- title -->
     <div class="content">
       <div class="title">
-        <h3>リング</h3>
-        <p>RING</p>
+        <h3>コンセプト</h3>
+        <p>CONCEPT</p>
       </div>
     </div>
 
+    <!--description-->
+    <div class="content">
+      <div class="caption_lv1">
+        <h3>日本一のコストパフォーマンス</h3>
+      </div>
+      <p>「日本一のコストパフォーマンス」は<br>
+      以下の３つの取り組みから生まれます。
+      </p>
+    </div>
 
+    <!--description-->
+    <div class="content yu_gothic">
+      <div class="indent_lv1">
+
+        <div class="caption_lv2">
+          <h3>工房直販</h3>
+        </div>
+        <p>モナトリエでは日本とタイの直営工房にて製作、直接販売しています。<br>
+        通常のジュエリー流通では中間メーカーや卸業者が介在しますが、<br>
+        モナトリエでは工房が直接販売しているため、品質と価格を高い次元で両立できています。
+        </p>
+
+        <div class="caption_lv2">
+          <h3>ダイヤモンドは直輸入</h3>
+        </div>
+        <p>モナトリエではダイヤモンドを、中間業者、輸入業者を通さず、インドの大手研磨工場から直接、大量に購入することで、高いコストパフォーマンスを実現しています。
+        </p>
+
+        <div class="caption_lv2">
+          <h3>ロット製作</h3>
+        </div>
+        <p>モナトリエでは割高になる単品の受注製作をせず、作業手順の同じ製品をロット製作することで製作コストと事務コストを必要最低限に抑制しています。<br>
+        また在庫を持つことで最短納期を可能にしています。
+        </p>
+
+      </div>
+    </div>
+
+    <!-- wide image -->
+    <div class="pc">
+      <div class="content">
+        <div class="content_wide_image">
+          {{ 'concept_01_pc.jpg' | asset_img_url: 'master' | img_tag }}
+        </div>
+      </div>
+    </div>
+
+    <div class="sp">
+      <div class="content">
+        <div class="content_wide_image">
+          {{ 'concept_01_sp.jpg' | asset_img_url: 'master' | img_tag }}
+        </div>
+      </div>
+    </div>
+
+    <!-- policy -->
+    <div class="content">
+      <div class="column_col">
+        <div class="title">
+          <h3>ポリシー</h3>
+          <p>POLICY</p>
+        </div>
+        <div class="caption_lv1">
+          <h3>自分で買いたいと思うジュエリー</h3>
+          <p>
+            私たちはジュエリー作りのプロフェッショナルだからこそ、ジュエリーに必要な品質はわかっていますし、削ってはいけないコストもわかっています。プロフェッショナルだからこそ、<br>
+            自分では欲しくないものを販売することはできません。
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- policy -->
+    <div class="content kodawari">
+      <div class="sp">{{ 'concept_02_sp.jpg' | asset_img_url: 'master' | img_tag }}</div>
+      <div class="col01">
+        <h3>品質へのこだわり</h3>
+        <p>QUALITY</p>
+        <h3>「品質」は「姿勢」から</h3>
+        <p>
+          「品質」のためには職人の技術と経験が必要です。モナトリエの工房には、品質のための人材と経験が十分蓄積されています。しかし「品質」はそれだけで実現できることではありません。「品質」は、材料選別や原型製作、検品など関わるスタッフ全員の気持ちが「品質」に向いていて、はじめて実現できることなのです。<br>
+          「品質」は技術ではなく「姿勢」が実現するのです。
+        </p>
+      </div>
+      <div class="pc">{{ 'concept_02_pc.jpg' | asset_img_url: 'master' | img_tag }}</div>
+    </div>
+
+  </div><!--#concept-->
 
 {% schema %}
 {
