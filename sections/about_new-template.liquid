@@ -23,59 +23,18 @@
       </div>
     </div>
 
-    <!-- news -->
-    <div class="content">
 
-    <div>
 
 {% schema %}
 {
-  "name": {
-    "ja": "コンテンツ"
-  },
-  "class": "content_image",
-  "blocks": [
-      {
-        "name": "image",
-        "type" : "header",
-        "settings": [
-          {
-            "type" : "image_picker",
-            "id" : "content_image_pc",
-            "label" : "コンテンツ画像(PC)"
-          },
-          {
-            "type" : "image_picker",
-            "id" : "content_image_sp",
-            "label" : "コンテンツ画像(SP)"
-          },
-          {
-            "type" : "text",
-            "id" : "content_text_jp",
-            "label" : "テキスト(日本語)"
-          },
-          {
-            "type" : "text",
-            "id" : "content_text_en",
-            "label" : "テキスト(英語)"
-          },
-          {
-            "type" : "url",
-            "id" : "content_link",
-            "label" : "リンクURL"
-          }
-        ]
-      }
-  ],
-  "presets": [
-    {
-      "name": {
-        "ja": "コンテンツ"
-      },
-      "category": {
-        "ja": "新規メニュー"
-      }
-    }
-  ]
+    "name": "Main Menu",
+    "settings": [
+        {
+            "type": "link_list",
+            "id": "main_linklist",
+            "label": "Menu",
+            "default": "main-menu"
+        }
+    ]
 }
-{% endschema %}
+  {% endschema %}
