@@ -658,6 +658,7 @@ figure.image{
 }
 .kodawari{
     margin-top: 100px;
+    margin-bottom: 120px;
     background: rgb(228 228 228 / 23%);
     display: flex;
     justify-content: space-between;
@@ -865,7 +866,7 @@ figure.image{
     .about_diamond>div:nth-child(1) {
         width: 100%;
     }
-    .caption_lv1 h3 {
+    #about .caption_lv1 h3 {
         margin-top: 60px;
     }
     .about_diamond_block01{
