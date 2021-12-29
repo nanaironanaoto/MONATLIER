@@ -724,8 +724,8 @@ figure.image{
 .about_diamond>div:nth-child(2) {
     width: max-content;
 }
-.caption_lv1 h3 {
-    margin-top: 0;
+#about .caption_lv1 h3 {
+    margin-top: 110px;
 }
 .caption_lv1 h3.about_daimond{
     margin-top: 110px;
