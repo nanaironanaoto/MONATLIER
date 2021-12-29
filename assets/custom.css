@@ -1,15 +1,22 @@
 body{
 	font-family: TTDrugs-R,"游ゴシック体",YuGothic,"游ゴシック Medium","Yu Gothic Medium","游ゴシック","Yu Gothic",sans-serif;
 }
+@media screen and (max-width: 764px) {
+    p {
+        line-height: 1.5;
+    }
+}
 .pc{
 	display: block;
 }
 .sp{
 	display: none;
 }
+.content.mb-80px{
+    margin-bottom: 80px;
+}
 .yu_gothic{
 	font-family: "游ゴシック体",YuGothic,"游ゴシック Medium","Yu Gothic Medium","游ゴシック","Yu Gothic",sans-serif;
-	letter-spacing: -1px;
 }
 .tt_drugs_r{
 	font-family: TTDrugs-R !important;
@@ -650,22 +657,49 @@ figure.image{
     width: 100%;
 }
 .kodawari{
-    background: #E4E4E4;
+    margin-top: 100px;
+    background: rgb(228 228 228 / 23%);
     display: flex;
     justify-content: space-between;
 }
 .kodawari .col01{
-    padding:80px 100px;
+    padding: 65px 85px;
+}
+.text-18px{
+    font-size: 18px;
+}
+.text-24px{
+    font-size: 24px;
+}
+.pc.kodawari_image_pc{
+    line-height: 0;
 }
 .kodawari .col02{
     display: flex;
     justify-content: end;
 }
+.kodawari .col01 .subtitle {
+    margin-bottom: -4px;
+}
+.kodawari .col01 h3.mb-25px {
+    margin-bottom: 25px;
+}
+.kodawari .col01 p.mb-75px {
+    margin-bottom: 35px;
+}
+.kodawari .kodawari_image_pc, .kodawari .kodawari_image_pc *{
+    max-width: max-content;
+}
 .caption_lv1 h3{
     font-size: 24px;
+    margin-bottom: 34px;
 }
 .caption_lv2 h3{
     font-size: 20px;
+    margin-bottom: 30px;
+}
+.indent_lv1 p {
+    margin-bottom: 60px;
 }
 .about_link_nav{
     display: flex;
@@ -682,23 +716,63 @@ figure.image{
 .about_diamond{
     display: flex;
     justify-content: space-between;
+    align-items: end;
+}
+.about_diamond>div:nth-child(1) {
+    width: 68%;
 }
 .about_diamond>div:nth-child(2) {
-    width: 100%;
+    width: max-content;
+}
+.caption_lv1 h3 {
+    margin-top: 110px;
+}
+.description_small{
+    color: #A2A2A2;
+    font-size: 12px;
 }
 .about_new_content02{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     column-gap: 73px;
     row-gap: 80px;
+    margin: 80px 0;
 }
 .about_jikin{
     display: flex;
     justify-content: space-between;
     gap: 100px;
+    margin: 80px 0;
 }
 .about_jikin * {
     width: 100%;
+}
+.about_jikin_image_caption{
+    margin-top:15px;
+}
+.wide-content-image-position{
+    display: flex;
+    justify-content: flex-end;
+}
+.wide-content-image{
+    width: 88.3%;
+    min-width: 1046px;
+    margin-bottom: 70px;
+}
+.wide-content-image img {
+    width: 100%;
+}
+#concept .title, #about .title {
+    margin-bottom: 75px;
+}
+.content_wide_image {
+    margin: 120px 0;
+}
+.content_wide_image.about_new {
+    margin: 80px 0 48px;
+}
+.about_diamond_block01{
+    margin: 0;
 }
 
 @media screen and (max-width: 1024px) {
@@ -731,13 +805,89 @@ figure.image{
         margin-left: 24px;
     }
     .kodawari.content{
-        margin: 24px;
+        margin: 70px 24px;
         padding: 0;
-        width: 100%;
+        width: calc(100% - 48px);
         min-width: auto;
+        max-width: 100%;
+    }
+    .kodawari_image_sp {
+        line-height: 0;
+    }
+    .text-24px{
+        font-size:16px;
     }
     .kodawari .col01 {
-        padding: 24px 48px;
+        padding: 48px 24px;
+    }
+    .kodawari .col01 .subtitle {
+        font-size: 20px;
+    }
+    .wide-content-image {
+        width: 100%;
+        min-width: 100%;
+        margin-bottom:50px;
+    }
+    #concept .title, #about .title {
+        margin-bottom: 45px;
+    }
+    .caption_lv1 h3{
+        margin-bottom: 32px;
+    }
+    .content.mb-80px {
+        margin-bottom: 40px;
+    }
+    .indent_lv1 p {
+        margin-bottom: 40px;
+    }
+    .content_wide_image {
+        margin: 40px 0;
+    }
+    #about .content_wide_image {
+        margin: 25px 0;
+    }
+    .about_link_nav {
+        display: inline-flex;
+        flex-direction: column;
+        gap: 25px;
+    }
+    .about_link_nav>div {
+        display: inline-block;
+        border-bottom: 1px solid #C8AB7A;
+    }
+    .about_link_nav>div h3{
+        font-size:14px;
+    }
+    .about_link_nav>div p{
+        font-size:12px;
+    }
+    .about_diamond>div:nth-child(1) {
+        width: 100%;
+    }
+    .caption_lv1 h3 {
+        margin-top: 60px;
+    }
+    .about_diamond_block01{
+        margin: 0 0 35px 0;
+    }
+    .about_new_content02_wapper h3{
+        font-size: 16px;
+    }
+    #about .about_new_content02_wapper p {
+        font-size: 10px;
+    }
+    .about_new_content02 {
+        grid-template-columns: 1fr 1fr;
+        column-gap: 45px;
+        row-gap: 40px;
+        margin: 30px 0;
+    }
+    .about_jikin {
+        gap: 24px;
+        margin: 40px 0;
+    }
+    #about .about_jikin_image_caption {
+        font-size: 10px;
     }
 }
 

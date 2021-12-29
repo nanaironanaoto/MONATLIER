@@ -1,16 +1,16 @@
   <div id="about">
     <!-- collection image -->
     <div class="pc">
-      <div class="wide-content collection_image_position">
-        <div class="collection_image">
+      <div class="wide-content wide-content-image-position">
+        <div class="wide-content-image">
           {{ 'about_mv_pc.jpg' | asset_img_url: 'master' | img_tag }}
         </div>
       </div>
     </div>
 
     <div class="sp">
-      <div class="wide-content collection_image_position">
-        <div class="collection_image">
+        <div class="wide-content wide-content-image-position">
+          <div class="wide-content-image">
           {{ 'about_mv_sp.jpg' | asset_img_url: 'master' | img_tag }}
         </div>
       </div>
@@ -38,7 +38,7 @@
         <div class="caption_lv1">
           <h3>ダイヤモンド</h3>
         </div>
-        <p>モナトリエでは、すべての製品に天然ダイヤモンドを使用しています。<br>
+        <p class="about_diamond_block01">モナトリエでは、すべての製品に天然ダイヤモンドを使用しています。<br>
         グレードは一般的な使用に問題がなく、最も高いコストパフォーマンスを発揮する品質<br>
         「I１ Gカラー Goodカット」を使用しています。<br>
         <br>
@@ -59,7 +59,7 @@
         </div>
         <p>ダイヤモンドの選別は、世界基準であるGIA(*2)が認定するダイヤモンド鑑定資格を持つスタッフが行っており、規定品質のダイヤモンドを製品にセットしています。
         </p>
-        <p>(*1) コンフリクトダイヤモンド：ダイヤモンドカルテルであるデビアス社の正規ルートを経ないダイヤモンドには、内戦国などから抗争資金を得るために不正に輸出されたダイヤモンドが混入している可能性が高い、と言われています。<br>
+        <p class="description_small">(*1) コンフリクトダイヤモンド：ダイヤモンドカルテルであるデビアス社の正規ルートを経ないダイヤモンドには、内戦国などから抗争資金を得るために不正に輸出されたダイヤモンドが混入している可能性が高い、と言われています。<br>
         (*2)GIA：世界のダイヤモンド取引に用いられる基準を提供している非営利組織です。通常GIAの鑑定がないダイヤモンドは取引対象になりません。</p>
       </div>
     </div>
@@ -67,7 +67,7 @@
     <!-- wide image -->
     <div class="pc">
       <div class="content">
-        <div class="content_wide_image">
+        <div class="content_wide_image about_new">
           {{ 'about_03_pc.jpg' | asset_img_url: 'master' | img_tag }}
         </div>
       </div>
@@ -87,7 +87,7 @@
       </div>
     </div>
 
-    <div class="content">
+    <div class="content about_new_content02_wapper">
       <h3>品質のための機器</h3>
       <div class="about_new_content02">
         <div><div>{{ 'gray.jpg' | asset_img_url: 'master' | img_tag }}</div><p>ダイヤ検査機</p></div>
@@ -112,13 +112,13 @@
       <div class="about_jikin">
         <div>
           <div><img src="{{ 'about_04_pc.jpg' | asset_img_url: 'master' }}" class="pc"><img src="{{ 'about_04_sp.jpg' | asset_img_url: 'master' }}" class="sp"></div>
-          <p>通常K１０：＊ｋｇにて10％変形</p>
+          <p class="about_jikin_image_caption">通常K10:kgて10％変形</p>
         </div>
         <div>
           <div>
             <div><img src="{{ 'about_05_pc.jpg' | asset_img_url: 'master' }}" class="pc"><img src="{{ 'about_05_sp.jpg' | asset_img_url: 'master' }}" class="sp"></div>
           </div>
-          <p>モナトリエK１０：＊ｋｇにて10％変形</p>
+          <p class="about_jikin_image_caption">モナトリエK10:kgにて10％変形</p>
         </div>
       </div>
     </div>
@@ -137,14 +137,14 @@
     <!-- wide image -->
     <div class="pc">
       <div class="content">
-        <div class="content_wide_image">
+        <div class="content_wide_image about_new">
           {{ 'about_06_pc.jpg' | asset_img_url: 'master' | img_tag }}
         </div>
       </div>
     </div>
     <div class="sp">
       <div class="content">
-        <div class="content_wide_image">
+        <div class="content_wide_image about_new">
           {{ 'about_06_sp.jpg' | asset_img_url: 'master' | img_tag }}
         </div>
       </div>
