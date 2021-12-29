@@ -12,10 +12,56 @@
         "top_heading_jp": "カテゴリー",
         "top_heading_en": "CATEGORY"
       }
+    },
+    "164075952606a15fcd": {
+      "type": "category",
+      "blocks": {
+        "8031b68f-ca8c-4f39-9813-d24d10bdf297": {
+          "type": "header",
+          "settings": {
+            "category_text_jp": "ネックレス",
+            "category_text_en": "NECKLACE",
+            "category_link": ""
+          }
+        },
+        "11cdc5e1-d8f5-4189-9e2f-ca06c5be0578": {
+          "type": "header",
+          "settings": {
+            "category_text_jp": "リング",
+            "category_text_en": "RING",
+            "category_link": ""
+          }
+        },
+        "53d7623c-45ec-44a0-b3ce-54e2b73022e3": {
+          "type": "header",
+          "settings": {
+            "category_text_jp": "ピアス",
+            "category_text_en": "EARRING",
+            "category_link": ""
+          }
+        },
+        "727164ef-1a74-42a5-bdc9-f660586c7445": {
+          "type": "header",
+          "settings": {
+            "category_text_jp": "ブレスレット",
+            "category_text_en": "BRACELET",
+            "category_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "8031b68f-ca8c-4f39-9813-d24d10bdf297",
+        "11cdc5e1-d8f5-4189-9e2f-ca06c5be0578",
+        "53d7623c-45ec-44a0-b3ce-54e2b73022e3",
+        "727164ef-1a74-42a5-bdc9-f660586c7445"
+      ],
+      "settings": {
+      }
     }
   },
   "order": [
     "concept-template",
-    "1640759493bc17e360"
+    "1640759493bc17e360",
+    "164075952606a15fcd"
   ]
 }
