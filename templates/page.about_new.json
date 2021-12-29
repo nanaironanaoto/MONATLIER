@@ -3,10 +3,117 @@
     "about_new-template": {
       "type": "about_new-template",
       "settings": {
+        "main_linklist": "main-menu"
       }
+    },
+    "1640759493bc17e360": {
+      "type": "top_heading",
+      "settings": {
+        "top_heading_jp": "カテゴリー",
+        "top_heading_en": "CATEGORY"
+      }
+    },
+    "164075952606a15fcd": {
+      "type": "category",
+      "blocks": {
+        "8031b68f-ca8c-4f39-9813-d24d10bdf297": {
+          "type": "header",
+          "settings": {
+            "category_text_jp": "ネックレス",
+            "category_text_en": "NECKLACE",
+            "category_link": "shopify:\/\/collections\/necklace"
+          }
+        },
+        "11cdc5e1-d8f5-4189-9e2f-ca06c5be0578": {
+          "type": "header",
+          "settings": {
+            "category_text_jp": "リング",
+            "category_text_en": "RING",
+            "category_link": "shopify:\/\/collections\/ring"
+          }
+        },
+        "53d7623c-45ec-44a0-b3ce-54e2b73022e3": {
+          "type": "header",
+          "settings": {
+            "category_text_jp": "ピアス",
+            "category_text_en": "EARRING",
+            "category_link": ""
+          }
+        },
+        "727164ef-1a74-42a5-bdc9-f660586c7445": {
+          "type": "header",
+          "settings": {
+            "category_text_jp": "ブレスレット",
+            "category_text_en": "BRACELET",
+            "category_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "8031b68f-ca8c-4f39-9813-d24d10bdf297",
+        "11cdc5e1-d8f5-4189-9e2f-ca06c5be0578",
+        "53d7623c-45ec-44a0-b3ce-54e2b73022e3",
+        "727164ef-1a74-42a5-bdc9-f660586c7445"
+      ],
+      "settings": {}
+    },
+    "164075976609361e9d": {
+      "type": "content",
+      "blocks": {
+        "638a9334-44e0-4b8f-8993-5a3aec8371cf": {
+          "type": "header",
+          "settings": {
+            "content_image_pc": "shopify:\/\/shop_images\/content_bnr01.jpg",
+            "content_image_sp": "shopify:\/\/shop_images\/content_bnr01_square.jpg",
+            "content_text_jp": "品質基準",
+            "content_text_en": "QUALITY",
+            "content_link": "shopify:\/\/pages\/about_new"
+          }
+        },
+        "ddf20c4e-336a-4097-866c-8f85d45790e3": {
+          "type": "header",
+          "settings": {
+            "content_image_pc": "shopify:\/\/shop_images\/content_bnr02.jpg",
+            "content_image_sp": "shopify:\/\/shop_images\/content_bnr02_square.jpg",
+            "content_text_jp": "素材について",
+            "content_text_en": "MATERIAL",
+            "content_link": "shopify:\/\/pages\/material"
+          }
+        },
+        "fd7ecbcb-25c6-4e59-9ac4-95a9163316c9": {
+          "type": "header",
+          "settings": {
+            "content_image_pc": "shopify:\/\/shop_images\/content_bnr03.jpg",
+            "content_image_sp": "shopify:\/\/shop_images\/content_bnr03_square.jpg",
+            "content_text_jp": "コンセプト",
+            "content_text_en": "CONCEPT",
+            "content_link": "shopify:\/\/pages\/concept_new"
+          }
+        },
+        "f99aaac1-398c-450d-9618-7796ea877f3d": {
+          "type": "header",
+          "settings": {
+            "content_image_pc": "shopify:\/\/shop_images\/content_bnr04.jpg",
+            "content_image_sp": "shopify:\/\/shop_images\/content_bnr04_square.jpg",
+            "content_text_jp": "アフターサービス",
+            "content_text_en": "SERVICE",
+            "content_link": "shopify:\/\/pages\/afterservice"
+          }
+        }
+      },
+      "block_order": [
+        "638a9334-44e0-4b8f-8993-5a3aec8371cf",
+        "ddf20c4e-336a-4097-866c-8f85d45790e3",
+        "fd7ecbcb-25c6-4e59-9ac4-95a9163316c9",
+        "f99aaac1-398c-450d-9618-7796ea877f3d"
+      ],
+      "settings": {}
     }
   },
   "order": [
-    "about_new-template"
+    "about_new-template",
+    "1640759493bc17e360",
+    "164075952606a15fcd",
+    "164075976609361e9d"
   ]
 }
