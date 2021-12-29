@@ -55,7 +55,8 @@
         "53d7623c-45ec-44a0-b3ce-54e2b73022e3",
         "727164ef-1a74-42a5-bdc9-f660586c7445"
       ],
-      "settings": {}
+      "settings": {
+      }
     },
     "164075976609361e9d": {
       "type": "content",
@@ -77,7 +78,7 @@
             "content_image_sp": "shopify:\/\/shop_images\/content_bnr02_square.jpg",
             "content_text_jp": "素材について",
             "content_text_en": "MATERIAL",
-            "content_link": "shopify:\/\/pages\/material"
+            "content_link": "shopify:\/\/pages\/material_old"
           }
         },
         "fd7ecbcb-25c6-4e59-9ac4-95a9163316c9": {
@@ -107,7 +108,8 @@
         "fd7ecbcb-25c6-4e59-9ac4-95a9163316c9",
         "f99aaac1-398c-450d-9618-7796ea877f3d"
       ],
-      "settings": {}
+      "settings": {
+      }
     }
   },
   "order": [
