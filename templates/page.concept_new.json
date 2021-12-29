@@ -3,10 +3,19 @@
     "concept-template": {
       "type": "concept-template",
       "settings": {
+        "main_linklist": "main-menu"
+      }
+    },
+    "1640759493bc17e360": {
+      "type": "top_heading",
+      "settings": {
+        "top_heading_jp": "カテゴリー",
+        "top_heading_en": "CATEGORY"
       }
     }
   },
   "order": [
-    "concept-template"
+    "concept-template",
+    "1640759493bc17e360"
   ]
 }
