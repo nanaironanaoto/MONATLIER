@@ -57,11 +57,32 @@
       ],
       "settings": {
       }
+    },
+    "164075976609361e9d": {
+      "type": "content",
+      "blocks": {
+        "638a9334-44e0-4b8f-8993-5a3aec8371cf": {
+          "type": "header",
+          "settings": {
+            "content_image_pc": "shopify:\/\/shop_images\/content_bnr01.jpg",
+            "content_image_sp": "shopify:\/\/shop_images\/content_bnr01_square.jpg",
+            "content_text_jp": "品質基準",
+            "content_text_en": "QUALITY",
+            "content_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "638a9334-44e0-4b8f-8993-5a3aec8371cf"
+      ],
+      "settings": {
+      }
     }
   },
   "order": [
     "concept-template",
     "1640759493bc17e360",
-    "164075952606a15fcd"
+    "164075952606a15fcd",
+    "164075976609361e9d"
   ]
 }
