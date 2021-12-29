@@ -149,7 +149,7 @@
             "content_image_sp": "shopify:\/\/shop_images\/content_bnr03_square.jpg",
             "content_text_jp": "コンセプト",
             "content_text_en": "CONCEPT",
-            "content_link": ""
+            "content_link": "shopify:\/\/pages\/concept"
           }
         },
         "514da0b8-3a8c-45ce-8ce0-bc224259b884": {
@@ -159,7 +159,7 @@
             "content_image_sp": "shopify:\/\/shop_images\/content_bnr04_square.jpg",
             "content_text_jp": "アフターサービス",
             "content_text_en": "SERVICE",
-            "content_link": ""
+            "content_link": "shopify:\/\/pages\/service"
           }
         }
       },
