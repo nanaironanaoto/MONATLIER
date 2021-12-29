@@ -725,8 +725,12 @@ figure.image{
     width: max-content;
 }
 .caption_lv1 h3 {
+    margin-top: 0;
+}
+.caption_lv1 h3.about_daimond{
     margin-top: 110px;
 }
+
 .description_small{
     color: #A2A2A2;
     font-size: 12px;
