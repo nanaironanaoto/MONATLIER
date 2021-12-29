@@ -70,10 +70,32 @@
             "content_text_en": "QUALITY",
             "content_link": ""
           }
+        },
+        "ddf20c4e-336a-4097-866c-8f85d45790e3": {
+          "type": "header",
+          "settings": {
+            "content_image_pc": "shopify:\/\/shop_images\/content_bnr02.jpg",
+            "content_image_sp": "shopify:\/\/shop_images\/content_bnr02_square.jpg",
+            "content_text_jp": "素材について",
+            "content_text_en": "MATERIAL",
+            "content_link": ""
+          }
+        },
+        "fd7ecbcb-25c6-4e59-9ac4-95a9163316c9": {
+          "type": "header",
+          "settings": {
+            "content_image_pc": "shopify:\/\/shop_images\/content_bnr03.jpg",
+            "content_image_sp": "shopify:\/\/shop_images\/content_bnr03_square.jpg",
+            "content_text_jp": "コンセプト",
+            "content_text_en": "CONCEPT",
+            "content_link": "shopify:\/\/pages\/concept_new"
+          }
         }
       },
       "block_order": [
-        "638a9334-44e0-4b8f-8993-5a3aec8371cf"
+        "638a9334-44e0-4b8f-8993-5a3aec8371cf",
+        "ddf20c4e-336a-4097-866c-8f85d45790e3",
+        "fd7ecbcb-25c6-4e59-9ac4-95a9163316c9"
       ],
       "settings": {
       }
