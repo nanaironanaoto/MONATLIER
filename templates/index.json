@@ -1,1 +1,202 @@
-{"sections":{"top_mv":{"type":"top_mv","blocks":{"b96c6446-29e7-4689-9c7f-364a38dca920":{"type":"header","settings":{"mv_image_pc":"shopify:\/\/shop_images\/mv_pc01.jpg","mv_image_sp":"shopify:\/\/shop_images\/mv_sp01.jpg"}},"46552444-2f78-40ca-ace3-5c49721e3d0a":{"type":"header","settings":{"mv_image_pc":"shopify:\/\/shop_images\/mv_pc01.jpg","mv_image_sp":"shopify:\/\/shop_images\/mv_sp01.jpg"}}},"block_order":["b96c6446-29e7-4689-9c7f-364a38dca920","46552444-2f78-40ca-ace3-5c49721e3d0a"],"settings":{}},"top_news":{"type":"top_news","blocks":{"506f655d-aaf0-4798-a5be-4339dc27577d":{"type":"header","settings":{"news_date":"2021\/12\/11","news_text":"Xmasジュエリー受注開始","news_link":""}},"f10eff1b-c144-4f30-9ded-1b970b1627aa":{"type":"header","settings":{"news_date":"2021\/12\/01","news_text":"Xmasジュエリーのデザイン発表","news_link":""}}},"block_order":["506f655d-aaf0-4798-a5be-4339dc27577d","f10eff1b-c144-4f30-9ded-1b970b1627aa"],"settings":{}},"top_heading":{"type":"top_heading","settings":{"top_heading_jp":"新着商品","top_heading_en":"NEW ITEM"}},"top_product":{"type":"top_product","settings":{"home_featured_products":"all","productAmount":6}},"view_all_btn":{"type":"view_all_btn","settings":{"view_all_btn_text_jp":"すべての商品を見る","view_all_btn_text_en":"VIEW ALL","view_all_btn_link":"shopify:\/\/collections\/all"}},"category":{"type":"category","blocks":{"d16539ec-cbca-4b2c-b44a-014d50ecd169":{"type":"header","settings":{"category_text_jp":"ネックレス","category_text_en":"NECKLACE","category_link":"shopify:\/\/collections\/necklace"}},"d3bc54bd-0017-4dcb-8053-2daf038c3973":{"type":"header","settings":{"category_text_jp":"リング","category_text_en":"RING","category_link":"shopify:\/\/collections\/ring"}},"42b60fb3-4a8a-4a14-8ae1-c7d4d7ecf8a6":{"type":"header","settings":{"category_text_jp":"ピアス","category_text_en":"EARRING","category_link":""}},"c2893a4d-49da-454b-a0eb-29e988e79dfc":{"type":"header","settings":{"category_text_jp":"ブレスレット","category_text_en":"BRACELET","category_link":""}}},"block_order":["d16539ec-cbca-4b2c-b44a-014d50ecd169","d3bc54bd-0017-4dcb-8053-2daf038c3973","42b60fb3-4a8a-4a14-8ae1-c7d4d7ecf8a6","c2893a4d-49da-454b-a0eb-29e988e79dfc"],"settings":{}},"content":{"type":"content","blocks":{"f3966f1e-d976-42fd-9e8c-f7b690558ae4":{"type":"header","settings":{"content_image_pc":"shopify:\/\/shop_images\/content_bnr01.jpg","content_image_sp":"shopify:\/\/shop_images\/content_bnr01_square.jpg","content_text_jp":"品質基準","content_text_en":"QUALITY","content_link":""}},"a3a70a40-ee9c-4bc3-a123-21a53fe323e1":{"type":"header","settings":{"content_image_pc":"shopify:\/\/shop_images\/content_bnr02.jpg","content_image_sp":"shopify:\/\/shop_images\/content_bnr02_square.jpg","content_text_jp":"素材について","content_text_en":"MATERIAL","content_link":""}},"817f5d5f-9b04-49a1-b980-63110f33c53d":{"type":"header","settings":{"content_image_pc":"shopify:\/\/shop_images\/content_bnr03.jpg","content_image_sp":"shopify:\/\/shop_images\/content_bnr03_square.jpg","content_text_jp":"コンセプト","content_text_en":"CONCEPT","content_link":""}},"514da0b8-3a8c-45ce-8ce0-bc224259b884":{"type":"header","settings":{"content_image_pc":"shopify:\/\/shop_images\/content_bnr04.jpg","content_image_sp":"shopify:\/\/shop_images\/content_bnr04_square.jpg","content_text_jp":"アフターサービス","content_text_en":"SERVICE","content_link":""}}},"block_order":["f3966f1e-d976-42fd-9e8c-f7b690558ae4","a3a70a40-ee9c-4bc3-a123-21a53fe323e1","817f5d5f-9b04-49a1-b980-63110f33c53d","514da0b8-3a8c-45ce-8ce0-bc224259b884"],"settings":{}},"column":{"type":"column","settings":{"column":"post","column_limit":4}},"16392222433e3abbbd":{"type":"view_all_btn","settings":{"view_all_btn_text_jp":"さらにお知らせを見る","view_all_btn_text_en":"VIEW ALL","view_all_btn_link":"shopify:\/\/blogs\/post"}}},"order":["top_mv","top_news","top_heading","top_product","view_all_btn","category","content","column","16392222433e3abbbd"]}
+{
+  "sections": {
+    "top_mv": {
+      "type": "top_mv",
+      "blocks": {
+        "b96c6446-29e7-4689-9c7f-364a38dca920": {
+          "type": "header",
+          "settings": {
+            "mv_image_pc": "shopify:\/\/shop_images\/mv_pc01.jpg",
+            "mv_image_sp": "shopify:\/\/shop_images\/mv_sp01.jpg"
+          }
+        },
+        "46552444-2f78-40ca-ace3-5c49721e3d0a": {
+          "type": "header",
+          "settings": {
+            "mv_image_pc": "shopify:\/\/shop_images\/mv_pc01.jpg",
+            "mv_image_sp": "shopify:\/\/shop_images\/mv_sp01.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "b96c6446-29e7-4689-9c7f-364a38dca920",
+        "46552444-2f78-40ca-ace3-5c49721e3d0a"
+      ],
+      "settings": {
+      }
+    },
+    "top_news": {
+      "type": "top_news",
+      "blocks": {
+        "506f655d-aaf0-4798-a5be-4339dc27577d": {
+          "type": "header",
+          "settings": {
+            "news_date": "2021\/12\/11",
+            "news_text": "Xmasジュエリー受注開始",
+            "news_link": ""
+          }
+        },
+        "f10eff1b-c144-4f30-9ded-1b970b1627aa": {
+          "type": "header",
+          "settings": {
+            "news_date": "2021\/12\/01",
+            "news_text": "Xmasジュエリーのデザイン発表",
+            "news_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "506f655d-aaf0-4798-a5be-4339dc27577d",
+        "f10eff1b-c144-4f30-9ded-1b970b1627aa"
+      ],
+      "settings": {
+      }
+    },
+    "top_heading": {
+      "type": "top_heading",
+      "settings": {
+        "top_heading_jp": "新着商品",
+        "top_heading_en": "NEW ITEM"
+      }
+    },
+    "top_product": {
+      "type": "top_product",
+      "settings": {
+        "home_featured_products": "all",
+        "productAmount": 6
+      }
+    },
+    "view_all_btn": {
+      "type": "view_all_btn",
+      "settings": {
+        "view_all_btn_text_jp": "すべての商品を見る",
+        "view_all_btn_text_en": "VIEW ALL",
+        "view_all_btn_link": "shopify:\/\/collections\/all"
+      }
+    },
+    "category": {
+      "type": "category",
+      "blocks": {
+        "d16539ec-cbca-4b2c-b44a-014d50ecd169": {
+          "type": "header",
+          "settings": {
+            "category_text_jp": "ネックレス",
+            "category_text_en": "NECKLACE",
+            "category_link": "shopify:\/\/collections\/necklace"
+          }
+        },
+        "d3bc54bd-0017-4dcb-8053-2daf038c3973": {
+          "type": "header",
+          "settings": {
+            "category_text_jp": "リング",
+            "category_text_en": "RING",
+            "category_link": "shopify:\/\/collections\/ring"
+          }
+        },
+        "42b60fb3-4a8a-4a14-8ae1-c7d4d7ecf8a6": {
+          "type": "header",
+          "settings": {
+            "category_text_jp": "ピアス",
+            "category_text_en": "EARRING",
+            "category_link": ""
+          }
+        },
+        "c2893a4d-49da-454b-a0eb-29e988e79dfc": {
+          "type": "header",
+          "settings": {
+            "category_text_jp": "ブレスレット",
+            "category_text_en": "BRACELET",
+            "category_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "d16539ec-cbca-4b2c-b44a-014d50ecd169",
+        "d3bc54bd-0017-4dcb-8053-2daf038c3973",
+        "42b60fb3-4a8a-4a14-8ae1-c7d4d7ecf8a6",
+        "c2893a4d-49da-454b-a0eb-29e988e79dfc"
+      ],
+      "settings": {
+      }
+    },
+    "content": {
+      "type": "content",
+      "blocks": {
+        "f3966f1e-d976-42fd-9e8c-f7b690558ae4": {
+          "type": "header",
+          "settings": {
+            "content_image_pc": "shopify:\/\/shop_images\/content_bnr01.jpg",
+            "content_image_sp": "shopify:\/\/shop_images\/content_bnr01_square.jpg",
+            "content_text_jp": "品質基準",
+            "content_text_en": "QUALITY",
+            "content_link": ""
+          }
+        },
+        "a3a70a40-ee9c-4bc3-a123-21a53fe323e1": {
+          "type": "header",
+          "settings": {
+            "content_image_pc": "shopify:\/\/shop_images\/content_bnr02.jpg",
+            "content_image_sp": "shopify:\/\/shop_images\/content_bnr02_square.jpg",
+            "content_text_jp": "素材について",
+            "content_text_en": "MATERIAL",
+            "content_link": "shopify:\/\/pages\/material"
+          }
+        },
+        "817f5d5f-9b04-49a1-b980-63110f33c53d": {
+          "type": "header",
+          "settings": {
+            "content_image_pc": "shopify:\/\/shop_images\/content_bnr03.jpg",
+            "content_image_sp": "shopify:\/\/shop_images\/content_bnr03_square.jpg",
+            "content_text_jp": "コンセプト",
+            "content_text_en": "CONCEPT",
+            "content_link": ""
+          }
+        },
+        "514da0b8-3a8c-45ce-8ce0-bc224259b884": {
+          "type": "header",
+          "settings": {
+            "content_image_pc": "shopify:\/\/shop_images\/content_bnr04.jpg",
+            "content_image_sp": "shopify:\/\/shop_images\/content_bnr04_square.jpg",
+            "content_text_jp": "アフターサービス",
+            "content_text_en": "SERVICE",
+            "content_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "f3966f1e-d976-42fd-9e8c-f7b690558ae4",
+        "a3a70a40-ee9c-4bc3-a123-21a53fe323e1",
+        "817f5d5f-9b04-49a1-b980-63110f33c53d",
+        "514da0b8-3a8c-45ce-8ce0-bc224259b884"
+      ],
+      "settings": {
+      }
+    },
+    "column": {
+      "type": "column",
+      "settings": {
+        "column": "post",
+        "column_limit": 4
+      }
+    },
+    "16392222433e3abbbd": {
+      "type": "view_all_btn",
+      "settings": {
+        "view_all_btn_text_jp": "さらにお知らせを見る",
+        "view_all_btn_text_en": "VIEW ALL",
+        "view_all_btn_link": "shopify:\/\/blogs\/post"
+      }
+    }
+  },
+  "order": [
+    "top_mv",
+    "top_news",
+    "top_heading",
+    "top_product",
+    "view_all_btn",
+    "category",
+    "content",
+    "column",
+    "16392222433e3abbbd"
+  ]
+}
