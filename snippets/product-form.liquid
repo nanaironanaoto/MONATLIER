@@ -35,6 +35,8 @@
     {%- endfor -%}
   {%- endunless -%}
 
+<div>
+
   <select name="id" id="ProductSelect-{{ section_id }}" class="product-single__variants no-js">
     {%- for variant in product.variants -%}
       {%- if variant.available -%}
@@ -58,6 +60,9 @@
     </div>
   {%- endif -%} {% endcomment %}
 
+</div>
+<div>
+
     <button
       {% if product.empty? %}type="button"{% else %}type="submit"{% endif %}
       name="add"
@@ -69,6 +74,8 @@
       </span>
       {% render = "svg-cart" %}
     </button>
+
+</div>
 
     {%- if enable_dynamic_buttons -%}
       {{ form | payment_button }}
