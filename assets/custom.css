@@ -368,6 +368,8 @@ body{
 }
 .footer_nav_title p:first-of-type {
     font-size: 20px;
+    width: 10px;
+    word-break: keep-all;  
 }
 .allright{
 	font-size: 14px;
