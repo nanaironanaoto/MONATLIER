@@ -23,66 +23,20 @@
       </div>
     </div>
 
-{{ linklists.footer_nav.title }}
-
-{% for link in linklists.footer_nav.links %}
-  {{ link.title }}: child_active: {{ link.child_active }}
-  {% for sub_link in link.links %}
-    {{ sub_link.title }}: child_active: {{ sub_link.child_active }}
-    {% for sub_sub_link in sub_link.links %}
-      {{ sub_sub_link.title }}: active: {{ sub_sub_link.active }}
+    {% for link in linklists.footer_nav.links %}
+      <div class="footer_nav cssreset">
+        <div>
+          <div class="footer_nav_title"><p>{{ link.title }}: child_active: {{ link.child_active }}</p></div>
+          <div>
+            <ul class="footer_nav_list">
+              {% for sub_link in link.links %}
+              <li>{{ sub_link.title }}</li>
+              {% endfor %}
+            </ul>
+          </div>
+        </div>
+      </div>
     {% endfor %}
-  {% endfor %}
-{% endfor %}
-
-
-    <div class="footer_nav cssreset">
-      <div>
-        <div class="footer_nav_title"><p>カテゴリー</p><p>CATEGORY</p></div>
-        <div>
-          <ul class="footer_nav_list">
-            <li>新作ジュエリー</li>
-            <li>ネックレス</li>
-            <li>リング</li>
-            <li>ピアス</li>
-            <li>ブレスレット</li>
-          </ul>
-        </div>
-      </div>
-      <div>
-        <div class="footer_nav_title"><p>コンセプト</p><p>CONCEPT</p></div>
-        <div>
-          <ul class="footer_nav_list">
-            <li>サイトコンセプト</li>
-            <li>素材について</li>
-          </ul>
-        </div>
-      </div>
-      <div>
-        <div class="footer_nav_title"><p>コラム</p><p>COLUMN</p></div>
-        <div>
-          <ul class="footer_nav_list">
-            <li>コラムジャンル1</li>
-            <li>コラムジャンル2</li>
-          </ul>
-        </div>
-      </div>
-      <div>
-        <div class="footer_nav_title"><p>ガイド</p><p>GUIDE</p></div>
-        <div>
-        </div>
-      </div>
-      <div>
-        <div class="footer_nav_title"><p>アフターサービス</p><p>SERVICE</p></div>
-        <div>
-        </div>
-      </div>
-      <div>
-        <div class="footer_nav_title"><p>コンタクト</p><p>CONTACT</p></div>
-        <div>
-        </div>
-      </div>
-    </div>
 
     <div class="footer_bottom">
       <div class="pc"><p class="allright">© 2021 J-one All Rights Reserved.</p></div>
