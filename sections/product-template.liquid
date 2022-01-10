@@ -114,16 +114,16 @@
       <div>
         <!--.素材、カラット-->
         <div class="product_material">
-        {% if product.metafields.custom_fields["cf_"] != blank %}
+        {%comment%}{% if product.metafields.custom_fields["cf_"] != blank %}
           <div>{{ product.metafields.custom_fields["cf_"] }}</div>
-        {%- endif -%}
+        {%- endif -%}{%endcomment%}
           
 		<!--地金,石-->
       	{% if product.metafields.custom_fields["metal"] != blank %}
-        	<p>{{ product.metafields.custom_fields["metal"] }}</p>
+        	<span>{{ product.metafields.custom_fields["metal"] }}</span>
       	{% endif %}
       	{% if product.metafields.custom_fields["stone"] != blank %}
-	        <p>{{ product.metafields.custom_fields["stone"] }}</p>
+	        <span>{{ product.metafields.custom_fields["stone"] }}</span>
 		{% endif %}          
           
         </div>
