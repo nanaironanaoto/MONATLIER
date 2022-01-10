@@ -11,6 +11,7 @@
           {{ 'insta_icon.svg' | asset_url | img_tag }}
         </div>
         <div>
+
           {{ 'facebook_icon.svg' | asset_url | img_tag }}
         </div>
         <div>
@@ -18,68 +19,81 @@
         </div>
       </div>
       <div class="btn_page_top tt_drugs_r">
-        <a href=""><ls-static-265947>PAGE TOP</ls-static-265947></a>
+        <a href="">PAGE TOP</a>
       </div>
     </div>
 
+{{ linklists.footer_nav.title }}
+
+{% for link in linklists.footer_nav.links %}
+  {{ link.title }}: child_active: {{ link.child_active }}
+  {% for sub_link in link.links %}
+    {{ sub_link.title }}: child_active: {{ sub_link.child_active }}
+    {% for sub_sub_link in sub_link.links %}
+      {{ sub_sub_link.title }}: active: {{ sub_sub_link.active }}
+    {% endfor %}
+  {% endfor %}
+{% endfor %}
+
+
     <div class="footer_nav cssreset">
       <div>
-        <div class="footer_nav_title"><p><ls-static-730678>カテゴリー</ls-static-730678></p><p><ls-static-87795>CATEGORY</ls-static-87795></p></div>
+        <div class="footer_nav_title"><p>カテゴリー</p><p>CATEGORY</p></div>
         <div>
           <ul class="footer_nav_list">
-            <li><ls-static-660306>新作ジュエリー</ls-static-660306></li>
-            <li><ls-static-565824>ネックレス</ls-static-565824></li>
-            <li><ls-static-967828>リング</ls-static-967828></li>
-            <li><ls-static-131436>ピアス</ls-static-131436></li>
-            <li><ls-static-439848>ブレスレット</ls-static-439848></li>
+            <li>新作ジュエリー</li>
+            <li>ネックレス</li>
+            <li>リング</li>
+            <li>ピアス</li>
+            <li>ブレスレット</li>
           </ul>
         </div>
       </div>
       <div>
-        <div class="footer_nav_title"><p><ls-static-109355>コンセプト</ls-static-109355></p><p><ls-static-254683>CONCEPT</ls-static-254683></p></div>
+        <div class="footer_nav_title"><p>コンセプト</p><p>CONCEPT</p></div>
         <div>
           <ul class="footer_nav_list">
-            <li><ls-static-272240>サイトコンセプト</ls-static-272240></li>
-            <li><ls-static-289928>素材について</ls-static-289928></li>
+            <li>サイトコンセプト</li>
+            <li>素材について</li>
           </ul>
         </div>
       </div>
       <div>
-        <div class="footer_nav_title"><p><ls-static-270905>コラム</ls-static-270905></p><p><ls-static-700148>COLUMN</ls-static-700148></p></div>
+        <div class="footer_nav_title"><p>コラム</p><p>COLUMN</p></div>
         <div>
           <ul class="footer_nav_list">
-            <li><ls-static-494063>コラムジャンル1</ls-static-494063></li>
-            <li><ls-static-97176>コラムジャンル2</ls-static-97176></li>
+            <li>コラムジャンル1</li>
+            <li>コラムジャンル2</li>
           </ul>
         </div>
       </div>
       <div>
-        <div class="footer_nav_title"><p><ls-static-814660>ガイド</ls-static-814660></p><p><ls-static-608304>GUIDE</ls-static-608304></p></div>
+        <div class="footer_nav_title"><p>ガイド</p><p>GUIDE</p></div>
         <div>
         </div>
       </div>
       <div>
-        <div class="footer_nav_title"><p><ls-static-300255>アフターサービス</ls-static-300255></p><p><ls-static-685702>SERVICE</ls-static-685702></p></div>
+        <div class="footer_nav_title"><p>アフターサービス</p><p>SERVICE</p></div>
         <div>
         </div>
       </div>
       <div>
-        <div class="footer_nav_title"><p><ls-static-161888>コンタクト</ls-static-161888></p><p><ls-static-488876>CONTACT</ls-static-488876></p></div>
+        <div class="footer_nav_title"><p>コンタクト</p><p>CONTACT</p></div>
         <div>
         </div>
       </div>
     </div>
 
     <div class="footer_bottom">
-      <div class="pc"><p class="allright"><ls-static-995922>© 2021 J-one All Rights Reserved.</ls-static-995922></p></div>
+      <div class="pc"><p class="allright">© 2021 J-one All Rights Reserved.</p></div>
       <div>
         <ul class="footer_bottom_nav">
-          <li><ls-static-985083>ご利用規約</ls-static-985083></li>
-          <li><ls-static-931577>特定商取引法表記</ls-static-931577></li>
-          <li><ls-static-239349>個人情報保護方針</ls-static-239349></li>
+          <li>ご利用規約</li>
+          <li>特定商取引法表記</li>
+          <li>個人情報保護方針</li>
         </ul>
       </div>
-      <div class="sp"><p class="allright"><ls-static-556593>© 2021 J-one All Rights Reserved.</ls-static-556593></p></div>
+      <div class="sp"><p class="allright">© 2021 J-one All Rights Reserved.</p></div>
     </div>
   </div>
 </div>
