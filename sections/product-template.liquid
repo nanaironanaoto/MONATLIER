@@ -117,6 +117,15 @@
         {% if product.metafields.custom_fields["cf_"] != blank %}
           <div>{{ product.metafields.custom_fields["cf_"] }}</div>
         {%- endif -%}
+          
+		<!--地金,石-->
+      	{% if product.metafields.custom_fields["metal"] != blank %}
+        	<p>{{ product.metafields.custom_fields["metal"] }}</p>
+      	{% endif %}
+      	{% if product.metafields.custom_fields["stone"] != blank %}
+	        <p>{{ product.metafields.custom_fields["stone"] }}</p>
+		{% endif %}          
+          
         </div>
 
         <!--商品名-->
