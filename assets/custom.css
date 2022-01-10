@@ -371,6 +371,9 @@ body{
     width: 10px;
     word-break: keep-all;  
 }
+/* .footer_nav_title p:last-of-type {
+    font-size: 14px;
+} */
 .allright{
 	font-size: 14px;
 }
@@ -460,9 +463,6 @@ body{
 	.top-header{
 		padding-left: 3.7%;
 	}
-  .footer_nav_title p:last-of-type {
-      font-size: 14px;
-  }
 }
 /* slide-box */
 
