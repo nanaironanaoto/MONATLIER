@@ -366,12 +366,10 @@ body{
     display: flex;
     column-gap: 50px;
 }
-.footer_nav_title p:first-of-type {
+.footer_nav_title p {
     font-size: 20px;
-/*   	padding-right: 90%;
-    word-break: keep-all;   */
 }
-.footer_nav_title p:last-of-type {
+.footer_nav_title p span {
     font-size: 14px;
 }
 .allright{
