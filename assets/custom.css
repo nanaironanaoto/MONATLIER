@@ -781,6 +781,10 @@ figure.image{
 .variant-wrapper--dropdown {
     display: block;
 }
+.product_form_wrapper form {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
 
 @media screen and (max-width: 1024px) {
     .content, .mv{
