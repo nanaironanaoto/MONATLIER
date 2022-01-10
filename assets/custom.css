@@ -785,6 +785,9 @@ figure.image{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
 }
+.variant-wrapper:nth-of-type(3) {
+    display: none;
+}
 
 @media screen and (max-width: 1024px) {
     .content, .mv{
