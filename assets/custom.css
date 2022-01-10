@@ -778,6 +778,9 @@ figure.image{
 .about_diamond_block01{
     margin: 0;
 }
+.variant-wrapper--dropdown {
+    display: block;
+}
 
 @media screen and (max-width: 1024px) {
     .content, .mv{
