@@ -111,21 +111,14 @@
 
 
       <!-- product_row右側 info -->
-      <div>
-        <!--.素材、カラット-->
-        <div class="product_material">
-        {%comment%}{% if product.metafields.custom_fields["cf_"] != blank %}
-          <div>{{ product.metafields.custom_fields["cf_"] }}</div>
-        {%- endif -%}{%endcomment%}
-          
-		<!--地金,石-->
-      	{% if product.metafields.custom_fields["metal"] != blank %}
-        	<span>{{ product.metafields.custom_fields["metal"] }}</span>
-      	{% endif %}
-      	{% if product.metafields.custom_fields["stone"] != blank %}
-	        <span>{{ product.metafields.custom_fields["stone"] }}</span>
-		{% endif %}          
-          
+      	<div>         
+          <!--地金,石-->
+          {% if product.metafields.custom_fields["metal"] != blank %}
+              <span>{{ product.metafields.custom_fields["metal"] }}</span>
+          {% endif %}
+          {% if product.metafields.custom_fields["stone"] != blank %}
+              <span>{{ product.metafields.custom_fields["stone"] }}</span>
+          {% endif %}          
         </div>
 
         <!--商品名-->
