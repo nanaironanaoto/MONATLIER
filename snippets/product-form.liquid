@@ -1,3 +1,5 @@
+<div>
+
 {%- capture form_id -%}AddToCartForm-{{ section_id }}{%- endcapture -%}
 {%- form 'product', product, id: form_id, class: 'product-single__form' -%}
   {%- unless product.has_only_default_variant -%}
@@ -34,8 +36,6 @@
       {%- endif -%}
     {%- endfor -%}
   {%- endunless -%}
-
-<div>
 
   <select name="id" id="ProductSelect-{{ section_id }}" class="product-single__variants no-js">
     {%- for variant in product.variants -%}
