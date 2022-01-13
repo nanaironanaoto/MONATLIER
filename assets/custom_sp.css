@@ -167,10 +167,10 @@
 	    font-size: 12px;
 	    margin-bottom: 8px;
 	}
-	.footer_nav_title p:first-of-type {
+	.footer_nav_title>a>p:first-of-type {
 	    font-size: 14px;
 	}
-	.footer_nav_title p:last-of-type {
+	.footer_nav_title>a>p:last-of-type {
 	    font-size: 12px;
 	}
 	.footer_bottom {
