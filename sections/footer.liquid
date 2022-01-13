@@ -33,7 +33,11 @@
       <div class="footer_nav cssreset">
         {% for link in linklists[section.settings.footer_menu01].links %}
         <div>
-          <div class="footer_nav_title"><p>{{ link.title }}</p></div>
+          <div class="footer_nav_title">
+            <a href="{{ link.url }}">
+              <p>{{ link.title }}</p>
+            </a>
+          </div>
           <div>
             <ul class="footer_nav_list">
               {% for sub_link in link.links %}
