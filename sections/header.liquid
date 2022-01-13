@@ -16,20 +16,20 @@
       <div class="header_navi cssreset">
         <a class="navi-text" href="/collections/all">
           <div>
-            <p class="text-20px yu_gothic"><ls-static-665019>ジュエリー</ls-static-665019></p>
-            <p class="text-14px"><ls-static-132794>JEWELRY</ls-static-132794></p>
+            <p class="text-20px yu_gothic">ジュエリー</p>
+            <p class="text-14px">JEWELRY</p>
           </div>
         </a>
         <a class="navi-text" href="/pages/quality">
           <div>
-            <p class="text-20px yu_gothic"><ls-static-442824>品質</ls-static-442824></p>
-            <p class="text-14px"><ls-static-706254>ABOUT</ls-static-706254></p>
+            <p class="text-20px yu_gothic">品質</p>
+            <p class="text-14px">ABOUT</p>
           </div>
         </a>
         <a class="navi-text" href="/pages/service">
           <div>
-            <p class="text-20px yu_gothic"><ls-static-346932>アフターサービス</ls-static-346932></p>
-            <p class="text-14px"><ls-static-129718>SERVICE</ls-static-129718></p>
+            <p class="text-20px yu_gothic">アフターサービス</p>
+            <p class="text-14px">SERVICE</p>
           </div>
         </a>
       </div>
@@ -520,204 +520,7 @@ $(function () {
         "id": "main_menu_link_list",
         "label": "Navigation",
         "default": "main-menu"
-      },
-      {
-        "type": "checkbox",
-        "id": "mega_menu_images",
-        "label": "Show mega menu images",
-        "default": true,
-        "info": "[How to create a mega menu](https://archetypethemes.co/blogs/impulse/how-do-i-create-a-mega-menu)"
-      },
-      {
-        "type": "select",
-        "id": "main_menu_alignment",
-        "label": "Header layout",
-        "default": "left",
-        "options": [
-          {
-            "value": "left",
-            "label": "Logo left, menu left"
-          },
-          {
-            "value": "left-center",
-            "label": "Logo left, menu center"
-          },
-          {
-            "value": "left-drawer",
-            "label": "Logo left, menu drawer"
-          },
-          {
-            "value": "center-left",
-            "label": "Logo center, menu left"
-          },
-          {
-            "value": "center-split",
-            "label": "Logo center, menu split"
-          },
-          {
-            "value": "center",
-            "label": "Logo center, menu below"
-          },
-          {
-            "value": "center-drawer",
-            "label": "Logo center, menu drawer"
-          }
-        ]
-      },
-      {
-        "type": "select",
-        "id": "header_style",
-        "label": "Header style",
-        "default": "normal",
-        "options": [
-          {
-            "value": "normal",
-            "label": "Normal"
-          },
-          {
-            "value": "sticky",
-            "label": "Sticky"
-          }
-        ]
-      },
-      {
-        "type": "checkbox",
-        "id": "sticky_index",
-        "label": "Overlay header over home page",
-        "default": false
-      },
-      {
-        "type": "checkbox",
-        "id": "sticky_collection",
-        "label": "Overlay header over collection",
-        "info": "(if collection image is enabled)",
-        "default": false
-      },
-      {
-        "type": "header",
-        "content": "Announcement bar"
-      },
-      {
-        "type": "checkbox",
-        "id": "announcement_compact",
-        "label": "Use compact style"
-      },
-      {
-        "type": "checkbox",
-        "id": "announcement_above_header",
-        "label": "Always show above header"
-      },
-      {
-        "type": "header",
-        "content": "Toolbar"
-      },
-      {
-        "type": "link_list",
-        "id": "toolbar_menu",
-        "label": "Navigation",
-        "info": "This menu won't show dropdown items"
-      },
-      {
-        "type": "checkbox",
-        "id": "toolbar_social",
-        "label": "Show social icons"
-      },
-      {
-        "type": "header",
-        "content": "Language selector",
-        "info": "To add a language, go to your [language settings.](/admin/settings/languages)"
-      },
-      {
-        "type": "checkbox",
-        "id": "show_locale_selector",
-        "label": "Show language selector",
-        "default": true
-      },
-      {
-        "type": "header",
-        "content": "Currency selector",
-        "info": "To add a currency, go to your [currency settings.](/admin/settings/payments)"
-      },
-      {
-        "type": "checkbox",
-        "id": "show_currency_selector",
-        "label": "Show currency selector",
-        "default": true
-      },
-      {
-        "type": "checkbox",
-        "id": "show_currency_flags",
-        "label": "Show currency flags",
-        "default": true
       }
-    ],
-    "blocks": [
-      {
-        "type": "logo",
-        "name": "Logo",
-        "limit": 1,
-        "settings": [
-          {
-            "type": "image_picker",
-            "id": "logo",
-            "label": "Logo"
-          },
-          {
-            "type": "image_picker",
-            "id": "logo-inverted",
-            "label": "White logo",
-            "info": "Used when on top of an image"
-          },
-          {
-            "type": "range",
-            "id": "desktop_logo_width",
-            "label": "Desktop logo width",
-            "default": 200,
-            "min": 100,
-            "max": 400,
-            "step": 10,
-            "unit": "px"
-          },
-          {
-            "type": "range",
-            "id": "mobile_logo_width",
-            "label": "Mobile logo width",
-            "default": 140,
-            "min": 60,
-            "max": 200,
-            "step": 10,
-            "unit": "px",
-            "info": "Set as a max-width, may appear smaller"
-          }
-        ]
-      },
-      {
-        "type": "announcement",
-        "name": "Announcement",
-        "limit": 3,
-        "settings": [
-          {
-            "type": "text",
-            "id": "text",
-            "label": "Heading",
-            "default": "Hassle-free returns"
-          },
-          {
-            "type": "text",
-            "id": "link_text",
-            "label": "Text",
-            "default": "30-day postage paid returns"
-          },
-          {
-            "type": "url",
-            "id": "link",
-            "label": "Link"
-          }
-        ]
-      }
-    ],
-    "default": {
-      "settings": {}
-    }
+    ]
   }
 {% endschema %}
