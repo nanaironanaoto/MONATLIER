@@ -3,20 +3,27 @@
   <div class="footer">
 
     <div class="footer_logo">
-      <p class="logo">
-        {{ 'logo.svg' | asset_url | img_tag }}
-      </p>
+      <a href="{{ shop.url }}">
+        <p class="logo">
+          {{ 'logo.svg' | asset_url | img_tag }}
+        </p>
+      </a>
       <div class="social_row">
-        <div>
-          {{ 'insta_icon.svg' | asset_url | img_tag }}
-        </div>
-        <div>
-
-          {{ 'facebook_icon.svg' | asset_url | img_tag }}
-        </div>
-        <div>
-          {{ 'twitter_icon.svg' | asset_url | img_tag }}
-        </div>
+        <a href="https://instagram.com/shopify">
+          <div>
+            {{ 'insta_icon.svg' | asset_url | img_tag }}
+          </div>
+        </a>
+        <a href="https://www.facebook.com/shopify">
+          <div>
+            {{ 'facebook_icon.svg' | asset_url | img_tag }}
+          </div>
+        </a>
+        <a href="https://twitter.com/MONATELIERjewel">
+          <div>
+            {{ 'twitter_icon.svg' | asset_url | img_tag }}
+          </div>
+        </a>
       </div>
       <div class="btn_page_top tt_drugs_r">
         <a href="#">PAGE TOP</a>
@@ -24,12 +31,12 @@
     </div>
 
       <div class="footer_nav cssreset">
-        {% for link in linklists.footer_nav.links %}
+        {% for link in linklists[section.settings.footer_menu01].links %}
         <div>
           <div class="footer_nav_title"><p>{{ link.title }}</p></div>
           <div>
             <ul class="footer_nav_list">
-              {% for sub_link in link.links %}
+              {% for sub_link in link.footer_menu01 %}
               <li>{{ sub_link.title }}</li>
               {% endfor %}
             </ul>
@@ -43,10 +50,10 @@
       <div class="pc"><p class="allright">© 2021 J-one All Rights Reserved.</p></div>
       <div>
         <ul class="footer_bottom_nav">
-          <li>ご利用規約</li>
-          <li>特定商取引法表記</li>
-          <li>個人情報保護方針</li>
-        </ul>
+          {% for link in linklists[section.settings.footer_menu02].links %}
+            <li>{{ link.title }}</li>
+          {% endfor %}
+       </ul>
       </div>
       <div class="sp"><p class="allright">© 2021 J-one All Rights Reserved.</p></div>
     </div>
@@ -55,207 +62,19 @@
 
 </script>
 {% schema %}
-  {
-    "name": "Footer",
-    "max_blocks": 12,
-    "settings": [
+{
+  "name": "Main Menu",
+  "settings": [
       {
-        "type": "header",
-        "content": "Language selector",
-        "info": "To add a language, go to your [language settings.](/admin/settings/languages)"
+          "type": "link_list",
+          "id": "footer_menu01",
+          "label": "Menu01"
       },
       {
-        "type": "checkbox",
-        "id": "show_locale_selector",
-        "label": "Show language selector",
-        "default": true
-      },
-      {
-        "type": "header",
-        "content": "Currency selector",
-        "info": "To add a currency, go to your [currency settings.](/admin/settings/payments)"
-      },
-      {
-        "type": "checkbox",
-        "id": "show_currency_selector",
-        "label": "Show currency selector",
-        "default": true
-      },
-      {
-        "type": "checkbox",
-        "id": "show_currency_flags",
-        "label": "Show currency flags",
-        "default": true
-      },
-      {
-        "type": "header",
-        "content": "Additional footer content"
-      },
-      {
-        "type": "checkbox",
-        "id": "show_payment_icons",
-        "label": "Show payment icons",
-        "default": false
-      },
-      {
-        "type": "checkbox",
-        "id": "show_copyright",
-        "label": "Show copyright"
-      },
-      {
-        "type": "text",
-        "id": "copyright_text",
-        "label": "Additional copyright text"
-      }
-    ],
-    "blocks": [
-      {
-        "type": "logo_social",
-        "name": "Logo",
-        "limit": 1,
-        "settings": [
-          {
-            "type": "image_picker",
-            "id": "logo",
-            "label": "Logo image"
-          },
-          {
-            "type": "range",
-            "id": "desktop_logo_height",
-            "label": "Logo height",
-            "default": 50,
-            "min": 20,
-            "max": 120,
-            "unit": "px"
-          },
-          {
-            "type": "range",
-            "id": "container_width",
-            "label": "Column width",
-            "default": 25,
-            "min": 15,
-            "max": 95,
-            "unit": "%"
-          }
-        ]
-      },
-      {
-        "type": "menu",
-        "name": "Navigation",
-        "settings": [
-          {
-            "type": "checkbox",
-            "id": "show_footer_title",
-            "label": "Show heading"
-          },
-          {
-            "type": "link_list",
-            "id": "menu",
-            "label": "Choose a menu",
-            "default": "footer",
-            "info": "This menu won't show dropdown items"
-          },
-          {
-            "type": "range",
-            "id": "container_width",
-            "label": "Column width",
-            "default": 25,
-            "min": 15,
-            "max": 95,
-            "unit": "%"
-          }
-        ]
-      },
-      {
-        "type": "newsletter",
-        "name": "Newsletter and social",
-        "limit": 1,
-        "settings": [
-          {
-            "type": "checkbox",
-            "id": "show_footer_title",
-            "label": "Show heading",
-            "default": true
-          },
-          {
-            "type": "paragraph",
-            "content": "Any customers who sign up will have an account created for them in Shopify. [View customers](/admin/customers)."
-          },
-          {
-            "type": "text",
-            "id": "title",
-            "label": "Heading",
-            "default": "Sign up and save"
-          },
-          {
-            "type": "richtext",
-            "id": "text",
-            "label": "Text",
-            "info": "Optional",
-            "default": "<p>Subscribe to get special offers, free giveaways, and once-in-a-lifetime deals.</p>"
-          },
-          {
-            "type": "range",
-            "id": "container_width",
-            "label": "Column width",
-            "default": 25,
-            "min": 15,
-            "max": 95,
-            "unit": "%"
-          }
-        ]
-      },
-      {
-        "type": "custom",
-        "name": "Custom text",
-        "settings": [
-          {
-            "type": "checkbox",
-            "id": "show_footer_title",
-            "label": "Show heading",
-            "default": true
-          },
-          {
-            "type": "text",
-            "id": "title",
-            "label": "Heading",
-            "default": "Custom text"
-          },
-          {
-            "type": "image_picker",
-            "id": "image",
-            "label": "Image"
-          },
-          {
-            "type": "richtext",
-            "id": "text",
-            "label": "Text",
-            "default": "<p>Add your own custom text here.</p>"
-          },
-          {
-            "type": "range",
-            "id": "container_width",
-            "label": "Column width",
-            "default": 25,
-            "min": 15,
-            "max": 95,
-            "unit": "%"
-          }
-        ]
-      }
-    ],
-    "default": {
-      "settings": {},
-      "blocks": [
-        {
-          "type": "menu",
-          "settings": {}
-        },
-        {
-          "type": "logo_social",
-          "settings": {}
-        }
-      ]
+        "type": "link_list",
+        "id": "footer_menu02",
+        "label": "Menu02"
     }
-  }
+  ]
+}
 {% endschema %}
