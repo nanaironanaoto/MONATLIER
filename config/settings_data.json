@@ -124,7 +124,7 @@
         "type": "footer",
         "settings": {
           "footer_menu01": "footer_nav",
-          "footer_menu02": ""
+          "footer_menu02": "link-list-1"
         }
       },
       "collection-template": {
