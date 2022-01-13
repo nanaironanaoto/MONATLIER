@@ -92,18 +92,6 @@
     "sections": {
       "header": {
         "type": "header",
-        "blocks": {
-          "1524770014057": {
-            "type": "logo",
-            "settings": {
-              "desktop_logo_width": 140,
-              "mobile_logo_width": 110
-            }
-          }
-        },
-        "block_order": [
-          "1524770014057"
-        ],
         "settings": {
           "main_menu_link_list": "main-menu",
           "mega_menu_images": true,
