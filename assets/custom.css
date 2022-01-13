@@ -1,6 +1,11 @@
 body{
 	font-family: TTDrugs-R,"游ゴシック体",YuGothic,"游ゴシック Medium","Yu Gothic Medium","游ゴシック","Yu Gothic",sans-serif;
 }
+
+a:hover{
+    color: #c8ab7a;
+}
+
 @media screen and (max-width: 764px) {
     p {
         line-height: 1.5;
@@ -47,9 +52,6 @@ body{
 	margin: 0 auto;
 }
 
-.top-header .navi-text:hover{
-	color:#f00;
-}
 .top-header .navi-text:hover+.menu_contents{
 	display: block;
 	opacity: 1;
@@ -184,7 +186,7 @@ body{
 }
 .newitem .product{
 }
-.newitem .product p:first-of-type{
+.newitem .product p.product_info_metal_stone{
 	font-size: 14px;
 }
 .newitem .product p{
@@ -276,6 +278,12 @@ body{
 .content_bnr a>div:last-of-type{
     width: 100%;
 }
+a {
+    transition: 0.2s;
+}
+a:hover {
+    opacity: 0.8;
+}
 
 /*add-style.cssを上書きする部分*/
 .top-header{
@@ -284,6 +292,9 @@ body{
 }
 .top-header .header-icons a, .top-header .navi-text{
 	color: #000;
+}
+.top-header .header-icons a:hover, .top-header .navi-text:hover{
+	color: #c8ab7a;
 }
 .top-header .hamub-menu-btn svg g line {
     stroke: #000;

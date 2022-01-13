@@ -31,10 +31,10 @@
     <div class="product_info">
       <!--地金,石-->
       {% if product.metafields.custom_fields["metal"] != blank %}
-        <p>{{ product.metafields.custom_fields["metal"] }}</p>
+        <p class="product_info_metal_stone">{{ product.metafields.custom_fields["metal"] }}</p>
       {% endif %}
       {% if product.metafields.custom_fields["stone"] != blank %}
-        <p>{{ product.metafields.custom_fields["stone"] }}</p>
+      <p class="product_info_metal_stone">{{ product.metafields.custom_fields["stone"] }}</p>
       {% endif %}
       <!--商品名-->
       <p>{{ product.title }}</p>

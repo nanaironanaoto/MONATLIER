@@ -58,7 +58,7 @@
 	    grid-template-columns: repeat(2, auto);
         padding-bottom: 54px;
     }
-	.newitem .product p:first-of-type {
+	.newitem .product p.product_info_metal_stone {
 	    font-size: 10px;
 	}
 	.newitem .product p {
