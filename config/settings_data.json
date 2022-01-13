@@ -123,12 +123,8 @@
       "footer": {
         "type": "footer",
         "settings": {
-          "show_locale_selector": false,
-          "show_currency_selector": false,
-          "show_currency_flags": false,
-          "show_payment_icons": false,
-          "show_copyright": false,
-          "copyright_text": ""
+          "footer_menu01": "footer_nav",
+          "footer_menu02": ""
         }
       },
       "collection-template": {
