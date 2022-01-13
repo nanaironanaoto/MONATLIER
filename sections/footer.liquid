@@ -37,7 +37,9 @@
           <div>
             <ul class="footer_nav_list">
               {% for sub_link in link.links %}
-              <li>{{ sub_link.title }}</li>
+              <a href="{{ sub_link.url }}">
+                <li>{{ sub_link.title }}</li>
+              </a>
               {% endfor %}
             </ul>
           </div>
@@ -51,7 +53,9 @@
       <div>
         <ul class="footer_bottom_nav">
           {% for link in linklists[section.settings.footer_menu02].links %}
+          <a href="{{ link.url }}">
             <li>{{ link.title }}</li>
+          </a>
           {% endfor %}
        </ul>
       </div>
