@@ -34,9 +34,9 @@
         {% for link in linklists[section.settings.footer_menu01].links %}
         <div>
           <div class="footer_nav_title">
-            {% if link.url == "#" %}<a href="{{ link.url }}">{% endif %}
+            {% unless link.url == "#" %}<a href="{{ link.url }}">{% endunless %}
               <p>{{ link.title }}</p>
-              {% if link.url == "#" %}</a>{% endif %}
+            {% unless link.url == "#" %}</a>{% endunless %}
           </div>
           <div>
             <ul class="footer_nav_list">
