@@ -8,7 +8,9 @@ a:hover{
 .article__body p{
   	word-break: break-word;
 }
-
+.cf-widget__columns[data-grid-width="2"] .cf-widget-item {
+    width: 100%;
+}
 @media screen and (max-width: 764px) {
     p {
         line-height: 1.5;
