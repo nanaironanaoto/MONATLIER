@@ -200,8 +200,8 @@
 
 
 <!---->
-<div class="">
-  <ul>
+<div class="" style="display: flex; justify-content: end;">
+  <ul style="display: flex;flex-direction: column;gap: 15px;">
     {% for tag in article.tags %}
       <li>
         <a href="{{ shop.url }}/blogs/post/tagged/{{ tag | downcase }}">{{ tag }}の記事一覧</a>
