@@ -200,9 +200,15 @@
 
 
 <!---->
-{% for tag in article.tags %}
-  <a href="https://monatelier-jewelry.com/blogs/post/tagged/{{ tag | downcase }}">{{ tag }}の記事一覧</a>
-{% endfor %}
+<div class="">
+  <ul>
+    {% for tag in article.tags %}
+      <li>
+        <a href="{{ shop.url }}/blogs/post/tagged/{{ tag | downcase }}">{{ tag }}の記事一覧</a>
+      </li>
+    {% endfor %}
+  </ul>
+</div>
 <!---->
 
 
