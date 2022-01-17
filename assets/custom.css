@@ -6,7 +6,7 @@ a:hover{
     color: #c8ab7a;
 }
 .article__body p{
- 	overflow-wrap: anywhere; 
+  	word-break: break-word;
 }
 
 @media screen and (max-width: 764px) {
