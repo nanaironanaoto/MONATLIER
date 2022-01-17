@@ -5,13 +5,11 @@ body{
 a:hover{
     color: #c8ab7a;
 }
-.article__body p{
-  	word-break: break-word;
-}
 
 @media screen and (max-width: 764px) {
     p {
         line-height: 1.5;
+  		word-break: break-word;
     }
 }
 .pc{
