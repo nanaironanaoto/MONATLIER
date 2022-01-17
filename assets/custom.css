@@ -5,6 +5,9 @@ body{
 a:hover{
     color: #c8ab7a;
 }
+.article__body p{
+ 	overflow-wrap: anywhere; 
+}
 
 @media screen and (max-width: 764px) {
     p {
