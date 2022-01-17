@@ -9,7 +9,7 @@ a:hover{
 @media screen and (max-width: 764px) {
     p {
         line-height: 1.5;
-  		word-break: break-word;
+  		word-break: break-all;
     }
 }
 .pc{
