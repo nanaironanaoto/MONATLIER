@@ -198,7 +198,15 @@
 {% render 'articles.custom_fields' %}
 </div>
 
-       
+
+<!---->
+<a href="">
+  {% for tag in article.tags %}
+    {{ tag }}
+  {% endfor %}
+</a>
+<!---->
+
 
 {% render 'sns-shares'%}
     
@@ -291,73 +299,64 @@
 
 {%- if section.settings.divider -%}</div>{%- endif -%}
 
-    
-    
-    
-    
-    
-    
-    
+{%- if blog.comments_enabled? -%}
 
+  {%- if number_of_comments > 0 -%}
+    <h3>{{ 'blogs.comments.with_count' | t: count: number_of_comments }}</h3>
+    <hr class="hr--small hr--clear">
+  {%- endif -%}
 
-      {%- if blog.comments_enabled? -%}
+  {%- paginate article.comments by 5 -%}
+    {% comment %}
+      #comments is required, it is used as an anchor link by Shopify.
+    {% endcomment %}
+    <div id="comments">
 
-        {%- if number_of_comments > 0 -%}
-          <h3>{{ 'blogs.comments.with_count' | t: count: number_of_comments }}</h3>
-          <hr class="hr--small hr--clear">
+      {%- if comment and comment.errors == blank -%}
+        <hr class="hr--small hr--clear">
+        <p class="note note--success">
+          {%- if blog.moderated? -%}
+            {{ 'blogs.comments.success_moderated' | t }}
+          {%- else -%}
+            {{ 'blogs.comments.success' | t }}
+          {%- endif -%}
+        </p>
+      {%- endif -%}
+
+      {%- if number_of_comments > 0 -%}
+        <ul class="no-bullets">
+          {%- if comment and comment.errors == blank -%}
+            <li id="{{ comment.id }}" class="comment{% if article.comments_count == 0 %} last{% endif %}">
+              {%- render 'comment', comment: comment -%}
+            </li>
+          {%- endif -%}
+
+          {%- for comment in article.comments -%}
+            <li id="{{ comment.id }}" class="comment{% unless number_of_comments > article.comments_count %}{% endunless %}{% if forloop.last %} last {% endif %}">
+              {%- render 'comment', comment: comment -%}
+            </li>
+
+            {%- unless forloop.last -%}
+              <li><hr class="hr--clear"></li>
+            {%- endunless -%}
+          {%- endfor -%}
+        </ul>
+
+        {%- if paginate.pages > 1 -%}
+          {%- render 'pagination', paginate: paginate -%}
         {%- endif -%}
 
-        {%- paginate article.comments by 5 -%}
-          {% comment %}
-            #comments is required, it is used as an anchor link by Shopify.
-          {% endcomment %}
-          <div id="comments">
-
-            {%- if comment and comment.errors == blank -%}
-              <hr class="hr--small hr--clear">
-              <p class="note note--success">
-                {%- if blog.moderated? -%}
-                  {{ 'blogs.comments.success_moderated' | t }}
-                {%- else -%}
-                  {{ 'blogs.comments.success' | t }}
-                {%- endif -%}
-              </p>
-            {%- endif -%}
-
-            {%- if number_of_comments > 0 -%}
-              <ul class="no-bullets">
-                {%- if comment and comment.errors == blank -%}
-                  <li id="{{ comment.id }}" class="comment{% if article.comments_count == 0 %} last{% endif %}">
-                    {%- render 'comment', comment: comment -%}
-                  </li>
-                {%- endif -%}
-
-                {%- for comment in article.comments -%}
-                  <li id="{{ comment.id }}" class="comment{% unless number_of_comments > article.comments_count %}{% endunless %}{% if forloop.last %} last {% endif %}">
-                    {%- render 'comment', comment: comment -%}
-                  </li>
-
-                  {%- unless forloop.last -%}
-                    <li><hr class="hr--clear"></li>
-                  {%- endunless -%}
-                {%- endfor -%}
-              </ul>
-
-              {%- if paginate.pages > 1 -%}
-                {%- render 'pagination', paginate: paginate -%}
-              {%- endif -%}
-
-            {%- endif -%}
-
-            <hr class="hr--large">
-
-            <header class="section-header{% unless settings.type_headers_align_text %} section-header--with-link{% endunless %}">
-              <h3 class="section-header__title">{{ 'blogs.comments.title' | t }}</h3>
-            </header>
-
-          </div>
-        {%- endpaginate -%}
       {%- endif -%}
+
+      <hr class="hr--large">
+
+      <header class="section-header{% unless settings.type_headers_align_text %} section-header--with-link{% endunless %}">
+        <h3 class="section-header__title">{{ 'blogs.comments.title' | t }}</h3>
+      </header>
+
+    </div>
+  {%- endpaginate -%}
+{%- endif -%}
 
 
     </article>
