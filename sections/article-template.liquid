@@ -204,7 +204,7 @@
   <ul style="display: flex;flex-direction: column;gap: 15px;">
     {% for tag in article.tags %}
       <li>
-        <a href="{{ shop.url }}/blogs/post/tagged/{{ tag | downcase }}">{{ tag }}の記事一覧</a>
+        <a style="text-align:right;" href="{{ shop.url }}/blogs/post/tagged/{{ tag | downcase }}">{{ tag }}の記事一覧</a>
       </li>
     {% endfor %}
   </ul>
