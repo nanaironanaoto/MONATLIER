@@ -259,20 +259,17 @@
             </dl>
           {% endif %}
         {% endif %}
-        {% if product.type == "リング" or product.type == "ネックレス" %}
-          <dl>
-              <div id = "infiniteoptions-container"></div>
-          </dl>
-        {% endif %}
         </div>
         <!--商品説明(スペック)-->
 		
         <!--ギフトラッピング-->
+        {% if product.type == "リング" or product.type == "ネックレス" %}
         <div class="title">
           <h3>ギフトラッピング</h3>
           <p>GIFT WRAPPING</p>
         </div>
         <div id="infiniteoptions-container"></div>
+        {% endif %}
         <!--ギフトラッピング-->
         
       </div>
