@@ -804,6 +804,9 @@ figure.image{
 .variant__input- {
     height: 40px;
 }
+.add-to-cart svg {
+    display: none;
+}
 .product_form_wrapper form {
     display: flex;
 }
