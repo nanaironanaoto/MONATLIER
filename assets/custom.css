@@ -485,7 +485,7 @@ a:hover {
 	}
 }
 @media screen and (max-width: 768px) {
-  .variant-wrapper--dropdown:nth-child(1) {
+  .variant-wrapper--dropdown:first-child {
     display: block !important;
   }
   .variant-wrapper--dropdown:nth-child(3) {
