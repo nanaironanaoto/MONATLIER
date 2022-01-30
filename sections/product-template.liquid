@@ -254,7 +254,15 @@
 
   <div class="content">
     <!--SP時・バリエーション選択&カートボタン・お気に入り追加ボタンここにもうひとつ-->
-    <div class="add_to_cart_clone"></div>
+    <div>カートに追加</div><div class="_SFA_clone"></div>
+    <script>
+      $(function () {
+        $(window).on('load',function () {
+          let _SFA_clone = $("._SFA").clone();
+          $("_SFA_clone").append(_SFA_clone);
+        });
+      });
+    </script>
   </div>
 
   <!-- title -->
