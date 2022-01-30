@@ -93,19 +93,7 @@
       "header": {
         "type": "header",
         "settings": {
-          "main_menu_link_list": "main-menu",
-          "mega_menu_images": true,
-          "main_menu_alignment": "left-center",
-          "header_style": "sticky",
-          "sticky_index": true,
-          "sticky_collection": false,
-          "announcement_compact": true,
-          "announcement_above_header": true,
-          "toolbar_menu": "",
-          "toolbar_social": false,
-          "show_locale_selector": true,
-          "show_currency_selector": true,
-          "show_currency_flags": true
+          "main_menu_link_list": "main-menu"
         }
       },
       "footer": {
@@ -585,6 +573,35 @@
           "thumbnail_arrows": false,
           "enable_video_looping": true,
           "product_video_style": "muted"
+        }
+      },
+      "category": {
+        "type": "category",
+        "blocks": {
+          "8d027ddf-804e-4d55-8a9d-6ab0380be67b": {
+            "type": "header",
+            "settings": {
+              "category_text_jp": "ネックレス",
+              "category_text_en": "NECKLACE",
+              "category_link": "shopify:\/\/collections\/necklace"
+            }
+          }
+        },
+        "block_order": [
+          "8d027ddf-804e-4d55-8a9d-6ab0380be67b"
+        ],
+        "settings": {
+        }
+      },
+      "content": {
+        "type": "content",
+        "settings": {
+        }
+      },
+      "column": {
+        "type": "column",
+        "settings": {
+          "column": ""
         }
       }
     },
