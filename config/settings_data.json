@@ -632,10 +632,21 @@
               "content_text_en": "QUALITY",
               "content_link": "shopify:\/\/pages\/warranty"
             }
+          },
+          "38fc5fe8-d3fb-4464-b99b-ec5bb13a421b": {
+            "type": "header",
+            "settings": {
+              "content_image_pc": "shopify:\/\/shop_images\/content_bnr02.jpg",
+              "content_image_sp": "shopify:\/\/shop_images\/content_bnr02_square.jpg",
+              "content_text_jp": "素材について",
+              "content_text_en": "MATERIAL",
+              "content_link": "shopify:\/\/pages\/material"
+            }
           }
         },
         "block_order": [
-          "e33122d8-075d-4db3-ac12-65c9b11f2d86"
+          "e33122d8-075d-4db3-ac12-65c9b11f2d86",
+          "38fc5fe8-d3fb-4464-b99b-ec5bb13a421b"
         ],
         "settings": {
         }
