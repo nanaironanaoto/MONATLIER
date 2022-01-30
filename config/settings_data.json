@@ -642,11 +642,22 @@
               "content_text_en": "MATERIAL",
               "content_link": "shopify:\/\/pages\/material"
             }
+          },
+          "adc2867f-94fc-42d1-84a7-ea3a9ea313a2": {
+            "type": "header",
+            "settings": {
+              "content_image_pc": "shopify:\/\/shop_images\/content_bnr03.jpg",
+              "content_image_sp": "shopify:\/\/shop_images\/content_bnr03_square.jpg",
+              "content_text_jp": "コンセプト",
+              "content_text_en": "CONCEPT",
+              "content_link": "shopify:\/\/pages\/concept"
+            }
           }
         },
         "block_order": [
           "e33122d8-075d-4db3-ac12-65c9b11f2d86",
-          "38fc5fe8-d3fb-4464-b99b-ec5bb13a421b"
+          "38fc5fe8-d3fb-4464-b99b-ec5bb13a421b",
+          "adc2867f-94fc-42d1-84a7-ea3a9ea313a2"
         ],
         "settings": {
         }
