@@ -168,7 +168,7 @@
             </div>
           </div>
           <!--カートボタン・お気に入り追加ボタン-->
-          <div class="btn_row" id="add_to_cart_original">
+          <div class="btn_row add_to_cart_original">
             <button type="submit" name="add" id="AddToCart-6535264207026" class="btn btn--full add-to-cart">
               <span id="AddToCartText-6535264207026" data-default-text="カートに追加">
                 カートに追加
@@ -366,7 +366,7 @@
   <script>
 $(function () {
   $(window).on('load',function () {
-    let add_to_cart_clone = $("#add_to_cart_original").clone();
+    let add_to_cart_clone = $("#AddToCartForm-").clone();
     $(".add_to_cart_clone").append(add_to_cart_clone);
   });
 });
