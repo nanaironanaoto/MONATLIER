@@ -129,7 +129,10 @@
 
         <!--価格-->
         <div class="product_price">
-          {% render 'price' %}
+          <span id="ProductPrice-{{ section_id }}"
+              class="product__price{% if current_variant.compare_at_price > current_variant.price %} on-sale{% endif %}">
+              {{ current_variant.price | money }}ddd
+          </span>
         </div>
 
         <!--バリエーション選択&カートボタン・お気に入り追加ボタン-->
