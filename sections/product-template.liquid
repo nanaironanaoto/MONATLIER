@@ -138,11 +138,13 @@
         <!--バリエーション選択&カートボタン・お気に入り追加ボタン-->
         <div class="btn_row">
 
+          {% capture add_to_cart_capture %}
   {%- render 'product-form',
     section_id: section_id,
     product: product,
     current_variant: current_variant
   -%}
+          {% endcapture %}
 
           {% comment %} <!--バリエーション選択プルダウン-->
           <div class="variant-wrapper--dropdown js btn_row">
