@@ -487,7 +487,8 @@ a:hover {
 
 @media screen and (max-width: 768px) {
   .variant-wrapper--dropdown {
-    display: block !important;
+    flex-direction: column;
+    align-items: start !important;
   }
   .variant-wrapper:nth-of-type(3) {
       display: none !important;
