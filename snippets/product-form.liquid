@@ -60,6 +60,18 @@
     </div>
   {%- endif -%} {% endcomment %}
 
+    {%- liquid
+      assign default_text = 'products.product.add_to_cart' | t
+      assign button_text = 'products.product.add_to_cart' | t
+      if template == 'product.preorder'
+        assign default_text = 'products.product.preorder' | t
+        assign button_text = 'products.product.preorder' | t
+      endif
+      unless current_variant.available
+        assign button_text = 'products.product.sold_out' | t
+      endunless
+    -%}
+  
     <button
       {% if product.empty? %}type="button"{% else %}type="submit"{% endif %}
       name="add"
