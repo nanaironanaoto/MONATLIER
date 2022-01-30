@@ -59,7 +59,10 @@ a:hover{
 	min-width: 1046px;
 	margin: 0 auto;
 }
-
+.prodcut_recommend_row {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
 .top-header .navi-text:hover+.menu_contents{
 	display: block;
 	opacity: 1;
