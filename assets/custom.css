@@ -595,9 +595,6 @@ figure.image{
   .product-template .slide-navigation .item .image::before {
     padding-top: 0;
   }
-  .variant-wrapper--dropdown {
-    display: block;
-  }
 }
 /* slick */
 .slick-vertical .slick-slide {
