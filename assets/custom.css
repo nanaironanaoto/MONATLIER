@@ -493,6 +493,23 @@ a:hover {
   .variant-wrapper:nth-of-type(3) {
       display: none !important;
   }
+  .product_form_wrapper form {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows   : 1fr 1fr 1fr;
+  }
+  .product_form_wrapper form>div:fitst-of-type {
+    grid-column: 1 / 4;
+    grid-row   : 1 / 2;
+  }
+  .product_form_wrapper form>button {
+    grid-column: 1 / 2;
+    grid-row   : 2 / 4;
+  }
+  .product_form_wrapper form>div:last-of-type {
+    grid-column: 2 / 4;
+    grid-row   : 2 / 4;
+  }
 }
 
 /* slide-box */
@@ -829,10 +846,11 @@ button#AddToCart- {
     display: flex;
   	align-items: center;
 }
-/*以下、商品情報から「納期」を一斉削除してもらったら消すこと！*/
+/*▼商品情報から「納期」を一斉削除してもらったら消すこと！*/
 .variant-wrapper--dropdown:nth-of-type(2) {
     display: none;
 }
+/*▲商品情報から「納期」を一斉削除してもらったら消すこと！*/
 
 @media screen and (max-width: 1024px) {
     .content, .mv{
