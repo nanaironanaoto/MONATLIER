@@ -496,7 +496,7 @@ a:hover {
   form#AddToCartForm- {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows   : 1fr 1fr 1fr;
+    row-gap: 20px;
   }
   form#AddToCartForm->div:fitst-of-type {
     grid-column: 1 / 4;
