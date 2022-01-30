@@ -88,9 +88,9 @@
                         {%- assign related_count = related_count | plus: 1 -%}
                         {%- unless related_count > number_of_products -%}
                           {%- if forloop.last and current_product_found -%}
-                            {%- render 'product-grid-item', product: product, grid_item_width: grid_item_width -%}
+                            {%- render 'product_card', product: product, grid_item_width: grid_item_width -%}
                           {%- else -%}
-                            {%- render 'product-grid-item', product: product, grid_item_width: grid_item_width -%}
+                            {%- render 'product_card', product: product, grid_item_width: grid_item_width -%}
                           {%- endif -%}
                         {%- endunless -%}
                       {%- endif -%}
