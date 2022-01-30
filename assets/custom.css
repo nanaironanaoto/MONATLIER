@@ -11,6 +11,9 @@ a:hover{
 .cf-widget__columns[data-grid-width="2"] .cf-widget-item {
     width: 100%;
 }
+.bread-pages {
+    display: none;
+}
 @media screen and (max-width: 764px) {
     p {
         line-height: 1.5;
