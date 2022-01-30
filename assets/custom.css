@@ -802,6 +802,9 @@ figure.image{
     display: flex;
   	align-items: center;
 }
+..variant__label[for], .variant-input-wrap{
+	margin-bottom:0;
+}
 .variant__input- {
     height: 40px;
 }
