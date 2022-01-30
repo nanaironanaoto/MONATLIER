@@ -252,15 +252,15 @@
     
     <!--SP時・バリエーション選択&カートボタン・お気に入り追加ボタンここにもうひとつ-->
     <div class="sp">
-    <div>カートに追加</div><div class="_SFA_clone"></div>
-    <script>
-      $(function () {
-        $(window).on('load',function () {
-          let _SFA_clone = $("._SFA").clone();
-          $("_SFA_clone").append(_SFA_clone);
-        });
-      });
-    </script>
+    	<div class="product_form_wrapper_clone"></div>
+        <script>
+          $(function () {
+            $(window).on('load',function () {
+              let product_form_wrapper = $(".product_form_wrapper").clone();
+              $(".product_form_wrapper_clone").append(product_form_wrapper_clone);
+            });
+          });
+        </script>
     </div>
       
     <div class="throw_line"></div>
