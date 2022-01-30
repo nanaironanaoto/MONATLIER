@@ -480,7 +480,10 @@ div.stamped-container[data-widget-style], div[data-widget-style] div.stamped-con
     margin: 0;
     border: none!important;
 }
-
+.stamped-review-header-title {
+    letter-spacing: 0;
+    font-weight: 100;
+}
 @media screen and (max-width: 1366px) {
 	.header .header_navi{
 		padding-right: 5%;
