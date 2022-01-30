@@ -475,6 +475,11 @@ a:hover {
     padding: 0;
     margin: 0;
 }
+div.stamped-container[data-widget-style], div[data-widget-style] div.stamped-container {
+    max-width: 100%;
+    margin: 0;
+    border: none!important;
+}
 
 @media screen and (max-width: 1366px) {
 	.header .header_navi{
