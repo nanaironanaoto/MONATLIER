@@ -67,6 +67,10 @@ a:hover{
 .medium-up--one-sixth {
     width: 100%;
 }
+.grid-product {
+    padding-left: 0;
+    margin-bottom: 0;
+}
 .top-header .navi-text:hover+.menu_contents{
 	display: block;
 	opacity: 1;
