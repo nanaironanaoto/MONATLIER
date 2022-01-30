@@ -585,10 +585,19 @@
               "category_text_en": "NECKLACE",
               "category_link": "shopify:\/\/collections\/necklace"
             }
+          },
+          "3958827d-3c26-40b0-ad47-0898ae6afb17": {
+            "type": "header",
+            "settings": {
+              "category_text_jp": "リング",
+              "category_text_en": "RING",
+              "category_link": "shopify:\/\/collections\/ring"
+            }
           }
         },
         "block_order": [
-          "8d027ddf-804e-4d55-8a9d-6ab0380be67b"
+          "8d027ddf-804e-4d55-8a9d-6ab0380be67b",
+          "3958827d-3c26-40b0-ad47-0898ae6afb17"
         ],
         "settings": {
         }
