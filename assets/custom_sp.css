@@ -357,5 +357,8 @@
       grid-column: 2 / 4;
       grid-row   : 2 / 4;
     }
-
+    .prodcut_recommend_row {
+        display: grid;
+        grid-template-columns: repeat(2, auto);
+    }
 }
