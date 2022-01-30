@@ -29,7 +29,8 @@
   endif
 -%}
 
-<div class="product_recommendation_row" {% comment%}data-aos="row-of-{{ per_row }}"{% endcomment %} data-product-handle="{{ product.handle }}">
+<div class="grid__item"
+     {% comment%}data-aos="row-of-{{ per_row }}"{% endcomment %} data-product-handle="{{ product.handle }}">
 
   <div class="grid-product__content">
     {%- if has_custom_label -%}
