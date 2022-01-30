@@ -805,6 +805,9 @@ figure.image{
 .variant__label[for], .variant-input-wrap{
   margin-bottom: 0 !important;
 }
+button#AddToCart- {
+    width: 164px;
+}
 .variant__input- {
     height: 40px;
 }
