@@ -96,10 +96,10 @@
 
   {% if template == 'product' and product.metafields.inventory.ShappifyHidden or product.type contains '_HIDDEN_' %}<meta name='robots' content='noindex'>{% endif %}
 
-  {%comment%}
+  
   {%- render 'bold-options-hybrid' -%}
   {%- render 'bold-common' -%}
-  {%endcomment%}
+  
   
 <script src="{{ 'vendor-scripts-v7.js' | asset_url | split: '?' | first }}" defer="defer"></script>
 
