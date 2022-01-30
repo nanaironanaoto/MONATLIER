@@ -212,7 +212,9 @@
 
     {%- section 'category' -%}
     {%- section 'content' -%}
-    {%- section 'column' -%}    
+    {% if template == 'index' %} 
+    	{%- section 'column' -%}    
+    {% endif %}
     {%- section 'footer' -%}
 
     {%- section 'newsletter-popup' -%}
