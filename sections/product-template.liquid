@@ -366,7 +366,7 @@
   <script>
 $(function () {
   $(window).on('load',function () {
-    let add_to_cart_clone = $("#AddToCartForm-").clone();
+    let add_to_cart_clone = $(".add_to_cart_original").clone();
     $(".add_to_cart_clone").append(add_to_cart_clone);
   });
 });
