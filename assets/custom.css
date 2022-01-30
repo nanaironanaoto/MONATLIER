@@ -799,7 +799,7 @@ figure.image{
     margin: 0;
 }
 .variant-wrapper--dropdown {
-    display: block;
+    display: flex;
 }
 .product_form_wrapper form {
     display: flex;
