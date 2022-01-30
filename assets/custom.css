@@ -484,9 +484,12 @@ a:hover {
 		padding-left: 3.7%;
 	}
 }
-@media screen and (max-width: 480px) {
-  .variant-wrapper--dropdown {
-    display: block;
+@media screen and (max-width: 768px) {
+  .variant-wrapper--dropdown:nth-child(1) {
+    display: block !important;
+  }
+  .variant-wrapper--dropdown:nth-child(3) {
+      display: none !important;
   }
 }
 
