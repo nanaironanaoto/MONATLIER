@@ -485,33 +485,6 @@ a:hover {
 	}
 }
 
-@media screen and (max-width: 768px) {
-  .variant-wrapper--dropdown {
-    flex-direction: column;
-    align-items: start !important;
-  }
-  .variant-wrapper:nth-of-type(3) {
-      display: none !important;
-  }
-  form#AddToCartForm- {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    row-gap: 20px;
-  }
-  form#AddToCartForm->div:fitst-of-type {
-    grid-column: 1 / 4;
-    grid-row   : 1 / 2;
-  }
-  form#AddToCartForm->button {
-    grid-column: 1 / 2;
-    grid-row   : 2 / 4;
-  }
-  form#AddToCartForm->div:last-of-type {
-    grid-column: 2 / 4;
-    grid-row   : 2 / 4;
-  }
-}
-
 /* slide-box */
 
 .slide-box {
