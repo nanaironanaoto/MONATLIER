@@ -483,10 +483,13 @@ a:hover {
 	.top-header{
 		padding-left: 3.7%;
 	}
+}
+@media screen and (max-width: 480px) {
   .variant-wrapper--dropdown {
     display: block;
   }
 }
+
 /* slide-box */
 
 .slide-box {
