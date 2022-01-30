@@ -12,7 +12,7 @@
       "settings": {
         "show_product_recommendations": true,
         "product_recommendations_heading": "You may also like",
-        "related_count": 4
+        "related_count": 3
       }
     }
   },
