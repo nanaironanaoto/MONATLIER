@@ -482,7 +482,10 @@ div.stamped-container[data-widget-style], div[data-widget-style] div.stamped-con
 }
 .stamped-review-header-title {
     letter-spacing: 0;
-    font-weight: 100;
+    font-weight: 400;
+}
+.stamped-review .author {
+    font-weight: 400;
 }
 @media screen and (max-width: 1366px) {
 	.header .header_navi{
