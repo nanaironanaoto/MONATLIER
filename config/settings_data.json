@@ -601,12 +601,21 @@
               "category_text_en": "EARRING",
               "category_link": "#"
             }
+          },
+          "99ddcde2-57ba-4834-b60b-22a00a6943e3": {
+            "type": "header",
+            "settings": {
+              "category_text_jp": "ブレスレット",
+              "category_text_en": "BLACELET",
+              "category_link": "#"
+            }
           }
         },
         "block_order": [
           "8d027ddf-804e-4d55-8a9d-6ab0380be67b",
           "3958827d-3c26-40b0-ad47-0898ae6afb17",
-          "44368c0b-e289-4115-9c76-5188c5ad0ece"
+          "44368c0b-e289-4115-9c76-5188c5ad0ece",
+          "99ddcde2-57ba-4834-b60b-22a00a6943e3"
         ],
         "settings": {
         }
