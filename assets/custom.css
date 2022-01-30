@@ -64,6 +64,9 @@ a:hover{
 	grid-template-columns: repeat(4, auto);
 	gap: 17px;
 }
+.medium-up--one-sixth {
+    width: 100%;
+}
 .top-header .navi-text:hover+.menu_contents{
 	display: block;
 	opacity: 1;
