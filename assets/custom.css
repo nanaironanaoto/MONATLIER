@@ -470,6 +470,11 @@ a:hover {
 .product_spec_table {
     margin-bottom: 64px;
 }
+.stamped-review {
+    background: none;
+    padding: 0;
+    margin: 0;
+}
 
 @media screen and (max-width: 1366px) {
 	.header .header_navi{
