@@ -493,20 +493,20 @@ a:hover {
   .variant-wrapper:nth-of-type(3) {
       display: none !important;
   }
-  .product_form_wrapper form {
+  form#AddToCartForm- {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows   : 1fr 1fr 1fr;
   }
-  .product_form_wrapper form>div:fitst-of-type {
+  form#AddToCartForm->div:fitst-of-type {
     grid-column: 1 / 4;
     grid-row   : 1 / 2;
   }
-  .product_form_wrapper form>button {
+  form#AddToCartForm->button {
     grid-column: 1 / 2;
     grid-row   : 2 / 4;
   }
-  .product_form_wrapper form>div:last-of-type {
+  form#AddToCartForm->div:last-of-type {
     grid-column: 2 / 4;
     grid-row   : 2 / 4;
   }
