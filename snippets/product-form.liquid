@@ -66,7 +66,8 @@
       id="AddToCart-{{ section_id }}"
       class="btn btn--full add-to-cart{% if enable_dynamic_buttons and product.selling_plan_groups == empty %} btn--secondary{% endif %}"
       {% unless current_variant.available %} disabled="disabled"{% endunless %}>
-      <span id="AddToCartText-{{ section_id }}" data-default-text="{{ default_text }}">
+      <span id="AddToCartText-{{ section_id }}">
+      {%comment%}<span id="AddToCartText-{{ section_id }}" data-default-text="{{ default_text }}">{%endcomment%}
         カートに追加
       </span>
       {% render = "svg-cart" %}
