@@ -801,6 +801,9 @@ figure.image{
 .variant-wrapper--dropdown {
     display: flex;
 }
+.variant__input- {
+    height: 40px;
+}
 .product_form_wrapper form {
     display: flex;
 }
