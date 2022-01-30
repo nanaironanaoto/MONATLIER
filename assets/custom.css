@@ -489,7 +489,7 @@ a:hover {
   .variant-wrapper--dropdown {
  	   display: block !important;
   }
-  .variant-wrapper--dropdown:nth-child(3) {
+  .variant-wrapper:nth-of-type(3) {
       display: none !important;
   }
 }
