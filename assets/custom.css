@@ -800,6 +800,7 @@ figure.image{
 }
 .variant-wrapper--dropdown {
     display: flex;
+  	align-items: center;
 }
 .variant__input- {
     height: 40px;
