@@ -52,62 +52,67 @@
       data-subsection
       data-section-type="collection-template"
       class="index-section">
-      <div class="page-width">
-        <header class="section-header">
-          <h3 class="section-header__title">
-            {{ section.settings.product_recommendations_heading }}
-          </h3>
-        </header>
-      </div>
 
-      <div class="page-width page-width--flush-small">
-        <div class="grid-overflow-wrapper">
-          {%- if recommend_products -%}
-            <div class="product-recommendations-placeholder">
-              {% comment %}
-                This content is visually hidden and replaced when recommended
-                products show up
-              {% endcomment %}
-              <div class="grid grid--uniform visually-invisible" aria-hidden="true">
-                {%- render 'product-grid-item', product: product, grid_item_width: grid_item_width -%}
-              </div>
-            </div>
-          {%- endif -%}
-          {%- if related_collection.products_count > 1 -%}
-            <div class="product-recommendations">
-              <div class="grid grid--uniform" data-aos="overflow__animation">
-                {%- assign current_product = product -%}
-                {%- assign current_product_found = false -%}
-                {%- assign related_count = 0 -%}
-                {%- for product in related_collection.products limit: number_of_products_to_fetch -%}
-                  {%- if product.handle == current_product.handle -%}
-                    {%- assign current_product_found = true -%}
-                  {%- else -%}
-                    {%- assign related_count = related_count | plus: 1 -%}
-                    {%- unless related_count > number_of_products -%}
-                      {%- if forloop.last and current_product_found -%}
-                        {%- render 'product-grid-item', product: product, grid_item_width: grid_item_width -%}
-                      {%- else -%}
-                        {%- render 'product-grid-item', product: product, grid_item_width: grid_item_width -%}
-                      {%- endif -%}
-                    {%- endunless -%}
-                  {%- endif -%}
-                {%- endfor -%}
-              </div>
-
-              {%- if settings.quick_shop_enable -%}
-                {%- for product in related_collection.products limit: number_of_products_to_fetch -%}
-                  {%- if product.handle != current_product.handle -%}
-                    {%- render 'quick-shop-modal', product: product -%}
-                  {%- endif -%}
-                {%- endfor -%}
-              {%- endif -%}
-            </div>
-          {%- endif -%}
+      <!-- title -->
+      <div class="content">
+        <div class="title">
+          <h3><ls-static-967752>あなたへのおすすめ</ls-static-967752></h3>
+          <p><ls-static-865478>RECOMMENDATION</ls-static-865478></p>
         </div>
       </div>
+
+      <!--recommendation-->
+      <div class="content">
+        <div class="recommendation">
+              {%- if recommend_products -%}
+                <div class="product-recommendations-placeholder">
+                  {% comment %}
+                    This content is visually hidden and replaced when recommended
+                    products show up
+                  {% endcomment %}
+                  <div class="grid grid--uniform visually-invisible" aria-hidden="true">
+                    {%- render 'product-grid-item', product: product, grid_item_width: grid_item_width -%}
+                  </div>
+                </div>
+              {%- endif -%}
+              {%- if related_collection.products_count > 1 -%}
+                <div class="product-recommendations">
+                  <div class="grid grid--uniform" data-aos="overflow__animation">
+                    {%- assign current_product = product -%}
+                    {%- assign current_product_found = false -%}
+                    {%- assign related_count = 0 -%}
+                    {%- for product in related_collection.products limit: number_of_products_to_fetch -%}
+                      {%- if product.handle == current_product.handle -%}
+                        {%- assign current_product_found = true -%}
+                      {%- else -%}
+                        {%- assign related_count = related_count | plus: 1 -%}
+                        {%- unless related_count > number_of_products -%}
+                          {%- if forloop.last and current_product_found -%}
+                            {%- render 'product-grid-item', product: product, grid_item_width: grid_item_width -%}
+                          {%- else -%}
+                            {%- render 'product-grid-item', product: product, grid_item_width: grid_item_width -%}
+                          {%- endif -%}
+                        {%- endunless -%}
+                      {%- endif -%}
+                    {%- endfor -%}
+                  </div>
+
+                  {%- if settings.quick_shop_enable -%}
+                    {%- for product in related_collection.products limit: number_of_products_to_fetch -%}
+                      {%- if product.handle != current_product.handle -%}
+                        {%- render 'quick-shop-modal', product: product -%}
+                      {%- endif -%}
+                    {%- endfor -%}
+                  {%- endif -%}
+                </div>
+              {%- endif -%}
+      </div>
+      </div>
+      
     </div>
-  </div>
+    
+  </div>    
+
 {%- endif -%}
 
 {% schema %}
