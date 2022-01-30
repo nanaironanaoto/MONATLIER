@@ -431,6 +431,10 @@ a:hover {
     text-decoration: underline;
     margin-bottom: 40px;
 }
+.add-to-cart {
+    height: 40px;
+    background: #C8AB7A;
+}
 .btn_row_second{
     display: none;
 }
