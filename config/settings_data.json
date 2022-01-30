@@ -652,12 +652,23 @@
               "content_text_en": "CONCEPT",
               "content_link": "shopify:\/\/pages\/concept"
             }
+          },
+          "0d69592a-9b0b-410c-a233-10a94877d416": {
+            "type": "header",
+            "settings": {
+              "content_image_pc": "shopify:\/\/shop_images\/content_bnr04.jpg",
+              "content_image_sp": "shopify:\/\/shop_images\/content_bnr04_square.jpg",
+              "content_text_jp": "アフターサービス",
+              "content_text_en": "SERVICE",
+              "content_link": "shopify:\/\/pages\/afterservice"
+            }
           }
         },
         "block_order": [
           "e33122d8-075d-4db3-ac12-65c9b11f2d86",
           "38fc5fe8-d3fb-4464-b99b-ec5bb13a421b",
-          "adc2867f-94fc-42d1-84a7-ea3a9ea313a2"
+          "adc2867f-94fc-42d1-84a7-ea3a9ea313a2",
+          "0d69592a-9b0b-410c-a233-10a94877d416"
         ],
         "settings": {
         }
