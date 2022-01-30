@@ -483,6 +483,9 @@ a:hover {
 	.top-header{
 		padding-left: 3.7%;
 	}
+  .variant-wrapper--dropdown {
+    display: block;
+  }
 }
 /* slide-box */
 
