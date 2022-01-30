@@ -71,6 +71,9 @@ a:hover{
     padding-left: 0;
     margin-bottom: 0;
 }
+.grid-product__image-mask {
+    width: 100%;
+}
 .top-header .navi-text:hover+.menu_contents{
 	display: block;
 	opacity: 1;
