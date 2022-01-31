@@ -241,6 +241,9 @@
     margin-bottom: 40px;
     border-bottom: 1px solid #ccc;
 	}
+    .slide-box {
+      margin: 0 0 32px 0;
+    }
 	.btn_row_second {
 	    display: block;
 	    padding-bottom: 60px;
