@@ -605,7 +605,7 @@ figure.image{
   height: 100%;
   content: "";
   opacity: 0.5;
-  background: #000;
+  background: #fff;
 }
 .product-template .slide-navigation .slick-current .image::after {
   opacity: 0;
