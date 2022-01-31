@@ -146,15 +146,7 @@
 
         <!--この商品について問い合わせる-->
         <div class="product_question">
-          <ls-static-219671>この商品について問い合わせる</ls-static-219671>
-          {%- unless isModal -%}
-          {%- if settings.surface_pickup_enable -%}
-          <div id="StoreAvailabilityHolder-{{ section_id }}"
-               data-product-name="{{ product.title | escape }}"
-               data-base-url="{{ shop.url }}{{ routes.root_url }}"
-               ></div>
-          {%- endif -%}
-          {%- endunless -%}
+          <a href="/pages/contact?id={{ product.handle }}" class="arrow-link">この商品について問い合わせる</a>
         </div>
 
         <!--説明テキスト-->
