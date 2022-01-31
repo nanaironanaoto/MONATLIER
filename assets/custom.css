@@ -269,6 +269,9 @@ a:hover{
 .shopify-section.category{
      margin-top: 120px; 
 }
+.slide-navigation.slick-initialized.slick-slider {
+    margin-top: 26px;
+}
 .content_bnr{
 	display: grid;
 	grid-template-columns: 1fr 1fr;
