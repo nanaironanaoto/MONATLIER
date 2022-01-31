@@ -137,18 +137,24 @@
 
         <!--バリエーション選択&カートボタン・お気に入り追加ボタン-->
         <div class="btn_row">
-
           {%- render 'product-form',
             section_id: section_id,
             product: product,
             current_variant: current_variant
           -%}
-
         </div>
 
         <!--この商品について問い合わせる-->
         <div class="product_question">
           <ls-static-219671>この商品について問い合わせる</ls-static-219671>
+          {%- unless isModal -%}
+          {%- if settings.surface_pickup_enable -%}
+          <div id="StoreAvailabilityHolder-{{ section_id }}"
+               data-product-name="{{ product.title | escape }}"
+               data-base-url="{{ shop.url }}{{ routes.root_url }}"
+               ></div>
+          {%- endif -%}
+          {%- endunless -%}
         </div>
 
         <!--説明テキスト-->
