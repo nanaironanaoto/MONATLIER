@@ -202,6 +202,7 @@
 
 	.product_row{
 		display: block;
+      	margin-bottom: 70px;
 	}
 	.product_row>div {
 	    width: 100%;
