@@ -361,4 +361,7 @@
         display: grid;
         grid-template-columns: repeat(2, auto);
     }
+    .boost-pfs-filter-right-col{
+         margin-bottom: 64px; 
+    }
 }
