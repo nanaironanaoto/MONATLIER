@@ -266,7 +266,9 @@ a:hover{
 .top_category span:last-of-type{
 	font-size: 14px;
 }
-
+.boost-pfs-filter-right-col{
+     margin-bottom: 40px; 
+}
 .content_bnr{
 	display: grid;
 	grid-template-columns: 1fr 1fr;
