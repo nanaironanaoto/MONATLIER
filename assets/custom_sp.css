@@ -390,6 +390,6 @@
         margin-left: 0 important;
     }
     .boost-pfs-filter-product-item {
-        padding-left: 0;
+        padding-left: 0 !important;
     }
 }
