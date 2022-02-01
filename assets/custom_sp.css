@@ -407,6 +407,6 @@
         margin-bottom: 7px;
     }
     .boost-pfs-filter-mobile-toolbar-items {
-        border-bottom: none;
+        border-bottom: none !important;
     }
 }
