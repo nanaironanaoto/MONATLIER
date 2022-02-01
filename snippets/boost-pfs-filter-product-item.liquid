@@ -151,14 +151,6 @@
 {%- endif -%}
 {%- endcapture -%}
 
-      <!--地金,石-->
-      {% if product.metafields.custom_fields["metal"] != blank %}
-        <p class="product_info_metal_stone">{{ product.metafields.custom_fields["metal"] }}</p>
-      {% endif %}
-      {% if product.metafields.custom_fields["stone"] != blank %}
-      <p class="product_info_metal_stone">{{ product.metafields.custom_fields["stone"] }}</p>
-      {% endif %}
-
 {%- assign padding_top = 100 -%}
 {%- unless preview_image == blank -%}
   	{%- assign padding_top = 1 | divided_by: preview_image.aspect_ratio | times: 100 -%}
@@ -349,6 +341,15 @@
 			{{- sold_out_label -}}
 			{{- sale_label -}}
 			{{- label_by_tag -}}
+
+            <!--地金,石-->
+            {% if product.metafields.custom_fields["metal"] != blank %}
+              <p class="product_info_metal_stone">{{ product.metafields.custom_fields["metal"] }}</p>
+            {% endif %}
+            {% if product.metafields.custom_fields["stone"] != blank %}
+            <p class="product_info_metal_stone">{{ product.metafields.custom_fields["stone"] }}</p>
+            {% endif %}          
+          
 		</div>
 		{%- endif -%}
     </div>
