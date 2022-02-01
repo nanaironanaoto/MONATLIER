@@ -399,7 +399,8 @@
     .product_info_metal_stone,  {
         font-size: 10px;
     }
-    .boost-pfs-filter-product-item-title .boost-pfs-filter-product-item-title-large {
+    .boost-pfs-filter-product-item-title .boost-pfs-filter-product-item-title-large,
+  	.boost-pfs-filter-product-item-price {
         font-size: 12px;
     }
 }
