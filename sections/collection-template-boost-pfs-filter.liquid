@@ -179,10 +179,11 @@
     <!-- news -->
     <div class="content collection_descrption_filter_sort_row">
       <div class="collection_description">
+        {% if collection.handle == 'all' %}
           <p>
-            リングの説明が入ります。リングの説明が入ります。リングの説明が入ります。<br>
-            リングの説明が入ります。リングの説明が入ります。
+            {{ collection.description }}
           </p>
+        {% endif %}
       </div>
       <div class="collection_filter_sort_row">
         <div class="collection_filter">
