@@ -373,4 +373,7 @@
     .shopify-section.category{
          margin-top: 120px; 
     }
+    .boost-pfs-container-default-box {
+        padding: 0 24px;
+    }
 }
