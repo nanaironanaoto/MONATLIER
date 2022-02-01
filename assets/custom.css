@@ -42,6 +42,7 @@ a:hover{
 	margin: 0;
 	padding: 0;
 }
+
 .text-14px{
 	font-size: 14px;
 }
@@ -1017,5 +1018,9 @@ button#AddToCart- {
 }
 
 .collection_left_area_bg_close_tab{
+    display: none;
+}
+ul.boost-pfs-filter-item-swatch.boost-pfs-filter-item-swatch-option.boost-pfs-filter-item-swatch-shape-circle.boost-pfs-filter-item-swatch-type-color,
+ul.boost-pfs-filter-item-swatch.boost-pfs-filter-item-swatch-option.boost-pfs-filter-item-swatch-shape-circle.boost-pfs-filter-item-swatch-type-img{
     display: none;
 }
