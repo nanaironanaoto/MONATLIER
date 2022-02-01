@@ -276,6 +276,7 @@
 		display: grid;
 		grid-template-columns: 1fr 1fr;
 		grid-column-gap: 15px;
+      	margin-top: 40px;
 	}
 	.collection_right_area .content {
 	    min-width: 100%;
