@@ -1021,6 +1021,7 @@ button#AddToCart- {
     display: none;
 }
 ul.boost-pfs-filter-item-swatch.boost-pfs-filter-item-swatch-option.boost-pfs-filter-item-swatch-shape-circle.boost-pfs-filter-item-swatch-type-color,
-ul.boost-pfs-filter-item-swatch.boost-pfs-filter-item-swatch-option.boost-pfs-filter-item-swatch-shape-circle.boost-pfs-filter-item-swatch-type-img{
+ul.boost-pfs-filter-item-swatch.boost-pfs-filter-item-swatch-option.boost-pfs-filter-item-swatch-shape-circle.boost-pfs-filter-item-swatch-type-img,
+button.boost-pfs-addtocart-btn.boost-pfs-addtocart-select-options{
     display: none;
 }
