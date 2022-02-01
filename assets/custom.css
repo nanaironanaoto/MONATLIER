@@ -1026,6 +1026,10 @@ button.boost-pfs-addtocart-btn.boost-pfs-addtocart-select-options{
     display: none;
 }
 .boost-pfs-filter-product-item-title {
+    font-weight: 400 !important;
+}
+a.boost-pfs-filter-product-item-title p {
+    line-height: 1;
     font-weight: 400;
 }
 @media screen and (min-width: 1200px){
