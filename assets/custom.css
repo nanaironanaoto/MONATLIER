@@ -512,6 +512,8 @@ div.stamped-container[data-widget-style], div[data-widget-style] div.stamped-con
 	.top-header .header-icons{
 		padding-right:0;
 	}
+}
+@media screen and (max-width: 1340px) {
   	.mv{
     	width: 93.5%;
     }
