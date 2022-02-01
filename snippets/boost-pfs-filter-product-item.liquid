@@ -156,6 +156,14 @@
   	{%- assign padding_top = 1 | divided_by: preview_image.aspect_ratio | times: 100 -%}
 {%- endunless -%}
 
+      <!--地金,石-->
+      {% if product.metafields.custom_fields["metal"] != blank %}
+        <p class="product_info_metal_stone">{{ product.metafields.custom_fields["metal"] }}</p>
+      {% endif %}
+      {% if product.metafields.custom_fields["stone"] != blank %}
+      <p class="product_info_metal_stone">{{ product.metafields.custom_fields["stone"] }}</p>
+      {% endif %}
+
 {%- comment -%} Vendor {%- endcomment -%}
 {%- capture product_vendor -%}
 {%- if show_vendor -%}
