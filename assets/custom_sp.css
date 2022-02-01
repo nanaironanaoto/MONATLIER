@@ -380,14 +380,14 @@
         width: 100%;
     }
     .boost-pfs-filter-products {
-        display: grid;
+        display: grid !important
         grid-template-columns: repeat(2,auto);
         padding-bottom: 54px;
         gap: 17px;
-        width: 100%;
+        width: 100% !important;
         float: none;
-        padding-top: 0px;
-        margin-left: 0;
+        padding-top: 0 !important;
+        margin-left: 0 important;
     }
     .boost-pfs-filter-product-item {
         padding-left: 0;
