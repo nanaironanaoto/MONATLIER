@@ -181,7 +181,7 @@
   {%- if product.price_varies -%}
 	<span class="boost-pfs-filter-product-item-price-from-text">{{- label_from | default: 'From' -}}</span>
 	{%- endif -%}
-	<span class="boost-pfs-filter-product-item-regular-price">{{- product.price | money -}}(税込)</span>
+	<span class="boost-pfs-filter-product-item-regular-price">{{- product.price | money -}}</span><span class="tax-notice">（税込）</span>
 {%- endif -%}
 </p>
 {%- endif -%}
