@@ -403,4 +403,7 @@
   	.boost-pfs-filter-product-item-price {
         font-size: 12px !important;
     }
+    .boost-pfs-filter-product-item-title p {
+        margin-bottom: 7px;
+    }
 }
