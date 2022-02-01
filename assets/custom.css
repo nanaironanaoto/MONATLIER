@@ -1025,7 +1025,7 @@ ul.boost-pfs-filter-item-swatch.boost-pfs-filter-item-swatch-option.boost-pfs-fi
 button.boost-pfs-addtocart-btn.boost-pfs-addtocart-select-options{
     display: none;
 }
-.boost-pfs-filter-product-item-title　.boost-pfs-filter-product-item-title-large {
+.boost-pfs-filter-product-item-title .boost-pfs-filter-product-item-title-large {
   	font-size: 16px;
     font-weight: 400 !important;
 }
