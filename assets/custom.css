@@ -514,6 +514,9 @@ div.stamped-container[data-widget-style], div[data-widget-style] div.stamped-con
 	}
 }
 @media screen and (max-width: 1340px) {
+  	.header{
+      	padding-left: 7%;
+    }
   	.mv{
     	width: 93.5%;
     }
