@@ -179,11 +179,11 @@
     <!-- news -->
     <div class="content collection_descrption_filter_sort_row">
       <div class="collection_description">
-        {% if collection.handle == 'all' %}
+        {% unless collection.handle == 'all' %}
           <p>
             {{ collection.description }}
           </p>
-        {% endif %}
+        {% endunless %}
       </div>
       <div class="collection_filter_sort_row">
         <div class="collection_filter">
