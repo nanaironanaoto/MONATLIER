@@ -523,6 +523,11 @@ div.stamped-container[data-widget-style], div[data-widget-style] div.stamped-con
       	width: 95.5%;
     }
 }
+@media screen and (max-width: 1100px) {
+  	.mv{
+      	width: 100%;
+    }
+}
 @media screen and (max-width: 1024px) {
 	.top-header{
 		padding-left: 3.7%;
