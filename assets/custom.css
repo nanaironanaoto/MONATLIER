@@ -1022,7 +1022,8 @@ button#AddToCart- {
 }
 ul.boost-pfs-filter-item-swatch.boost-pfs-filter-item-swatch-option.boost-pfs-filter-item-swatch-shape-circle.boost-pfs-filter-item-swatch-type-color,
 ul.boost-pfs-filter-item-swatch.boost-pfs-filter-item-swatch-option.boost-pfs-filter-item-swatch-shape-circle.boost-pfs-filter-item-swatch-type-img,
-button.boost-pfs-addtocart-btn.boost-pfs-addtocart-select-options{
+button.boost-pfs-addtocart-btn.boost-pfs-addtocart-select-options,
+ul.boost-pfs-filter-item-swatch.boost-pfs-filter-item-swatch-option.boost-pfs-filter-item-swatch-shape-square.boost-pfs-filter-item-swatch-type-text{
     display: none;
 }
 .boost-pfs-filter-product-item-title .boost-pfs-filter-product-item-title-large {
