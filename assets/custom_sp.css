@@ -406,4 +406,7 @@
     .boost-pfs-filter-product-item-title p {
         margin-bottom: 7px;
     }
+    .boost-pfs-filter-mobile-toolbar-items {
+        border-bottom: none;
+    }
 }
