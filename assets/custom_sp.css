@@ -376,4 +376,7 @@
     .boost-pfs-container-default-box {
         padding: 0 24px;
     }
+    .boost-pfs-filter-product-item-grid.boost-pfs-filter-grid-width-mb-2 {
+        width: 100%;
+    }
 }
