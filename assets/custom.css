@@ -853,6 +853,7 @@ figure.image{
     margin: 0;
 }
 .variant-wrapper--dropdown {
+  	min-width: auto;
     display: flex;
   	align-items: center;
 }
