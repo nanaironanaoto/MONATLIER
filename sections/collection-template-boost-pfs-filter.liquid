@@ -359,13 +359,21 @@
 -%}
 
 <script> 
-  $(document).on('click', '.boost-pfs-filter-option-category .boost-pfs-filter-button', function() {
-    location.reload();
-  });
-
-  $(document).on('click', '.boost-pfs-filter-option-category .boost-pfs-filter-option-value', function() {
-      location.reload();
-  });
+$(window).on('load resize', function(){
+  var winW = $(window).width();
+  var devW = 767;
+  if (winW <= devW) {
+    //767px以下の時の処理
+	$(document).on('click', '.boost-pfs-filter-option-category .boost-pfs-filter-option-value', function() {
+        location.reload();
+    });
+  } else {
+    //768pxより大きい時の処理
+    $(document).on('click', '.boost-pfs-filter-option-category .boost-pfs-filter-button', function() {
+        location.reload();
+    });
+  }
+});
 </script>
 
 {% schema %}
