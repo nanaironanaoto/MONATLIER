@@ -28,6 +28,9 @@ a:hover{
 .carousel-main .carousel-cell img {
     width: 100%;
 }
+.carousel-nav{
+  margin-bottom:60px;
+}
 .carousel-nav .carousel-cell img {
     width: 96px;
 }
