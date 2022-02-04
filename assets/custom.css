@@ -25,8 +25,11 @@ a:hover{
 .sp{
 	display: none;
 }
-.carousel-cell img {
+.carousel-main .carousel-cell img {
     width: 100%;
+}
+.carousel-nav .carousel-cell img {
+
 }
 .content.mb-80px{
     margin-bottom: 80px;
