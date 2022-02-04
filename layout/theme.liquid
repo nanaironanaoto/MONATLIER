@@ -437,6 +437,15 @@ $(function(){
 <script async type="text/javascript" data-api-key="" id="stamped-script-widget" src="https://cdn-stamped-io.azureedge.net/files/widget.min.js"></script>
 <!-- Stamped - Begin Script (Reviews and UGCアプリ用追加コード)-->
   <style>
+    
+    .shopify-section.category{
+        {% if template == 'index' %}
+            margin-top: 0; 
+        {% else %}
+           margin-top: 120px;
+        {% endif %}
+    }
+    
     .stamped-review {
     background: none;
     padding: 0;
