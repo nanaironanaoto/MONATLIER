@@ -659,6 +659,9 @@ figure.image{
   .product-template .slide-navigation .item .image::before {
     padding-top: 0;
   }
+  .carousel-nav {
+      margin-bottom: 30px;
+  }
   .carousel-nav .carousel-cell img {
     width: 60px;
   }
