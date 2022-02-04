@@ -276,9 +276,15 @@ a:hover{
 .top_category span:last-of-type{
 	font-size: 14px;
 }
+{% if page.handle == 'frontpage' %}
+.shopify-section.category{
+     margin-top: 0; 
+}
+{% else %}
 .shopify-section.category{
      margin-top: 120px; 
 }
+{% endif %}
 .slide-navigation.slick-initialized.slick-slider {
     margin-top: 26px;
 }
