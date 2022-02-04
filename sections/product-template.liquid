@@ -61,39 +61,15 @@
 
       <!-- product_row左側 image -->
       <div>
-        <div class="slide-box">
-          <ul class="slide">
-            {% for image in product.images %}
-            <li><div data-image-id="{{ image.id }}" class="carousel-cell"><img src="{{ image.src | img_url: '900x' }}"></div></li>
-            {% endfor %}
-          </ul>
-          <div class="slide-navigation">
-            <div class="item">
-              <figure class="image">
-                {{ 'sample01.jpg' | asset_url | img_tag }}
-              </figure>
-            </div>
-            <div class="item">
-              <figure class="image">
-                {{ 'sample01.jpg' | asset_url | img_tag }}
-              </figure>
-            </div>
-            <div class="item">
-              <figure class="image">
-                {{ 'sample01.jpg' | asset_url | img_tag }}
-              </figure>
-            </div>
-            <div class="item">
-              <figure class="image">
-                {{ 'sample01.jpg' | asset_url | img_tag }}
-              </figure>
-            </div>
-            <div class="item">
-              <figure class="image">
-                {{ 'sample01.jpg' | asset_url | img_tag }}
-              </figure>
-            </div>
-          </div>
+        <div class="carousel carousel-main" data-flickity='{"pageDots": false }'>
+          {% for image in product.images %}
+            <div data-image-id="{{ image.id }}" class="carousel-cell"><img src="{{ image.src | img_url: '900x' }}"></div>
+          {% endfor %}
+        </div>
+        <div class="carousel carousel-nav" data-flickity='{ "asNavFor": ".carousel-main", "contain": true, "pageDots": false }'>
+          {% for image in product.images %}
+            <div data-image-id="{{ image.id }}" class="carousel-cell"><img src="{{ image | img_url: '150x' }}"></div>
+          {% endfor %}
         </div>
       </div>
 
