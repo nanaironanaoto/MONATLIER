@@ -25,6 +25,9 @@ a:hover{
 .sp{
 	display: none;
 }
+.carousel-cell img {
+    width: 100%;
+}
 .content.mb-80px{
     margin-bottom: 80px;
 }
