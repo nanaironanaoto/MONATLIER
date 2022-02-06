@@ -340,10 +340,15 @@ $(function(){
     });
   });
 });
+  
+$('.drawer.hamub-menu-btn').on('click', function() {
+  $('#hamb_menu_toggle_btn_pc').removeAttr("checked").prop("checked", false).change();
+  $('#hamb_menu_toggle_btn_sp').removeAttr("checked").prop("checked", false).change();
+});
 
-
+  
+  
 $(function(){
-
     var parent = $('.js-accordion-one');
   parent.each(function(){
   var self = $(this);
