@@ -23,7 +23,7 @@
 .page-width.narrow {
     padding: 0 10vw;
 }
-  
+
 .main-content{
     padding-top: 24vw !important;
 }
@@ -307,7 +307,7 @@ input:checked + .check-btn:after {
 }
 
 @media only screen and (max-width: 768px){
-    
+
 .template-product .sns-shares{
     margin: 23vw 0 30vw;
 }
@@ -333,28 +333,28 @@ input:checked + .check-btn:after {
 .cursor,.follower {
   border-radius: 50%;
   position: absolute;
-  pointer-events: none !important; 
+  pointer-events: none !important;
 }
- 
+
 .cursor {
   background-color: #000;
   posinter-events: none;
-  z-index: 1001; 
+  z-index: 1001;
 }
- 
+
 .follower {
   width: 11px;
   height: 11px;
   posinter-events: none;
   background-color: #d6b17d52;
-  z-indes: 1000; 
+  z-indes: 1000;
   transition: all 0.4s;
 }
 .follower.is-hover {
     transform: scale(7);
   posinter-events: none;
   background-color: #d6b17d52;
-  z-indes: 1000; 
+  z-indes: 1000;
 }
 @media screen and (max-width: 768px){
     .cursor, .follower{display: none;}
@@ -367,7 +367,7 @@ input:checked + .check-btn:after {
     overflow: hidden;
   margin:0;
 }
-    
+
 #CollectionSection-16106895859848283a{
     position: absolute;
     left:100%;}
@@ -421,7 +421,7 @@ input:checked + .check-btn:after {
 /*--コレクション：グリッド調整--*/
 .grid-product__meta{text-align: left; clear: both;}
 .grid-product__image-mask{
-    width:85%; 
+    width:85%;
     margin-right: 16px;
     display: inline-block;
     float: left;
@@ -472,7 +472,7 @@ input:checked + .check-btn:after {
     position: absolute;
     opacity: 1 !important;
     transform: scale(1.01);
-    
+
 }
 /*--------------------------------------------------------------------------商品画像ホバー時の画像拡大*/
 .grid-product__image{transition: transform 0.4s ease;}
@@ -518,7 +518,7 @@ input:checked + .check-btn:after {
 .grid-product__image-mask:hover .image-wrap:before{opacity: 1;}
 .grid-product__image-mask:hover .image-wrap:after{opacity: 0.8;}
 }
-  
+
 @media screen and (max-width: 768px){
 /*--商品グリッド調整--*/
 .grid--collection{
@@ -541,7 +541,7 @@ input:checked + .check-btn:after {
 /*--商品画像サイズ--*/
 .grid--collection .grid-product__image-mask{
     margin-right: 2.6vw;
-    width:90%; 
+    width:90%;
     display: inline-block;
     float: left;
 }
@@ -555,7 +555,7 @@ input:checked + .check-btn:after {
 .grid--collection .grid-product__price{
     letter-spacing: 0.2vw;
     font-size:3.1vw !important;}
-  
+
 }
 
 /*----------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -612,7 +612,7 @@ SLICKスライダー
 
 .top-product .grid-product{margin-bottom: 1.8vw;}
 .top-product .grid-product__image-mask{
-    width:86%; 
+    width:86%;
     margin-right: 16px;
     display: inline-block;
     float: left;
@@ -649,14 +649,14 @@ SLICKスライダー
     font-size: 10vw;
     letter-spacing: 0.8vw;
 }
-  
+
 #shopify-section-1609503358b9a1e66c span {
     letter-spacing: 0.14em;
 }
 .top-product .grid-product__image-mask {
     margin-right: 3.5vw;
 }
-  
+
 .top-product .grid-product{
     padding-left: 4vw;
 }
@@ -695,7 +695,7 @@ SLICKスライダー
     margin:0 auto;
     width: 100%;
     display: block;
-    
+
 }
 .arrow-link,.blog-main-text a{
     font-size:13px;
@@ -812,7 +812,7 @@ a.see-more.left.text-link{
 }
 
 @media only screen and (max-width: 768px){
-    
+
 a.see-more.text-link{
     width: 55vw;
     font-size: 6.5vw;
@@ -1043,7 +1043,6 @@ a.see-more.text-link{
 
 //右カラム
 .guide-wrap {
-  max-width: 940px;
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
@@ -1127,11 +1126,11 @@ a.see-more.text-link{
     padding-top: 3px;
     width: 64px;
     display: inline-block;}
-    
+
 .guide-wrap .shipping-flow p{
     width: 90%;}
-.guide-wrap .small-text{font-size:13px;}   
-    
+.guide-wrap .small-text{font-size:13px;}
+
 .shipping-cost th{width:30%;}
 
 
@@ -1169,11 +1168,11 @@ a.see-more.text-link{
     margin-bottom: 9vw;
     color:#939393;
 }
-.shoppingguide-menu-sp 
+.shoppingguide-menu-sp
 .shoppingguide-menu{
     padding: 6.5vw 0 6vw;
 }
-.shoppingguide-menu-sp 
+.shoppingguide-menu-sp
 .shoppingguide-menu-right h3{
     font-size: 4.8vw;
     letter-spacing: 1.4px;
@@ -1181,25 +1180,26 @@ a.see-more.text-link{
     margin-bottom: 0px;
     font-weight: 600;
 }
-.shoppingguide-menu-sp 
+.shoppingguide-menu-sp
 .shoppingguide-menu-left{
     font-size: 4vw;
     letter-spacing: 0.08em;
     position: relative;
     top:1vw;
 }
-.shoppingguide-menu-sp 
+.shoppingguide-menu-sp
 .shoppingguide-menu:after{
     width: 2vw;
     height: 2.8vw;
     top: 10vw;
  }
-    
+
 .guide-page{
     padding: 0 !important;
 }
 .guide-wrap{
     margin-bottom: 36vw;
+    display: block;
 }
 .page-content .guide-wrap h1 {
     font-size: 6.5vw;
@@ -1226,7 +1226,7 @@ a.see-more.text-link{
     line-height: 1.8;
 }
 .guide-wrap .guide-inner{
-    padding: 0 5vw; 
+    padding: 0;
     margin-bottom: 29.4vw ;
 }
 .guide-wrap .guide-inner:last-child{
@@ -1239,11 +1239,11 @@ a.see-more.text-link{
 .guide-wrap .main{
     width:100%;
     margin:0 auto;
-    padding:0 20px;
+    padding:0;
     margin-top: 14vw;
 }
 .guide-wrap .main img{width: 100%;}
-  
+
   .shopping-page-menu-wrap{
     margin-top: 10vw;
     margin-left: -5vw;
@@ -1262,7 +1262,7 @@ a.see-more.text-link{
     font-size: 2.7vw;
     letter-spacing: 0.08em;
     width: 91%;
-    
+
 }
 .shopping-page-menu a:after{
     content:"";
@@ -1335,7 +1335,7 @@ a.see-more.text-link{
 
 .guide-wrap .sidebar ul.open-accordion{
     display:block;}
-    
+
 .guide-wrap .sidebar svg{
     height: 8px;
     margin-right:3px;
@@ -1351,7 +1351,7 @@ a.see-more.text-link{
     transform: rotate(-180deg);
     margin: 20px -7px 0;
  }
-.widget--sticky {    
+.widget--sticky {
   	padding-top: 110px;
     margin-bottom: 20px;
     position: sticky;
@@ -1403,7 +1403,7 @@ a.see-more.text-link{
 }
 .service .grid{margin-left:-5px;}
 .service .grid__item{
-    padding:0 0 5px 5px; 
+    padding:0 0 5px 5px;
     position: relative;
     clear: inherit !important;
     margin-bottom: 0px;
@@ -1481,7 +1481,7 @@ a.see-more.text-link{
 .service .section-header {
     margin-bottom: 11vw;
 }
-  
+
 .service .section-header h2 {
     font-size: 12vw;
     letter-spacing: 0.07em;
@@ -1491,7 +1491,7 @@ a.see-more.text-link{
     font-size: 3.4vw !important;
     letter-spacing: 0.08em;
 }
-  
+
 .service { margin-bottom: 14vw;}
 .service .grid{margin-left: 0;}
 .service .grid__item{padding:0 0 2px 0; }
@@ -1534,7 +1534,7 @@ a.see-more.text-link{
     padding-right: 0;
     padding-left: 1px;
 }
-  
+
 }
 .service .see-more{
     display: block !important;
@@ -1560,12 +1560,12 @@ a.see-more.text-link{
   .template-collection .service{
     margin-bottom: 40vw;
     overflow: hidden;
-    
+
 }
 }
 /*---------------------------------------------------サービスページフッターナビ--*/
 .service-nav-wrap{
-  margin: 200px auto 0; 
+  margin: 200px auto 0;
   max-width:880px;
     margin: 200px auto 146px;
 }
@@ -1585,7 +1585,7 @@ a.see-more.text-link{
     line-height: 1.2;
     border-left:solid 1px #EEEEEE;
 	font-family: "TTDrugs-R" !important;
-	letter-spacing: 0.08em;  
+	letter-spacing: 0.08em;
 }
 .service-nav .left-nav{border:0px;}
 .service-nav span{
@@ -1594,12 +1594,12 @@ a.see-more.text-link{
     font-size: 12px;
 	font-family:  "游ゴシック体", YuGothic, "游ゴシック Medium", "Yu Gothic Medium", "游ゴシック", "Yu Gothic", sans-serif !important;
 	color: #939393;
-	letter-spacing: 0.09em;  
-  
+	letter-spacing: 0.09em;
+
 }
 .service-current, .service-current span{
     color:#c9c9c9;
-  
+
     pointer-events: none;
 }
 
@@ -1660,7 +1660,7 @@ a.see-more.text-link{
 }
 
 .contact-us .contuct-us-header h2{
-    text-align: left; 
+    text-align: left;
     position: relative;
     z-index: 1;
     font-size:55px !important;
@@ -1672,7 +1672,7 @@ a.see-more.text-link{
     color:#4B4B4B;
 }
 .contact-us p{
-    font-size:16px; 
+    font-size:16px;
     margin-bottom:50px;
     position: relative;
     z-index: 1;
@@ -1692,7 +1692,7 @@ a.see-more.text-link{
 lottie-player{
     opacity: 0;
     position: absolute;
-    transition:all 0.6s ease-out; 
+    transition:all 0.6s ease-out;
     pointer-events: none;
 }
 
@@ -1711,9 +1711,9 @@ lottie-player.scrollin {
 
 .lottie-01{
     right: -38vw;
-    height:  48vw !important;	
+    height:  48vw !important;
     margin-top: 7vw;
-    
+
 }
 .lottie-02{
     right: -5vw;
@@ -1728,7 +1728,7 @@ lottie-player.scrollin {
 lottie-player{
     opacity: 0;
     position: absolute;
-    transition:all 1s ease-out; 
+    transition:all 1s ease-out;
     pointer-events: none;
 }
 
@@ -1743,39 +1743,39 @@ lottie-player.scrollin {
 //工房について
 .lottie-05{
     left: -40vw;
-    height:  52vw !important;	
+    height:  52vw !important;
     margin-top: 40vw;
 }
 
 .lottie-06{
     right: -45vw;
-    height:  52vw !important;	
+    height:  52vw !important;
     margin-top: 10vw;
-    
+
 }
 .lottie-07{
     right: -40vw;
-    height:   60vw !important;	
+    height:   60vw !important;
     margin-top: 20vw;
 }
 //コンセプト
 .lottie-08{
     right: -40vw;
-    height:   60vw !important;	
+    height:   60vw !important;
     margin-top: 0vw;
 }
 .lottie-09{
     left: -58vw;
-    height:   60vw !important;	
+    height:   60vw !important;
     margin-top: 0vw;
-    
+
 }
 
 @media only screen and (max-width: 768px)
 {
   .contact-us .page-width{
     padding: 0 10vw
-} 
+}
 .contact-us .contuct-us-header  h2{
     font-size: 11.7vw!important;
     letter-spacing: 0.06em !important;
@@ -1798,7 +1798,7 @@ lottie-player.scrollin {
 
 .para-img{
     position: absolute;
-    transition:all 1s ease-out; 
+    transition:all 1s ease-out;
     pointer-events: none;
 }
 .para-img.is-1{
@@ -1856,7 +1856,7 @@ lottie-player.scrollin {
 }
 /*----------------------------------------------------------------------------------------------------------------モーダル--*/
 
-  
+
 body.is-modal-open{
     overflow-y: hidden;
     overflow-x: hidden;
@@ -1958,7 +1958,7 @@ a.ec-modal-close{
     margin-top: 90px;
     max-width: 930px;
 }
-.info-page h1{ 
+.info-page h1{
     font-size: 52px;
     letter-spacing: 2px;
   	font-family: "TTDrugs-R" !important;
@@ -1970,7 +1970,7 @@ a.ec-modal-close{
     color:#939393;
     margin-bottom: -21px;
 }
-.info-page h1.japanese{ 
+.info-page h1.japanese{
     font-size:30px;
     font-weight: 600;
     font-family:  "游ゴシック体", YuGothic, "游ゴシック Medium", "Yu Gothic Medium", "游ゴシック", "Yu Gothic", sans-serif !important;
@@ -2058,9 +2058,9 @@ a.ec-modal-close{
     margin-right: 2vw;
 }
 .info-page{
-    margin-top: 12.4vw !important; 
+    margin-top: 12.4vw !important;
     padding:0 10vw;
-    margin-bottom: 30vw !important; 
+    margin-bottom: 30vw !important;
 }
 .info-page .section-header {
     margin-bottom: 10vw;
@@ -2250,7 +2250,7 @@ a.ec-modal-close{
 .contact-product-right h2{
     font-size: 16px;
     letter-spacing: 0.06em;
-    margin-bottom: 10px;  
+    margin-bottom: 10px;
     line-height: 1.7;
 
 }
@@ -2427,7 +2427,7 @@ span.form-repuired{
 }
 //カスタムオーダー切替
 .page-contact .form-custom{
-    margin: 0 !important; 
+    margin: 0 !important;
 }
 .form-custom label,
 .form-custom select,
@@ -2446,12 +2446,12 @@ span.form-repuired{
 }
 
 @media screen and (max-width: 768px){
-    
+
 .form-custom.is-1 select,
 .form-custom textarea,{
     margin-bottom: 12vw;
 }
-    
+
 .page-contact .success-msg {
     padding: 5vw;
     margin-bottom: 10vw;
@@ -2460,7 +2460,7 @@ span.form-repuired{
     letter-spacing: 0.06em;
 
 }
-    
+
 }
 .contact-product img {
     opacity: 1 !important;
@@ -2564,14 +2564,14 @@ span.form-repuired{
 #customer_register_link{
     font-size: 13px;
     letter-spacing: 0.06em;
-    
+
 }
 @media screen and (max-width: 768px){
 
 .page-account{
     margin-bottom: 27.4vw;
     padding: 0 10vw;
-}    
+}
 #CustomerLoginForm{max-width: 100%;}
 #RecoverPasswordForm form{max-width: 100%;}
 
@@ -2646,7 +2646,7 @@ span.form-repuired{
 #RecoverPasswordForm p{
     font-size: 3.5vw;
     letter-spacing: 0.06em;
-    
+
 }
 //アカウント作成
 #customer_register_link{
@@ -2656,7 +2656,7 @@ span.form-repuired{
 
 //新規登録
 .page-account label.yugo{
-    font-family: "游ゴシック体", YuGothic, "游ゴシック Medium", "Yu Gothic Medium", "游ゴシック", "Yu Gothic", sans-serif; 
+    font-family: "游ゴシック体", YuGothic, "游ゴシック Medium", "Yu Gothic Medium", "游ゴシック", "Yu Gothic", sans-serif;
 }
 .page-account .section-header.register-header {
     margin-top: 74px;
@@ -2672,13 +2672,13 @@ span.form-repuired{
 }
 #create_customer{
     text-align: center;
-  
+
     width: 390px;
     margin: 0 auto;
 }
 
 @media screen and (max-width: 768px){
-    
+
 .page-account .section-header.register-header {
     margin-top: 12vw;
 }
@@ -2854,7 +2854,7 @@ span.form-repuired{
 .faq .service-nav a{
     font-size: 15px;
     letter-spacing: 0.04em;
-    font-family: "游ゴシック体", YuGothic, "游ゴシック Medium", "Yu Gothic Medium", "游ゴシック", "Yu Gothic", sans-serif; font-weight:500; 
+    font-family: "游ゴシック体", YuGothic, "游ゴシック Medium", "Yu Gothic Medium", "游ゴシック", "Yu Gothic", sans-serif; font-weight:500;
 }
 .faq .service-nav.bottom{
     margin: 140px 0 110px;
@@ -2949,7 +2949,7 @@ span.form-repuired{
     letter-spacing: 0.08em;
     margin-top: 2.4vw;
     margin-bottom: 8.6vw;
-}  
+}
 .faq .service-nav-half{
     margin-bottom:0 ;
 }
@@ -3065,7 +3065,7 @@ span.form-repuired{
     opacity: 0.7;
 }
 @media only screen and (max-width: 768px){
-    
+
 .my-page .medium-up--one-third{
     margin-top: 8vw;
     margin-bottom: 14vw;
@@ -3078,7 +3078,7 @@ span.form-repuired{
 .my-page p{
     font-size: 3.5vw;
     letter-spacing: 0.06em;
-    
+
 }
 .my-page td{
     padding: 3vw;
@@ -3142,14 +3142,14 @@ span.form-repuired{
 }
 
 @media screen and (max-width: 768px){
-    
+
 .address-page p{
     font-size: 3.8vw;
     letter-spacing: 0.06em;
 }
 .address-list-wrap label{
     font-size:3.5vw;
-}    
+}
 .page-account.address-page input,.page-account.address-page select{
     height: 10vw;
 }
@@ -3199,7 +3199,7 @@ span.form-repuired{
 
 //レビューを書く
 #admin-bar-iframe{
-    display:none !important; 
+    display:none !important;
 }
 //レビュー画像
 .stamped-proxy-write > div > div > a{
@@ -3247,7 +3247,7 @@ span.form-repuired{
     background-color: #F6F6F6;
     border: 0px;
     letter-spacing: 0.06em;
-    font-size: 14px;   
+    font-size: 14px;
     height: 57px;
     padding: 8px 24px;
 }
@@ -3255,7 +3255,7 @@ span.form-repuired{
     background-color: #F6F6F6;
     border: 0px;
     letter-spacing: 0.06em;
-    font-size: 14px;   
+    font-size: 14px;
     padding: 16px 24px;
 }
 //レビュー非表示
@@ -3329,7 +3329,7 @@ input.stamped-button{
 }
 .new-review-form{
     padding: 0 5vw !important;
-}    
+}
 .new-review-form input{
     height: 14vw;
     padding: 2vw 5vw;
