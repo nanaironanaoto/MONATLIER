@@ -117,9 +117,11 @@
                     <!--PC版 ハンバーガー-->
                     
                     <!--SP版 ハンバーガー-->
-                    <div class="sp-hamub-menu-btn sp hamub_menu_btn_sp">
-                      <span class="hamub-open">{% render 'svg-menu-button' %}</span>
-                      <span class="hamub-close">{% render 'svg-close-button' %} </span>
+                    <div class="hamub-menu-btn sp hamub_menu_btn_sp">
+                      <label for="hamb_menu_toggle_btn">
+                        {% render 'svg-close-button' %}
+                      </label>
+                      <input type="checkbox" id="hamb_menu_toggle_btn">
                     </div>
                     <!--SP版 ハンバーガー-->
                     
