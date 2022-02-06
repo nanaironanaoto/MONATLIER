@@ -107,14 +107,24 @@
                       </svg>
                     </a>
 
-                    <!--hamburger-->
-                    <div class="hamub-menu-btn">
+                    <!--PC版 ハンバーガー-->
+                    <div class="hamub-menu-btn pc">
                       <label for="hamb_menu_toggle_btn">
                         {% render 'svg-close-button' %}
                       </label>
                       <input type="checkbox" id="hamb_menu_toggle_btn">
                     </div>
-                  </div><!--.header-icons-->
+                    <!--PC版 ハンバーガー-->
+                    
+                    <!--SP版 ハンバーガー-->
+                    <div class="sp-hamub-menu-btn sp">
+                      <span class="hamub-open">{% render 'svg-menu-button' %}</span>
+                      <span class="hamub-close">{% render 'svg-close-button' %} </span>
+                    </div>
+                    <!--SP版 ハンバーガー-->
+                    
+                  </div>
+                  
 
                 </div>
                 
