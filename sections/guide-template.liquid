@@ -1,126 +1,108 @@
-  <div id="concept">
-    <!-- collection image -->
-    <div class="pc">
-      <div class="wide-content wide-content-image-position">
-        <div class="wide-content-image">
-          {{ 'concept_mv_pc.jpg' | asset_img_url: 'master' | img_tag }}
+<div class="page-width page-content pages guide-page">
+  
+<div class="guide-wrap">
+  <div class="sidebar pc">
+    <div class="widget widget--sticky">
+      <span class="sidebar-title">{{ 'general.site.shoppingguide' | t }}</span>
+      <div class="">
+        <div class="guid-nav">
+          <h3><a href="/pages/flow">{{ 'general.guide.flow' | t }}<span class=" arrow arrow-bottom {% if page.handle contains 'flow' %}active{% endif %}">{% render 'arrow-bottom' %}</span></a></h3>
+        <ul class="{% if page.handle contains 'flow' %}open-accordion{% endif %}">
+          <li>{% render 'arrow-svg' %}<a href="#order">{{ 'general.guide.order' | t }}</a></li>
+          <li>{% render 'arrow-svg' %}<a href="#shipping">{{ 'general.guide.shipping-date' | t }}</a></li>
+        </ul>
         </div>
+        <div class="guid-nav">
+          <h3 class=""><a href="/pages/payment">{{ 'general.guide.payment' | t }}<span class="arrow arrow-bottom {% if page.handle contains 'payment' %}active{% endif %}">{% render 'arrow-bottom' %}</span></a></h3>
+        <ul class="{% if page.handle contains 'payment' %}open-accordion{% endif %}">
+          <li>{% render 'arrow-svg' %}<a href="#card">{{ 'general.guide.card' | t }}</a></li>
+          <li>{% render 'arrow-svg' %}<a href="#yamato">{{ 'general.guide.yamato' | t }}</a></li>
+          <li>{% render 'arrow-svg' %}<a href="#bank">{{ 'general.guide.bank' | t }}</a></li>
+          <li>{% render 'arrow-svg' %}<a href="#paypay">{{ 'general.guide.paypay' | t }}</a></li>
+          <li>{% render 'arrow-svg' %}<a href="#paypal">{{ 'general.guide.paypal' | t }}</a></li>
+          <li>{% render 'arrow-svg' %}<a href="#invoice">{{ 'general.guide.invoice' | t }}</a></li>
+        </ul>
+        </div>
+        <div class="guid-nav">
+          <h3 class=""><a href="/pages/shipping">{{ 'general.guide.shipping' | t }}<span class="arrow arrow-bottom {% if page.handle contains 'shipping' %}active{% endif %}">{% render 'arrow-bottom' %}</span></a></h3>
+        <ul class="{% if page.handle contains 'shipping' %}open-accordion{% endif %}">
+          <li>{% render 'arrow-svg' %}<a href="#company">{{ 'general.guide.company' | t }}</a></li>
+          <li>{% render 'arrow-svg' %}<a href="#date">{{ 'general.guide.date' | t }}</a></li>
+          <li>{% render 'arrow-svg' %}<a href="#time">{{ 'general.guide.time' | t }}</a></li>
+          <li>{% render 'arrow-svg' %}<a href="#price">{{ 'general.guide.price' | t }}</a></li>
+          <li>{% render 'arrow-svg' %}<a href="#global">{{ 'general.guide.global' | t }}</a></li>
+          <li>{% render 'arrow-svg' %}<a href="#today">{{ 'general.guide.today' | t }}</a></li>
+        </ul>
+        </div>
+        <div class="guid-nav">
+          <h3 class=""><a href="/pages/returns">{{ 'general.guide.returns' | t }}<span class="arrow arrow-bottom {% if page.handle contains 'returns' %}active{% endif %}">{% render 'arrow-bottom' %}</span></a></h3>
+        <ul class="{% if page.handle contains 'returns' %}open-accordion{% endif %}">
+          <li>{% render 'arrow-svg' %}<a href="#info">{{ 'general.guide.info' | t }}</a></li>
+          <li>{% render 'arrow-svg' %}<a href="#cannot">{{ 'general.guide.cannot' | t }}</a></li>
+          <li>{% render 'arrow-svg' %}<a href="#aboutreturn">{{ 'general.guide.aboutreturn' | t }}</a></li>
+          <li>{% render 'arrow-svg' %}<a href="#aboutchange">{{ 'general.guide.aboutchange' | t }}</a></li>
+          <li>{% render 'arrow-svg' %}<a href="#defective">{{ 'general.guide.defective' | t }}</a></li>
+          <li>{% render 'arrow-svg' %}<a href="#refund">{{ 'general.guide.refund' | t }}</a></li>
+          <li>{% render 'arrow-svg' %}<a href="#cancel">{{ 'general.guide.cancel' | t }}</a></li>
+        </ul>
+        </div>
+
+              
       </div>
     </div>
-
-    <div class="sp">
-      <div class="wide-content wide-content-image-position">
-        <div class="wide-content-image">
-          {{ 'concept_mv_sp.jpg' | asset_img_url: 'master' | img_tag }}
-        </div>
+  </div>
+  <div class="main">
+    <h1 class="mobile">{{ page.title }}</h1>
+      <div class="rte--nomargin">
+        {{ page.content }}
       </div>
-    </div>
+  
+  </div>
+  
+  {% comment %}
+  {%- render 'breadcrumbs' -%}
+  {% endcomment %}
 
-    <!-- title -->
-    <div class="content">
-      <div class="title">
-        <h3><ls-static-862455>コンセプト</ls-static-862455></h3>
-        <p><ls-static-643477>CONCEPT</ls-static-643477></p>
-      </div>
-    </div>
+</div>
+</div>
+<div class="shoppingguide-menu-sp">
+  
+  <h2>{{ 'general.site.shoppingguide' | t }}</h2><span class="guide-subtitle">{{ 'general.guide.guide' | t }}</span>
+<div class="shoppingguide-menu-wrap"><a href="/pages/flow" class="shoppingguide-menu">
+<div class="shoppingguide-menu-left"><span>01</span></div>
+<div class="shoppingguide-menu-right {% if page.handle contains "flow"%}is-active{% endif %}">
+<h3>{{ 'general.guide.flow' | t }}</h3>
+</div>
+</a></div>
+<div class="shoppingguide-menu-wrap"><a href="/pages/payment" class="shoppingguide-menu">
+<div class="shoppingguide-menu-left"><span>02</span></div>
+<div class="shoppingguide-menu-right {% if page.handle contains "payment"%}is-active{% endif %}">
+<h3>{{ 'general.guide.payment' | t }}</h3>
+</div>
+</a></div>
+<div class="shoppingguide-menu-wrap"><a href="/pages/shipping" class="shoppingguide-menu">
+<div class="shoppingguide-menu-left"><span>03</span></div>
+<div class="shoppingguide-menu-right {% if page.handle contains "shipping"%}is-active{% endif %}">
+<h3>{{ 'general.guide.shipping' | t }}</h3>
+</div>
+</a></div>
+<div class="shoppingguide-menu-wrap"><a href="/pages/returns" class="shoppingguide-menu">
+<div class="shoppingguide-menu-left"><span>04</span></div>
+<div class="shoppingguide-menu-right {% if page.handle contains "returns"%}is-active{% endif %}">
+<h3>{{ 'general.guide.returns' | t }}</h3>
+</div>
+</a></div>
+</div>
 
-    <!--description-->
-    <div class="content mb-80px">
-      <div class="caption_lv1">
-        <h3><ls-static-735179>日本一のコストパフォーマンス</ls-static-735179></h3>
-      </div>
-      <p><ls-static-842276>「日本一のコストパフォーマンス」は</ls-static-842276><br>
-      <ls-static-195527>以下の３つの取り組みから生まれます。</ls-static-195527>
-      </p>
-    </div>
 
-    <!--description-->
-    <div class="content yu_gothic">
-      <div class="indent_lv1">
 
-        <div class="caption_lv2">
-          <h3><ls-static-772071>工房直販</ls-static-772071></h3>
-        </div>
-        <p><ls-static-168020>モナトリエでは日本とタイの直営工房にて製作、直接販売しています。</ls-static-168020><br>
-        <ls-static-621110>通常のジュエリー流通では中間メーカーや卸業者が介在しますが、モナトリエでは工房が直接販売しているため、品質と価格を高い次元で両立できています。</ls-static-621110>
-        </p>
 
-        <div class="caption_lv2">
-          <h3><ls-static-285537>ダイヤモンドは直輸入</ls-static-285537></h3>
-        </div>
-        <p><ls-static-251119>モナトリエではダイヤモンドを、中間業者、輸入業者を通さず、インドの大手研磨工場から直接、大量に購入することで、高いコストパフォーマンスを実現しています。</ls-static-251119>
-        </p>
 
-        <div class="caption_lv2">
-          <h3><ls-static-189578>ロット製作</ls-static-189578></h3>
-        </div>
-        <p><ls-static-613575>モナトリエでは割高になる単品の受注製作をせず、作業手順の同じ製品をロット製作することで製作コストと事務コストを必要最低限に抑制しています。また在庫を持つことで最短納期を可能にしています。</ls-static-613575>
-        </p>
+  	{% section 'FAQ-and-CONTACT' %}
+<div class="bread-pages">
+  <a href="{{ routes.root_url }}">{{ 'general.site.top' | t }}</a> <span>＞</span> <a href="/pages/shoppingguide">{{ 'general.site.shoppingguide' | t }}</a> <span>＞</span> {{ page.title}}
+</div>
 
-      </div>
-    </div>
 
-    <!-- wide image -->
-    <div class="pc">
-      <div class="content">
-        <div class="content_wide_image">
-          {{ 'concept_01_pc.jpg' | asset_img_url: 'master' | img_tag }}
-        </div>
-      </div>
-    </div>
 
-    <div class="sp">
-      <div class="content">
-        <div class="content_wide_image">
-          {{ 'concept_01_sp.jpg' | asset_img_url: 'master' | img_tag }}
-        </div>
-      </div>
-    </div>
 
-    <!-- policy -->
-    <div class="content">
-      <div class="column_col">
-        <div class="title">
-          <h3><ls-static-576200>ポリシー</ls-static-576200></h3>
-          <p><ls-static-774041>POLICY</ls-static-774041></p>
-        </div>
-        <div class="caption_lv1">
-          <h3><ls-static-233040>自分で買いたいと思うジュエリー</ls-static-233040></h3>
-          <p>
-            <ls-static-686842>私たちはジュエリー作りのプロフェッショナルだからこそ、ジュエリーに必要な品質はわかっていますし、削ってはいけないコストもわかっています。プロフェッショナルだからこそ、</ls-static-686842><br>
-            <ls-static-870046>自分では欲しくないものを販売することはできません。</ls-static-870046>
-          </p>
-        </div>
-      </div>
-    </div>
-
-    <!-- policy -->
-    <div class="content kodawari">
-      <div class="sp kodawari_image_sp">{{ 'concept_02_sp.jpg' | asset_img_url: 'master' | img_tag }}</div>
-      <div class="col01">
-        <h3 class="subtitle"><ls-static-722146>品質へのこだわり</ls-static-722146></h3>
-        <p class="mb-75px text-18px"><ls-static-211052>QUALITY</ls-static-211052></p>
-        <h3 class="mb-25px text-24px"><ls-static-478320>「品質」は「姿勢」から</ls-static-478320></h3>
-        <p>
-          <ls-static-179516>「品質」のためには職人の技術と経験が必要です。モナトリエの工房には、品質のための人材と経験が十分蓄積されています。しかし「品質」はそれだけで実現できることではありません。「品質」は、材料選別や原型製作、検品など関わるスタッフ全員の気持ちが「品質」に向いていて、はじめて実現できることなのです。</ls-static-179516><br>
-          <ls-static-624176>「品質」は技術ではなく「姿勢」が実現するのです。</ls-static-624176>
-        </p>
-      </div>
-      <div class="pc kodawari_image_pc">{{ 'concept_02_pc.jpg' | asset_img_url: 'master' | img_tag }}</div>
-    </div>
-
-  </div><!--#concept-->
-
-{% schema %}
-{
-    "name": "Main Menu",
-    "settings": [
-        {
-            "type": "link_list",
-            "id": "main_linklist",
-            "label": "Menu",
-            "default": "main-menu"
-        }
-    ]
-}
-  {% endschema %}
