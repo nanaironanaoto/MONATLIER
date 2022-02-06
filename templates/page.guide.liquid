@@ -1,0 +1,64 @@
+<div class="page-width page-content about-page">
+
+
+      <header class="section-header">
+        <h1 class="section-header__title">{{ page.metafields.custom_fields["subtitle"] }}</h1>
+          <div class="page-subtitle">
+            {{ page.title }}
+          </div>
+        {% if page.metafields.custom_fields["page_description"] != blank %}
+        <div class="page-description">
+            {{ page.metafields.custom_fields["page_description"] }}
+        </div>
+        {% endif %}
+      </header>
+
+<div class="rte--nomargin">
+
+        {{ page.content }}
+  
+  <div class="about-nav">
+    <a href="/pages/concept" class="about-nav-list is-1 {% if page.handle == "concept" %} is-active {% endif %}">
+      <span class="about-nav-title ">{{ 'general.pages.concept-en'|t  }}</span>
+      <span class="about-nav-japanese">{{ 'general.pages.brandconcept'|t  }}</span>
+    </a>
+    <a href="/pages/material" class="about-nav-list is-2 {% if page.handle == "material" %} is-active {% endif %}">
+      <span class="about-nav-title">{{ 'general.pages.material-en'|t  }}</span>
+      <span class="about-nav-japanese">{{ 'general.pages.material'|t  }}</span>
+    </a>
+    <a href="/pages/workshop" class="about-nav-list is-3 {% if page.handle == "workshop" %} is-active {% endif %}">
+      <span class="about-nav-title">{{ 'general.pages.workshop-en'|t  }}</span>
+      <span class="about-nav-japanese">{{ 'general.pages.workshop'|t  }}</span>
+    </a>
+      </div>
+    </div>
+<div class="bread-pages">
+  <a href="{{ routes.root_url }}">{{ 'general.site.top'|t  }}</a> <span>＞</span> <a href="/pages/shoppingguide">{{ 'general.site.about'|t  }}</a> <span>＞</span> {{ page.title}}
+</div>
+  
+  
+  <style>
+    {% if request.locale.name == "English" or  request.locale.name == "繁體中文" or  request.locale.name == "简体中文"%}  
+    ruby{display:none;}
+    {% endif %}
+    
+    {% if request.locale.name == "English" %}  
+    .japanese-name{ opacity: 0; margin-bottom: -10px !important; }
+    {% endif %}
+    
+  </style>
+  
+  
+  
+<script>
+// ブラウザサイズを自動で取得してiOS対策
+$(document).ready(function () {
+  var hSize = $(window).height();
+  $(".concept-header").height(hSize); // ブラウザの縦のサイズを取得
+});
+$(window).resize(function () { // ページをリサイズした時の処理
+  var hSize = $(window).height();
+  $(".concept-header").height(hSize); // ブラウザの縦のサイズを取得
+});
+  
+</script>
