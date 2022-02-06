@@ -3,7 +3,6 @@
     "shopping-guide": {
       "type": "shopping-guide",
       "settings": {
-        "main_linklist": "main-menu"
       }
     }
   },
