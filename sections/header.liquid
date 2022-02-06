@@ -174,10 +174,25 @@
               </div>
 
               <!--旧SP版ドロワー内アコーディオンメニュー-->{% render "sp-menu" %}
-              <div class="sns-icon-sp-footer">
-                <a href="https://www.instagram.com/monatelier_jewelry/" target="_blank">{% render "svg-insta" %} </a>
-                <a href="https://www.facebook.com/TATSUMI-SHIMADA-101693801852364" target="_blank">{% render "svg-face" %}</a>
+
+              <div class="social_row">
+                <a href="https://instagram.com/shopify">
+                  <div>
+                    {{ 'insta_icon.svg' | asset_url | img_tag }}
+                  </div>
+                </a>
+                <a href="https://www.facebook.com/shopify">
+                  <div>
+                    {{ 'facebook_icon.svg' | asset_url | img_tag }}
+                  </div>
+                </a>
+                <a href="https://twitter.com/MONATELIERjewel">
+                  <div>
+                    {{ 'twitter_icon.svg' | asset_url | img_tag }}
+                  </div>
+                </a>
               </div>
+              
             </div>
             <!-- SP版ドロワー -->
           </div>
