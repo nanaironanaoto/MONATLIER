@@ -327,46 +327,6 @@ $(function() {
   });
 });
 
-//--SP：ハンバーガーメニュークリックで展開
-
-$(function() {
-  $('.hamub-open').on('click' , function() {
-    $('.sp-hamub').fadeIn();
-    $('.sp-search-menu').fadeOut();
-    $('.site-header').addClass('header-white');
-    $('.sp-hamub-menu-btn').addClass('is-active');
-    $('.sp-hamub-search-btn').removeClass('is-active');
-    $('.sp-top').addClass('is-hide');
-  });
-});
-$(function() {
-  $('.hamub-close').on('click' , function() {
-    $('.sp-hamub').fadeOut(150);
-    $('.sp-search-menu').fadeOut(150);
-    $('.site-header').removeClass('header-white');
-    $('.sp-hamub-menu-btn').removeClass('is-active');
-    $('.sp-top').removeClass('is-hide');
-  });
-});
-$(function(){
-    $('.search-open').on('click' , function() {
-    $('.sp-search-menu').fadeIn();
-    $('.sp-hamub').fadeOut();
-    $('.site-header').addClass('header-white');
-    $('.sp-hamub-search-btn').addClass('is-active');
-    $('.sp-hamub-menu-btn').removeClass('is-active');
-    $('.sp-top').addClass('is-hide');
-  });
-});
-$(function() {
-  $('.search-close').on('click' , function() {
-    $('.sp-search-menu').fadeOut(150);
-    $('.sp-hamub').fadeOut(150);
-    $('.site-header').removeClass('header-white');
-    $('.sp-hamub-search-btn').removeClass('is-active');
-    $('.sp-top').removeClass('is-hide');
-  });
-});
 
 //--SP：メニュー内アコーディオンクリックで展開
 
@@ -399,17 +359,6 @@ $(function(){
     });
   });
 });
-
-
-//--PC：ハンバーガーメニュークリックで展開
-
-$(function(){
-  $('.hamub-menu-btn').on('click', function(){
-    $('.hamub-menu').toggleClass('is-active');
-
-  });
-});
-
 </script>
 
 
