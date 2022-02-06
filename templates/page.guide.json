@@ -1,0 +1,13 @@
+{
+  "sections": {
+    "guide-template": {
+      "type": "guide-template",
+      "settings": {
+        "main_linklist": "main-menu"
+      }
+    }
+  },
+  "order": [
+    "guide-template"
+  ]
+}
