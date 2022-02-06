@@ -119,28 +119,37 @@
                 </div>
                 
                 <!-- PC版ドロワー -->
-                <div class="hamub-right-middle">
-                  <div class="hamub-right-main">
-                    <ul>
-                      <li><a href="{{ collections.all.url }}">{{ 'general.site.jewerly' |t }}</a></li>
-                    <li><a href="{{ pages["concept"].url}}">{{ 'general.site.about' | t }}</a></li>
-                      <li><a href="{{ pages["service"].url}}">{{ 'general.site.service' | t }}</a></li>
-                      <li><a href="{{ blogs["post"].url}}">{{ 'general.site.column' | t }}</a></li>
-                    </ul>
+                <div class="hamub-menu">
+                  <div class="hamub-left"></div>
+                  <div class="hamub-right">
+                    <div class="hamub-right-top">
+                      {% render 'header-icon-list' %}
+                      <div class="hamub-menu-btn">{% render 'svg-close-button' %}</div>
+                    </div>
+                    <div class="hamub-right-middle">
+                      <div class="hamub-right-main">
+                        <ul>
+                          <li><a href="{{ collections.all.url }}">{{ 'general.site.jewerly' |t }}</a></li>
+                          <li><a href="{{ pages["concept"].url}}">{{ 'general.site.about' | t }}</a></li>
+                          <li><a href="{{ pages["service"].url}}">{{ 'general.site.service' | t }}</a></li>
+                          <li><a href="{{ blogs["post"].url}}">{{ 'general.site.column' | t }}</a></li>
+                        </ul>
+                      </div>
+                      <div class="hamub-right-sub">
+                        <ul>
+                          <li><a href="{{ pages["shoppingguide"].url}}">{{ 'general.site.shoppingguide' |t }}</a></li>
+                          <li><a href="{{ pages["faq"].url}}">{{ 'general.site.faq' |t }}</a></li>
+                          <li><a href="{{ pages["contact"].url}}">{{ 'general.site.contact' |t }}</a></li>
+                          <li><a href="{{ pages["company"].url}}">{{ 'general.site.company' |t }}</a></li>
+                        </ul>
+                        <a class="insta" href="https://www.instagram.com/monatelier_jewelry/" target="_blank">{% render 'svg-insta' %}</a>
+                        <a  class="face"  href="https://www.facebook.com/TATSUMI-SHIMADA-101693801852364" target="_blank">{% render 'svg-face' %}</a>
+                      </div>
+                    </div>
+                    <div class="hamub-right-bottom">
+                      {% render 'svg-logo-big' %}
+                    </div>
                   </div>
-                  <div class="hamub-right-sub">
-                    <ul>
-                      <li><a href="{{ pages["shoppingguide"].url}}">{{ 'general.site.shoppingguide' |t }}</a></li>
-                      <li><a href="{{ pages["faq"].url}}">{{ 'general.site.faq' |t }}</a></li>
-                      <li><a href="{{ pages["contact"].url}}">{{ 'general.site.contact' |t }}</a></li>
-                      <li><a href="{{ pages["company"].url}}">{{ 'general.site.company' |t }}</a></li>
-                    </ul>
-                    <a class="insta" href="https://www.instagram.com/monatelier_jewelry/" target="_blank">{% render 'svg-insta' %}</a>
-                    <a  class="face"  href="https://www.facebook.com/TATSUMI-SHIMADA-101693801852364" target="_blank">{% render 'svg-face' %}</a>
-                  </div>
-                </div>
-                <div class="hamub-right-bottom">
-                  {% render 'svg-logo-big' %}
                 </div>
                 <!-- PC版ドロワー -->
                 
