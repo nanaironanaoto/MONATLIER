@@ -634,6 +634,12 @@ a.select-lang{
     overflow-x: hidden;
     padding:0 10vw;
 }
+.hamb_menu_toggle_btn_sp:checked+.sp-hamub {
+  opacity: 1;
+  pointer-events: auto;
+}
+  
+  
 .sp-menu-multiple .hamub-main-sp ul{
     display: none;
 }
