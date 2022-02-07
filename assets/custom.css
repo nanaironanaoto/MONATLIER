@@ -719,6 +719,8 @@ figure.image{
     display: grid;
     grid-template-columns: 3fr 1fr;
     padding-bottom: 75px;
+    position: relative;
+    top: -50px;
 }
 .collection_right_area .content {
     min-width: 100%;
