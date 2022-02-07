@@ -29,6 +29,11 @@ a:hover{
 .sp{
 	display: none;
 }
+.boost-pfs-filter-button span {
+    display: block;
+    line-height: 1.5;
+    width: 155px;
+}
 .carousel-main .carousel-cell img {
     width: 100%;
 }
