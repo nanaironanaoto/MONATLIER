@@ -7,7 +7,6 @@
 	}
 	.content {
 	    padding: 0 30px;
-      	overflow: hidden;
     }
 	.mv {
 	    padding: 0 0 0 24px;
@@ -76,6 +75,14 @@
 	.btn_right a span:last-of-type {
 	    font-size: 12px;
 	}
+  	.hamub-right{
+      	width:100%;
+    }
+    #hamb_menu_toggle_btn_sp:checked+.sp-hamub {
+      opacity: 1;
+      display:block;
+      pointer-events: auto;
+    }
 	.top_category {
 		margin: 0 auto 50px;
 		grid-template-columns: 1fr;
@@ -186,7 +193,7 @@
 	.allright {
 	    font-size: 10px;
 	    text-align: center;
-        padding-bottom: 20px;
+        padding-bottom: 50px;
     }
 	.top-header .header-icons {
 	    padding-right: 0;
@@ -370,9 +377,6 @@
         display: grid;
         grid-template-columns: repeat(2, auto);
     }
-    .shopify-section.category{
-         margin-top: 120px; 
-    }
     .boost-pfs-container-default-box {
         padding: 0 24px;
     }
@@ -409,4 +413,15 @@
     .boost-pfs-filter-mobile-toolbar-items {
         border-bottom: none !important;
     }
+		.sg_section {
+				margin-bottom: 60px;
+		}
+		.guide-wrap .main h3 {
+				font-size: 16px;
+				margin-top: 45px;
+				margin-bottom: 15px;
+		}
+		.sg_sidenav_list svg {
+				margin-right: 15px;
+		}
 }

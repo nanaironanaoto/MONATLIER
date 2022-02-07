@@ -902,7 +902,6 @@ a.see-more.text-link{
     max-width: 700px;
     margin:  auto;
     border-top: solid 1px #EEEEEE;
-    border-bottom: solid 1px #EEEEEE;
     margin-top:-1px;
 }
 .shoppingguide-menu{
@@ -1019,6 +1018,9 @@ a.see-more.text-link{
 
 @media only screen and (max-width: 768px)
 {
+.shoppingguide-menu-wrap{
+    border-top: none;
+}
 #paypal img{
     float: none;
     width: 40vw;
@@ -1046,33 +1048,29 @@ a.see-more.text-link{
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
-  margin-bottom: 160px ;
 }
 .guide-wrap .guide-inner:last-child{
     margin-bottom: 0;
 }
 .guide-wrap .main {
-  	padding-top: 110px;
-    width: calc(100% - 247px);
-    padding-left: 120px;
+    width: calc(100% - 256px);
 }
 .guide-wrap .main {
     font-size: 14px;
-    letter-spacing: 1px;
 }
 .guide-wrap .main h3{
     font-size: 16px;
-    letter-spacing: 0.14em;
     margin-top:51px;
-    color:#4B4B4B;
+    color:#717171;
+    font-weight: bold;
 }
 
 .guide-wrap .main h2{
-  	margin-top:9px;
-    font-size:24px;
+  	margin-top: 0;
+    font-size:18px;
     font-weight: 600;
     color:#C8AB7A;
-    letter-spacing: 0.12em;
+    letter-spacing: 0;
     margin-bottom:28px;
 }
 .guide-wrap a.arrow-link{
@@ -1107,19 +1105,34 @@ a.see-more.text-link{
 .guide-wrap table{
     margin-bottom: 12px;
     margin-top: 24px;
+    background: none;
 }
 .guide-wrap ul{margin-left: 16px;}
 .guide-wrap .main li::marker{content:"・";}
 
-.guide-wrap table {table-layout: auto;}
+.guide-wrap table {
+    width: auto;
+    table-layout: auto;
+}
 .guide-wrap table tr{
     font-size:12px;
-    border: solid 1px #EEEEEE; }
+    border-bottom: solid 1px #F9F9F9;
+}
 .guide-wrap table th{
     font-weight: 400;
-    background: #F8F6F4;
+    background: #F9F9F9;
 }
-.guide-wrap table th, .pages table td{padding:14px;}
+.guide-wrap table td {
+    border-bottom: 1px solid #F9F9F9;
+}
+.guide-wrap table th{
+    padding:14px;
+    width: 123px;
+}
+.pages table td{
+    padding:14px;
+    width: 172px;
+}
 
 .guide-wrap .shipping-flow {display: flex;}
 .guide-wrap .shipping-flow span{
@@ -1137,8 +1150,7 @@ a.see-more.text-link{
 @media only screen and (max-width: 768px){
 
 .sp-one-table td ,.sp-one-table th{
-    width: 100%;
-    display: block;
+    width: auto;
 }
 .sp-one-table th{
   padding: 7px 14px !important;
@@ -1299,7 +1311,8 @@ a.see-more.text-link{
 }
 //サイドバー
 .guide-wrap .sidebar {
-    width: 247px;
+    width: 25%;
+    max-width: 256px;
 }
 .guid-nav{
     border-top: 1px solid #EEEEEE;
@@ -1327,18 +1340,16 @@ a.see-more.text-link{
     margin-bottom:8px;
 }
 .guide-wrap .sidebar ul{
-    display:none;
     margin-left:0px;
     margin-bottom: 0;
-    padding-bottom: 46px;
 }
 
 .guide-wrap .sidebar ul.open-accordion{
     display:block;}
 
 .guide-wrap .sidebar svg{
-    height: 8px;
-    margin-right:3px;
+    height: 16px;
+    margin-right: 15px;
 }
 
 .guide-wrap .sidebar .arrow{
@@ -1352,15 +1363,16 @@ a.see-more.text-link{
     margin: 20px -7px 0;
  }
 .widget--sticky {
-  	padding-top: 110px;
+    padding-top: 160px;
+    margin-top: -160px;
     margin-bottom: 20px;
     position: sticky;
-    top: 20px;
+    top: 0;
 }
 
 @media screen and (min-width: 769px){
 .guide-wrap .sidebar li svg{
-    position: absolute;
+
 }
 .guid-nav li a{
     position: relative;
@@ -1473,6 +1485,9 @@ a.see-more.text-link{
 
 @media only screen and (max-width: 768px)
 {
+.guide-wrap table th {
+    width: 110px;
+}
 #shopify-section-16090897165fb90f44{padding: 16vw 0 20vw;}
 .service .page-width{
     max-width: 100%;
