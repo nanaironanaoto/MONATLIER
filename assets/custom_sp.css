@@ -12,6 +12,9 @@
 	    padding: 0 0 0 24px;
 			margin-bottom: 15px;
     }
+    .collection_descrption_filter_sort_row {
+        top: 0;
+    }
 	.header{
 		height: 48px;
     padding-right: 24px;
