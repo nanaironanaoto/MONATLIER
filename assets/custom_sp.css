@@ -13,7 +13,8 @@
 			margin-bottom: 15px;
     }
     .collection_descrption_filter_sort_row {
-        top: 0;
+      top: 0;
+      margin-bottom: 0;
     }
 	.header{
 		height: 48px;
