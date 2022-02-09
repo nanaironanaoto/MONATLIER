@@ -522,7 +522,7 @@ input:checked + .check-btn:after {
 @media screen and (max-width: 768px){
 /*--商品グリッド調整--*/
 .grid--collection{
-    margin-left:-5vw !important;
+    0;
 }
 .grid--collection .grid-product{
   padding-left: 5vw;
