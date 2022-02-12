@@ -389,11 +389,7 @@ function parallax() {
 <script>
 $(".slick_mv").not('.slick-initialized').slick({});
   
-$("#slick_product_detail").not('.slick-initialized').slick({});
-  
-$("#thumbnail_slider").not('.slick-initialized').slick({});
-
-$(".slide").not('.slick-initialized').slick({
+$("#slick_product_detail").not('.slick-initialized').slick({
   asNavFor: ".slide-navigation",
   infinite: true,
   slidesToShow: 1,
@@ -402,7 +398,7 @@ $(".slide").not('.slick-initialized').slick({
   fade: true,
 });
 
-$(".slide-navigation").not('.slick-initialized').slick({
+$("#thumbnail_slider").not('.slick-initialized').slick({
   asNavFor: ".slide",
   centerMode: true,
   infinite: true,
