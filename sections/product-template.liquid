@@ -78,7 +78,7 @@
             background-color: #ddd;
             padding: 50px 0;
           }
-          #slider,#thumbnail_slider{
+          #slider__,#thumbnail_slider{
             width: 300px;
             margin: 0 auto 10px;
           }
@@ -94,7 +94,29 @@
             } 
           }
         </style>
-        
+		<script>
+          $(function(){
+           var mainSlider = "#slider__"; //メインスライダーid
+           var thumbnailSlider = "#thumbnail_slider"; //サムネイルスライダーid
+
+            $(mainSlider).slick({
+              autoplay: true,
+              speed: 1000,
+              arrows: false,
+              asNavFor: thumbnailSlider
+            });
+            $(thumbnailSlider).slick({
+              slidesToShow: 3,
+              speed: 1000,    
+              asNavFor: mainSlider
+            });
+            //#thumbnail_sliderでクリックしたスライドをカレントにする
+            $(thumbnailSlider+" .slick-slide").on('click',function(){
+              var index = $(this).attr("data-slick-index");
+              $(thumbnailSlider).slick("slickGoTo",index,false);
+            });
+          });
+        </script>
       </div>      
 
       <!-- product_row右側 info -->
