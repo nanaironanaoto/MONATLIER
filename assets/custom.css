@@ -834,7 +834,7 @@ figure.image{
 .about_diamond{
     display: flex;
     justify-content: space-between;
-    align-items: end;
+    align-items: center;
 }
 .about_diamond>div:nth-child(1) {
     width: 68%;
