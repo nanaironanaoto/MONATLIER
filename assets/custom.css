@@ -443,7 +443,9 @@ a:hover {
 .allright{
 	font-size: 14px;
 }
-
+.product_info_metal_stone_col4{
+  font-size:14px;
+}
 .product_row{
 	display: flex;
 	gap: 64px;
