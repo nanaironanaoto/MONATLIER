@@ -614,8 +614,12 @@ div.stamped-container[data-widget-style], div[data-widget-style] div.stamped-con
 .slide > .slick-list,
 .slide > .slick-list > .slick-track,
 .slide > .slick-list > .slick-track > .slick-slide > div {
-  position: relative;
-  height: 100%;
+    position: relative;
+    max-height: 980px;
+    display: flex;
+    align-items: center;
+    /* max-width: 76.5%; */
+    height: calc(1046px / 2);
 }
 
 /* slide-navigation */
