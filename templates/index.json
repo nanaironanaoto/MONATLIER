@@ -54,7 +54,7 @@
     "top_product": {
       "type": "top_product",
       "settings": {
-        "home_featured_products": "all",
+        "home_featured_products": "new",
         "productAmount": 6
       }
     },
