@@ -61,63 +61,20 @@
 
       <!-- product_row左側 image -->
       <div>
-        <div id="wrap__">
-          <ul id="slider__">
-            <li class="slide-item"><img src="https://takblog.site/wp-content/themes/takblog/assets/img/blanks/post19_1.jpg" alt="画像"></li>
-            <li class="slide-item"><img src="https://takblog.site/wp-content/themes/takblog/assets/img/blanks/post19_2.jpg" alt="画像"></li>
-            <li class="slide-item"><img src="https://takblog.site/wp-content/themes/takblog/assets/img/blanks/post19_3.jpg" alt="画像"></li>
-          </ul>
-          <ul id="thumbnail_slider">
-            <li class="thumbnail-item"><img src="https://takblog.site/wp-content/themes/takblog/assets/img/blanks/post19_1.jpg" alt="画像"></li>
-            <li class="thumbnail-item"><img src="https://takblog.site/wp-content/themes/takblog/assets/img/blanks/post19_2.jpg" alt="画像"></li>
-            <li class="thumbnail-item"><img src="https://takblog.site/wp-content/themes/takblog/assets/img/blanks/post19_3.jpg" alt="画像"></li>
-          </ul>
+        <div class="carousel carousel-main" data-flickity='{"pageDots": false }'>
+      		<ul class="slick-product slick_mv cssreset">
+              {% for image in product.images %}
+                <div data-image-id="{{ image.id }}" class="carousel-cell"><img src="{{ image.src | img_url: '523x' }}"></div>
+              {% endfor %}
+            </ul>
         </div>
-        <style>
-          #wrap__{
-            background-color: #ddd;
-            padding: 50px 0;
-          }
-          #slider__,#thumbnail_slider{
-            width: 300px;
-            margin: 0 auto 10px;
-          }
-          .slide-item{
-            img{
-              width: 100%;
-            }  
-          }
-          .thumbnail-item{
-            img{
-              width: 98%;
-              margin: 0 auto;
-            } 
-          }
-        </style>
-		<script>
-          $(function(){
-           var mainSlider = "#slider__"; //メインスライダーid
-           var thumbnailSlider = "#thumbnail_slider"; //サムネイルスライダーid
+        <div class="slick-slider carousel carousel-nav" data-flickity='{ "asNavFor": ".carousel-main", "contain": true, "pageDots": false }'>
+          {% for image in product.images %}
+            <div data-image-id="{{ image.id }}" class="carousel-cell"><img src="{{ image | img_url: '60x' }}"></div>
+          {% endfor %}
+        </div>
+      </div>
 
-            $(mainSlider).slick({
-              autoplay: true,
-              speed: 1000,
-              arrows: false,
-              asNavFor: thumbnailSlider
-            });
-            $(thumbnailSlider).slick({
-              slidesToShow: 3,
-              speed: 1000,    
-              asNavFor: mainSlider
-            });
-            //#thumbnail_sliderでクリックしたスライドをカレントにする
-            $(thumbnailSlider+" .slick-slide").on('click',function(){
-              var index = $(this).attr("data-slick-index");
-              $(thumbnailSlider).slick("slickGoTo",index,false);
-            });
-          });
-        </script>
-      </div>      
 
       <!-- product_row右側 info -->
       <div>
