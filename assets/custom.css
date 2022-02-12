@@ -852,9 +852,9 @@ figure.image{
 }
 .about_new_content02{
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    column-gap: 73px;
-    row-gap: 80px;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    column-gap: 26px;
+    row-gap: 62px;
     margin: 80px 0;
 }
 .about_jikin{
