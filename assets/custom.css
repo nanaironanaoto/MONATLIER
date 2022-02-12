@@ -621,6 +621,10 @@ div.stamped-container[data-widget-style], div[data-widget-style] div.stamped-con
     /* max-width: 76.5%; */
   height: calc(1046px / 2 - -173px);
 }
+.slick-slide img {
+    width: 100%;
+    object-fit: cover;
+}
 
 /* slide-navigation */
 .product-template .product-template .slide-navigation {
