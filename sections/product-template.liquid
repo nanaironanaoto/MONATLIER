@@ -68,7 +68,7 @@
           </li>
           {% endfor %}
         </ul>
-        <ul id="thumbnail_slider" class="slide-navigation carousel carousel-nav cssreset" data-flickity='{ "asNavFor": ".carousel-main", "contain": true, "pageDots": false }'>
+        <ul id="thumbnail_slider" class="slide-navigation carousel carousel-nav cssreset">
           {% for image in product.images %}
           <li class="thumbnail-item">
             <div data-image-id="{{ image.id }}" class="carousel-cell"><img src="{{ image | img_url: '245x' }}"></div>
