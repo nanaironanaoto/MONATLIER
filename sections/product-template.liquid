@@ -61,14 +61,14 @@
 
       <!-- product_row左側 image -->
       <div>
-        <ul id="slick_product_detail" class="cssreset">
+        <ul id="slick_product_detail" class="slide cssreset">
           {% for image in product.images %}
           <li class="slide-item">
             <div data-image-id="{{ image.id }}" class="carousel-cell"><img src="{{ image.src | img_url: '980x' }}"></div>
           </li>
           {% endfor %}
         </ul>
-        <ul id="thumbnail_slider" class="carousel carousel-nav" data-flickity='{ "asNavFor": ".carousel-main", "contain": true, "pageDots": false }'>
+        <ul id="thumbnail_slider" class="slide-navigation carousel carousel-nav cssreset" data-flickity='{ "asNavFor": ".carousel-main", "contain": true, "pageDots": false }'>
           {% for image in product.images %}
           <li class="thumbnail-item">
             <div data-image-id="{{ image.id }}" class="carousel-cell"><img src="{{ image | img_url: '245x' }}"></div>
@@ -77,24 +77,7 @@
         </ul>
       </div>
   <script>
-    $(function(){
-     var mainSlider = "#slick_product_detail"; //メインスライダーid
-     var thumbnailSlider = "#thumbnail_slider"; //サムネイルスライダーid
-     
-      $(mainSlider).slick({
-        arrows: false,
-        asNavFor: thumbnailSlider
-      });
-      $(thumbnailSlider).slick({
-        slidesToShow: 3,
-        asNavFor: mainSlider
-      });
-      //#thumbnail_sliderでクリックしたスライドをカレントにする
-      $(thumbnailSlider+" .slick-slide").on('click',function(){
-        var index = $(this).attr("data-slick-index");
-        $(thumbnailSlider).slick("slickGoTo",index,false);
-      });
-    });
+
   </script>
 
       <!-- product_row右側 info -->
