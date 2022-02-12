@@ -627,8 +627,8 @@
           "e33122d8-075d-4db3-ac12-65c9b11f2d86": {
             "type": "header",
             "settings": {
-              "content_image_pc": "shopify:\/\/shop_images\/content01pc.jpg",
-              "content_image_sp": "shopify:\/\/shop_images\/content01sp.jpg",
+              "content_image_pc": "shopify:\/\/shop_images\/content01pc_545e1d32-e27d-4b68-b347-6196cb79efeb.jpg",
+              "content_image_sp": "shopify:\/\/shop_images\/content01sp_74c25a48-31d1-430a-bfd6-e1cdbf5493ba.jpg",
               "content_text_jp": "品質基準",
               "content_text_en": "QUALITY",
               "content_link": "shopify:\/\/pages\/warranty"
@@ -637,8 +637,8 @@
           "38fc5fe8-d3fb-4464-b99b-ec5bb13a421b": {
             "type": "header",
             "settings": {
-              "content_image_pc": "shopify:\/\/shop_images\/content02pc.jpg",
-              "content_image_sp": "shopify:\/\/shop_images\/content02sp.jpg",
+              "content_image_pc": "shopify:\/\/shop_images\/content02pc_9e46bc8c-ed12-41d9-80ab-02791fff9fae.jpg",
+              "content_image_sp": "shopify:\/\/shop_images\/content02sp_ee58a433-ede1-44b4-8018-209318b8145f.jpg",
               "content_text_jp": "素材について",
               "content_text_en": "MATERIAL",
               "content_link": "shopify:\/\/pages\/material"
@@ -647,8 +647,8 @@
           "adc2867f-94fc-42d1-84a7-ea3a9ea313a2": {
             "type": "header",
             "settings": {
-              "content_image_pc": "shopify:\/\/shop_images\/content03pc.jpg",
-              "content_image_sp": "shopify:\/\/shop_images\/content03sp.jpg",
+              "content_image_pc": "shopify:\/\/shop_images\/content03pc_07645c14-0eb7-4b1f-a478-f5156f8236b4.jpg",
+              "content_image_sp": "shopify:\/\/shop_images\/content03sp_af74ff4d-f51d-4e2e-905e-7d24e52c4b21.jpg",
               "content_text_jp": "コンセプト",
               "content_text_en": "CONCEPT",
               "content_link": "shopify:\/\/pages\/concept"
@@ -657,8 +657,8 @@
           "0d69592a-9b0b-410c-a233-10a94877d416": {
             "type": "header",
             "settings": {
-              "content_image_pc": "shopify:\/\/shop_images\/content04pc.jpg",
-              "content_image_sp": "shopify:\/\/shop_images\/content04sp.jpg",
+              "content_image_pc": "shopify:\/\/shop_images\/content04pc_c945ff1f-7bd7-4768-a318-3e2de7280962.jpg",
+              "content_image_sp": "shopify:\/\/shop_images\/content04sp_4aa0b99b-8751-4fae-905c-03a958d297e7.jpg",
               "content_text_jp": "アフターサービス",
               "content_text_en": "SERVICE",
               "content_link": "shopify:\/\/pages\/service"
