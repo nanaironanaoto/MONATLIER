@@ -389,13 +389,13 @@ function parallax() {
 <script>
 $(".slick_mv").not('.slick-initialized').slick({});
 
-// $('.slider_product').not('.slick-initialized').slick({
-//   dots:true,
-//   customPaging: function(slick,index) {
-//     var targetImage = slick.$slides.eq(index).find('img').attr('src');
-//     return '<img src=" ' + targetImage + ' "/>';
-//   }
-// });
+$('"#slider__').not('.slick-initialized').slick({
+  dots:true,
+  customPaging: function(slick,index) {
+    var targetImage = slick.$slides.eq(index).find('img').attr('src');
+    return '<img src=" ' + targetImage + ' "/>';
+  }
+});
   
 $(".slide").not('.slick-initialized').slick({
   asNavFor: ".slide-navigation",
