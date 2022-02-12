@@ -928,10 +928,7 @@ div[data-widget-style*=standard] .stamped-review:first-child {
 .slick-list.draggable {
     padding: 0 !important;
 }
-.slick-slider .slick-track, .slick-slider .slick-list {
-    width: auto !important;
-    transform: none !important;
-}
+
 /*▼商品情報から「納期」を一斉削除してもらったら消すこと！*/
 .variant-wrapper--dropdown:nth-of-type(2) {
 /*     display: none; */
