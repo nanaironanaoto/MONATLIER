@@ -59,7 +59,7 @@
 							{% paginate search.results by 2 %}
 								{% if search.performed %}
 									{% for item in search.results %}
-										<div class="grid__item"></div>
+										<div class="grid__item" style="display: none !important"></div>
 									{% endfor %}
 								{% endif %}
 							{% endpaginate %}
