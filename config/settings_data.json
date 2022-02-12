@@ -657,8 +657,8 @@
           "0d69592a-9b0b-410c-a233-10a94877d416": {
             "type": "header",
             "settings": {
-              "content_image_pc": "shopify:\/\/shop_images\/content_bnr04.jpg",
-              "content_image_sp": "shopify:\/\/shop_images\/content_bnr04_square.jpg",
+              "content_image_pc": "shopify:\/\/shop_images\/content04pc.jpg",
+              "content_image_sp": "shopify:\/\/shop_images\/content04sp.jpg",
               "content_text_jp": "アフターサービス",
               "content_text_en": "SERVICE",
               "content_link": "shopify:\/\/pages\/service"
