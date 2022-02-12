@@ -862,10 +862,9 @@ div[data-widget-style*=standard] .stamped-tab-container {display: none !importan
 #stamped-sort-select {display: none !important;}
 
 .stamped-review{
-    clear: inherit !important;
+	clear: inherit!important;
     background: #F8F6F4;
-    padding: 70px 100px 40px  !important;
-    margin:0 60px  !important;
+    padding: 70px 0 40px!important;
     position: relative;
     font-family: "游ゴシック体", YuGothic, "游ゴシック Medium", "Yu Gothic Medium", "游ゴシック", "Yu Gothic", sans-serif;
 }
