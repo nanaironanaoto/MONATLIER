@@ -923,7 +923,7 @@ button#AddToCart- {
 }
 /*▼商品情報から「納期」を一斉削除してもらったら消すこと！*/
 .variant-wrapper--dropdown:nth-of-type(2) {
-    display: none;
+/*     display: none; */
 }
 /*▲商品情報から「納期」を一斉削除してもらったら消すこと！*/
 
