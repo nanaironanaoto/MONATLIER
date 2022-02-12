@@ -64,14 +64,14 @@
         <ul id="slick_product_detail" class="slide cssreset">
           {% for image in product.images %}
           <li class="slide-item">
-            <div data-image-id="{{ image.id }}" class="carousel-cell"><img src="{{ image.src | img_url: '980x' }}"></div>
+            <div data-image-id="{{ image.id }}"><img src="{{ image.src | img_url: '980x' }}"></div>
           </li>
           {% endfor %}
         </ul>
-        <ul id="thumbnail_slider" class="slide-navigation carousel carousel-nav cssreset">
+        <ul id="thumbnail_slider" class="slide-navigation cssreset">
           {% for image in product.images %}
           <li class="thumbnail-item">
-            <div data-image-id="{{ image.id }}" class="carousel-cell"><img src="{{ image | img_url: '245x' }}"></div>
+            <div data-image-id="{{ image.id }}"><img src="{{ image | img_url: '245x' }}"></div>
           </li>
           {% endfor %}
         </ul>
