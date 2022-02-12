@@ -448,6 +448,8 @@ a:hover {
 	display: flex;
 	gap: 64px;
   	margin-bottom:70px;
+    margin-left: auto;
+    margin-right: auto;
 }
 .product_row>div{
 	width: calc(50% - 32px);
