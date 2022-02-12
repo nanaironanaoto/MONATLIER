@@ -62,7 +62,7 @@
       <!-- product_row左側 image -->
       <div>
         <div class="carousel carousel-main" data-flickity='{"pageDots": false }'>
-      		<ul class="slick-product slick_mv cssreset">
+      		<ul class="slick-product cssreset">
               {% for image in product.images %}
                 <div data-image-id="{{ image.id }}" class="carousel-cell"><img src="{{ image.src | img_url: '523x' }}"></div>
               {% endfor %}
