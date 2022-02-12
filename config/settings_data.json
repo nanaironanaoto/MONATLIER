@@ -647,8 +647,8 @@
           "adc2867f-94fc-42d1-84a7-ea3a9ea313a2": {
             "type": "header",
             "settings": {
-              "content_image_pc": "shopify:\/\/shop_images\/content_bnr03.jpg",
-              "content_image_sp": "shopify:\/\/shop_images\/content_bnr03_square.jpg",
+              "content_image_pc": "shopify:\/\/shop_images\/content03pc.jpg",
+              "content_image_sp": "shopify:\/\/shop_images\/content03sp.jpg",
               "content_text_jp": "コンセプト",
               "content_text_en": "CONCEPT",
               "content_link": "shopify:\/\/pages\/concept"
