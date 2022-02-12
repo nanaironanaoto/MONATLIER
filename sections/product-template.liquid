@@ -61,12 +61,12 @@
 
       <!-- product_row左側 image -->
       <div>
-        <div class="carousel carousel-main" data-flickity='{"pageDots": false }'>
+        <div class="slick-slider carousel carousel-main" data-flickity='{"pageDots": false }'>
           {% for image in product.images %}
             <div data-image-id="{{ image.id }}" class="carousel-cell"><img src="{{ image.src | img_url: '523x' }}"></div>
           {% endfor %}
         </div>
-        <div class="carousel carousel-nav" data-flickity='{ "asNavFor": ".carousel-main", "contain": true, "pageDots": false }'>
+        <div class="slick-slider carousel carousel-nav" data-flickity='{ "asNavFor": ".carousel-main", "contain": true, "pageDots": false }'>
           {% for image in product.images %}
             <div data-image-id="{{ image.id }}" class="carousel-cell"><img src="{{ image | img_url: '60x' }}"></div>
           {% endfor %}
