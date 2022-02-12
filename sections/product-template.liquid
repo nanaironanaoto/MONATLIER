@@ -61,19 +61,18 @@
 
       <!-- product_row左側 image -->
       <div>
-      		<ul class="slick_product_detail cssreset">
-              {% for image in product.images %}
-              	<li>
-                  <div data-image-id="{{ image.id }}" class="carousel-cell"><img src="{{ image.src | img_url: '523x' }}"></div>
-              	</li>
-              {% endfor %}
-            </ul>
-
+        <ul class="slick_product_detail cssreset">
+          {% for image in product.images %}
+          <li>
+            <div data-image-id="{{ image.id }}" class="carousel-cell"><img src="{{ image.src | img_url: '980x' }}"></div>
+          </li>
+          {% endfor %}
+        </ul>
         <ul class="slick_product_detail carousel carousel-nav" data-flickity='{ "asNavFor": ".carousel-main", "contain": true, "pageDots": false }'>
           {% for image in product.images %}
-          	<li>
-              <div data-image-id="{{ image.id }}" class="carousel-cell"><img src="{{ image | img_url: '60x' }}"></div>
-          	</li>
+          <li>
+            <div data-image-id="{{ image.id }}" class="carousel-cell"><img src="{{ image | img_url: '245x' }}"></div>
+          </li>
           {% endfor %}
         </ul>
       </div>
