@@ -2,7 +2,7 @@
   {%- assign search_btn_style = 'btn' -%}
 {%- endunless -%}
 
-<div>
+<div class="header_bar_sp">
   <form action="https://monatelier-jewelry.com/collections/new?q=" method="get" class="input-group search-bar {{ search_bar_location }}" role="search">
     <input type="hidden" name="type" value="{{ settings.search_type }}">
     <input type="search" name="q" value="{{ search.terms | escape | replace: '*', '' }}" placeholder="{{ 'general.search.placeholder' | t }}" class="input-group-field" aria-label="{{ 'general.search.placeholder' | t }}">
