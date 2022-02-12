@@ -9,18 +9,10 @@
             "mv_image_pc": "shopify:\/\/shop_images\/top_mv01pc_0d439771-4149-4b73-842e-d6e6fb048c4b.jpg",
             "mv_image_sp": "shopify:\/\/shop_images\/top_mv01sp_dfc1b5cb-f613-4407-ab8a-9d2a7c535275.jpg"
           }
-        },
-        "46552444-2f78-40ca-ace3-5c49721e3d0a": {
-          "type": "header",
-          "settings": {
-            "mv_image_pc": "shopify:\/\/shop_images\/mv_pc01.jpg",
-            "mv_image_sp": "shopify:\/\/shop_images\/mv_sp01.jpg"
-          }
         }
       },
       "block_order": [
-        "b96c6446-29e7-4689-9c7f-364a38dca920",
-        "46552444-2f78-40ca-ace3-5c49721e3d0a"
+        "b96c6446-29e7-4689-9c7f-364a38dca920"
       ],
       "settings": {
       }
