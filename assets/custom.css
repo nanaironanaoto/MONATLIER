@@ -1024,14 +1024,14 @@ div[data-widget-style*=standard] .stamped-review:first-child {
         flex-direction: column;
         gap: 25px;
     }
-    .about_link_nav>a>div {
+    .about_link_nav>div {
         display: inline-block;
         border-bottom: 1px solid #C8AB7A;
     }
-    .about_link_nav>a>div h3{
+    .about_link_nav>div h3{
         font-size:14px;
     }
-    .about_link_nav>a>div p{
+    .about_link_nav>div p{
         font-size:12px;
     }
     .about_diamond>div:nth-child(1) {
