@@ -390,37 +390,15 @@ $(function(){
   });
 });
   
-$(window).on('load resize', function(){
-  var winW = $(window).width();
-  var devW = 767;
-  if (winW <= devW) {
-    //767px以下の時の処理
-    //スムーススクロール
-    $(function(){
-      $('a[href^="#"]').click(function(){
-        var headsize = 64;
-        var speed = 800;
-        var href= $(this).attr("href");
-        var target = $(href == "#" || href == "" ? 'html' : href);
-        var position = target.offset().top-headsize;
-        $("html, body").animate({scrollTop:position}, speed, "swing");
-        return false;
-      });
-    });
+$(window).on('load resize', function() {
+  //ウィンドウサイズを取得する
+  var w = $(window).width();
+  //ウィンドウサイズが768より大きい場合の処理
+  if( w > 768 ) {
+    console.log('ウィンドウサイズは768より大きいです。');
+  //ウィンドウサイズが768以下の場合の処理
   } else {
-    //768pxより大きい時の処理
-    //スムーススクロール
-    $(function(){
-      $('a[href^="#"]').click(function(){
-        var headsize = 150;
-        var speed = 800;
-        var href= $(this).attr("href");
-        var target = $(href == "#" || href == "" ? 'html' : href);
-        var position = target.offset().top-headsize;
-        $("html, body").animate({scrollTop:position}, speed, "swing");
-        return false;
-      });
-    });
+    console.log('ウィンドウサイズは768以下です。');
   }
 });
 
