@@ -832,11 +832,11 @@ figure.image{
     display: flex;
     column-gap:40px;
 }
-.about_link_nav>div{
+.about_link_nav>a>div{
     display: inline-block;
     border-bottom: 1px solid #C8AB7A;
 }
-.about_link_nav>div *{
+.about_link_nav>a>div *{
     display: inline-block;
     margin-right: 10px;
 }
