@@ -815,7 +815,7 @@ figure.image{
     margin-bottom: 35px;
 }
 .kodawari .kodawari_image_pc, .kodawari .kodawari_image_pc *{
-    max-width: max-content;
+/*     max-width: max-content; */
 }
 .caption_lv1 h3{
     font-size: 24px;
