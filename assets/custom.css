@@ -818,6 +818,9 @@ figure.image{
 .kodawari .kodawari_image_pc, .kodawari .kodawari_image_pc *{
 /*     max-width: max-content; */
 }
+.bc-al-style4 .boost-pfs-action-list-wrapper .boost-pfs-quickview-btn {
+    display: none !important;
+}
 .caption_lv1 h3{
     font-size: 24px;
     margin-bottom: 34px;
