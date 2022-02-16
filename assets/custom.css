@@ -788,6 +788,7 @@ figure.image{
     background: rgb(228 228 228 / 23%);
     display: flex;
     justify-content: space-between;
+	max-width: 1046px;
 }
 .kodawari .col01{
     padding: 65px 85px;
