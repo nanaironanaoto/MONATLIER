@@ -239,16 +239,19 @@
   </div>
 
   <!-- title -->
+  {%if product.metafields.stamped.reviews %}
   <div class="content">
     <div class="title">
       <h3><ls-static-847163>レビュー</ls-static-847163></h3>
       <p><ls-static-249989>REVIEW</ls-static-249989></p>
     </div>
   </div>
+  {% endif %}
 
   <!-- review -->
   <div class="content">
     
+    {%if product.metafields.stamped.reviews %}
     <!--Stamped - Begin Main Widget -->
     <div 
          id="stamped-main-widget"   
@@ -260,9 +263,10 @@
          data-product-sku="{{product.handle}}"
          data-product-title="{{product.title}}" 
          data-product-type="{{product.type}}">   
-      {{product.metafields.stamped.reviews}}   
+      {{product.metafields.stamped.reviews}}
     </div>
     <!-- Stamped - End Main Widget -->
+    {% endif %}
     
     <div class="throw_line"></div>
   </div>
