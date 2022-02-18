@@ -83,7 +83,7 @@
       <!-- product_row右側 info -->
       <div>
       	<div>         
-          <!--地金,石-->
+          <!--地金,石-->         
           {% if product.metafields.custom_fields["metal"] != blank %}
               <span>{{ product.metafields.custom_fields["metal"] }}</span>
           {% endif %}
@@ -205,18 +205,22 @@
   </div>
 
   <!-- title -->
+  {% if product.metafields.custom_fields["feature1-2"] != blank %}
   <div class="content">
     <div class="title">
       <h3><ls-static-143281>おすすめポイント</ls-static-143281></h3>
       <p><ls-static-796241>POINTS</ls-static-796241></p>
     </div>
   </div>
-
+  {% endif %}
+  
   <!-- point_description -->
   <div class="content">
+    {% if product.metafields.custom_fields["feature1-2"] != blank %}
     <p class="point_description">
-      {{ product.description }}
+		<span>{{ product.metafields.custom_fields["feature1-2"] }}</span>         	
     </p>
+  	{% endif %}  
     
     <!--SP時・バリエーション選択&カートボタン・お気に入り追加ボタンここにもうひとつ-->
     <div class="sp">
