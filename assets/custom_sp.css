@@ -75,7 +75,7 @@
       	margin-bottom:200px;
     }
     .boost-pfs-filter-products {
-        padding-top: 200px;
+        margin-top: 0 !important;
     }
     .grid-product__image {
         object-fit: cover;
