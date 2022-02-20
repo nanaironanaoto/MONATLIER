@@ -248,6 +248,7 @@ a:hover{
 }
 .newitem .product p.product_info_metal_stone{
 	font-size: 14px;
+  	line-hight:0.5;
 }
 .newitem .product p{
 	line-height: 1;
