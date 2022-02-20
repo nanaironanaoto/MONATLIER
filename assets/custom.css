@@ -26,6 +26,15 @@ a:hover{
 #infiniteoptions-container {
     margin-bottom: 40px;
 }
+.grid-product__image {
+    object-fit: cover;
+    object-position: center;
+    height: 100%;
+}
+.grid-product__image-mask {
+    width: 100%;
+    height: calc(25vw - 32px);
+}
 @media screen and (max-width: 764px) {
     p {
         line-height: 1.5;
