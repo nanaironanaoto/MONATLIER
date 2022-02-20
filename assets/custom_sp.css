@@ -306,6 +306,7 @@
 	.collection_descrption_filter_sort_row{
 	    display: block;
 	    padding-bottom: 30px;
+      	margin-bottom: 200px;
 	}
 	.collection_filter_sort_row{
 		display: grid;
