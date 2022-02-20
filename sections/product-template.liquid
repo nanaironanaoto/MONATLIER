@@ -141,13 +141,10 @@
             $('#modal_bg').addClass('modal_display');
           });
 
-          $('#modal_bg.modal_display').on('click', function() {
+          $('#test').on('click', function() {
             window.alert("クリックされました");
           });
          
-          $('#modal_close_btn').on('click', function() {
-            window.alert("クリックされました");
-          });          
         </script>
         <style>
           #modal_bg{
@@ -199,6 +196,7 @@
         </style>
         <div id="modal_bg">
           <div id="modal_wrapper">
+            <p id="#test">test</p>
             指輪のサイズ表
             <style type="text/css">
               .tg  {border-collapse:collapse;border-spacing:0;}
