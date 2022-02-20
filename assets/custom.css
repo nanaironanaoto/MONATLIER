@@ -23,6 +23,9 @@ a:hover{
     display: inline-block !important;
     width: 100% !important;
 }
+#infiniteoptions-container {
+    margin-bottom: 40px;
+}
 @media screen and (max-width: 764px) {
     p {
         line-height: 1.5;
