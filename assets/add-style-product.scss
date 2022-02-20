@@ -616,13 +616,13 @@ div.orbittour-views_wrapper .orbittour-thumbnail:focus{
 } */
 
 
-.giftwrapping-select span label:nth-child(1):before{
+.giftwrapping-select span label:nth-child(1):after{
     content:"PACKING";
 }
-.giftwrapping-select span label:nth-child(2):before{
+.giftwrapping-select span label:nth-child(2):after{
     content:"GIFT WRAPPING";
 }
-.giftwrapping-select span label:nth-child(3):before{
+.giftwrapping-select span label:nth-child(3):after{
     content:"SPECIAL GIFT WRAPPING";
 }
 
