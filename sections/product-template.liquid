@@ -141,6 +141,11 @@
             $('#modal_bg').addClass('modal_display');
           });
 
+          $(document).on('click', '#modal_close_btn', function(){
+            window,alert("効いた！");
+          });
+
+          
           $('#modal_close_btn').on('click', function() {
             window.alert("クリックされました");
             $('html').css('overflow','auto');
