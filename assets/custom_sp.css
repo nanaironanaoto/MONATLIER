@@ -66,6 +66,10 @@
 	.title p {
 	    font-size: 12px;
     }
+    .boost-pfs-filter-products {
+      padding-top:0px;
+      margin-top:0px;
+    }
     .grid-product__image {
         object-fit: cover;
         object-position: center;
