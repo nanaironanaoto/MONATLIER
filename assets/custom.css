@@ -33,7 +33,7 @@ a:hover{
 }
 .grid-product__image-mask {
     width: 100%;
-    height: calc(25vw - 32px);
+    height: 19;
 }
 @media screen and (max-width: 764px) {
     p {
