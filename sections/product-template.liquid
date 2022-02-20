@@ -127,13 +127,35 @@
         <div class="product_question">
           {% if product.type == "リング" %}
           <!--リングサイズ表-->
-          	<a href="/pages/contact?id={{ product.handle }}" style="line-height: 3;">リングサイズ表</a>
+          	<a id="ringSizeTable" href="/pages/contact?id={{ product.handle }}" style="line-height: 3;">リングサイズ表</a>
           	<br>
           {% endif %}
           <a href="/pages/contact?id={{ product.handle }}">この商品について問い合わせる</a>
         </div>
         
         <!--リングサイズ表モーダル-->
+        <script>
+          var textarea = document.querySelector('textarea');
+          textarea.scrollTop = 1;
+
+          window.addEventListener('touchmove', function(event) {
+            if (event.target === textarea && textarea.scrollTop !== 0 && textarea.scrollTop + textarea.clientHeight !== textarea.scrollHeight) {
+              event.stopPropagation();
+            }
+            else {
+              event.preventDefault();
+            }
+          });
+
+          textarea.addEventListener('scroll', function(event) {
+            if (textarea.scrollTop === 0) {
+              textarea.scrollTop = 1;
+            }
+            else if (textarea.scrollTop + textarea.clientHeight === textarea.scrollHeight) {
+              textarea.scrollTop = textarea.scrollTop - 1;
+            }
+          });
+        </script>
         <div style="
             position: absolute;
             background: #00000094;
