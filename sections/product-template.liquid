@@ -139,9 +139,8 @@
             window.alert("クリックされました");
             $('html').css('overflow','hidden');
             $('body').css('overflow','hidden');
+            $('#modal_bg').addClass('modal_display');
           });
-
-          
           
           var ringSizeTable = document.querySelector('#ringSizeTable');
           ringSizeTable.scrollTop = 1;
@@ -164,7 +163,16 @@
             }
           });
         </script>
-        <div style="
+        <style>
+          #modal_bg{
+          	display:none;  
+          }
+          #modal_bg.modal_display{
+            display:block;
+          }
+        </style>
+        <div id="modal_bg"
+             style="
             position: absolute;
             background: #00000094;
             width: 100vw;
