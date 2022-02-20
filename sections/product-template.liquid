@@ -128,6 +128,13 @@
           <a href="/pages/contact?id={{ product.handle }}">この商品について問い合わせる</a>
         </div>
 
+        {% if product.type == "リング" %}
+        <!--リングサイズ表-->
+        <div class="product_question">
+          <a href="/pages/contact?id={{ product.handle }}">サイズ表</a>
+        </div>
+       	{% endif %}
+        
         <!--説明テキスト-->
         <div class="product_description_text">
           {{ product.description }}
