@@ -66,6 +66,11 @@
 	.title p {
 	    font-size: 12px;
     }
+    .grid-product__image {
+        object-fit: cover;
+        object-position: center;
+        height: 100%;
+    }
     .grid-product__image-mask {
         width: 100%;
         height: calc(50vw - 32px);
