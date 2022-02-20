@@ -68,7 +68,7 @@
     }
     .boost-pfs-filter-products {
       padding-top:200px;
-      margin-top:-200px;
+      margin-top:-400px;
     }
     .boost-pfs-filter-right-col {
         position: relative;
@@ -302,11 +302,6 @@
 	/*collection*/
 	.collection_row {
 	    display: block;
-	}
-	.collection_descrption_filter_sort_row{
-	    display: block;
-	    padding-bottom: 30px;
-      	margin-bottom: 200px;
 	}
 	.collection_filter_sort_row{
 		display: grid;
