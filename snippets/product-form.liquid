@@ -1,205 +1,64 @@
-{%- capture form_id -%}AddToCartForm-{{ section_id }}{%- endcapture -%}
-{%- form 'product', product, id: form_id, class: 'product-single__form' -%}
-  {%- unless product.has_only_default_variant -%}
-    {%- for option in product.options_with_values -%}
-      {%- liquid
-        if settings.product_color_swatches
-          assign is_color = false
-          assign color_option_index = 0
-          assign swatch_trigger = 'products.general.color_swatch_trigger' | t | downcase
-          assign color_option_index = forloop.index0
-          assign downcased_option = option.name | downcase
-          if downcased_option contains swatch_trigger
-            assign is_color = true
-          elsif swatch_trigger == 'color' and downcased_option contains 'colour'
-            assign is_color = true
+<div class="product_form_wrapper">
+
+  {%- capture form_id -%}AddToCartForm-{{ section_id }}{%- endcapture -%}
+  {%- form 'product', product, id: form_id, class: 'product-single__form' -%}
+    {%- unless product.has_only_default_variant -%}
+      {%- for option in product.options_with_values -%}
+        {%- liquid
+          if settings.product_color_swatches
+            assign is_color = false
+            assign color_option_index = 0
+            assign swatch_trigger = 'products.general.color_swatch_trigger' | t | downcase
+            assign color_option_index = forloop.index0
+            assign downcased_option = option.name | downcase
+            if downcased_option contains swatch_trigger
+              assign is_color = true
+            elsif swatch_trigger == 'color' and downcased_option contains 'colour'
+              assign is_color = true
+            endif
           endif
-        endif
-      -%}
-
-      {%- if settings.variant_type == 'button' -%}
-        {%- render 'variant-button',
-          section_id: section_id,
-          option: option,
-          forloop: forloop,
-          is_color: is_color,
-          color_option_index: color_option_index
         -%}
-      {%- else -%}
-        {%- render 'variant-dropdown',
-          section_id: section_id,
-          option: option,
-          forloop: forloop
-        -%}
-      {%- endif -%}
-    {%- endfor -%}
-  {%- endunless -%}
 
-  <select name="id" id="ProductSelect-{{ section_id }}" class="product-single__variants no-js">
-    {%- for variant in product.variants -%}
-      {%- if variant.available -%}
-        <option {% if variant == product.selected_or_first_available_variant %}
-          selected="selected"{% endif %}
-          value="{{ variant.id }}">
-          {{ variant.title }} - {{ variant.price | money_with_currency }}
-        </option>
-      {%- else -%}
-        <option disabled="disabled">
-          {{ variant.title }} - {{ 'products.product.sold_out' | t }}
-        </option>
-      {%- endif -%}
-    {%- endfor -%}
-  </select>
-
-  {%- if settings.quantity_enable -%}
-    <div class="product__quantity product__quantity--{{ settings.variant_type }}">
-      <label for="Quantity-{{ section_id }}">{{ 'products.product.quantity' | t }}</label>
-      {%- render 'quantity-input', id: section_id, qty: 1, min: 1 -%}
-    </div>
-  {%- endif -%}
-
-			<div class="product-info-wrapper">
-              <div class="product-info">
-				<h2 class="h3 product-ad product-accordion">{{ 'general.product.detail_en' | t }}<span>{{ 'general.product.detail' | t }}</span><span class="arrow arrow-bottom">{% render 'arrow-bottom' %}</span></h2>
-				<ul class="list">
-                  <li class="list__item"><p>{{ product.description }}</p></li>
-				</ul>
-                {% if product.type == "リング" or product.type == "ネックレス" %}
-				<h2 class="h3 product-ad product-accordion" >{{ 'general.product.info_en' | t }}<span>{{ 'general.product.info' | t }}</span><span class="arrow arrow-bottom">{% render 'arrow-bottom' %}</span></h2>
-				<ul class=" list">
-  					<li class="list__item">
-						<table>
-                {% if product.metafields.custom_fields["size"] != blank %}
-                <tr>
-                <th>{{ 'general.product.size' | t }}</th>
-                <td>{{ product.metafields.custom_fields["size"] }}</td>
-                </tr>
-                {% endif %}
-                {% if product.metafields.custom_fields["length"] != blank %}
-                <tr>
-                <th>{{ 'general.product.length' | t }}</th>
-                <td>{{ product.metafields.custom_fields["length"] }}</td>
-                </tr>
-                {% endif %}
-                {% if product.metafields.custom_fields["metal"] != blank %}
-                <tr>
-                <th>{{ 'general.product.metal' | t }}</th>
-                <td>{{ product.metafields.custom_fields["metal"] }}</td>
-                </tr>
-                {% endif %}
-                {% if product.metafields.custom_fields["arm"] != blank %}
-                <tr>
-                <th>{{ 'general.product.arm' | t }}</th>
-                <td>{{ product.metafields.custom_fields["arm"] }}</td>
-                </tr>
-                {% endif %}
-                {% if product.metafields.custom_fields["topsize"] != blank %}
-                <tr>
-                <th>{{ 'general.product.topsize' | t }}</th>
-                <td>{{ product.metafields.custom_fields["topsize"] }}</td>
-                </tr>
-                {% endif %}
-                {% if product.metafields.custom_fields["motif"] != blank %}
-                <tr>
-                <th>{{ 'general.product.motif' | t }}</th>
-                <td>{{ product.metafields.custom_fields["motif"] }}</td>
-                </tr>
-                {% endif %}
-                {% if product.metafields.custom_fields["chain"] != blank %}
-                <tr>
-                <th>{{ 'general.product.chain' | t }}</th>
-                <td>{{ product.metafields.custom_fields["chain"] }}
-				<a class="ec-modal-open ring-size-modal is-2" href="" data-target="modal02">？</a></td>
-                </tr>
-                {% endif %}
-                {% if product.metafields.custom_fields["stone"] != blank %}
-                <tr>
-                <th>{{ 'general.product.stone' | t }}</th>
-                <td>{{ product.metafields.custom_fields["stone"] }}</td>
-                </tr>
-                {% endif %}
-                {% if product.metafields.custom_fields["weight"] != blank %}
-                <tr>
-                <th>{{ 'general.product.weight' | t }}</th>
-                <td>{{ product.metafields.custom_fields["weight"] }}</td>
-                </tr>
-                {% endif %}
-                </table>
-					</li>
-				</ul> 
-                {% else %}
-                {% endif %}
-                {% if product.type == "リング" or product.type == "ネックレス" %}
-				<h2 class="h3 product-ad product-accordion" >{{ 'general.product.wrapping_en' | t }}<span>{{ 'general.product.wrapping' | t }}</span><span class="arrow arrow-bottom">{% render 'arrow-bottom' %}</span></h2>
-				<ul class="list">
-  					<li class="list__item">
-              			<div id = "infiniteoptions-container"></div>
-                  </li>
-  				</ul>   
-                {% else %}
-                {% endif %}
-              </div>
-            </div>
-
-  {%- assign inventory_visible = false -%}
-  {%- if settings.inventory_enable and current_variant.inventory_management == 'shopify' -%}
-    {%- if current_variant.inventory_quantity <= settings.inventory_threshold and current_variant.inventory_quantity >= 0 -%}
-      {%- assign inventory_visible = true -%}
-    {%- endif -%}
-  {%- endif -%}
-
-  {%- liquid
-    if current_variant.inventory_quantity == 0 or current_variant.inventory_policy == 'continue'
-      assign inventory_visible = false
-    endif
-
-    assign show_incoming = false
-    if current_variant.incoming and inventory_visible == false and current_variant.inventory_quantity <= settings.inventory_threshold
-      assign show_incoming = true
-    endif
-  -%}
-
-  {%- if settings.inventory_enable -%}
-    <div
-      id="ProductInventory-{{ section_id }}"
-      class="product__inventory{% unless inventory_visible %} hide{% endunless %}"
-		>
-      {%- if current_variant.available -%}
-        {{ 'products.product.stock_label' | t: count: current_variant.inventory_quantity }}
-			
-      {%- endif -%}
-    </div>
-  {%- endif -%}
-
-  {%- if settings.inventory_transfers_enable -%}
-    <div
-      id="ProductIncomingInventory-{{ section_id }}"
-      class="product__inventory{% if inventory_visible %} hide{% endif %}">
-      {%- if show_incoming == true -%}
-        {%- if current_variant.next_incoming_date -%}
-          {%- assign date = current_variant.next_incoming_date | date: format: 'date' -%}
-          {%- if current_variant.available -%}
-            {{ 'products.product.will_not_ship_until' | t: date: date }}
-          {%- else -%}
-            {{ 'products.product.will_be_in_stock_after' | t: date: date }}
-          {%- endif -%}
+        {%- if settings.variant_type == 'button' -%}
+          {%- render 'variant-button',
+            section_id: section_id,
+            option: option,
+            forloop: forloop,
+            is_color: is_color,
+            color_option_index: color_option_index
+          -%}
         {%- else -%}
-          {{ 'products.product.waiting_for_stock' | t }}
+          {%- render 'variant-dropdown',
+            section_id: section_id,
+            option: option,
+            forloop: forloop
+          -%}
         {%- endif -%}
-      {%- endif -%}
-    </div>
-  {%- endif -%}
+      {%- endfor -%}
+    {%- endunless -%}
 
-  {%- liquid
-    assign enable_dynamic_buttons = false
-    if settings.enable_payment_button and template != 'product.preorder'
-      assign enable_dynamic_buttons = true
-    endif
-  -%}
+    <select name="id" id="ProductSelect-{{ section_id }}" class="product-single__variants no-js">
+      {%- for variant in product.variants -%}
+        {%- if variant.available -%}
+          <option {% if variant == product.selected_or_first_available_variant %}
+            selected="selected"{% endif %}
+            value="{{ variant.id }}">
+            {{ variant.title }} - {{ variant.price | money_with_currency }}
+          </option>
+        {%- else -%}
+          <option disabled="disabled">
+            {{ variant.title }} - {{ 'products.product.sold_out' | t }}
+          </option>
+        {%- endif -%}
+      {%- endfor -%}
+    </select>
 
-  {%- if enable_dynamic_buttons -%}
-    <div class="payment-buttons">
-  {%- endif -%}
+    {% comment %}{%- if settings.quantity_enable -%}
+      <div class="product__quantity product__quantity--{{ settings.variant_type }}">
+        <label for="Quantity-{{ section_id }}">{{ 'products.product.quantity' | t }}</label>
+        {%- render 'quantity-input', id: section_id, qty: 1, min: 1 -%}
+      </div>
+    {%- endif -%}{% endcomment %}
 
     {%- liquid
       assign default_text = 'products.product.add_to_cart' | t
@@ -212,8 +71,7 @@
         assign button_text = 'products.product.sold_out' | t
       endunless
     -%}
-
-
+    
     <button
       {% if product.empty? %}type="button"{% else %}type="submit"{% endif %}
       name="add"
@@ -230,16 +88,19 @@
       {{ form | payment_button }}
     {%- endif -%}
 
-  {%- if enable_dynamic_buttons -%}
-    </div>
-  {%- endif -%}
+    {%- if enable_dynamic_buttons -%}
+      </div>
+    {%- endif -%}
 
-  <textarea id="VariantsJson-{{ section_id }}" class="hide" aria-hidden="true" aria-label="Product JSON">
-    {{ product.variants | json }}
-  </textarea>
-  {%- if product.options.size > 1 -%}
-    <textarea id="CurrentVariantJson-{{ section_id }}" class="hide" aria-hidden="true" aria-label="Variant JSON">
-      {{ current_variant | json }}
+    <textarea id="VariantsJson-{{ section_id }}" class="hide" aria-hidden="true" aria-label="Product JSON">
+      {{ product.variants | json }}
     </textarea>
-  {%- endif -%}
-{%- endform -%}
+
+    {%- if product.options.size > 1 -%}
+      <textarea id="CurrentVariantJson-{{ section_id }}" class="hide" aria-hidden="true" aria-label="Variant JSON">
+        {{ current_variant | json }}
+      </textarea>
+    {%- endif -%}
+
+  {%- endform -%}
+</div>
