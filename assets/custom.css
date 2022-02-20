@@ -32,6 +32,9 @@ a:hover{
     width: 100%;
     height: 19vw;
 }
+.boost-pfs-filter-wrapper {
+  
+}
 @media screen and (max-width: 764px) {
     p {
         line-height: 1.5;
