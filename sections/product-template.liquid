@@ -107,11 +107,13 @@
 
         <!--バリエーション選択&カートボタン・お気に入り追加ボタン-->
         <div class="btn_row">
+          <div class="product_form_wrapper">
           {%- render 'product-form',
             section_id: section_id,
             product: product,
             current_variant: current_variant
           -%}
+          </div>
         </div>
 
         <!--この商品について問い合わせる-->
