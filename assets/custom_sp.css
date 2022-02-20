@@ -74,9 +74,6 @@
         position: relative;
       	margin-bottom:200px;
     }
-    .boost-pfs-filter-products {
-        margin-top: 0 !important;
-    }
     .grid-product__image {
         object-fit: cover;
         object-position: center;
