@@ -23,9 +23,6 @@ a:hover{
     display: inline-block !important;
     width: 100% !important;
 }
-#infiniteoptions-container {
-    margin-bottom: 40px;
-}
 .grid-product__image {
     object-fit: cover;
     object-position: center;
