@@ -141,12 +141,10 @@
             $('#modal_bg').addClass('modal_display');
           });
 
-          $('#modal_bg.modal_display').on('click', function() {
+          $('modal_bg.modal_display').on('click', function() {
             window.alert("クリックされました");
-            $('html').css('overflow','auto');
-            $('body').css('overflow','auto');            
-            $('#modal_bg').removeClass('modal_display');
           });
+         
         </script>
         <style>
           #modal_bg{
