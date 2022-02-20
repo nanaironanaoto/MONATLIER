@@ -1,4 +1,4 @@
-<div class="product_form_wrapper">
+
   {%- capture form_id -%}AddToCartForm-{{ section_id }}{%- endcapture -%}
   {%- form 'product', product, id: form_id, class: 'product-single__form' -%}
     {%- unless product.has_only_default_variant -%}
@@ -161,4 +161,3 @@
       </textarea>
     {%- endif -%}
   {%- endform -%}
-</div>
