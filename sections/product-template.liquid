@@ -142,23 +142,17 @@
           });
 
           $(document).on('click', '#modal_close_btn', function(){
-            window,alert("効いた！");
+            $('html').css('overflow','auto');
+            $('body').css('overflow','auto');            
+            $('#modal_bg').removeClass('modal_display');
           });
 
-          
-          $('#modal_close_btn').on('click', function() {
-            window.alert("クリックされました");
+          $(document).on('click', '#modal_bg.modal_display', function(){
             $('html').css('overflow','auto');
             $('body').css('overflow','auto');            
             $('#modal_bg').removeClass('modal_display');
           });
           
-          $('#modal_bg.modal_display').on('click', function() {
-            window.alert("クリックされました");
-            $('html').css('overflow','auto');
-            $('body').css('overflow','auto');            
-            $('#modal_bg').removeClass('modal_display');
-          });
         </script>
         <style>
           #modal_bg{
