@@ -127,7 +127,7 @@
         <div class="product_question">
           {% if product.type == "リング" %}
           <!--リングサイズ表-->
-          	<a id="ringSizeTable" href="/pages/contact?id={{ product.handle }}" style="line-height: 3;">リングサイズ表</a>
+          	<a id="ringSizeTable" style="line-height: 3;">リングサイズ表</a>
           	<br>
           {% endif %}
           <a href="/pages/contact?id={{ product.handle }}">この商品について問い合わせる</a>
@@ -135,6 +135,12 @@
         
         <!--リングサイズ表モーダル-->
         <script>
+          $('#ringSizeTable').on('click', function() {
+            window.alert("クリックされました");
+          });
+
+          
+          
           var ringSizeTable = document.querySelector('#ringSizeTable');
           ringSizeTable.scrollTop = 1;
 
