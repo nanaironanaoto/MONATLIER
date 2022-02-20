@@ -136,32 +136,16 @@
         <!--リングサイズ表モーダル-->
         <script>
           $('#ringSizeTable').on('click', function() {
-            window.alert("クリックされました");
             $('html').css('overflow','hidden');
             $('body').css('overflow','hidden');
             $('#modal_bg').addClass('modal_display');
           });
-          
-          var ringSizeTable = document.querySelector('#ringSizeTable');
-          ringSizeTable.scrollTop = 1;
 
-          window.addEventListener('touchmove', function(event) {
-            if (event.target === ringSizeTable && ringSizeTable.scrollTop !== 0 && ringSizeTable.scrollTop + ringSizeTable.clientHeight !== ringSizeTable.scrollHeight) {
-              event.stopPropagation();
-            }
-            else {
-              event.preventDefault();
-            }
-          });
-
-          ringSizeTable.addEventListener('scroll', function(event) {
-            if (ringSizeTable.scrollTop === 0) {
-              ringSizeTable.scrollTop = 1;
-            }
-            else if (ringSizeTable.scrollTop + ringSizeTable.clientHeight === ringSizeTable.scrollHeight) {
-              ringSizeTable.scrollTop = ringSizeTable.scrollTop - 1;
-            }
-          });
+          $('#ringSizeTable').on('click', function() {
+            $('html').css('overflow','auto');
+            $('body').css('overflow','auto');            
+            $('#modal_bg').removeClass('modal_display');
+          }
         </script>
         <style>
           #modal_bg{
