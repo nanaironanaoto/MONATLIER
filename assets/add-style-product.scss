@@ -602,27 +602,30 @@ div.orbittour-views_wrapper .orbittour-thumbnail:focus{
     right: 0;
     top:0;
 }
-.giftwrapping-select span label:nth-child(1):after{
-    background-image: url('https://cdn.shopify.com/s/files/1/0268/1202/2962/files/850_6366_2x_49fd5e7c-3a12-4339-9296-d3aa13f1aca1.jpg?v=1615943909');
-}
 
-.giftwrapping-select span label:nth-child(2){
-  display:none;
-}
-.giftwrapping-select span label:nth-child(3):after{
+.giftwrapping-select span label:nth-child(1):after{
     background-image: url('https://cdn.shopify.com/s/files/1/0268/1202/2962/files/2x_cc27d3d6-cc8c-4372-a503-bb40cd59e94c.jpg?v=1615943909');
 }
 
+.giftwrapping-select span label:nth-child(2):after{
+    background-image: url('https://cdn.shopify.com/s/files/1/0268/1202/2962/files/850_6366_2x_49fd5e7c-3a12-4339-9296-d3aa13f1aca1.jpg?v=1615943909');
+}
+
+/* .giftwrapping-select span label:nth-child(2){
+  display:none;
+} */
+
 
 .giftwrapping-select span label:nth-child(1):before{
+    content:"PACKING";
+}
+.giftwrapping-select span label:nth-child(2):before{
     content:"GIFT WRAPPING";
 }
 .giftwrapping-select span label:nth-child(2):before{
     content:"SPECIAL GIFT WRAPPING";
 }
-.giftwrapping-select span label:nth-child(3):before{
-    content:"PACKING";
-}
+
 
 //ギフト価格表示
 .giftwrapping-select span label input:after{
@@ -633,11 +636,12 @@ div.orbittour-views_wrapper .orbittour-thumbnail:focus{
     font-size: 14px;
 }
 
-.giftwrapping-select span label:nth-child(3) input:after{
+/* .giftwrapping-select span label:nth-child(3) input:after{
     width: 300px;
     font-size:11px;
     color:red;
-}
+} */
+
 //ギフト：ラジオボタン
 .giftwrapping-select input[type=radio] {
     margin: 0 20px 0 0;
