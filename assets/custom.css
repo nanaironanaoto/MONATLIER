@@ -930,9 +930,9 @@ button#AddToCart- {
 .add-to-cart svg {
     display: none;
 }
-.product_form_wrapper form {
+form#AddToCartForm- {
     display: flex;
-  	align-items: center;
+    align-items: center;
 }
 div[data-widget-style*=standard] .stamped-review:first-child {
     margin: auto !important;
