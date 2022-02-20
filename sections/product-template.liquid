@@ -165,14 +165,7 @@
         </script>
         <style>
           #modal_bg{
-          	display:none;  
-          }
-          #modal_bg.modal_display{
-            display:block;
-          }
-        </style>
-        <div id="modal_bg"
-             style="
+          	display:none;
             position: fixed;
             background: #00000094;
             width: 100vw;
@@ -180,8 +173,11 @@
             top: 0;
             left: 0;
             z-index: 2;
-        ">
-            <div style="
+          }
+          #modal_bg.modal_display{
+            display:block;
+          }
+          #modal_wrapper{
             position: relative;
             top: 0;
             left: 0;
@@ -192,7 +188,15 @@
             padding: 40px;
             overflow: scroll;
             height: calc(100vh - 50px);
-        ">
+            -ms-overflow-style: none;    /* IE, Edge 対応 */
+            scrollbar-width: none;       /* Firefox 対応 */
+          }
+			#modal_wrapper::-webkit-scrollbar{
+              display:none;
+            }
+        </style>
+        <div id="modal_bg">
+            <div id="modal_wrapper">
             指輪のサイズ表
             <style type="text/css">
             .tg  {border-collapse:collapse;border-spacing:0;}
