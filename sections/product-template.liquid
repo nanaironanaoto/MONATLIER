@@ -136,13 +136,24 @@
         <!--リングサイズ表モーダル-->
         <script>
           $('#ringSizeTable').on('click', function() {
+            $('html').css('overflow','hidden');
+            $('body').css('overflow','hidden');
             $('#modal_bg').addClass('modal_display');
           });
 
-          $('#test').on('click', function() {
+          $('modal_bg.modal_display').on('click', function() {
             window.alert("クリックされました");
+            $('html').css('overflow','hidden');
+            $('body').css('overflow','hidden');
+            $('#modal_bg').addClass('modal_display');
           });
-         
+          
+          $('#modal_bg.modal_display').on('click', function() {
+            window.alert("クリックされました");
+            $('html').css('overflow','auto');
+            $('body').css('overflow','auto');            
+            $('#modal_bg').removeClass('modal_display');
+          });
         </script>
         <style>
           #modal_bg{
@@ -194,7 +205,6 @@
         </style>
         <div id="modal_bg">
           <div id="modal_wrapper">
-            <p id="test">test</p>
             指輪のサイズ表
             <style type="text/css">
               .tg  {border-collapse:collapse;border-spacing:0;}
