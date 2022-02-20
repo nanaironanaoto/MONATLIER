@@ -32,7 +32,7 @@ a:hover{
     width: 100%;
     height: 19vw;
 }
-.boost-pfs-filter-wrapper {
+.boost-pfs-filter-wrapper,.boost-pfs-container-default-box {
   padding-top:100px;
   margin-top:-100px;
 }
