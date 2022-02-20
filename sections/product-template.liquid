@@ -133,13 +133,13 @@
           {{ product.description }}
         </div>
 
+        {% if product.metafields.custom_fields["size"] %}
         <!--商品スペック-->
         <div class="title">
           <h3><ls-static-81910>商品説明</ls-static-81910></h3>
           <p><ls-static-371109>DESCRIPTION</ls-static-371109></p>
         </div>
         <div class="product_spec_table">
-        {% if product.type == "リング" or product.type == "ネックレス" %}
           {% if product.metafields.custom_fields["size"] != blank %}
             <dl>
               <dt>{{ 'general.product.size' | t }}</dt>
@@ -194,10 +194,10 @@
               <dd>{{ product.metafields.custom_fields["weight"] }}</dd>
             </dl>
           {% endif %}
-        {% endif %}
         </div>
         <!--商品説明(スペック)-->
-		        
+        {% endif %}
+        
       </div>
     </div>
   </div>
