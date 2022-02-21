@@ -377,23 +377,20 @@ $("#thumbnail_slider").not('.slick-initialized').slick({
   focusOnSelect: true,
 });
   
-//スムーススクロール
-$(window).on('load resize', function() {
-  //ウィンドウサイズを取得する
-  var w = $(window).width();
-  //ウィンドウサイズが768より大きい場合の処理
-  if( w > 768 ) {
-    console.log('ウィンドウサイズは768より大きいです。');
-    var headsize = 160;   
-  //ウィンドウサイズが768以下の場合の処理
-  } else {
-    console.log('ウィンドウサイズは768以下です。');
-    var headsize = 64;
-  }
-});
-  
+//スムーススクロール 
   $(function(){
     $('a[href^="#"]').click(function(){
+      //ウィンドウサイズを取得する
+      var w = $(window).width();
+      //ウィンドウサイズが768より大きい場合の処理
+      if( w > 768 ) {
+        console.log('ウィンドウサイズは768より大きいです。');
+        var headsize = 160;   
+      //ウィンドウサイズが768以下の場合の処理
+      } else {
+        console.log('ウィンドウサイズは768以下です。');
+        var headsize = 64;
+      }
       var speed = 800;
       var href= $(this).attr("href");
       var target = $(href == "#" || href == "" ? 'html' : href);
