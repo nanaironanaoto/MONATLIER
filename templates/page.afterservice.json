@@ -1,0 +1,12 @@
+{
+  "sections": {
+    "afterservice": {
+      "type": "afterservice",
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "afterservice"
+  ]
+}
