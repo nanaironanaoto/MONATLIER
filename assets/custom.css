@@ -569,7 +569,7 @@ div.stamped-container[data-widget-style], div[data-widget-style] div.stamped-con
 }
 @media screen and (max-width: 1366px) {
 	.header .header_navi{
-		padding-right: 5% !important;
+		padding-right: 5%;
 	}
 	.top-header .header-icons{
 		padding-right:0;
