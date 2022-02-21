@@ -444,10 +444,13 @@
 
 
         <!--商品スペック-->
+        {% if product.metafields.custom_fields["size"] or product.metafields.custom_fields["length"] or product.metafields.custom_fields["metal"] or product.metafields.custom_fields["arm"] or product.metafields.custom_fields["topsize"] or product.metafields.custom_fields["motif"] or product.metafields.custom_fields["chain"] or product.metafields.custom_fields["stone"] or product.metafields.custom_fields["weight"] or product.metafields.custom_fields["weight"] %}
         <div class="title">
           <h3><ls-static-81910>商品説明</ls-static-81910></h3>
           <p><ls-static-371109>DESCRIPTION</ls-static-371109></p>
         </div>
+        {% endif %}
+        
         <div class="product_spec_table">
           {% if product.metafields.custom_fields["size"] != blank %}
             <dl>
