@@ -605,6 +605,7 @@
           },
           "99ddcde2-57ba-4834-b60b-22a00a6943e3": {
             "type": "header",
+            "disabled": true,
             "settings": {
               "category_text_jp": "ブレスレット",
               "category_text_en": "BRACELET",
