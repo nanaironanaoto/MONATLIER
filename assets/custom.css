@@ -165,7 +165,7 @@ a:hover{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding-right: 20%;
+    padding-right: calc(50% - 460px);
 }
 .header .header_menu{
 	width: 25%;
