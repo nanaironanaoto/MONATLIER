@@ -31,7 +31,7 @@
               <th>{{ 'customer.orders.payment_status' | t }}</th>
               <th>{{ 'customer.orders.fulfillment_status' | t }}</th>
               <th>{{ 'customer.orders.total' | t }}</th>
-              <th>保証書</th>
+			  <!-- <th>保証書</th> -->
             </tr>
           </thead>
           <tbody>
@@ -42,7 +42,7 @@
                 <td data-label="{{ 'customer.orders.payment_status' | t }}">{{ order.financial_status_label }}</td>
                 <td data-label="{{ 'customer.orders.fulfillment_status' | t }}">{{ order.fulfillment_status_label }}</td>
                 <td data-label="{{ 'customer.orders.total' | t }}">{{ order.total_price | money }}</td>
-                <td><a target='_blank' href='https://www.orderprinterpro.com/download/orders/11665ae3ef3992f40b33/{{ order.id | times: 9418 }}/{{ order.name | handleize }}.pdf'>保証書</a></td>
+				<!-- <td><a target='_blank' href='https://www.orderprinterpro.com/download/orders/11665ae3ef3992f40b33/{{ order.id | times: 9418 }}/{{ order.name | handleize }}.pdf'>保証書</a></td> -->
               </tr>
             {%- endfor -%}
           </tbody>
