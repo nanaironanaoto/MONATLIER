@@ -385,10 +385,9 @@ $(window).on('load resize', function() {
   //ウィンドウサイズが768より大きい場合の処理
   if( w > 768 ) {
     console.log('ウィンドウサイズは768より大きいです。');
-    var headsize = 150;
+    var headsize = 300;
     $(function(){
       $('a[href^="#"]').click(function(){
-        var headsize = 150;
         var speed = 800;
         var href= $(this).attr("href");
         var target = $(href == "#" || href == "" ? 'html' : href);
