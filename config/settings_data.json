@@ -624,14 +624,14 @@
       "content": {
         "type": "content",
         "blocks": {
-          "e33122d8-075d-4db3-ac12-65c9b11f2d86": {
+          "adc2867f-94fc-42d1-84a7-ea3a9ea313a2": {
             "type": "header",
             "settings": {
-              "content_image_pc": "shopify:\/\/shop_images\/content01pc_545e1d32-e27d-4b68-b347-6196cb79efeb.jpg",
-              "content_image_sp": "shopify:\/\/shop_images\/content01sp_74c25a48-31d1-430a-bfd6-e1cdbf5493ba.jpg",
-              "content_text_jp": "品質基準",
-              "content_text_en": "QUALITY",
-              "content_link": "https:\/\/monatelier-jewelry.com\/pages\/quality"
+              "content_image_pc": "shopify:\/\/shop_images\/content03pc_07645c14-0eb7-4b1f-a478-f5156f8236b4.jpg",
+              "content_image_sp": "shopify:\/\/shop_images\/content03sp_af74ff4d-f51d-4e2e-905e-7d24e52c4b21.jpg",
+              "content_text_jp": "コンセプト",
+              "content_text_en": "CONCEPT",
+              "content_link": "shopify:\/\/pages\/concept"
             }
           },
           "38fc5fe8-d3fb-4464-b99b-ec5bb13a421b": {
@@ -644,14 +644,14 @@
               "content_link": "shopify:\/\/pages\/material"
             }
           },
-          "adc2867f-94fc-42d1-84a7-ea3a9ea313a2": {
+          "e33122d8-075d-4db3-ac12-65c9b11f2d86": {
             "type": "header",
             "settings": {
-              "content_image_pc": "shopify:\/\/shop_images\/content03pc_07645c14-0eb7-4b1f-a478-f5156f8236b4.jpg",
-              "content_image_sp": "shopify:\/\/shop_images\/content03sp_af74ff4d-f51d-4e2e-905e-7d24e52c4b21.jpg",
-              "content_text_jp": "コンセプト",
-              "content_text_en": "CONCEPT",
-              "content_link": "shopify:\/\/pages\/concept"
+              "content_image_pc": "shopify:\/\/shop_images\/255_2x_438a9fcf-ea5c-454b-afa9-b4402e2f11b2.jpg",
+              "content_image_sp": "shopify:\/\/shop_images\/116_2x_befbb2ab-8e80-47d2-a648-f725eea9dbf9.jpg",
+              "content_text_jp": "ショッピングガイド",
+              "content_text_en": "SHOPPING GUIDE",
+              "content_link": "shopify:\/\/pages\/shopping-guide"
             }
           },
           "0d69592a-9b0b-410c-a233-10a94877d416": {
@@ -666,9 +666,9 @@
           }
         },
         "block_order": [
-          "e33122d8-075d-4db3-ac12-65c9b11f2d86",
-          "38fc5fe8-d3fb-4464-b99b-ec5bb13a421b",
           "adc2867f-94fc-42d1-84a7-ea3a9ea313a2",
+          "38fc5fe8-d3fb-4464-b99b-ec5bb13a421b",
+          "e33122d8-075d-4db3-ac12-65c9b11f2d86",
           "0d69592a-9b0b-410c-a233-10a94877d416"
         ],
         "settings": {
