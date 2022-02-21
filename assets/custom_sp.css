@@ -189,9 +189,11 @@
 	    padding: 0;
 	    display: block;
 	}
+  	.footer_nav_title{
+      width:50%;
+    }
 	.footer_nav>div {
-	    display: grid;
-	    grid-template-columns: 1fr 1fr;
+	    display: flex;
 	    border-bottom: 1px solid #ccc;
 		padding-bottom: 15px;
 		margin-bottom: 23px;
