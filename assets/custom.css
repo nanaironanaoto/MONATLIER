@@ -452,7 +452,7 @@ a:hover {
     display: flex;
     column-gap: 50px;
 }
-.footer_nav_title>a>p:first-child {
+.footer_nav_title>a>p:first-child, .footer_nav_title>p:first-child {
     font-size: 20px;
   	padding-right: 90%;
     word-break: keep-all;
