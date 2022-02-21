@@ -36,6 +36,9 @@ a:hover{
   padding-top:300px;
   margin-top:-300px;
 }
+.service-nav-wrap {
+    display: none;
+}
 @media screen and (max-width: 764px) {
     p {
         line-height: 1.5;
