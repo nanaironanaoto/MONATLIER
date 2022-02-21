@@ -39,6 +39,9 @@ a:hover{
 .service-nav-wrap {
     display: none;
 }
+.sg_sidenav_list span {
+    border-bottom: 1px solid #C8AB7A;
+}
 @media screen and (max-width: 764px) {
     p {
         line-height: 1.5;
