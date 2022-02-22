@@ -943,6 +943,7 @@ figure.image{
 }
 button#AddToCart- {
     width: 240px;
+  	padding:0;
 }
 .variant__input- {
     height: 40px;
