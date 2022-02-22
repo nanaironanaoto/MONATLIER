@@ -33,8 +33,6 @@ a:hover{
     height: 19vw;
 }
 .boost-pfs-filter-products {
-  display: grid !important;
-  grid-template-columns: repeat(3,auto);
   padding-top:300px;
   margin-top:-300px;
 }
