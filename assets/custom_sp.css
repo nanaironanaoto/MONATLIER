@@ -15,6 +15,7 @@
     .collection_descrption_filter_sort_row {
       top: 0;
       margin-bottom: 0;
+      z-index:10;
     }
     .header_bar_sp {
         width: 100vw;
@@ -67,8 +68,9 @@
 	    font-size: 12px;
     }
     .boost-pfs-filter-products {
-    	padding-top: 0 !important;
-    	margin-top: 0;
+    	padding-top: 100px !important;
+    	margin-top: -100px;
+	}
     }
     .grid-product__image {
         object-fit: cover;
