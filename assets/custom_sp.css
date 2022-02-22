@@ -73,6 +73,10 @@
     .boost-pfs-filter-right-col {
         position: relative;
     }
+    .boost-pfs-filter-right-col {
+        position: relative;
+        top: 200px;
+    }
     .grid-product__image {
         object-fit: cover;
         object-position: center;
