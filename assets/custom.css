@@ -42,9 +42,6 @@ a:hover{
 .sg_sidenav_list span {
     border-bottom: 1px solid #C8AB7A;
 }
-.collection_filter_sort_row{
-  z-index:2;
-}
 @media screen and (max-width: 764px) {
     p {
         line-height: 1.5;
