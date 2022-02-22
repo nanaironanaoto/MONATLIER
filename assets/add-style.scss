@@ -2545,9 +2545,8 @@ span.form-repuired{
 .page-account input[type= "password"],
 .page-account select{
     height: 67px;
-	/*     max-width: 390px; */
     padding: 8px 24px;
-  	margin:0 auto;
+    margin: 0 auto 20px;
 }
 //送信ボタン
 .page-account button[type= "submit"],
