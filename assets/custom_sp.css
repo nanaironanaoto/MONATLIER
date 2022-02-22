@@ -67,8 +67,8 @@
 	    font-size: 12px;
     }
     .boost-pfs-filter-products {
-      padding-top:100px !important;
-      margin-top:-100px;
+		padding-top: 0 !important;
+    	margin-top: -180px;
     }
     .boost-pfs-filter-right-col {
         position: relative;
