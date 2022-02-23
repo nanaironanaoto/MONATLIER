@@ -12,6 +12,9 @@
 	    padding: 0 0 0 24px;
 			margin-bottom: 15px;
     }
+  	.input-group-btn{
+      width:90px;
+    }
     .collection_descrption_filter_sort_row {
       top: 0;
       margin-bottom: 0;
