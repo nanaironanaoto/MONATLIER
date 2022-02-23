@@ -156,12 +156,13 @@
   	{%- assign padding_top = 1 | divided_by: preview_image.aspect_ratio | times: 100 -%}
 {%- endunless -%}
 
-{%- comment -%} Vendor {%- endcomment -%}
+{%- comment -%} Vendor 
 {%- capture product_vendor -%}
 {%- if show_vendor -%}
 <!-- <p class="boost-pfs-filter-product-item-vendor">{{- product.vendor -}}</p> -->
 {%- endif -%}
 {%- endcapture -%}
+{%- endcomment -%}
 
 {%- comment -%} Review {%- endcomment -%}
 {%- capture product_review -%}
