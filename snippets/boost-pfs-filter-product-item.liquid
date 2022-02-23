@@ -176,7 +176,7 @@
 <p class="boost-pfs-filter-product-item-price">
 {%- if on_sale -%}
 	<span class="boost-pfs-filter-product-item-sale-price">{{- product.price | money -}}</span>
-	<s>{{- product.compare_at_price | money -}}</s>
+	<s>{{- product.compare_at_price | money -}}</s>}<span class="tax-notice">{{ 'general.product.tax' |t }}</span>
 {%- else -%}
   {%- if product.price_varies -%}
 	<span class="boost-pfs-filter-product-item-price-from-text">{{- label_from | default: 'From' -}}</span>
