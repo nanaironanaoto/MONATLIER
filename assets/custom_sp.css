@@ -415,7 +415,7 @@
     }
     .boost-pfs-filter-products {
         display: grid !important;
-        grid-template-columns: repeat(2,auto);
+        grid-template-columns: 1fr 1fr;
         padding-bottom: 54px;
         gap: 17px;
         width: 100% !important;
