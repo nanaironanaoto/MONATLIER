@@ -37,6 +37,9 @@
     padding-top: 20px;
 		height: 64px;
 	}
+    .search_icon{
+      width:20px;
+    }
 	.header .header_navi {
 		display: none;
 	}
