@@ -241,6 +241,7 @@
 					products_per_row: products_per_row,
 					products_per_row_m: products_per_row_m,
 					show_detail_when_hover: show_detail_when_hover,
+					show_vendor: show_vendor,
 					show_price: show_price,
 
 					active_image_swap: active_image_swap,
@@ -361,6 +362,10 @@
 	$(document).on('click', '.boost-pfs-filter-option-value', function() {
         location.reload();
     });
+  
+  $('.hamub-menu-btn.sp').on('click', function() {
+    $('.sp-hamub sp-menu-list drawer_').toggleClass('sp_hm_menu_active');
+  }
 </script>
 
 {% schema %}
