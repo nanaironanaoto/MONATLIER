@@ -628,7 +628,7 @@ div.orbittour-views_wrapper .orbittour-thumbnail:focus{
 
 
 //ギフト価格表示
-.giftwrapping-select span label input:after{
+.giftwrapping-select span label:nth-child(2) input:after{
     content: "￥1,900";
     margin-top: 20px;
     display: block;
