@@ -752,7 +752,7 @@ figure.image{
     display: grid;
     grid-template-columns: 3fr 1fr;
     padding-bottom: 75px;
-    position: relative;
+	/*     position: relative; */
     top: -100px;
     margin-bottom: -100px;
 }
