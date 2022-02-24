@@ -23,17 +23,17 @@
         "506f655d-aaf0-4798-a5be-4339dc27577d": {
           "type": "header",
           "settings": {
-            "news_date": "2021\/12\/11",
-            "news_text": "Xmasジュエリー受注開始",
-            "news_link": ""
+            "news_date": "2022\/2\/24",
+            "news_text": "リニューアルオープンのお知らせ",
+            "news_link": "shopify:\/\/blogs\/post\/renewal"
           }
         },
         "f10eff1b-c144-4f30-9ded-1b970b1627aa": {
           "type": "header",
           "settings": {
-            "news_date": "2021\/12\/01",
-            "news_text": "Xmasジュエリーのデザイン発表",
-            "news_link": ""
+            "news_date": "2022\/2\/24",
+            "news_text": "モナトリエの天然ダイヤモンド",
+            "news_link": "shopify:\/\/blogs\/post\/diamond2"
           }
         }
       },
