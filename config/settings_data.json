@@ -13,6 +13,28 @@
       },
       "category": {
         "type": "category",
+        "blocks": {
+          "60d44515-fe2d-4be9-9fe9-84bbd7d60de5": {
+            "type": "header",
+            "settings": {
+              "category_text_jp": "ネックレス",
+              "category_text_en": "NECKLACE",
+              "category_link": "shopify:\/\/collections\/necklace"
+            }
+          },
+          "0960788d-ce45-4d9a-9aea-186b7d2aa904": {
+            "type": "header",
+            "settings": {
+              "category_text_jp": "リング",
+              "category_text_en": "RING",
+              "category_link": "shopify:\/\/collections\/ring"
+            }
+          }
+        },
+        "block_order": [
+          "60d44515-fe2d-4be9-9fe9-84bbd7d60de5",
+          "0960788d-ce45-4d9a-9aea-186b7d2aa904"
+        ],
         "settings": {
         }
       },
@@ -30,8 +52,8 @@
       "footer": {
         "type": "footer",
         "settings": {
-          "footer_menu01": "",
-          "footer_menu02": ""
+          "footer_menu01": "footer_nav",
+          "footer_menu02": "link-list-1"
         }
       },
       "newsletter-popup": {
