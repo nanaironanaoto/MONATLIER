@@ -29,11 +29,20 @@
               "category_text_en": "RING",
               "category_link": "shopify:\/\/collections\/ring"
             }
+          },
+          "86a4fb7b-a9be-4a4c-a52e-1b8ffe42af62": {
+            "type": "header",
+            "settings": {
+              "category_text_jp": "ピアス",
+              "category_text_en": "EARRING",
+              "category_link": "shopify:\/\/collections\/earring"
+            }
           }
         },
         "block_order": [
           "60d44515-fe2d-4be9-9fe9-84bbd7d60de5",
-          "0960788d-ce45-4d9a-9aea-186b7d2aa904"
+          "0960788d-ce45-4d9a-9aea-186b7d2aa904",
+          "86a4fb7b-a9be-4a4c-a52e-1b8ffe42af62"
         ],
         "settings": {
         }
