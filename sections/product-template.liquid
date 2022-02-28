@@ -476,7 +476,7 @@
 
           {% if product.metafields.custom_fields["topdepth"] != blank %}
             <dl>
-              <dt>{{ 'general.product.topdepth' | t }}</dt>
+              <dt>トップサイズ</dt>
               <dd>{{ product.metafields.custom_fields["topdepth"] }}</dd>
             </dl>
           {% endif %}
@@ -504,11 +504,12 @@
 
           {% if product.metafields.custom_fields["etc"] != blank %}
             <dl>
-              <dt>{{ 'general.product.etc' | t }}</dt>
+              <dt>その他</dt>
               <dd>{{ product.metafields.custom_fields["etc"] }}</dd>
             </dl>
           {% endif %}
 
+          
           {%comment%}
           {% if product.metafields.custom_fields["size"] != blank %}
             <dl>
