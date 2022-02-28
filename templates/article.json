@@ -1,0 +1,18 @@
+{
+  "sections": {
+    "article-template": {
+      "type": "article-template",
+      "settings": {
+      }
+    },
+    "custom-fields-articles": {
+      "type": "custom-fields-articles",
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "article-template",
+    "custom-fields-articles"
+  ]
+}
