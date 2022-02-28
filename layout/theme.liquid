@@ -90,9 +90,9 @@
   </script>
 
 
-  <script type="text/javascript"> var ndnapps_product_json = "{{ 'ndnapps-products-slider.json' | asset_url }}";</script>
+<!--   <script type="text/javascript"> var ndnapps_product_json = "{{ 'ndnapps-products-slider.json' | asset_url }}";</script> -->
 {{ content_for_header }}
-{{ 'ndnapps_products_slider.js' | asset_url | script_tag }}
+<!-- {{ 'ndnapps_products_slider.js' | asset_url | script_tag }} -->
 
   {% if template == 'product' and product.metafields.inventory.ShappifyHidden or product.type contains '_HIDDEN_' %}<meta name='robots' content='noindex'>{% endif %}
 
@@ -162,8 +162,8 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
 <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.1/TweenMax.min.js"></script>
-  <script src="{{ 'jquery.easing.1.3.js' | asset_url }}" defer="defer"></script>
+<!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.1/TweenMax.min.js"></script>
+  <script src="{{ 'jquery.easing.1.3.js' | asset_url }}" defer="defer"></script> -->
 
 
 
