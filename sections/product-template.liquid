@@ -452,60 +452,86 @@
         {% endif %}
         
         <div class="product_spec_table">
-          {% if product.metafields.custom_fields["size"] != blank %}
-            <dl>
-              <dt>{{ 'general.product.size' | t }}</dt>
-              <dd>{{ product.metafields.custom_fields["size"] }}</dd>
-            </dl>
-          {% endif %}
-          {% if product.metafields.custom_fields["length"] != blank %}
-            <dl>
-              <dt>{{ 'general.product.length' | t }}</dt>
-              <dd>{{ product.metafields.custom_fields["length"] }}</dd>
-            </dl>
-          {% endif %}
-          {% if product.metafields.custom_fields["metal"] != blank %}
-            <dl>
-              <dt>{{ 'general.product.metal' | t }}</dt>
-              <dd>{{ product.metafields.custom_fields["metal"] }}</dd>
-            </dl>
-          {% endif %}
-          {% if product.metafields.custom_fields["arm"] != blank %}
-            <dl>
-              <dt>{{ 'general.product.arm' | t }}</dt>
-              <dd>{{ product.metafields.custom_fields["arm"] }}</dd>
-            </dl>
-          {% endif %}
-          {% if product.metafields.custom_fields["topsize"] != blank %}
-            <dl>
-              <dt>{{ 'general.product.topsize' | t }}</dt>
-              <dd>{{ product.metafields.custom_fields["topsize"] }}</dd>
-            </dl>
-          {% endif %}
-          {% if product.metafields.custom_fields["motif"] != blank %}
-            <dl>
-              <dt>{{ 'general.product.motif' | t }}</dt>
-              <dd>{{ product.metafields.custom_fields["motif"] }}</dd>
-            </dl>
-          {% endif %}
-          {% if product.metafields.custom_fields["chain"] != blank %}
-            <dl>
-              <dt>{{ 'general.product.chain' | t }}</dt>
-              <dd>{{ product.metafields.custom_fields["chain"] }}</dd>
-            </dl>
-          {% endif %}
+
           {% if product.metafields.custom_fields["stone"] != blank %}
             <dl>
               <dt>{{ 'general.product.stone' | t }}</dt>
               <dd>{{ product.metafields.custom_fields["stone"] }}</dd>
             </dl>
           {% endif %}
+
+          {% if product.metafields.custom_fields["metal"] != blank %}
+            <dl>
+              <dt>{{ 'general.product.metal' | t }}</dt>
+              <dd>{{ product.metafields.custom_fields["metal"] }}</dd>
+            </dl>
+          {% endif %}
+
+          {% if product.metafields.custom_fields["topsize"] != blank %}
+            <dl>
+              <dt>{{ 'general.product.topsize' | t }}</dt>
+              <dd>{{ product.metafields.custom_fields["topsize"] }}</dd>
+            </dl>
+          {% endif %}
+
+          {% if product.metafields.custom_fields["topdepth"] != blank %}
+            <dl>
+              <dt>{{ 'general.product.topdepth' | t }}</dt>
+              <dd>{{ product.metafields.custom_fields["topdepth"] }}</dd>
+            </dl>
+          {% endif %}
+
+          {% if product.metafields.custom_fields["arm"] != blank %}
+            <dl>
+              <dt>{{ 'general.product.arm' | t }}</dt>
+              <dd>{{ product.metafields.custom_fields["arm"] }}</dd>
+            </dl>
+          {% endif %}
+
+          {% if product.metafields.custom_fields["length"] != blank %}
+            <dl>
+              <dt>{{ 'general.product.length' | t }}</dt>
+              <dd>{{ product.metafields.custom_fields["length"] }}</dd>
+            </dl>
+          {% endif %}
+
           {% if product.metafields.custom_fields["weight"] != blank %}
             <dl>
               <dt>{{ 'general.product.weight' | t }}</dt>
               <dd>{{ product.metafields.custom_fields["weight"] }}</dd>
             </dl>
           {% endif %}
+
+          {% if product.metafields.custom_fields["etc"] != blank %}
+            <dl>
+              <dt>{{ 'general.product.etc' | t }}</dt>
+              <dd>{{ product.metafields.custom_fields["etc"] }}</dd>
+            </dl>
+          {% endif %}
+
+          {%comment%}
+          {% if product.metafields.custom_fields["size"] != blank %}
+            <dl>
+              <dt>{{ 'general.product.size' | t }}</dt>
+              <dd>{{ product.metafields.custom_fields["size"] }}</dd>
+            </dl>
+          {% endif %}
+
+          {% if product.metafields.custom_fields["motif"] != blank %}
+            <dl>
+              <dt>{{ 'general.product.motif' | t }}</dt>
+              <dd>{{ product.metafields.custom_fields["motif"] }}</dd>
+            </dl>
+          {% endif %}
+
+          {% if product.metafields.custom_fields["chain"] != blank %}
+            <dl>
+              <dt>{{ 'general.product.chain' | t }}</dt>
+              <dd>{{ product.metafields.custom_fields["chain"] }}</dd>
+            </dl>
+          {% endif %}
+          {%endcomment%}
+
         </div>
         <!--商品説明(スペック)-->
 
