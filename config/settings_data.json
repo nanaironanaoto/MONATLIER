@@ -103,7 +103,8 @@
       "column": {
         "type": "column",
         "settings": {
-          "column": ""
+          "column": "post",
+          "column_limit": 4
         }
       },
       "footer": {
