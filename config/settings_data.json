@@ -49,6 +49,21 @@
       },
       "content": {
         "type": "content",
+        "blocks": {
+          "7a2db465-2820-4e69-9dfb-fe184d12ca3d": {
+            "type": "header",
+            "settings": {
+              "content_image_pc": "shopify:\/\/shop_images\/content03pc_07645c14-0eb7-4b1f-a478-f5156f8236b4.jpg",
+              "content_image_sp": "shopify:\/\/shop_images\/content03sp_af74ff4d-f51d-4e2e-905e-7d24e52c4b21.jpg",
+              "content_text_jp": "コンセプト",
+              "content_text_en": "CONCEPT",
+              "content_link": "shopify:\/\/pages\/concept"
+            }
+          }
+        },
+        "block_order": [
+          "7a2db465-2820-4e69-9dfb-fe184d12ca3d"
+        ],
         "settings": {
         }
       },
