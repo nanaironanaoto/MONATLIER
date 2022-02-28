@@ -1,0 +1,633 @@
+
+/*--------------------------------------------------------------------------------
+
+トップページ
+
+--------------------------------------------------------------------------------*/
+
+.page-container{overflow: hidden; position: relative;}
+.section-header h2{
+  	font-size:52px;
+    margin-bottom: 8px;
+    letter-spacing: 0.09em;
+}
+.section-header span{
+    font-size:14px;
+    letter-spacing: 2.5px;
+}
+
+@media only screen and (max-width: 768px){
+  .section-header { margin-bottom: 11vw;}
+h2.section-header__title {
+    margin-bottom: 3vw;
+}
+.section-header span{
+    font-size:3.2vw;
+    letter-spacing: 0.4vw;
+}
+}
+
+/*----------------------------------------------------------------------------------------------------------------トップページヘッダー--*/
+.top-header{
+    position: absolute;
+    width: 100%;
+    z-index: 2;
+    background: none;
+    padding: 0;
+    display: block;
+    transition: all 0.1.5s ;
+    transition-timing-function:linear;
+}
+.top-header .header-wrap{height: 150px;}
+
+.top-header .header-wrap .gnavi > ul > li{
+  	padding-top:60px;
+    height: 160px;
+}
+
+.top-header .navi-text, .top-header .header-icons a{color:#FFF ;
+    transition: all 0.6s; font-family: "TTDrugs-R" !important;}
+.top-header .header-icons{width: 35%; }
+.top-header .gnavi{width: 35%;}
+.top-header .site-logo{width: 35%;text-align: left;
+    margin-bottom: 6px;}
+.top-header .site-logo svg{max-width: 203px;}
+.top-header .site-logo svg path{fill:#FFF;
+    transition: all 0.6s;}
+
+.top-header .hamub-menu-btn svg g line{stroke:#FFF;
+    transition: all 0.6s;}
+.top-header .hamub-menu-btn.is-active svg g line{stroke:#4b4b4b;}
+
+.top-header.is-hover{background: #fffffff0 !important;}
+.top-header.is-hover li a{color:#4B4B4B !important;}
+.top-header.is-hover li:hover a.navi-text{color:#C9C9C9 !important;}
+.top-header.is-hover .site-logo svg path{fill:#4B4B4B !important;}
+.top-header.is-hover .favorite-icon svg path{fill:#4B4B4B !important;}
+.top-header.is-hover a .cart-item-count{background: #4c4c4c !important; color:#FFF !important;}
+.top-header.is-hover .header-wrap .header-icons a{color:#4B4B4B !important;}
+.top-header.is-hover .hamub-menu-btn svg g line {stroke:#4B4B4B !important;}
+
+@media only screen and (max-width: 768px){
+  .top-header{display:none;}
+}
+/*----------------------------------------------------------------------------------------------------------------お知らせ--*/
+#shopify-section-template--15173518557362__top-news{
+    margin-left: 55px;
+    padding-top: 38px;
+    z-index: 0;
+    position: relative;
+}
+#shopify-section-template--15173518557362__top-news .news-title{
+    font-family:  "TTDrugs-R" !important;
+    margin-right: 13px;
+}
+#shopify-section-template--15173518557362__top-news a{
+    font-size:14px;
+    margin-left: 8px;
+}
+.top-news.pc{
+    color:#DBDBDB;
+}
+.top-news.pc .news-title{
+    color:#4B4B4B;
+}
+.top-news.pc a time{
+    color:#6F6F6F;
+    margin-right: 6px;
+}
+
+.top-news.mobile {
+    margin-bottom: 10vw;
+}
+.top-news.mobile .news-title{
+    font-size: 5vw;
+    letter-spacing: 0.5vw;
+    display: inline-block;
+    margin-right: -3vw;
+    position: relative;
+}
+.top-news.mobile .news-date{
+    font-size: 3.5vw;
+    letter-spacing: 0.2vw;
+    color: #939393;
+    position: relative;
+}
+.top-news.mobile .news{
+    margin-top: 1.8vw;
+    font-size: 3vw;
+    display: block;
+    letter-spacing: 0.5vw;
+    position: relative;
+}
+.top-news-bar{
+    font-size: 22px;
+    position: relative;
+    top:3px;
+}
+
+@media only screen and (max-width: 768px){
+#shopify-section-template--15173518557362__top-news {
+    margin: 0 10vw;
+    padding-top: 10vw;
+
+}
+.top-news.mobile {
+    margin-bottom: 10vw;
+}
+.top-news.mobile .news-title{
+    font-size: 5.2vw;
+    letter-spacing: 0.3vw;
+    display: inline-block;
+    margin-right: 3vw;
+}
+.top-news.mobile .news-date{
+    font-size: 3.8vw;
+    letter-spacing: 0.1vw;
+    color: #939393;
+}
+.top-news.mobile .news{
+    margin-top: 1.8vw;
+    font-size: 3.4vw;
+    display: block;
+    letter-spacing: 0.5vw;
+}
+}
+
+
+/*----------------------------------------------------------------------------------------------------------------ブログ--*/
+#shopify-section-1525115199973 h2{
+    font-size: 53px;
+    letter-spacing: 0.16em;
+}
+@media only screen and (max-width: 768px){
+#shopify-section-1525115199973 {
+    margin: 20vw 0 !important;
+    padding-top: 10vw;
+}
+
+#shopify-section-1525115199973 h2{
+    font-size: 12.5vw;
+    letter-spacing: 0.06em;
+}
+
+#shopify-section-1525115199973 span{
+    font-size: 3.5vw;
+    letter-spacing: 0.08em;
+}
+
+}
+
+/*----------------------------------------------------------------------------------------------------------------シリーズスライダー--*/
+
+#shopify-section-template--15173518557362__16350574848cd73f51 {
+	padding-top:100px;
+    height: 70vw;
+    overflow: hidden;
+}
+
+#shopify-section-template--15173518557362__16350574848cd73f51 .section-header{
+
+    z-index: 1;
+    position: relative;
+}
+
+.series-slider-wrapper{position: relative;}
+.slick-arrow {font-size:18px; color:#000}
+.series-slider{
+    width: 25%;
+    position: absolute !important;
+    opacity : 0;
+    transform : translate(0, 50px);
+    transition: opacity 1.2s;
+}
+.series-slider-description{
+    width: 30%;
+}
+.series-slider.scrollin {
+    opacity : 1;
+    transform : translate(0, 0);
+}
+
+.series-slider-left{
+    top:0;
+    left: -12%;
+    margin: auto;
+    pointer-events: none;
+}
+.series-slider-center{
+    top: 5vw;
+    left: 24%;
+    margin: auto;
+    pointer-events: none;
+}
+.series-slider-description{
+    box-shadow: none;
+    padding:2.6vw 0 0 2.2vw ;
+    top: 5vw;
+    left: 50%;
+}
+.series-slider-description {
+    pointer-events: none;
+}
+.series-slider-description button, .series-slider-description a{
+    pointer-events: auto;
+}
+.series-slider-right{
+    top: 10vw;
+    right: -12%;
+    margin: auto;
+    pointer-events: none;
+}
+.series-slider .slick-arrow{display:none !important;}
+.series-slider-description .slick-arrow{
+    display:block !important;
+    top: 35vw;
+    width:3.7vw;
+    height: 3.7vw;
+    border:solid 1px #EFE0CB;
+    border-radius: 50px;
+}
+.series-slider-description .slick-arrow svg{
+    display: none;
+}
+.series-slider-description .slick-arrow:before{
+    background: url('https://cdn.shopify.com/s/files/1/0268/1202/2962/files/gold-arrow-right.png?v=1610683666');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 0.6vw;
+    content: "";
+    width: 3.7vw;
+    height: 3.7vw;
+    display: block;
+}
+.series-slider-description .slick-prev.slick-arrow:before { transform: rotate( 180deg );
+    width: 3.3vw;}
+.series-slider-description .slick-prev {left: 3vw;}
+.series-slider-description .slick-next {left: 7.6vw;}
+.series-slider-description h3{
+    font-size:4.6vw;
+    margin-bottom: 0;
+    line-height: 1.5;
+  	font-family: "TTDrugs-R" !important;
+}
+.series-slider-description h4{
+    font-size:1.6vw;
+    margin-top: 0vw;
+    margin-bottom:2vw;
+    margin-left: 0vw;
+    color:#C9C9C9;
+    font-weight: 400;
+    position: relative;
+    left: -0.8vw;
+}
+.series-slider-description p{
+    font-size:1.14vw;
+    font-weight: 500;
+}
+.series-slider-description a span{
+    display: block;
+    width: 14vw;
+    font-size:1.23vw;
+    margin-top: 3.6vw;
+    padding-bottom:6px;
+    padding-left:0;
+    letter-spacing: 2px;
+  	font-family: "TTDrugs-R" !important;
+  	color: #787878;
+}
+
+//3行用コピーに設定
+.series-slider-description .br-sp {
+    display: block;
+}
+
+
+//シリーズ名
+.series-slider-name{
+    position: absolute;
+    writing-mode: vertical-rl;
+    -webkit-writing-mode: vertical-rl;
+      -ms-writing-mode: tb-rl;
+          writing-mode: vertical-rl;
+    height: 20vw;
+    width: 5vw;
+    margin-bottom: 0;
+    left: 18.2vw;
+    top: 5vw;
+    font-size: 1.1vw;
+    letter-spacing: 0.12em;
+    color: #d6b17d;
+    font-family: "TTDrugs-R"
+}
+@media only screen and (max-width: 1060px){
+#shopify-section-template--15173518557362__16350574848cd73f51  {height: 100vw;}
+.series-slider{width: 32%; }
+.series-slider-left{left: -24vw;}
+.series-slider-center{left: 17.5vw;}
+.series-slider-description{top: 5vw;}
+.series-slider-right{right: -24vw;}
+.series-slider-description h3{font-size:6.6vw; }
+.series-slider-description h4{font-size:2.2vw; }
+.series-slider-description p{font-size:1.8vw; }
+.series-slider-description a span{font-size:1.8vw; }
+.series-slider-description .slick-arrow{top: 46vw;}
+  .series-slider-name{
+    left: 11.5vw;
+    font-size: 1.5vw;
+}
+}
+
+@media only screen and (max-width: 768px){
+
+#shopify-section-template--15173518557362__16350574848cd73f51{
+    overflow: unset !important;
+}
+#shopify-section-template--15173518557362__16350574848cd73f51 {margin-bottom:22vw;}
+#shopify-section-template--15173518557362__16350574848cd73f51  h2 {
+    font-size: 10.4vw;
+    letter-spacing: 0.05em;
+}
+#shopify-section-template--15173518557362__16350574848cd73f51  {height: 240vw;}
+
+#shopify-section-template--15173518557362__16350574848cd73f51  .section-header span {
+  margin-bottom:6vw; display:block;
+    letter-spacing: 0.16em;
+
+}
+.series-slider{width: 65%; }
+.series-slider-left{display:none !important;}
+.series-slider-center{
+	left: 10vw;
+    pointer-events: auto;
+}
+.series-slider-description{top: 108vw; left: 0vw;}
+.series-slider-right{
+    right: -55vw;
+    top: 22vw;}
+.series-slider-description {
+    width:80%;
+    margin-left: 9vw;
+    padding:1vw;
+}
+.series-slider-description h3{font-size:12vw; }
+.series-slider-description h4{font-size:5vw;
+    left: -2.4vw; }
+.series-slider-description p{font-size: 3.8vw; }
+.series-slider-description a span{font-size:5.6vw; }
+.series-slider-description .slick-arrow{
+    top: 35vw;
+    width:8.5vw;
+    height: 8.5vw;
+    border-radius: 50%;
+}
+.series-slider-description .slick-arrow:before{
+    background-size: 2vw;
+    width: 8.7vw;
+    height: 7vw;
+}
+.series-slider-description .slick-prev.slick-arrow:before { width: 7.3vw;}
+
+
+.series-slider-description .slick-prev {left: 68.4vw; top: -19vw;}
+.series-slider-description .slick-next {left: 68.4vw;
+    top: -8.4vw;}
+.series-slider-description a span{ width: 56vw;}
+.series-slider-name{
+    left: unset;
+    right: 16.8vw;
+    font-size: 4.2vw;
+    height: 50vw;
+}
+}
+.series-slider-description .slick-slide{
+ opacity: 0 !important;
+}
+.slick-slide.slick-current{
+ opacity: 1 !important;
+}
+/*----------------------------------------------------------------------------------------------------------------商品カルーセル--*/
+#shopify-section-1609503358b9a1e66c .section-header h2 {
+    font-size: 53px;
+    letter-spacing: 0.12em;
+}
+@media only screen and (max-width: 768px){
+
+#shopify-section-1609503358b9a1e66c {
+    position: relative;
+}
+#shopify-section-1609503358b9a1e66c .section-header h2 {
+    font-size: 53px;
+    font-size: 10.5vw;
+    letter-spacing: 0.05em;
+}
+}
+/*----------------------------------------------------------------------------------------------------------------コンセプト--*/
+#shopify-section-1525115199973 {
+    position: relative;
+    z-index: 1;
+}
+#shopify-section-16106328737510c41c .custom-content{
+    max-width: 820px;
+    margin:0 auto;
+}
+
+#shopify-section-16106328737510c41c .custom__item{
+    padding:0;
+}
+
+#shopify-section-16106328737510c41c {
+    background-image: url('https://cdn.shopify.com/s/files/1/0268/1202/2962/files/concepthero.jpg?v=1614911739');
+    background-size: cover;
+    background-attachment:fixed;
+
+    padding:8.5em 0 6.5em;
+    color:#FFF;
+    background-position: center;
+    z-index: 1;
+    position: relative;
+
+}
+
+#shopify-section-16106328737510c41c h2{
+    font-size: 53px;
+    margin-bottom: 34px;
+    letter-spacing: 0.11em;
+}
+#shopify-section-16106328737510c41c span{
+    margin-bottom:24px;
+    display: block;
+    line-height: 2.3;
+}
+.top-concept{
+    display:flex;
+    margin-top:80px;
+}
+
+.top-concept div{
+    color:#4B4B4B;
+    width:50%;
+    background: #FFF;
+    padding:50px 40px 64px;
+    font-size:15px;
+    text-align: left;
+}
+.top-concept h3{
+    font-size:26px;
+    margin-bottom:6px;
+    letter-spacing: 4px;
+  font-family: "TTDrugs-R" !important;
+}
+.top-concept p{
+    margin-bottom:22px;
+    letter-spacing: 1.3px;
+}
+.top-concept div:first-child{padding-left:90px;}
+.top-concept div:last-child{padding-right:90px;}
+
+@media only screen and (max-width: 768px){
+#shopify-section-16106328737510c41c h2{
+    font-size: 11.5vw;
+    letter-spacing: 0.07em;
+}
+#shopify-section-16106328737510c41c {
+  background-position: left;
+    padding: 25vw 0 19vw;
+    background-image: url('https://cdn.shopify.com/s/files/1/0268/1202/2962/files/concept-sp-hero.jpg?v=1614912851');
+    background-attachment: initial;
+}
+#shopify-section-16106328737510c41c .custom__item{padding:0 5vw;}
+#shopify-section-16106328737510c41c span{
+    font-size:3.6vw;
+    margin-bottom:6vw;
+    letter-spacing: 0.12em;
+
+}
+.top-concept{display: block;
+    margin-top:14vw;
+}
+.top-concept a:before{
+    background-image: url('https://cdn.shopify.com/s/files/1/0268/1202/2962/files/gold-arrow-right.png?v=1610683666') ;
+    background-size: contain;
+    background-repeat: no-repeat;
+    content:"";
+    width: 2vw;
+    height: 4vw;
+    display: block;
+    position: absolute;
+    right: 5vw;
+    top:43%;
+
+}
+.top-concept a{
+    background: #FFF;
+    padding: 5vw 6vw 5.5vw;
+    margin-bottom:0.4vw;
+}
+.top-concept a:after{content:none !important;}
+.top-concept a h3{
+    font-size:7vw;
+    margin-bottom:-1vw;}
+
+.top-concept p{
+    font-size: 3.4vw;
+}
+}
+
+
+/*----------------------------------------------------------------------------------------------------------------インスタグラム--*/
+
+.instagram-wrap{
+    z-index: 1;
+    position: relative;
+    margin:60px auto;
+    background-color: #D6B17D;
+    padding:50px ;
+    max-width:1160px;
+}
+.instagram{
+    display: flex;
+    align-items: center;
+    margin:0;
+    text-align: center;
+}
+
+.instagram .insta-image{ width: 50%;}
+
+.insta-info{
+    width: 50%;
+    color: #FFF;
+    padding-left: 50px;
+}
+
+.insta-info img{width: 26px;}
+
+.insta-info h2{
+    margin: 30px 0 20px;
+    font-size: 59.5px;
+    font-family: "TTDrugs-R" !important;
+    letter-spacing: 0.12em;
+}
+
+.insta-info span{
+    font-size:24px;
+    display: block;
+    margin-bottom:60px;
+	font-family: "TTDrugs-I" !important;
+  letter-spacing: 2px;
+}
+.instagram a.see-more{ font-size:20px;}
+.instagram a.see-more:before{
+    background-image: url('https://cdn.shopify.com/s/files/1/0268/1202/2962/files/link-outside.png?v=1610680000');
+    content: "";
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 14px;
+    margin-top: 17px;
+    margin-left: -20px;
+    margin-right: 20px;
+    display: inline-block;
+    height: 12px;
+    float: right;
+}
+@media only screen and (max-width: 768px){
+#shopify-section-16106329090fc9a8d1{
+    padding: 0 ;
+}
+.insta-info img{width: 6vw;}
+.insta-info h2{
+    font-size:12vw ;
+    letter-spacing: 1.4vw ;
+    margin: 5vw 0 4vw;
+}
+.instagram-wrap{
+  padding: 18vw 5vw  26vw ;
+  margin:0 auto;
+
+}
+.instagram{flex-direction: column-reverse;}
+.insta-info{
+    width: 100%;
+    padding-left: 0;
+}
+.instagram .insta-image{width:100%;}
+.instagram .insta-image img{margin:0 0 9vw;}
+.insta-info span{
+    font-size:4vw;
+    margin-bottom:9vw;
+
+}
+.instagram a.see-more{
+    transform: scale(1.2);
+    font-size: 5vw;
+}
+.instagram a.see-more:before{
+    width: 4vw;
+    margin-top: 4.4vw;
+    margin-left: 0.4vw;
+    margin-right: 4vw;
+    display: inline-block;
+    height: 3vw;
+    float: right;
+}
+}
