@@ -90,9 +90,9 @@
   </script>
 
 
-  <script type="text/javascript"> var ndnapps_product_json = "{{ 'ndnapps-products-slider.json' | asset_url }}";</script>
+<!--   <script type="text/javascript"> var ndnapps_product_json = "{{ 'ndnapps-products-slider.json' | asset_url }}";</script> -->
 {{ content_for_header }}
-{{ 'ndnapps_products_slider.js' | asset_url | script_tag }}
+<!-- {{ 'ndnapps_products_slider.js' | asset_url | script_tag }} -->
 
   {% if template == 'product' and product.metafields.inventory.ShappifyHidden or product.type contains '_HIDDEN_' %}<meta name='robots' content='noindex'>{% endif %}
 
