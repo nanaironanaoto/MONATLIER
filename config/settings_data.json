@@ -69,11 +69,22 @@
               "content_text_en": "MATERIAL",
               "content_link": "shopify:\/\/pages\/material"
             }
+          },
+          "3440b37d-c0f4-43db-be2d-79430a7e85d7": {
+            "type": "header",
+            "settings": {
+              "content_image_pc": "shopify:\/\/shop_images\/255_2x_438a9fcf-ea5c-454b-afa9-b4402e2f11b2.jpg",
+              "content_image_sp": "shopify:\/\/shop_images\/116_2x_befbb2ab-8e80-47d2-a648-f725eea9dbf9.jpg",
+              "content_text_jp": "ショッピングガイド",
+              "content_text_en": "SHOPPING GUIDE",
+              "content_link": "shopify:\/\/pages\/shopping-guide"
+            }
           }
         },
         "block_order": [
           "7a2db465-2820-4e69-9dfb-fe184d12ca3d",
-          "b34e4a29-7c59-419f-b05b-03ce956330f5"
+          "b34e4a29-7c59-419f-b05b-03ce956330f5",
+          "3440b37d-c0f4-43db-be2d-79430a7e85d7"
         ],
         "settings": {
         }
