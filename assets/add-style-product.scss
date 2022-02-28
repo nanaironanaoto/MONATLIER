@@ -1,0 +1,1485 @@
+
+/*--------------------------------------------------------------------------------
+
+商品ページ
+
+--------------------------------------------------------------------------------*/
+#page-container{
+  overflow:hidden;
+}
+
+/*--商品ページ：レイアウト--*/
+
+.main-content {
+    padding-top: 0 !important;
+}
+.page-content--product{padding-top:0;}
+.page-content--product .page-width {
+  	max-width: 100%;
+    padding: 0;
+}
+.page-content--product .grid{margin:0;}
+.page-content--product .grid__item{
+  padding: 112px 0 0;
+}
+
+h2.section-header__title{
+    font-size:54px;
+    letter-spacing: 0.08em;
+    margin-bottom: 9px;
+}
+.section-header span{
+    font-size:14.5px;
+    letter-spacing: 0.14em;
+}
+@media only screen and (max-width: 768px)
+{
+  .page-width{padding: 0 5vw;}
+}
+/*----------------------------------------------------------------------------------------------------------------レイアウト--*/
+/*--商品ページ：レイアウト--*/
+
+/*--サイドバー余白--*/
+.product-single__sticky{
+    padding-top: 112px;
+  top:0;
+}
+.orbitvu-gallery-fix {
+    border: 0px solid #ccc !important;
+}
+
+@media only screen and (min-width: 769px){
+/*--商品画像のレイアウト--*/
+.page-content--product .medium-up--two-fifths, .page-content--product .medium-up--three-fifths {width: 50% ;}
+
+/*--レイアウト右側の余白--*/
+.product-single__meta {
+    max-width: 545px;
+    padding-left: 100px;
+    position: relative;
+    padding-bottom: 20vw;
+
+}
+}
+/*--パンくずリスト--*/
+.bread-product{font-size:11px; color:#6F6F6F;}
+.bread-product span{margin:0 1px 0 5px;color:#DDDDDD;}
+.product-no{font-size:13px;color:#6F6F6F;margin-top:15px;}
+
+/*--シリーズ名--*/
+.product-page-series{font-size:14px;font-family: "TTDrugs-R" !important;}
+.product-page-series .bar{
+    color:#DDDDDD;
+    margin:0 10px 0 8px;
+}
+.product-page-series span.japanese{
+    color:#C9C9C9;
+    font-size:14px;
+    margin:0 ;
+}
+
+/*--商品タイトル--*/
+h1.product-single__title{
+    font-size:35px ;
+    font-weight: 500;
+    margin-top: 5px;
+    line-height: 1.3;
+    font-family: "游ゴシック体", YuGothic, "游ゴシック Medium", "Yu Gothic Medium", "游ゴシック", "Yu Gothic", sans-serif !important;
+}
+
+/*--商品価格--*/
+.product__price{
+    font-size:27px;
+    font-weight: 500;
+    margin-bottom:34px;
+    display: block;
+}
+.product__price.product__price--compare{display: none;}
+.product__price-savings{display: none;}
+.product__policies{display: none;}
+
+/*--カートに追加ボタン--*/
+.add-to-cart {
+    height: 54px;
+    font-weight: 400;
+    background: #4B4B4B;
+    color: #FFF;
+    border: none !important;
+    width:calc(100% - 60px) ;
+    display: inline-block;
+}
+.add-to-cart:disabled:hover{
+    background: #f6f6f6 !important;
+}
+.add-to-cart svg{
+    position: absolute;
+    width: 19px;
+    right: 17px;
+    top: 14px;
+}
+.add-to-cart svg path,.add-to-cart svg rect{fill:#FFF;}
+.add-to-cart[disabled] svg path, .add-to-cart[disabled] svg rect{
+    fill: #4b4b4b;
+}
+/*--お気に入りボタン--*/
+._SFA.detail{
+    float: right;
+}
+.SFA__btn{
+    height: 54px !important;
+    width: 54px !important;
+    margin: 0 !important;
+}
+.SFA__btn.active:after{
+    background: #d6b17d !important;
+}
+//この商品についてお問い合わせ
+.product-contact a{
+    font-size: 12px;
+}
+
+/*--バリアントセレクター--*/
+.variant-wrapper--dropdown{
+  min-width: 49%; margin:0;
+  font-size:0;
+}
+.variant-input-wrap{
+    display: inline-block;
+    margin-bottom: 10px;
+}
+.variant-input-wrap select{
+    padding:4px 30px 4px 8px ;
+    font-size:14px ;
+}
+
+.product__quantity label, label.variant__label {
+    display: inline-block !important;
+    letter-spacing:0 ;
+    font-size:14px ;
+    min-width:100px;
+    white-space: nowrap;
+}
+.product__quantity{
+    display: block;
+    padding-left: 0px;
+}
+.product__quantity input{
+    font-size:14px ;
+    padding:4px 10px 4px 8px ;
+}
+.product-single__form{margin-bottom:10px;}
+
+.product__quantity .js-qty__adjust{
+    padding-bottom: 0;
+    padding-top: 0;
+}
+
+@media only screen and (max-width: 768px)
+{
+/*--レイアウト調整--*/
+.page-container{overflow: hidden;}
+.page-content--product .page-width {
+    margin-top:24vw !important;
+    padding: 0 !important;
+
+}
+.page-content--product .grid {margin-left: 0 ;}
+.page-content--product .grid__item{padding:0 ;}
+.bread-product{display: none;}
+.bread-product.mobile{
+    display: block !important;
+    margin-left: 5vw;
+    font-size: 2.8vw;
+    letter-spacing: 0.3vw;
+    margin-bottom: 4vw;
+}
+.product-no{
+    margin-bottom:1.3vw;
+    font-size: 2.7vw;
+    letter-spacing: 0.1vw;
+}
+.product-single__meta {
+    text-align: left;
+    padding: 0 10vw;
+    padding-top: 0 !important;
+    margin-top: -4vw;
+    z-index: 1;
+    position: relative;
+}
+/*--シリーズ名--*/
+.product-page-series{
+    font-size:13px;
+    letter-spacing: 0.3vw;
+}
+.product-page-series .bar{margin:0 3vw 0 2vw;}
+.product-page-series span.japanese{font-size:13px;}
+
+/*--商品タイトル--*/
+h1.product-single__title {
+    font-size: 6.2vw !important;
+    line-height: 1.4;
+    margin-top: 5px ;
+    letter-spacing: 0.3vw;
+}
+
+/*--商品価格--*/
+.product__price {
+    font-size: 5.2vw;
+    letter-spacing: 0.01em;
+    margin-bottom: 7vw;
+}
+
+/*--バリアントセレクター--*/
+.variant-wrapper--dropdown{
+  width: 100%; margin:0;
+
+}
+.variant-input-wrap{
+    display: inline-block;
+    margin-bottom: 1.4vw;
+    width: 48%;
+}
+.variant-input-wrap select{
+    padding: 2vw 1vw 2vw 3vw ;
+    font-size: 3.8vw !important;
+    letter-spacing:0.2vw;
+    width: 100%;
+}
+
+.product__quantity label, label.variant__label {
+    display: inline-block !important;
+    letter-spacing:0 ;
+    font-size: 3.8vw ;
+    letter-spacing:0.2vw;
+    width:40%;
+}
+.product__quantity{
+    display: block;
+    padding-left: 0;
+}
+.product__quantity input{
+    padding: 2vw 1vw 2vw 1vw !important ;
+    width: 100%;
+    font-size: 3.8vw !important;
+}
+.js-qty__wrapper{
+    max-width: 48% !important;
+    width: 48%;
+}
+
+/*--カートに追加ボタン--*/
+.add-to-cart {
+    height: 15vw;
+    width:calc(100% - 16.3vw) ;
+    font-size: 3.8vw;
+    letter-spacing: 0.7vw;
+}
+.add-to-cart svg{
+    position: absolute;
+    width: 5vw;
+    right: 4.4vw;
+    top: 4.5vw;
+}
+
+/*--お気に入りボタン--*/
+._SFA.detail{
+    float: right;
+}
+.SFA__btn{
+    height: 15vw !important;
+    width: 15vw !important;
+    margin: 0 !important;
+}
+.SFA__btn:after{
+    width: 4.5vw !important;
+    height: 4.5vw !important;
+}
+
+}
+
+/*----------------------------------------------------------------------------------------------------------------商品画像：ORBITVU--*/
+/*--ORBITVU--*/
+div.orbittour-container{
+    z-index: 0;
+}
+div.ov-control-panel{
+    display: none;
+}
+div.ov-nosize.ov-sixteen-nine{
+    padding-bottom: 114% !important;
+}
+div.orbittour-views-container{
+    position: absolute;
+    bottom: 9vw;
+}
+div.orbittour-views_wrapper a{
+    border:0 !important;
+}
+.orbittour-fullscreen-button-wrapper{
+    display: none !important;
+}
+div.ovvvport.zoomin .orbitvu-viewer-object-canvas, div.ovvvport.zoomin .ovvtiles{
+    transform: scale(1) !important;
+}
+
+/*--ORBITVU：サムネイル--*/
+
+div.orbittour-views_wrapper a{
+    overflow: hidden;
+    margin-right: 0.7vw !important;
+    max-height: unset !important;
+    width: 6.5vw !important;
+    height: 6.5vw !important;
+}
+div.orbittour-views_wrapper a img{
+    object-fit: cover;
+    transform: scale(1) !important;
+}
+
+@media only screen and (max-width: 768px)
+{
+.orbittour-views{
+    min-height: 14.5vw !important;
+}
+.orbittour-size-small a.orbittour-thumbnail{
+    height: 14.5vw !important;
+    width: 14.5vw !important;
+    margin-right: 1.2vw !important;
+
+}
+.orbittour-initialized div.orbittour-views_wrapper:before {
+    width: 14.5vw !important;
+    height: 14.5vw !important;
+    padding-top: 2.5vw !important;
+    font-size: 1.2vw;
+}
+
+/*--ORBITVU：高さ調整--*/
+.product-360-image{
+    height: 120vw;
+    content:"";
+}
+div.ov-nosize.ov-sixteen-nine{
+    padding-bottom: 120% !important;
+}
+/*--ORBITVU：サムネイル--*/
+div.orbittour-views-container{
+    position: absolute;
+    bottom: 19vw;
+}
+div.orbittour-views_wrapper a{
+    margin-right: 1.4vw !important;
+}
+.orbittour-thumbnail {
+    height: 14.5vw !important;
+    width: 14.5vw !important;
+    margin-right: 5vw !important;
+}
+
+.orbittour-size-medium a.orbittour-thumbnail {
+    height: 14.5vw !important;
+    width: 14.5vw !important;
+    margin-right: 5vw !important;
+}
+}
+.orbittour-initialized div.orbittour-views_wrapper:before{
+    width: 6.5vw;
+    margin-right: 1vw;
+    height: 6.5vw;
+    content: "360°\AVIEW";
+    white-space: pre;
+    color:#C8AB7A;
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    display: block;
+    padding-top: 1.9vw;
+    font-size: 1.2vw;
+    letter-spacing: 0.01em;
+    line-height: 1.25;
+    font-family: "TTDrugs-R" !important;
+}
+.orbittour-initialized div.orbittour-views_wrapper a {
+    transition: border 0.3s, height 0.5s, width 0.5s !important;
+}
+div.orbittour-views_wrapper a:hover{
+    border-color: white ;}
+div.orbittour-container :focus{
+    border: solid 1px #C8AB7A !important;
+}
+div.orbittour-views_wrapper .orbittour-thumbnail{
+    border-bottom-color: #FFF !important;
+    border-top-color: #FFF !important;
+    border-right-color: #FFF !important;
+    border-left-color: #FFF !important;
+}
+div.orbittour-views_wrapper .orbittour-thumbnail:focus{
+    border-bottom-color: #C8AB7A !important;
+    border-top-color: #C8AB7A !important;
+    border-right-color: #C8AB7A !important;
+    border-left-color: #C8AB7A !important;
+}
+/*----------------------------------------------------------------------------------------------------------------商品詳細--*/
+
+
+
+/*--お試しリング：モーダル--*/
+.ring-size-modal{
+    display: inline-block;
+    color: F000;
+    font-size: 12px;
+    background: #DDDDDD;
+    color: #4b4b4b;
+    padding: 2px 0 0 1px;
+    font-weight: 600;
+    border-radius: 50%;
+    width: 20px;
+    text-align: center;
+    margin-left: 5px;
+}
+
+@media only screen and (max-width: 768px)
+{
+.ring-size-modal {
+    font-size: 2.8vw;
+    padding: 0.4vw 0vw 0.3vw ;
+    width: 5.1vw;
+    margin-left: 3vw;
+}
+}
+.ring-size-modal .grid-product{
+    width: 20px;
+    height: 20px;
+    padding: 0;
+    float: none;
+    display: inline-block;
+    overflow: hidden;
+    margin:0;
+}
+//商品詳細情報
+.product-info{
+    border-bottom:1px solid #EEEEEE ;
+    padding: 30px 0 0;
+    margin-bottom: 40px;
+}
+.product-info h2{margin:0;
+    font-size:23px;
+    letter-spacing: 1px;
+    font-family: "TTDrugs-R" !important;
+    padding: 13px 0;
+    border-top: solid 1px #EEEEEE;
+    margin-top: -1px;
+    position: relative;
+}
+.product-info h2 span{
+    font-size:12px;
+    margin-left:14px;
+    color:#848484;
+    font-family:  "游ゴシック体", YuGothic, "游ゴシック Medium", "Yu Gothic Medium", "游ゴシック", "Yu Gothic", sans-serif ; font-weight:500;
+}
+
+.product-metafields-text-explanation{
+    font-size:13px;
+    color:#6f6f6f;
+    font-family:  "游ゴシック体", YuGothic, "游ゴシック Medium", "Yu Gothic Medium", "游ゴシック", "Yu Gothic", sans-serif ; font-weight:500;
+	margin-top: 13px;
+    margin-bottom: 0;
+}
+
+.product-info p{
+    font-size:14px;
+    letter-spacing: 0.06em;
+    line-height: 1.7;
+}
+
+.product-info .arrow{
+    position: absolute;
+    right: 0;
+    top: 24px;
+}
+.product-info .arrow svg{
+    width: 15px;
+}
+.product-info h2.active .arrow svg{
+    transform: rotate(180deg);
+}
+
+.product-info li::marker{content:"";}
+.product-info ul{
+    margin: 0 0 0;
+    padding-bottom: 50px;
+    display: none;
+
+}
+@media only screen and (max-width: 768px)
+{
+
+.product-info h2{
+    font-size: 6.3vw;
+    letter-spacing: 0.3vw;
+    font-family: "TTDrugs-R" !important;
+    padding: 3vw 0;
+}
+.product-info h2 span{
+    display: block;
+    font-size: 3vw;
+    letter-spacing: 0.3vw;
+    margin: -1vw 0 1vw;
+}
+.product-metafields-text-explanation{
+    font-size: 2.7vw;
+    letter-spacing: 0.3vw;
+    margin-top: 1.3vw;
+}
+.product-info .arrow {
+    top: 10vw;
+}
+ .product-info .arrow svg {
+    width: 3.5vw;
+}
+}
+
+/*--商品詳細テーブル--*/
+
+.product-info table{
+    border-spacing: 1px;
+    background: #FFF;
+    border-top: solid 1px #F8F6F4;
+    margin-bottom: 20px;
+}
+.product-info tr{
+    border: none;
+}
+.product-info th{
+    background: #F8F6F4;
+    width: 140px;
+}
+.product-info th,.product-info td{
+    font-size:13px;
+}
+.product-info td{
+    font-size:13px;
+    border-bottom: solid 1px #F8F6F4;
+}
+.product-info td:first-child{
+    font-size:13px;
+}
+
+/*--ギフトラッピング--*/
+.spb-label-tooltip{font-size:0;}
+
+//ラベル
+.giftwrapping-select span label{
+    margin-bottom: 10px;
+    position: relative;
+    height: 80px;
+    padding-right: 50px;
+    letter-spacing: 0.08em;
+    font-size:14px;
+}
+
+//英語ラベル
+.giftwrapping-select span label:before{
+    display: block;
+    margin-left: 34px;
+    margin-bottom: 3px;
+    font-size: 15px;
+    font-family: "TTDrugs-R" !important;
+    color: #B7B7B7;
+    letter-spacing: 0.05em;
+}
+
+//ギフト画像
+.giftwrapping-select span label:after{
+    content: "";
+    background-image: url('https://cdn.shopify.com/s/files/1/0268/1202/2962/files/850_6366_2x_49fd5e7c-3a12-4339-9296-d3aa13f1aca1.jpg?v=1615943909');
+    background-size:contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 16%;
+    height: 70px;
+    position: absolute;
+    right: 0;
+    top:0;
+}
+
+.giftwrapping-select span label:nth-child(2):after{
+    background-image: url('https://cdn.shopify.com/s/files/1/0268/1202/2962/products/850_6366_2x_36e89bcb-802c-4664-bd8d-61be46443a13.jpg?v=1632300840');
+}
+
+.giftwrapping-select span label:nth-child(1):after{
+    background-image: url('https://cdn.shopify.com/s/files/1/0268/1202/2962/products/20220222.jpg?v=1645504310');
+}
+
+/* .giftwrapping-select span label:nth-child(2){
+  display:none;
+} */
+
+
+.giftwrapping-select span label:nth-child(1):before{
+    content:"PACKING";
+}
+.giftwrapping-select span label:nth-child(2):before{
+    content:"GIFT WRAPPING";
+}
+.giftwrapping-select span label:nth-child(3):before{
+    content:"SPECIAL GIFT WRAPPING";
+}
+
+
+//ギフト価格表示
+.giftwrapping-select span label input:after{
+    margin-top: 20px;
+    display: block;
+    margin-left: 32px;
+    font-size: 14px;
+}
+
+.giftwrapping-select span label:nth-child(1) input:after{
+    content: "￥0";
+}
+
+.giftwrapping-select span label:nth-child(2) input:after{
+    content: "￥1,900";
+}
+
+/* .giftwrapping-select span label:nth-child(3) input:after{
+    width: 300px;
+    font-size:11px;
+    color:red;
+} */
+
+//ギフト：ラジオボタン
+.giftwrapping-select input[type=radio] {
+    margin: 0 20px 0 0;
+}
+.giftwrapping-select input[type=radio]:before {
+    background: none;
+    border: 1px solid #DDDDDD;
+    background: #FFF;
+    border-radius: 50%;
+    content: '';
+    display: block;
+    width: 19px;
+    height: 20px;
+    left: -1px;
+    margin-top: -15px;
+    position: absolute;
+    top: 50%;
+}
+
+.giftwrapping-select input[type=radio]:checked:before {
+    background: none;
+    border: 1px solid #DDDDDD;
+    background: #FFF;
+    border-radius: 50%;
+    content: '●';
+    color:#c8ab7a;
+    font-size: 14px;
+    display: block;
+    line-height: 1.3;
+    padding-left: 1.5px;
+    width: 19px;
+    height: 20px;
+    left: -1px;
+    margin-top: -15px;
+    position: absolute;
+    top: 50%;
+}
+
+
+/*----------------------------------------------------------------------------------------------------------------おすすめ商品--*/
+
+
+/*--おすすめ商品--*/
+.slick-initialized .slick-slide {
+    clear:inherit !important;
+}
+
+/*----------------------------------------------------------------------------------------------------------------ギャラリー--*/
+
+.gallery-section{margin:200px 0;}
+.gallery-box{
+    width: 100%;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    margin-bottom:4.6%;
+}
+.gallery-box img{
+  width: 100%;
+  object-fit: cover;
+  max-height: 63vh;
+}
+.gallery-box:before {
+    content:"";
+    display: block;
+}
+.gallery-box-half{
+    width: 100%;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    margin-bottom:4.6%;
+}
+
+.gallery-box-half:before {
+    content:"";
+    display: block;
+}
+.gallery-box-half-child{
+    width: 50%;
+    background-position: center;
+    background-size: cover;
+}
+
+.gallery-box-half-child:first-child{margin-right: 2.3%;}
+
+.gallery-box-half-child:last-child{margin-left: 2.3%;}
+
+//Youtube
+.video-wrapper{
+    margin-bottom:55px;
+}
+
+@media only screen and (max-width: 768px)
+{
+.video-wrapper{
+    margin-bottom: 6vw;
+}
+}
+@media only screen and (max-width: 768px)
+{
+.gallery-section{margin:29vw 0;}
+.gallery-section .section-header{
+    margin-bottom: 12vw;
+}
+.gallery-section h2.section-header__title{
+    font-size: 12vw;
+    letter-spacing: 0.07em;
+    margin-bottom: 4vw;
+}
+.gallery-section span{
+    font-size: 3.3vw;
+    letter-spacing: 0.08em;
+}
+.gallery-box{
+    width: 100%;
+    background-position: center;
+    background-size: cover;
+    display: block;
+    margin-bottom:5vw;
+}
+.gallery-box-half{
+    width: 100%;
+    background-position: center;
+    background-size: cover;
+    display: block
+}
+.gallery-box-half:before {content:none;}
+
+.gallery-box-half-child{
+    width: 100%;
+    margin:0 0 5vw !important;
+}
+}
+
+
+/*----------------------------------------------------------------------------------------------------------------ポイント--*/
+.point-section{
+    background: #F8F6F4;
+    padding:120px 0 180px;
+}
+
+.point-section h2{
+    letter-spacing: 0.12em;
+}
+.point-section h3{
+    letter-spacing: 0.13em;
+    font-size: 23px;
+}
+.point-section p{
+    font-size: 15px;
+    letter-spacing: 0.08em;
+}
+
+
+.flex-box{
+  display: flex;
+  justify-content: center;
+  padding: 0px;
+    background: #FFF;
+}
+.flex-box__item{width:50%;}
+.flex-content{padding:8%;}
+.flex-image{
+    background-size: cover;
+    background-position: center;
+    content: "　";
+    line-height: 0 !important;
+}
+.flex-box.reverse{
+    flex-direction: row-reverse;
+}
+
+@media only screen and (max-width: 768px){
+.point-section {padding:21vw 0; margin:0;}
+.point-section .section-header{
+    margin-bottom: 13vw;
+}
+.point-section h2.section-header__title{
+    font-size: 12vw;
+    letter-spacing: 0.07em;
+    margin-bottom: 4vw;
+}
+.point-section span{
+    font-size: 3.4vw;
+    letter-spacing: 0.08em;
+}
+.point-section p{
+    font-size: 3.4vw;
+    letter-spacing: 0.05em;
+    margin-bottom: 4vw;
+}
+
+.flex-box{
+  flex-direction: column !important;
+  margin: 0 0 6.5vw;
+}
+.flex-content{padding: 12vw 10vw 10vw;}
+.flex-box__item{width:100%;}
+.flex-image{
+    height: 100%;
+  padding-top : 100% ;
+}
+
+.point-section h3{
+    font-size: 4.3vw;
+    font-weight: 600;
+    line-height: 1.7;
+    letter-spacing: 0.12em;
+    margin-bottom: 4vw;
+
+}
+}
+/*----------------------------------------------------------------------------------------------------------------レビュー--*/
+.product-reviews{margin-top: 160px;}
+.stamped-fa-star{color:#C8AB7A !important;}
+.product-reviews .section-header{margin-bottom:0 ;}
+#stamped-main-widget{margin:0 !important;}
+
+.stamped-header{display: none;}
+div[data-widget-style*=standard] .stamped-tab-container {display: none !important;}
+#stamped-sort-select {display: none !important;}
+
+.stamped-review{
+	clear: inherit!important;
+    background: #F8F6F4;
+    padding: 70px 0 40px!important;
+    position: relative;
+    font-family: "游ゴシック体", YuGothic, "游ゴシック Medium", "Yu Gothic Medium", "游ゴシック", "Yu Gothic", sans-serif;
+}
+.stamped-review-header-title{
+    font-size:20px !important;
+    letter-spacing: 3px;
+    line-height: 1.5 !important;
+}
+.stamped-review-content-body{
+    letter-spacing: 1px;
+    line-height: 2.1 !important;
+    margin-top: 20px !important;
+}
+.stamped-review-header{margin-bottom: 30px;}
+div.stamped-review-header .created{float: left !important; margin-right:10px; font-size:15px;}
+.stamped-starratings{
+    display: block;
+    position: absolute;
+    right: 100px ;
+    top:66px  !important;
+    }
+
+@media only screen and (max-width: 768px)
+{
+.product-reviews{margin: 22vw 0;}
+.product-reviews h2.section-header__title{
+    font-size: 12vw;
+    letter-spacing: 0.07em;
+    margin-bottom: 4vw;
+}
+.product-reviews .section-header span{
+    font-size: 3.4vw;
+    letter-spacing: 0.08em;
+}
+.stamped-review-header {
+    margin-bottom: 6vw;
+}
+div.stamped-review-header .created{
+    margin-right:2.4vw !important;
+    font-size: 3.8vw;
+    letter-spacing: 0.3vw;
+}
+div.stamped-review-header .author{
+    font-weight: 500;
+    font-size: 3.8vw;
+    letter-spacing: 0.3vw;
+}
+.stamped-main-widget{padding-bottom: 18vw;}
+.stamped-review{
+
+}
+.stamped-starratings{
+    position: inherit;
+    margin-top: 2vw  !important;
+}
+.stamped-fa-star:before {
+    font-size:4vw !important;
+    letter-spacing: 0.4vw;
+
+}
+.stamped-review-header-title{
+    font-size:5vw !important;
+    letter-spacing: 0.7vw;}
+
+.stamped-review-content-body{
+    letter-spacing: 0.2vw !important;
+    font-size: 3.4vw !important;
+}
+
+.product-reviews .slick-arrow{
+    position: absolute;
+    top:108%;
+}
+.product-reviews .slick-next{left:21vw;}
+.product-reviews .slick-prev{left:5vw;}
+.product-reviews .slick-arrow{display:none !important;}
+.product-reviews .slick-arrow{
+    display:block !important;
+    width: 14vw;
+    height: 14vw;
+}
+
+.product-reviews .slick-arrow:before{
+    background-size:2.7vw;
+    width: 14vw;
+    height: 13.5vw;
+}
+.product-reviews .slick-prev.slick-arrow:before{
+    width: 13vw;
+    height: 13.5vw;
+}
+.write-review{
+    width:54%  !important;
+    position: absolute;
+    right: 4vw;
+    margin-top:-16vw;
+}
+.write-review-blank .write-review{
+    position: relative;
+    margin: 0 auto;
+    right: unset;
+    width: auto !important;
+    margin-top: -20vw;
+}
+
+}
+
+
+/*----------------------------------------------------------------------------------------------------------------ページ下部--*/
+
+.concept-section{
+    text-align: center;
+    margin: 160px 0 34px;
+}
+.concept-section h2{
+    font-size:60px;
+    font-weight: 500;
+    letter-spacing: 0.11em;
+}
+.concept-section p{
+    margin-bottom:60px;
+}
+.concept-image{
+    height: 540px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.series-products-wrap{
+    display: flex;
+    margin: 100px 110px 0;
+    align-items: center;
+    text-align: left;
+}
+.series-products-wrap .series-name{
+    font-size:17px;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+}
+.series-products-wrap h3{
+    font-family: "TTDrugs-R" !important;
+    font-size:66px;
+    letter-spacing: 0.02em;
+    line-height: 1;
+}
+.series-products-wrap .series-japanese{
+    color: #C9C9C9;
+    font-size:20px;
+    letter-spacing: 4px;
+    margin-left: -12px;
+    margin-bottom:10px;
+}
+.series-products-wrap p{
+    margin: 0 ;
+    margin-left: 80px;
+    letter-spacing: 2px;
+}
+
+@media only screen and (max-width: 768px)
+{
+
+
+.concept-section {
+    text-align: center;
+    margin: 26vw 0 9vw ;
+}
+.concept-section h2.section-header__title{
+    font-size: 12vw;
+    letter-spacing: 0.07em;
+    margin-bottom: 4vw;
+}
+.concept-section .section-header span{
+    font-size: 3.4vw;
+    letter-spacing: 0.08em;
+}
+.concept-section .section-header {
+    margin-bottom: 7.5vw;
+}
+.concept-image{height: 64vw;}
+.series-products-wrap h3 {
+    font-size: 14vw;
+    letter-spacing: 0.03em;
+}
+.series-products-left span.series-japanese{
+    font-size: 4.8vw !important;
+    letter-spacing: 0.34em !important;
+
+}
+.series-products-wrap{
+    display: flex;
+    margin: 10vw 10vw 0;
+    flex-direction: column;
+    text-align: center;
+}
+.series-products-wrap .series-name{display: none;}
+.series-products-wrap p{
+    margin: 4vw 0 2vw;
+    margin-left: 0;
+    font-size: 3.8vw;
+    letter-spacing: 0.08em;
+}
+}
+
+/*--コレクションへ戻る：非表示--*/
+.btn.btn--small.return-link{display: none;}
+
+/*----------------------------------------------------------------------------------------------------------------商品モーダル--*/
+/*--商品モーダル：共通--*/
+.section-header.english .section-title{
+    font-size:54px;
+    letter-spacing: 5px;
+}
+.modal-flex-wrap{
+    display: flex;
+    margin-left: -8%;
+}
+.modal-flex-box{
+    width: 33.3%;
+    text-align: center;
+    padding-left: 8%;
+}
+.modal-flex-box img{
+    height: 200px;
+    margin: 0 auto;
+}
+
+/*--お試しリング：共通--*/
+.ring-size-modawindow hr{
+    margin-top: 60px;
+    color:#C9C9C9;
+}
+.ring-size-modawindow h4{
+    margin-top:60px;
+    font-size:38px;
+    letter-spacing: 5px;
+    font-family: "TTDrugs-L" !important;
+}
+.ring-size-modawindow h4 span{
+    font-size:14px;
+    margin-left: 15px;
+    letter-spacing: 2px;
+    font-weight: 500;
+    color:#6F6F6F;
+    font-family: "游ゴシック体", YuGothic, "游ゴシック Medium", "Yu Gothic Medium", "游ゴシック", "Yu Gothic", sans-serif;
+}
+.ring-size-modawindow p{
+    font-size:14px;
+    text-align: left;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+}
+
+ul.ring-size-list{
+    list-style: desc;
+    font-size: 14px;
+    letter-spacing: 0.08em;
+    list-style-type: disc !important;
+    line-height: 1.8;
+    margin: 0 0 15px 15px;
+}
+ul.ring-size-list li::marker{
+    content: "・";
+}
+
+/*--お試しリング：上部--*/
+.ring-size-info{display: flex;}
+.ring-size-info-image{ width: 32%;}
+.ring-size-info-text{
+    width: 68%;
+    margin-left: 40px;
+    font-size:14px;
+    letter-spacing: 1px;
+}
+.ring-size-info-text > span{
+    font-size:22px;
+    font-weight: 500;
+    display: block;
+    margin-top: -20px;
+    text-align: left;
+}
+.ringsize-add-to-cart{
+    display: flex;
+    align-items: center;
+}
+.ring-size-modawindow section{
+    width:300px;
+    display: none;
+}
+.ringsize-add-to-cart .product-single__form {margin-bottom: 0;}
+.ringsize-add-to-cart .add-to-cart{
+    width: 100%;
+    height: 50px;
+}
+.ringsize-add-to-cart .ring-size-select{
+    width: 32%;
+    margin-right: 40px;
+    height: 50px;
+    font-size:12px !important;
+    color:#4b4b4b;
+}
+.ringsize-add-to-cart > span{width: 30%;}
+.ringsize-add-to-cart > section{width: 28%;}
+
+
+/*--リングサイズ対応表--*/
+.ring-size-modawindow table{
+    background: #F8F6F4;
+    font-size:13px;
+}
+.ring-size-modawindow table th{
+    background: #F8F6F4;
+    border-bottom: solid 1px #FFF;
+    font-size:12px;
+    font-weight: 500;
+}
+.ring-size-modawindow table th,
+.ring-size-modawindow table td{padding:16px;
+    }
+.ring-size-modawindow table td{text-align: center;}
+.ring-size-modawindow table tr:last-child th{border-bottom: solid 0px #F8F6F4;}
+
+/*--サイズ確定までの流れ--*/
+.size-flow.is-mobile{ display: none;}
+.size-flow.is-mobile{
+    margin: -10vw -5vw -10vw;
+    overflow:hidden;
+}
+.size-flow.is-mobile .modal-flex-box{
+    padding: 0 5vw;
+}
+.size-flow.is-mobile .slick-arrow{
+    top:23vw;
+    width: 7vw;
+    height: 7vw;
+}
+.size-flow.is-mobile .slick-arrow:before{
+    background-size: 1.7vw;
+    width: 7vw;
+    height: 6.7vw;
+}
+.size-flow.is-mobile .slick-prev.slick-arrow:before{
+    width: 6vw; }
+.size-flow.is-mobile .slick-next{right:5vw;}
+.size-flow.is-mobile .slick-prev{left:5vw;}
+
+
+@media only screen and (max-width: 768px)
+{
+/*--商品モーダル：共通--*/
+/*--商品モーダル：タイトル--*/
+.section-header.english .section-title{
+    font-size:12vw;
+    letter-spacing: 0.07em;
+    margin-top:6.5vw;
+    margin-bottom: 2vw;
+}
+.ec-modal__inner .section-header span {
+    font-size: 3.4vw;
+    letter-spacing: 0.1em;
+}
+.ec-modal__inner .section-header{
+    margin-bottom: 8vw;
+}
+/*--お試しリング：共通--*/
+.ring-size-modawindow p{
+    font-size:3.6vw;
+    letter-spacing: 0.08em;
+}
+.ring-size-modawindow h4{
+    text-align: center;
+    margin-top: 10vw;
+    font-size: 7.3vw;
+    letter-spacing: 0.14em ;
+    margin-bottom: 7vw;
+}
+.ring-size-modawindow h4 span{
+    display: block;
+    font-size: 3.1vw;
+    margin-left: 0;
+    letter-spacing: 0.14em ;
+}
+.ring-size-modawindow hr {
+    margin-top: 13vw;
+    margin-bottom: 0;
+}
+.ring-size-modawindow ul::marker{
+    content:"・" !important;
+}
+.ring-size-modawindow ul{
+    list-style-type: disc !important;
+    margin: 0 0 0 4vw;
+    font-size: 3.4vw;
+    line-height: 1.91;
+    letter-spacing: 0.07em ;
+}
+.ring-size-modawindow ul li::marker{
+    content:"・" !important;
+}
+/*--お試しリング：上部--*/
+.ring-size-info{flex-direction: column;}
+.ring-size-info-image{ width: 100%;}
+.ring-size-info-text{
+    width: 100%;
+    margin-left: 0px;
+}
+.ring-size-info-text h3{
+    font-size:5.6vw;
+    text-align: left;
+    letter-spacing: 0.08em;
+    margin-top: 4vw;
+}
+.ring-size-info-text > span{
+    font-size:5vw;
+    margin-top: -2vw;
+    letter-spacing: 0.11em;
+    margin-bottom: 2vw;
+}
+
+.ringsize-add-to-cart{display: block;}
+
+/*--お試しリングサイズ文字--*/
+.ringsize-add-to-cart > span{
+    width: 100%;
+    display: block;
+    text-align: left;
+    font-weight: 600;
+    font-size: 3vw;
+    letter-spacing: 0.04em;
+}
+
+.ringsize-add-to-cart .ring-size-select{
+    width: 100%;
+    margin:2vw 0;
+    font-size:3.6vw !important;
+    letter-spacing: 0;
+    height: auto;
+    padding: 3.4vw;
+}
+.ringsize-add-to-cart > section{width: 100%;}
+
+/*--サイズ確定までの流れ--*/
+.size-flow.is-mobile{ display: block;}
+.size-flow.is-pc{ display: none;}
+
+/*--リングサイズ対応表--*/
+
+
+.ring-size-modawindow table{
+  display: block;
+  overflow-x: scroll;
+  white-space: nowrap;
+  -webkit-overflow-scrolling: touch;
+}
+
+.ring-size-modawindow table th,
+.ring-size-modawindow table td{
+    padding: 3.8vw;
+    font-size:2.8vw;
+    letter-spacing: 0.08em;
+}
+h4.conversion-chart {
+    font-size:6vw !important;
+    letter-spacing: 0.05em;
+}
+
+}
+
+//アジャスターカン
+
+.adjuster{
+    width: 33.333333%;
+    padding: 0 4%;
+    text-align: center;
+    margin-top: -30px;
+    margin-bottom: -10px;
+}
+
+.adjuster img{
+    height: 204px;
+}
+
+
+@media only screen and (max-width: 768px)
+{
+
+.adjuster{
+    width: 100%;
+    padding: 10% 0;
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: -10vw;
+}
+
+.adjuster:last-child{
+    margin-bottom: 0vw;
+}
+.adjuster img{
+    height: 204px;
+}
+}
+
+//下部コンテンツ非表示
+.page-content--bottom{
+    display: none;
+}
+//ぱんくず
+.template-product .service{
+    margin-bottom: 140px;
+}
+.template-product  .bread-pages{
+    line-height: 1.2;
+}
+
+
+
+//ORBITVU
+.orbitvu-gallery{
+    padding-bottom: 0 !important;
+    padding-top: 100% !important;
+
+}
+.orbitvu-gallery-fix{
+    position: relative;
+    z-index: 0 !important;
+}
+div.orbitvu-gallery-view-image img.orbitvu-gallery-main-image{
+    width: 100% !important;
+}
+
+
+/*--ORBITVU：サムネイル--*/
+
+div.orbitvu-gallery-scroller{
+    position: relative;
+    bottom: 10vw;
+    z-index: 1;
+    width: 100%;
+}
+div.orbitvu-image-thumbs {
+    margin: 0 auto !important;
+}
+.orbitvu-gallery-product-views{
+    display: flex;
+    align-items: center;
+    align-content: center;
+}
+div.orbitvu-gallery-product-views ul.orbitvu-image-thumbs{
+
+    margin: 0 auto !important;
+}
+li.orbitvu-gallery-item {
+    overflow: hidden;
+    margin: 0.4vw !important;
+    max-height: unset !important;
+    width: 6.5vw !important;
+    height: 6.5vw !important;
+    border: solid 0px !important;
+}
+div.orbitvu-gallery-product-views ul.orbitvu-image-thumbs li.orbitvu-gallery-item, .orbitvu-gallery-product-views ul.orbitvu-image-thumbs li.orbitvu-gallery-item a{
+    overflow: hidden;
+    max-height: unset !important;
+    width: 6.5vw !important;
+    height: 6.5vw !important;
+
+}
+div.orbitvu-gallery-product-views ul.orbitvu-image-thumbs li.orbitvu-gallery-item, .orbitvu-gallery-product-views ul.orbitvu-image-thumbs li.orbitvu-gallery-item a img{
+    overflow: hidden;
+    max-height: unset !important;
+    width: 6.5vw !important;
+    height: 6.5vw !important;
+}
+
+div.orbittour-views_wrapper a img{
+    object-fit: cover;
+    transform: scale(1) !important;
+}
+
+
+@media only screen and (max-width: 768px)
+{
+
+div.orbitvu-gallery-scroller{
+    bottom: 21vw;
+}
+li.orbitvu-gallery-item {
+    margin: 0 0.9vw  1vw!important;
+    width: 14.5vw !important;
+    height: 14.5vw !important;
+}
+div.orbitvu-gallery-product-views ul.orbitvu-image-thumbs li.orbitvu-gallery-item, .orbitvu-gallery-product-views ul.orbitvu-image-thumbs li.orbitvu-gallery-item a{
+    width: 14.5vw !important;
+    height: 14.5vw !important;
+}
+
+div.orbitvu-gallery-product-views ul.orbitvu-image-thumbs li.orbitvu-gallery-item, .orbitvu-gallery-product-views ul.orbitvu-image-thumbs li.orbitvu-gallery-item a img{
+    vertical-align: top !important;
+    width: 14.5vw !important;
+    height: 14.5vw !important;
+}
+}
+
+//おすすめ商品スライダー
+
+.series-product .slick-track{
+    margin-left: 0;
+}
