@@ -540,7 +540,7 @@ a:hover {
 .product_spec_table dt {
     background: #E4E4E4;
     width: 100%;
-    max-width: 100px;
+    max-width: 130px;
     border-bottom: 1px solid #fff;
     padding: 5px 15px;
 }
