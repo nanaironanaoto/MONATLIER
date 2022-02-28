@@ -1,0 +1,636 @@
+@charset "UTF-8";
+/*-------------------
+
+コレクションページ
+
+-------------------*/
+/*=====================================================================================================コレクションページ：全体*/
+.page-width {
+  max-width: 1250px;
+  padding: 0 55px;
+}
+
+.grid {
+  margin-left: 0;
+}
+
+/*--ヘッダー：パディング削除--*/
+.boost-pfs-search-suggestion-header a {
+  font-size: 0 !important;
+}
+
+/*--ヘッダー：色変更--*/
+.site-header {
+  background: none;
+  opacity: 1 !important;
+}
+
+.header-fixed {
+  background: #fffffff0;
+}
+
+@media screen and (min-width: 769px) {
+  .grid__item--sidebar {
+    max-width: 190px;
+    overflow: hidden;
+    margin-top: 100px;
+    max-height: unset;
+    position: relative;
+    padding: 108px 0 216px;
+  }
+
+  .grid__item--content {
+    max-width: calc(100% - 190px);
+    padding: 48px 0 90px 50px;
+  }
+}
+.boost-pfs-filter-mobile-footer {
+  width: 100% !important;
+}
+
+.boost-pfs-filter-show-result {
+  background: #C8AB7A !important;
+  padding: 6vw !important;
+  font-size: 3.8vw !important;
+  letter-spacing: 0.4vw;
+}
+
+.boost-pfs-filter-bottom-pagination img {
+  width: 7.5px;
+  margin: 0 10px;
+}
+
+@media screen and (max-width: 768px) {
+  .pagination {
+    margin-bottom: 16vw;
+  }
+}
+/*=====================================================================================================コレクションページ：ヘッダー*/
+.collection-hero {
+  height: 540px;
+}
+
+.collection-hero-mobile {
+  display: none;
+}
+
+.collection-hero .parallax-container {
+  height: 100%;
+  position: relative;
+  top: 0%;
+}
+
+.collection-hero__image {
+  background-attachment: scroll;
+}
+
+.collection-hero__image {
+  background: #FFF;
+  opacity: 1;
+}
+
+.collection-hero__image.lazyloaded {
+  animation: unset;
+  opacity: 100;
+}
+
+.collection-hero__content {
+  position: relative;
+  padding: 106px 0 0;
+}
+
+.collection-hero__content:before {
+  background-color: #FFF;
+}
+
+.collection-hero__content h1 {
+  color: #4B4B4B;
+  text-align: left;
+  /*width: 300px;*/
+  font-size: 57px !important;
+  letter-spacing: 0.02em;
+  margin-bottom: 26px;
+}
+
+.section-header .section-header--hero {
+  pointer-events: none;
+}
+
+.collection-description {
+  color: #4B4B4B;
+  text-align: left;
+  font-size: 15px;
+  letter-spacing: 0.12em;
+  line-height: 2;
+  width: 70%;
+}
+
+.collection-hero__content .section-header {
+  animation: unset !important;
+  opacity: 1;
+}
+
+@media screen and (min-width: 769px) {
+  #CollectionAjaxResult {
+    margin-top: -100px;
+    z-index: 1;
+    position: relative;
+  }
+
+  .collection-filter__item--sort {
+    flex: 0 1 30.2%;
+    padding-left: 7.5px;
+    padding-right: 37px;
+  }
+
+  .collection-filter__item--sort select {
+    font-size: 13px;
+  }
+
+  .grid--collection.boost-pfs-filter-products {
+    margin-top: 100px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .collection-hero {
+    height: 151vw;
+    background: none;
+  }
+
+  .collection-hero__image {
+    display: none !important;
+  }
+
+  .collection-hero-mobile {
+    display: block;
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+  }
+
+  .collection-hero__content {
+    padding-top: 6vw;
+  }
+
+  /*コレクションページ：タイトル*/
+  .section-header--hero {
+    flex-direction: column;
+  }
+
+  .collection-hero__content h1 {
+    font-size: 12vw !important;
+    letter-spacing: 0.02em;
+    text-align: center;
+    width: auto;
+    margin-bottom: 7vw;
+  }
+
+  .collection-description {
+    font-size: 3vw;
+    line-height: 2;
+    letter-spacing: 0.5vw;
+    text-align: center;
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  .collection-description p {
+    font-size: 2.9vw;
+    line-height: 2;
+    letter-spacing: 0.5vw;
+  }
+}
+.style-japanese-title {
+  font-size: 23px;
+  font-family: "游ゴシック体", YuGothic, "游ゴシック Medium", "Yu Gothic Medium", "游ゴシック", "Yu Gothic", sans-serif;
+  font-weight: 500;
+  color: #B7B7B7;
+  letter-spacing: 0.26em;
+}
+
+.collection-seriese {
+  color: #C8AB7A;
+  font-family: TTDrugs-R !important;
+  text-align: left !important;
+  display: block;
+  margin-bottom: 10px;
+}
+
+@media screen and (max-width: 768px) {
+  .style-japanese-title {
+    font-size: 5vw;
+    margin-top: 3vw;
+    margin-bottom: -2vw;
+    display: block;
+  }
+
+  .collection-seriese {
+    color: #C8AB7A;
+    text-align: center !important;
+    font-size: 3.5vw;
+    display: block;
+    margin-bottom: 1vw;
+  }
+}
+/*=====================================================================================================コレクションページ：サイドバー*/
+.boost-pfs-filter-refine-by-wrapper {
+  display: none;
+}
+
+.boost-pfs-filter-refine-by-items {
+  display: none;
+}
+
+.boost-pfs-filter-option-title-text {
+  font-size: 22px;
+  letter-spacing: 0.04em;
+  font-family: "TTDrugs-R" !important;
+  font-weight: 500;
+}
+
+.boost-pfs-filter-option-item-list-single-list .boost-pfs-filter-option-value:before {
+  content: "";
+  background-image: url("https://cdn.shopify.com/s/files/1/0268/1202/2962/files/arrow-bottom-gray.png?v=1611673807");
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 10px;
+  height: 10px;
+  display: inline-block;
+  transform: rotate(-90deg);
+  margin-right: 5px;
+}
+
+.boost-pfs-filter-option-content .boost-pfs-filter-option-item-list .boost-pfs-filter-option-item {
+  margin-top: 0 !important;
+  margin-bottom: 12.5px !important;
+  padding-right: 8px !important;
+  list-style: none;
+  line-height: 1 !important;
+}
+
+.boost-pfs-filter-option-content .boost-pfs-filter-option-item-list .boost-pfs-filter-option-item button, .boost-pfs-filter-option-content .boost-pfs-filter-option-item-list .boost-pfs-filter-option-item a {
+  color: #4b4b4b;
+}
+
+.boost-pfs-filter-tree-v .boost-pfs-filter-option {
+  border-top: solid 1px #EEEEEE;
+}
+
+.boost-pfs-filter-tree-v .boost-pfs-filter-option-title-text:before {
+  position: absolute;
+  background-image: url("https://cdn.shopify.com/s/files/1/0268/1202/2962/files/8.png?v=1612008705");
+  background-size: contain;
+  background-repeat: no-repeat;
+  right: -10px;
+  display: inline-block;
+  width: 15px !important;
+  height: 10px !important;
+  border: 0px !important;
+  top: 5px;
+}
+
+.boost-pfs-filter-option-collapsed .boost-pfs-filter-option-title-text:before {
+  transform: rotate(180deg);
+}
+
+.boost-pfs-filter-option-title-text:after {
+  display: block;
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  font-family: "游ゴシック体", YuGothic, "游ゴシック Medium", "Yu Gothic Medium", "游ゴシック", "Yu Gothic", sans-serif;
+  font-weight: 500;
+  color: #848484;
+  margin-top: 5px;
+}
+
+.boost-pfs-filter-option-content .boost-pfs-filter-option-item-list.boost-pfs-filter-option-item-list-multiple-list li .boost-pfs-check-box {
+  border: solid 1px #DDDDDD !important;
+  width: 12px !important;
+  height: 12px !important;
+  top: 3px !important;
+}
+
+.boost-pfs-filter-option-content .boost-pfs-filter-option-item-list.boost-pfs-filter-option-item-list-multiple-list li.selected .boost-pfs-check-box:before {
+  border: none !important;
+  background-color: #c8ab7a !important;
+  transform: unset !important;
+  height: 8px !important;
+  width: 8px !important;
+  top: 1px !important;
+  left: 1px !important;
+}
+
+@media screen and (min-width: 769px) {
+  .boost-pfs-filter-options-wrapper {
+    border-top: 1px solid #EEEEEE;
+    border-bottom: 1px solid #EEEEEE;
+  }
+
+  .collection-sidebar {
+    padding: 0;
+  }
+
+  /*--フィルター：要素の余白--*/
+  .boost-pfs-filter-tree-v .boost-pfs-filter-option {
+    padding: 22px 0 12px !important;
+  }
+
+  .boost-pfs-filter-option-content {
+    padding: 0 !important;
+  }
+
+  .boost-pfs-filter-option-content-inner {
+    margin-top: 10px !important;
+    margin-bottom: 38px !important;
+    padding: 0;
+  }
+
+  /*--フィルター：クリアの文字調整--*/
+  .boost-pfs-filter-tree-v .boost-pfs-filter-option .boost-pfs-filter-option-title .boost-pfs-filter-clear {
+    margin-right: 32px;
+    font-size: 12px;
+  }
+
+  /*--フィルター：リスト--*/
+  .boost-pfs-filter-option-value {
+    font-size: 13px;
+  }
+
+  .boost-pfs-filter-button .boost-pfs-filter-clear {
+    display: none;
+  }
+
+  /*--フィルター：検索バー見出し--*/
+  .search-bar-side h4 {
+    font-family: "TTDrugs-R" !important;
+    font-weight: 500;
+    font-size: 14px;
+    margin-top: 60px;
+    margin-bottom: 15px;
+    letter-spacing: 2px;
+  }
+
+  /*--検索バー：文言変更--*/
+  .boost-pfs-search-suggestion-header a:before {
+    content: "検索結果を全て表示する";
+    font-size: 13px;
+  }
+
+  .search-bar-side .input-group-btn {
+    width: 54px;
+  }
+
+  .search-bar-side .input-group-btn button {
+    padding: 0;
+    min-width: 54px;
+  }
+
+  .search-bar-side svg {
+    width: 18px;
+  }
+
+  .search-bar-side .input-group-btn button {
+    width: 44px !important;
+    min-width: 44px !important;
+  }
+}
+.boost-pfs-filter-top-sorting-select:hover {
+  border: solid 1px #e8e8e1 !important;
+}
+
+/*=====================================================================================================コレクションページ：モバイルフィルター*/
+@media screen and (max-width: 768px) {
+  /*--モバイル--*/
+  .collection-filter {
+    padding: 5vw 0 6.4vw;
+    margin: 5vw 0 14vw;
+  }
+
+  /*--絞り込みボタン--*/
+  .collection-filter__item--drawer {
+    margin: 0;
+  }
+
+  .boost-pfs-filter-tree-mobile-button button {
+    background: #4b4b4b !important;
+    text-align: left;
+    padding: 3.2vw 4.1vw !important;
+    font-size: 3.6vw !important;
+    letter-spacing: 0.3vw;
+    margin: 0 !important;
+    position: relative;
+  }
+
+  .boost-pfs-filter-tree-mobile-button button:after {
+    content: "";
+    background: url("https://cdn.shopify.com/s/files/1/0268/1202/2962/files/search.png?v=1612256632");
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: absolute;
+    width: 3.3vw;
+    height: 3.3vw;
+    right: 2.5vw;
+    top: 3.4vw;
+    margin-bottom: 0.5vw;
+    display: block;
+    font-size: 4vw;
+    letter-spacing: 0.3vw;
+  }
+
+  /*--並び替えボタン--*/
+  .collection-filter__item--sort {
+    padding-left: 2.5vw;
+  }
+
+  .collection-filter__item--sort {
+    margin: 0;
+  }
+
+  .collection-filter__item--sort:before {
+    content: "SORT";
+    font-family: "TTDrugs-R" !important;
+    margin-bottom: 0.5vw;
+    display: block;
+    font-size: 4vw;
+    letter-spacing: 0.3vw;
+  }
+
+  .boost-pfs-filter-top-sorting select {
+    height: auto;
+    padding: 3.2vw 4.1vw;
+    font-size: 3.6vw !important;
+    letter-spacing: 0.3vw;
+  }
+
+  .boost-pfs-filter-option-stock {
+    padding-bottom: 10vw !important;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .boost-pfs-filter-tree-content {
+    padding: 10vw;
+  }
+
+  .boost-pfs-filter-option-title {
+    padding: 6.5vw 0 3.5vw !important;
+  }
+
+  .boost-pfs-filter-mobile-toolbar-middle {
+    display: none !important;
+  }
+
+  .boost-pfs-filter-mobile-toolbar-right {
+    width: 100% !important;
+  }
+
+  .boost-pfs-filter-mobile-toolbar-right button {
+    font-size: 3.2vw !important;
+  }
+
+  .boost-pfs-filter-tree-mobile-style2 .boost-pfs-filter-mobile-toolbar .boost-pfs-filter-close span {
+    background: none !important;
+  }
+
+  .boost-pfs-filter-tree-mobile-style2 .boost-pfs-filter-mobile-toolbar .boost-pfs-filter-close span:before {
+    background-color: unset !important;
+    width: 6.5vw !important;
+    height: 6.5vw !important;
+    transform: unset !important;
+    background-image: url("https://cdn.shopify.com/s/files/1/0268/1202/2962/files/modal-close.svg?v=1614476322") !important;
+    display: block !important;
+    background-size: contain !important;
+    left: 1vw !important;
+    top: 4.5vw !important;
+  }
+
+  .boost-pfs-filter-tree-mobile-style2 .boost-pfs-filter-mobile-toolbar .boost-pfs-filter-close span:after {
+    display: none !important;
+  }
+
+  .boost-pfs-filter-tree-mobile-style2 .boost-pfs-filter-mobile-toolbar .boost-pfs-filter-close {
+    background: #0000007a !important;
+  }
+
+  .boost-pfs-filter-option-title-text:after {
+    font-size: 3.5vw;
+    letter-spacing: 0.02em;
+    margin-top: 3vw;
+    display: block;
+    color: #848484;
+    font-family: "游ゴシック体", YuGothic, "游ゴシック Medium", "Yu Gothic Medium", "游ゴシック", "Yu Gothic", sans-serif;
+    font-weight: 500;
+  }
+
+  .boost-pfs-filter-option-title-text {
+    font-size: 7vw;
+    letter-spacing: 0.04em;
+    padding-bottom: 2vw;
+    font-family: "TTDrugs-R" !important;
+    padding-top: 0;
+  }
+
+  .boost-pfs-filter-tree-mobile-style2.boost-pfs-filter-tree-v .boost-pfs-filter-option .boost-pfs-filter-option-title .boost-pfs-filter-selected-items-mobile span {
+    font-size: 3vw;
+  }
+
+  .boost-pfs-filter-tree-mobile-style2.boost-pfs-filter-tree-v .boost-pfs-filter-option .boost-pfs-filter-option-title .boost-pfs-filter-option-title-heading:after {
+    border: solid 0px !important;
+    background-image: url("https://cdn.shopify.com/s/files/1/0268/1202/2962/files/arrow-bottom-gold_2.svg?v=1614138349");
+    background-size: 4vw;
+    background-repeat: no-repeat;
+    transform: rotate(-90deg) !important;
+    display: block !important;
+    width: 4vw !important;
+    height: 4vw !important;
+    top: 2.4vw !important;
+    right: -1vw !important;
+  }
+
+  .boost-pfs-filter-option-value {
+    font-size: 3.5vw;
+  }
+
+  .boost-pfs-filter-option-content .boost-pfs-filter-option-item-list.boost-pfs-filter-option-item-list-multiple-list li {
+    position: relative;
+    padding-left: 6vw;
+  }
+
+  .boost-pfs-filter-option-content .boost-pfs-filter-option-item-list .boost-pfs-filter-option-item {
+    margin-bottom: 4vw !important;
+  }
+
+  div.boost-pfs-filter-option-category .boost-pfs-filter-option-item.boost-pfs-filter-option-label a span.boost-pfs-filter-option-value:after {
+    font-size: 3.5vw !important;
+  }
+
+  .boost-pfs-filter-option-category .boost-pfs-filter-selected-items-mobile {
+    margin-bottom: 2vw !important;
+  }
+
+  .boost-pfs-filter-option-item-list-single-list .boost-pfs-filter-option-value:before {
+    width: 3vw;
+    height: 3vw;
+    margin-right: 1.4vw;
+  }
+
+  .boost-pfs-filter-option-content .boost-pfs-filter-option-item-list.boost-pfs-filter-option-item-list-multiple-list li .boost-pfs-check-box {
+    width: 3vw !important;
+    height: 3vw !important;
+    top: 0 !important;
+    left: 1.4vw;
+  }
+
+  .boost-pfs-filter-option-content .boost-pfs-filter-option-item-list.boost-pfs-filter-option-item-list-multiple-list li.selected .boost-pfs-check-box:before {
+    height: 2vw !important;
+    width: 2vw !important;
+    top: 0.3vw !important;
+    left: 0.3vw !important;
+  }
+
+  div.boost-pfs-filter-tree-mobile-style2.boost-pfs-filter-tree-v {
+    width: 85vw !important;
+  }
+
+  .boost-pfs-filter-tree-mobile-style2 .boost-pfs-filter-mobile-footer {
+    width: 85vw !important;
+    left: 0 !important;
+  }
+
+  .boost-pfs-filter-tree-mobile-style2 .boost-pfs-filter-mobile-toolbar .boost-pfs-filter-mobile-toolbar-top {
+    width: 15vw !important;
+  }
+
+  .boost-pfs-filter-tree-mobile-style2 .boost-pfs-filter-mobile-toolbar .boost-pfs-filter-close span {
+    margin: 0 0 0 3.4vw !important;
+  }
+}
+/*=====================================================================================================コレクションページ：メインカラム*/
+@media only screen and (max-width: 768px) {
+  /*--コレクションページ余白--*/
+  .page-width {
+    padding: 5vw !important;
+  }
+
+  .page-width > .grid {
+    margin: 0;
+  }
+
+  .collection-content .page-width > .grid > .grid__item {
+    padding: 0;
+  }
+
+  /*--商品数非表示--*/
+  .boost-pfs-filter-total-product {
+    display: none;
+  }
+
+  /*--フィルターのスティッキー解除--*/
+  .collection-filter {
+    position: relative;
+  }
+
+  /*--検索バー非表示--*/
+  .search-bar-side {
+    display: none;
+  }
+}
