@@ -1,0 +1,3879 @@
+@charset "UTF-8";
+/*----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+全体設定
+
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+.no-display {
+  display: none !important;
+}
+
+/*--------------------------------------------------------------------------コンテナ--*/
+.step__footer__previous-link {
+  display: none !important;
+}
+
+/*--lottieplayer：非表示--*/
+@media only screen and (max-width: 768px) {
+  lottie-player {
+    display: none;
+  }
+}
+.page-width {
+  max-width: 1170px;
+  padding: 0 55px;
+}
+
+.page-width.narrow {
+  max-width: 930px;
+  padding: 0 55px;
+}
+
+@media only screen and (max-width: 768px) {
+  .page-width.narrow {
+    padding: 0 10vw;
+  }
+
+  .main-content {
+    padding-top: 24vw !important;
+  }
+}
+.template-collection .main-content {
+  padding-top: 0 !important;
+}
+
+.template-index .main-content {
+  padding-top: 0 !important;
+}
+
+.pagination {
+  width: auto;
+  background: none;
+  font-family: "TTDrugs-R" !important;
+  font-size: 18px;
+  letter-spacing: 0.1em;
+  padding: 0 0 52px;
+}
+
+.pagination .next, .pagination .prev {
+  width: auto;
+  background: none;
+  font-size: 15px;
+  letter-spacing: 0.03em;
+  margin: 0 30px;
+}
+
+.pagination svg {
+  width: 7.5px;
+  margin: 0 10px;
+}
+
+.pagination .prev svg {
+  transform: rotate(180deg);
+}
+
+.pagination .page.current {
+  color: #c8ab7a;
+  opacity: 1;
+}
+
+/*--------------------------------------------------------------------------フォントスタイル--*/
+body {
+  font-family: "游ゴシック体", YuGothic, "游ゴシック Medium", "Yu Gothic Medium", "游ゴシック", "Yu Gothic", sans-serif;
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: "TTDrugs-R";
+  src: url("TTDrugs-R.woff2") format("woff2"), url("TTDrugs-R.woff") format("woff2");
+}
+@font-face {
+  font-family: "TTDrugs-L";
+  src: url("TTDrugs-L.woff2") format("woff2"), url("TTDrugs-L.woff") format("woff2");
+}
+@font-face {
+  font-family: "TTDrugs-I";
+  src: url("TTDrugs-I.woff2") format("woff2"), url("TTDrugs-I.woff") format("woff2");
+}
+h1,
+.series-name,
+.section-header h2,
+.see-more, .quick-product__label {
+  font-family: "TTDrugs-R" !important;
+}
+
+.rte-setting a:not(.btn):after, .rte a:not(.btn):after {
+  bottom: -1px;
+  border-bottom: 1px solid currentColor;
+}
+
+/*--段落--*/
+p {
+  line-height: 2;
+}
+
+.rte p {
+  margin-bottom: 5px;
+}
+
+@media only screen and (max-width: 768px) {
+  p {
+    font-size: 13px;
+  }
+}
+/*--見出し--*/
+h2.section-header__title {
+  font-size: 52px;
+  margin-bottom: 3px;
+}
+
+h3, .h3 {
+  font-size: 26px;
+  font-weight: 500;
+  line-height: 1.7;
+}
+
+.text-small {
+  font-size: 92%;
+}
+
+a {
+  transition: color 0.4s;
+}
+
+ul {
+  list-style-type: none !important;
+}
+
+:focus {
+  outline: none !important;
+}
+
+a, button {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  cursor: pointer;
+}
+
+::placeholder {
+  color: #4b4b4b;
+}
+
+@media screen and (min-width: 769px) {
+  .br-sp {
+    display: none;
+  }
+
+  .medium--hide {
+    display: none !important;
+  }
+}
+@media screen and (max-width: 768px) {
+  .br-pc {
+    display: none;
+  }
+}
+input:active, input:focus {
+  border: solid 0px;
+}
+
+input[type=search]:focus {
+  border: solid 1px #e8e8e1;
+}
+
+.submit:hover {
+  transition-delay: unset !important;
+}
+
+select {
+  background-image: url("https://cdn.shopify.com/s/files/1/0268/1202/2962/files/select-drop.png?v=1612320835");
+  background-size: 9px;
+}
+
+@media only screen and (max-width: 768px) {
+  select {
+    background-size: 2.4vw;
+  }
+}
+.page-contact input[type=radio] {
+  display: none !important;
+}
+
+.radio-btn {
+  box-sizing: border-box;
+  cursor: pointer;
+  display: inline-block;
+  padding: 0 16px 0 24px;
+  position: relative;
+  width: auto;
+}
+
+.radio-btn:before {
+  background: none;
+  border: 1px solid #DDDDDD;
+  border-radius: 50%;
+  content: "";
+  display: block;
+  width: 18px;
+  height: 18px;
+  left: -2px;
+  margin-top: -9px;
+  position: absolute;
+  top: 50%;
+}
+
+.radio-btn:after {
+  background: #C8AB7A;
+  border-radius: 50%;
+  content: "";
+  display: block;
+  width: 12px;
+  height: 12px;
+  left: 1px;
+  margin-top: -6px;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+}
+
+input:checked + .radio-btn:after {
+  opacity: 1 !important;
+}
+
+input[type=checkbox] {
+  display: none !important;
+}
+
+.check-btn {
+  box-sizing: border-box;
+  cursor: pointer;
+  display: inline-block;
+  padding: 0 16px 0 24px;
+  position: relative;
+  width: auto;
+}
+
+.check-btn:before {
+  background: none;
+  border: 1px solid #DDDDDD;
+  content: "";
+  display: block;
+  width: 15px;
+  height: 15px;
+  left: 0px;
+  margin-top: -7px;
+  position: absolute;
+  top: 50%;
+}
+
+.check-btn:after {
+  background: #C8AB7A;
+  content: "";
+  display: block;
+  width: 9px;
+  height: 9px;
+  left: 3px;
+  margin-top: -4px;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+}
+
+input:checked + .check-btn:after {
+  opacity: 1 !important;
+}
+
+@media screen and (max-width: 768px) {
+  .radio-btn {
+    padding: 0 5vw 0 6.8vw;
+  }
+
+  .radio-btn:before {
+    width: 4.8vw;
+    height: 4.8vw;
+    left: 0;
+    margin-top: -2.3vw;
+    top: 50%;
+  }
+
+  .radio-btn:after {
+    width: 3.4vw;
+    height: 3.4vw;
+    left: 0.72vw;
+    margin-top: -1.6vw;
+    top: 50%;
+  }
+
+  .check-btn {
+    padding: 0 0 0 6.8vw;
+  }
+
+  .check-btn:before {
+    width: 4vw;
+    height: 4vw;
+    left: 0px;
+    margin-top: -2vw;
+    top: 50%;
+  }
+
+  .check-btn:after {
+    width: 2.6vw;
+    height: 2.6vw;
+    left: 0.7vw;
+    margin-top: -1.3vw;
+    top: 50%;
+  }
+}
+/*--SNSシェアボタン--*/
+.sns-shares {
+  text-align: center;
+  margin: 40px 0 120px;
+}
+
+.sns-shares span {
+  display: block;
+  font-family: "TTDrugs-R" !important;
+  font-size: 24px;
+  letter-spacing: 1px;
+  margin-bottom: 0px;
+}
+
+.sns-shares a {
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0 24px;
+}
+
+.sns-shares a svg {
+  width: 28px;
+  fill: #707070;
+}
+
+.sns-shares a.line-btn svg {
+  width: 28.5px;
+}
+
+.template-product .sns-shares {
+  margin: 80px 0 180px;
+}
+
+@media only screen and (max-width: 768px) {
+  .template-product .sns-shares {
+    margin: 23vw 0 30vw;
+  }
+
+  .template-product .sns-shares span {
+    font-size: 6.4vw;
+    letter-spacing: 0.07em;
+    margin-bottom: 3vw;
+  }
+
+  .template-product .sns-shares a {
+    margin: 0 4.4vw;
+  }
+
+  .template-product .sns-shares a svg {
+    width: 7.5vw;
+  }
+
+  .template-product .sns-shares a.line-btn svg {
+    width: 7.8vw;
+  }
+}
+/*--------------------------------------------------------------------------マウスカーソル--*/
+.cursor, .follower {
+  border-radius: 50%;
+  position: absolute;
+  pointer-events: none !important;
+}
+
+.cursor {
+  background-color: #000;
+  posinter-events: none;
+  z-index: 1001;
+}
+
+.follower {
+  width: 11px;
+  height: 11px;
+  posinter-events: none;
+  background-color: #d6b17d52;
+  z-indes: 1000;
+  transition: all 0.4s;
+}
+
+.follower.is-hover {
+  transform: scale(7);
+  posinter-events: none;
+  background-color: #d6b17d52;
+  z-indes: 1000;
+}
+
+@media screen and (max-width: 768px) {
+  .cursor, .follower {
+    display: none;
+  }
+}
+/*--------------------------------------------------------------------------クイックビュー有効化--*/
+#shopify-section-16106895859848283a {
+  position: relative;
+  overflow: hidden;
+  margin: 0;
+}
+
+#CollectionSection-16106895859848283a {
+  position: absolute;
+  left: 100%;
+}
+
+/*--------------------------------------------------------------------------モバイル用コンテンツ切替--*/
+.mobile {
+  display: none !important;
+}
+
+@media only screen and (max-width: 768px) {
+  .sp-full {
+    padding: 0;
+  }
+
+  .mobile {
+    display: block !important;
+  }
+
+  .pc {
+    display: none !important;
+  }
+}
+/*----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+コレクション
+
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+.grid-product__tag.grid-product__tag--sold-out {
+  display: none;
+}
+
+/*=====================================================================================================コレクションページ：メインカラム==*/
+.collection-content {
+  padding-top: 0;
+}
+
+.collection-filter__item--count {
+  display: none;
+}
+
+/*プロダクトグリッド*/
+/*--価格表示--*/
+.grid-product__price {
+  font-size: 15px;
+  margin-top: 2px;
+}
+
+.tax-notice {
+  font-size: 10px;
+}
+
+/*--コレクション：セールタグ削除--*/
+.grid-product__price--savings {
+  display: none;
+}
+
+.grid-product__tag.grid-product__tag--sale {
+  display: none;
+}
+
+/*--コレクション：グリッド調整--*/
+.grid-product__meta {
+  text-align: left;
+  clear: both;
+}
+
+.grid-product__image-mask {
+  width: 85%;
+  margin-right: 16px;
+  display: inline-block;
+  float: left;
+}
+
+.grid-product {
+  padding-left: 35px;
+  margin-bottom: 80px;
+}
+
+.grid-product__content a {
+  display: block;
+}
+
+/*--------------------------------------------------------------------------シリーズ名表示*/
+.product-series {
+  line-height: 0;
+  writing-mode: vertical-rl;
+  -webkit-writing-mode: vertical-rl;
+  -ms-writing-mode: tb-rl;
+  writing-mode: vertical-rl;
+  color: #DDDDDD;
+  font-size: 15px;
+  font-weight: 300;
+  position: relative;
+  display: inline-block;
+  font-family: "TTDrugs-R" !important;
+}
+
+.product-series .series-name {
+  writing-mode: vertical-rl;
+  -webkit-writing-mode: vertical-rl;
+  -ms-writing-mode: tb-rl;
+  writing-mode: vertical-rl;
+  display: inline-block !important;
+  position: relative !important;
+  font-size: 15px !important;
+}
+
+.product-series .style-name {
+  writing-mode: vertical-rl;
+  -webkit-writing-mode: vertical-rl;
+  -ms-writing-mode: tb-rl;
+  writing-mode: vertical-rl;
+  display: inline-block !important;
+  position: relative !important;
+}
+
+.series-name {
+  color: #d6b17d;
+  margin-bottom: 5px;
+}
+
+.style-name {
+  color: #C9C9C9;
+  margin-top: 4px;
+}
+
+/*--------------------------------------------------------------------------商品画像ホバー時の画像切替*/
+.grid-product__image-mask img {
+  position: absolute;
+  opacity: 1 !important;
+  transform: scale(1.01);
+}
+
+/*--------------------------------------------------------------------------商品画像ホバー時の画像拡大*/
+.grid-product__image {
+  transition: transform 0.4s ease;
+}
+
+@media screen and (min-width: 769px) {
+  .grid-product__image-mask:hover .grid-product__image {
+    transform: scale(1.07);
+  }
+}
+/*--------------------------------------------------------------------------商品画像ホバー時：Discover表示*/
+@media screen and (min-width: 769px) {
+  .grid-product__image-mask .image-wrap:before {
+    content: "DISCOVER";
+    font-family: "TTDrugs-R" !important;
+    text-align: center;
+    color: #FFF;
+    font-size: 18px;
+    display: block;
+    position: absolute;
+    top: 44%;
+    width: 65%;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    z-index: 1;
+    padding-bottom: 4px;
+    border-bottom: solid 1px #FFF;
+    opacity: 0;
+    transition: all 0.5s;
+  }
+
+  .grid-product__image-mask .image-wrap:after {
+    content: "";
+    display: block;
+    position: absolute;
+    background: #CDCFD3;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: all 0.5s;
+  }
+}
+@media screen and (min-width: 769px) {
+  .grid-product__image-mask:hover .image-wrap:before {
+    opacity: 1;
+  }
+
+  .grid-product__image-mask:hover .image-wrap:after {
+    opacity: 0.8;
+  }
+}
+@media screen and (max-width: 768px) {
+  /*--商品グリッド調整--*/
+  .grid--collection {
+    margin-left: -5vw !important;
+  }
+
+  .grid--collection .grid-product {
+    padding-left: 5vw;
+    margin-bottom: 12vw;
+  }
+
+  /*--シリーズ名表示--*/
+  .grid--collection .product-series {
+    font-size: 3.3vw;
+    letter-spacing: 0.3vw;
+    font-weight: 300;
+    position: relative;
+    display: inline-block;
+    line-height: 0;
+  }
+
+  /*--商品画像サイズ--*/
+  .grid--collection .grid-product__image-mask {
+    margin-right: 2.6vw;
+    width: 90%;
+    display: inline-block;
+    float: left;
+  }
+
+  /*--商品タイトル--*/
+  .grid--collection .grid-product__title {
+    margin-top: 2vw;
+    font-size: 3.1vw !important;
+    margin-bottom: 0.8vw;
+    letter-spacing: 0.6vw;
+  }
+
+  .grid--collection .grid-product__price {
+    letter-spacing: 0.2vw;
+    font-size: 3.1vw !important;
+  }
+}
+/*----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+SLICKスライダー
+
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+.slick-arrow {
+  display: none !important;
+}
+
+.slick-arrow {
+  display: block !important;
+  width: 60px;
+  height: 60px;
+  border: solid 1px #EFE0CB;
+  border-radius: 50px;
+  z-index: 1;
+}
+
+.slick-arrow svg {
+  display: none !important;
+}
+
+.slick-arrow:before {
+  background: url("https://cdn.shopify.com/s/files/1/0268/1202/2962/files/gold-arrow-right.png?v=1610683666");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 9px;
+  content: "";
+  width: 60px;
+  height: 58px;
+  display: block;
+}
+
+.slick-prev.slick-arrow:before {
+  background: url("https://cdn.shopify.com/s/files/1/0268/1202/2962/files/gold-arrow-left.png?v=1611025679");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 9px;
+  content: "";
+  width: 54px;
+  height: 58px;
+  display: block;
+}
+
+/*--------------------------------------------------------------------------商品スライダー--*/
+.top-product .page-width {
+  height: auto;
+  padding: 0;
+  margin-left: 110px;
+  max-width: 100%;
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
+  padding-bottom: 40px;
+}
+
+.top-product .grid-product {
+  margin-bottom: 1.8vw;
+}
+
+.top-product .grid-product__image-mask {
+  width: 86%;
+  margin-right: 16px;
+  display: inline-block;
+  float: left;
+}
+
+.top-product .product-series {
+  font-size: 15px;
+}
+
+.top-product .section-header h2 {
+  text-align: left;
+}
+
+.top-product .section-header span {
+  text-align: left;
+  width: 100%;
+  display: inline-block;
+}
+
+.top-product .slick-slider {
+  margin-right: -160px;
+  margin-left: -35px;
+}
+
+.top-product .slick-slider .slick-arrow {
+  display: block;
+  top: 110%;
+  width: 60px;
+  height: 60px;
+  border: solid 1px #EFE0CB;
+  border-radius: 50px;
+  z-index: 1;
+}
+
+.top-product .slick-slider .slick-arrow svg {
+  height: 40px;
+  width: 10px;
+  margin: 0 auto;
+  color: #D3AD78;
+}
+
+.top-product .slick-slider .slick-prev {
+  right: 350px;
+  left: inherit;
+}
+
+.top-product .slick-slider .slick-next {
+  right: 280px;
+}
+
+@media only screen and (max-width: 768px) {
+  #shopify-section-1609503358b9a1e66c {
+    margin-bottom: 0px;
+  }
+
+  #shopify-section-1609503358b9a1e66c h2 {
+    font-size: 10vw;
+    letter-spacing: 0.8vw;
+  }
+
+  #shopify-section-1609503358b9a1e66c span {
+    letter-spacing: 0.14em;
+  }
+
+  .top-product .grid-product__image-mask {
+    margin-right: 3.5vw;
+  }
+
+  .top-product .grid-product {
+    padding-left: 4vw;
+  }
+
+  .top-product .product-series span {
+    font-size: 3.3vw;
+    letter-spacing: 0.04em !important;
+  }
+
+  .top-product .page-width {
+    margin-left: 10vw;
+    height: auto;
+  }
+
+  .top-product .slick-slider {
+    margin-right: -35vw;
+    margin-left: -4vw;
+  }
+
+  .top-product .slick-slider button.slick-arrow {
+    display: none !important;
+  }
+
+  .top-product .grid-product__title {
+    margin-top: 2.3vw;
+    font-size: 3.8vw;
+  }
+
+  .top-product .grid-product__price {
+    font-size: 3.8vw;
+  }
+}
+/*----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+リンク・アイコン
+
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+/*--------------------------------------------------------------------------矢印付きリンク--*/
+.write-review {
+  margin: 0 auto;
+  width: 100%;
+  display: block;
+}
+
+.arrow-link, .blog-main-text a {
+  font-size: 13px;
+}
+
+.arrow-link:after, .blog-main-text a:after {
+  content: "";
+  background: url("https://cdn.shopify.com/s/files/1/0268/1202/2962/files/3.svg?v=1613161848");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  background-size: 7.5px;
+  content: "";
+  width: 7.5px;
+  height: 12px;
+  position: relative;
+  top: 1.5px;
+  left: 10px;
+  display: inline-block;
+}
+
+@media only screen and (max-width: 768px) {
+  a.arrow-link, .blog-main-text a {
+    font-size: 3.7vw;
+    display: block;
+  }
+
+  .arrow-link:after, .blog-main-text a:after {
+    content: "";
+    background-size: contain;
+    content: "";
+    width: 2vw;
+    margin-bottom: -0.5vw;
+    height: 4vw;
+    display: inline-block;
+  }
+}
+/*--------------------------------------------------------------------------「+」リンク--*/
+.plus-link {
+  color: #C8AB7A;
+  margin-right: 10px;
+}
+
+.plus-link:after {
+  content: "";
+  position: relative;
+  top: 7px;
+  left: 6px;
+  background: url("https://cdn.shopify.com/s/files/1/0268/1202/2962/files/plus.png?v=1611230302");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 12px;
+  content: "";
+  width: 28px;
+  height: 28px;
+  display: inline-block;
+  border: solid 1px #F2E7D7;
+  border-radius: 20px;
+  transition: transform 1s;
+}
+
+a.ec-modal-open.plus-link:hover {
+  color: #C8AB7A !important;
+}
+
+a.ec-modal-open.plus-link:hover:after {
+  transform: rotate(180deg);
+}
+
+@media only screen and (max-width: 768px) {
+  .plus-link {
+    color: #C8AB7A;
+    font-size: 3.6vw;
+    letter-spacing: 0.11em;
+  }
+
+  .plus-link:after {
+    content: "";
+    position: relative;
+    top: 1.5vw;
+    left: 2vw;
+    background-size: 2.6vw;
+    content: "";
+    width: 6vw;
+    height: 6vw;
+    border-radius: 50%;
+  }
+}
+/*--------------------------------------------------------------------------クイックビュー--*/
+.quick-product__btn {
+  color: #d6b17d;
+  background: none;
+  right: 10%;
+  left: inherit;
+}
+
+/*--------------------------------------------------------------------------seemore--*/
+a.see-more.text-link {
+  display: block;
+  width: 200px;
+  font-size: 22px;
+  margin: 0 auto;
+  line-height: 2.3;
+  letter-spacing: 0.09em;
+}
+
+a.see-more.white.text-link {
+  color: #FFF;
+  border-color: #ffffff30;
+}
+
+a.see-more.small.text-link {
+  margin-left: 0;
+  font-size: 18px;
+  width: 170px;
+}
+
+a.see-more.left.text-link {
+  margin-left: 0;
+}
+
+@media only screen and (max-width: 768px) {
+  a.see-more.text-link {
+    width: 55vw;
+    font-size: 6.5vw;
+    letter-spacing: 0.4vw;
+  }
+}
+/*--------------------------------------------------------------------------スクロールエフェクト--*/
+.fadein {
+  opacity: 0;
+  transition: opacity 1.2s;
+}
+
+.fadein.scrollin {
+  opacity: 1;
+}
+
+/*----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+固定ページ
+
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+/*--固定ページ見出し--*/
+.page-content h1 {
+  font-size: 60px;
+}
+
+.pages h3 {
+  font-size: 20px;
+  font-weight: 600;
+  margin: 16px 0 6px;
+  color: #4B4B4B;
+  letter-spacing: 2px;
+}
+
+.page-subtitle {
+  margin: 6px 0 40px;
+}
+
+/*--------------------------------------------------------------------------ぱんくず--*/
+.bread-pages {
+  margin-left: 55px;
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  margin-bottom: 50px;
+  margin-top: 0;
+}
+
+.bread-pages span {
+  color: #C9C9C9;
+  font-size: 12px;
+  margin: 0 3px;
+}
+
+.bread-pages.fadein,
+.bread-pages a.fadein,
+.bread-pages span .fadein {
+  opacity: 1 !important;
+}
+
+@media only screen and (max-width: 768px) {
+  .bread-pages {
+    margin-left: 5vw;
+    margin-right: 5vw;
+    font-size: 3vw;
+    margin-bottom: 6vw;
+    margin-top: 0;
+  }
+
+  .bread-pages span {
+    font-size: 2.4vw;
+  }
+}
+/*--------------------------------------------------------------------------------
+
+ショッピングガイド
+
+--------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------------------------------------ショッピングガイド：メニュー--*/
+.shopping-guide-menu-page {
+  margin-top: 90px;
+  margin-bottom: 110px;
+}
+
+.shopping-guide-menu-page .section-header {
+  margin-bottom: 100px;
+}
+
+.shoppingguide-menu-wrap {
+  max-width: 700px;
+  margin: auto;
+  border-top: solid 1px #EEEEEE;
+  margin-top: -1px;
+}
+
+.shoppingguide-menu {
+  padding: 43px 0 40px;
+  display: flex;
+  position: relative;
+}
+
+.shoppingguide-menu:after {
+  content: "";
+  background-image: url("https://cdn.shopify.com/s/files/1/0268/1202/2962/files/gold-arrow-right.png?v=1610683666");
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 10px;
+  height: 17px;
+  position: absolute;
+  right: 0;
+  top: 44%;
+}
+
+.shoppingguide-menu-left {
+  font-size: 19px;
+  color: #C8AB7A;
+  font-family: "TTDrugs-R" !important;
+}
+
+.shoppingguide-menu-right {
+  margin-left: 20px;
+}
+
+.shoppingguide-menu-right h2 {
+  font-size: 25px;
+  color: #4b4b4b;
+  letter-spacing: 0.05em;
+  line-height: 1.3;
+  margin-bottom: 11px;
+  font-weight: 600;
+}
+
+.shoppingguide-menu-right span {
+  font-size: 14px;
+  letter-spacing: 0px;
+}
+
+.shoppingguide-menu-right.is-active {
+  color: #c9c9c9;
+}
+
+.shopping-guide-menu-page .service-nav {
+  margin-top: 100px !important;
+}
+
+.shoppingguide-menu-sp {
+  display: none;
+}
+
+@media only screen and (max-width: 768px) {
+  .shopping-guide-menu-page {
+    margin-top: 3vw;
+    padding: 0 10vw;
+    margin-bottom: 14vw;
+  }
+
+  .shopping-guide-menu-page .section-header {
+    margin-bottom: 60px;
+  }
+
+  .shopping-guide-menu-page h1 {
+    font-size: 12.4vw;
+    letter-spacing: 0.05em;
+    margin-top: 11.2vw;
+    line-height: 1.1;
+  }
+
+  .shopping-guide-menu-page .page-subtitle {
+    font-size: 3.5vw;
+    letter-spacing: 0.05em;
+    color: #939393;
+    margin: 1.6vw 0 15vw;
+  }
+
+  .shoppingguide-menu {
+    padding: 7.6vw 0 7vw;
+  }
+
+  .shoppingguide-menu-left {
+    font-size: 4.6vw;
+    letter-spacing: 0.08em;
+  }
+
+  .shoppingguide-menu-right h2 {
+    font-size: 5.5vw;
+    letter-spacing: 0.08em;
+  }
+
+  .shoppingguide-menu-right {
+    margin-left: 2vw;
+  }
+
+  .shoppingguide-menu-right span {
+    font-size: 3.2vw;
+    letter-spacing: 0.04em;
+  }
+
+  .shoppingguide-menu:after {
+    width: 1.6vw;
+    height: 3vw;
+    position: absolute;
+    right: 0;
+    top: 10vw;
+  }
+}
+#paypal img, #paypay img {
+  float: right;
+  width: 218px;
+  margin: 0 30px 0 42px;
+  position: relative;
+  top: -8px;
+}
+
+#paypay img {
+  float: right;
+  width: 250px;
+  margin: 0 14px 0 30px;
+  position: relative;
+  top: -14px;
+}
+
+@media only screen and (max-width: 768px) {
+  .shoppingguide-menu-wrap {
+    border-top: none;
+  }
+
+  #paypal img {
+    float: none;
+    width: 40vw;
+    margin: 9vw auto !important;
+    display: block;
+    top: 0;
+  }
+
+  #paypay img {
+    float: none;
+    width: 47vw;
+    margin: 9vw auto !important;
+    display: block;
+    top: 0;
+  }
+}
+/*--------------------------------------------------------------------------------
+
+ショッピングガイド
+
+--------------------------------------------------------------------------------*/
+.guide-wrap {
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+.guide-wrap .guide-inner:last-child {
+  margin-bottom: 0;
+}
+
+.guide-wrap .main {
+  width: calc(100% - 256px);
+}
+
+.guide-wrap .main {
+  font-size: 14px;
+}
+
+.guide-wrap .main h3 {
+  font-size: 16px;
+  margin-top: 51px;
+  color: #717171;
+  font-weight: bold;
+}
+
+.guide-wrap .main h2 {
+  margin-top: 0;
+  font-size: 18px;
+  font-weight: 600;
+  color: #C8AB7A;
+  letter-spacing: 0;
+  margin-bottom: 28px;
+}
+
+.guide-wrap a.arrow-link {
+  position: relative;
+  top: -6px;
+}
+
+.guide-wrap .johnson-box {
+  background: #F8F6F4;
+  padding: 30px 26px 12px;
+  margin-top: 20px;
+  line-height: 2;
+  font-size: 13px;
+}
+
+.guide-wrap .johnson-box h4 {
+  font-size: 14px;
+  letter-spacing: 0.16em;
+  margin: 0 0 8px;
+}
+
+.guide-wrap .gray-text {
+  color: #B7B7B7;
+  font-size: 15px;
+  font-family: "TTDrugs-R" !important;
+}
+
+.guide-wrap .guide-inner {
+  margin-bottom: 130px;
+}
+
+.guide-wrap table {
+  margin-bottom: 12px;
+  margin-top: 24px;
+  background: none;
+}
+
+.guide-wrap ul {
+  margin-left: 16px;
+}
+
+.guide-wrap .main li::marker {
+  content: "・";
+}
+
+.guide-wrap table {
+  width: auto;
+  table-layout: auto;
+}
+
+.guide-wrap table tr {
+  font-size: 12px;
+  border-bottom: solid 1px #F9F9F9;
+}
+
+.guide-wrap table th {
+  font-weight: 400;
+  background: #F9F9F9;
+}
+
+.guide-wrap table td {
+  border-bottom: 1px solid #F9F9F9;
+}
+
+.guide-wrap table th {
+  padding: 14px;
+  width: 123px;
+}
+
+.pages table td {
+  padding: 14px;
+  width: 172px;
+}
+
+.guide-wrap .shipping-flow {
+  display: flex;
+}
+
+.guide-wrap .shipping-flow span {
+  padding-top: 3px;
+  width: 64px;
+  display: inline-block;
+}
+
+.guide-wrap .shipping-flow p {
+  width: 90%;
+}
+
+.guide-wrap .small-text {
+  font-size: 13px;
+}
+
+.shipping-cost th {
+  width: 30%;
+}
+
+@media only screen and (max-width: 768px) {
+  .sp-one-table td, .sp-one-table th {
+    width: auto;
+  }
+
+  .sp-one-table th {
+    padding: 7px 14px !important;
+  }
+
+  .shipping-time-table td, .shipping-time-table th {
+    padding: 8px !important;
+    text-align: center;
+  }
+
+  .shoppingguide-menu-sp {
+    display: block;
+    padding: 0 10vw;
+    margin-bottom: 12vw;
+  }
+
+  .shoppingguide-menu-sp h2 {
+    text-align: center;
+    font-family: "TTDrugs-R" !important;
+    font-size: 7vw;
+    letter-spacing: 0.04em;
+  }
+
+  .shoppingguide-menu-sp .guide-subtitle {
+    width: 100%;
+    display: block;
+    text-align: center;
+    font-size: 3.2vw;
+    letter-spacing: 0.09em;
+    margin-bottom: 9vw;
+    color: #939393;
+  }
+
+  .shoppingguide-menu-sp .shoppingguide-menu {
+    padding: 6.5vw 0 6vw;
+  }
+
+  .shoppingguide-menu-sp .shoppingguide-menu-right h3 {
+    font-size: 4.8vw;
+    letter-spacing: 1.4px;
+    line-height: 1.6;
+    margin-bottom: 0px;
+    font-weight: 600;
+  }
+
+  .shoppingguide-menu-sp .shoppingguide-menu-left {
+    font-size: 4vw;
+    letter-spacing: 0.08em;
+    position: relative;
+    top: 1vw;
+  }
+
+  .shoppingguide-menu-sp .shoppingguide-menu:after {
+    width: 2vw;
+    height: 2.8vw;
+    top: 10vw;
+  }
+
+  .guide-page {
+    padding: 0 !important;
+  }
+
+  .guide-wrap {
+    margin-bottom: 36vw;
+    display: block;
+  }
+
+  .page-content .guide-wrap h1 {
+    font-size: 6.5vw;
+    letter-spacing: 0.14em;
+    font-weight: 600;
+    text-align: center;
+    font-family: "游ゴシック体", YuGothic, "游ゴシック Medium", "Yu Gothic Medium", "游ゴシック", "Yu Gothic", sans-serif !important;
+  }
+
+  .guide-wrap .guide-inner h2 {
+    font-size: 4.8vw;
+    letter-spacing: 0.14em;
+    margin-top: 0;
+    margin-bottom: 6.6vw;
+  }
+
+  .guide-wrap .main .guide-inner h3 {
+    margin-top: 11vw;
+    margin-bottom: 1.9vw;
+    font-size: 3.6vw;
+  }
+
+  .guide-wrap .main p {
+    font-size: 3.8vw;
+    letter-spacing: 0.1em;
+    margin-bottom: 3vw;
+    line-height: 1.8;
+  }
+
+  .guide-wrap .guide-inner {
+    padding: 0;
+    margin-bottom: 29.4vw;
+  }
+
+  .guide-wrap .guide-inner:last-child {
+    margin-bottom: 0;
+  }
+
+  .guide-wrap .main img {
+    margin: 0 !important;
+  }
+
+  .guide-wrap .main {
+    width: 100%;
+    margin: 0 auto;
+    padding: 0;
+    margin-top: 14vw;
+  }
+
+  .guide-wrap .main img {
+    width: 100%;
+  }
+
+  .shopping-page-menu-wrap {
+    margin-top: 10vw;
+    margin-left: -5vw;
+    margin-right: -5vw;
+    padding: 6vw 10vw;
+    display: flex !important;
+    background: #F8F6F4;
+    margin-bottom: 16.4vw;
+  }
+
+  .shopping-page-menu {
+    width: 50%;
+  }
+
+  .shopping-page-menu a {
+    display: block;
+    margin: 4.2vw 0;
+    position: relative;
+    font-size: 2.7vw;
+    letter-spacing: 0.08em;
+    width: 91%;
+  }
+
+  .shopping-page-menu a:after {
+    content: "";
+    background-image: url("https://cdn.shopify.com/s/files/1/0268/1202/2962/files/arrow-bottom-gray.png?v=1611673807");
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 2.4vw;
+    top: 1.8vw;
+    position: absolute;
+    margin-left: 0.8vw;
+    position: relative;
+    display: inline-block;
+    height: 3vw;
+  }
+
+  .guide-wrap ul {
+    margin-left: 3vw;
+  }
+
+  .guide-wrap .johnson-box {
+    padding: 8vw 8vw 4vw;
+    margin-top: 5vw;
+    line-height: 2;
+    font-size: 3.3vw;
+    line-height: 1.8;
+    letter-spacing: 0.03em;
+  }
+
+  .guide-wrap .johnson-box h4 {
+    font-size: 3.8vw;
+    margin: 0 0 1.6vw;
+  }
+
+  .page-jump {
+    padding-top: 0vw !important;
+    margin-top: 0vw !important;
+  }
+}
+.guide-wrap .sidebar {
+  width: 25%;
+  max-width: 256px;
+}
+
+.guid-nav {
+  border-top: 1px solid #EEEEEE;
+  border-bottom: 1px solid #EEEEEE;
+  margin-top: -1px;
+}
+
+.guide-wrap .sidebar h3 {
+  display: block;
+  font-size: 16px;
+  letter-spacing: 0.08em;
+  font-weight: 600;
+  padding: 18px 0 17px;
+  margin: 0;
+}
+
+.guide-wrap .sidebar-title {
+  font-size: 21px;
+  letter-spacing: 0.06em;
+  padding-bottom: 40px;
+  display: block;
+  font-family: "TTDrugs-R" !important;
+}
+
+.guide-wrap .sidebar li {
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  margin-bottom: 8px;
+}
+
+.guide-wrap .sidebar ul {
+  margin-left: 0px;
+  margin-bottom: 0;
+}
+
+.guide-wrap .sidebar ul.open-accordion {
+  display: block;
+}
+
+.guide-wrap .sidebar svg {
+  height: 16px;
+  margin-right: 15px;
+}
+
+.guide-wrap .sidebar .arrow {
+  height: 8px;
+  position: absolute;
+  right: 0;
+  margin-right: -9px;
+}
+
+.guide-wrap .sidebar .arrow.active {
+  transform: rotate(-180deg);
+  margin: 20px -7px 0;
+}
+
+.widget--sticky {
+  padding-top: 160px;
+  margin-top: -160px;
+  margin-bottom: 20px;
+  position: sticky;
+  top: 0;
+}
+
+@media screen and (min-width: 769px) {
+  .guid-nav li a {
+    position: relative;
+    left: 13px;
+    width: 90%;
+    top: -4px;
+  }
+}
+/*--------------------------------------------------------------------------------
+
+サービス
+
+--------------------------------------------------------------------------------*/
+#shopify-section-16090897165fb90f44 {
+  padding: 100px 0 200px;
+}
+
+.service .page-width {
+  max-width: 1170px;
+  padding: 0 55px;
+}
+
+#shopify-section-16090897165fb90f44 .service .page-width {
+  max-width: 100%;
+  padding: 0 110px;
+}
+
+.service .section-header h2 {
+  font-size: 53px;
+  margin-bottom: 8px;
+  letter-spacing: 0.1em;
+}
+
+.service .see-more {
+  text-align: center;
+  margin-top: 34px !important;
+}
+
+.service {
+  position: relative;
+  margin-bottom: 60px;
+}
+
+.service .page-width {
+  z-index: 1;
+  position: relative;
+}
+
+.service .grid {
+  margin-left: -5px;
+}
+
+.service .grid__item {
+  padding: 0 0 5px 5px;
+  position: relative;
+  clear: inherit !important;
+  margin-bottom: 0px;
+}
+
+.service .grid a {
+  display: block;
+  overflow: hidden;
+  height: auto;
+}
+
+.service .service-back {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  transform: scale(1.01);
+  content: "";
+  transition: all 1s ease;
+  background-position: center;
+  padding-top: 125.5%;
+}
+
+.service .service-info {
+  width: 100%;
+  position: absolute;
+  text-align: center;
+  bottom: 57px;
+}
+
+#shopify-section-16090897165fb90f44 .service .service-info {
+  bottom: 4.7vw;
+}
+
+.service .service-info span {
+  font-size: 13.5px;
+  letter-spacing: 0.09em;
+  display: block;
+  color: #939393;
+}
+
+#shopify-section-16090897165fb90f44 .service .service-info span {
+  font-size: 1.1vw;
+}
+
+.service .service-info h3 {
+  font-size: 22px;
+  margin: 0 0 0px;
+  letter-spacing: 0.08em;
+  font-family: "TTDrugs-R" !important;
+  font-weight: 500;
+}
+
+#shopify-section-16090897165fb90f44 .service .service-info h3 {
+  font-size: 1.8vw;
+  margin: 0 0 0.5vw;
+}
+
+.service .medium-up--one-half .service-back {
+  padding-top: 57%;
+}
+
+.service .medium-up--one-half .service-info {
+  position: absolute;
+  text-align: left;
+  top: 39%;
+  padding-left: 11.8%;
+}
+
+@media screen and (min-width: 769px) {
+  .service .grid a:hover .service-back {
+    transform: scale(1.1);
+  }
+}
+@media only screen and (max-width: 768px) {
+  .guide-wrap table th {
+    width: 110px;
+  }
+
+  #shopify-section-16090897165fb90f44 {
+    padding: 16vw 0 20vw;
+  }
+
+  .service .page-width {
+    max-width: 100%;
+    padding: 0 !important;
+  }
+
+  .service .section-header {
+    margin-bottom: 11vw;
+  }
+
+  .service .section-header h2 {
+    font-size: 12vw;
+    letter-spacing: 0.07em;
+    margin-bottom: 3vw;
+  }
+
+  .service .section-header span {
+    font-size: 3.4vw !important;
+    letter-spacing: 0.08em;
+  }
+
+  .service {
+    margin-bottom: 14vw;
+  }
+
+  .service .grid {
+    margin-left: 0;
+  }
+
+  .service .grid__item {
+    padding: 0 0 2px 0;
+  }
+
+  .service .service-info h3 {
+    line-height: 1.2;
+    margin: 0 auto;
+    font-size: 6.2vw !important;
+    padding: 0.6vw 4vw;
+    letter-spacing: 0.04em;
+  }
+
+  .service .small--one span {
+    font-size: 3.4vw !important;
+  }
+
+  .service .small--one-half h3 {
+    font-size: 5vw !important;
+  }
+
+  .service .small--one-half span {
+    font-size: 3vw !important;
+  }
+
+  .service .small--one .service-back {
+    padding-top: 66.666666%;
+  }
+
+  .service .small--one-half .service-back {
+    padding-top: 123.3%;
+  }
+
+  .service .service-info {
+    bottom: 6.8vw;
+  }
+
+  .service .medium-up--one-half .service-info {
+    text-align: center;
+    top: unset;
+    padding-left: 0%;
+  }
+
+  .service .small--one-half {
+    padding-right: 1px;
+  }
+
+  .service .small--one-half:last-child {
+    padding-right: 0;
+    padding-left: 1px;
+  }
+}
+.service .see-more {
+  display: block !important;
+  width: 200px;
+  font-size: 22px;
+  margin: 0 auto;
+  line-height: 2.3;
+  letter-spacing: 0.09em;
+}
+
+.template-collection .service {
+  margin-bottom: 150px;
+}
+
+@media only screen and (max-width: 768px) {
+  .service .see-more {
+    width: 55vw;
+    font-size: 6.5vw;
+    letter-spacing: 0.4vw;
+  }
+
+  .service .see-more {
+    text-align: center;
+    margin-top: 9vw !important;
+  }
+
+  .template-collection .service {
+    margin-bottom: 40vw;
+    overflow: hidden;
+  }
+}
+/*---------------------------------------------------サービスページフッターナビ--*/
+.service-nav-wrap {
+  margin: 200px auto 0;
+  max-width: 880px;
+  margin: 200px auto 146px;
+}
+
+.service-nav {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 52px;
+}
+
+.service-nav .service-nav-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20%;
+  font-size: 19px;
+  padding: 0 20px;
+  text-align: center;
+  line-height: 1.2;
+  border-left: solid 1px #EEEEEE;
+  font-family: "TTDrugs-R" !important;
+  letter-spacing: 0.08em;
+}
+
+.service-nav .left-nav {
+  border: 0px;
+}
+
+.service-nav span {
+  display: block;
+  margin-top: 7px;
+  font-size: 12px;
+  font-family: "游ゴシック体", YuGothic, "游ゴシック Medium", "Yu Gothic Medium", "游ゴシック", "Yu Gothic", sans-serif !important;
+  color: #939393;
+  letter-spacing: 0.09em;
+}
+
+.service-current, .service-current span {
+  color: #c9c9c9;
+  pointer-events: none;
+}
+
+@media only screen and (max-width: 768px) {
+  .service-nav-wrap {
+    margin: 80px auto 0;
+  }
+
+  .service-nav {
+    margin-bottom: 17vw;
+  }
+
+  .service-nav-sp {
+    display: block;
+  }
+
+  .service-nav-sp .service-nav-item {
+    width: 100%;
+    font-size: 5.4vw;
+    letter-spacing: 0.06em;
+    display: block;
+    border-left: 0px;
+    margin-bottom: 8.4vw;
+  }
+
+  .service-nav-half {
+    padding: 0 5vw;
+    margin-bottom: 24vw;
+  }
+
+  .service-nav-half.is-bottom {
+    padding: 0;
+  }
+
+  .service-nav-half .service-nav-item {
+    width: 50%;
+    font-size: 6.2vw;
+    letter-spacing: 0.06em;
+    display: block;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .service-nav span {
+    display: block;
+    font-size: 3.2vw;
+    letter-spacing: 0.08em;
+    margin-top: 1vw;
+  }
+}
+/*----------------------------------------------------------------------------------------------------------------お問い合わせパーツ--*/
+.contact-us .page-width {
+  max-width: 950px;
+}
+
+.contact-us .contuct-us-header {
+  margin-bottom: 22px;
+}
+
+.contact-us {
+  position: relative;
+  padding: 80px 0 200px;
+}
+
+.contact-us .contuct-us-header h2 {
+  text-align: left;
+  position: relative;
+  z-index: 1;
+  font-size: 55px !important;
+  letter-spacing: 0.12em !important;
+  margin-bottom: 8px;
+  font-family: "TTDrugs-R" !important;
+  margin-top: 0;
+  font-weight: 500;
+  color: #4B4B4B;
+}
+
+.contact-us p {
+  font-size: 16px;
+  margin-bottom: 50px;
+  position: relative;
+  z-index: 1;
+  letter-spacing: 1px;
+}
+
+.contact-us .see-more {
+  display: block;
+  width: 200px;
+  font-size: 22px;
+  margin: 0 auto;
+  line-height: 2.3;
+  letter-spacing: 0.09em;
+}
+
+/*----------------------------------------------------------------------------------------------------------------リング背景：Lottie-plyaer--*/
+lottie-player {
+  opacity: 0;
+  position: absolute;
+  transition: all 0.6s ease-out;
+  pointer-events: none;
+}
+
+lottie-player.scrollin {
+  opacity: 1;
+}
+
+.lottie-player-torigger {
+  display: block;
+  height: 0;
+  margin-bottom: 0 !important;
+}
+
+#shopify-section-161077031738688c13 {
+  position: relative;
+  z-index: 1;
+}
+
+.lottie-01 {
+  right: -38vw;
+  height: 48vw !important;
+  margin-top: 7vw;
+}
+
+.lottie-02 {
+  right: -5vw;
+  height: 70vw !important;
+  margin-top: -20vw;
+}
+
+.lottie-03 {
+  left: -36vw;
+  height: 55vw !important;
+  margin-top: 20vw;
+}
+
+lottie-player {
+  opacity: 0;
+  position: absolute;
+  transition: all 1s ease-out;
+  pointer-events: none;
+}
+
+lottie-player.scrollin {
+  opacity: 1;
+}
+
+.lottie-04 {
+  right: -34vw;
+  height: 70vw !important;
+  margin-top: -21vw;
+}
+
+.lottie-05 {
+  left: -40vw;
+  height: 52vw !important;
+  margin-top: 40vw;
+}
+
+.lottie-06 {
+  right: -45vw;
+  height: 52vw !important;
+  margin-top: 10vw;
+}
+
+.lottie-07 {
+  right: -40vw;
+  height: 60vw !important;
+  margin-top: 20vw;
+}
+
+.lottie-08 {
+  right: -40vw;
+  height: 60vw !important;
+  margin-top: 0vw;
+}
+
+.lottie-09 {
+  left: -58vw;
+  height: 60vw !important;
+  margin-top: 0vw;
+}
+
+@media only screen and (max-width: 768px) {
+  .contact-us .page-width {
+    padding: 0 10vw;
+  }
+
+  .contact-us .contuct-us-header h2 {
+    font-size: 11.7vw !important;
+    letter-spacing: 0.06em !important;
+    margin-bottom: 6vw !important;
+  }
+
+  .contact-us span {
+    letter-spacing: 0.08em;
+  }
+
+  .contact-us p {
+    font-size: 4.2vw;
+    margin-bottom: 6vw;
+    letter-spacing: 0.3vw;
+  }
+
+  .contact-us a.see-more.text-link {
+    width: 85%;
+  }
+}
+.para-img {
+  position: absolute;
+  transition: all 1s ease-out;
+  pointer-events: none;
+}
+
+.para-img.is-1 {
+  right: -74vw;
+  top: 30vw;
+  width: 130vw;
+}
+
+.para-img.is-2 {
+  right: -34vw;
+  top: 190vw;
+  width: 130vw;
+}
+
+.para-img.is-3 {
+  left: -34vw;
+  top: 170vw;
+  width: 115vw;
+}
+
+.para-img.is-4 {
+  left: -65vw;
+  top: 170vw;
+  width: 125vw;
+}
+
+.para-img.is-5 {
+  right: -55vw;
+  top: 15vw;
+  width: 125vw;
+}
+
+.para-img.is-6 {
+  right: -35vw;
+  top: 110vw;
+  width: 100vw;
+}
+
+.para-img.is-7 {
+  left: -50vw;
+  top: 120vw;
+  width: 128vw;
+}
+
+.para-img.is-8 {
+  right: -85vw;
+  top: 90vw;
+  width: 140vw;
+}
+
+.para-img.is-9 {
+  left: -40vw;
+  top: 75vw;
+  width: 128vw;
+}
+
+.para-img.is-10 {
+  right: -60vw;
+  top: 195vw;
+  width: 140vw;
+}
+
+/*----------------------------------------------------------------------------------------------------------------モーダル--*/
+body.is-modal-open {
+  overflow-y: hidden;
+  overflow-x: hidden;
+}
+
+.ec-modal {
+  display: none;
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+}
+
+.ec-modal-wrap {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+}
+
+.ec-modal__bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #c9c9c9e0;
+  height: 100vh;
+  width: 100vw;
+}
+
+.ec-modal__content {
+  position: relative;
+  max-width: 1060px;
+  margin: 0 auto;
+}
+
+.ec-modal__inner {
+  overflow: auto;
+  background: #fff;
+  padding: 110px;
+  position: relative;
+  max-width: 90vw;
+  max-height: 90vh;
+}
+
+a.ec-modal-close {
+  background-image: url("https://cdn.shopify.com/s/files/1/0268/1202/2962/files/modal-close.svg?v=1614476322");
+  background-size: contain;
+  width: 30px;
+  height: 30px;
+  display: block;
+  content: "aaaa";
+  position: absolute;
+  right: -58px;
+  z-index: 999;
+}
+
+.ec-modal__inner::-webkit-scrollbar {
+  /* Chrome, Safari 対応 */
+  display: none;
+}
+
+.ec-modal__inner {
+  -ms-overflow-style: none;
+  /* IE, Edge 対応 */
+  scrollbar-width: none;
+  /* Firefox 対応 */
+}
+
+@media only screen and (max-width: 1280px) {
+  .ec-modal__content {
+    margin: 0 110px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .ec-modal__content {
+    margin: 0 5vw;
+  }
+
+  a.ec-modal-close {
+    width: 7vw;
+    height: 7vw;
+    right: 5vw;
+    top: -5vw;
+    z-index: 999;
+  }
+
+  .ec-modal__content {
+    margin: 0 auto;
+    max-width: 100vw;
+  }
+
+  .ec-modal__inner {
+    overflow: auto;
+    background: #fff;
+    position: relative;
+    max-width: 100%;
+    max-height: 80vh;
+    padding: 10vw;
+    margin: 5vw;
+  }
+}
+/*----------------------------------------------------------------------------------------------------------------概要ページ--*/
+.info-page {
+  margin-top: 90px;
+  max-width: 930px;
+}
+
+.info-page h1 {
+  font-size: 52px;
+  letter-spacing: 2px;
+  font-family: "TTDrugs-R" !important;
+  margin-bottom: 40px;
+}
+
+.info-page .page-subtitle {
+  font-size: 16px;
+  letter-spacing: 0.19em;
+  color: #939393;
+  margin-bottom: -21px;
+}
+
+.info-page h1.japanese {
+  font-size: 30px;
+  font-weight: 600;
+  font-family: "游ゴシック体", YuGothic, "游ゴシック Medium", "Yu Gothic Medium", "游ゴシック", "Yu Gothic", sans-serif !important;
+  text-align: center;
+  letter-spacing: 0.14em;
+}
+
+.info-page h2 {
+  font-size: 15px;
+  text-align: left;
+  color: #C8AB7A;
+  font-weight: 600;
+  letter-spacing: 2px;
+  margin-top: 67px;
+  margin-bottom: 16px;
+}
+
+.info-page .page-description {
+  font-size: 15px;
+  letter-spacing: 0.1em;
+  margin: -6px 0 122px;
+}
+
+.info-page .page-description p {
+  line-height: 2.0666666;
+  margin: 0;
+}
+
+.info-wrap p {
+  font-size: 15px;
+  letter-spacing: 0.06em;
+  line-height: 1.8666666667;
+  margin-bottom: 28px;
+}
+
+.info-wrap {
+  margin-top: 76px;
+  margin-bottom: 138px;
+}
+
+.info-flex-wrap {
+  display: flex;
+  padding: 27px 0 22px;
+  border-bottom: solid 1px #EEEEEE;
+}
+
+.info-flex-wrap:last-child {
+  border-bottom: solid 0px #EEEEEE;
+}
+
+.info-flex p {
+  font-size: 14px;
+  letter-spacing: 0.08em;
+  line-height: 1.7857142857;
+  margin-bottom: 28px;
+}
+
+.info-flex p:last-child {
+  margin: 0;
+}
+
+.info-flex.left {
+  width: 30%;
+  font-weight: 600;
+  color: #C8AB7A;
+}
+
+.info-flex.right {
+  width: 70%;
+}
+
+.google-link {
+  text-decoration: underline;
+}
+
+.google-link:before {
+  content: "";
+  display: inline-block;
+  background-image: url("https://cdn.shopify.com/s/files/1/0268/1202/2962/files/map-icon.svg?v=1615466239");
+  background-repeat: no-repeat;
+  background-size: 10px;
+  width: 10px;
+  height: 16px;
+  position: relative;
+  top: 4px;
+  margin-right: 6px;
+}
+
+@media only screen and (max-width: 768px) {
+  .google-link:before {
+    background-size: 3vw;
+    width: 3vw;
+    height: 5vw;
+    position: relative;
+    top: 1.3vw;
+    margin-right: 2vw;
+  }
+
+  .info-page {
+    margin-top: 12.4vw !important;
+    padding: 0 10vw;
+    margin-bottom: 30vw !important;
+  }
+
+  .info-page .section-header {
+    margin-bottom: 10vw;
+  }
+
+  .info-page h1.section-header__title {
+    font-size: 12vw !important;
+    letter-spacing: 0.09em;
+    margin-bottom: 2.4vw !important;
+  }
+
+  .info-page .page-subtitle {
+    font-size: 3.6vw !important;
+    letter-spacing: 0.08em;
+    margin-bottom: -3vw;
+  }
+
+  .info-flex-wrap {
+    padding: 6.8vw 0 5.4vw;
+  }
+
+  .info-page h2 {
+    font-size: 3.5vw;
+    letter-spacing: 0.08em;
+    margin-top: 10vw;
+    margin-bottom: 3vw;
+  }
+
+  .info-page p {
+    font-size: 3.5vw;
+    margin-bottom: 5vw;
+  }
+
+  .info-flex-wrap p {
+    font-size: 3.8vw;
+    letter-spacing: 0.08em;
+    line-height: 1.68;
+    margin-bottom: 5vw;
+  }
+
+  .info-page h1.japanese {
+    font-size: 6vw;
+    margin-bottom: 6vw;
+  }
+
+  .info-page .page-description {
+    margin-bottom: 10vw;
+  }
+
+  .info-page .page-description p {
+    font-size: 3vw;
+    margin-bottom: 4vw;
+    text-align: left;
+  }
+
+  .info-wrap {
+    margin-top: 0px;
+  }
+
+  .info-flex-wrap {
+    flex-direction: column;
+  }
+
+  .info-flex {
+    width: 100% !important;
+  }
+}
+/*--------------------------------------------------------------------------------
+
+お問い合わせ
+
+--------------------------------------------------------------------------------*/
+.page-contact {
+  max-width: 930px;
+}
+
+#contact-form {
+  margin: 0;
+}
+
+#contact_form li {
+  display: flex;
+  margin: 0 0 30px;
+}
+
+#contact_form label {
+  font-size: 14px;
+  letter-spacing: 0.06em;
+}
+
+#contact_form label.labal-left {
+  min-width: 205px;
+  font-size: 15px;
+  letter-spacing: 0.04em;
+  padding-top: 16px;
+}
+
+.page-contact input[type=text],
+.page-contact input[type=email],
+.page-contact select,
+.page-contact textarea {
+  background-color: #F6F6F6;
+  border: 0px;
+  letter-spacing: 0.06em;
+  font-size: 14px;
+}
+
+.page-contact input[type=text],
+.page-contact input[type=email],
+.page-contact select {
+  height: 57px;
+  padding: 8px 24px;
+}
+
+.page-contact input[type=text] {
+  width: 50%;
+}
+
+.page-contact input[type=text]:last-child {
+  margin-left: 5px;
+}
+
+.page-contact textarea {
+  width: 100%;
+  height: 171px;
+  padding: 18px 24px;
+}
+
+.page-contact .section-header {
+  margin: 75px 0 70px;
+}
+
+.page-contact .section-header h1 {
+  font-size: 52px;
+  letter-spacing: 0.04em;
+  margin-bottom: 10px;
+}
+
+.page-contact .section-header span {
+  font-size: 16px;
+  letter-spacing: 0.19em;
+  color: #939393;
+}
+
+.page-contact .section-header p {
+  font-size: 15px;
+  letter-spacing: 0.1em;
+  margin-top: 46px;
+}
+
+#contact_form .form-subject-list > div {
+  display: inline-block;
+}
+
+.form-subject-list input, .form-subject-list label {
+  display: inline-block;
+}
+
+.form-subject-list-half:nth-child(1) {
+  min-width: 52%;
+}
+
+.form-subject-list-half:nth-child(2) {
+  min-width: 47%;
+}
+
+.form-subject-list-quarter:nth-child(3) {
+  min-width: 30%;
+}
+
+.form-subject-list-quarter:nth-child(4) {
+  min-width: 28%;
+}
+
+.form-subject-list-quarter:nth-child(5) {
+  min-width: 25%;
+}
+
+.form-subject-list-quarter:nth-child(6) {
+  min-width: 12%;
+}
+
+.form-subject-list label {
+  margin-bottom: 23px;
+}
+
+#contact_form li.form-product {
+  margin: -10px 0 50px;
+}
+
+.form-product-inner {
+  border: solid 1px #DDDDDD;
+  width: 100%;
+  padding: 34px 40px;
+}
+
+.form-product-inner input {
+  display: inline-block;
+}
+
+.form-product label.contact-product-label {
+  width: 80% !important;
+  display: inline-block;
+}
+
+.contact-product {
+  display: flex;
+  width: 100%;
+  margin: 12px 0 0;
+}
+
+.contact-product .image-wrap {
+  padding: 0 !important;
+  width: 170px;
+  height: 170px !important;
+  position: relative;
+  display: flex;
+}
+
+.contact-product .image-wrap img {
+  position: relative;
+  object-fit: cover;
+}
+
+.contact-product-right {
+  padding: 18px 0 0 40px;
+}
+
+.contact-product-right span {
+  font-size: 11px;
+  letter-spacing: 0.06em;
+}
+
+.contact-product-right .product-page-series {
+  font-size: 15.5px;
+  letter-spacing: 0.03em;
+  font-family: "TTDrugs-R" !important;
+  color: #B7B7B7;
+  margin: 22px 0 12px;
+}
+
+.contact-product-right .series-name {
+  font-size: 15.5px;
+  letter-spacing: 0.05em;
+}
+
+.contact-product-right .bar {
+  margin: 0 10px;
+  color: #DDDDDD;
+}
+
+.contact-product-right h2 {
+  font-size: 16px;
+  letter-spacing: 0.06em;
+  margin-bottom: 10px;
+  line-height: 1.7;
+}
+
+.contact-product-right p {
+  font-size: 16px;
+  letter-spacing: 0.06em;
+  margin-bottom: 0;
+  line-height: 1;
+}
+
+.page-contact .form-email {
+  width: 100%;
+}
+
+.page-contact input[type=email] {
+  width: 100%;
+  margin-bottom: 5px;
+}
+
+span.form-repuired {
+  background: #BE9151;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  font-weight: 600;
+  color: #FFF;
+  padding: 3px 8px;
+  margin-left: 8px;
+  position: relative;
+  top: -2px;
+}
+
+.page-contact .type-submit input {
+  margin: 0 auto;
+  font-size: 14px;
+  letter-spacing: 0.12em;
+  font-weight: 500;
+  width: 240px;
+  height: 55px;
+  margin: 30px auto 88px;
+  background-image: url("https://cdn.shopify.com/s/files/1/0268/1202/2962/files/arrow-right.svg?v=1613309577");
+  background-size: 6.5px;
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+}
+
+.page-contact .type-submit input {
+  background-image: url("https://cdn.shopify.com/s/files/1/0268/1202/2962/files/arrow-right.svg?v=1613309577") !important;
+  background-size: 6.5px !important;
+  background-repeat: no-repeat !important;
+  background-position: right 10px center !important;
+}
+
+@media screen and (max-width: 768px) {
+  .page-contact {
+    padding: 0 5vw;
+  }
+
+  #contact_form li {
+    flex-direction: column;
+    margin-bottom: 12vw;
+  }
+
+  .page-contact .section-header {
+    margin: 12.6vw 0 10.8vw;
+  }
+
+  .page-contact .section-header h1 {
+    font-size: 12vw;
+    letter-spacing: 0.04em;
+    margin-bottom: 2.4vw;
+  }
+
+  .page-contact .section-header span {
+    font-size: 3.5vw;
+    letter-spacing: 0.08em;
+  }
+
+  .page-contact .section-header p {
+    font-size: 3.5vw;
+    letter-spacing: 0.08em;
+    margin: 7.2vw 0 0 0;
+    line-height: 1.9230769231;
+  }
+
+  #contact_form label {
+    font-size: 3.5vw;
+    letter-spacing: 0.06em;
+  }
+
+  #contact_form label.labal-left {
+    min-width: 100%;
+    font-size: 3.2vw;
+    letter-spacing: 0.04em;
+    padding-top: 0;
+    font-weight: 600;
+    margin-bottom: 4vw;
+  }
+
+  .form-subject-list label {
+    margin-bottom: 6vw;
+  }
+
+  .page-contact input[type=text],
+.page-contact input[type=email],
+.page-contact select,
+.page-contact textarea {
+    border: 0px;
+    font-size: 3.5vw !important;
+  }
+
+  .page-contact input[type=text],
+.page-contact input[type=email],
+.page-contact select {
+    height: 14vw;
+    padding: 2vw 5vw;
+    margin-bottom: 1vw;
+    width: 100% !important;
+  }
+
+  .page-contact input[type=text] {
+    width: 50%;
+  }
+
+  .page-contact input[type=text]:last-child {
+    margin-left: 0;
+  }
+
+  .page-contact textarea {
+    width: 100%;
+    height: 40vw;
+    padding: 5vw 5vw;
+  }
+
+  .form-product label.contact-product-label {
+    width: 100% !important;
+    padding-right: 0;
+  }
+
+  .form-product-inner {
+    padding: 6.6vw 5vw 8vw;
+  }
+
+  .product__main-photos {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .contact-product .image-wrap {
+    width: 32vw;
+    height: 32vw !important;
+  }
+
+  .contact-product {
+    margin-top: 3.4vw;
+  }
+
+  .contact-product-right {
+    padding: 1vw 0 0 7vw;
+  }
+
+  .contact-product-right span {
+    font-size: 2.6vw;
+  }
+
+  .contact-product-right .product-page-series {
+    font-size: 3.5vw;
+    margin: 5vw 0 2.4vw;
+  }
+
+  .contact-product-right .series-name {
+    font-size: 3.4vw;
+  }
+
+  .contact-product-right .bar {
+    margin: 0 2vw;
+  }
+
+  .contact-product-right h2 {
+    font-size: 3.4vw;
+    margin-bottom: 2vw;
+  }
+
+  .contact-product-right p {
+    font-size: 3.4vw;
+  }
+
+  span.form-repuired {
+    font-size: 2.4vw;
+    padding: 0.6vw 1.6vw;
+    margin-left: 2vw;
+    top: -0.4vw;
+  }
+
+  .page-contact .type-submit input {
+    font-size: 3.3vw !important;
+    width: 50vw !important;
+    height: 14vw !important;
+    margin: 8vw auto 20vw !important;
+    background-size: 2vw !important;
+    background-position: right 1.6vw center !important;
+  }
+}
+.page-contact .form-custom {
+  margin: 0 !important;
+}
+
+.form-custom label,
+.form-custom select,
+.form-custom textarea {
+  margin-bottom: 30px;
+}
+
+.page-contact .success-msg {
+  background: #F8F6F4;
+  color: #C8AB7A;
+  padding: 41px 40px;
+  margin-bottom: 80px;
+  margin-top: -60px;
+  font-size: 14px;
+  letter-spacing: 0.06em;
+}
+
+@media screen and (max-width: 768px) {
+  .form-custom.is-1 select,
+.form-custom textarea {
+    margin-bottom: 12vw;
+  }
+
+  .page-contact .success-msg {
+    padding: 5vw;
+    margin-bottom: 10vw;
+    margin-top: -5vw;
+    font-size: 3.2vw;
+    letter-spacing: 0.06em;
+  }
+}
+.contact-product img {
+  opacity: 1 !important;
+}
+
+.contact-product .product__thumbs {
+  display: none;
+}
+
+/*--------------------------------------------------------------------------------
+
+アカウント
+
+--------------------------------------------------------------------------------*/
+#CustomerLoginForm {
+  max-width: 390px;
+  margin: 0 auto;
+}
+
+#RecoverPasswordForm form {
+  max-width: 390px;
+  margin: 0 auto;
+}
+
+.page-account {
+  margin-bottom: 83px;
+}
+
+.page-account .section-header {
+  margin: 69px 0 51px;
+}
+
+.page-account .section-header h1 {
+  font-size: 59px;
+  letter-spacing: 0.03em;
+  margin-bottom: 9px;
+}
+
+.page-account .section-header span {
+  font-size: 16px;
+  letter-spacing: 0.2em;
+  color: #939393;
+}
+
+.page-account label {
+  font-size: 16px;
+  letter-spacing: 0.04em;
+  font-family: "TTDrugs-R";
+  margin-bottom: 2px;
+}
+
+.label-info {
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  text-decoration: underline;
+  margin-bottom: 0;
+}
+
+.page-account input[type=text],
+.page-account input[type=email],
+.page-account input[type=tel],
+.page-account input[type=password],
+.page-account select,
+.page-account textarea {
+  background-color: #F6F6F6;
+  border: 0px;
+  letter-spacing: 0.06em;
+  font-size: 14px;
+}
+
+.page-account input[type=text],
+.page-account input[type=email],
+.page-account input[type=tel],
+.page-account input[type=password],
+.page-account select {
+  height: 67px;
+  padding: 8px 24px;
+  margin: 0 auto 20px;
+}
+
+.page-account button[type=submit],
+.page-account input[type=submit] {
+  margin: 0 auto;
+  font-size: 14px !important;
+  letter-spacing: 0.12em;
+  font-weight: 500;
+  width: 240px;
+  height: 55px;
+  margin: 27px auto 8px;
+  background-image: url("https://cdn.shopify.com/s/files/1/0268/1202/2962/files/arrow-right.svg?v=1613309577");
+  background-size: 6.5px;
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+}
+
+.page-account button[type=submit]:hover,
+.page-account input[type=submit]:hover {
+  background-image: url("https://cdn.shopify.com/s/files/1/0268/1202/2962/files/arrow-right.svg?v=1613309577") !important;
+  background-size: 6.5px !important;
+  background-repeat: no-repeat !important;
+  background-position: right 10px center !important;
+}
+
+#RecoverPasswordForm button {
+  margin-top: -10px;
+  margin-bottom: 26px;
+}
+
+#customer_register_link {
+  font-size: 13px;
+  letter-spacing: 0.06em;
+}
+
+@media screen and (max-width: 768px) {
+  .page-account {
+    margin-bottom: 27.4vw;
+    padding: 0 10vw;
+  }
+
+  #CustomerLoginForm {
+    max-width: 100%;
+  }
+
+  #RecoverPasswordForm form {
+    max-width: 100%;
+  }
+
+  .page-account .section-header {
+    margin: 12vw 0 9.2vw;
+  }
+
+  .page-account .section-header h1 {
+    font-size: 12.5vw;
+    letter-spacing: 0.07em;
+    margin-bottom: 2.4vw;
+  }
+
+  .page-account .section-header span {
+    font-size: 3.5vw;
+    letter-spacing: 0.12em;
+    color: #939393;
+  }
+
+  .page-account label {
+    font-size: 4.4vw;
+    margin-bottom: 0.6vw;
+  }
+
+  .label-info {
+    font-size: 3vw;
+    letter-spacing: 0.06em;
+    text-decoration: underline;
+    margin-bottom: 0;
+    line-height: 2.4;
+  }
+
+  .page-account input[type=text],
+.page-account input[type=email],
+.page-account input[type=password],
+.page-account select,
+.page-account textarea {
+    background-color: #F6F6F6;
+    border: 0px;
+    letter-spacing: 0.06em;
+    font-size: 3.5vw !important;
+    margin-bottom: 8vw;
+  }
+
+  .page-account input[type=text],
+.page-account input[type=email],
+.page-account input[type=password],
+.page-account select {
+    height: 17.6vw;
+    max-width: 100%;
+    padding: 2vw 5vw;
+  }
+
+  .page-account P {
+    margin: 0;
+  }
+
+  .page-account button[type=submit],
+.page-account input[type=submit] {
+    font-size: 3.5vw !important;
+    letter-spacing: 0.06em;
+    width: 74%;
+    height: 14.6vw;
+    padding: 5vw 5vw;
+    margin: 3.2vw auto 6.6vw;
+    background-image: url("https://cdn.shopify.com/s/files/1/0268/1202/2962/files/arrow-right.svg?v=1613309577");
+    background-size: 1.8vw !important;
+    background-repeat: no-repeat;
+    background-position: right 3vw center !important;
+  }
+
+  #RecoverPasswordForm button {
+    margin-top: -2vw;
+    margin-bottom: 0vw;
+  }
+
+  #RecoverPasswordForm p {
+    font-size: 3.5vw;
+    letter-spacing: 0.06em;
+  }
+
+  #customer_register_link {
+    font-size: 3.4vw;
+  }
+}
+.page-account label.yugo {
+  font-family: "游ゴシック体", YuGothic, "游ゴシック Medium", "Yu Gothic Medium", "游ゴシック", "Yu Gothic", sans-serif;
+}
+
+.page-account .section-header.register-header {
+  margin-top: 74px;
+}
+
+.page-account .register-header p {
+  font-size: 15px;
+  letter-spacing: 0.1em;
+  margin-top: 52px;
+}
+
+.page-account .section-header.register-header h1 {
+  font-size: 53px;
+  letter-spacing: 0.04em;
+}
+
+#create_customer {
+  text-align: center;
+  width: 100%;
+  margin: 0 auto;
+  max-width: 390px;
+}
+
+@media screen and (max-width: 768px) {
+  .page-account .section-header.register-header {
+    margin-top: 12vw;
+  }
+
+  .page-account .register-header p {
+    font-size: 3.5vw;
+    letter-spacing: 0.1em;
+    margin-top: 10vw;
+  }
+
+  .page-account .section-header.register-header h1 {
+    font-size: 12.5vw;
+  }
+}
+._SFA__pager__list {
+  display: none !important;
+}
+
+.rules-header {
+  margin-top: -108px;
+  font-size: 12px;
+}
+
+.rules-header p {
+  font-size: 12px !important;
+  text-align: center;
+  letter-spacing: 0.05em;
+  line-height: 1.9166666;
+}
+
+.rules-container {
+  max-width: 930px;
+  height: 390px;
+  background: #F6F6F6;
+  padding: 70px 70px 20px;
+  margin: 44px 0 50px;
+  overflow-y: scroll;
+}
+
+.rules-container h2 {
+  font-size: 18px;
+  letter-spacing: 0.1em;
+  color: #4B4B4B;
+  margin: 0 0 20px;
+}
+
+.rules-container p {
+  font-size: 13px;
+  letter-spacing: 0.05em;
+  line-height: 1.9230769231;
+  margin-bottom: 46px;
+}
+
+.rules-comfirm {
+  text-align: center;
+}
+
+.rules-button {
+  width: 220px;
+  height: 55px;
+  margin: 0 7.5px;
+  text-align: center;
+  display: inline-block;
+  font-size: 14px;
+  letter-spacing: 0.06em;
+  padding-top: 17px;
+}
+
+.rules-button.is-yes {
+  background: #c8ab7a;
+  color: #FFF;
+}
+
+.rules-button.is-no {
+  background: #EEEEEE;
+}
+
+@media only screen and (max-width: 768px) {
+  .rules-header {
+    margin-top: -9vw;
+    font-size: 12px;
+  }
+
+  .rules-header p {
+    font-size: 2.8vw !important;
+    text-align: left;
+    letter-spacing: 0.05em;
+    line-height: 1.9166666;
+  }
+
+  .rules-container {
+    max-width: 100%;
+    height: 80vw;
+    background: #F6F6F6;
+    padding: 10vw 10vw 5vw;
+    margin: 44px 0 50px;
+    overflow-y: scroll;
+  }
+
+  .rules-container h2 {
+    font-size: 3.8vw;
+    margin: 0 0 5vw;
+  }
+
+  .rules-container p {
+    font-size: 3.3vwpx;
+    margin-bottom: 8vw;
+  }
+
+  .rules-comfirm {
+    text-align: center;
+  }
+
+  .rules-button {
+    width: 60vw;
+    height: 12vw;
+    margin: 0 0 1vw;
+    font-size: 3.4vw;
+    padding-top: 3.6vw;
+  }
+}
+.section-header--404 {
+  padding: 120px 0 103px;
+}
+
+.section-header--404 h1 {
+  font-size: 54px;
+  letter-spacing: 0.04em;
+  margin-bottom: 30px;
+}
+
+.section-header--404 p {
+  font-size: 15px;
+  letter-spacing: 0.1em;
+  margin-bottom: 50px;
+}
+
+.section-header--404 a {
+  font-size: 21px;
+  padding-bottom: 6px;
+  letter-spacing: 0.09em;
+  width: 190px;
+}
+
+@media only screen and (max-width: 768px) {
+  .page-404 {
+    padding: 0 !important;
+  }
+
+  .section-header--404 {
+    padding: 8vw 0 26vw;
+  }
+
+  .section-header--404 h1 {
+    font-size: 6.9vw !important;
+    letter-spacing: 0.08em;
+    margin-bottom: 9.8vw;
+  }
+
+  .section-header--404 .rte {
+    margin: 0 !important;
+  }
+
+  .section-header--404 h1 span {
+    display: block;
+    font-size: 22vw;
+    margin-bottom: 2.2vw;
+  }
+
+  .section-header--404 p {
+    font-size: 3.5vw;
+    margin: 0 0 10.8vw !important;
+  }
+
+  .section-header--404 a {
+    font-size: 6.4vw;
+    padding-bottom: 2.2vw;
+    width: 56vw;
+  }
+}
+.faq .page-width {
+  max-width: 810px;
+}
+
+.faq h1 {
+  font-size: 59px;
+  letter-spacing: 0.03em;
+}
+
+.faq .section-header {
+  margin-top: 89px;
+  margin-bottom: 120px;
+}
+
+.faq .page-subtitle {
+  font-size: 16px;
+  letter-spacing: 0.23em;
+  margin-top: 14px;
+  margin-bottom: 60px;
+  color: #939393;
+}
+
+.faq .service-nav-item {
+  width: 160px;
+}
+
+.faq .service-nav a {
+  font-size: 15px;
+  letter-spacing: 0.04em;
+  font-family: "游ゴシック体", YuGothic, "游ゴシック Medium", "Yu Gothic Medium", "游ゴシック", "Yu Gothic", sans-serif;
+  font-weight: 500;
+}
+
+.faq .service-nav.bottom {
+  margin: 140px 0 110px;
+}
+
+.faq h2:first-child {
+  margin-top: 0;
+}
+
+.faq h2 {
+  font-size: 22px;
+  letter-spacing: 0.1em;
+  text-align: center;
+  margin-bottom: 44px;
+  margin-top: 130px;
+  font-weight: 600;
+  color: #C8AB7A;
+}
+
+.faq dl {
+  margin: 0;
+  border-bottom: solid 1px #EEEEEE;
+  position: relative;
+}
+
+.faq dl dt {
+  border-top: solid 1px #EEEEEE;
+  padding: 26px 30px 26px 46px;
+  position: relative;
+  font-size: 15px;
+  letter-spacing: 0.05em;
+}
+
+.faq dl dt:after {
+  content: "";
+  background-image: url("https://cdn.shopify.com/s/files/1/0268/1202/2962/files/arrow-bottom-gold_2.svg?v=1614138349");
+  background-repeat: no-repeat;
+  background-size: 12px;
+  width: 12px;
+  height: 12px;
+  display: block;
+  position: absolute;
+  right: 0;
+  top: 35px;
+}
+
+.faq dl dt:before {
+  content: "Q";
+  font-family: "TTDrugs-R" !important;
+  color: #C8AB7A;
+  font-size: 22px;
+  position: absolute;
+  left: 0;
+  top: 19px;
+}
+
+.faq dl dt.active:after {
+  transform: rotate(180deg);
+  top: 30px;
+}
+
+.faq dl dd {
+  display: none;
+  margin: 0 0 70px 0;
+  padding-left: 46px;
+  padding-right: 46px;
+  font-size: 13px;
+  letter-spacing: 0.04em;
+  position: relative;
+  line-height: 2.05;
+}
+
+.faq dl dd:before {
+  content: "A";
+  font-family: "TTDrugs-R" !important;
+  color: #C9C9C9;
+  font-size: 22px;
+  position: absolute;
+  left: 0;
+  top: -10px;
+}
+
+@media only screen and (max-width: 768px) {
+  .faq .page-width {
+    padding: 0 5vw;
+  }
+
+  .faq .section-header {
+    margin-top: 12.5vw;
+    margin-bottom: 22vw;
+  }
+
+  .faq h1 {
+    font-size: 12vw;
+  }
+
+  .faq h2 {
+    font-size: 5.4vw;
+    margin-bottom: 10.8vw;
+    margin-top: 30vw;
+  }
+
+  .faq .page-subtitle {
+    font-size: 3.5vw;
+    letter-spacing: 0.08em;
+    margin-top: 2.4vw;
+    margin-bottom: 8.6vw;
+  }
+
+  .faq .service-nav-half {
+    margin-bottom: 0;
+  }
+
+  .faq .service-nav-item {
+    width: 30vw;
+  }
+
+  .faq .service-nav a {
+    font-size: 3.3vw;
+  }
+
+  .faq .service-nav.bottom {
+    margin: 30vw 0 28vw;
+  }
+
+  .faq dl dt {
+    padding: 6.6vw 8vw 6.6vw 9vw;
+    font-size: 3.6vw;
+    letter-spacing: 0.05em;
+  }
+
+  .faq dl dt:after {
+    background-size: 4vw;
+    width: 4vw;
+    height: 3vw;
+    top: 8vw;
+  }
+
+  .faq dl dt:before {
+    font-size: 6vw;
+    top: 4vw;
+  }
+
+  .faq dl dt.active:after {
+    transform: rotate(180deg);
+    top: 7vw;
+  }
+
+  .faq dl dd {
+    display: none;
+    margin: 0 0 14vw 0;
+    padding-left: 8vw;
+    padding-right: 8vw;
+    font-size: 3.4vw;
+    letter-spacing: 0.07em;
+  }
+
+  .faq dl dd:before {
+    font-size: 6vw;
+    top: -2vw;
+  }
+}
+.favorite-page .section-header {
+  margin-bottom: 130px;
+}
+
+h1.section-header__title {
+  margin-bottom: 0px;
+}
+
+.SFA__btn__list.active:after {
+  background: #C8AB7A !important;
+}
+
+.favorite-page {
+  margin-bottom: 80px;
+}
+
+#ReplaceFavoriteApp > .grid > i {
+  display: none !important;
+}
+
+#ReplaceFavoriteApp > .grid > p {
+  display: none !important;
+}
+
+#ReplaceFavoriteApp > .grid > a {
+  display: none !important;
+}
+
+@media only screen and (max-width: 768px) {
+  .favorite-page {
+    padding: 0 5vw;
+  }
+}
+.my-page .section-header {
+  margin-bottom: 70px;
+}
+
+.my-page h2 {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 28px;
+}
+
+.my-page h2 {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 28px;
+}
+
+.my-page .h5 {
+  color: #c3c3c3;
+}
+
+.my-page .btn {
+  background: #EEEEEE;
+  margin: 0 auto;
+  display: block;
+  width: 240px;
+  height: 54px;
+  padding-top: 20px;
+  border: solid 0px;
+  margin-bottom: 100px;
+  margin-top: 180px;
+  background-image: url("https://cdn.shopify.com/s/files/1/0268/1202/2962/files/arrow-left-silver.svg?v=1614492919");
+  background-size: 6px;
+  background-repeat: no-repeat;
+  background-position: left 12px center;
+  transition: 0.4s;
+  font-size: 14px;
+  letter-spacing: 0.06em;
+}
+
+.my-page .btn:hover {
+  opacity: 0.7;
+}
+
+@media only screen and (max-width: 768px) {
+  .my-page .medium-up--one-third {
+    margin-top: 8vw;
+    margin-bottom: 14vw;
+  }
+
+  .my-page h2 {
+    font-size: 5vw;
+    letter-spacing: 0.06em;
+    margin-bottom: 5vw;
+  }
+
+  .my-page p {
+    font-size: 3.5vw;
+    letter-spacing: 0.06em;
+  }
+
+  .my-page td {
+    padding: 3vw;
+  }
+
+  .my-page td, .my-page td:before {
+    font-size: 3.5vw;
+    letter-spacing: 0.04em;
+  }
+
+  .my-page .btn {
+    width: 60vw;
+    height: 14vw;
+    padding-top: 5vw;
+    border: solid 0px;
+    margin-bottom: 20vw;
+    margin-top: 34vw;
+    background-size: 1.7vw;
+    background-position: left 3vw center;
+    font-size: 3.5vw;
+  }
+}
+.address-page h2 {
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 30px;
+}
+
+.address-page p {
+  text-align: left;
+}
+
+.address-list {
+  padding-bottom: 18px;
+  padding-top: 34px;
+  border-bottom: solid 1px #E8E8E2;
+}
+
+.address-list:first-child {
+  padding-top: 6px;
+}
+
+.address-list:last-child {
+  border: solid 0px;
+}
+
+.address-page .btn.address-new-toggle {
+  background: #EEEEEE;
+  margin: 0 auto;
+  display: block;
+  width: 240px;
+  height: 54px;
+  padding-top: 10px;
+  border: solid 0px;
+  margin-bottom: 100px;
+  margin-top: 90px;
+  transition: 0.4s;
+  font-size: 14px;
+  letter-spacing: 0.06em;
+}
+
+.address-page .btn:hover {
+  opacity: 0.7;
+}
+
+.page-account.address-page input, .page-account.address-page select {
+  height: 43px;
+}
+
+@media screen and (max-width: 768px) {
+  .address-page p {
+    font-size: 3.8vw;
+    letter-spacing: 0.06em;
+  }
+
+  .address-list-wrap label {
+    font-size: 3.5vw;
+  }
+
+  .page-account.address-page input, .page-account.address-page select {
+    height: 10vw;
+  }
+
+  .address-edit-toggle, .address-delete {
+    font-size: 3.5vw;
+    letter-spacing: 0.06em;
+    font-weight: 500;
+    width: 20vw;
+    margin-top: 4vw;
+  }
+
+  .address-list {
+    padding-bottom: 7vw;
+    padding-top: 5vw;
+    border-bottom: solid 1px #E8E8E2;
+  }
+
+  .address-page .btn.address-new-toggle {
+    width: 60vw;
+    height: 14vw;
+    padding-top: 2.4vw;
+    border: solid 0px;
+    margin-bottom: 20vw;
+    margin-top: 34vw;
+    background-position: left 3vw center;
+    font-size: 3.5vw;
+  }
+}
+.overlay-all {
+  content: "";
+  display: block;
+  width: 100vw;
+  height: 100vh;
+  background: #FFF;
+  z-index: 9999999999 !important;
+  position: fixed;
+  top: 0;
+  opacity: 1;
+  transition-delay: 0.25s;
+  transition: opacity 1s;
+  pointer-events: none;
+}
+
+.overlay-all.active {
+  opacity: 0;
+}
+
+#admin-bar-iframe {
+  display: none !important;
+}
+
+.stamped-proxy-write > div > div > a {
+  width: 240px;
+  height: 240px;
+  display: block;
+  overflow: hidden;
+  display: flex;
+}
+
+.stamped-proxy-write > div > div > a > img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+.stamped-proxy-write-title:before {
+  content: "レビューを書く" !important;
+  display: block;
+  font-size: 24px;
+  line-height: 2;
+  margin-bottom: 10px;
+}
+
+.stamped-form-review-body label:before {
+  content: "本文";
+  font-size: 14px;
+}
+
+.stamped-form-review-body label {
+  font-size: 0 !important;
+}
+
+.stamped-proxy-write-title {
+  font-size: 16px;
+}
+
+.stamped-container {
+  font-family: "游ゴシック体", YuGothic, "游ゴシック Medium", "Yu Gothic Medium", "游ゴシック", "Yu Gothic", sans-serif;
+  font-weight: 500;
+}
+
+.new-review-form label {
+  color: #4b4b4b;
+  margin-bottom: 6px;
+  margin-top: 24px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.new-review-form input {
+  background-color: #F6F6F6;
+  border: 0px;
+  letter-spacing: 0.06em;
+  font-size: 14px;
+  height: 57px;
+  padding: 8px 24px;
+}
+
+.new-review-form textarea {
+  background-color: #F6F6F6;
+  border: 0px;
+  letter-spacing: 0.06em;
+  font-size: 14px;
+  padding: 16px 24px;
+}
+
+.stamped-proxy-write .stamped-reviews {
+  display: none;
+}
+
+#reviewRating {
+  opacity: 0;
+}
+
+.stamped-messages .stamped-share-links {
+  display: none !important;
+}
+
+.stamped-file-uploader-btn {
+  display: none !important;
+}
+
+.stamped-form-actions {
+  text-align: center;
+}
+
+input.stamped-button {
+  background: #c8ab7a !important;
+  background-image: url(https://cdn.shopify.com/s/files/1/0268/1202/2962/files/arrow-right.svg?v=1613309577) !important;
+  background-size: 6.5px !important;
+  background-repeat: no-repeat !important;
+  background-position: right 10px center !important;
+  font-size: 14px;
+  letter-spacing: 0.12em;
+  font-weight: 500;
+  width: 240px !important;
+  height: 55px !important;
+  margin: 30px auto 88px;
+}
+
+.stamped-container[data-count="0"][data-widget-language=""] .stamped-empty-state {
+  display: none !important;
+}
+
+.stamped-thank-you p {
+  font-size: 0;
+}
+
+.stamped-thank-you {
+  border: solid 0px !important;
+}
+
+@media only screen and (max-width: 768px) {
+  .stamped-proxy-write > div > div > a {
+    width: 40vw;
+    height: 40vw;
+    display: block;
+    overflow: hidden;
+    display: flex;
+  }
+
+  .stamped-proxy-write > div > div > a > img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+  }
+
+  .stamped-proxy-write-title:before {
+    font-size: 6vw;
+    margin-top: 10vw;
+  }
+
+  .stamped-proxy-write-title {
+    font-size: 4vw;
+    margin-top: 10vw;
+  }
+
+  .new-review-form {
+    padding: 0 5vw !important;
+  }
+
+  .new-review-form input {
+    height: 14vw;
+    padding: 2vw 5vw;
+    margin-bottom: 1vw;
+    width: 100% !important;
+    font-size: 3.2vw !important;
+  }
+
+  .new-review-form label {
+    min-width: 100%;
+    font-size: 3.2vw;
+    letter-spacing: 0.04em;
+    padding-top: 0;
+    font-weight: 600;
+    margin-bottom: 3vw;
+  }
+
+  .stamped-form-review-body label:before {
+    font-size: 3.2vw;
+  }
+
+  input.stamped-button {
+    font-size: 3.3vw !important;
+    width: 50vw !important;
+    height: 14vw !important;
+    margin: 8vw auto 20vw !important;
+    background-size: 1.6vw !important;
+    background-position: right 2vw center !important;
+  }
+}
+.template-search .boost-pfs-search-result-toolbar {
+  display: none !important;
+}
+
+.template-search .boost-pfs-search-panel-product-show {
+  display: none;
+}
+
+.template-search .grid__item.medium-up--four-fifths {
+  width: 100%;
+  margin-top: 140px;
+}
+
+.template-search .collection-content {
+  margin-top: 120px;
+}
