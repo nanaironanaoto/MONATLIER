@@ -488,6 +488,13 @@
             </dl>
           {% endif %}
 
+          {% if product.metafields.custom_fields["parts_"] != blank %}
+            <dl>
+              <dt>{{ 'general.product.parts_' | t }}</dt>
+              <dd>{{ product.metafields.custom_fields["parts_"] }}</dd>
+            </dl>
+          {% endif %}
+          
           {% if product.metafields.custom_fields["length"] != blank %}
             <dl>
               <dt>{{ 'general.product.length' | t }}</dt>
