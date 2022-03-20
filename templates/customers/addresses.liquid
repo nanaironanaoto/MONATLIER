@@ -132,10 +132,8 @@
           <select id="AddressCountryNew" class="input-full" name="address[country]" data-default="{{form.country}}">{{ country_option_tags }}</select>
 
 
-          <div class="grid__item" id="AddressProvinceContainerNew" style="display: none;">
-            <label for="AddressProvinceNew">都道府県</label>
-            <select id="AddressProvinceNew" class="input-full" name="address[province]" data-default="{{form.province}}"></select>
-          </div>
+          <label for="AddressProvinceNew">都道府県</label>
+          <select id="AddressProvinceNew" class="input-full" name="address[province]" data-default="{{form.province}}"></select>
 
           <label for="AddressCityNew">市区町村</label>
           <input type="text" id="AddressCityNew" class="input-full" name="address[city]" value="{{form.city}}" autocapitalize="words">
