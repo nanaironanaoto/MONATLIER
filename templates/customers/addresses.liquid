@@ -44,14 +44,6 @@
               </div>
             </div>
 
-              class="js-address-country"
-              data-country-id="AddressCountry_{{form.id}}"
-              data-province-container-id="AddressProvinceContainer_{{form.id}}"
-              data-province-id="AddressProvince_{{form.id}}">
-              <label for="AddressCountry_{{form.id}}">{{ 'customer.addresses.country' | t }}</label>
-              <select id="AddressCountry_{{form.id}}" class="input-full" name="address[country]" data-default="{{form.country}}">{{ country_option_tags }}</select>
-            </div>
-          
             <div class="grid grid--small">
               <div class="grid__item one-half small--one-whole">
                 <label for="AddressZip_{{form.id}}">{{ 'customer.addresses.zip' | t }}</label>
@@ -63,9 +55,18 @@
                 <input type="tel" id="AddressPhone_{{form.id}}" class="input-full" name="address[phone]" value="{{form.phone}}">
               </div>
             </div>
+
+            <div
+              class="js-address-country"
+              data-country-id="AddressCountry_{{form.id}}"
+              data-province-container-id="AddressProvinceContainer_{{form.id}}"
+              data-province-id="AddressProvince_{{form.id}}">
+              <label for="AddressCountry_{{form.id}}">{{ 'customer.addresses.country' | t }}</label>
+              <select id="AddressCountry_{{form.id}}" class="input-full" name="address[country]" data-default="{{form.country}}">{{ country_option_tags }}</select>
+            </div>
           
-			<!--             <label for="AddressCompany_{{form.id}}">{{ 'customer.addresses.company' | t }}</label>
-            <input type="text" id="AddressCompany_{{form.id}}" class="input-full" name="address[company]" value="{{form.company}}" autocapitalize="words"> -->
+            <label for="AddressCompany_{{form.id}}">{{ 'customer.addresses.company' | t }}</label>
+            <input type="text" id="AddressCompany_{{form.id}}" class="input-full" name="address[company]" value="{{form.company}}" autocapitalize="words">
 
             <div id="AddressProvinceContainer_{{form.id}}" style="display: none;">
               <label for="AddressProvince_{{form.id}}">{{ 'customer.addresses.province' | t }}</label>
