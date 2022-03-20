@@ -46,10 +46,13 @@
 
             <div class="grid grid--small">
               <div class="grid__item one-half small--one-whole">
+                <label for="AddressPhone_{{form.id}}">{{ 'customer.addresses.phone' | t }}</label>
+                <input type="tel" id="AddressPhone_{{form.id}}" class="input-full" name="address[phone]" value="{{form.phone}}">
+              </div>
+              <div class="grid__item one-half small--one-whole">
                 <label for="AddressZip_{{form.id}}">{{ 'customer.addresses.zip' | t }}</label>
                 <input type="text" id="AddressZip_{{form.id}}" class="input-full" name="address[zip]" value="{{form.zip}}" autocapitalize="characters">
               </div>
-
             </div>
 
             <div
@@ -75,11 +78,7 @@
             <label for="AddressAddress2_{{form.id}}">建物名・部屋番号</label>
             <input type="text" id="AddressAddress2_{{form.id}}" class="input-full" name="address[address2]" value="{{form.address2}}" autocapitalize="words">
 
-              <div class="grid__item one-half small--one-whole">
-                <label for="AddressPhone_{{form.id}}">{{ 'customer.addresses.phone' | t }}</label>
-                <input type="tel" id="AddressPhone_{{form.id}}" class="input-full" name="address[phone]" value="{{form.phone}}">
-              </div>
-          
+
             <p>
               {{ form.set_as_default_checkbox }}
               <label for="address_default_address_{{form.id}}" class="inline check-btn">{{ 'customer.addresses.set_default' | t }}</label>
