@@ -117,6 +117,16 @@
               <input type="text" id="AddressFirstNameNew" class="input-full" name="address[first_name]" value="{{form.first_name}}" autocapitalize="words">
             </div>
 
+            <div class="grid__item medium-up--one-half">
+              <label for="AddressPhoneNew">{{ 'customer.addresses.phone' | t }}</label>
+              <input type="tel" id="AddressPhoneNew" class="input-full" name="address[phone]" value="{{form.phone}}">
+            </div>
+            
+            <div class="grid__item medium-up--one-half">
+              <label for="AddressZipNew">{{ 'customer.addresses.zip' | t }}</label>
+              <input type="text" id="AddressZipNew" class="input-full" name="address[zip]" value="{{form.zip}}" autocapitalize="characters">
+            </div>
+            
           </div>
 
           <label for="AddressAddress1New">{{ 'customer.addresses.address1' | t }}</label>
@@ -143,11 +153,6 @@
             <div class="grid__item" id="AddressProvinceContainerNew" style="display: none;">
               <label for="AddressProvinceNew">市区町村</label>
               <select id="AddressProvinceNew" class="input-full" name="address[province]" data-default="{{form.province}}"></select>
-            </div>
-
-            <div class="grid__item medium-up--one-half">
-              <label for="AddressPhoneNew">{{ 'customer.addresses.phone' | t }}</label>
-              <input type="tel" id="AddressPhoneNew" class="input-full" name="address[phone]" value="{{form.phone}}">
             </div>
           </div>
 
