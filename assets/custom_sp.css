@@ -92,6 +92,7 @@
     }
 	.newitem .product p.product_info_metal_stone {
 	    font-size: 10px;
+      	line-height: .5;
 	}
 	.newitem .product p {
 	    font-size: 12px;
