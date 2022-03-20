@@ -15,6 +15,8 @@
       <br>
 
       {{ customer.default_address | format_address }}
+      
+      <br>
 
       <p><a href="{{ routes.account_addresses_url }}" class="text-link">{{ 'customer.account.view_addresses' | t }} ({{ customer.addresses_count }})</a></p>
     </div>
