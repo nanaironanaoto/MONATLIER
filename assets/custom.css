@@ -6,6 +6,9 @@ body{
 a:hover{
     color: #c8ab7a;
 }
+.text-link {
+    text-decoration: underline;
+}
 .article__body p{
   	word-break: break-word;
 }
