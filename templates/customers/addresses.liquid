@@ -64,9 +64,6 @@
               <label for="AddressCountry_{{form.id}}">{{ 'customer.addresses.country' | t }}</label>
               <select id="AddressCountry_{{form.id}}" class="input-full" name="address[country]" data-default="{{form.country}}">{{ country_option_tags }}</select>
             </div>
-          
-            <label for="AddressCompany_{{form.id}}">{{ 'customer.addresses.company' | t }}</label>
-            <input type="text" id="AddressCompany_{{form.id}}" class="input-full" name="address[company]" value="{{form.company}}" autocapitalize="words">
 
             <div id="AddressProvinceContainer_{{form.id}}" style="display: none;">
               <label for="AddressProvince_{{form.id}}">{{ 'customer.addresses.province' | t }}</label>
