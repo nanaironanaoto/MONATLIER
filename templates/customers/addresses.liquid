@@ -34,6 +34,79 @@
 
             <div class="grid grid--small">
               <div class="grid__item one-half small--one-whole">
+				<label for="AddressLastName_{{form.id}}">姓</label>
+                <input type="text" id="AddressLastName_{{form.id}}" class="input-full" name="address[last_name]" value="{{form.last_name}}" autocapitalize="words">
+              </div>
+
+              <div class="grid__item one-half small--one-whole">
+				<label for="AddressFirstName_{{form.id}}">名</label>
+                <input type="text" id="AddressFirstName_{{form.id}}" class="input-full" name="address[first_name]" value="{{form.first_name}}" autocapitalize="words">                
+              </div>
+            </div>
+
+            <div class="grid grid--small">
+              <div class="grid__item one-half small--one-whole">
+                <label for="AddressPhone_{{form.id}}">{{ 'customer.addresses.phone' | t }}</label>
+                <input type="tel" id="AddressPhone_{{form.id}}" class="input-full" name="address[phone]" value="{{form.phone}}">
+              </div>
+              <div class="grid__item one-half small--one-whole">
+                <label for="AddressZip_{{form.id}}">{{ 'customer.addresses.zip' | t }}</label>
+                <input type="text" id="AddressZip_{{form.id}}" class="input-full" name="address[zip]" value="{{form.zip}}" autocapitalize="characters">
+              </div>
+            </div>
+
+            <div
+              class="js-address-country"
+              data-country-id="AddressCountry_{{form.id}}"
+              data-province-container-id="AddressProvinceContainer_{{form.id}}"
+              data-province-id="AddressProvince_{{form.id}}">
+              <label for="AddressCountry_{{form.id}}">{{ 'customer.addresses.country' | t }}</label>
+              <select id="AddressCountry_{{form.id}}" class="input-full" name="address[country]" data-default="{{form.country}}">{{ country_option_tags }}</select>
+            </div>
+
+            <div id="AddressProvinceContainer_{{form.id}}" style="display: none;">
+              <label for="AddressProvince_{{form.id}}">都道府県</label>
+              <select id="AddressProvince_{{form.id}}" class="input-full" name="address[province]" data-default="{{form.province}}"></select>
+            </div>
+          
+            <label for="AddressCity_{{form.id}}">市区町村</label>
+            <input type="text" id="AddressCity_{{form.id}}" class="input-full" name="address[city]" value="{{form.city}}" autocapitalize="words">
+          
+            <label for="AddressAddress1_{{form.id}}">丁目・番地・号</label>
+            <input type="text" id="AddressAddress1_{{form.id}}" class="input-full" name="address[address1]" value="{{form.address1}}" autocapitalize="words">
+
+            <label for="AddressAddress2_{{form.id}}">建物名・部屋番号(オプション)</label>
+            <input type="text" id="AddressAddress2_{{form.id}}" class="input-full" name="address[address2]" value="{{form.address2}}" autocapitalize="words">
+
+
+            <p>
+              {{ form.set_as_default_checkbox }}
+              <label for="address_default_address_{{form.id}}" class="inline check-btn">{{ 'customer.addresses.set_default' | t }}</label>
+            </p>
+
+            <p>
+              <button type="submit" class="btn">
+                {{ 'customer.addresses.update' | t }}
+              </button>
+            </p>
+            <p>
+              <button type="button" class="text-link address-edit-toggle" data-form-id="{{ form.id }}">{{ 'customer.addresses.cancel' | t }}</button>
+            </p>
+          {%- endform -%}
+        </div>
+      </div>
+
+      {%- endfor -%}
+      </div>
+
+      <button type="button" class="btn btn--secondary btn--small section-header__link address-new-toggle">{{ 'customer.addresses.add_new' | t }}</button>
+      <div id="AddressNewForm" class="form-vertical js-address-form text-left hide">
+        {%- form 'customer_address', customer.new_address -%}
+
+          <h2>{{ 'customer.addresses.add_new' | t }}</h2>
+
+            <div class="grid grid--small">
+              <div class="grid__item one-half small--one-whole">
 				<label for="AddressLastNameNew">姓</label>
                 <input type="text" id="AddressLastNameNew" class="input-full" name="address[last_name]" value="{{form.last_name}}" autocapitalize="words">
               </div>
@@ -64,7 +137,7 @@
               <select id="AddressCountryNew" class="input-full" name="address[country]" data-default="{{form.country}}">{{ country_option_tags }}</select>
             </div>
 
-            <div id="AddressProvinceContainerNew">
+            <div id="AddressProvinceContainerNew" style="display: none;">
               <label for="AddressProvinceNew">都道府県</label>
               <select id="AddressProvinceNew" class="input-full" name="address[province]" data-default="{{form.province}}"></select>
             </div>
@@ -77,74 +150,6 @@
 
             <label for="AddressAddress2New">建物名・部屋番号(オプション)</label>
             <input type="text" id="AddressAddress2New" class="input-full" name="address[address2]" value="{{form.address2}}" autocapitalize="words">
-
-
-            <p>
-              {{ form.set_as_default_checkbox }}
-              <label for="address_default_address_{{form.id}}" class="inline check-btn">{{ 'customer.addresses.set_default' | t }}</label>
-            </p>
-
-            <p>
-              <button type="submit" class="btn">
-                {{ 'customer.addresses.update' | t }}
-              </button>
-            </p>
-            <p>
-              <button type="button" class="text-link address-edit-toggle" data-form-id="{{ form.id }}">{{ 'customer.addresses.cancel' | t }}</button>
-            </p>
-          {%- endform -%}
-        </div>
-      </div>
-
-      {%- endfor -%}
-      </div>
-
-      <button type="button" class="btn btn--secondary btn--small section-header__link address-new-toggle">{{ 'customer.addresses.add_new' | t }}</button>
-      <div id="AddressNewForm" class="form-vertical js-address-form text-left hide">
-        {%- form 'customer_address', customer.new_address -%}
-
-          <h2>{{ 'customer.addresses.add_new' | t }}</h2>
-
-          <div class="grid grid--small">
-            <div class="grid__item one-half small--one-whole">
-              <label for="AddressLastName_{{form.id}}">姓</label>
-              <input type="text" id="AddressLastNameNew" class="input-full" name="address[last_name]" value="{{form.last_name}}" autocapitalize="words">
-            </div>
-
-            <div class="grid__item one-half small--one-whole">
-              <label for="AddressFirstName_{{form.id}}">名</label>
-              <input type="text" id="AddressFirstNameNew" class="input-full" name="address[first_name]" value="{{form.first_name}}" autocapitalize="words">                
-            </div>
-          </div>
-
-          <div class="grid grid--small">
-            <div class="grid__item one-half small--one-whole">
-              <label for="AddressPhone_{{form.id}}">{{ 'customer.addresses.phone' | t }}</label>
-              <input type="tel" id="AddressPhoneNew" class="input-full" name="address[phone]" value="{{form.phone}}">
-            </div>
-            <div class="grid__item one-half small--one-whole">
-              <label for="AddressZip_{{form.id}}">{{ 'customer.addresses.zip' | t }}</label>
-              <input type="text" id="AddressZipNew" class="input-full" name="address[zip]" value="{{form.zip}}" autocapitalize="characters">
-            </div>
-          </div>
-        
-          <label for="AddressCountryNew">{{ 'customer.addresses.country' | t }}</label>
-          <select id="AddressCountryNew" class="input-full" name="address[country]" data-default="{{form.country}}">{{ country_option_tags }}</select>
-
-
-          <label for="AddressProvinceNew">都道府県</label>
-          <select id="AddressProvinceNew" class="input-full" name="address[province]" data-default="{{form.province}}"></select>
-
-          <label for="AddressCityNew">市区町村</label>
-          <input type="text" id="AddressCityNew" class="input-full" name="address[city]" value="{{form.city}}" autocapitalize="words">
-
-        
-          <label for="AddressAddress1New">丁目・番地・号</label>
-          <input type="text" id="AddressAddress1New" class="input-full" name="address[address1]" value="{{form.address1}}" autocapitalize="words">
-
-          <label for="AddressAddress2New">建物名・部屋番号(オプション)</label>
-          <input type="text" id="AddressAddress2New" class="input-full" name="address[address2]" value="{{form.address2}}" autocapitalize="words">
-
 
           <p>
             {{ form.set_as_default_checkbox }}
