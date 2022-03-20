@@ -106,7 +106,6 @@
           <h2>{{ 'customer.addresses.add_new' | t }}</h2>
 
           <div class="grid grid--small">
-
             <div class="grid__item medium-up--one-half">
               <label for="AddressLastNameNew">姓</label>
               <input type="text" id="AddressLastNameNew" class="input-full" name="address[last_name]" value="{{form.last_name}}" autocapitalize="words">
@@ -116,6 +115,7 @@
 			　<label for="AddressFirstNameNew">名</label>
               <input type="text" id="AddressFirstNameNew" class="input-full" name="address[first_name]" value="{{form.first_name}}" autocapitalize="words">
             </div>
+        </div>
 
             <div class="grid__item medium-up--one-half">
               <label for="AddressPhoneNew">{{ 'customer.addresses.phone' | t }}</label>
@@ -127,8 +127,6 @@
               <input type="text" id="AddressZipNew" class="input-full" name="address[zip]" value="{{form.zip}}" autocapitalize="characters">
             </div>
             
-          </div>
-
 
               <label for="AddressCountryNew">{{ 'customer.addresses.country' | t }}</label>
               <select id="AddressCountryNew" class="input-full" name="address[country]" data-default="{{form.country}}">{{ country_option_tags }}</select>
