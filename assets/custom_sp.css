@@ -92,8 +92,6 @@
     }
 	.newitem .product p.product_info_metal_stone {
 	    font-size: 10px;
-      	line-height: .5;
-		margin-bottom: 7px;
 	}
 	.newitem .product p {
 	    font-size: 12px;
@@ -433,6 +431,8 @@
     }
     .product_info_metal_stone{
         font-size: 10px !important;
+      	line-height: .5;
+		margin-bottom: 7px;
     }
     .boost-pfs-filter-product-item-title .boost-pfs-filter-product-item-title-large,
   	.boost-pfs-filter-product-item-price {
