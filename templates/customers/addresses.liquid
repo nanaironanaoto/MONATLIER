@@ -65,11 +65,11 @@
             </div>
 
             <div id="AddressProvinceContainer_{{form.id}}" style="display: none;">
-              <label for="AddressProvince_{{form.id}}">市区町村</label>
+              <label for="AddressProvince_{{form.id}}">都道府県</label>
               <select id="AddressProvince_{{form.id}}" class="input-full" name="address[province]" data-default="{{form.province}}"></select>
             </div>
           
-            <label for="AddressCity_{{form.id}}">{{ 'customer.addresses.city' | t }}</label>
+            <label for="AddressCity_{{form.id}}">市区町村</label>
             <input type="text" id="AddressCity_{{form.id}}" class="input-full" name="address[city]" value="{{form.city}}" autocapitalize="words">
           
             <label for="AddressAddress1_{{form.id}}">丁目・番地・号</label>
@@ -139,7 +139,7 @@
             </div>
 
             <div class="grid__item" id="AddressProvinceContainerNew" style="display: none;">
-              <label for="AddressProvinceNew">市区町村</label>
+              <label for="AddressProvinceNew">都道府県</label>
               <select id="AddressProvinceNew" class="input-full" name="address[province]" data-default="{{form.province}}"></select>
             </div>
         
