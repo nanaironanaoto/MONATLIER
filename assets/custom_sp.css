@@ -248,6 +248,7 @@
 	}
 	.product_row>div {
 	    width: 100%;
+      	margin-bottom: 12px;
 	}
 	.product-template .btn_row .btn_row {
 	    display: flex;
