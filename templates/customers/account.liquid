@@ -14,13 +14,13 @@
       <p class="h5">{{ customer.name }}</p>
       <br><br>
       
-      <h2>配送先住所</h2>
+      <h2><ls-static-426673>配送先住所</ls-static-426673></h2>
 
       {{ customer.default_address | format_address }}
       
       <br>
 
-      <p><a href="{{ routes.account_addresses_url }}" class="text-link">登録住所編集 ({{ customer.addresses_count }})</a></p>
+      <p><a href="{{ routes.account_addresses_url }}" class="text-link"><ls-static-266203>登録住所編集 (</ls-static-266203>{{ customer.addresses_count }})</a></p>
     </div>
 
     <div class="grid__item medium-up--two-thirds">
