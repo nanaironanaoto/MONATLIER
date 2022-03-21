@@ -22,7 +22,7 @@
         {{ address | format_address }}
 
         <p>
-          <button type="button" class="btn btn--small address-edit-toggle" data-form-id="{{ address.id }}">編集</button>
+          <button type="button" class="btn btn--small address-edit-toggle" data-form-id="{{ address.id }}"><ls-static-858106>編集</ls-static-858106></button>
           <button type="button" class="btn btn--secondary btn--small address-delete" data-form-id="{{ address.id }}" data-confirm-message="{{ 'customer.addresses.delete_confirm' | t }}">{{ 'customer.addresses.delete' | t }}</button>
         </p>
 
@@ -30,7 +30,7 @@
           {%- form 'customer_address', address -%}
 
             <hr class="hr--large" />
-            <h2>住所を編集する</h2>
+            <h2><ls-static-23575>住所を編集する</ls-static-23575></h2>
 
             <div class="grid grid--small">
               <div class="grid__item one-half small--one-whole">
@@ -65,17 +65,17 @@
             </div>
 
             <div id="AddressProvinceContainer_{{form.id}}" style="display: none;">
-              <label for="AddressProvince_{{form.id}}">都道府県</label>
+              <label for="AddressProvince_{{form.id}}"><ls-static-202296>都道府県</ls-static-202296></label>
               <select id="AddressProvince_{{form.id}}" class="input-full" name="address[province]" data-default="{{form.province}}"></select>
             </div>
           
-            <label for="AddressCity_{{form.id}}">市区町村</label>
+            <label for="AddressCity_{{form.id}}"><ls-static-604077>市区町村</ls-static-604077></label>
             <input type="text" id="AddressCity_{{form.id}}" class="input-full" name="address[city]" value="{{form.city}}" autocapitalize="words">
           
-            <label for="AddressAddress1_{{form.id}}">丁目・番地・号</label>
+            <label for="AddressAddress1_{{form.id}}"><ls-static-352218>丁目・番地・号</ls-static-352218></label>
             <input type="text" id="AddressAddress1_{{form.id}}" class="input-full" name="address[address1]" value="{{form.address1}}" autocapitalize="words">
 
-            <label for="AddressAddress2_{{form.id}}">建物名・部屋番号(オプション)</label>
+            <label for="AddressAddress2_{{form.id}}"><ls-static-102760>建物名・部屋番号(オプション)</ls-static-102760></label>
             <input type="text" id="AddressAddress2_{{form.id}}" class="input-full" name="address[address2]" value="{{form.address2}}" autocapitalize="words">
 
 
@@ -138,17 +138,17 @@
             </div>
 
             <div id="AddressProvinceContainerNew" style="display: none;">
-              <label for="AddressProvinceNew">都道府県</label>
+              <label for="AddressProvinceNew"><ls-static-708653>都道府県</ls-static-708653></label>
               <select id="AddressProvinceNew" class="input-full" name="address[province]" data-default="{{form.province}}"></select>
             </div>
           
-            <label for="AddressCityNew">市区町村</label>
+            <label for="AddressCityNew"><ls-static-3976>市区町村</ls-static-3976></label>
             <input type="text" id="AddressCityNew" class="input-full" name="address[city]" value="{{form.city}}" autocapitalize="words">
           
-            <label for="AddressAddress1New">丁目・番地・号</label>
+            <label for="AddressAddress1New"><ls-static-91737>丁目・番地・号</ls-static-91737></label>
             <input type="text" id="AddressAddress1New" class="input-full" name="address[address1]" value="{{form.address1}}" autocapitalize="words">
 
-            <label for="AddressAddress2New">建物名・部屋番号(オプション)</label>
+            <label for="AddressAddress2New"><ls-static-982401>建物名・部屋番号(オプション)</ls-static-982401></label>
             <input type="text" id="AddressAddress2New" class="input-full" name="address[address2]" value="{{form.address2}}" autocapitalize="words">
 
           <p>
