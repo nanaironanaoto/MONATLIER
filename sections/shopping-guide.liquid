@@ -166,7 +166,7 @@
                 配送の日付指定をご希望の場合は、商品ご購入時にヤマト運輸配送のオプションをご購入いただき、備考欄に詳細をご記入ください。発送後は、ヤマト運輸が提供するサービスのご利用をお願いいたします。
             </p>
           </div>
-        </div>
+        </div><!-- sg_section -->
         <!--注文からお届けまで-->
   
         <!--お支払い方法-->
@@ -179,15 +179,7 @@
             <p>お支払い回数はご使用されるクレジットカード会社により異なります。</p>
             {{ 'sg_paymethods.jpg' | asset_img_url: 'master' | img_tag }}
           </div>
-  
-          <!-- <div id="yamato" class="page-jump">
-            <h3>代金引換（ヤマト運輸）</h3>
-            <p>商品お受け取り時に、配達ドライバーに代金をお支払いください。<br>
-            お支払いは現金のみご利用いただけます。代引手数料は全国区一律無料です。<br>
-            「商品発送後のキャンセル」「長期不在」「受取拒否」などによる返品はお受けいたしかねます。<br>
-            この場合、往復送料、実損額￥8,000（製作時の工賃・材料に分解・再製錬する工賃）をご請求させていただきます。</p>
-          </div> -->
-  
+ 
           <div id="bank" class="page-jump">
             <h3>銀行振り込み（前払い）</h3>
             <p>
@@ -205,223 +197,8 @@
               </ul>
             </div><!--johnson-box-->
           </div>
-  
-          {% comment %} <div id="paypay" class="page-jump">
-            <h2 id="paypay">PayPay支払い</h2>
-            <img src="https://cdn.shopify.com/s/files/1/0268/1202/2962/files/PayPay_cfde5ca9-9317-45ff-80fa-80847f0659aa.png?v=1619461459" float:="" right="">
-            <p>PayPayなら、お持ちのスマートフォンアプリから簡単にお支払いいただけます。</p>
-          </div>
-  
-          <div id="paypal" class="page-jump">
-            <h2 id="paypal">PayPal支払い</h2>
-            <img src="https://cdn.shopify.com/s/files/1/0268/1202/2962/files/PayPal-img.png?v=1615454465" float:="" right="">
-            <p>海外からのご利用のお客様向けの決済方法に「Paypal」をご用意しております。<br><br>通常のクレジットカード支払いですとお届け先が海外、カード発行会社が海外、連絡先が海外の場合審査が通らない、配送トラブル時の保証がないため「買い手保護制度」のあるPaypalでのお支払いをご案内しております。</p>
-          </div> {% endcomment %}
-          {% comment %} <div id="invoice" class="page-jump">
-            <h2 id="invoice">領収書の発行について</h2>
-            <p>基本的には、各種お支払い機関が発行する利用明細や領収書、受領書をもって領収書に代えさせていただきます。<br>当店発行の領収書をご希望の場合は、手書きでの領収書を発行いたします。<br>また、商品にはお買上明細書を同封しております。<br><br>※当店は、通常、商品と明細書・領収書を同梱してお届けしております。<br>贈り物などで当店をご利用の場合、ご注文の際に備考欄などでお知らせください。</p>
-          </div> {% endcomment %}
-        </div>
+        </div><!-- sg_section -->
         <!--お支払い方法-->
-  
-        {% comment %}
-        <!--配送と送料-->
-        <div class="sg_section">
-          <div id="shipping" class="page-jump">
-            <h2>配送と送料</h2>
-            <h3>配送会社</h3>
-            <p style="margin-bottom:40px;">国内はすべてヤマト運輸で発送いたします。<br> ※海外は日本郵便のEMSで発送いたします。<br><br> 商品出荷後、「【MONATELIER】商品発送のご案内」というタイトルで、お荷物番号を記載したメールをお送りいたします。<br> ヤマト運輸のサイトにてお届け状況などの確認や、配送指定などの変更ができます。</p>
-            <a href="https://www.kuronekoyamato.co.jp/ytc/customer/members/receive/redelivery/" class="arrow-link" target="_blank" rel="noopener noreferrer">クロネコヤマトの荷物問い合わせシステム</a>
-            <div class="johnson-box">
-              <h4>ご注意事項</h4>
-              <span>配送業者の繁忙期の配達状況や、悪天候時の交通事情によっては配送が遅れる場合がございます。あらかじめご了承ください。</span>
-            </div>
-          </div>
-        </div>
-  
-        <div class="sg_section">
-          <div id="date" class="page-jump">
-            <h2>到着日のご指定</h2>
-            <h3>在庫のある商品（即納対応商品）</h3>
-            <p>土日祝を除く13時までのご注文で即日発送、13時以降のご注文は翌営業日に発送いたします。</p>
-            <table width="100%" class="sp-one-table">
-            <tbody>
-            <tr>
-            <th>本州</th>
-            <td>発送日の翌日以降</td>
-            </tr>
-            <tr>
-            <th>九州・北海道</th>
-            <td>発送日の翌々日以降</td>
-            </tr>
-            <tr>
-            <th>沖縄・離島</th>
-            <td>発送日から3日後以降</td>
-            </tr>
-            <tr>
-            <th>一部離島</th>
-            <td>地域により異なります</td>
-            </tr>
-            </tbody>
-            </table>
-            <p class="small-text">※ご指定のない場合、最短到着指定で発送いたします。</p>
-            <h3>在庫のない商品、カスタムオーダー商品</h3>
-            <p>受注確定メールに記載する、お届け予定日以降の到着予定日がご指定いただけます。<br>ご希望の場合は、当店からのメールにご返信くださいませ。<br>
-            ご指定のない場合は、最短で発送いたします。</p>
-            <a href="/pages/flow" class="arrow-link">ご注文からお届けまでの流れ</a>
-          </div>
-          {% endcomment %}
-  
-          {% comment %} <div id="time" class="page-jump">
-            <h2>時間のご指定</h2>
-            <p>以下のお届け時間帯がご指定いただけます。</p>
-            <table class="shipping-time-table">
-            <tbody>
-            <tr>
-            <th>午前中</th>
-            <th>14時<br class="br-sp">～<br class="br-sp">16時</th>
-            <th>16時<br class="br-sp">～<br class="br-sp">18時</th>
-            <th>18時<br class="br-sp">～<br class="br-sp">20時</th>
-            <th>19時<br class="br-sp">～<br class="br-sp">21時</th>
-            </tr>
-            </tbody>
-            </table>
-            <p class="small-text">※お住まいの地域によっては時間指定をされると配達が翌々日となる場合もございます。</p>
-            <h3>ご不在の場合</h3>
-            <p>配送日時にご不在の場合、不在連絡票がお客様のポストへ投函されます。<br>お届けより6日以内に、不在連絡票に記載されたヤマト運輸の各営業所まで、再配達の依頼をお願いいたします。<br>不在荷物の保管期間（6日間）を超えてお受け取りいただけない場合、お荷物は一旦当店へ引き上げとなり、再発送に多くのお時間がかかる場合がございます。</p>
-            <a href="https://www.kuronekoyamato.co.jp/ytc/customer/members/receive/redelivery/" class="arrow-link" target="_blank" rel="noopener noreferrer">クロネコヤマトの荷物問い合わせシステム</a>
-          </div> {% endcomment %}
-  
-          {% comment %} <div id="price" class="page-jump">
-            <h2>送料</h2>
-            <p>日本全国、送料無料でお届けいたします（一部除外）。</p>
-            <table class="shipping-cost sp-one-table">
-            <tbody>
-            <tr>
-            <th>北海道</th>
-            <td>930円</td>
-            <th>青森・岩手・秋田</th>
-            <td>630円</td>
-            </tr>
-            <tr>
-            <th>宮城・山形・福島</th>
-            <td>530円</td>
-            <th>茨城・栃木・群馬・山梨</th>
-            <td>490円</td>
-            </tr>
-            <tr>
-            <th>埼玉・千葉・東京・神奈川</th>
-            <td>490円</td>
-            <th>富山・石川・福井・岐阜・静岡・愛知・三重</th>
-            <td>530円</td>
-            </tr>
-            <tr>
-            <th>滋賀・京都・大阪・兵庫・奈良・和歌山</th>
-            <td>490円</td>
-            <th>新潟・長野</th>
-            <td>520円</td>
-            </tr>
-            <tr>
-            <th>中国地方</th>
-            <td>730円</td>
-            <th>四国地方</th>
-            <td>730円</td>
-            </tr>
-            <tr>
-            <th>九州地方</th>
-            <td>930円</td>
-            <th>沖縄</th>
-            <td>1240円</td>
-            </tr>
-            </tbody>
-            </table>
-            <p class="small-text">※税抜１万円以下のお買い物の場合は、上記の送料が発生いたします。<br>※料金はすべて税抜です。<br>※離島でも追加料金がかかることはありません。</p>
-          </div> {% endcomment %}
-  
-          {% comment %} <div id="global" class="page-jump">
-            <h2>海外発送について</h2>
-            <p>日本郵便のEMSで発送いたします。<br>保障の都合上、商品代金が20万円以下のものに限らせていただきます。<br>商品出荷後、「【MONATELIER】商品発送のご案内」というタイトルで、お荷物番号を記載したメールをお送りいたします。<br>日本郵便のサイトにてお届け状況などの確認ができます。</p>
-            <a href="https://www.post.japanpost.jp/int/ems/" class="arrow-link" target="_blank" rel="noopener noreferrer"> 日本郵便EMS</a>
-            <h3>支払金額</h3>
-            <p>「商品代金－消費税＋送料」です。</p>
-            <h3>対応地域</h3>
-            <p>EMSで発送できる地域へのみ発送をお受けしております。</p>
-            <p>日本郵便EMS</p>
-            <h3>送料</h3>
-            <p>一律、1000円をご負担いただきます。</p>
-            <h3>住所入力</h3>
-            <p>通常通り住所を入力してください。送付先情報の記入漏れや誤りがある場合、いかなるトラブルも弊社では責任を負いません。</p>
-            <div class="johnson-box">
-            <h4>ご注意事項</h4>
-            <ul>
-            <li>発送先国の配送事情はわかりかねますため、出荷完了の時点で、商品配送に関する責任は配送業者、及びお客さまに移行いたします。また、海外でのトラブルにつきましては免責とさせて頂きます。あらかじめご了承下さいませ。</li>
-            <li>ご購入頂いた商品に対し、発送先国での通関時に関税や輸入税、および通関手数料が課せられる場合がございます。その際は、お受取人様のご負担となりますので、お届け時に直接配送業者へお支払い下さいませ。なお、税金や通関手数料に関するポリシーは各国によって異なりますので、詳しくは発送先国の税関にお問い合わせ下さい。</li>
-            </ul>
-          </div> {% endcomment %}
-  
-          {% comment %} <div id="today" class="page-jump">
-            <h2>即日発送／翌日配達商品</h2>
-            <h3>お届けまでの流れ</h3>
-            <div class="shipping-flow">
-              <span class="">STEP 1</span>　
-              <p>13時までにご注文手続きを完了してください。</p>
-            </div>
-            <div class="shipping-flow">
-              <span class="">STEP 2</span>　
-              <p>ご注文と同時に当店から自動返信メール、<br>その後 受注完了メールが届きます。</p>
-            </div>
-            <div class="shipping-flow">
-              <span class="">STEP 3</span>　
-              <p>その日のうちに検品・梱包し、出荷します。<br>お客様には発送完了メールが届きます。</p>
-            </div>
-            <div class="shipping-flow">
-              <span class="">STEP 4</span>　
-              <p>翌日にはご注文のジュエリーがお手元に届きます。</p>
-            </div>
-            <h3><span>ご利用条件</span></h3>
-            <p><span>13時までにご注文いただく必要がございます。（</span>土日祝日を除く）</p>
-            <p><span class="small-text">※到着時間は地域により異なる場合があります。13時以降の注文は翌日発送。</span></p>
-            <h3><span>翌日配送対応可能エリア</span></h3>
-            <table class="sp-one-table">
-            <tbody>
-            <tr>
-            <th>東北</th>
-            <td>青森・岩手・宮城・秋田・山形・福島</td>
-            </tr>
-            <tr>
-            <th>甲信越</th>
-            <td>新潟・長野・山梨</td>
-            </tr>
-            <tr>
-            <th>関東</th>
-            <td>東京・神奈川・埼玉・千葉・茨城・栃木・群馬</td>
-            </tr>
-            <tr>
-            <th>北陸</th>
-            <td>富山・石川・福井</td>
-            </tr>
-            <tr>
-            <th>東海</th>
-            <td>愛知・岐阜・静岡・三重</td>
-            </tr>
-            <tr>
-            <th>関西</th>
-            <td>大阪・兵庫・京都・滋賀・奈良・和歌山</td>
-            </tr>
-            <tr>
-            <th>中国</th>
-            <td>鳥取・島根・岡山・広島・山口</td>
-            </tr>
-            <tr>
-            <th>四国</th>
-            <td>徳島・香川・愛媛・高知</td>
-            </tr>
-            </tbody>
-            </table>
-            <p><span class="small-text">※離島など例外地域もございます<br>※掲載中の即納品は、在庫状況の反映に時差があるため、売り切れている場合がございます。必ず商品ページにて即納品の有無をご確認いただき、ご注文くださいませ。</span></p>
-          </div> {% endcomment %}
-        </div>
-        <!--配送と送料-->
   
         <!--ご返品について-->
         <div class="sg_section">
@@ -460,7 +237,7 @@
               </ul>
             </div>
           </div>
-        </div>
+        </div><!-- sg_section -->
   
         <div class="sg_section">
           <div id="aboutchange" class="page-jump">
@@ -475,7 +252,7 @@
                 <li>お値段が同じでも商品自体が異なる交換をご希望の場合は、システムの都合上、いったん返品していただき、ご希望商品の再注文をお願いしております。</li>
               </ul>
             </div>
-          </div>
+          </div><!-- sg_section -->
   
           <div id="difective" class="page-jump">
             <h3>不良品・誤配送について</h3>
