@@ -8,6 +8,10 @@
     .collection_products_wrapper {
         grid-template-columns: 1fr 1fr;
     }
+    .collection_products_wrapper .product p {
+        font-size: 12px;
+        margin-bottom: 7px;
+    }
     .boost-pfs-container-default-box {
         padding: 0 30px;
     }
