@@ -2,8 +2,10 @@ body{
 	font-family: TTDrugs-R,"游ゴシック体",YuGothic,"游ゴシック Medium","Yu Gothic Medium","游ゴシック","Yu Gothic",sans-serif;
     letter-spacing: 0;
 }
-.collection_products_wrapper{
-  
+.collection_products_wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 15px;
 }
 a:hover{
     color: #c8ab7a;
