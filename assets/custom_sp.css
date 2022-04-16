@@ -8,6 +8,9 @@
     .collection_products_wrapper {
         grid-template-columns: 1fr 1fr;
     }
+    .boost-pfs-container-default-box {
+        padding: 0 30px;
+    }
 	.content {
 	    padding: 0 30px;
     }
