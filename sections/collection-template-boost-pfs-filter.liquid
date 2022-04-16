@@ -234,11 +234,11 @@
 		{%- if switch_layout_filter != 'switch_layout_filter_horizontal' -%}
 		  <div class="boost-pfs-filter-right-col">
 		{%- endif -%}
-
+			<div class="collection_products_wrapper">
 				{%- for product in collection.products -%}
 					{% include 'product_card' %}
 				{%- endfor -%}
-
+            </div>
 			<div class="boost-pfs-filter-bottom-pagination boost-pfs-filter-bottom-pagination-default">
 				{%- if paginate.pages > 1 -%}
 				{%- render 'boost-pfs-filter-pagination' -%}
