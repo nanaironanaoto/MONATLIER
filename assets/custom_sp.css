@@ -5,6 +5,9 @@
 	.sp{
 		display: block;
 	}
+    .collection_products_wrapper {
+        grid-template-columns: 1fr 1fr;
+    }
 	.content {
 	    padding: 0 30px;
     }
