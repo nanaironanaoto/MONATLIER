@@ -346,9 +346,6 @@
     </div>
 		<div class="boost-pfs-filter-product-bottom">
 			<div class="boost-pfs-filter-product-bottom-inner">
-      {% if product.metafields.custom_fields["stone"] != blank %}
-      <p class="product_info_metal_stone">{{ product.metafields.custom_fields["stone"] }}</p>
-      {% endif %}
 				<a href="{{- product_url -}}#" class="boost-pfs-filter-product-item-title">
                   <!--地金,石-->
                   {% if product.metafields.custom_fields["metal"] != blank %}
