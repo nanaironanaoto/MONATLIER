@@ -7,6 +7,13 @@ body{
     grid-template-columns: 1fr 1fr 1fr;
     gap: 15px;
 }
+.collection_products_wrapper .product p.product_info_metal_stone {
+    font-size: 14px;
+    line-height: .5;
+}
+.collection_products_wrapper .product p {
+    line-height: 1;
+}
 a:hover{
     color: #c8ab7a;
 }
