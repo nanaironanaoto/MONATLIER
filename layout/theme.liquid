@@ -213,7 +213,7 @@
     {%- section 'category' -%}
     {%- section 'content' -%}
     {% if template == 'index' %} 
-    	{%- section 'column' -%}    
+        {%- section 'column' -%}    
     {% endif %}
     {%- section 'footer' -%}
 
@@ -233,7 +233,7 @@
     var winScrollTop;
     $('.ec-modal-open').each(function(){
         $(this).on('click',function(){
-    		$('body').addClass("is-modal-open");
+            $('body').addClass("is-modal-open");
             //スクロール位置を取得
             winScrollTop = $(window).scrollTop();
             var target = $(this).data('target');
@@ -244,7 +244,7 @@
     });
     $('.ec-modal-close').on('click',function(){
         $('.ec-modal').fadeOut( 200);
-    		$('body').removeClass("is-modal-open");
+            $('body').removeClass("is-modal-open");
         $('body,html').stop().animate({scrollTop:winScrollTop}, 100);
         return false;
     });
@@ -296,7 +296,7 @@ jQuery(function(){
             var scroll = jQuery(window).scrollTop();
           var windowHeight = jQuery(window).height();
             if (scroll > elemPos - windowHeight + 50){
-              	$(this).next().addClass('display-active');
+                $(this).next().addClass('display-active');
                 $(this).next().addClass('scrollin');
             }
         });
@@ -358,23 +358,24 @@ function parallax() {
 $(".slick_mv").not('.slick-initialized').slick({});
   
 $("#slick_product_detail").not('.slick-initialized').slick({
-  asNavFor: ".slide-navigation",
-  infinite: true,
-  slidesToShow: 1,
-  slidesToScroll: 1,
-  arrows: false,
-  //fade: true,
+    asNavFor: ".slide-navigation",
+    infinite: true,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    arrows: false,
+    //fade: true,
 });
 
 $("#thumbnail_slider").not('.slick-initialized').slick({
-  asNavFor: ".slide",
-  infinite: true,
-  slidesToShow: 3,
-  slidesToScroll: 1,
-  //autoplay: true,
-  //autoplaySpeed: 4000,
-  speed: 400,
-  focusOnSelect: true,
+    asNavFor: ".slide",
+    centerMode: true,
+    infinite: true,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    //autoplay: true,
+    //autoplaySpeed: 4000,
+    speed: 400,
+    focusOnSelect: true,
 });
   
 //スムーススクロール 
@@ -429,7 +430,7 @@ $("#thumbnail_slider").not('.slick-initialized').slick({
     margin: 0;
     }
     div[data-widget-style*=standard] .stamped-review:first-child {
-    	margin: 0!important;
+        margin: 0!important;
         padding: 0 !important;
     }
     .stamped-starratings {
