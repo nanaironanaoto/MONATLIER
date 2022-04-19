@@ -234,7 +234,7 @@
 		{%- if switch_layout_filter != 'switch_layout_filter_horizontal' -%}
 		  <div class="boost-pfs-filter-right-col">
 		{%- endif -%}
-			<div class="collection_products_wrapper">
+			<div class="collection_products_wrapper boost-pfs-filter-products {{ products_item_settings }}">
 				{%- for product in collection.products -%}
 					{% include 'product_card' %}
 				{%- endfor -%}
