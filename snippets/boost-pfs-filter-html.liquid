@@ -12,6 +12,10 @@
 
         <div class="boost-pfs-filter-product-bottom">
           <div class="boost-pfs-filter-product-bottom-inner">
+            <!--地金,石-->
+            <p class="product_info_metal_stone">{{product.metafields.custom_fields.metal}}</p>
+            <p class="product_info_metal_stone">{{product.metafields.custom_fields.stone}}</p>
+            <!--商品名-->
             <a href="{{itemUrl}}#" class="boost-pfs-filter-product-item-title">{{itemTitle}}</a>
             {{itemVendor}}
             {{itemReviews}}
@@ -22,48 +26,7 @@
     </div>
 </div>
 {% endraw %}
-{%- when 'productListItemHtml' -%}
-{% raw %}
-<div class="boost-pfs-filter-product-item boost-pfs-filter-product-item-list {{soldOutClass}}{{saleClass}} {{itemActiveSwapClass}}">
-  <div class="boost-pfs-filter-product-item-inner">
-    <div class="boost-pfs-filter-product-item-image">
-        {{itemImages}}
-        <div class="boost-pfs-filter-product-item-label">{{itemLabels}}{{itemTagLabels}}</div>
-    </div>
-    <div class="boost-pfs-filter-product-bottom">
-      <div class="boost-pfs-filter-product-bottom-inner">
-        <a href="{{itemUrl}}" class="boost-pfs-filter-product-item-title">{{itemTitle}}</a>
-        {{itemVendor}}
-        {{itemReviews}}
-        {{itemPrice}}
-        <p class="boost-pfs-filter-des">{{itemDescription}}</p>
-        {{itemSwatches}}
-      </div>
-    </div>
-  </div>
-</div>
-{% endraw %}
-{%- when 'productListPlaceholderHtml' -%}
-{% raw %}
-<div class="boost-pfs-filter-product-item boost-pfs-filter-product-item-list {{class.filterProductSkeleton}}">
-  <div class="boost-pfs-filter-product-item-image">
-    <div class="{{class.filterProductSkeleton}}-image" style="padding-top: {{paddingTop}}%"></div>
-  </div>
-  <div class="boost-pfs-filter-product-bottom">
-    <div class="boost-pfs-filter-product-bottom-inner">
-    <a href="#" class="boost-pfs-filter-product-item-title"><span class="boost-pfs-filter-skeleton-text boost-pfs-filter-skeleton-width4"></span></a>
-    <p class="boost-pfs-filter-product-item-vendor"><span class="boost-pfs-filter-skeleton-text boost-pfs-filter-skeleton-width1"></span></p>
-    <p class="boost-pfs-filter-product-item-price"><span class="boost-pfs-filter-skeleton-text boost-pfs-filter-skeleton-width2"></span></p>
-    <p class="boost-pfs-filter-des">
-      <span class="boost-pfs-filter-skeleton-text" style="width: 100%"></span><br />
-      <span class="boost-pfs-filter-skeleton-text" style="width: 100%"></span><br />
-      <span class="boost-pfs-filter-skeleton-text" style="width: 100%"></span><br />
-      <span class="boost-pfs-filter-skeleton-text" style="width: 30%"></span>
-    </p>
-    </div>
-  </div>
-</div>
-{% endraw %}
+
 
 {%- when 'soldOutLabelHtml' -%}
 
