@@ -28,7 +28,7 @@
     .collection_descrption_filter_sort_row {
       top: 0;
       margin-bottom: 0;
-      z-index:1;
+      z-index:3;
     }
     .header_bar_sp {
         width: 100vw;
