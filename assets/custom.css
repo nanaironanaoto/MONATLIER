@@ -158,7 +158,7 @@ a:hover{
 	margin-top:160px;
 }
 .header_wrapper{
-    z-index: 3;
+    z-index: 4;
     position: fixed;
     width: 100vw;
     top: 0;
