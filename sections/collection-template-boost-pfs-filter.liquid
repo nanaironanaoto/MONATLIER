@@ -117,6 +117,10 @@
 {%- paginate collection.products by products_per_page -%}
 
 <style>
+p.product_info_metal_stone {
+    font-size: 14px;
+    line-height: .5;
+}
 .boost-pfs-container-default-box {
     max-width: 76.5%;
     min-width: 1046px;
@@ -125,6 +129,10 @@
 	content: none;
 }
  @media screen and (max-width: 768px) {
+	.product_info_metal_stone {
+		font-size: 10px!important;
+		margin-bottom: 7px;
+   }
   .boost-pfs-container-default-box {
       max-width: 100%;
       min-width: 100%;
