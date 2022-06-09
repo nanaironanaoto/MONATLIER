@@ -411,7 +411,7 @@
       grid-row   : 2 / 4;
     }
     form#AddToCartForm->div:last-of-type {
-      top: -47px;
+      top: 10px;
       right: 50px;
       position: relative;
     }
