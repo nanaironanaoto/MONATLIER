@@ -939,6 +939,9 @@ figure.image{
 .wide-content-image img {
     width: 100%;
 }
+#modal_bg{
+  z-index:4px
+}
 #concept .title, #about .title {
     margin-bottom: 75px;
 }
