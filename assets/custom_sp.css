@@ -411,8 +411,8 @@
       grid-row   : 2 / 4;
     }
     form#AddToCartForm->div:last-of-type {
-      top: 10px;
-      right: 50px;
+      top: 70px;
+      right: 0;
       position: relative;
     }
     .prodcut_recommend_row {
