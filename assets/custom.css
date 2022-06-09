@@ -940,7 +940,7 @@ figure.image{
     width: 100%;
 }
 #modal_bg{
-  z-index:4px !important;
+  z-index:4 !important;
 }
 #concept .title, #about .title {
     margin-bottom: 75px;
