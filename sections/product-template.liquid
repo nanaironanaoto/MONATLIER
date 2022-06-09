@@ -122,6 +122,64 @@
             current_variant: current_variant
           -%}
         </div>
+        
+                {% if product.available == false %}
+                　　　<div class="product-restock-notion-form">
+                     
+                    
+                     {% assign chatboost_url = "https://cb-admin.hassyadai.com" %}
+                     {% assign client_id = "1657202163" %}
+                     
+                     
+                     {% assign chatboost_redirect_url = chatboost_url | append: "/admin/line-login-callback" %}
+                     {% assign current_url = "https://" | append: request.host | append: request.path %}
+                    
+                     {%- assign min = 0 -%}
+					 {%- assign max = 100000007 -%}
+                     {%- assign diff = max | minus: min -%}
+                     {%- assign random_number = "now" | date: "%N" | modulo: diff | plus: min -%}
+
+ 
+                     {% assign stateParams = "shop_domain^" | append: shop.domain | append: "|" %}
+                     {% assign stateParams = stateParams | append: "product_id^" | append: product.id  | append: "|" %}
+                     {% assign stateParams = stateParams | append: "redirect_url^" | append: current_url | append: "|" %}
+                     {% assign stateParams = stateParams | append: "client_id^" | append: client_id | append: "|"%}
+
+                     {% assign stateParams = stateParams | append: "random^" | append: random_number | append: "|" %}
+                     {% assign stateParams = stateParams | append: "type^" | append: "enable_restock_notification" %}
+                     {% assign stateParams = stateParams | base64_encode %}
+                     
+                     <a 
+                      id="setting-reentry-notion"
+                      name="goto-line-login"
+                      aria-label="次回の入荷をLineで通知する"
+                      class="btn setting-restock-notion"
+
+                      href="
+https://access.line.me/oauth2/v2.1/authorize?response_type=code&client_id={{client_id}}&redirect_uri={{chatboost_redirect_url}}&
+state={{stateParams}}&bot_prompt=aggressive&scope=profile"
+                      >
+                      <span setting-restock-notion-text>
+                      {{ '次回の入荷をLineで通知する' }}
+                      </span>
+                    </a>
+
+                     <style type="text/css">
+                      <!--
+                       #setting-reentry-notion {
+                        width: 100%;
+                        line-height: 1.4;
+                        padding-left: 5px;
+                        padding-right: 5px;
+                        white-space: normal;
+                        margin-top: 0;
+                        margin-bottom: 10px;
+                        min-height: 44px;
+                       }
+                      -->
+                    </style>
+                </div>
+                {% endif %}
        
         <!--この商品について問い合わせる-->
         <div class="product_question">
