@@ -145,13 +145,11 @@
         </span>
         {% render = "svg-cart" %}
       </button>
-        
+
       {%- if enable_dynamic_buttons -%}
         {{ form | payment_button }}
       {%- endif -%}
-        
-    {%- if enable_dynamic_buttons -%}
-        
+
 		{% if product.available == false %}
         <div class="product-restock-notion-form">
 
@@ -206,8 +204,9 @@
             -->
           </style>
         </div>
-        {% endif %}        
+        {% endif %}
         
+    {%- if enable_dynamic_buttons -%}
       </div>
     {%- endif -%}
 
