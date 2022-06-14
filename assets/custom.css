@@ -951,6 +951,9 @@ figure.image{
     left: 190px;
     top: -47px;
 }
+button.SFA__btn {
+    position: absolute;
+}
 .content_wide_image {
     margin: 120px 0;
 }
