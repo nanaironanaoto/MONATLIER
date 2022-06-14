@@ -402,7 +402,7 @@
 /*       grid-template-columns: 1fr 1fr 1fr; */
       row-gap: 20px;
     }
-    ._SFA.detail {
+    .SFA__btn {
         float: none;
         position: relative;
         left: 190px;
