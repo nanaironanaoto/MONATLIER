@@ -965,7 +965,7 @@ button.SFA__btn {
 }
 .variant-wrapper--dropdown {
   	min-width: auto;
-    display: flex;
+/*     display: flex; */
   	align-items: center;
   	margin-right: 20px;
 }
