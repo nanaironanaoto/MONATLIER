@@ -415,6 +415,9 @@
       left: 190px;
       position: relative;
     }
+    button#AddToCart- {
+        width: 180px;
+    }
     .variant-input-wrap, .variant-input-wrap select {
         width: 180px;
     }
