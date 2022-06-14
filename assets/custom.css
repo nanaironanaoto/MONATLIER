@@ -946,10 +946,10 @@ figure.image{
     margin-bottom: 75px;
 }
 ._SFA.detail {
-    float: right;
+    float: none;
     position: relative;
-	right: 54%;
-    top: -7px;
+    left: 190px;
+    top: -47px;
 }
 .content_wide_image {
     margin: 120px 0;
