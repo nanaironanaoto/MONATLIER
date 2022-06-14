@@ -412,6 +412,7 @@
     }
     form#AddToCartForm->div:last-of-type {
       top: -10px;
+      right: 27%;
       position: relative;
     }
     .variant-input-wrap, .variant-input-wrap select {
