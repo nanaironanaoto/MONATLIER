@@ -961,8 +961,12 @@ figure.image{
   	margin-right: 20px;
 }
 .variant-input-wrap{
-  margin-bottom: 10px !important;
+	margin-bottom: 10px !important;
 }
+.variant__label[for]{
+	margin-bottom: 0 !important;
+}
+
 button#AddToCart- {
     width: 180px;
   	padding:0;
