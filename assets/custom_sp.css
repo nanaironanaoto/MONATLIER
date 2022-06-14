@@ -402,12 +402,6 @@
 /*       grid-template-columns: 1fr 1fr 1fr; */
       row-gap: 20px;
     }
-    .SFA__btn {
-        float: none;
-        position: relative;
-        left: 190px;
-        top: -47px;
-    }
     form#AddToCartForm->div:fitst-of-type {
       grid-column: 1 / 4;
       grid-row   : 1 / 2;
