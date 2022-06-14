@@ -414,7 +414,7 @@
       top: -10px;
       position: relative;
     }
-    .variant-input-wrap {
+    .variant-input-wrap, .variant-input-wrap select {
         width: 180px;
     }
     .prodcut_recommend_row {
