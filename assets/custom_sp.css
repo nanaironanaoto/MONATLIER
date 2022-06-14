@@ -414,6 +414,9 @@
       top: -10px;
       position: relative;
     }
+    .variant-input-wrap {
+        width: 180px;
+    }
     .prodcut_recommend_row {
         display: grid;
         grid-template-columns: repeat(2, auto);
