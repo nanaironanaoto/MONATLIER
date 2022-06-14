@@ -1014,7 +1014,7 @@ div[data-widget-style*=standard] .stamped-review:first-child {
         padding: 0 30px;
         width: 100%;
         min-width: 100%;
-        overflow: unset;
+        overflow: hidden;
         height: auto;
         display: block;
     }
