@@ -1164,4 +1164,8 @@ a.boost-pfs-filter-product-item-title p {
   .bc-al-style4 .boost-pfs-quickview-btn span svg {
       display: none !important;
   }
+  a#setting-reentry-notion {
+      margin: 10px 0 0 0;
+      width: 180px;
+  }
 }
