@@ -399,7 +399,7 @@
     }
     form#AddToCartForm- {
 /*       display: grid; */
-      grid-template-columns: 1fr 1fr 1fr;
+/*       grid-template-columns: 1fr 1fr 1fr; */
       row-gap: 20px;
     }
     form#AddToCartForm->div:fitst-of-type {

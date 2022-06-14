@@ -974,7 +974,7 @@ button#AddToCart- {
     display: none;
 }
 form#AddToCartForm- {
-    display: flex;
+/*     display: flex; */
     align-items: center;
 }
 div[data-widget-style*=standard] .stamped-review:first-child {
