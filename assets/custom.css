@@ -522,8 +522,8 @@ a:hover {
     margin-bottom: 20px;
 }
 .product-template .btn_row{
-	display: flex;
-	align-items: center;
+/* 	display: flex;
+	align-items: center; */
 }
 .product_question{
     font-size: 12px;
