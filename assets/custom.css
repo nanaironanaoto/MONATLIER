@@ -948,6 +948,7 @@ figure.image{
 ._SFA.detail {
     float: right;
     position: relative;
+	right: 54%;
     top: -7px;
 }
 .content_wide_image {
