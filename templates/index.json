@@ -5,6 +5,7 @@
       "blocks": {
         "b96c6446-29e7-4689-9c7f-364a38dca920": {
           "type": "header",
+          "disabled": true,
           "settings": {
             "mv_image_pc": "shopify:\/\/shop_images\/fv.png",
             "mv_image_sp": "shopify:\/\/shop_images\/fv_41007133-35a1-43e5-be45-a8366034d304.png"
@@ -13,6 +14,8 @@
         "32790399-e42c-4d2c-89ed-4fc7797bffd0": {
           "type": "header",
           "settings": {
+            "mv_image_pc": "shopify:\/\/shop_images\/PC.jpg",
+            "mv_image_sp": "shopify:\/\/shop_images\/fdb411a17997dc272d6b95af9965c235.jpg"
           }
         }
       },
@@ -41,11 +44,20 @@
             "news_text": "モナトリエの天然ダイヤモンド",
             "news_link": "shopify:\/\/blogs\/post\/diamond2"
           }
+        },
+        "5c56ab5e-af14-40b8-a24f-de406640d832": {
+          "type": "header",
+          "settings": {
+            "news_date": "2022\/7\/1",
+            "news_text": "お守りジュエリー｜イニシャル・ペンダント「ギル」に特別な想いを込めて",
+            "news_link": ""
+          }
         }
       },
       "block_order": [
         "8d02059b-f851-459d-9c3d-2ec2311a854d",
-        "f10eff1b-c144-4f30-9ded-1b970b1627aa"
+        "f10eff1b-c144-4f30-9ded-1b970b1627aa",
+        "5c56ab5e-af14-40b8-a24f-de406640d832"
       ],
       "settings": {
       }
