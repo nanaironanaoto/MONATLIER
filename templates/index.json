@@ -9,10 +9,16 @@
             "mv_image_pc": "shopify:\/\/shop_images\/fv.png",
             "mv_image_sp": "shopify:\/\/shop_images\/fv_41007133-35a1-43e5-be45-a8366034d304.png"
           }
+        },
+        "32790399-e42c-4d2c-89ed-4fc7797bffd0": {
+          "type": "header",
+          "settings": {
+          }
         }
       },
       "block_order": [
-        "b96c6446-29e7-4689-9c7f-364a38dca920"
+        "b96c6446-29e7-4689-9c7f-364a38dca920",
+        "32790399-e42c-4d2c-89ed-4fc7797bffd0"
       ],
       "settings": {
       }
@@ -28,15 +34,6 @@
             "news_link": "https:\/\/monatelier-jewelry.com\/blogs\/post\/resale"
           }
         },
-        "506f655d-aaf0-4798-a5be-4339dc27577d": {
-          "type": "header",
-          "disabled": true,
-          "settings": {
-            "news_date": "2022\/2\/24",
-            "news_text": "リニューアルオープンのお知らせ",
-            "news_link": "shopify:\/\/blogs\/post\/renewal"
-          }
-        },
         "f10eff1b-c144-4f30-9ded-1b970b1627aa": {
           "type": "header",
           "settings": {
@@ -48,7 +45,6 @@
       },
       "block_order": [
         "8d02059b-f851-459d-9c3d-2ec2311a854d",
-        "506f655d-aaf0-4798-a5be-4339dc27577d",
         "f10eff1b-c144-4f30-9ded-1b970b1627aa"
       ],
       "settings": {
