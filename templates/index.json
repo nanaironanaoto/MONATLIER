@@ -29,6 +29,14 @@
     "top_news": {
       "type": "top_news",
       "blocks": {
+        "5c56ab5e-af14-40b8-a24f-de406640d832": {
+          "type": "header",
+          "settings": {
+            "news_date": "2022\/9\/1",
+            "news_text": "9月新リング｜「存在感×バランス感」が美しい、モナトリエの新作リング",
+            "news_link": "shopify:\/\/blogs\/post\/2022newring2"
+          }
+        },
         "cb8fcab5-f6c4-468f-b615-20b6a8267a0a": {
           "type": "header",
           "settings": {
@@ -45,14 +53,6 @@
             "news_link": "shopify:\/\/blogs\/post\/newring2022summer"
           }
         },
-        "5c56ab5e-af14-40b8-a24f-de406640d832": {
-          "type": "header",
-          "settings": {
-            "news_date": "2022\/9\/1",
-            "news_text": "9月新リング｜「存在感×バランス感」が美しい、モナトリエの新作リング",
-            "news_link": "shopify:\/\/blogs\/post\/2022newring2"
-          }
-        },
         "f10eff1b-c144-4f30-9ded-1b970b1627aa": {
           "type": "header",
           "disabled": true,
@@ -64,9 +64,9 @@
         }
       },
       "block_order": [
+        "5c56ab5e-af14-40b8-a24f-de406640d832",
         "cb8fcab5-f6c4-468f-b615-20b6a8267a0a",
         "8d02059b-f851-459d-9c3d-2ec2311a854d",
-        "5c56ab5e-af14-40b8-a24f-de406640d832",
         "f10eff1b-c144-4f30-9ded-1b970b1627aa"
       ],
       "settings": {
