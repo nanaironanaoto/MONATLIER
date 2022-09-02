@@ -29,6 +29,15 @@
     "top_news": {
       "type": "top_news",
       "blocks": {
+        "f10eff1b-c144-4f30-9ded-1b970b1627aa": {
+          "type": "header",
+          "disabled": true,
+          "settings": {
+            "news_date": "2022\/9\/2",
+            "news_text": "9月新作ネックレス｜あなたらしさを高める、モナトリエの新作ネックレス",
+            "news_link": "shopify:\/\/blogs\/post\/新作発表-あなたらしさを高める-モナトリエの新作ネックレス"
+          }
+        },
         "5c56ab5e-af14-40b8-a24f-de406640d832": {
           "type": "header",
           "settings": {
@@ -52,22 +61,13 @@
             "news_text": "2022夏発売｜この夏をもっと輝かせる、モナトリエの新作リング",
             "news_link": "shopify:\/\/blogs\/post\/newring2022summer"
           }
-        },
-        "f10eff1b-c144-4f30-9ded-1b970b1627aa": {
-          "type": "header",
-          "disabled": true,
-          "settings": {
-            "news_date": "2022\/9\/2",
-            "news_text": "9月新作ネックレス｜あなたらしさを高める、モナトリエの新作ネックレス",
-            "news_link": "shopify:\/\/blogs\/post\/新作発表-あなたらしさを高める-モナトリエの新作ネックレス"
-          }
         }
       },
       "block_order": [
+        "f10eff1b-c144-4f30-9ded-1b970b1627aa",
         "5c56ab5e-af14-40b8-a24f-de406640d832",
         "cb8fcab5-f6c4-468f-b615-20b6a8267a0a",
-        "8d02059b-f851-459d-9c3d-2ec2311a854d",
-        "f10eff1b-c144-4f30-9ded-1b970b1627aa"
+        "8d02059b-f851-459d-9c3d-2ec2311a854d"
       ],
       "settings": {
       }
