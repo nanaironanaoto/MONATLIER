@@ -31,11 +31,10 @@
       "blocks": {
         "f10eff1b-c144-4f30-9ded-1b970b1627aa": {
           "type": "header",
-          "disabled": true,
           "settings": {
             "news_date": "2022\/9\/2",
             "news_text": "9月新作ネックレス｜あなたらしさを高める、モナトリエの新作ネックレス",
-            "news_link": "shopify:\/\/blogs\/post\/新作発表-あなたらしさを高める-モナトリエの新作ネックレス"
+            "news_link": "shopify:\/\/blogs\/post\/2022newnecklace2"
           }
         },
         "5c56ab5e-af14-40b8-a24f-de406640d832": {
@@ -48,6 +47,7 @@
         },
         "cb8fcab5-f6c4-468f-b615-20b6a8267a0a": {
           "type": "header",
+          "disabled": true,
           "settings": {
             "news_date": "2022\/8\/19",
             "news_text": "2022夏発売｜モナトリエの新作ネックレスで、この夏にもっと煌めきを",
