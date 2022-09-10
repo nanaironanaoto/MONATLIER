@@ -155,11 +155,11 @@
         {% if product.metafields.custom_fields["metal"] != blank %}
           <p class="product_info_metal_stone product_info_metal_stone_col4">{{ product.metafields.custom_fields["metal"] }}</p>
         {% endif %}
-        {% comment %}
-        {% if product.metafields.custom_fields["cf_"] != blank %}
-        <p class="product_info_metal_cf_ product_info_metal_cf_col4">{{ product.metafields.custom_fields["cf_"] }}</p>
+       
+        {% if product.metafields.custom_fields["stone"] != blank %}
+        <p class="product_info_metal_cf_ product_info_metal_cf_col4">{{ product.metafields.custom_fields["stone"] }}</p>
         {% endif %}
-        {% endcomment %}
+        
 
         <div class="grid-product__title grid-product__title--{{ settings.type_product_style }}">{{ product.title }}</div>
 
