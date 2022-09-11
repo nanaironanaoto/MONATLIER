@@ -15,6 +15,9 @@
             <!--地金,石-->
             <p class="product_info_metal_stone">{{product.metafields.custom_fields.metal}}</p>
             <p class="product_info_metal_stone">{{product.metafields.custom_fields["cf_"]}}</p>
+            {% if product.metafields.custom_fields["stone"] != blank %}
+                  <p class="product_info_metal_stone">{{ product.metafields.custom_fields["cf_"] }}</p>
+                  {% endif %}  
             <!--商品名-->
             <a class-"product_title" href="{{itemUrl}}#" class="boost-pfs-filter-product-item-title">{{itemTitle}}</a>
             {{itemVendor}}
