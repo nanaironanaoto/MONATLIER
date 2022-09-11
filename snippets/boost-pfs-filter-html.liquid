@@ -2,7 +2,7 @@
 {%- capture bc_layout -%}
 {%- case layout -%}
 {%- when 'productGridItemHtml' -%}
-{% assign unko2 = {{ product.metafields.custom_fields.["cf_"] }} %}
+{% assign dia = {{ product.metafields.custom_fields.["cf_"] }} %}
 {% raw %}
 <div class="boost-pfs-filter-product-item boost-pfs-filter-product-item-grid grid-product__meta　{{gridWidthClass}}{{soldOutClass}}{{saleClass}} {{itemActiveSwapClass}}">
     <div class="boost-pfs-filter-product-item-inner">
