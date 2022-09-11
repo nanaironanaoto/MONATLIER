@@ -1,5 +1,5 @@
 {%- comment -%} VERSION: 0.0.3 Please do not delete this line. {%- endcomment -%}
-{% assign dia = product.metafields.custom_fields.["cf_"] %}
+
 {%- capture bc_layout -%}
 {%- case layout -%}
 {%- when 'productGridItemHtml' -%}
@@ -15,7 +15,7 @@
           <div class="boost-pfs-filter-product-bottom-inner">
             <!--地金,石-->
             <p class="product_info_metal_stone">{{product.metafields.custom_fields.metal}}</p>
-            <p class="product_info_metal_stone">{{dia}}</p>
+            <p class="product_info_metal_stone">{{product.metafields.custom_fields.stone}}</p>
             
             <!--商品名-->
             <a class-"product_title" href="{{itemUrl}}#" class="boost-pfs-filter-product-item-title">{{itemTitle}}</a>
