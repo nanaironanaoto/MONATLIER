@@ -1,0 +1,22 @@
+.p-page_review.content{
+  margin-top:75px;
+}
+
+.p-page_review .jdgm-widget:not(.jdgm-review-widget--small,.jdgm-review-widget--medium) .jdgm-rev-widg__title{
+  text-align:left;
+}
+
+.p-page_review .jdgm-widget:not(.jdgm-review-widget--small,.jdgm-review-widget--medium) .jdgm-row-stars>div{
+  align-items:start;
+}
+.p-page_review .jdgm-rev-widg{
+  padding:0;
+}
+
+.p-page_review  .jdgm-widget:not(.jdgm-review-widget--small,.jdgm-review-widget--medium) .jdgm-row-stars{
+  justify-content:left;
+}
+
+.p-page_review .jdgm-sort-dropdown-wrapper .jdgm-sort-dropdown, .jdgm-sort-dropdown-wrapper .jdgm-sort-dropdown-arrow{
+  color:var(--colorTextBody);
+}
