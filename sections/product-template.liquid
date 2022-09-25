@@ -97,7 +97,8 @@
         <div class="product_name">
           {{ product.title | escape }}
         </div>
-
+        <!--評価-->
+　　　　　　　　　　{% render 'judgeme_widgets', widget_type: 'judgeme_preview_badge', jm_style: '', concierge_install: false, product: product %}
         <!--価格-->
         <div class="product_price">
           <span id="ProductPrice-{{ section_id }}"
