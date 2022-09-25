@@ -615,6 +615,10 @@
     {% endif %}
   </div>
   
+  <!-- judge.meレビュー -->
+  <div class="content p-page_review">
+  {% render 'judgeme_widgets', widget_type: 'judgeme_review_widget', concierge_install: false, product: product %}
+  </div>
 </div>
 {% schema %}
 {
