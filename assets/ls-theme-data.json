@@ -1,1 +1,13 @@
-{"originalThemeId":118096887986,"currentVersion":"2.7.3","createdVersion":"2.7.3"}
+{
+  "originalThemeId": 118096887986,
+  "currentVersion": "2.7.3",
+  "createdVersion": "2.7.3",
+  "originalThemeInfo": {
+    "name": "theme_info",
+    "theme_name": "Impulse",
+    "theme_author": "Archetype Themes",
+    "theme_version": "3.6.1",
+    "theme_documentation_url": "https:\/\/archetypethemes.co\/blogs\/impulse",
+    "theme_support_url": "https:\/\/archetypethemes.co\/pages\/support#impulse"
+  }
+}
